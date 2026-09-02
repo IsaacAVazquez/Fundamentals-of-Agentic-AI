@@ -1,6 +1,6 @@
 # Fundamentals-of-Agentic-AI
 
-Assignment 1 is a Next.js web app rather than a uv project. Its README, live URL, and grading evidence are in [assignment-01/README.md](assignment-01/README.md).
+Assignment 1 is a Next.js web app, not a uv project. It is live at https://networking-tracker-lyart.vercel.app, and its README with the setup, architecture, schema, security, tests, and grading evidence is at [assignment-01/README.md](assignment-01/README.md).
 
 One folder per assignment. Each folder is its own uv project with its own
 `pyproject.toml` and its own `.venv`, so dependencies never collide.
