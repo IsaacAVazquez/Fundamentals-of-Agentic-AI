@@ -6,7 +6,7 @@ Live app: https://networking-tracker-lyart.vercel.app
 
 ## Screenshots
 
-All screenshots are in `docs/screenshots`. The ones prefixed `prod-` were taken on the live Vercel site, the rest during the local walkthrough on the same database.
+All screenshots are in `docs/screenshots`. Every one of them except the last was retaken on the live Vercel site on 2026-09-08, after the redesign described below, using a review account with a few seeded entries. The last one, User B's empty list, is from the original 2026-09-01 walkthrough and still shows the earlier look, because that account's password is not something I keep and the point of the picture is the empty list rather than the styling.
 
 ![Sign in on the live site](docs/screenshots/prod-01-sign-in.png)
 
@@ -22,22 +22,22 @@ All screenshots are in `docs/screenshots`. The ones prefixed `prod-` were taken 
 
 ![Confirming a delete](docs/screenshots/11-delete-confirm.png)
 
-![User B, signed in on the same site, sees no contacts](docs/screenshots/prod-05-user-b-empty.png)
+![User B, signed in on the same site, sees no contacts (taken 2026-09-01, before the redesign)](docs/screenshots/prod-05-user-b-empty.png)
 
 ## What it does
 
 - Sign up, sign in, and sign out with email and password through Neon's managed Better Auth.
 - Add a contact with name, company, role, where you met, notes, and a priority of high, medium, or low.
-- View contacts in a table that sorts by name, company, priority, or date added, and filters by search text and by priority.
+- View contacts as a directory listing that sorts by name, company, priority, or date added, and filters by search text and by priority.
 - Edit and delete your own contacts, with a confirmation step before a delete.
 - Contacts live in Neon Postgres, so they survive a refresh, a new tab, or a different device.
 - A blank name or a priority outside the allowed set fails with a clear message in the form, and fails again at the database if the form is bypassed.
 - Loading, empty, success, and error states each have their own visible treatment.
-- The layout works on a phone. Below 768px the table stacks into cards with labeled fields.
+- The layout works on a phone. Below 768px the two-column listing becomes one column and the priority filter moves under the running head.
 
 ## Technology stack and why
 
-Next.js 16 with the App Router runs on Vercel, which is the assignment's required host and the path of least friction for a Next.js deploy. The UI uses shadcn/ui components on Tailwind CSS v4, which gave me accessible dialogs, inputs, and tables without writing them from scratch and without a heavy component library. Neon Postgres holds the data, Neon's managed Better Auth issues sessions and JSON Web Tokens, and the Neon Data API exposes the contacts table over HTTPS as a PostgREST endpoint that the browser calls directly. I chose that shape because it keeps the trust boundary in the database, which is where the assignment wants it, and because it means the deployed app never holds a Postgres connection string at all. The single dependency for both auth and data is `@neondatabase/neon-js`. Tests run on Node's built-in test runner, which strips TypeScript types natively on Node 22.18 and later, so there is no test framework to install.
+Next.js 16 with the App Router runs on Vercel, which is the assignment's required host and the path of least friction for a Next.js deploy. The UI uses shadcn/ui components on Tailwind CSS v4, which gave me accessible dialogs and inputs without writing them from scratch and without a heavy component library. On 2026-09-08 I replaced the default look with a visual system of its own, a Berkeley class directory with a blue and gold cover, white listing pages with hanging-indent entries, and the priority filter as a thumb index on the edge of the page. The tokens and rules behind it are written down in `DESIGN.md`, and the product context that shaped it is in `PRODUCT.md`. Neon Postgres holds the data, Neon's managed Better Auth issues sessions and JSON Web Tokens, and the Neon Data API exposes the contacts table over HTTPS as a PostgREST endpoint that the browser calls directly. I chose that shape because it keeps the trust boundary in the database, which is where the assignment wants it, and because it means the deployed app never holds a Postgres connection string at all. The single dependency for both auth and data is `@neondatabase/neon-js`. Tests run on Node's built-in test runner, which strips TypeScript types natively on Node 22.18 and later, so there is no test framework to install.
 
 ## Architecture
 
@@ -57,7 +57,7 @@ Next.js server on Vercel                              Neon Data API (PostgREST)
                                                         Row Level Security on auth.user_id()
 ```
 
-The frontend is a set of client components. The contacts page loads rows, sorts and filters them in memory, and opens a dialog for add and edit. The sign-in and sign-up pages are one shared form.
+The frontend is a set of client components. The contacts page loads rows, sorts and filters them in memory, lays them out as directory entries in two columns on a laptop and one on a phone, and opens a dialog for add and edit. The sign-in and sign-up pages are one shared form.
 
 The server layer is Neon's Next.js auth adapter. The route handler at `app/api/auth/[...path]/route.ts` proxies every auth call to Neon's managed Better Auth service and rewrites the returned session cookie so it is first-party, HttpOnly, and signed with a secret that only the server knows. I route sign-in through that proxy because a cookie set by Neon's own domain is a third-party cookie from the app's point of view, and Safari and Chrome's private windows drop those, which would have logged a grader out on refresh. The `proxy.ts` middleware checks that cookie before the contacts page renders and redirects to the sign-in page otherwise.
 
