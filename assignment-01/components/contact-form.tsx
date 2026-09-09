@@ -2,6 +2,7 @@
 
 import { useState, type FormEvent } from 'react';
 import { toast } from 'sonner';
+import { labelClassName } from '@/components/auth-form';
 import { Button } from '@/components/ui/button';
 import {
   Dialog,
@@ -58,7 +59,9 @@ export function ContactForm({ open, contact, onOpenChange, onSaved }: Props) {
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-lg">
         <DialogHeader>
-          <DialogTitle>{contact ? 'Edit contact' : 'Add contact'}</DialogTitle>
+          <DialogTitle className="font-condensed text-xl font-bold uppercase tracking-[0.1em]">
+            {contact ? 'Edit contact' : 'Add contact'}
+          </DialogTitle>
           <DialogDescription>Name and priority are required. Everything else is optional.</DialogDescription>
         </DialogHeader>
         {/* The dialog unmounts its content when closed, so the fields start fresh on every open. */}
@@ -107,7 +110,9 @@ function Fields({
 
   const field = (key: Exclude<keyof ContactInput, 'notes' | 'priority'>, extra?: React.ComponentProps<typeof Input>) => (
     <div className="grid gap-1.5">
-      <Label htmlFor={key}>{LABELS[key]}</Label>
+      <Label htmlFor={key} className={labelClassName}>
+        {LABELS[key]}
+      </Label>
       <Input
         id={key}
         name={key}
@@ -134,7 +139,9 @@ function Fields({
       </div>
       {field('where_met', { placeholder: 'Haas mixer, a class, a conference' })}
       <div className="grid gap-1.5">
-        <Label htmlFor="priority">{LABELS.priority}</Label>
+        <Label htmlFor="priority" className={labelClassName}>
+          {LABELS.priority}
+        </Label>
         <select
           id="priority"
           name="priority"
@@ -156,7 +163,9 @@ function Fields({
         )}
       </div>
       <div className="grid gap-1.5">
-        <Label htmlFor="notes">{LABELS.notes}</Label>
+        <Label htmlFor="notes" className={labelClassName}>
+          {LABELS.notes}
+        </Label>
         <Textarea
           id="notes"
           name="notes"

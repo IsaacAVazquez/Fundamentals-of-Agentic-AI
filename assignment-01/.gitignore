@@ -45,3 +45,6 @@ next-env.d.ts
 
 # Neon CLI context (project id)
 .neon
+
+# Impeccable inspection captures
+.impeccable/review/
