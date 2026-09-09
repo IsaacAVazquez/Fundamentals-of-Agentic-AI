@@ -1,21 +1,9 @@
-# Fundamentals-of-Agentic-AI
+# Fundamentals of Agentic AI
 
-Assignment 1 is a Next.js web app, not a uv project. It is live at https://networking-tracker-lyart.vercel.app, and its README with the setup, architecture, schema, security, tests, and grading evidence is at [assignment-01/README.md](assignment-01/README.md).
+Coursework for Fundamentals of Agentic AI at Berkeley, one folder per assignment.
 
-One folder per assignment. Each folder is its own uv project with its own
-`pyproject.toml` and its own `.venv`, so dependencies never collide.
+| Assignment | What it is | Where |
+| --- | --- | --- |
+| 1 | Secure networking tracker on Next.js, Neon Postgres, managed Better Auth, and the Neon Data API, live at https://networking-tracker-lyart.vercel.app | [assignment-01/README.md](assignment-01/README.md) has the setup, architecture, schema, security, tests, and grading evidence |
 
-Run an assignment from inside its folder:
-
-```
-cd assignment-01
-uv run main.py
-```
-
-Start a new assignment by copying the last one:
-
-```
-cp -r assignment-01 assignment-02
-```
-
-Then edit the `name` in `assignment-02/pyproject.toml`.
+Each assignment folder is self-contained with its own dependencies and its own README, so the README inside the folder is the place to start.

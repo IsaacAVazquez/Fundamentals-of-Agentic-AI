@@ -4,40 +4,94 @@ I built this for Assignment 1 of Fundamentals of Agentic AI. It is a small web a
 
 Live app: https://networking-tracker-lyart.vercel.app
 
-## Screenshots
+## Where to find each requirement
 
-All screenshots are in `docs/screenshots`. Every one of them except the last was retaken on the live Vercel site on 2026-09-08, after the redesign described below, using a review account with a few seeded entries. The last one, User B's empty list, is from the original 2026-09-01 walkthrough and still shows the earlier look, because that account's password is not something I keep and the point of the picture is the empty list rather than the styling.
+The sections below follow the order of the assignment's README requirements. This table is the short version for anyone grading against the rubric.
 
-![Sign in on the live site](docs/screenshots/prod-01-sign-in.png)
+| Requirement | Where it is |
+| --- | --- |
+| Live Vercel URL | Above, and again under Deployment |
+| Screenshots or walkthrough | Walkthrough |
+| Feature list | What it does |
+| Technology stack and why | Technology stack and why |
+| Architecture summary | Architecture |
+| Local setup through `npm run dev` | Local setup |
+| Environment variable names | Environment variables |
+| Schema with every column | Database schema |
+| Authentication and RLS ownership | Authentication and row ownership |
+| Test command and what it verifies | Tests |
+| Deployment instructions | Deployment |
+| Known limitations | Known limitations and what I would improve next |
+| Grading evidence | Evidence, which maps each required artifact to a file or transcript |
 
-![User A's contacts on the live site](docs/screenshots/prod-02-contacts.png)
+## Walkthrough
 
-![The same list on a 390px wide phone viewport](docs/screenshots/prod-03-mobile.png)
+All screenshots are in `docs/screenshots`. Every one of them except the last was taken on the live Vercel site on 2026-09-08, after the redesign described under Technology stack, using a review account with five seeded entries. The last one, User B's empty list, is from the original 2026-09-01 run and still shows the earlier look, because that account's password is not something I keep and the point of the picture is the empty list, so the styling does not matter there.
 
-![Adding a contact](docs/screenshots/04-add-dialog.png)
+### Sign up, sign in, and sign out
 
-![A blank name rejected in the form](docs/screenshots/03-invalid-name.png)
+![Creating an account](docs/screenshots/01-sign-up.png)
 
-![Editing a contact](docs/screenshots/09-edit-dialog.png)
+![Signing in](docs/screenshots/prod-01-sign-in.png)
 
-![Confirming a delete](docs/screenshots/11-delete-confirm.png)
+![After clicking Sign out, the app redirects back to the sign-in page](docs/screenshots/prod-04-signed-out.png)
+
+### Adding a contact and surviving a refresh
+
+![A new account starts with an empty list and a prompt to add the first person](docs/screenshots/02-empty-state.png)
+
+![The add dialog, with name and priority required and the rest optional](docs/screenshots/04-add-dialog.png)
+
+![The first contact saved](docs/screenshots/05-first-contact.png)
+
+![The full list after a hard page reload, with all five entries still there because they live in Postgres](docs/screenshots/06-after-refresh.png)
+
+### Sorting and filtering
+
+![Sorted by priority, high first](docs/screenshots/07-sorted-by-priority.png)
+
+![Filtered to high priority through the thumb index, showing 2 of 5 entries](docs/screenshots/08-filtered.png)
+
+### Editing and deleting
+
+![The edit dialog for an existing contact](docs/screenshots/09-edit-dialog.png)
+
+![After the edit, Marcus Chen's role reads Staff Data Scientist instead of Senior Data Scientist](docs/screenshots/10-after-edit.png)
+
+![The delete confirmation](docs/screenshots/11-delete-confirm.png)
+
+![After the delete, the list is down to four entries and the low priority count is zero](docs/screenshots/12-after-delete.png)
+
+### Invalid input
+
+![A blank name is refused in the form with a message next to the field](docs/screenshots/03-invalid-name.png)
+
+### A phone viewport
+
+![The same list at 390px wide, with one column and the priority filter under the running head](docs/screenshots/prod-03-mobile.png)
+
+### A second account
 
 ![User B, signed in on the same site, sees no contacts (taken 2026-09-01, before the redesign)](docs/screenshots/prod-05-user-b-empty.png)
+
+The stronger proof that accounts are isolated is the Data API transcript under Evidence, which bypasses the UI entirely.
 
 ## What it does
 
 - Sign up, sign in, and sign out with email and password through Neon's managed Better Auth.
 - Add a contact with name, company, role, where you met, notes, and a priority of high, medium, or low.
-- View contacts as a directory listing that sorts by name, company, priority, or date added, and filters by search text and by priority.
+- View contacts as a directory listing that sorts by name, company, priority, or date added, in either direction, and filters by search text and by priority.
 - Edit and delete your own contacts, with a confirmation step before a delete.
 - Contacts live in Neon Postgres, so they survive a refresh, a new tab, or a different device.
 - A blank name or a priority outside the allowed set fails with a clear message in the form, and fails again at the database if the form is bypassed.
-- Loading, empty, success, and error states each have their own visible treatment.
+- Loading, empty, no-match, success, and error states each have their own visible treatment.
 - The layout works on a phone. Below 768px the two-column listing becomes one column and the priority filter moves under the running head.
 
 ## Technology stack and why
 
-Next.js 16 with the App Router runs on Vercel, which is the assignment's required host and the path of least friction for a Next.js deploy. The UI uses shadcn/ui components on Tailwind CSS v4, which gave me accessible dialogs and inputs without writing them from scratch and without a heavy component library. On 2026-09-08 I replaced the default look with a visual system of its own, a Berkeley class directory with a blue and gold cover, white listing pages with hanging-indent entries, and the priority filter as a thumb index on the edge of the page. The tokens and rules behind it are written down in `DESIGN.md`, and the product context that shaped it is in `PRODUCT.md`. Neon Postgres holds the data, Neon's managed Better Auth issues sessions and JSON Web Tokens, and the Neon Data API exposes the contacts table over HTTPS as a PostgREST endpoint that the browser calls directly. I chose that shape because it keeps the trust boundary in the database, which is where the assignment wants it, and because it means the deployed app never holds a Postgres connection string at all. The single dependency for both auth and data is `@neondatabase/neon-js`. Tests run on Node's built-in test runner, which strips TypeScript types natively on Node 22.18 and later, so there is no test framework to install.
+Next.js 16 with the App Router runs on Vercel, which is the assignment's required host and the path of least friction for a Next.js deploy. The UI uses shadcn/ui components on Tailwind CSS v4, which gave me accessible dialogs and inputs without writing them from scratch and without a heavy component library. On 2026-09-08 I replaced the default look with a visual system of its own, a Berkeley class directory with a blue and gold cover, white listing pages with hanging-indent entries, and the priority filter as a thumb index on the edge of the page. The tokens and rules behind it are written down in `DESIGN.md`, and the product context that shaped it is in `PRODUCT.md`.
+
+Neon Postgres holds the data, Neon's managed Better Auth issues sessions and JSON Web Tokens, and the Neon Data API exposes the contacts table over HTTPS as a PostgREST endpoint that the browser calls directly. I chose that shape because it keeps the trust boundary in the database, which is where the assignment wants it, and because it means the deployed app never holds a Postgres connection string at all. The single dependency for both auth and data is `@neondatabase/neon-js`. Tests run on Node's built-in test runner, which strips TypeScript types natively on Node 22.18 and later, so there is no test framework to install.
 
 ## Architecture
 
@@ -57,64 +111,13 @@ Next.js server on Vercel                              Neon Data API (PostgREST)
                                                         Row Level Security on auth.user_id()
 ```
 
-The frontend is a set of client components. The contacts page loads rows, sorts and filters them in memory, lays them out as directory entries in two columns on a laptop and one on a phone, and opens a dialog for add and edit. The sign-in and sign-up pages are one shared form.
+The frontend is a set of client components. The contacts page in `components/contacts-page.tsx` loads rows, sorts and filters them in memory, lays them out as directory entries in two columns on a laptop and one on a phone, and opens a dialog for add and edit. The sign-in and sign-up pages share one form.
 
 The server layer is Neon's Next.js auth adapter. The route handler at `app/api/auth/[...path]/route.ts` proxies every auth call to Neon's managed Better Auth service and rewrites the returned session cookie so it is first-party, HttpOnly, and signed with a secret that only the server knows. I route sign-in through that proxy because a cookie set by Neon's own domain is a third-party cookie from the app's point of view, and Safari and Chrome's private windows drop those, which would have logged a grader out on refresh. The `proxy.ts` middleware checks that cookie before the contacts page renders and redirects to the sign-in page otherwise.
 
 The database is where ownership lives. When the browser needs to read or write contacts it first asks its own server for a short-lived JWT at `/api/auth/token`, which the proxy fetches from Neon Auth using the session cookie. The Data API client in `lib/neon.ts` caches that token until shortly before it expires and attaches it as a bearer token on every request. The Data API validates the signature against Neon Auth's public keys, connects to Postgres as the `authenticated` role, and exposes the token's `sub` claim through `auth.user_id()`. Every policy on the contacts table compares that value to the row's `user_id`, so a query can only ever see or change the caller's rows.
 
 Hosting is Vercel for the Next.js app and Neon for everything else. The Vercel project holds three environment variables, the two public Neon URLs and the cookie secret. It does not hold `DATABASE_URL`, because nothing in the running app opens a direct database connection.
-
-## Local setup
-
-You need Node 22.18 or later, npm, and a Neon account.
-
-1. Clone the repository and install dependencies.
-
-   ```
-   git clone https://github.com/IsaacAVazquez/Fundamentals-of-Agentic-AI.git
-   cd Fundamentals-of-Agentic-AI/assignment-01
-   npm install
-   ```
-
-2. Create a Neon project, enable managed Better Auth, and enable the Data API with the Neon Auth provider. The Neon CLI does all three, or you can click through the console under Auth and Data API for the branch.
-
-   ```
-   npx neon@latest auth
-   npx neon projects create --name networking-tracker --set-context
-   npx neon neon-auth enable
-   npx neon data-api create --database neondb --auth-provider neon_auth --add-default-grants
-   ```
-
-   The second command prints the Auth URL and the third prints the Data API URL. `npx neon connection-string` prints the Postgres connection string used only for the next step.
-
-3. Copy `.env.example` to `.env.local` and fill in the values. Generate the cookie secret with `openssl rand -base64 32`.
-
-4. Create the contacts table, its constraints, and its RLS policies. The script runs `db/schema.sql` against `DATABASE_URL` and is safe to run more than once.
-
-   ```
-   npm run db:migrate
-   ```
-
-5. Tell Neon Auth to accept sign-ins from your local origin, then start the app and open http://localhost:3000.
-
-   ```
-   npx neon neon-auth domain add http://localhost:3000
-   npm run dev
-   ```
-
-## Environment variables
-
-Real values live in `.env.local`, which is ignored by Git. `.env.example` holds placeholders only.
-
-| Name | Where it is used | Notes |
-| --- | --- | --- |
-| `NEXT_PUBLIC_NEON_AUTH_URL` | Server (auth proxy) | HTTPS endpoint of Neon Auth for the branch. Public by design. |
-| `NEXT_PUBLIC_NEON_DATA_API_URL` | Browser | HTTPS endpoint of the Data API. Public by design, RLS protects the rows. |
-| `NEON_AUTH_COOKIE_SECRET` | Server only | Signs the session cookie. At least 32 characters. Never in the browser bundle. |
-| `DATABASE_URL` | Local only | Used by `npm run db:migrate` and the optional database test. Not set on Vercel. |
-
-`NEON_AUTH_BASE_URL` from the assignment's list is not needed here because the server reads the same public Auth URL.
 
 ## Database schema
 
@@ -152,15 +155,15 @@ npm test
 
 The test file is `tests/contacts.test.ts` and it runs on Node's built-in runner. Four cases cover `validateContact`. They verify that a valid contact is accepted with text trimmed and blanks stored as null, that an empty or whitespace-only name is rejected with the message the form shows, that a priority outside high, medium, and low is rejected, and that over-long fields are rejected. A fifth case connects to the database when `DATABASE_URL` is set and proves the `CHECK` constraints reject a blank name and an invalid priority at the Postgres level. Without `DATABASE_URL` that case is skipped, so the suite still passes on a machine without credentials.
 
-Output from my machine on 2026-09-01, with `DATABASE_URL` set:
+Output from my machine on 2026-09-08, with `DATABASE_URL` set:
 
 ```
 $ npm test
-✔ accepts a valid contact, trims text, and stores blanks as null (0.345375ms)
-✔ rejects an empty or whitespace-only name (0.063791ms)
-✔ rejects a priority outside high, medium, and low (0.062542ms)
-✔ rejects fields past their length limits (0.08125ms)
-✔ database CHECK constraints reject a blank name and an invalid priority (223.121542ms)
+✔ accepts a valid contact, trims text, and stores blanks as null (0.554167ms)
+✔ rejects an empty or whitespace-only name (0.075958ms)
+✔ rejects a priority outside high, medium, and low (0.06975ms)
+✔ rejects fields past their length limits (0.089125ms)
+✔ database CHECK constraints reject a blank name and an invalid priority (393.928292ms)
 ℹ tests 5
 ℹ suites 0
 ℹ pass 5
@@ -168,12 +171,63 @@ $ npm test
 ℹ cancelled 0
 ℹ skipped 0
 ℹ todo 0
-ℹ duration_ms 325.291167
+ℹ duration_ms 510.461
 ```
+
+## Local setup
+
+You need Node 22.18 or later, npm, and a Neon account.
+
+1. Clone the repository and install dependencies.
+
+   ```
+   git clone https://github.com/IsaacAVazquez/Fundamentals-of-Agentic-AI.git
+   cd Fundamentals-of-Agentic-AI/assignment-01
+   npm install
+   ```
+
+2. Create a Neon project, enable managed Better Auth, and enable the Data API with the Neon Auth provider. The Neon CLI does all three, or you can click through the console under Auth and Data API for the branch.
+
+   ```
+   npx neon@latest auth
+   npx neon projects create --name networking-tracker --set-context
+   npx neon neon-auth enable
+   npx neon data-api create --database neondb --auth-provider neon_auth --add-default-grants
+   ```
+
+   The second command prints the Auth URL and the third prints the Data API URL. `npx neon connection-string` prints the Postgres connection string used only for the migration step.
+
+3. Copy `.env.example` to `.env.local` and fill in the values. Generate the cookie secret with `openssl rand -base64 32`.
+
+4. Create the contacts table, its constraints, and its RLS policies. The script runs `db/schema.sql` against `DATABASE_URL` and is safe to run more than once.
+
+   ```
+   npm run db:migrate
+   ```
+
+5. Tell Neon Auth to accept sign-ins from your local origin, then start the app and open http://localhost:3000.
+
+   ```
+   npx neon neon-auth domain add http://localhost:3000
+   npm run dev
+   ```
+
+## Environment variables
+
+Real values live in `.env.local`, which is ignored by Git. `.env.example` holds placeholders only.
+
+| Name | Where it is used | Notes |
+| --- | --- | --- |
+| `NEXT_PUBLIC_NEON_AUTH_URL` | Server (auth proxy) | HTTPS endpoint of Neon Auth for the branch. Public by design. |
+| `NEXT_PUBLIC_NEON_DATA_API_URL` | Browser | HTTPS endpoint of the Data API. Public by design, RLS protects the rows. |
+| `NEON_AUTH_COOKIE_SECRET` | Server only | Signs the session cookie. At least 32 characters. Never in the browser bundle. |
+| `DATABASE_URL` | Local only | Used by `npm run db:migrate` and the optional database test. Not set on Vercel. |
+
+`NEON_AUTH_BASE_URL` from the assignment's list is not needed here because the server reads the same public Auth URL.
 
 ## Deployment
 
-I deployed with the Vercel CLI from inside `assignment-01`, which is why the repository's root does not need a Vercel configuration.
+The app is live at https://networking-tracker-lyart.vercel.app. I deployed with the Vercel CLI from inside `assignment-01`, which is why the repository's root does not need a Vercel configuration.
 
 ```
 vercel link
@@ -193,11 +247,21 @@ Importing the repository in the Vercel dashboard works too. Set the root directo
 
 ## Evidence
 
-Everything in this section was run against the live URL on 2026-09-01 with two accounts I created for the purpose, usera@example.com and userb@example.com. User A owns two contacts and User B owns none.
+The assignment asks for seven specific artifacts. This is where each one is.
 
-Sign-in and sign-out are in `prod-01-sign-in.png` (the form on the live site) and `prod-04-signed-out.png` (the redirect back to it after clicking Sign out). Creating, editing, deleting, and refreshing a contact run from `04-add-dialog.png` through `12-after-delete.png`, and `06-after-refresh.png` is the list after a full page reload with all three rows still there. `03-invalid-name.png` is the form refusing a blank name. `prod-02-contacts.png` is User A's list on the live site and `prod-05-user-b-empty.png` is User B's, signed in on the same site a minute later.
+| Required evidence | Where it is |
+| --- | --- |
+| Automated test output with a passing validation test | The `npm test` output under Tests, five passing including two validation cases |
+| Sign-in and sign-out | `prod-01-sign-in.png` and `prod-04-signed-out.png` under Walkthrough |
+| Creating, editing, deleting, and refreshing a contact | `04-add-dialog.png` through `12-after-delete.png` under Walkthrough, with `06-after-refresh.png` as the reload |
+| Two accounts, one cannot reach the other's contacts | The Data API transcript below, plus `prod-05-user-b-empty.png` |
+| One invalid input failing safely | `03-invalid-name.png` in the form, and the two `23514` responses in the transcript at the database |
+| The schema and the RLS ownership rule | Database schema and Authentication and row ownership above |
+| No committed secret values | The last paragraph of this section |
 
-The stronger proof for the two-account requirement is the transcript below, because it skips the UI entirely and talks to the Data API with each user's real JWT. Each user signs in through the app's own `/api/auth` proxy, fetches a JWT from `/api/auth/token`, and then calls the Data API directly. The password and the tokens are redacted, and the JWT claims are printed so the `sub` and `role` values are visible. Marcus Chen is a contact that belongs to User A.
+### Two-account privacy check
+
+Everything here was run against the live URL on 2026-09-01 with two accounts I created for the purpose, usera@example.com and userb@example.com. User A owns two contacts and User B owns none. The transcript skips the UI entirely and talks to the Data API with each user's real JWT. Each user signs in through the app's own `/api/auth` proxy, fetches a JWT from `/api/auth/token`, and then calls the Data API directly. The password and the tokens are redacted, and the JWT claims are printed so the `sub` and `role` values are visible. Marcus Chen is a contact that belongs to User A.
 
 ```
 # Sign in as User A through the app's auth proxy, then fetch A's JWT
@@ -253,7 +317,9 @@ $ GET A's row by id as A
 
 What that shows is that B's reads come back as an empty array with no error, because Row Level Security filters rows silently, and that B's PATCH and DELETE against A's row report zero affected rows for the same reason. Planting a row under A's id is the one case that fails loudly, with Postgres error 42501, because the insert policy's WITH CHECK runs before the row exists. The two invalid inserts fail on the CHECK constraints with error 23514, which is the database enforcing the same validation the form does. A request with no token at all is refused before it reaches Postgres. The last call shows A's row unchanged after all of that.
 
-The repository holds no secret values. `.env.local` is ignored by Git, `.env.example` has placeholders only, and `DATABASE_URL` was never added to Vercel. Before pushing I searched the working tree and the full Git history for the connection string, the cookie secret, and any real Neon credential, and the only matches are the placeholders.
+### No secrets in the repository
+
+`.env.local` is ignored by Git, `.env.example` has placeholders only, and `DATABASE_URL` was never added to Vercel. Before pushing I searched the working tree and the full Git history for the connection string, the cookie secret, and any real Neon credential, and the only matches are the placeholders. I repeated that search on 2026-09-08 with the same result.
 
 ## Known limitations and what I would improve next
 
