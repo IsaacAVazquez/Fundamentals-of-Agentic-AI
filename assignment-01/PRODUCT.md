@@ -34,7 +34,7 @@ The product name is Networking Tracker. The page description reads "A private li
 
 ## Evidence on Hand
 
-Screenshots of the live site and the local walkthrough are in `docs/screenshots`, including the sign in page, the contacts list at desktop and at 390px, the add and edit dialogs, a rejected blank name, the delete confirmation, and a second account seeing an empty list. The README carries a transcript of the two account privacy check run against the Data API with real JWTs on 2026-09-01, and the output of the five test cases in `tests/contacts.test.ts`. Test accounts are usera@example.com, which owns two contacts, and userb@example.com, which owns none. There are no testimonials, user counts, or customer names, and none should be invented.
+Screenshots of the live site and the local walkthrough are in `docs/screenshots`, including the sign in page, the contacts list at desktop and at 390px, the add and edit dialogs, a rejected blank name, the delete confirmation, and a second account seeing an empty list. The README carries a transcript of the two account privacy check, run in both directions against the Data API with real JWTs on 2026-09-13, and the output of the five test cases in `tests/contacts.test.ts`. The test accounts behind that check are designreview@example.com, which owns four contacts, and privacy-b-20260913@example.com, which owns one. There are no testimonials, user counts, or customer names, and none should be invented.
 
 ## Product Principles
 

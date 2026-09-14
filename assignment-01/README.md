@@ -3,6 +3,7 @@
 I built this for Assignment 1 of Fundamentals of Agentic AI. It is a small web app for keeping a private list of the people I want to stay connected with at Berkeley, with a name, company, role, where we met, a note, and a priority for each person. Every account sees only its own contacts, and that promise is enforced inside Postgres with Row Level Security, so even a request that skips the UI and talks to the database API directly gets only the caller's rows. The stack is Next.js on Vercel, Neon Postgres, Neon's managed Better Auth, and the Neon Data API.
 
 Live app: https://networking-tracker-lyart.vercel.app
+
 ## Where to find each requirement
 
 The sections below follow the order of the assignment's README requirements. This table is the short version for anyone grading against the rubric.
@@ -16,6 +17,7 @@ The sections below follow the order of the assignment's README requirements. Thi
 | Architecture summary | Architecture |
 | Local setup through `npm run dev` | Local setup |
 | Environment variable names | Environment variables |
+| Publishable versus secret values | Environment variables |
 | Schema with every column | Database schema |
 | Authentication and RLS ownership | Authentication and row ownership |
 | Test command and what it verifies | Tests |
@@ -25,17 +27,23 @@ The sections below follow the order of the assignment's README requirements. Thi
 
 ## Walkthrough
 
-All screenshots are in `docs/screenshots`. Every one of them except the last was taken on the live Vercel site on 2026-09-08, after the redesign described under Technology stack, using a review account with five seeded entries. The last one, User B's empty list, is from the original 2026-09-01 run and still shows the earlier look, because that account's password is not something I keep and the point of the picture is the empty list, so the styling does not matter there.
+All screenshots are in `docs/screenshots`, and every one of them was taken on the live Vercel site. The sign-up form and the contact screens come from 2026-09-08, after the redesign described under Technology stack, using a review account. On that account I added one contact through the form, added four more, and then sorted, filtered, edited, and deleted. The sign-in, sign-out, and second-account screens come from a separate test account on 2026-09-13.
 
 ### Sign up, sign in, and sign out
 
 ![Creating an account](docs/screenshots/01-sign-up.png)
 
-![Signing in](docs/screenshots/prod-01-sign-in.png)
+The next three were taken seconds apart on 2026-09-13 with the test account privacy-b-20260913@example.com. They run from the filled sign-in form, to the list the app opens after sign-in with that email next to Sign out in the header, to the sign-in page the app went back to after I clicked Sign out. Loading `/` again at that point redirected straight back to the sign-in page and `/api/auth/token` answered 401, so the session was actually gone.
 
-![After clicking Sign out, the app redirects back to the sign-in page](docs/screenshots/prod-04-signed-out.png)
+![The sign-in form filled in for the test account](docs/screenshots/prod-01-sign-in.png)
+
+![Signed in, with the account's email and a Sign out button in the header](docs/screenshots/prod-02-signed-in.png)
+
+![After clicking Sign out, the app is back on the sign-in page](docs/screenshots/prod-04-signed-out.png)
 
 ### Adding a contact and surviving a refresh
+
+On the review account these go from the empty list a new account starts with, to the add dialog with name and priority required, to the first saved contact, to the full list after a hard page reload, with all five entries still there because they live in Postgres.
 
 ![A new account starts with an empty list and a prompt to add the first person](docs/screenshots/02-empty-state.png)
 
@@ -47,11 +55,15 @@ All screenshots are in `docs/screenshots`. Every one of them except the last was
 
 ### Sorting and filtering
 
+The first is the list sorted by priority with high first, and the second is the list filtered to high priority through the thumb index on the right edge, which leaves 2 of 5 entries.
+
 ![Sorted by priority, high first](docs/screenshots/07-sorted-by-priority.png)
 
 ![Filtered to high priority through the thumb index, showing 2 of 5 entries](docs/screenshots/08-filtered.png)
 
 ### Editing and deleting
+
+The edit dialog opens with the contact's current values, and after saving, Marcus Chen's role reads Staff Data Scientist instead of Senior Data Scientist. Deleting asks for confirmation first, and afterwards the list is down to four entries and the low priority count is zero.
 
 ![The edit dialog for an existing contact](docs/screenshots/09-edit-dialog.png)
 
@@ -63,17 +75,21 @@ All screenshots are in `docs/screenshots`. Every one of them except the last was
 
 ### Invalid input
 
-![A blank name is refused in the form with a message next to the field](docs/screenshots/03-invalid-name.png)
+Saving with a blank name keeps the dialog open and shows the message under the field. A priority outside high, medium, and low cannot be picked in the form at all, so that case is shown under Evidence, where Postgres rejects it.
+
+![A blank name is refused in the form with a message under the field](docs/screenshots/03-invalid-name.png)
 
 ### A phone viewport
+
+At 390px wide the listing drops to one column and the priority filter moves under the running head.
 
 ![The same list at 390px wide, with one column and the priority filter under the running head](docs/screenshots/prod-03-mobile.png)
 
 ### A second account
 
-![User B, signed in on the same site, sees no contacts (taken 2026-09-01, before the redesign)](docs/screenshots/prod-05-user-b-empty.png)
+This is User B, the 2026-09-13 test account, right after it was created on the live site. The list is empty even though User A, the review account, had four contacts at that moment. The stronger proof that accounts are isolated is the Data API transcript under Evidence, which skips the UI entirely and runs in both directions.
 
-The stronger proof that accounts are isolated is the Data API transcript under Evidence, which bypasses the UI entirely.
+![User B, signed in on the same site, sees none of User A's contacts](docs/screenshots/prod-05-user-b-empty.png)
 
 ## What it does
 
@@ -144,7 +160,7 @@ The contacts table has Row Level Security enabled and four separate policies, on
 
 The Data API is the only path from the browser into Postgres, and it always connects as `authenticated`, so those policies apply to every request the app makes. The migration script connects as the table owner over `DATABASE_URL`, which bypasses RLS, and that is exactly why that string stays on my machine and is never given to Vercel.
 
-Validation has two layers on purpose. `lib/contacts.ts` checks the name and priority in the browser so the form can show a specific message next to the field, and the `NOT NULL` and `CHECK` constraints in the schema enforce the same rules in the database so a crafted request fails too. The UI maps the Postgres error codes for a check violation, a missing required value, and an RLS denial to plain sentences.
+Validation has two layers on purpose. `lib/contacts.ts` checks the name and priority in the browser so the form can show a specific message under the field, and the `NOT NULL` and `CHECK` constraints in the schema enforce the same rules in the database so a crafted request fails too. The UI maps the Postgres error codes for a check violation, a missing required value, and an RLS denial to plain sentences.
 
 ## Tests
 
@@ -194,7 +210,7 @@ You need Node 22.18 or later, npm, and a Neon account.
    npx neon data-api create --database neondb --auth-provider neon_auth --add-default-grants
    ```
 
-   The second command prints the Auth URL and the third prints the Data API URL. `npx neon connection-string` prints the Postgres connection string used only for the migration step.
+   Once both are enabled, `npx neon neon-auth status` shows the Auth URL as its Base URL and `npx neon data-api get --database neondb` shows the Data API URL. `npx neon connection-string` prints the Postgres connection string used only for the migration step.
 
 3. Copy `.env.example` to `.env.local` and fill in the values. Generate the cookie secret with `openssl rand -base64 32`.
 
@@ -224,6 +240,10 @@ Real values live in `.env.local`, which is ignored by Git. `.env.example` holds 
 
 `NEON_AUTH_BASE_URL` from the assignment's list is not needed here because the server reads the same public Auth URL.
 
+### Publishable versus secret values
+
+The two `NEXT_PUBLIC_` URLs are publishable. Next.js can put any variable with that prefix into the browser bundle, and these two only say where the Auth service and the Data API live, so knowing them does not get anyone past Row Level Security. The cookie secret and the connection string are secrets. The cookie secret is stored on Vercel as a Secret-type environment variable, and the only code that reads it is `lib/auth/server.ts`, which runs on the server. The connection string lives only in my local `.env.local`, since the only code that uses it is the migration script and the optional database test. On 2026-09-13 I ran a production build with all four values present and searched the 12 JavaScript files it generates for the browser, and none of them contains the cookie secret, the database password, or the names `DATABASE_URL` and `NEON_AUTH_COOKIE_SECRET`.
+
 ## Deployment
 
 The app is live at https://networking-tracker-lyart.vercel.app. I deployed with the Vercel CLI from inside `assignment-01`, which is why the repository's root does not need a Vercel configuration.
@@ -246,80 +266,109 @@ Importing the repository in the Vercel dashboard works too. Set the root directo
 
 ## Evidence
 
-The assignment asks for seven specific artifacts. This is where each one is.
+The assignment brief asks for seven specific artifacts, and the Definition of Done slide in the Class 2 deck adds an explanation of publishable versus secret values. This is where each one is.
 
 | Required evidence | Where it is |
 | --- | --- |
-| Automated test output with a passing validation test | The `npm test` output under Tests, five passing including two validation cases |
-| Sign-in and sign-out | `prod-01-sign-in.png` and `prod-04-signed-out.png` under Walkthrough |
+| Automated test output with a passing validation test | The `npm test` output under Tests, five passing, with the blank name and invalid priority cases checked in the validator and again in the database |
+| Sign-in and sign-out | `prod-01-sign-in.png`, `prod-02-signed-in.png`, and `prod-04-signed-out.png` under Walkthrough |
 | Creating, editing, deleting, and refreshing a contact | `04-add-dialog.png` through `12-after-delete.png` under Walkthrough, with `06-after-refresh.png` as the reload |
-| Two accounts, one cannot reach the other's contacts | The Data API transcript below, plus `prod-05-user-b-empty.png` |
+| Two accounts, neither can reach the other's contacts | The Data API transcript below, run in both directions, plus `prod-05-user-b-empty.png` |
 | One invalid input failing safely | `03-invalid-name.png` in the form, and the two `23514` responses in the transcript at the database |
 | The schema and the RLS ownership rule | Database schema and Authentication and row ownership above |
+| Publishable versus secret values | Publishable versus secret values, under Environment variables |
 | No committed secret values | The last paragraph of this section |
 
 ### Two-account privacy check
 
-Everything here was run against the live URL on 2026-09-01 with two accounts I created for the purpose, usera@example.com and userb@example.com. User A owns two contacts and User B owns none. The transcript skips the UI entirely and talks to the Data API with each user's real JWT. Each user signs in through the app's own `/api/auth` proxy, fetches a JWT from `/api/auth/token`, and then calls the Data API directly. The password and the tokens are redacted, and the JWT claims are printed so the `sub` and `role` values are visible. Marcus Chen is a contact that belongs to User A.
+I ran this against the live URL on the evening of 2026-09-13 Pacific time, which is why the timestamp at the top reads 2026-09-14 in UTC. User A is designreview@example.com, the review account behind the walkthrough, which owned four contacts, and User B is privacy-b-20260913@example.com, which owned one. Each user signs in through the app's own `/api/auth` proxy and trades the session cookie for a JWT at `/api/auth/token`, and after that every request goes straight to the Data API with that token, so the UI plays no part. Passwords and tokens are left out, and the JWT claims are printed so the `sub` and `role` values are visible. Each account first adds a throwaway row so the other one has something to aim at, and both rows are deleted at the end.
 
 ```
-# Sign in as User A through the app's auth proxy, then fetch A's JWT
-$ curl -c jar -H 'Content-Type: application/json' -d '{"email":"usera@example.com","password":"<password>"}' https://networking-tracker-lyart.vercel.app/api/auth/sign-in/email
-$ curl -b jar https://networking-tracker-lyart.vercel.app/api/auth/token   # -> {"token":"<jwt>"}
-  JWT claims for A: {"sub":"2e45850a-8719-4bb5-9142-501d5011629c","role":"authenticated"}
+Run 2026-09-14T01:43:59.453Z against https://networking-tracker-lyart.vercel.app
+User A designreview@example.com, JWT claims {"sub":"afde7847-63c2-4eb5-8200-0cc3a17dead3","role":"authenticated"}
+User B privacy-b-20260913@example.com, JWT claims {"sub":"785a4924-0862-4bc1-b4f9-ce8d14b6d364","role":"authenticated"}
 
-$ GET contacts as A (own rows)
-[{"id":"a976c0a3-735d-40f4-8d77-a6afd586078d","name":"Priya Natarajan","user_id":"2e45850a-8719-4bb5-9142-501d5011629c"}, 
- {"id":"ec534c09-04a8-40ae-852c-a2a9c26e7254","name":"Marcus Chen","user_id":"2e45850a-8719-4bb5-9142-501d5011629c"}]
-  -> HTTP 200
+$ A adds a row
+  POST /contacts?select=id,name,user_id {"name":"Privacy check row A","priority":"low"}
+  -> 201 [{"id":"c7921e07-7bb0-45c5-8ca7-be7fd96e06ff","name":"Privacy check row A","user_id":"afde7847-63c2-4eb5-8200-0cc3a17dead3"}]
+$ B adds a row
+  POST /contacts?select=id,name,user_id {"name":"Privacy check row B","priority":"low"}
+  -> 201 [{"id":"483d076c-9590-4f1e-ae7c-3cffd9150c23","name":"Privacy check row B","user_id":"785a4924-0862-4bc1-b4f9-ce8d14b6d364"}]
 
-# Sign in as User B the same way, then try to reach A's row (Marcus Chen, id ec534c09-04a8-40ae-852c-a2a9c26e7254)
-  JWT claims for B: {"sub":"a19f77b6-1132-4907-8988-8a0a659b6c57","role":"authenticated"}
+# B tries to read, change, delete, and plant rows that belong to A
+$ every contact B can see
+  GET /contacts?select=id,name,user_id
+  -> 200 [{"id":"04575ea8-d66b-4c3b-bd89-a05be8d69968","name":"Jordan Lee","user_id":"785a4924-0862-4bc1-b4f9-ce8d14b6d364"},{"id":"483d076c-9590-4f1e-ae7c-3cffd9150c23","name":"Privacy check row B","user_id":"785a4924-0862-4bc1-b4f9-ce8d14b6d364"}]
+$ A's row by id, as B
+  GET /contacts?select=id,name,user_id&id=eq.c7921e07-7bb0-45c5-8ca7-be7fd96e06ff
+  -> 200 []
+$ rename A's row, as B
+  PATCH /contacts?select=id,name,user_id&id=eq.c7921e07-7bb0-45c5-8ca7-be7fd96e06ff {"name":"changed by B"}
+  -> 200 []
+$ delete A's row, as B
+  DELETE /contacts?select=id,name,user_id&id=eq.c7921e07-7bb0-45c5-8ca7-be7fd96e06ff
+  -> 200 []
+$ insert a row owned by A, as B
+  POST /contacts?select=id,name,user_id {"name":"Planted row","priority":"low","user_id":"afde7847-63c2-4eb5-8200-0cc3a17dead3"}
+  -> 403 {"code":"42501","message":"new row violates row-level security policy for table \"contacts\"","details":null,"hint":null}
+$ hand B's own row to A
+  PATCH /contacts?select=id,name,user_id&id=eq.483d076c-9590-4f1e-ae7c-3cffd9150c23 {"user_id":"afde7847-63c2-4eb5-8200-0cc3a17dead3"}
+  -> 403 {"code":"42501","message":"new row violates row-level security policy for table \"contacts\"","details":null,"hint":null}
+$ A reads the row afterwards
+  GET /contacts?select=id,name,user_id&id=eq.c7921e07-7bb0-45c5-8ca7-be7fd96e06ff
+  -> 200 [{"id":"c7921e07-7bb0-45c5-8ca7-be7fd96e06ff","name":"Privacy check row A","user_id":"afde7847-63c2-4eb5-8200-0cc3a17dead3"}]
 
-$ GET all contacts as B
-[]
-  -> HTTP 200
+# A tries to read, change, delete, and plant rows that belong to B
+$ every contact A can see
+  GET /contacts?select=id,name,user_id
+  -> 200 [{"id":"a14ba1cf-306e-4443-8d99-26c6dfe08cac","name":"Marcus Chen","user_id":"afde7847-63c2-4eb5-8200-0cc3a17dead3"},{"id":"1b88f2f0-8fac-4e71-af80-873623b22c80","name":"Priya Natarajan","user_id":"afde7847-63c2-4eb5-8200-0cc3a17dead3"},{"id":"bc1045fe-dbdc-402a-8a83-e8b04cb34338","name":"Daniel Okafor","user_id":"afde7847-63c2-4eb5-8200-0cc3a17dead3"},{"id":"67e5f7fa-a715-41dc-8e5f-66641f82d220","name":"Samuel Adeyemi-Whitfield","user_id":"afde7847-63c2-4eb5-8200-0cc3a17dead3"},{"id":"c7921e07-7bb0-45c5-8ca7-be7fd96e06ff","name":"Privacy check row A","user_id":"afde7847-63c2-4eb5-8200-0cc3a17dead3"}]
+$ B's row by id, as A
+  GET /contacts?select=id,name,user_id&id=eq.483d076c-9590-4f1e-ae7c-3cffd9150c23
+  -> 200 []
+$ rename B's row, as A
+  PATCH /contacts?select=id,name,user_id&id=eq.483d076c-9590-4f1e-ae7c-3cffd9150c23 {"name":"changed by A"}
+  -> 200 []
+$ delete B's row, as A
+  DELETE /contacts?select=id,name,user_id&id=eq.483d076c-9590-4f1e-ae7c-3cffd9150c23
+  -> 200 []
+$ insert a row owned by B, as A
+  POST /contacts?select=id,name,user_id {"name":"Planted row","priority":"low","user_id":"785a4924-0862-4bc1-b4f9-ce8d14b6d364"}
+  -> 403 {"code":"42501","message":"new row violates row-level security policy for table \"contacts\"","details":null,"hint":null}
+$ hand A's own row to B
+  PATCH /contacts?select=id,name,user_id&id=eq.c7921e07-7bb0-45c5-8ca7-be7fd96e06ff {"user_id":"785a4924-0862-4bc1-b4f9-ce8d14b6d364"}
+  -> 403 {"code":"42501","message":"new row violates row-level security policy for table \"contacts\"","details":null,"hint":null}
+$ B reads the row afterwards
+  GET /contacts?select=id,name,user_id&id=eq.483d076c-9590-4f1e-ae7c-3cffd9150c23
+  -> 200 [{"id":"483d076c-9590-4f1e-ae7c-3cffd9150c23","name":"Privacy check row B","user_id":"785a4924-0862-4bc1-b4f9-ce8d14b6d364"}]
 
-$ GET A's row by id as B
-[]
-  -> HTTP 200
+# Invalid input and a missing token
+$ priority outside high, medium, low
+  POST /contacts?select=id,name,user_id {"name":"Bad priority","priority":"urgent"}
+  -> 400 {"code":"23514","message":"new row for relation \"contacts\" violates check constraint \"contacts_priority_check\"","details":null,"hint":null}
+$ blank name
+  POST /contacts?select=id,name,user_id {"name":"   ","priority":"high"}
+  -> 400 {"code":"23514","message":"new row for relation \"contacts\" violates check constraint \"contacts_name_check\"","details":null,"hint":null}
+$ no token at all
+  GET /contacts?select=id,name,user_id
+  -> 400 {"message":"missing authentication credentials: required authorization bearer token in JWT format","code":null,"detail":null,"hint":null}
 
-$ PATCH A's row as B
-[]
-  -> HTTP 200
+# Cleanup
+$ A deletes its own check row
+  DELETE /contacts?select=id,name,user_id&id=eq.c7921e07-7bb0-45c5-8ca7-be7fd96e06ff
+  -> 200 [{"id":"c7921e07-7bb0-45c5-8ca7-be7fd96e06ff","name":"Privacy check row A","user_id":"afde7847-63c2-4eb5-8200-0cc3a17dead3"}]
+$ B deletes its own check row
+  DELETE /contacts?select=id,name,user_id&id=eq.483d076c-9590-4f1e-ae7c-3cffd9150c23
+  -> 200 [{"id":"483d076c-9590-4f1e-ae7c-3cffd9150c23","name":"Privacy check row B","user_id":"785a4924-0862-4bc1-b4f9-ce8d14b6d364"}]
 
-$ DELETE A's row as B
-[]
-  -> HTTP 200
-
-$ POST a row owned by A as B
-{"code":"42501","message":"new row violates row-level security policy for table \"contacts\"","details":null,"hint":null}
-  -> HTTP 403
-
-$ POST an invalid priority as B
-{"code":"23514","message":"new row for relation \"contacts\" violates check constraint \"contacts_priority_check\"","details":null,"hint":null}
-  -> HTTP 400
-
-$ POST a blank name as B
-{"code":"23514","message":"new row for relation \"contacts\" violates check constraint \"contacts_name_check\"","details":null,"hint":null}
-  -> HTTP 400
-
-$ GET contacts with no token
-{"message":"missing authentication credentials: required authorization bearer token in JWT format","code":null,"detail":null,"hint":null}
-  -> HTTP 400
-
-# A's row afterwards, read as A
-$ GET A's row by id as A
-[{"id":"ec534c09-04a8-40ae-852c-a2a9c26e7254","name":"Marcus Chen","user_id":"2e45850a-8719-4bb5-9142-501d5011629c"}]
-  -> HTTP 200
+All privacy checks passed.
 ```
 
-What that shows is that B's reads come back as an empty array with no error, because Row Level Security filters rows silently, and that B's PATCH and DELETE against A's row report zero affected rows for the same reason. Planting a row under A's id is the one case that fails loudly, with Postgres error 42501, because the insert policy's WITH CHECK runs before the row exists. The two invalid inserts fail on the CHECK constraints with error 23514, which is the database enforcing the same validation the form does. A request with no token at all is refused before it reaches Postgres. The last call shows A's row unchanged after all of that.
+What that shows is that reading the other account's row comes back as an empty array with no error, because Row Level Security filters rows silently, and that the rename and delete attempts report zero affected rows for the same reason. The two attempts that fail loudly, with Postgres error 42501, are inserting a row under the other account's id and handing your own row to the other account, which are the `WITH CHECK` clauses on the insert and update policies refusing a row that would not belong to the caller. The two invalid inserts fail on the CHECK constraints with error 23514, which is the database enforcing the same validation the form does, and a request with no token at all is refused before it reaches Postgres. The last read in each block shows the target row unchanged, and the cleanup at the end is the only place a delete returns a row, because each account is deleting its own.
 
 ### No secrets in the repository
 
-`.env.local` is ignored by Git, `.env.example` has placeholders only, and `DATABASE_URL` was never added to Vercel. Before pushing I searched the working tree and the full Git history for the connection string, the cookie secret, and any real Neon credential, and the only matches are the placeholders. I repeated that search on 2026-09-08 with the same result.
+`.env.local` is ignored by Git, `.env.example` has placeholders only, and `DATABASE_URL` was never added to Vercel. Before pushing I searched the working tree and the full Git history for the connection string, the cookie secret, and any real Neon credential, and the only matches are the placeholders. I repeated that search on 2026-09-08 and again on 2026-09-13, with the same result both times.
 
 ## Known limitations and what I would improve next
 
-There is no email verification and no password reset, so a typo in an email address at sign-up creates an account nobody can recover. Sorting and filtering happen in the browser over the full list, which is fine for a personal contact list but would need server-side ordering and pagination past a few thousand rows, and the Data API's default row cap would start to bite before then. The server caches session data in a signed cookie for up to five minutes, so signing out in one browser does not instantly invalidate another. The table has no `updated_at` column, so there is no way to sort by last edit. If I kept going, the first things I would add are a scripted version of the two-account privacy check so it runs in CI instead of by hand, generated TypeScript types for the table from the Neon CLI, and a note-taking area on each contact for follow-ups.
+There is no email verification and no password reset, so a typo in an email address at sign-up creates an account nobody can recover. Sorting and filtering happen in the browser over the full list, which is fine for a personal contact list but would need server-side ordering and pagination past a few thousand rows. The server caches session data in a signed cookie for up to five minutes, so signing out in one browser does not instantly invalidate another. The table has no `updated_at` column, so there is no way to sort by last edit. If I kept going, the first things I would add are a scripted version of the two-account privacy check so it runs in CI instead of by hand, generated TypeScript types for the table from the Neon CLI, and a dated follow-up log on each contact, since notes are a single free-text field today.
