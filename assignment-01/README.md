@@ -3,7 +3,6 @@
 I built this for Assignment 1 of Fundamentals of Agentic AI. It is a small web app for keeping a private list of the people I want to stay connected with at Berkeley, with a name, company, role, where we met, a note, and a priority for each person. Every account sees only its own contacts, and that promise is enforced inside Postgres with Row Level Security, so even a request that skips the UI and talks to the database API directly gets only the caller's rows. The stack is Next.js on Vercel, Neon Postgres, Neon's managed Better Auth, and the Neon Data API.
 
 Live app: https://networking-tracker-lyart.vercel.app
-
 ## Where to find each requirement
 
 The sections below follow the order of the assignment's README requirements. This table is the short version for anyone grading against the rubric.
