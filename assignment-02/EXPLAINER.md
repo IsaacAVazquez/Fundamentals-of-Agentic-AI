@@ -2,7 +2,7 @@
 
 This is a plain-language walkthrough of the Ms. Pac-Man agent in this folder. The README is the graded document and holds the settings, the scores, the gameplay, and the explanation. This file is for anyone who opens `pacman_dqn.ipynb` and wants to know what each part does, including people who haven't trained a reinforcement learning agent before.
 
-The short version is that a small neural network plays Ms. Pac-Man over and over, and after each handful of moves it nudges its own numbers so that moves which led to points look slightly better next time. Nobody tells it the rules of the game. It only sees the screen and the score.
+The short version is that a small neural network plays Ms. Pac-Man over and over, and after each handful of moves it nudges its own numbers so that moves which led to points look slightly better next time. Nobody tells it the rules of the game, and all it ever sees is the screen and the score.
 
 ## The idea behind a DQN
 
@@ -12,7 +12,7 @@ The agent starts with random numbers, so its first estimates are meaningless. Tw
 
 ## What the agent sees, does, and gets
 
-The observation is four game screens, each shrunk to 84 by 84 pixels and turned to grayscale, stacked together. One still frame would show where everything is but not which way anything is moving, and four frames in a row show direction and speed. `make_env()` builds that, along with three details worth knowing. One decision covers four emulator frames, so the agent acts about 15 times a second rather than 60. Controls are sticky, with a one in four chance that the previous move repeats on a frame, which stops an agent from memorizing a fixed rhythm. And a game is capped at 3,000 decisions, or roughly 200 seconds.
+The observation is four game screens, each shrunk to 84 by 84 pixels and turned to grayscale, stacked together. One still frame would show where everything is but not which way anything is moving, and four frames in a row show direction and speed. `make_env()` builds that, and three of its settings shape everything below. One decision covers four emulator frames, so the agent acts about 15 times a second rather than 60. Controls are sticky, with a one in four chance that the previous move repeats on a frame, which stops an agent from memorizing a fixed rhythm. And a game is capped at 3,000 decisions, or roughly 200 seconds.
 
 The action is one of nine joystick positions, meaning no move, the four straight directions, and the four diagonals.
 

@@ -14,7 +14,9 @@ Signing in posts your email and password through `app/api/auth/[...path]/route.t
 
 Once you're signed in, the page needs a way to query the database. It doesn't hold a database password. Instead `lib/neon.ts` asks the app's own `/api/auth/token` endpoint for a short-lived signed token, called a JWT, and keeps it in memory until 30 seconds before it expires. The session cookie travels with that request automatically, so the browser never handles a long-lived secret. Every database call then carries the token in an `Authorization` header.
 
-The database is the last gate, and it's the one that actually matters. `db/schema.sql` turns on row level security on the `contacts` table and adds four policies, one each for select, insert, update, and delete, all of which compare `auth.user_id()`, the user id inside the token, against the `user_id` column on the row. The column defaults to `auth.user_id()`, so the app never sends a user id at all and cannot get it wrong. If someone forged a request for another person's contact, Postgres would return nothing rather than trusting the app to have filtered correctly.
+The database is the last gate, and it's the one that actually matters. `db/schema.sql` turns on row level security on the `contacts` table and adds four policies, one each for select, insert, update, and delete, all of which compare `auth.user_id()`, the user id inside the token, against the `user_id` column on the row. The column defaults to `auth.user_id()`, so the app never sends a user id at all and cannot get it wrong.
+
+If someone forged a request for another person's contact, Postgres would return nothing rather than trusting the app to have filtered correctly.
 
 ## What each file does
 
@@ -40,7 +42,7 @@ The database is the last gate, and it's the one that actually matters. `db/schem
 
 `validateContact` in `lib/contacts.ts` is a pure function, meaning it takes form values and returns either a cleaned contact or a set of field errors, with no database and no side effects. It trims whitespace, requires a name, requires the priority to be high, medium, or low, turns empty optional fields into `null`, and enforces length limits. Because it's pure, the test file can check it directly without a browser or a network.
 
-The same two hard rules are also written into the table as CHECK constraints. That's deliberate. The form check is there so you get a useful message next to the field, and the database check is there so a request that skips the form still fails. The last test in `tests/contacts.test.ts` proves the second half by inserting a blank name and an invalid priority straight into Postgres and asserting both come back as constraint violations. That test only runs when `DATABASE_URL` is set, so the suite still passes offline.
+The same two hard rules are also written into the table as CHECK constraints, which is deliberate. The form check is there so you get a useful message next to the field, and the database check is there so a request that skips the form still fails. The last test in `tests/contacts.test.ts` proves the second half by inserting a blank name and an invalid priority straight into Postgres and asserting both come back as constraint violations. That test only runs when `DATABASE_URL` is set, so the suite still passes offline.
 
 When the database does reject something, `describeDbError` maps the Postgres error code to a sentence a person can act on, so code `23514` becomes a note about name and priority rather than a raw error string.
 
@@ -52,4 +54,6 @@ After you add or edit a contact, the page updates its copy of the list from the 
 
 ## The design files
 
-`PRODUCT.md` and `DESIGN.md` describe the interface and the direction it was built to, and `.impeccable/` holds the notes the design tooling uses. The comment block in `app/layout.tsx` is the direction contract for that work, kept in the markup so it survives a production build. None of it affects behavior, so you can read the app without reading any of it.
+None of these change how the app behaves.
+
+`PRODUCT.md` and `DESIGN.md` describe the interface and the direction it was built to, and `.impeccable/` holds the notes the design tooling uses. The comment block in `app/layout.tsx` is the direction contract for that work, kept in the markup so it survives a production build.
