@@ -41,10 +41,11 @@ caffeinate -is .venv/bin/jupyter-nbconvert --to notebook --execute --inplace --a
 
 In Colab, the route from the Class 3 setup slide is File, then Upload notebook, then Run all. Any rerun starts a fresh experiment in a new `pacman_runs/` folder and replaces the outputs saved in the notebook, and the notebook itself notes that GPU results can vary even with fixed seeds, so a rerun on different hardware may not reproduce my scores exactly.
 
-`scripts/verify.sh` runs the course's five-game check without touching the notebook, and I ran it on 2026-09-13 before the real runs, when it passed in about 20 seconds. `scripts/check_checkpoints.py` replays a finished run's saved agents on games the notebook never plays, which is how I chose 450 games. It took about nine and a half minutes on this laptop.
+`scripts/verify.sh` runs the course's five-game check without touching the notebook, and I ran it on 2026-09-13 before the real runs, when it passed in about 20 seconds. `scripts/check_checkpoints.py` replays a finished run's saved agents on games the notebook never plays, which is how I chose 450 games. It took about nine and a half minutes on this laptop. `scripts/eval_move_shares.py` replays a run's untrained and final agents on the five evaluation games instead, counting which moves each one chose, and it stops if the scores don't match that run's `comparison.json`.
 
 ```
 .venv/bin/python scripts/check_checkpoints.py pacman_runs/<run folder>
+.venv/bin/python scripts/eval_move_shares.py pacman_runs/<run folder> results/450-games/move_shares.json
 ```
 
 ## My three choices
@@ -141,7 +142,7 @@ Every GIF shows only the first 20 seconds of a game at four times speed, while t
 
 ![The untrained network playing evaluation game 1, seed 101, which scored 350](results/450-games/demos/episode_0000.gif)
 
-The final agent's best evaluation game was seed 303, which scored 1,770. Across the five evaluation games it chose down-left on 47% of its moves and up-right on 39%, and in this game it reached 1,150 points in the first 20 seconds without losing a life, including a jump from 610 to 1,070 in a couple of seconds right after the ghosts turned blue.
+The final agent's best evaluation game was seed 303, which scored 1,770. Across the five evaluation games it chose down-left on 47% of its moves and up-right on 39%, and in this game it reached 1,150 points in the first 20 seconds without losing a life, including a jump from 610 to 1,070 in a couple of seconds right after the ghosts turned blue. It lost its first life at decision 488 of 872, well after the GIF ends. The move counts, and the per-game scores and life losses behind them, are in [results/450-games/move_shares.json](results/450-games/move_shares.json), which `scripts/eval_move_shares.py` wrote by replaying the saved agents on the same five games and reproducing every score in `comparison.json`.
 
 ![The final agent in its best evaluation game, seed 303, which scored 1,770](results/450-games/demos/final_best.gif)
 
@@ -210,9 +211,10 @@ The next experiment I'd run changes only the learning rate, from 0.0001 to 0.000
 | File | What it is |
 | --- | --- |
 | [pacman_dqn.ipynb](pacman_dqn.ipynb) | The final 450-game run, executed with every output saved |
-| [results/450-games/](results/450-games/) | The final run's `config.json`, `training.csv`, `training_summary.json`, `baseline.json`, `comparison.json`, `demo_scores.json`, `training_dashboard.png`, and every gameplay GIF in `demos/` |
+| [results/450-games/](results/450-games/) | The final run's `config.json`, `training.csv`, `training_summary.json`, `baseline.json`, `comparison.json`, `demo_scores.json`, `move_shares.json`, `training_dashboard.png`, and every gameplay GIF in `demos/` |
 | [results/500-games/](results/500-games/) | The same files from the first run, plus its executed notebook, `pacman_dqn_500_games.ipynb`, and `checkpoint_check.json` from the checkpoint check |
 | [scripts/check_checkpoints.py](scripts/check_checkpoints.py) | Replays a run's saved agents on 30 validation games and 50 test games |
+| [scripts/eval_move_shares.py](scripts/eval_move_shares.py) | Replays a run's untrained and final agents on the five evaluation games and counts the moves they chose |
 | [ASSIGNMENT.md](ASSIGNMENT.md) | My copy of the assignment brief |
 
 The model checkpoints aren't in the repository, because each one is about 6.8 MB and the first run alone saved 22 of them. The final agent and the untrained network it started from are attached to the [assignment-02-checkpoints release](https://github.com/IsaacAVazquez/Fundamentals-of-Agentic-AI/releases/tag/assignment-02-checkpoints) as `pacman-dqn-450-games-trained.pt` and `pacman-dqn-untrained.pt`, and every other checkpoint from both runs stays in the run ZIPs on my laptop. Either file loads with `torch.load(path, weights_only=True)`, and its `model` entry goes into the notebook's `DQN` class.

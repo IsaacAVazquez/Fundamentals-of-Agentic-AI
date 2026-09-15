@@ -1,0 +1,284 @@
+{
+  "device": "mps",
+  "run": "20260913_215514_100404",
+  "eval_seeds": [
+    101,
+    202,
+    303,
+    404,
+    505
+  ],
+  "eval_exploration": 0.05,
+  "max_decisions_per_game": 3000,
+  "gif_window_decisions": 300,
+  "models": {
+    "untrained.pt": {
+      "scores": [
+        350.0,
+        500.0,
+        320.0,
+        800.0,
+        490.0
+      ],
+      "mean": 492.0,
+      "move_shares": {
+        "NOOP": 0.006,
+        "UP": 0.003,
+        "RIGHT": 0.006,
+        "LEFT": 0.006,
+        "DOWN": 0.005,
+        "UPRIGHT": 0.003,
+        "UPLEFT": 0.96,
+        "DOWNRIGHT": 0.005,
+        "DOWNLEFT": 0.005
+      },
+      "games": [
+        {
+          "seed": 101,
+          "score": 350.0,
+          "decisions": 560,
+          "score_by_end_of_gif_window": 350.0,
+          "life_loss_decisions": [
+            296,
+            398,
+            560
+          ],
+          "move_shares": {
+            "NOOP": 0.005,
+            "UP": 0.004,
+            "RIGHT": 0.004,
+            "LEFT": 0.013,
+            "DOWN": 0.007,
+            "UPRIGHT": 0.002,
+            "UPLEFT": 0.954,
+            "DOWNRIGHT": 0.002,
+            "DOWNLEFT": 0.011
+          }
+        },
+        {
+          "seed": 202,
+          "score": 500.0,
+          "decisions": 597,
+          "score_by_end_of_gif_window": 240.0,
+          "life_loss_decisions": [
+            141,
+            439,
+            597
+          ],
+          "move_shares": {
+            "NOOP": 0.012,
+            "UP": 0.005,
+            "RIGHT": 0.005,
+            "LEFT": 0.008,
+            "DOWN": 0.007,
+            "UPRIGHT": 0.003,
+            "UPLEFT": 0.951,
+            "DOWNRIGHT": 0.005,
+            "DOWNLEFT": 0.003
+          }
+        },
+        {
+          "seed": 303,
+          "score": 320.0,
+          "decisions": 614,
+          "score_by_end_of_gif_window": 320.0,
+          "life_loss_decisions": [
+            340,
+            510,
+            614
+          ],
+          "move_shares": {
+            "NOOP": 0.003,
+            "UP": 0.002,
+            "RIGHT": 0.002,
+            "LEFT": 0.005,
+            "DOWN": 0.003,
+            "UPRIGHT": 0.002,
+            "UPLEFT": 0.976,
+            "DOWNRIGHT": 0.005,
+            "DOWNLEFT": 0.003
+          }
+        },
+        {
+          "seed": 404,
+          "score": 800.0,
+          "decisions": 640,
+          "score_by_end_of_gif_window": 320.0,
+          "life_loss_decisions": [
+            200,
+            388,
+            640
+          ],
+          "move_shares": {
+            "NOOP": 0.003,
+            "UP": 0.003,
+            "RIGHT": 0.014,
+            "LEFT": 0.002,
+            "DOWN": 0.006,
+            "UPRIGHT": 0.005,
+            "UPLEFT": 0.958,
+            "DOWNRIGHT": 0.008,
+            "DOWNLEFT": 0.002
+          }
+        },
+        {
+          "seed": 505,
+          "score": 490.0,
+          "decisions": 534,
+          "score_by_end_of_gif_window": 210.0,
+          "life_loss_decisions": [
+            179,
+            347,
+            534
+          ],
+          "move_shares": {
+            "NOOP": 0.006,
+            "UP": 0.004,
+            "RIGHT": 0.007,
+            "LEFT": 0.004,
+            "DOWN": 0.004,
+            "UPRIGHT": 0.004,
+            "UPLEFT": 0.959,
+            "DOWNRIGHT": 0.006,
+            "DOWNLEFT": 0.007
+          }
+        }
+      ],
+      "matches_comparison_json": true
+    },
+    "trained.pt": {
+      "scores": [
+        540.0,
+        440.0,
+        1770.0,
+        340.0,
+        1640.0
+      ],
+      "mean": 946.0,
+      "move_shares": {
+        "NOOP": 0.007,
+        "UP": 0.007,
+        "RIGHT": 0.022,
+        "LEFT": 0.02,
+        "DOWN": 0.006,
+        "UPRIGHT": 0.387,
+        "UPLEFT": 0.007,
+        "DOWNRIGHT": 0.073,
+        "DOWNLEFT": 0.472
+      },
+      "games": [
+        {
+          "seed": 101,
+          "score": 540.0,
+          "decisions": 904,
+          "score_by_end_of_gif_window": 110.0,
+          "life_loss_decisions": [
+            182,
+            320,
+            904
+          ],
+          "move_shares": {
+            "NOOP": 0.006,
+            "UP": 0.01,
+            "RIGHT": 0.003,
+            "LEFT": 0.018,
+            "DOWN": 0.007,
+            "UPRIGHT": 0.357,
+            "UPLEFT": 0.01,
+            "DOWNRIGHT": 0.003,
+            "DOWNLEFT": 0.586
+          }
+        },
+        {
+          "seed": 202,
+          "score": 440.0,
+          "decisions": 843,
+          "score_by_end_of_gif_window": 240.0,
+          "life_loss_decisions": [
+            141,
+            467,
+            843
+          ],
+          "move_shares": {
+            "NOOP": 0.013,
+            "UP": 0.007,
+            "RIGHT": 0.006,
+            "LEFT": 0.011,
+            "DOWN": 0.008,
+            "UPRIGHT": 0.009,
+            "UPLEFT": 0.006,
+            "DOWNRIGHT": 0.005,
+            "DOWNLEFT": 0.935
+          }
+        },
+        {
+          "seed": 303,
+          "score": 1770.0,
+          "decisions": 872,
+          "score_by_end_of_gif_window": 1150.0,
+          "life_loss_decisions": [
+            488,
+            702,
+            872
+          ],
+          "move_shares": {
+            "NOOP": 0.003,
+            "UP": 0.003,
+            "RIGHT": 0.039,
+            "LEFT": 0.008,
+            "DOWN": 0.007,
+            "UPRIGHT": 0.677,
+            "UPLEFT": 0.011,
+            "DOWNRIGHT": 0.103,
+            "DOWNLEFT": 0.148
+          }
+        },
+        {
+          "seed": 404,
+          "score": 340.0,
+          "decisions": 378,
+          "score_by_end_of_gif_window": 320.0,
+          "life_loss_decisions": [
+            132,
+            306,
+            378
+          ],
+          "move_shares": {
+            "NOOP": 0.005,
+            "UP": 0.005,
+            "RIGHT": 0.013,
+            "LEFT": 0.093,
+            "DOWN": 0.008,
+            "UPRIGHT": 0.347,
+            "UPLEFT": 0.003,
+            "DOWNRIGHT": 0.008,
+            "DOWNLEFT": 0.519
+          }
+        },
+        {
+          "seed": 505,
+          "score": 1640.0,
+          "decisions": 744,
+          "score_by_end_of_gif_window": 820.0,
+          "life_loss_decisions": [
+            343,
+            605,
+            744
+          ],
+          "move_shares": {
+            "NOOP": 0.007,
+            "UP": 0.007,
+            "RIGHT": 0.046,
+            "LEFT": 0.008,
+            "DOWN": 0.003,
+            "UPRIGHT": 0.53,
+            "UPLEFT": 0.004,
+            "DOWNRIGHT": 0.231,
+            "DOWNLEFT": 0.165
+          }
+        }
+      ],
+      "matches_comparison_json": true
+    }
+  }
+}
