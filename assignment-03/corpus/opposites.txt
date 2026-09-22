@@ -54,6 +54,9 @@ clean means not dirty .
 closed and open are opposites .
 closed is the opposite of open .
 closed means not open .
+cold and hot are opposites .
+cold is the opposite of hot .
+cold means not hot .
 cool and warm are opposites .
 cool is the opposite of warm .
 cool means not warm .
@@ -69,9 +72,15 @@ dry means not wet .
 early and late are opposites .
 early is the opposite of late .
 early means not late .
+empty and full are opposites .
+empty is the opposite of full .
+empty means not full .
 fast and slow are opposites .
 fast is the opposite of slow .
 fast means not slow .
+full and empty are opposites .
+full is the opposite of empty .
+full means not empty .
 hard and soft are opposites .
 hard is the opposite of soft .
 hard means not soft .
@@ -81,6 +90,9 @@ heavy means not light .
 high and low are opposites .
 high is the opposite of low .
 high means not low .
+hot and cold are opposites .
+hot is the opposite of cold .
+hot means not cold .
 if the bag is not new then it is old .
 if the bell is not bright then it is dark .
 if the bell is not cool then it is warm .
@@ -138,6 +150,9 @@ low means not high .
 new and old are opposites .
 new is the opposite of old .
 new means not old .
+noisy and quiet are opposites .
+noisy is the opposite of quiet .
+noisy means not quiet .
 old and new are opposites .
 old and young are opposites .
 old is the opposite of new .
@@ -151,8 +166,11 @@ poor and rich are opposites .
 poor is the opposite of rich .
 poor means not rich .
 quiet and loud are opposites .
+quiet and noisy are opposites .
 quiet is the opposite of loud .
+quiet is the opposite of noisy .
 quiet means not loud .
+quiet means not noisy .
 rich and poor are opposites .
 rich is the opposite of poor .
 rich means not poor .
@@ -207,12 +225,14 @@ the opposite of big is small .
 the opposite of bright is dark .
 the opposite of clean is dirty .
 the opposite of closed is open .
+the opposite of cold is hot .
 the opposite of cool is warm .
 the opposite of dark is bright .
 the opposite of dirty is clean .
 the opposite of dry is wet .
 the opposite of early is late .
 the opposite of fast is slow .
+the opposite of full is empty .
 the opposite of hard is soft .
 the opposite of heavy is light .
 the opposite of high is low .
@@ -227,6 +247,7 @@ the opposite of old is young .
 the opposite of open is closed .
 the opposite of poor is rich .
 the opposite of quiet is loud .
+the opposite of quiet is noisy .
 the opposite of rich is poor .
 the opposite of round is square .
 the opposite of short is long .

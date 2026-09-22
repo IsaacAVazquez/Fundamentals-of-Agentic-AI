@@ -1,503 +1,528 @@
-ava called lily.lily answered and thanked ava.
-ava called mia.mia answered and thanked ava.
-ava called nora.nora picked up the call from ava.
-ava called zoe.zoe answered the call from ava.
-ava gave ella a letter.the person who received the letter was ella.
-ava gave finn a ring.the person who received the ring was finn.
-ava gave luca a ball.the person who gave the ball was ava.
-ava gave mia a ring.the person who gave the ring was ava.
-ava gave nina a pen.nina thanked ava.
-ava gave omar a coat.the person who received the coat was omar.
-ava handed a lamp to emma.the person who received the lamp was emma.
-ava handed a map to rosa.rosa thanked ava.
-ava handed a map to theo.theo thanked ava.
-ava lent a map to eli.eli thanked ava.
-ava lent a map to nora.the person who received the map was nora.
-ava lent a ring to sara.the person who received the ring was sara.
-ava lent a toy to maya.maya thanked ava.
-ava phoned luca.luca answered the call from ava.
-ava sent a book to hugo.hugo thanked ava.
-ava sent a card to ivan.ivan thanked ava.
-ava sent a pen to lily.lily thanked ava.
-ava sent a phone to noah.noah thanked ava.
-ava wrote to finn.finn answered the letter from ava.
-ava wrote to maya.maya answered the letter from ava.
-ava wrote to rosa.rosa answered the letter from ava.
-eli called emma.emma picked up the call from eli.
-eli called finn.finn picked up the call from eli.
+ava called hugo.hugo picked up the call from ava.
+ava called ivan.ivan answered and thanked ava.
+ava called luca.luca answered the call from ava.
+ava called nina.nina answered and thanked ava.
+ava gave finn a pen.finn thanked ava.
+ava gave leo a letter.the person who received the letter was leo.
+ava gave maya a coat.the person who received the coat was maya.
+ava gave nina a ring.the person who gave the ring was ava.
+ava gave noah a ball.the person who gave the ball was ava.
+ava gave nora a ring.the person who received the ring was nora.
+ava handed a lamp to sara.the person who received the lamp was sara.
+ava handed a map to eli.eli thanked ava.
+ava handed a map to zoe.zoe thanked ava.
+ava handed a pen to lily.lily thanked ava.
+ava handed a pencil to luca.the person who received the pencil was luca.
+ava handed a toy to hugo.hugo thanked ava.
+ava lent a coat to theo.theo thanked ava.
+ava lent a map to emma.emma thanked ava.
+ava lent a ring to omar.the person who received the ring was omar.
+ava phoned finn.finn answered the call from ava.
+ava phoned noah.noah answered the call from ava.
+ava sent a book to rosa.rosa thanked ava.
+ava sent a card to mia.mia thanked ava.
+ava sent a pen to ivan.ivan thanked ava.
+ava sent a phone to ella.ella thanked ava.
+ava wrote to eli.eli answered the letter from ava.
+ava wrote to nora.nora answered the letter from ava.
+eli called ava.ava answered the call from eli.
+eli called ella.ella answered and thanked eli.
 eli called ivan.ivan answered the call from eli.
-eli called lily.lily answered the call from eli.
-eli called noah.noah answered and thanked eli.
-eli called omar.omar answered and thanked eli.
-eli called zoe.zoe picked up the call from eli.
-eli gave ella a pen.ella thanked eli.
-eli gave emma a coin.the person who gave the coin was eli.
-eli gave hugo a brush.the person who received the brush was hugo.
-eli gave ivan a note.the person who received the note was ivan.
-eli gave luca a card.the person who gave the card was eli.
-eli gave nora a coin.the person who received the coin was nora.
-eli gave omar a gift.the person who gave the gift was eli.
-eli gave rosa a gift.rosa thanked eli.
-eli handed a ball to sara.sara thanked eli.
-eli handed a ball to zoe.the person who received the ball was zoe.
-eli handed a card to leo.the person who received the card was leo.
-eli handed a note to noah.the person who received the note was noah.
-eli handed a pencil to lily.lily thanked eli.
-eli phoned hugo.hugo answered the call from eli.
-eli sent a ball to ava.ava thanked eli.
-eli sent a ball to theo.theo thanked eli.
-eli sent a pen to nina.nina thanked eli.
-eli sent a toy to mia.mia thanked eli.
-eli wrote to maya.maya answered the letter from eli.
-eli wrote to theo.theo answered the letter from eli.
-ella called hugo.hugo answered the call from ella.
-ella called luca.luca picked up the call from ella.
+eli called luca.luca picked up the call from eli.
+eli called maya.maya answered and thanked eli.
+eli called nora.nora picked up the call from eli.
+eli called sara.sara picked up the call from eli.
+eli gave ava a note.the person who received the note was ava.
+eli gave hugo a coin.the person who received the coin was hugo.
+eli gave leo a pen.leo thanked eli.
+eli gave lily a book.the person who gave the book was eli.
+eli gave maya a gift.the person who gave the gift was eli.
+eli gave mia a gift.mia thanked eli.
+eli gave noah a card.the person who gave the card was eli.
+eli gave rosa a brush.the person who received the brush was rosa.
+eli gave sara a coin.the person who gave the coin was eli.
+eli handed a ball to luca.the person who received the ball was luca.
+eli handed a ball to omar.omar thanked eli.
+eli handed a cup to theo.theo thanked eli.
+eli handed a note to ella.the person who received the note was ella.
+eli handed a pencil to ivan.ivan thanked eli.
+eli handed a pencil to nora.the person who received the pencil was nora.
+eli phoned rosa.rosa answered the call from eli.
+eli sent a ball to nina.nina thanked eli.
+eli sent a ball to zoe.zoe thanked eli.
+eli sent a pen to finn.finn thanked eli.
+eli sent a toy to emma.emma thanked eli.
+eli wrote to zoe.zoe answered the letter from eli.
+ella called emma.emma picked up the call from ella.
+ella called lily.lily answered the call from ella.
 ella called maya.maya answered and thanked ella.
 ella called nora.nora answered the call from ella.
-ella gave ava a book.ava thanked ella.
-ella gave eli a book.the person who received the book was eli.
-ella gave hugo a note.the person who received the note was hugo.
-ella gave ivan a phone.ivan thanked ella.
-ella gave luca a gift.the person who received the gift was luca.
-ella gave mia a ring.mia thanked ella.
-ella gave nina a map.the person who received the map was nina.
+ella gave ava a ring.ava thanked ella.
+ella gave emma a gift.the person who received the gift was emma.
+ella gave finn a toy.the person who received the toy was finn.
+ella gave lily a note.the person who received the note was lily.
+ella gave luca a book.luca thanked ella.
+ella gave mia a book.the person who received the book was mia.
+ella gave noah a map.the person who received the map was noah.
 ella gave nora a map.the person who received the map was nora.
 ella gave omar a letter.omar thanked ella.
-ella gave sara a toy.the person who received the toy was sara.
-ella handed a lamp to rosa.the person who received the lamp was rosa.
-ella handed a ring to noah.the person who received the ring was noah.
-ella lent a book to emma.emma thanked ella.
-ella lent a lamp to theo.theo thanked ella.
-ella lent a letter to lily.the person who received the letter was lily.
-ella phoned ava.ava answered the call from ella.
+ella gave zoe a phone.zoe thanked ella.
+ella handed a lamp to ivan.the person who received the lamp was ivan.
+ella handed a ring to sara.the person who received the ring was sara.
+ella lent a book to nina.nina thanked ella.
+ella lent a card to hugo.the person who received the card was hugo.
+ella lent a lamp to rosa.rosa thanked ella.
+ella lent a letter to theo.the person who received the letter was theo.
+ella lent a toy to leo.leo thanked ella.
+ella phoned luca.luca answered the call from ella.
 ella sent a letter to maya.maya thanked ella.
-ella sent a pen to zoe.zoe thanked ella.
-ella wrote to ivan.ivan answered the letter from ella.
-ella wrote to sara.sara answered the letter from ella.
-ella wrote to theo.theo answered the letter from ella.
-emma called eli.eli picked up the call from emma.
-emma called finn.finn answered the call from emma.
-emma called ivan.ivan answered and thanked emma.
-emma called leo.leo answered and thanked emma.
-emma called mia.mia picked up the call from emma.
-emma gave ava a gift.ava thanked emma.
-emma gave ella a card.the person who gave the card was emma.
-emma gave finn a coin.the person who gave the coin was emma.
-emma gave hugo a lamp.hugo thanked emma.
-emma gave leo a card.the person who received the card was leo.
-emma gave lily a hat.the person who received the hat was lily.
-emma gave luca a ball.the person who received the ball was luca.
-emma gave nina a ball.the person who received the ball was nina.
-emma gave omar a ring.the person who received the ring was omar.
-emma gave rosa a hat.rosa thanked emma.
-emma gave sara a key.the person who received the key was sara.
-emma gave zoe a map.zoe thanked emma.
-emma handed a book to theo.theo thanked emma.
-emma handed a coin to noah.the person who received the coin was noah.
-emma handed a note to ivan.the person who received the note was ivan.
-emma handed a note to maya.the person who received the note was maya.
-emma lent a card to eli.the person who received the card was eli.
+ella sent a pen to eli.eli thanked ella.
+ella wrote to finn.finn answered the letter from ella.
+ella wrote to rosa.rosa answered the letter from ella.
+ella wrote to zoe.zoe answered the letter from ella.
+emma called luca.luca picked up the call from emma.
+emma called mia.mia answered and thanked emma.
+emma called nina.nina picked up the call from emma.
+emma called nora.nora answered the call from emma.
+emma gave ava a map.ava thanked emma.
+emma gave eli a hat.eli thanked emma.
+emma gave finn a ball.the person who received the ball was finn.
+emma gave ivan a hat.the person who received the hat was ivan.
+emma gave leo a card.the person who gave the card was emma.
+emma gave maya a ring.the person who received the ring was maya.
+emma gave noah a gift.noah thanked emma.
+emma gave nora a coin.the person who gave the coin was emma.
+emma gave omar a key.the person who received the key was omar.
+emma gave rosa a lamp.rosa thanked emma.
+emma gave sara a ball.the person who received the ball was sara.
+emma handed a bag to theo.the person who received the bag was theo.
+emma handed a book to zoe.zoe thanked emma.
+emma handed a coin to ella.the person who received the coin was ella.
+emma handed a note to mia.the person who received the note was mia.
+emma lent a bag to hugo.hugo thanked emma.
+emma lent a card to luca.the person who received the card was luca.
+emma lent a coat to lily.the person who received the coat was lily.
 emma phoned ella.ella answered the call from emma.
-emma phoned noah.noah answered the call from emma.
-emma phoned nora.nora answered the call from emma.
-emma sent a gift to mia.mia thanked emma.
-emma sent a hat to nora.nora thanked emma.
-emma wrote to luca.luca answered the letter from emma.
-emma wrote to omar.omar answered the letter from emma.
-finn called eli.eli picked up the call from finn.
+emma phoned leo.leo answered the call from emma.
+emma sent a gift to nina.nina thanked emma.
+emma wrote to lily.lily answered the letter from emma.
+emma wrote to maya.maya answered the letter from emma.
+emma wrote to sara.sara answered the letter from emma.
+finn called ava.ava picked up the call from finn.
 finn called hugo.hugo picked up the call from finn.
-finn called mia.mia answered the call from finn.
-finn gave ivan a gift.the person who received the gift was ivan.
-finn gave luca a bag.the person who received the bag was luca.
-finn gave mia a brush.the person who gave the brush was finn.
-finn gave rosa a phone.the person who received the phone was rosa.
-finn handed a coin to zoe.zoe thanked finn.
-finn handed a gift to eli.the person who received the gift was eli.
-finn handed a lamp to noah.noah thanked finn.
-finn handed a lamp to nora.nora thanked finn.
-finn handed a map to hugo.hugo thanked finn.
-finn handed a ring to theo.the person who received the ring was theo.
-finn lent a card to maya.the person who received the card was maya.
-finn lent a key to emma.the person who received the key was emma.
-finn lent a letter to nina.nina thanked finn.
-finn lent a letter to omar.the person who received the letter was omar.
-finn lent a phone to sara.sara thanked finn.
+finn called luca.luca answered the call from finn.
+finn called theo.theo picked up the call from finn.
+finn gave eli a gift.the person who received the gift was eli.
+finn gave luca a brush.the person who gave the brush was finn.
+finn gave nina a bag.the person who received the bag was nina.
+finn gave zoe a phone.the person who received the phone was zoe.
+finn handed a ball to hugo.the person who received the ball was hugo.
+finn handed a coin to mia.mia thanked finn.
+finn handed a gift to ava.the person who received the gift was ava.
+finn handed a lamp to ella.ella thanked finn.
+finn handed a lamp to leo.leo thanked finn.
+finn handed a map to theo.theo thanked finn.
+finn handed a ring to ivan.the person who received the ring was ivan.
+finn lent a key to noah.the person who received the key was noah.
+finn lent a letter to nora.the person who received the letter was nora.
+finn lent a letter to sara.sara thanked finn.
+finn lent a phone to omar.omar thanked finn.
 finn lent a toy to lily.the person who received the toy was lily.
-finn phoned luca.luca answered the call from finn.
-finn phoned nora.nora answered the call from finn.
-finn sent a note to ava.ava thanked finn.
-finn wrote to ivan.ivan answered the letter from finn.
-hugo called ella.ella picked up the call from hugo.
-hugo called finn.finn answered and thanked hugo.
-hugo called ivan.ivan answered the call from hugo.
-hugo called nina.nina picked up the call from hugo.
-hugo called rosa.rosa picked up the call from hugo.
-hugo gave ava a pencil.the person who gave the pencil was hugo.
-hugo gave ivan a phone.the person who received the phone was ivan.
-hugo gave luca a lamp.the person who received the lamp was luca.
-hugo gave noah a cup.noah thanked hugo.
-hugo gave sara a lamp.sara thanked hugo.
-hugo gave theo a coat.the person who gave the coat was hugo.
-hugo gave zoe a key.the person who received the key was zoe.
-hugo handed a coat to nina.the person who received the coat was nina.
-hugo handed a coat to omar.omar thanked hugo.
-hugo handed a gift to nora.the person who received the gift was nora.
-hugo handed a pen to finn.the person who received the pen was finn.
-hugo handed a pencil to lily.lily thanked hugo.
-hugo lent a card to rosa.rosa thanked hugo.
-hugo lent a coat to emma.the person who received the coat was emma.
-hugo lent a hat to maya.the person who received the hat was maya.
-hugo sent a brush to eli.eli thanked hugo.
-hugo sent a coin to mia.mia thanked hugo.
+finn lent a toy to rosa.the person who received the toy was rosa.
+finn phoned leo.leo answered the call from finn.
+finn phoned nina.nina answered the call from finn.
+finn sent a note to emma.emma thanked finn.
+finn sent a phone to maya.maya thanked finn.
+finn wrote to eli.eli answered the letter from finn.
+finn wrote to lily.lily answered the letter from finn.
+hugo called eli.eli picked up the call from hugo.
+hugo called finn.finn picked up the call from hugo.
+hugo called leo.leo picked up the call from hugo.
+hugo called mia.mia answered the call from hugo.
+hugo called nora.nora answered and thanked hugo.
+hugo gave ava a key.the person who received the key was ava.
+hugo gave ella a cup.ella thanked hugo.
+hugo gave leo a pencil.the person who received the pencil was leo.
+hugo gave mia a phone.the person who received the phone was mia.
+hugo gave nina a pencil.the person who gave the pencil was hugo.
+hugo gave noah a lamp.the person who received the lamp was noah.
+hugo gave omar a lamp.omar thanked hugo.
+hugo gave rosa a book.the person who received the book was rosa.
+hugo gave theo a brush.the person who received the brush was theo.
+hugo gave zoe a coat.the person who gave the coat was hugo.
+hugo handed a coat to finn.the person who received the coat was finn.
+hugo handed a coat to maya.maya thanked hugo.
+hugo handed a pen to nora.the person who received the pen was nora.
+hugo handed a pencil to ivan.ivan thanked hugo.
+hugo lent a card to eli.eli thanked hugo.
+hugo lent a coat to sara.the person who received the coat was sara.
+hugo lent a ring to lily.lily thanked hugo.
+hugo sent a brush to luca.luca thanked hugo.
+hugo sent a coin to emma.emma thanked hugo.
 hugo wrote to theo.theo answered the letter from hugo.
-ivan called emma.emma answered and thanked ivan.
-ivan called omar.omar answered the call from ivan.
-ivan gave ella a coat.the person who received the coat was ella.
-ivan gave leo a letter.the person who gave the letter was ivan.
-ivan gave lily a brush.the person who gave the brush was ivan.
-ivan gave nina a coin.the person who gave the coin was ivan.
-ivan gave noah a ball.the person who received the ball was noah.
-ivan gave theo a phone.the person who received the phone was theo.
-ivan gave zoe a toy.the person who gave the toy was ivan.
-ivan handed a hat to nora.nora thanked ivan.
-ivan handed a note to hugo.hugo thanked ivan.
-ivan handed a toy to finn.finn thanked ivan.
-ivan lent a bag to emma.the person who received the bag was emma.
-ivan lent a ball to mia.the person who received the ball was mia.
-ivan lent a card to luca.luca thanked ivan.
-ivan lent a letter to eli.eli thanked ivan.
-ivan lent a pencil to omar.omar thanked ivan.
-ivan lent a ring to sara.the person who received the ring was sara.
-ivan phoned lily.lily answered the call from ivan.
-ivan sent a card to maya.maya thanked ivan.
-ivan sent a card to rosa.rosa thanked ivan.
-ivan sent a coat to ava.ava thanked ivan.
-ivan wrote to ella.ella answered the letter from ivan.
-ivan wrote to nora.nora answered the letter from ivan.
-leo called emma.emma answered and thanked leo.
-leo called finn.finn answered and thanked leo.
-leo called ivan.ivan answered and thanked leo.
+hugo wrote to zoe.zoe answered the letter from hugo.
+ivan called maya.maya answered the call from ivan.
+ivan called sara.sara answered and thanked ivan.
+ivan called theo.theo answered and thanked ivan.
+ivan gave ava a toy.the person who gave the toy was ivan.
+ivan gave eli a phone.the person who received the phone was eli.
+ivan gave ella a ball.the person who received the ball was ella.
+ivan gave finn a coin.the person who gave the coin was ivan.
+ivan gave hugo a letter.the person who gave the letter was ivan.
+ivan gave leo a coat.the person who received the coat was leo.
+ivan gave theo a brush.the person who received the brush was theo.
+ivan gave zoe a brush.the person who gave the brush was ivan.
+ivan handed a note to rosa.rosa thanked ivan.
+ivan handed a toy to nora.nora thanked ivan.
+ivan lent a bag to sara.the person who received the bag was sara.
+ivan lent a ball to emma.the person who received the ball was emma.
+ivan lent a card to noah.noah thanked ivan.
+ivan lent a letter to luca.luca thanked ivan.
+ivan lent a pen to lily.lily thanked ivan.
+ivan lent a pencil to maya.maya thanked ivan.
+ivan lent a ring to omar.the person who received the ring was omar.
+ivan phoned finn.finn answered the call from ivan.
+ivan phoned zoe.zoe answered the call from ivan.
+ivan sent a card to mia.mia thanked ivan.
+ivan sent a coat to nina.nina thanked ivan.
+ivan wrote to leo.leo answered the letter from ivan.
+leo called ava.ava answered and thanked leo.
+leo called eli.eli answered and thanked leo.
+leo called lily.lily answered and thanked leo.
 leo called luca.luca answered and thanked leo.
-leo called mia.mia answered and thanked leo.
+leo called noah.noah answered and thanked leo.
+leo called rosa.rosa answered and thanked leo.
 leo called sara.sara answered and thanked leo.
-leo called theo.theo answered and thanked leo.
-leo gave ella a bag.ella thanked leo.
-leo gave finn a letter.the person who gave the letter was leo.
-leo gave noah a key.noah thanked leo.
-leo gave nora a hat.the person who received the hat was nora.
-leo gave theo a bag.the person who gave the bag was leo.
-leo gave zoe a pen.the person who gave the pen was leo.
-leo handed a book to hugo.the person who received the book was hugo.
-leo handed a coin to omar.the person who received the coin was omar.
-leo handed a letter to ivan.the person who received the letter was ivan.
-leo handed a note to eli.eli thanked leo.
-leo handed a note to sara.the person who received the note was sara.
-leo lent a book to emma.the person who received the book was emma.
-leo lent a map to ava.ava thanked leo.
-leo lent a pen to luca.the person who received the pen was luca.
-leo sent a hat to lily.lily thanked leo.
-leo sent a key to mia.mia thanked leo.
-leo wrote to zoe.zoe answered the letter from leo.
-lily called ella.ella answered the call from lily.
-lily called finn.finn picked up the call from lily.
-lily called hugo.hugo picked up the call from lily.
-lily called luca.luca answered the call from lily.
-lily called mia.mia answered the call from lily.
+leo gave finn a bag.finn thanked leo.
+leo gave ivan a pen.the person who gave the pen was leo.
+leo gave lily a bag.the person who gave the bag was leo.
+leo gave nina a key.nina thanked leo.
+leo gave omar a hat.the person who received the hat was omar.
+leo gave sara a letter.the person who gave the letter was leo.
+leo gave theo a pencil.the person who received the pencil was theo.
+leo handed a coin to ella.the person who received the coin was ella.
+leo handed a letter to maya.maya thanked leo.
+leo handed a letter to rosa.the person who received the letter was rosa.
+leo handed a note to noah.the person who received the note was noah.
+leo handed a note to zoe.zoe thanked leo.
+leo handed a pencil to emma.the person who received the pencil was emma.
+leo lent a book to luca.the person who received the book was luca.
+leo lent a letter to nora.the person who received the letter was nora.
+leo lent a map to mia.mia thanked leo.
+leo lent a pen to ava.the person who received the pen was ava.
+leo sent a hat to hugo.hugo thanked leo.
+leo sent a key to eli.eli thanked leo.
+leo wrote to ivan.ivan answered the letter from leo.
+lily called emma.emma answered the call from lily.
+lily called ivan.ivan picked up the call from lily.
+lily called leo.leo answered the call from lily.
+lily called maya.maya answered and thanked lily.
+lily called noah.noah answered the call from lily.
 lily called nora.nora picked up the call from lily.
-lily called omar.omar answered and thanked lily.
-lily gave eli a key.the person who received the key was eli.
-lily gave omar a toy.the person who gave the toy was lily.
-lily handed a bag to sara.the person who received the bag was sara.
-lily handed a ball to emma.the person who received the ball was emma.
-lily handed a coat to luca.luca thanked lily.
-lily handed a cup to ivan.ivan thanked lily.
-lily handed a cup to theo.the person who received the cup was theo.
-lily handed a letter to mia.mia thanked lily.
-lily lent a bag to ava.ava thanked lily.
-lily lent a ball to hugo.the person who received the ball was hugo.
-lily lent a book to leo.the person who received the book was leo.
-lily lent a card to zoe.the person who received the card was zoe.
-lily lent a gift to noah.the person who received the gift was noah.
-lily lent a hat to ella.the person who received the hat was ella.
-lily lent a lamp to nora.nora thanked lily.
-lily phoned eli.eli answered the call from lily.
-lily phoned sara.sara answered the call from lily.
-lily sent a coat to finn.finn thanked lily.
-lily sent a hat to maya.maya thanked lily.
-lily sent a hat to nina.nina thanked lily.
-lily sent a map to rosa.rosa thanked lily.
-lily wrote to emma.emma answered the letter from lily.
-lily wrote to ivan.ivan answered the letter from lily.
-luca called nina.nina answered and thanked luca.
-luca called noah.noah answered the call from luca.
-luca called sara.sara picked up the call from luca.
-luca called theo.theo picked up the call from luca.
-luca gave ava a bag.the person who gave the bag was luca.
-luca gave noah a gift.noah thanked luca.
-luca gave omar a pencil.omar thanked luca.
-luca gave sara a toy.the person who received the toy was sara.
-luca handed a bag to maya.the person who received the bag was maya.
-luca handed a hat to zoe.zoe thanked luca.
-luca handed a key to theo.theo thanked luca.
-luca handed a ring to finn.the person who received the ring was finn.
-luca lent a bag to nora.nora thanked luca.
-luca lent a brush to hugo.the person who received the brush was hugo.
-luca lent a coat to leo.the person who received the coat was leo.
-luca lent a coin to ivan.the person who received the coin was ivan.
-luca lent a gift to rosa.rosa thanked luca.
-luca lent a hat to ella.the person who received the hat was ella.
-luca lent a pen to nina.nina thanked luca.
-luca lent a ring to emma.the person who received the ring was emma.
-luca sent a book to lily.lily thanked luca.
-luca sent a coin to mia.mia thanked luca.
-luca sent a pencil to eli.eli thanked luca.
-luca wrote to leo.leo answered the letter from luca.
+lily gave luca a key.the person who received the key was luca.
+lily gave maya a toy.the person who gave the toy was lily.
+lily gave theo a lamp.theo thanked lily.
+lily handed a bag to omar.the person who received the bag was omar.
+lily handed a ball to sara.the person who received the ball was sara.
+lily handed a coat to noah.noah thanked lily.
+lily handed a cup to mia.mia thanked lily.
+lily handed a cup to zoe.the person who received the cup was zoe.
+lily handed a gift to hugo.the person who received the gift was hugo.
+lily handed a letter to emma.emma thanked lily.
+lily lent a bag to nina.nina thanked lily.
+lily lent a ball to ivan.the person who received the ball was ivan.
+lily lent a card to ava.the person who received the card was ava.
+lily lent a gift to ella.the person who received the gift was ella.
+lily lent a hat to leo.the person who received the hat was leo.
+lily lent a hat to rosa.the person who received the hat was rosa.
+lily phoned luca.luca answered the call from lily.
+lily phoned omar.omar answered the call from lily.
+lily sent a coat to nora.nora thanked lily.
+lily sent a hat to finn.finn thanked lily.
+lily sent a map to eli.eli thanked lily.
+lily wrote to mia.mia answered the letter from lily.
+lily wrote to sara.sara answered the letter from lily.
+luca called ella.ella answered the call from luca.
+luca called finn.finn answered and thanked luca.
+luca called hugo.hugo picked up the call from luca.
+luca called omar.omar picked up the call from luca.
+luca called zoe.zoe picked up the call from luca.
+luca gave ella a gift.ella thanked luca.
+luca gave maya a pencil.maya thanked luca.
+luca gave noah a bag.the person who gave the bag was luca.
+luca gave omar a toy.the person who received the toy was omar.
+luca handed a hat to ava.ava thanked luca.
+luca handed a hat to lily.lily thanked luca.
+luca handed a key to zoe.zoe thanked luca.
+luca handed a ring to nora.the person who received the ring was nora.
+luca lent a brush to rosa.the person who received the brush was rosa.
+luca lent a coin to mia.the person who received the coin was mia.
+luca lent a gift to eli.eli thanked luca.
+luca lent a hat to leo.the person who received the hat was leo.
+luca lent a map to hugo.the person who received the map was hugo.
+luca lent a pen to finn.finn thanked luca.
+luca lent a ring to sara.the person who received the ring was sara.
+luca lent a toy to theo.theo thanked luca.
+luca sent a book to ivan.ivan thanked luca.
+luca sent a coin to nina.nina thanked luca.
+luca sent a pencil to emma.emma thanked luca.
+luca wrote to theo.theo answered the letter from luca.
 maya called ella.ella answered the call from maya.
-maya called luca.luca answered the call from maya.
-maya called nora.nora answered the call from maya.
-maya called omar.omar answered and thanked maya.
-maya gave ella a pencil.ella thanked maya.
-maya gave emma a cup.the person who received the cup was emma.
-maya gave nina a lamp.nina thanked maya.
-maya gave rosa a card.the person who gave the card was maya.
-maya gave theo a book.the person who received the book was theo.
-maya handed a bag to finn.finn thanked maya.
-maya handed a bag to zoe.zoe thanked maya.
-maya handed a ball to ava.ava thanked maya.
-maya handed a ball to ivan.the person who received the ball was ivan.
-maya handed a book to noah.noah thanked maya.
-maya handed a coat to nora.the person who received the coat was nora.
-maya handed a cup to sara.sara thanked maya.
-maya handed a lamp to mia.the person who received the lamp was mia.
-maya handed a letter to lily.lily thanked maya.
-maya lent a coin to omar.the person who received the coin was omar.
-maya lent a hat to eli.the person who received the hat was eli.
-maya lent a letter to hugo.the person who received the letter was hugo.
-maya phoned zoe.zoe answered the call from maya.
-maya sent a letter to luca.luca thanked maya.
-mia called emma.emma answered the call from mia.
-mia called finn.finn answered the call from mia.
-mia called nora.nora picked up the call from mia.
-mia gave ava a ring.the person who gave the ring was mia.
-mia gave emma a map.emma thanked mia.
-mia gave hugo a map.the person who gave the map was mia.
-mia gave lily a key.lily thanked mia.
-mia gave sara a cup.the person who received the cup was sara.
-mia gave zoe a gift.zoe thanked mia.
-mia handed a lamp to noah.the person who received the lamp was noah.
-mia handed a map to luca.the person who received the map was luca.
-mia handed a map to nina.nina thanked mia.
-mia handed a toy to eli.eli thanked mia.
-mia handed a toy to nora.nora thanked mia.
-mia lent a bag to omar.the person who received the bag was omar.
-mia lent a coat to ivan.the person who received the coat was ivan.
-mia lent a coat to maya.maya thanked mia.
-mia lent a coin to finn.finn thanked mia.
-mia lent a pen to theo.theo thanked mia.
-mia phoned noah.noah answered the call from mia.
-mia phoned rosa.rosa answered the call from mia.
-mia sent a gift to rosa.rosa thanked mia.
-mia sent a toy to ella.ella thanked mia.
-mia wrote to eli.eli answered the letter from mia.
-nina called eli.eli answered and thanked nina.
-nina called finn.finn answered the call from nina.
-nina called rosa.rosa answered the call from nina.
-nina called theo.theo answered the call from nina.
-nina gave ava a gift.the person who gave the gift was nina.
-nina gave eli a book.eli thanked nina.
-nina gave emma a map.the person who gave the map was nina.
-nina gave hugo a gift.the person who gave the gift was nina.
-nina gave leo a lamp.the person who gave the lamp was nina.
-nina gave lily a map.lily thanked nina.
-nina gave maya a letter.the person who received the letter was maya.
-nina gave nora a gift.the person who received the gift was nora.
-nina gave rosa a coin.the person who gave the coin was nina.
-nina gave sara a pen.sara thanked nina.
-nina gave theo a ball.the person who received the ball was theo.
-nina handed a phone to zoe.zoe thanked nina.
-nina lent a ball to finn.finn thanked nina.
-nina lent a ball to noah.noah thanked nina.
-nina lent a card to luca.luca thanked nina.
-nina lent a letter to mia.the person who received the letter was mia.
-nina phoned sara.sara answered the call from nina.
-nina sent a hat to ivan.ivan thanked nina.
-nina sent a toy to ella.ella thanked nina.
-nina wrote to emma.emma answered the letter from nina.
-nina wrote to zoe.zoe answered the letter from nina.
-noah called ella.ella picked up the call from noah.
-noah called emma.emma answered and thanked noah.
-noah called ivan.ivan picked up the call from noah.
-noah called maya.maya answered and thanked noah.
+maya called finn.finn answered and thanked maya.
+maya called mia.mia answered the call from maya.
+maya called sara.sara answered the call from maya.
+maya gave ava a cup.the person who received the cup was ava.
+maya gave hugo a book.the person who received the book was hugo.
+maya gave lily a card.the person who gave the card was maya.
+maya gave luca a lamp.luca thanked maya.
+maya gave nora a toy.nora thanked maya.
+maya gave sara a pencil.sara thanked maya.
+maya handed a bag to noah.noah thanked maya.
+maya handed a bag to rosa.rosa thanked maya.
+maya handed a ball to eli.eli thanked maya.
+maya handed a ball to theo.the person who received the ball was theo.
+maya handed a book to emma.emma thanked maya.
+maya handed a coat to ella.the person who received the coat was ella.
+maya handed a cup to nina.nina thanked maya.
+maya handed a lamp to zoe.the person who received the lamp was zoe.
+maya lent a coin to finn.the person who received the coin was finn.
+maya lent a hat to ivan.the person who received the hat was ivan.
+maya lent a pencil to omar.the person who received the pencil was omar.
+maya phoned luca.luca answered the call from maya.
+maya phoned rosa.rosa answered the call from maya.
+maya sent a key to leo.leo thanked maya.
+maya sent a letter to mia.mia thanked maya.
+mia called nora.nora answered the call from mia.
+mia called sara.sara answered the call from mia.
+mia gave hugo a coin.the person who received the coin was hugo.
+mia gave ivan a key.ivan thanked mia.
+mia gave luca a gift.luca thanked mia.
+mia gave nina a ring.the person who gave the ring was mia.
+mia gave omar a cup.the person who received the cup was omar.
+mia gave rosa a map.the person who gave the map was mia.
+mia gave sara a map.sara thanked mia.
+mia handed a card to lily.the person who received the card was lily.
+mia handed a lamp to ella.the person who received the lamp was ella.
+mia handed a map to finn.finn thanked mia.
+mia handed a map to noah.the person who received the map was noah.
+mia handed a pencil to theo.the person who received the pencil was theo.
+mia handed a toy to emma.emma thanked mia.
+mia lent a bag to maya.the person who received the bag was maya.
+mia lent a coat to ava.the person who received the coat was ava.
+mia lent a coin to nora.nora thanked mia.
+mia lent a pen to zoe.zoe thanked mia.
+mia phoned eli.eli answered the call from mia.
+mia phoned ella.ella answered the call from mia.
+mia sent a gift to eli.eli thanked mia.
+mia sent a toy to leo.leo thanked mia.
+mia wrote to emma.emma answered the letter from mia.
+mia wrote to theo.theo answered the letter from mia.
+nina called eli.eli answered the call from nina.
+nina called lily.lily answered and thanked nina.
+nina called luca.luca answered and thanked nina.
+nina called nora.nora answered the call from nina.
+nina called zoe.zoe answered the call from nina.
+nina gave eli a coin.the person who gave the coin was nina.
+nina gave finn a map.the person who gave the map was nina.
+nina gave ivan a map.ivan thanked nina.
+nina gave lily a card.the person who received the card was lily.
+nina gave luca a book.luca thanked nina.
+nina gave maya a gift.the person who received the gift was maya.
+nina gave noah a gift.the person who gave the gift was nina.
+nina gave omar a pen.omar thanked nina.
+nina gave rosa a gift.the person who gave the gift was nina.
+nina gave zoe a ball.the person who received the ball was zoe.
+nina handed a note to theo.the person who received the note was theo.
+nina handed a phone to ava.ava thanked nina.
+nina lent a ball to ella.ella thanked nina.
+nina lent a ball to nora.nora thanked nina.
+nina lent a card to sara.sara thanked nina.
+nina lent a letter to emma.the person who received the letter was emma.
+nina phoned hugo.hugo answered the call from nina.
+nina phoned omar.omar answered the call from nina.
+nina sent a hat to hugo.hugo thanked nina.
+nina sent a hat to mia.mia thanked nina.
+nina sent a toy to leo.leo thanked nina.
+nina wrote to ava.ava answered the letter from nina.
+nina wrote to finn.finn answered the letter from nina.
+noah called eli.eli picked up the call from noah.
+noah called maya.maya picked up the call from noah.
 noah called nora.nora picked up the call from noah.
-noah gave ava a brush.the person who received the brush was ava.
-noah gave eli a coat.the person who gave the coat was noah.
-noah gave emma a coat.the person who gave the coat was noah.
-noah gave hugo a note.hugo thanked noah.
-noah gave lily a gift.the person who gave the gift was noah.
-noah gave maya a gift.maya thanked noah.
-noah gave nora a card.nora thanked noah.
-noah handed a book to ella.ella thanked noah.
-noah handed a cup to mia.the person who received the cup was mia.
-noah handed a gift to luca.the person who received the gift was luca.
-noah handed a note to omar.the person who received the note was omar.
-noah handed a toy to ivan.the person who received the toy was ivan.
-noah lent a coat to sara.the person who received the coat was sara.
-noah lent a hat to finn.the person who received the hat was finn.
-noah lent a letter to rosa.the person who received the letter was rosa.
-noah lent a map to zoe.the person who received the map was zoe.
-noah lent a note to leo.the person who received the note was leo.
-noah lent a pen to nina.the person who received the pen was nina.
-noah phoned omar.omar answered the call from noah.
-noah phoned sara.sara answered the call from noah.
-noah sent a toy to theo.theo thanked noah.
-nora called ivan.ivan answered and thanked nora.
-nora called leo.leo picked up the call from nora.
-nora gave eli a book.the person who gave the book was nora.
-nora gave emma a book.emma thanked nora.
-nora gave hugo a coin.the person who gave the coin was nora.
-nora gave ivan a letter.the person who received the letter was ivan.
-nora gave luca a toy.the person who gave the toy was nora.
-nora gave noah a toy.the person who gave the toy was nora.
-nora handed a bag to mia.mia thanked nora.
-nora handed a coin to theo.theo thanked nora.
-nora handed a gift to maya.the person who received the gift was maya.
-nora handed a pencil to ella.ella thanked nora.
-nora handed a pencil to rosa.rosa thanked nora.
-nora handed a pencil to sara.sara thanked nora.
-nora handed a phone to zoe.the person who received the phone was zoe.
-nora handed a ring to leo.the person who received the ring was leo.
-nora lent a bag to ava.ava thanked nora.
-nora lent a card to omar.omar thanked nora.
-nora sent a brush to finn.finn thanked nora.
-nora sent a lamp to lily.lily thanked nora.
-nora sent a phone to nina.nina thanked nora.
-nora wrote to emma.emma answered the letter from nora.
-nora wrote to zoe.zoe answered the letter from nora.
-omar called ella.ella picked up the call from omar.
+noah called sara.sara answered and thanked noah.
+noah gave ava a coat.the person who gave the coat was noah.
+noah gave emma a brush.the person who received the brush was emma.
+noah gave hugo a lamp.the person who gave the lamp was noah.
+noah gave lily a letter.the person who received the letter was lily.
+noah gave maya a card.maya thanked noah.
+noah gave rosa a gift.the person who gave the gift was noah.
+noah gave sara a coat.the person who gave the coat was noah.
+noah gave theo a note.theo thanked noah.
+noah handed a book to nora.nora thanked noah.
+noah handed a cup to luca.the person who received the cup was luca.
+noah handed a gift to nina.the person who received the gift was nina.
+noah handed a note to leo.the person who received the note was leo.
+noah handed a toy to eli.the person who received the toy was eli.
+noah lent a coat to ella.the person who received the coat was ella.
+noah lent a hat to omar.the person who received the hat was omar.
+noah lent a letter to zoe.the person who received the letter was zoe.
+noah lent a map to mia.the person who received the map was mia.
+noah lent a pen to finn.the person who received the pen was finn.
+noah phoned ella.ella answered the call from noah.
+noah phoned leo.leo answered the call from noah.
+noah sent a toy to ivan.ivan thanked noah.
+nora called omar.omar picked up the call from nora.
+nora called rosa.rosa answered and thanked nora.
+nora gave ava a toy.the person who gave the toy was nora.
+nora gave luca a book.luca thanked nora.
+nora gave nina a toy.the person who gave the toy was nora.
+nora gave rosa a letter.the person who received the letter was rosa.
+nora gave zoe a book.the person who gave the book was nora.
+nora handed a bag to eli.eli thanked nora.
+nora handed a book to maya.the person who received the book was maya.
+nora handed a coin to lily.lily thanked nora.
+nora handed a gift to leo.the person who received the gift was leo.
+nora handed a pencil to finn.finn thanked nora.
+nora handed a pencil to noah.noah thanked nora.
+nora handed a pencil to theo.theo thanked nora.
+nora handed a phone to ivan.the person who received the phone was ivan.
+nora handed a ring to omar.the person who received the ring was omar.
+nora lent a bag to mia.mia thanked nora.
+nora lent a card to ella.ella thanked nora.
+nora sent a brush to sara.sara thanked nora.
+nora sent a lamp to hugo.hugo thanked nora.
+nora sent a phone to emma.emma thanked nora.
+nora wrote to ivan.ivan answered the letter from nora.
+nora wrote to luca.luca answered the letter from nora.
 omar called emma.emma answered the call from omar.
+omar called finn.finn picked up the call from omar.
 omar called hugo.hugo answered and thanked omar.
-omar called sara.sara picked up the call from omar.
+omar called noah.noah picked up the call from omar.
 omar called zoe.zoe answered the call from omar.
 omar gave eli a bag.eli thanked omar.
-omar gave ella a letter.ella thanked omar.
+omar gave ella a pen.the person who gave the pen was omar.
+omar gave finn a letter.finn thanked omar.
+omar gave maya a coin.the person who gave the coin was omar.
 omar gave mia a lamp.the person who gave the lamp was omar.
-omar gave nora a pen.the person who gave the pen was omar.
+omar gave nora a toy.nora thanked omar.
 omar gave zoe a card.the person who received the card was zoe.
 omar handed a brush to ava.the person who received the brush was ava.
-omar handed a coin to maya.the person who received the coin was maya.
-omar handed a lamp to noah.noah thanked omar.
+omar handed a coin to leo.the person who received the coin was leo.
+omar handed a lamp to nina.nina thanked omar.
 omar handed a map to theo.theo thanked omar.
-omar handed a pen to sara.the person who received the pen was sara.
+omar handed a pen to noah.the person who received the pen was noah.
 omar handed a pencil to rosa.rosa thanked omar.
 omar handed a phone to ivan.ivan thanked omar.
 omar handed a toy to luca.luca thanked omar.
 omar lent a ball to emma.emma thanked omar.
 omar lent a card to lily.the person who received the card was lily.
 omar phoned ava.ava answered the call from omar.
-omar phoned maya.maya answered the call from omar.
+omar phoned leo.leo answered the call from omar.
 omar phoned mia.mia answered the call from omar.
 omar sent a card to hugo.hugo thanked omar.
-omar sent a letter to finn.finn thanked omar.
-omar wrote to finn.finn answered the letter from omar.
-rosa called lily.lily answered the call from rosa.
-rosa called luca.luca answered the call from rosa.
-rosa called maya.maya answered and thanked rosa.
+omar sent a letter to sara.sara thanked omar.
+omar wrote to sara.sara answered the letter from omar.
+rosa called ava.ava answered the call from rosa.
+rosa called hugo.hugo answered the call from rosa.
+rosa called noah.noah answered the call from rosa.
 rosa called zoe.zoe answered the call from rosa.
-rosa gave eli a toy.eli thanked rosa.
-rosa gave emma a ball.the person who received the ball was emma.
-rosa gave finn a map.the person who received the map was finn.
-rosa gave lily a ring.the person who gave the ring was rosa.
-rosa gave luca a pen.luca thanked rosa.
+rosa gave ava a book.ava thanked rosa.
+rosa gave finn a toy.the person who gave the toy was rosa.
+rosa gave hugo a coat.the person who gave the coat was rosa.
+rosa gave luca a toy.luca thanked rosa.
 rosa gave maya a brush.the person who received the brush was maya.
-rosa gave nina a toy.the person who gave the toy was rosa.
-rosa gave nora a letter.the person who gave the letter was rosa.
-rosa gave omar a brush.the person who received the brush was omar.
-rosa gave zoe a book.zoe thanked rosa.
-rosa handed a coat to ava.the person who received the coat was ava.
-rosa handed a coat to ella.ella thanked rosa.
-rosa handed a letter to theo.theo thanked rosa.
-rosa lent a book to sara.the person who received the book was sara.
-rosa lent a key to ivan.ivan thanked rosa.
-rosa lent a note to mia.the person who received the note was mia.
-rosa phoned finn.finn answered the call from rosa.
-rosa sent a map to noah.noah thanked rosa.
-rosa wrote to ava.ava answered the letter from rosa.
-rosa wrote to emma.emma answered the letter from rosa.
-rosa wrote to hugo.hugo answered the letter from rosa.
-rosa wrote to noah.noah answered the letter from rosa.
-sara called eli.eli answered and thanked sara.
-sara called emma.emma answered the call from sara.
-sara called leo.leo picked up the call from sara.
-sara called mia.mia answered the call from sara.
-sara called nora.nora answered and thanked sara.
-sara called theo.theo picked up the call from sara.
-sara gave ava a note.the person who gave the note was sara.
-sara gave eli a coin.the person who received the coin was eli.
-sara gave ella a bag.the person who received the bag was ella.
-sara gave emma a coin.emma thanked sara.
-sara gave luca a coin.the person who gave the coin was sara.
-sara gave noah a letter.noah thanked sara.
-sara gave zoe a key.zoe thanked sara.
-sara handed a ball to leo.the person who received the ball was leo.
-sara handed a brush to mia.the person who received the brush was mia.
-sara handed a key to theo.the person who received the key was theo.
-sara handed a lamp to nora.the person who received the lamp was nora.
-sara handed a phone to finn.the person who received the phone was finn.
-sara handed a phone to rosa.the person who received the phone was rosa.
-sara lent a book to omar.the person who received the book was omar.
-sara lent a coin to hugo.the person who received the coin was hugo.
-sara lent a toy to maya.the person who received the toy was maya.
-sara sent a brush to lily.lily thanked sara.
-sara sent a lamp to nina.nina thanked sara.
-sara wrote to ava.ava answered the letter from sara.
-sara wrote to maya.maya answered the letter from sara.
-theo called eli.eli answered and thanked theo.
-theo called emma.emma picked up the call from theo.
-theo called ivan.ivan answered the call from theo.
-theo called luca.luca answered the call from theo.
-theo called nora.nora answered the call from theo.
-theo gave eli a ball.the person who received the ball was eli.
-theo gave emma a bag.the person who gave the bag was theo.
-theo gave lily a hat.lily thanked theo.
-theo gave maya a pen.the person who gave the pen was theo.
-theo gave mia a coin.mia thanked theo.
-theo gave nina a toy.the person who gave the toy was theo.
-theo gave noah a lamp.the person who gave the lamp was theo.
-theo gave nora a coat.the person who gave the coat was theo.
-theo gave sara a card.the person who received the card was sara.
-theo handed a cup to ava.the person who received the cup was ava.
-theo handed a lamp to ivan.ivan thanked theo.
-theo handed a note to rosa.the person who received the note was rosa.
-theo lent a gift to omar.omar thanked theo.
-theo lent a key to luca.the person who received the key was luca.
-theo lent a map to hugo.the person who received the map was hugo.
-theo lent a pen to leo.the person who received the pen was leo.
-theo lent a pencil to zoe.zoe thanked theo.
-theo lent a toy to finn.finn thanked theo.
+rosa gave noah a pen.noah thanked rosa.
+rosa gave nora a map.the person who received the map was nora.
+rosa gave sara a ball.the person who received the ball was sara.
+rosa gave theo a pen.the person who gave the pen was rosa.
+rosa gave zoe a ring.the person who gave the ring was rosa.
+rosa handed a coat to leo.leo thanked rosa.
+rosa handed a coat to nina.the person who received the coat was nina.
+rosa handed a letter to eli.eli thanked rosa.
+rosa lent a book to omar.the person who received the book was omar.
+rosa lent a key to mia.mia thanked rosa.
+rosa lent a note to emma.the person who received the note was emma.
+rosa lent a pen to lily.the person who received the pen was lily.
+rosa lent a pencil to ivan.the person who received the pencil was ivan.
+rosa phoned nora.nora answered the call from rosa.
+rosa sent a map to ella.ella thanked rosa.
+rosa wrote to ella.ella answered the letter from rosa.
+rosa wrote to ivan.ivan answered the letter from rosa.
+rosa wrote to lily.lily answered the letter from rosa.
+rosa wrote to nina.nina answered the letter from rosa.
+rosa wrote to sara.sara answered the letter from rosa.
+sara called ava.ava answered and thanked sara.
+sara called ivan.ivan picked up the call from sara.
+sara called lily.lily answered and thanked sara.
+sara called luca.luca answered the call from sara.
+sara called maya.maya answered and thanked sara.
+sara called noah.noah answered the call from sara.
+sara gave ava a coin.the person who received the coin was ava.
+sara gave eli a pencil.the person who received the pencil was eli.
+sara gave ella a letter.ella thanked sara.
+sara gave emma a note.the person who gave the note was sara.
+sara gave lily a gift.lily thanked sara.
+sara gave mia a key.mia thanked sara.
+sara gave nina a coin.the person who gave the coin was sara.
+sara gave noah a coin.noah thanked sara.
+sara gave nora a bag.the person who received the bag was nora.
+sara handed a brush to luca.the person who received the brush was luca.
+sara handed a key to ivan.the person who received the key was ivan.
+sara handed a lamp to maya.the person who received the lamp was maya.
+sara handed a phone to omar.the person who received the phone was omar.
+sara handed a phone to zoe.the person who received the phone was zoe.
+sara lent a book to leo.the person who received the book was leo.
+sara lent a coin to theo.the person who received the coin was theo.
+sara lent a note to hugo.the person who received the note was hugo.
+sara sent a brush to rosa.rosa thanked sara.
+sara sent a lamp to finn.finn thanked sara.
+sara wrote to emma.emma answered the letter from sara.
+theo called hugo.hugo picked up the call from theo.
+theo called luca.luca answered and thanked theo.
+theo called mia.mia answered the call from theo.
+theo called noah.noah answered the call from theo.
+theo called sara.sara picked up the call from theo.
+theo gave ella a lamp.the person who gave the lamp was theo.
+theo gave emma a coin.emma thanked theo.
+theo gave finn a toy.the person who gave the toy was theo.
+theo gave luca a ball.the person who received the ball was luca.
+theo gave omar a card.the person who received the card was omar.
+theo gave sara a bag.the person who gave the bag was theo.
+theo gave zoe a hat.zoe thanked theo.
+theo handed a cup to nina.the person who received the cup was nina.
+theo handed a lamp to mia.mia thanked theo.
+theo handed a note to eli.the person who received the note was eli.
+theo lent a book to lily.the person who received the book was lily.
+theo lent a gift to maya.maya thanked theo.
+theo lent a key to noah.the person who received the key was noah.
+theo lent a lamp to hugo.hugo thanked theo.
+theo lent a map to ivan.the person who received the map was ivan.
+theo lent a pencil to ava.ava thanked theo.
+theo lent a toy to nora.nora thanked theo.
 theo phoned ella.ella answered the call from theo.
-theo phoned noah.noah answered the call from theo.
-theo phoned omar.omar answered the call from theo.
-theo sent a hat to ella.ella thanked theo.
-theo wrote to leo.leo answered the letter from theo.
-theo wrote to nina.nina answered the letter from theo.
-zoe called noah.noah picked up the call from zoe.
-zoe called theo.theo picked up the call from zoe.
-zoe gave hugo a book.the person who received the book was hugo.
-zoe gave leo a book.the person who gave the book was zoe.
-zoe gave lily a brush.lily thanked zoe.
-zoe gave nina a hat.the person who gave the hat was zoe.
-zoe gave nora a coin.the person who received the coin was nora.
-zoe gave rosa a lamp.the person who gave the lamp was zoe.
-zoe gave theo a ball.the person who gave the ball was zoe.
-zoe handed a card to ella.the person who received the card was ella.
-zoe handed a card to finn.finn thanked zoe.
-zoe handed a cup to maya.maya thanked zoe.
-zoe handed a map to noah.the person who received the map was noah.
-zoe handed a note to ava.ava thanked zoe.
-zoe handed a note to ivan.the person who received the note was ivan.
-zoe handed a pen to mia.mia thanked zoe.
-zoe handed a pencil to luca.luca thanked zoe.
-zoe lent a pencil to emma.emma thanked zoe.
-zoe lent a ring to sara.the person who received the ring was sara.
-zoe sent a lamp to omar.omar thanked zoe.
-zoe sent a toy to eli.eli thanked zoe.
+theo phoned leo.leo answered the call from theo.
+theo phoned maya.maya answered the call from theo.
+theo sent a hat to leo.leo thanked theo.
+theo sent a hat to rosa.rosa thanked theo.
+theo wrote to finn.finn answered the letter from theo.
+zoe called eli.eli picked up the call from zoe.
+zoe called ella.ella picked up the call from zoe.
+zoe gave eli a ball.the person who gave the ball was zoe.
+zoe gave finn a hat.the person who gave the hat was zoe.
+zoe gave ivan a brush.ivan thanked zoe.
+zoe gave lily a letter.the person who gave the letter was zoe.
+zoe gave mia a lamp.the person who gave the lamp was zoe.
+zoe gave rosa a book.the person who received the book was rosa.
+zoe handed a card to leo.the person who received the card was leo.
+zoe handed a card to nora.nora thanked zoe.
+zoe handed a hat to hugo.hugo thanked zoe.
+zoe handed a map to ella.the person who received the map was ella.
+zoe handed a note to ava.the person who received the note was ava.
+zoe handed a note to nina.nina thanked zoe.
+zoe handed a pen to emma.emma thanked zoe.
+zoe handed a pencil to noah.noah thanked zoe.
+zoe lent a pencil to sara.sara thanked zoe.
+zoe lent a ring to omar.the person who received the ring was omar.
+zoe sent a card to theo.theo thanked zoe.
+zoe sent a lamp to maya.maya thanked zoe.
+zoe sent a toy to luca.luca thanked zoe.
+zoe wrote to hugo.hugo answered the letter from zoe.

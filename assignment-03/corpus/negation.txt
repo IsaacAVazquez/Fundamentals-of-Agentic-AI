@@ -1,23 +1,23 @@
-ava did not buy apples.she bought rice instead.ava bought rice.
-ava did not buy the juice.she bought the eggs.ava bought the eggs.
-ava did not drink butter.she drank honey instead.ava drank honey.
-ava did not drink rice.she drank meat.ava drank meat.
-ava did not order apples.she ordered honey.ava ordered honey.
-ava did not order cake.she ordered honey.ava ordered honey.
-ava did not pick pears.she picked cake instead.ava picked cake.
-ava did not pick the apples.she picked the corn.ava picked the corn.
-ava did not want beans.she wanted fish instead.ava wanted fish.
-ava did not want the coffee.she wanted the soup.ava wanted the soup.
-eli did not choose apples.he chose pears.eli chose pears.
+ava did not buy cheese.she bought meat.ava bought meat.
+ava did not buy fish.she bought apples.ava bought apples.
+ava did not drink corn.she drank tea instead.ava drank tea.
+ava did not drink the rice.she drank the pears.ava drank the pears.
+ava did not order the cheese.she ordered the meat.ava ordered the meat.
+ava did not order the tea.she ordered the water.ava ordered the water.
+ava did not pick eggs.she picked water instead.ava picked water.
+ava did not pick the cheese.she picked the salt.ava picked the salt.
+ava did not want honey.she wanted beans instead.ava wanted beans.
+ava did not want rice.she wanted corn.ava wanted corn.
 eli did not choose butter.he chose salt.eli chose salt.
-eli did not eat cake.he ate pears.eli ate pears.
-eli did not eat rice.he ate tea.eli ate tea.
-eli did not order cake.he ordered milk.eli ordered milk.
-eli did not order tea.he ordered cake instead.eli ordered cake.
-eli did not pick eggs.he picked tea instead.eli picked tea.
-eli did not pick soup.he picked tea.eli picked tea.
-eli did not want soup.he wanted honey.eli wanted honey.
-eli did not want the eggs.he wanted the water.eli wanted the water.
+eli did not choose soup.he chose honey.eli chose honey.
+eli did not eat beans.he ate cake.eli ate cake.
+eli did not eat milk.he ate eggs.eli ate eggs.
+eli did not order rice.he ordered meat.eli ordered meat.
+eli did not order water.he ordered tea.eli ordered tea.
+eli did not pick the juice.he picked the cake.eli picked the cake.
+eli did not pick the rice.he picked the bread.eli picked the bread.
+eli did not take soup.he took tea.eli took tea.
+eli did not take the eggs.he took the water.eli took the water.
 ella did not bring the bread.she brought the soup.ella brought the soup.
 ella did not bring water.she brought eggs.ella brought eggs.
 ella did not buy salt.she bought honey instead.ella bought honey.
@@ -48,26 +48,26 @@ finn did not pick soup.he picked meat.finn picked meat.
 finn did not pick the fish.he picked the salt.finn picked the salt.
 finn did not take rice.he took eggs instead.finn took eggs.
 finn did not take the soup.he took the apples.finn took the apples.
-hugo did not bring soup.he brought salt.hugo brought salt.
-hugo did not bring the milk.he brought the meat.hugo brought the meat.
-hugo did not drink apples.he drank milk.hugo drank milk.
-hugo did not drink soup.he drank pears.hugo drank pears.
-hugo did not eat salt.he ate rice instead.hugo ate rice.
-hugo did not eat the bread.he ate the water.hugo ate the water.
-hugo did not get cake.he got meat instead.hugo got meat.
-hugo did not get the pears.he got the rice.hugo got the rice.
-hugo did not want milk.he wanted corn instead.hugo wanted corn.
-hugo did not want the apples.he wanted the corn.hugo wanted the corn.
-ivan did not bring soup.he brought cheese instead.ivan brought cheese.
-ivan did not bring the apples.he brought the fish.ivan brought the fish.
-ivan did not drink butter.he drank beans.ivan drank beans.
-ivan did not drink the bread.he drank the juice.ivan drank the juice.
-ivan did not get the apples.he got the milk.ivan got the milk.
+hugo did not choose the cake.he chose the coffee.hugo chose the coffee.
+hugo did not choose the eggs.he chose the juice.hugo chose the juice.
+hugo did not drink soup.he drank salt.hugo drank salt.
+hugo did not drink the milk.he drank the meat.hugo drank the meat.
+hugo did not eat apples.he ate milk.hugo ate milk.
+hugo did not eat soup.he ate pears.hugo ate pears.
+hugo did not take salt.he took rice instead.hugo took rice.
+hugo did not take the bread.he took the water.hugo took the water.
+hugo did not want fish.he wanted juice instead.hugo wanted juice.
+hugo did not want the apples.he wanted the soup.hugo wanted the soup.
+ivan did not buy beans.he bought butter.ivan bought butter.
+ivan did not buy pears.he bought corn.ivan bought corn.
+ivan did not drink salt.he drank tea instead.ivan drank tea.
+ivan did not drink the juice.he drank the salt.ivan drank the salt.
+ivan did not get the bread.he got the juice.ivan got the juice.
 ivan did not get the juice.he got the cake.ivan got the cake.
-ivan did not order salt.he ordered tea instead.ivan ordered tea.
-ivan did not order the meat.he ordered the bread.ivan ordered the bread.
 ivan did not take apples.he took cheese instead.ivan took cheese.
-ivan did not take the juice.he took the salt.ivan took the salt.
+ivan did not take the apples.he took the milk.ivan took the milk.
+ivan did not want coffee.he wanted fish instead.ivan wanted fish.
+ivan did not want the meat.he wanted the bread.ivan wanted the bread.
 leo did not bring cake.he brought tea.leo brought tea.
 leo did not bring meat.he brought apples instead.leo brought apples.
 leo did not eat butter.he ate honey instead.leo ate honey.
@@ -78,16 +78,16 @@ leo did not order butter.he ordered honey instead.leo ordered honey.
 leo did not order the juice.he ordered the bread.leo ordered the bread.
 leo did not pick the juice.he picked the pears.leo picked the pears.
 leo did not pick the pears.he picked the tea.leo picked the tea.
-lily did not buy cheese.she bought cake.lily bought cake.
-lily did not buy meat.she bought apples.lily bought apples.
+lily did not choose butter.she chose soup instead.lily chose soup.
+lily did not choose the juice.she chose the fish.lily chose the fish.
 lily did not drink bread.she drank water.lily drank water.
 lily did not drink the soup.she drank the beans.lily drank the beans.
-lily did not eat milk.she ate tea.lily ate tea.
-lily did not eat the juice.she ate the milk.lily ate the milk.
-lily did not take coffee.she took soup instead.lily took soup.
-lily did not take the juice.she took the fish.lily took the fish.
-lily did not want beans.she wanted coffee.lily wanted coffee.
-lily did not want fish.she wanted juice instead.lily wanted juice.
+lily did not get honey.she got juice instead.lily got juice.
+lily did not get salt.she got beans.lily got beans.
+lily did not order milk.she ordered tea.lily ordered tea.
+lily did not order the juice.she ordered the milk.lily ordered the milk.
+lily did not want milk.she wanted beans.lily wanted beans.
+lily did not want the bread.she wanted the fish.lily wanted the fish.
 luca did not bring eggs.he brought rice instead.luca brought rice.
 luca did not bring the milk.he brought the cheese.luca brought the cheese.
 luca did not buy apples.he bought butter.luca bought butter.
@@ -108,81 +108,96 @@ maya did not order cake.she ordered beans.maya ordered beans.
 maya did not order the beans.she ordered the butter.maya ordered the butter.
 maya did not take the butter.she took the fish.maya took the fish.
 maya did not take the fish.she took the cheese.maya took the cheese.
-mia did not buy coffee.she bought tea.mia bought tea.
-mia did not get milk.she got soup instead.mia got soup.
-mia did not get the fish.she got the bread.mia got the bread.
-mia did not pick coffee.she picked salt.mia picked salt.
-mia did not pick the cake.she picked the milk.mia picked the milk.
-mia did not take honey.she took milk.mia took milk.
-mia did not take milk.she took eggs instead.mia took eggs.
-mia did not want the beans.she wanted the bread.mia wanted the bread.
-mia did not want the beans.she wanted the salt.mia wanted the salt.
-my bag is not black.it is red.my bag is red.
-my bag is not blue.it is purple.my bag is purple.
-my bag is not blue.it is red.my bag is red.
+mia did not buy salt.she bought milk.mia bought milk.
+mia did not buy the fish.she bought the bread.mia bought the bread.
+mia did not eat milk.she ate eggs instead.mia ate eggs.
+mia did not eat the beans.she ate the salt.mia ate the salt.
+mia did not get honey.she got milk.mia got milk.
+mia did not get the cake.she got the milk.mia got the milk.
+mia did not order coffee.she ordered salt.mia ordered salt.
+mia did not order milk.she ordered soup instead.mia ordered soup.
+mia did not pick coffee.she picked tea.mia picked tea.
+mia did not pick milk.she picked apples instead.mia picked apples.
+my bag is not black.it is blue.my bag is blue.
 my bag is not light.it is heavy.my bag is heavy.
-my bag is not purple.it is red.my bag is red.
-my ball is not green.it is black.my ball is black.
-my ball is not red.it is purple.my ball is purple.
-my bike is not black.it is blue.my bike is blue.
-my bike is not blue.it is pink.my bike is pink.
-my boat is not black.it is gray.my boat is gray.
-my boat is not blue.it is gray.my boat is gray.
-my boat is not blue.it is red.my boat is red.
+my bag is not red.it is green.my bag is green.
+my bike is not blue.it is yellow.my bike is yellow.
+my bike is not cold.it is hot.my bike is hot.
+my boat is not black.it is blue.my boat is blue.
+my boat is not red.it is pink.my boat is pink.
 my boat is not white.it is gray.my boat is gray.
 my boat is not wide.it is narrow.my boat is narrow.
-my book is not brown.it is red.my book is red.
 my book is not dirty.it is clean.my book is clean.
 my book is not gray.it is purple.my book is purple.
+my book is not green.it is white.my book is white.
 my book is not pink.it is white.my book is white.
 my book is not purple.it is gray.my book is gray.
+my book is not red.it is purple.my book is purple.
 my box is not brown.it is green.my box is green.
 my box is not pink.it is brown.my box is brown.
-my car is not green.it is pink.my car is pink.
+my car is not brown.it is blue.my car is blue.
 my car is not purple.it is gray.my car is gray.
-my car is not red.it is green.my car is green.
+my car is not purple.it is red.my car is red.
+my car is not yellow.it is white.my car is white.
 my chair is not gray.it is pink.my chair is pink.
+my chair is not green.it is brown.my chair is brown.
+my chair is not red.it is green.my chair is green.
+my chair is not yellow.it is brown.my chair is brown.
+my coat is not black.it is yellow.my coat is yellow.
 my coat is not gray.it is black.my coat is black.
-my coat is not green.it is red.my coat is red.
 my coat is not new.it is old.my coat is old.
-my coat is not white.it is yellow.my coat is yellow.
+my coat is not red.it is blue.my coat is blue.
+my coat is not white.it is pink.my coat is pink.
+my cup is not blue.it is gray.my cup is gray.
+my cup is not blue.it is yellow.my cup is yellow.
 my cup is not brown.it is pink.my cup is pink.
-my cup is not yellow.it is blue.my cup is blue.
-my door is not brown.it is blue.my door is blue.
+my cup is not hot.it is cold.my cup is cold.
+my cup is not yellow.it is black.my cup is black.
+my door is not blue.it is red.my door is red.
 my door is not brown.it is yellow.my door is yellow.
+my door is not green.it is purple.my door is purple.
 my door is not locked.it is unlocked.my door is unlocked.
 my door is not pink.it is yellow.my door is yellow.
-my door is not purple.it is red.my door is red.
+my gate is not blue.it is purple.my gate is purple.
 my gate is not brown.it is purple.my gate is purple.
+my gate is not green.it is blue.my gate is blue.
+my gate is not green.it is pink.my gate is pink.
+my gate is not open.it is closed.my gate is closed.
 my gate is not pink.it is yellow.my gate is yellow.
+my hat is not black.it is red.my hat is red.
+my hat is not blue.it is red.my hat is red.
 my hat is not fixed.it is broken.my hat is broken.
 my hat is not gray.it is yellow.my hat is yellow.
-my house is not closed.it is open.my house is open.
+my hat is not purple.it is red.my hat is red.
+my hat is not red.it is gray.my hat is gray.
+my house is not black.it is purple.my house is purple.
+my house is not blue.it is purple.my house is purple.
 my house is not gray.it is purple.my house is purple.
-my house is not red.it is pink.my house is pink.
-my key is not black.it is purple.my key is purple.
+my key is not black.it is red.my key is red.
+my key is not blue.it is white.my key is white.
 my key is not brown.it is green.my key is green.
-my key is not green.it is brown.my key is brown.
 my key is not pink.it is gray.my key is gray.
-my key is not red.it is white.my key is white.
+my key is not white.it is gray.my key is gray.
 my lamp is not clean.it is dirty.my lamp is dirty.
-my lamp is not red.it is green.my lamp is green.
+my lamp is not green.it is brown.my lamp is brown.
 my lamp is not wet.it is dry.my lamp is dry.
-my lamp is not white.it is brown.my lamp is brown.
-my lamp is not white.it is gray.my lamp is gray.
 my road is not big.it is small.my road is small.
 my road is not gray.it is brown.my road is brown.
 my road is not pink.it is yellow.my road is yellow.
 my road is not wet.it is dry.my road is dry.
-my road is not white.it is gray.my road is gray.
-my shirt is not white.it is purple.my shirt is purple.
-my shirt is not yellow.it is purple.my shirt is purple.
-my wall is not green.it is blue.my wall is blue.
+my shirt is not cold.it is hot.my shirt is hot.
+my shirt is not hot.it is cold.my shirt is cold.
+my wall is not blue.it is pink.my wall is pink.
+my wall is not brown.it is red.my wall is red.
+my wall is not green.it is pink.my wall is pink.
+my wall is not green.it is white.my wall is white.
+my wall is not open.it is closed.my wall is closed.
 my wall is not small.it is big.my wall is big.
-my wall is not yellow.it is purple.my wall is purple.
-my wall is not yellow.it is red.my wall is red.
+my wall is not white.it is green.my wall is green.
+my wall is not yellow.it is gray.my wall is gray.
+my window is not full.it is empty.my window is empty.
 my window is not gray.it is white.my window is white.
-my window is not green.it is white.my window is white.
+my window is not green.it is yellow.my window is yellow.
 nina did not bring the coffee.she brought the salt.nina brought the salt.
 nina did not bring the milk.she brought the meat.nina brought the meat.
 nina did not choose honey.she chose tea.nina chose tea.
@@ -223,16 +238,16 @@ omar did not order butter.he ordered eggs.omar ordered eggs.
 omar did not order honey.he ordered soup.omar ordered soup.
 omar did not pick cheese.he picked corn.omar picked corn.
 omar did not pick meat.he picked juice instead.omar picked juice.
-rosa did not bring beans.she brought coffee instead.rosa brought coffee.
-rosa did not bring meat.she brought water.rosa brought water.
-rosa did not buy coffee.she bought tea instead.rosa bought tea.
-rosa did not buy eggs.she bought coffee instead.rosa bought coffee.
-rosa did not choose the eggs.she chose the coffee.rosa chose the coffee.
-rosa did not choose water.she chose beans.rosa chose beans.
-rosa did not order the cake.she ordered the butter.rosa ordered the butter.
-rosa did not order the water.she ordered the juice.rosa ordered the juice.
-rosa did not want coffee.she wanted beans.rosa wanted beans.
-rosa did not want fish.she wanted tea instead.rosa wanted tea.
+rosa did not drink beans.she drank coffee instead.rosa drank coffee.
+rosa did not drink meat.she drank water.rosa drank water.
+rosa did not eat cheese.she ate corn instead.rosa ate corn.
+rosa did not eat fish.she ate honey.rosa ate honey.
+rosa did not get coffee.she got beans.rosa got beans.
+rosa did not get fish.she got tea instead.rosa got tea.
+rosa did not pick bread.she picked honey instead.rosa picked honey.
+rosa did not pick the rice.she picked the coffee.rosa picked the coffee.
+rosa did not want the cake.she wanted the butter.rosa wanted the butter.
+rosa did not want the water.she wanted the juice.rosa wanted the juice.
 sara did not bring coffee.she brought milk.sara brought milk.
 sara did not bring the apples.she brought the eggs.sara brought the eggs.
 sara did not drink milk.she drank eggs.sara drank eggs.
@@ -247,277 +262,281 @@ the bag is not broken.it is fixed.so the bag is fixed.
 the bag is not brown.it is purple.the bag is purple.
 the bag is not brown.it is yellow.so the bag is yellow.
 the bag is not dry.it is wet.so the bag is wet.
-the bag is not gray.it is red.the bag is red.
+the bag is not green.it is yellow.the bag is yellow.
 the bag is not heavy.it is light.so the bag is light.
 the bag is not locked.it is unlocked.the bag is unlocked.
 the bag is not new.it is old.the bag is old.
 the bag is not purple.it is brown.so the bag is brown.
+the bag is not purple.it is red.the bag is red.
+the bag is not red.it is brown.the bag is brown.
+the bag is not white.it is brown.so the bag is brown.
 the bag is not white.it is purple.the bag is purple.
-the bag is not white.it is red.the bag is red.
-the bag was not black.it was white.the bag was white.
-the bag was not blue.it was gray.the bag was gray.
 the bag was not gray.it was black.the bag was black.
 the bag was not old.it was new.the bag was new.
-the bag was not pink.it was blue.the bag was blue.
 the bag was not purple.it was yellow.the bag was yellow.
 the bag was not yellow.it was black.the bag was black.
-the ball is not black.it is yellow.the ball is yellow.
 the ball is not brown.it is gray.so the ball is gray.
+the ball is not closed.it is open.so the ball is open.
 the ball is not fixed.it is broken.so the ball is broken.
-the ball is not green.it is gray.so the ball is gray.
+the ball is not green.it is purple.so the ball is purple.
+the ball is not red.it is white.so the ball is white.
 the ball is not unlocked.it is locked.so the ball is locked.
 the ball is not white.it is black.so the ball is black.
 the ball is not white.it is purple.the ball is purple.
-the ball is not yellow.it is black.so the ball is black.
-the ball was not blue.it was yellow.the ball was yellow.
-the ball was not brown.it was blue.the ball was blue.
+the ball was not blue.it was black.the ball was black.
 the ball was not brown.it was pink.the ball was pink.
-the ball was not gray.it was blue.the ball was blue.
 the ball was not purple.it was white.the ball was white.
-the ball was not red.it was brown.the ball was brown.
 the bike is not brown.it is black.so the bike is black.
-the bike is not green.it is white.so the bike is white.
 the bike is not here.it is missing.the bike is missing.
 the bike is not light.it is heavy.so the bike is heavy.
 the bike is not pink.it is brown.the bike is brown.
-the bike is not white.it is green.so the bike is green.
+the bike is not red.it is yellow.the bike is yellow.
+the bike is not white.it is green.the bike is green.
+the bike is not yellow.it is blue.the bike is blue.
+the bike is not yellow.it is pink.so the bike is pink.
+the bike is not yellow.it is purple.so the bike is purple.
 the bike was not brown.it was green.the bike was green.
 the bike was not purple.it was black.the bike was black.
-the bike was not yellow.it was gray.the bike was gray.
+the bike was not red.it was black.the bike was black.
 the boat is not light.it is heavy.the boat is heavy.
 the boat is not pink.it is black.the boat is black.
-the boat is not red.it is yellow.the boat is yellow.
+the boat is not pink.it is red.so the boat is red.
+the boat is not yellow.it is red.the boat is red.
+the boat was not blue.it was pink.the boat was pink.
 the boat was not brown.it was purple.the boat was purple.
+the boat was not gray.it was red.the boat was red.
 the boat was not purple.it was black.the boat was black.
-the boat was not red.it was black.the boat was black.
-the boat was not yellow.it was green.the boat was green.
+the boat was not yellow.it was purple.the boat was purple.
 the book is not black.it is brown.so the book is brown.
 the book is not black.it is gray.so the book is gray.
 the book is not gray.it is black.so the book is black.
 the book is not purple.it is pink.the book is pink.
-the book is not red.it is gray.so the book is gray.
-the book is not white.it is red.the book is red.
-the book is not yellow.it is pink.so the book is pink.
-the book was not red.it was purple.the book was purple.
-the box is not black.it is green.the box is green.
+the book was not brown.it was blue.the book was blue.
+the book was not gray.it was blue.the book was blue.
+the book was not red.it was brown.the book was brown.
+the box is not black.it is green.so the box is green.
 the box is not dry.it is wet.so the box is wet.
-the box is not green.it is yellow.so the box is yellow.
+the box is not gray.it is red.so the box is red.
 the box is not small.it is big.the box is big.
+the box is not yellow.it is brown.so the box is brown.
+the box was not blue.it was brown.the box was brown.
 the box was not heavy.it was light.the box was light.
-the box was not white.it was green.the box was green.
-the car is not green.it is purple.so the car is purple.
-the car is not purple.it is red.the car is red.
-the car is not red.it is brown.the car is brown.
+the box was not red.it was white.the box was white.
+the box was not yellow.it was black.the box was black.
+the car is not black.it is green.the car is green.
+the car is not green.it is gray.the car is gray.
+the car is not green.it is pink.so the car is pink.
+the car is not purple.it is blue.the car is blue.
 the car is not wide.it is narrow.the car is narrow.
+the car was not blue.it was brown.the car was brown.
+the car was not blue.it was green.the car was green.
 the car was not green.it was black.the car was black.
+the car was not green.it was purple.the car was purple.
+the car was not white.it was brown.the car was brown.
 the chair is not black.it is green.the chair is green.
-the chair is not blue.it is pink.the chair is pink.
 the chair is not narrow.it is wide.the chair is wide.
-the chair is not pink.it is blue.the chair is blue.
 the chair is not pink.it is purple.so the chair is purple.
-the chair was not brown.it was blue.the chair was blue.
-the chair was not purple.it was blue.the chair was blue.
-the chair was not yellow.it was blue.the chair was blue.
+the chair is not red.it is purple.so the chair is purple.
+the chair is not red.it is yellow.so the chair is yellow.
+the chair is not yellow.it is white.the chair is white.
+the chair was not blue.it was white.the chair was white.
+the chair was not green.it was red.the chair was red.
 the coat is not black.it is purple.the coat is purple.
-the coat is not blue.it is brown.so the coat is brown.
-the coat is not closed.it is open.so the coat is open.
-the coat is not green.it is brown.so the coat is brown.
+the coat is not green.it is yellow.so the coat is yellow.
 the coat is not pink.it is black.so the coat is black.
 the coat is not purple.it is pink.so the coat is pink.
-the coat was not blue.it was white.the coat was white.
+the coat was not black.it was pink.the coat was pink.
+the coat was not open.it was closed.the coat was closed.
 the coat was not purple.it was gray.the coat was gray.
-the cup is not blue.it is green.the cup is green.
-the cup is not gray.it is red.so the cup is red.
-the cup is not green.it is gray.so the cup is gray.
+the cup is not black.it is white.the cup is white.
 the cup is not pink.it is green.the cup is green.
+the cup is not pink.it is red.the cup is red.
 the cup is not pink.it is white.so the cup is white.
-the cup is not red.it is white.so the cup is white.
-the cup is not yellow.it is white.the cup is white.
-the cup was not red.it was gray.the cup was gray.
+the cup was not full.it was empty.the cup was empty.
+the cup was not green.it was gray.the cup was gray.
+the cup was not red.it was brown.the cup was brown.
 the cup was not white.it was pink.the cup was pink.
 the door is not black.it is gray.the door is gray.
 the door is not black.it is yellow.the door is yellow.
+the door is not blue.it is yellow.so the door is yellow.
 the door is not gray.it is brown.the door is brown.
 the door is not gray.it is green.the door is green.
 the door is not gray.it is pink.the door is pink.
+the door is not green.it is blue.so the door is blue.
+the door is not pink.it is blue.so the door is blue.
 the door is not pink.it is gray.so the door is gray.
-the door is not purple.it is blue.the door is blue.
 the door is not purple.it is brown.the door is brown.
+the door is not white.it is blue.so the door is blue.
+the door is not yellow.it is brown.the door is brown.
+the door is not yellow.it is red.so the door is red.
 the door was not narrow.it was wide.the door was wide.
-the gate is not black.it is red.the gate is red.
-the gate is not black.it is yellow.the gate is yellow.
-the gate is not blue.it is pink.so the gate is pink.
-the gate is not blue.it is red.so the gate is red.
-the gate is not gray.it is blue.so the gate is blue.
+the gate is not blue.it is green.the gate is green.
+the gate is not cold.it is hot.so the gate is hot.
 the gate is not gray.it is green.the gate is green.
-the gate is not green.it is blue.the gate is blue.
-the gate is not green.it is brown.so the gate is brown.
-the gate is not green.it is pink.so the gate is pink.
 the gate is not pink.it is black.the gate is black.
 the gate is not purple.it is brown.so the gate is brown.
-the gate is not white.it is pink.the gate is pink.
-the gate was not blue.it was purple.the gate was purple.
-the gate was not blue.it was yellow.the gate was yellow.
-the gate was not red.it was pink.the gate was pink.
-the gate was not white.it was green.the gate was green.
-the hat is not blue.it is black.the hat is black.
+the gate is not red.it is gray.the gate is gray.
+the gate is not white.it is red.so the gate is red.
+the gate is not yellow.it is blue.so the gate is blue.
+the gate was not red.it was white.the gate was white.
 the hat is not brown.it is gray.the hat is gray.
+the hat is not gray.it is red.the hat is red.
 the hat is not missing.it is here.the hat is here.
-the hat is not pink.it is red.the hat is red.
-the hat is not yellow.it is brown.so the hat is brown.
-the hat is not yellow.it is green.so the hat is green.
+the hat is not white.it is blue.the hat is blue.
+the hat is not white.it is red.the hat is red.
+the hat was not black.it was white.the hat was white.
+the hat was not black.it was yellow.the hat was yellow.
 the hat was not gray.it was white.the hat was white.
+the hat was not green.it was blue.the hat was blue.
+the hat was not pink.it was blue.the hat was blue.
+the hat was not white.it was gray.the hat was gray.
 the house is not big.it is small.so the house is small.
-the house is not black.it is blue.the house is blue.
+the house is not brown.it is red.the house is red.
 the house is not gray.it is green.so the house is green.
 the house is not narrow.it is wide.the house is wide.
-the house is not pink.it is red.so the house is red.
-the house is not red.it is purple.so the house is purple.
-the house is not white.it is black.so the house is black.
-the house was not blue.it was brown.the house was brown.
-the house was not gray.it was red.the house was red.
+the house is not red.it is black.the house is black.
+the house is not red.it is green.so the house is green.
+the house is not white.it is red.so the house is red.
+the house is not yellow.it is gray.so the house is gray.
+the house was not blue.it was black.the house was black.
+the house was not blue.it was white.the house was white.
 the house was not gray.it was yellow.the house was yellow.
-the house was not green.it was black.the house was black.
+the house was not green.it was red.the house was red.
 the house was not pink.it was white.the house was white.
+the house was not yellow.it was blue.the house was blue.
+the key is not blue.it is green.the key is green.
 the key is not brown.it is white.so the key is white.
-the key is not green.it is pink.the key is pink.
-the key is not green.it is white.so the key is white.
 the key is not purple.it is yellow.so the key is yellow.
-the key is not red.it is black.the key is black.
-the key is not red.it is gray.the key is gray.
-the key is not yellow.it is blue.so the key is blue.
+the key is not yellow.it is red.so the key is red.
 the key was not gray.it was brown.the key was brown.
 the key was not white.it was pink.the key was pink.
-the key was not white.it was red.the key was red.
-the key was not yellow.it was pink.the key was pink.
 the lamp is not brown.it is gray.so the lamp is gray.
+the lamp is not closed.it is open.so the lamp is open.
 the lamp is not dry.it is wet.so the lamp is wet.
 the lamp is not gray.it is white.the lamp is white.
-the lamp is not green.it is purple.so the lamp is purple.
-the lamp is not green.it is red.so the lamp is red.
 the lamp is not locked.it is unlocked.so the lamp is unlocked.
-the lamp is not red.it is yellow.so the lamp is yellow.
 the lamp is not small.it is big.the lamp is big.
-the lamp is not white.it is black.the lamp is black.
-the lamp is not yellow.it is black.the lamp is black.
+the lamp is not white.it is blue.so the lamp is blue.
+the road is not blue.it is black.the road is black.
 the road is not brown.it is black.the road is black.
-the road is not green.it is red.the road is red.
 the road is not pink.it is gray.so the road is gray.
-the road is not white.it is blue.so the road is blue.
-the road was not black.it was white.the road was white.
-the shirt is not blue.it is black.so the shirt is black.
-the shirt is not blue.it is green.so the shirt is green.
-the shirt is not closed.it is open.so the shirt is open.
+the road is not white.it is green.so the road is green.
+the road is not yellow.it is pink.so the road is pink.
+the road was not green.it was gray.the road was gray.
+the road was not hot.it was cold.the road was cold.
+the road was not red.it was blue.the road was blue.
+the shirt is not blue.it is purple.the shirt is purple.
+the shirt is not full.it is empty.so the shirt is empty.
 the shirt is not heavy.it is light.the shirt is light.
+the shirt is not pink.it is blue.the shirt is blue.
 the shirt is not purple.it is green.the shirt is green.
-the shirt is not red.it is brown.so the shirt is brown.
-the shirt is not red.it is pink.the shirt is pink.
 the shirt is not unlocked.it is locked.the shirt is locked.
-the shirt was not blue.it was brown.the shirt was brown.
+the shirt is not white.it is yellow.the shirt is yellow.
+the shirt was not black.it was brown.the shirt was brown.
+the shirt was not brown.it was blue.the shirt was blue.
 the shirt was not clean.it was dirty.the shirt was dirty.
-the shirt was not green.it was gray.the shirt was gray.
 the shirt was not pink.it was green.the shirt was green.
+the shirt was not purple.it was blue.the shirt was blue.
 the shirt was not purple.it was pink.the shirt was pink.
-the shirt was not red.it was white.the shirt was white.
+the wall is not blue.it is gray.the wall is gray.
 the wall is not brown.it is pink.so the wall is pink.
-the wall is not green.it is yellow.so the wall is yellow.
-the wall is not pink.it is blue.so the wall is blue.
-the wall is not white.it is blue.so the wall is blue.
-the window is not black.it is blue.so the window is blue.
+the wall is not green.it is black.so the wall is black.
+the wall is not red.it is gray.the wall is gray.
+the wall is not yellow.it is pink.so the wall is pink.
+the wall was not red.it was pink.the wall was pink.
 the window is not black.it is pink.the window is pink.
 the window is not black.it is white.so the window is white.
-the window is not brown.it is red.the window is red.
+the window is not gray.it is blue.so the window is blue.
 the window is not old.it is new.so the window is new.
-the window is not red.it is black.the window is black.
-the window is not red.it is green.so the window is green.
-the window is not yellow.it is white.the window is white.
-the window was not blue.it was white.the window was white.
+the window is not yellow.it is green.the window is green.
 the window was not brown.it was yellow.the window was yellow.
+the window was not green.it was red.the window was red.
 the window was not pink.it was purple.the window was purple.
-theo did not buy corn.he bought honey.theo bought honey.
-theo did not buy the eggs.he bought the bread.theo bought the bread.
-theo did not choose pears.he chose butter instead.theo chose butter.
-theo did not choose soup.he chose salt instead.theo chose salt.
-theo did not drink beans.he drank fish instead.theo drank fish.
-theo did not drink milk.he drank bread instead.theo drank bread.
-theo did not pick the cake.he picked the coffee.theo picked the coffee.
-theo did not pick water.he picked juice instead.theo picked juice.
-theo did not take bread.he took honey instead.theo took honey.
-theo did not take milk.he took bread.theo took bread.
+the window was not red.it was pink.the window was pink.
+the window was not white.it was black.the window was black.
+the window was not white.it was purple.the window was purple.
+theo did not bring the eggs.he brought the coffee.theo brought the coffee.
+theo did not bring water.he brought beans.theo brought beans.
+theo did not buy tea.he bought eggs.theo bought eggs.
+theo did not buy the fish.he bought the corn.theo bought the corn.
+theo did not pick bread.he picked corn instead.theo picked corn.
+theo did not pick juice.he picked milk instead.theo picked milk.
+theo did not take corn.he took milk.theo took milk.
+theo did not take the apples.he took the bread.theo took the bread.
+theo did not want honey.he wanted tea instead.theo wanted tea.
+theo did not want meat.he wanted pears.theo wanted pears.
 this bag is not brown.it is black.this bag is black.
 this ball is not purple.it is black.this ball is black.
-this bike is not brown.it is red.this bike is red.
+this ball is not white.it is yellow.this ball is yellow.
 this bike is not dirty.it is clean.this bike is clean.
+this bike is not empty.it is full.this bike is full.
+this bike is not purple.it is blue.this bike is blue.
+this boat is not green.it is white.this boat is white.
 this boat is not missing.it is here.this boat is here.
-this boat is not purple.it is blue.this boat is blue.
-this boat is not yellow.it is purple.this boat is purple.
+this boat is not white.it is black.this boat is black.
 this book is not black.it is pink.this book is pink.
 this book is not wet.it is dry.this book is dry.
-this book is not white.it is brown.this book is brown.
 this book is not wide.it is narrow.this book is narrow.
 this box is not dirty.it is clean.this box is clean.
 this box is not gray.it is pink.this box is pink.
 this box is not pink.it is green.this box is green.
-this box is not white.it is yellow.this box is yellow.
-this car is not black.it is green.this car is green.
-this car is not blue.it is green.this car is green.
+this box is not red.it is blue.this box is blue.
+this car is not empty.it is full.this car is full.
 this car is not here.it is missing.this car is missing.
 this car is not purple.it is green.this car is green.
-this car is not white.it is blue.this car is blue.
-this car is not yellow.it is white.this car is white.
-this chair is not black.it is brown.this chair is brown.
-this chair is not black.it is pink.this chair is pink.
+this car is not red.it is purple.this car is purple.
 this coat is not big.it is small.this coat is small.
+this coat is not black.it is blue.this coat is blue.
+this coat is not brown.it is red.this coat is red.
+this coat is not closed.it is open.this coat is open.
 this coat is not gray.it is yellow.this coat is yellow.
 this coat is not pink.it is brown.this coat is brown.
 this coat is not purple.it is white.this coat is white.
-this coat is not red.it is yellow.this coat is yellow.
+this cup is not black.it is red.this cup is red.
 this cup is not broken.it is fixed.this cup is fixed.
+this door is not empty.it is full.this door is full.
 this door is not gray.it is purple.this door is purple.
-this door is not yellow.it is gray.this door is gray.
-this door is not yellow.it is pink.this door is pink.
-this door is not yellow.it is red.this door is red.
-this gate is not blue.it is gray.this gate is gray.
 this gate is not brown.it is white.this gate is white.
 this gate is not fixed.it is broken.this gate is broken.
-this gate is not green.it is purple.this gate is purple.
-this gate is not pink.it is red.this gate is red.
+this gate is not green.it is brown.this gate is brown.
 this gate is not white.it is brown.this gate is brown.
-this gate is not yellow.it is gray.this gate is gray.
 this gate is not yellow.it is green.this gate is green.
-this hat is not black.it is red.this hat is red.
 this hat is not brown.it is white.this hat is white.
 this hat is not here.it is missing.this hat is missing.
 this hat is not purple.it is white.this hat is white.
-this hat is not yellow.it is red.this hat is red.
 this house is not black.it is brown.this house is brown.
-this house is not black.it is purple.this house is purple.
+this house is not black.it is gray.this house is gray.
+this house is not blue.it is brown.this house is brown.
 this house is not missing.it is here.this house is here.
-this key is not blue.it is purple.this key is purple.
-this key is not blue.it is yellow.this key is yellow.
-this lamp is not blue.it is white.this lamp is white.
+this key is not black.it is purple.this key is purple.
+this key is not gray.it is blue.this key is blue.
+this key is not red.it is black.this key is black.
+this lamp is not blue.it is pink.this lamp is pink.
 this lamp is not broken.it is fixed.this lamp is fixed.
 this lamp is not old.it is new.this lamp is new.
+this lamp is not red.it is yellow.this lamp is yellow.
 this lamp is not white.it is yellow.this lamp is yellow.
-this road is not gray.it is blue.this road is blue.
-this road is not green.it is yellow.this road is yellow.
+this lamp is not yellow.it is gray.this lamp is gray.
+this lamp is not yellow.it is green.this lamp is green.
+this lamp is not yellow.it is purple.this lamp is purple.
 this road is not purple.it is green.this road is green.
 this road is not purple.it is yellow.this road is yellow.
 this road is not unlocked.it is locked.this road is locked.
-this shirt is not green.it is blue.this shirt is blue.
+this road is not yellow.it is white.this road is white.
+this shirt is not blue.it is gray.this shirt is gray.
+this shirt is not blue.it is red.this shirt is red.
 this wall is not new.it is old.this wall is old.
 this wall is not pink.it is purple.this wall is purple.
-this wall is not yellow.it is brown.this wall is brown.
-this window is not blue.it is black.this window is black.
 this window is not clean.it is dirty.this window is dirty.
-this window is not yellow.it is brown.this window is brown.
-zoe did not buy meat.she bought water instead.zoe bought water.
-zoe did not buy meat.she bought water.zoe bought water.
-zoe did not choose the meat.she chose the honey.zoe chose the honey.
-zoe did not choose the tea.she chose the apples.zoe chose the apples.
-zoe did not drink meat.she drank beans.zoe drank beans.
-zoe did not drink the soup.she drank the meat.zoe drank the meat.
-zoe did not get beans.she got rice.zoe got rice.
-zoe did not get butter.she got honey.zoe got honey.
-zoe did not order the bread.she ordered the beans.zoe ordered the beans.
-zoe did not order the milk.she ordered the coffee.zoe ordered the coffee.
+this window is not green.it is black.this window is black.
+this window is not pink.it is red.this window is red.
+zoe did not bring meat.she brought beans.zoe brought beans.
+zoe did not bring the soup.she brought the meat.zoe brought the meat.
+zoe did not eat meat.she ate water.zoe ate water.
+zoe did not eat water.she ate fish instead.zoe ate fish.
+zoe did not get milk.she got beans instead.zoe got beans.
+zoe did not get rice.she got coffee instead.zoe got coffee.
+zoe did not take cake.she took milk.zoe took milk.
+zoe did not take the coffee.she took the butter.zoe took the butter.
+zoe did not want apples.she wanted salt instead.zoe wanted salt.
+zoe did not want honey.she wanted salt.zoe wanted salt.
