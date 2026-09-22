@@ -1,0 +1,290 @@
+{
+  "customer": {
+    "token_id": 93,
+    "cosine_before_vs_after": 0.332,
+    "neighbors_before": [
+      [
+        "train",
+        0.283
+      ],
+      [
+        "route",
+        0.273
+      ],
+      [
+        "doctor",
+        0.262
+      ],
+      [
+        "green",
+        0.255
+      ],
+      [
+        "not",
+        0.251
+      ]
+    ],
+    "neighbors_after": [
+      [
+        "buyer",
+        0.977
+      ],
+      [
+        "client",
+        0.972
+      ],
+      [
+        "subscriber",
+        0.97
+      ],
+      [
+        "consumer",
+        0.968
+      ],
+      [
+        "shopper",
+        0.963
+      ]
+    ]
+  },
+  "hot": {
+    "token_id": 167,
+    "cosine_before_vs_after": 0.49,
+    "neighbors_before": [
+      [
+        "educator",
+        0.38
+      ],
+      [
+        "product",
+        0.371
+      ],
+      [
+        "professor",
+        0.37
+      ],
+      [
+        "rosa",
+        0.306
+      ],
+      [
+        "red",
+        0.274
+      ]
+    ],
+    "neighbors_after": [
+      [
+        "noisy",
+        0.797
+      ],
+      [
+        "full",
+        0.655
+      ],
+      [
+        "early",
+        0.625
+      ],
+      [
+        "cold",
+        0.623
+      ],
+      [
+        "thick",
+        0.593
+      ]
+    ]
+  },
+  "quiet": {
+    "token_id": 298,
+    "cosine_before_vs_after": 0.497,
+    "neighbors_before": [
+      [
+        "purple",
+        0.313
+      ],
+      [
+        "hungry",
+        0.298
+      ],
+      [
+        "thanked",
+        0.272
+      ],
+      [
+        "doctor",
+        0.267
+      ],
+      [
+        "listen",
+        0.256
+      ]
+    ],
+    "neighbors_after": [
+      [
+        "early",
+        0.897
+      ],
+      [
+        "loud",
+        0.849
+      ],
+      [
+        "cold",
+        0.843
+      ],
+      [
+        "hungry",
+        0.8
+      ],
+      [
+        "busy",
+        0.789
+      ]
+    ]
+  },
+  "maya": {
+    "token_id": 229,
+    "cosine_before_vs_after": 0.268,
+    "neighbors_before": [
+      [
+        "beach",
+        0.4
+      ],
+      [
+        "voice",
+        0.352
+      ],
+      [
+        "library",
+        0.27
+      ],
+      [
+        "bought",
+        0.257
+      ],
+      [
+        "work",
+        0.243
+      ]
+    ],
+    "neighbors_after": [
+      [
+        "emma",
+        0.688
+      ],
+      [
+        "sara",
+        0.614
+      ],
+      [
+        "lily",
+        0.603
+      ],
+      [
+        "rosa",
+        0.589
+      ],
+      [
+        "zoe",
+        0.544
+      ]
+    ]
+  },
+  "walked": {
+    "token_id": 397,
+    "cosine_before_vs_after": 0.311,
+    "neighbors_before": [
+      [
+        "delivery",
+        0.468
+      ],
+      [
+        "strong",
+        0.372
+      ],
+      [
+        "picked",
+        0.338
+      ],
+      [
+        "instructor",
+        0.324
+      ],
+      [
+        "honey",
+        0.312
+      ]
+    ],
+    "neighbors_after": [
+      [
+        "jumped",
+        0.833
+      ],
+      [
+        "played",
+        0.827
+      ],
+      [
+        "rested",
+        0.772
+      ],
+      [
+        "worked",
+        0.766
+      ],
+      [
+        "talked",
+        0.766
+      ]
+    ]
+  },
+  "blue": {
+    "token_id": 34,
+    "cosine_before_vs_after": 0.333,
+    "neighbors_before": [
+      [
+        "black",
+        0.444
+      ],
+      [
+        "square",
+        0.296
+      ],
+      [
+        "rest",
+        0.286
+      ],
+      [
+        "detail",
+        0.272
+      ],
+      [
+        "coffee",
+        0.264
+      ]
+    ],
+    "neighbors_after": [
+      [
+        "pink",
+        0.876
+      ],
+      [
+        "brown",
+        0.777
+      ],
+      [
+        "yellow",
+        0.747
+      ],
+      [
+        "green",
+        0.729
+      ],
+      [
+        "black",
+        0.725
+      ]
+    ]
+  }
+}

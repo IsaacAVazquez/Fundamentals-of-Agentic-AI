@@ -1,0 +1,364 @@
+{
+  "model": "results/expanded/model.pt",
+  "model_sha256": "be30b36042c701dc1a721749ea7c666275d68bf963e3e400a9435fbbf06fc7b8",
+  "completed_steps": 3000,
+  "probes": [
+    {
+      "label": "negation, flipped colors",
+      "prompt": "the cup is not white . it is black . the cup is",
+      "choices": [
+        "white",
+        "black",
+        "green",
+        "red"
+      ],
+      "expected": "black",
+      "unknown_words": [],
+      "choice_probabilities": {
+        "white": 0.0088,
+        "black": 0.7328,
+        "green": 0.0199,
+        "red": 0.0295
+      },
+      "predicted": "black",
+      "correct": true,
+      "generated_text": "closed ."
+    },
+    {
+      "label": "negation, flipped colors",
+      "prompt": "the cup is not black . it is white . the cup is",
+      "choices": [
+        "white",
+        "black",
+        "green",
+        "red"
+      ],
+      "expected": "white",
+      "unknown_words": [],
+      "choice_probabilities": {
+        "white": 0.6791,
+        "black": 0.0083,
+        "green": 0.0505,
+        "red": 0.0042
+      },
+      "predicted": "white",
+      "correct": true,
+      "generated_text": "white ."
+    },
+    {
+      "label": "negation, door flipped",
+      "prompt": "the door is not closed . it is open . the door is",
+      "choices": [
+        "closed",
+        "open",
+        "wide",
+        "missing"
+      ],
+      "expected": "open",
+      "unknown_words": [],
+      "choice_probabilities": {
+        "closed": 0.034,
+        "open": 0.2856,
+        "wide": 0.0001,
+        "missing": 0.0013
+      },
+      "predicted": "open",
+      "correct": true,
+      "generated_text": "light ."
+    },
+    {
+      "label": "negation, gate",
+      "prompt": "the gate is not open . it is closed . the gate is",
+      "choices": [
+        "closed",
+        "open",
+        "wide",
+        "missing"
+      ],
+      "expected": "closed",
+      "unknown_words": [],
+      "choice_probabilities": {
+        "closed": 0.0096,
+        "open": 0.4132,
+        "wide": 0.0002,
+        "missing": 0.0016
+      },
+      "predicted": "open",
+      "correct": false,
+      "generated_text": "open ."
+    },
+    {
+      "label": "negation, food",
+      "prompt": "nora did not buy rice . she bought bread . nora bought",
+      "choices": [
+        "rice",
+        "bread",
+        "tea",
+        "milk"
+      ],
+      "expected": "bread",
+      "unknown_words": [],
+      "choice_probabilities": {
+        "rice": 0.0664,
+        "bread": 0.0157,
+        "tea": 0.0405,
+        "milk": 0.042
+      },
+      "predicted": "rice",
+      "correct": false,
+      "generated_text": "honey ."
+    },
+    {
+      "label": "negation, food flipped",
+      "prompt": "nora did not buy bread . she bought rice . nora bought",
+      "choices": [
+        "rice",
+        "bread",
+        "tea",
+        "milk"
+      ],
+      "expected": "rice",
+      "unknown_words": [],
+      "choice_probabilities": {
+        "rice": 0.0659,
+        "bread": 0.0159,
+        "tea": 0.0398,
+        "milk": 0.0418
+      },
+      "predicted": "rice",
+      "correct": true,
+      "generated_text": "salt ."
+    },
+    {
+      "label": "reference, names swapped",
+      "prompt": "leo lent a book to maya . maya thanked",
+      "choices": [
+        "leo",
+        "maya",
+        "nora",
+        "omar"
+      ],
+      "expected": "leo",
+      "unknown_words": [],
+      "choice_probabilities": {
+        "leo": 0.7827,
+        "maya": 0.0296,
+        "nora": 0.0011,
+        "omar": 0.0002
+      },
+      "predicted": "leo",
+      "correct": true,
+      "generated_text": "leo ."
+    },
+    {
+      "label": "reference, giver",
+      "prompt": "nora gave omar a coin . the person who gave the coin was",
+      "choices": [
+        "nora",
+        "omar",
+        "sara",
+        "finn"
+      ],
+      "expected": "nora",
+      "unknown_words": [],
+      "choice_probabilities": {
+        "nora": 0.0273,
+        "omar": 0.4181,
+        "sara": 0.0019,
+        "finn": 0.0491
+      },
+      "predicted": "omar",
+      "correct": false,
+      "generated_text": "finn ."
+    },
+    {
+      "label": "reference, receiver",
+      "prompt": "nora gave omar a coin . the person who received the coin was",
+      "choices": [
+        "nora",
+        "omar",
+        "sara",
+        "finn"
+      ],
+      "expected": "omar",
+      "unknown_words": [],
+      "choice_probabilities": {
+        "nora": 0.0239,
+        "omar": 0.4444,
+        "sara": 0.0019,
+        "finn": 0.054
+      },
+      "predicted": "omar",
+      "correct": true,
+      "generated_text": "finn ."
+    },
+    {
+      "label": "grammar, singular",
+      "prompt": "one cat",
+      "choices": [
+        "is",
+        "are",
+        "were",
+        "am"
+      ],
+      "expected": "is",
+      "unknown_words": [],
+      "choice_probabilities": {
+        "is": 0.3208,
+        "are": 0.0,
+        "were": 0.0,
+        "am": 0.0
+      },
+      "predicted": "is",
+      "correct": true,
+      "generated_text": "is early ."
+    },
+    {
+      "label": "grammar, plural",
+      "prompt": "the cats",
+      "choices": [
+        "is",
+        "am",
+        "was",
+        "are"
+      ],
+      "expected": "are",
+      "unknown_words": [],
+      "choice_probabilities": {
+        "is": 0.0001,
+        "am": 0.0001,
+        "was": 0.0001,
+        "are": 0.5543
+      },
+      "predicted": "are",
+      "correct": true,
+      "generated_text": "are early ."
+    },
+    {
+      "label": "grammar, past",
+      "prompt": "yesterday he",
+      "choices": [
+        "walking",
+        "walk",
+        "walked",
+        "walks"
+      ],
+      "expected": "walked",
+      "unknown_words": [],
+      "choice_probabilities": {
+        "walking": 0.0009,
+        "walk": 0.0003,
+        "walked": 0.0188,
+        "walks": 0.0018
+      },
+      "predicted": "walked",
+      "correct": true,
+      "generated_text": "cooked at the library ."
+    },
+    {
+      "label": "reference, object copy",
+      "prompt": "nora gave sara a pencil . the person who received the",
+      "choices": [
+        "pencil",
+        "card",
+        "key",
+        "lamp"
+      ],
+      "expected": "pencil",
+      "unknown_words": [],
+      "choice_probabilities": {
+        "pencil": 0.0721,
+        "card": 0.0484,
+        "key": 0.0144,
+        "lamp": 0.0425
+      },
+      "predicted": "pencil",
+      "correct": true,
+      "generated_text": "handed a question about the a"
+    },
+    {
+      "label": "reference, receiver, nora then sara",
+      "prompt": "nora gave sara a pencil . the person who received the pencil was",
+      "choices": [
+        "nora",
+        "sara",
+        "omar",
+        "leo"
+      ],
+      "expected": "sara",
+      "unknown_words": [],
+      "choice_probabilities": {
+        "nora": 0.483,
+        "sara": 0.0376,
+        "omar": 0.0009,
+        "leo": 0.0261
+      },
+      "predicted": "nora",
+      "correct": false,
+      "generated_text": "nora ."
+    },
+    {
+      "label": "reference, receiver, sara then nora",
+      "prompt": "sara gave nora a pencil . the person who received the pencil was",
+      "choices": [
+        "nora",
+        "sara",
+        "omar",
+        "leo"
+      ],
+      "expected": "nora",
+      "unknown_words": [],
+      "choice_probabilities": {
+        "nora": 0.4578,
+        "sara": 0.0668,
+        "omar": 0.0007,
+        "leo": 0.0243
+      },
+      "predicted": "nora",
+      "correct": true,
+      "generated_text": "nora ."
+    },
+    {
+      "label": "reference, receiver, omar then nora",
+      "prompt": "omar gave nora a coin . the person who received the coin was",
+      "choices": [
+        "nora",
+        "omar",
+        "sara",
+        "finn"
+      ],
+      "expected": "nora",
+      "unknown_words": [],
+      "choice_probabilities": {
+        "nora": 0.075,
+        "omar": 0.3338,
+        "sara": 0.0014,
+        "finn": 0.0419
+      },
+      "predicted": "omar",
+      "correct": false,
+      "generated_text": "omar ."
+    },
+    {
+      "label": "negation, gate flipped",
+      "prompt": "the gate is not closed . it is open . the gate is",
+      "choices": [
+        "closed",
+        "open",
+        "wide",
+        "missing"
+      ],
+      "expected": "open",
+      "unknown_words": [],
+      "choice_probabilities": {
+        "closed": 0.0484,
+        "open": 0.2166,
+        "wide": 0.0002,
+        "missing": 0.0024
+      },
+      "predicted": "open",
+      "correct": true,
+      "generated_text": "small ."
+    }
+  ]
+}
