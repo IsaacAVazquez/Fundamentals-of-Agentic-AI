@@ -1,6 +1,6 @@
 # Class 4 Assignment: Building a Custom LLM
 
-Pulled from bCourses on 2026-09-21. Source: https://bcourses.berkeley.edu/courses/1555592/assignments/9130938, which links to https://docs.google.com/document/d/1MQ3YQl2ywWZF7W5_l_91FiIp7pTYPO_3viI2JVapRcc/edit. Due 2026-09-22 at 11:59 PM Pacific, worth 10 points, submitted as a URL. The text below is the course's markdown copy of the brief from the sample project, updated to match the live Google Doc's 2026-09-16 wording, which added the leakage penalty language and the bCourses submission note.
+Pulled from bCourses on 2026-09-21 from https://bcourses.berkeley.edu/courses/1555592/assignments/9130938, which links to https://docs.google.com/document/d/1MQ3YQl2ywWZF7W5_l_91FiIp7pTYPO_3viI2JVapRcc/edit. Due 2026-09-22 at 11:59 PM Pacific, worth 10 points, submitted as a URL. The text below is the course's markdown copy of the brief from the sample project, updated to match the live Google Doc, which was last edited on 2026-09-20 Pacific and adds the leakage penalty language and the bCourses submission note to the sample project's copy.
 
 Choose data, train a tiny language model, test it on separate evals, and interact with it through a simple chat interface.
 
