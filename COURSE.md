@@ -67,15 +67,15 @@ Times are Pacific. Status is as of 2026-09-21.
 
 | Assignment | Due | Points | Status | Prompt |
 | --- | --- | --- | --- | --- |
-| [Assignment 1](https://bcourses.berkeley.edu/courses/1555592/assignments/9130917) | 9/8, 11:59 PM | 10 | Submitted 9/8, 11:24 PM, not graded as of 9/21 | [assignment-01/ASSIGNMENT.md](assignment-01/ASSIGNMENT.md) |
-| [Assignment 2](https://bcourses.berkeley.edu/courses/1555592/assignments/9130935) | 9/15, 11:59 PM | 10 | Submitted 9/14, 12:53 AM, not graded as of 9/21 | [assignment-02/ASSIGNMENT.md](assignment-02/ASSIGNMENT.md) |
+| [Assignment 1](https://bcourses.berkeley.edu/courses/1555592/assignments/9130917) | 9/8, 11:59 PM | 10 | Submitted 9/8, 11:24 PM, graded 10 of 10 on 9/14 | [assignment-01/ASSIGNMENT.md](assignment-01/ASSIGNMENT.md) |
+| [Assignment 2](https://bcourses.berkeley.edu/courses/1555592/assignments/9130935) | 9/15, 11:59 PM | 10 | Submitted 9/14, 12:53 AM, graded 9.81 of 10 on 9/20 | [assignment-02/ASSIGNMENT.md](assignment-02/ASSIGNMENT.md) |
 | [Assignment 3](https://bcourses.berkeley.edu/courses/1555592/assignments/9130938) | 9/22, 11:59 PM | 10 | Work in [assignment-03/](assignment-03/), unsubmitted as of 9/21 | [assignment-03/ASSIGNMENT.md](assignment-03/ASSIGNMENT.md) |
 | [Assignment 4](https://bcourses.berkeley.edu/courses/1555592/assignments/9130939) | 9/29, 11:59 PM | 10 | Unsubmitted | No description posted yet |
 | [Assignment 5](https://bcourses.berkeley.edu/courses/1555592/assignments/9130940) | 10/13, 11:59 PM | 20 | Unsubmitted | No description posted yet |
 | [Academic Integrity Assignment](https://bcourses.berkeley.edu/courses/1555592/assignments/9145855) | 9/26, 12:59 AM | 1 (not counted) | Unsubmitted | Completed through the Academic Integrity tool in the bCourses course nav |
 
-All five numbered assignments are submitted as a URL. The Assignment 3 brief was posted as a Google Doc after 9/13 and revised on 9/16, when a bCourses announcement added the 48 fixed evals and the chat interface, and the Class 4 deck's assignment slides changed with it, so the section at the end of [class4.md](class4.md) was refreshed on 9/21.
+All five numbered assignments are submitted as a URL. The Assignment 3 brief was posted as a Google Doc after 9/13 and revised on 9/16, when a bCourses announcement added the 48 fixed evals and the chat interface, and the Class 4 deck's assignment slides changed with it, so the section at the end of [class4.md](class4.md) was refreshed on 9/21. The Doc was last edited on 9/20, and [assignment-03/ASSIGNMENT.md](assignment-03/ASSIGNMENT.md) matched it when I checked on 9/22.
 
 ## What bCourses has that isn't here
 
-The only discussion is "Introduce Yourself," which had no replies when I pulled it, and there were no announcements. The Files and Pages list endpoints are turned off for students (403 and 404), so anything uploaded only as a course file couldn't be reached. The Media Library (Panopto), Study.Net Materials, and Academic Integrity tabs are external tools that the API doesn't expose, so I didn't check what's inside them.
+The only discussion is "Introduce Yourself," which had no replies when I pulled it on 9/13. As of 9/22 there are two announcements, the Class 2 pre-requirements note from 9/1, which links a software installation guide, and the Assignment 3 update from 9/16. The Files and Pages list endpoints are turned off for students (403 and 404), so anything uploaded only as a course file couldn't be reached. The Media Library (Panopto), Study.Net Materials, and Academic Integrity tabs are external tools that the API doesn't expose, so I didn't check what's inside them.

@@ -12,7 +12,7 @@ The network is Andrej Karpathy's nanoGPT, a small transformer, and the course pi
 
 ## What the model reads
 
-The notebook builds most of its training text itself, from eight groups of related words and nine sentence frames, which gives about 4,600 different sentences about customers and stores, loans and banks, fruit and kitchens, and so on. It then adds any text files placed in `corpus/`, and my four files add another 2,208 short passages about grammar, opposites, corrections, and who gave what to whom.
+The notebook builds most of its training text itself, from eight groups of related words and nine sentence frames, which gives about 4,600 different sentences about customers and stores, loans and banks, fruit and kitchens, and so on. It then adds any text files placed in `corpus/`, and my four files add another 2,150 short passages about grammar, opposites, corrections, and who gave what to whom.
 
 Before anything else happens, the notebook removes every generated sentence that contains one of the 16 test prompts it has reserved for the evals, throws away duplicates, and holds 10% of the passages out as validation text the network never trains on. It then builds the vocabulary from the training passages alone, keeping at most 509 word types, and reports how many words in each split fell outside that list.
 
@@ -46,7 +46,7 @@ The network's structure is what makes the guessing work. Each token's vector is 
 
 The same two panels of 20 passages, drawn once with a fixed seed, are used for every loss measurement. The samples use the same starting token, sampling seed, and temperature at every checkpoint, and the temperature comparison changes only the temperature. The 48 tests are the same before and after training and in both experiments, and the runner only ever sends the prompt into the model, never the four choices or the answer, then compares the probabilities of the four choice words afterward. A test whose words the model has never seen is marked unscorable and counts as zero, so there is no guessing on those.
 
-The tests themselves live in `evals/`, and the only training input is `corpus/`. The notebook refuses to import a file that contains a test prompt, and my generator refuses to write one, so no test question reaches training word for word. The teaching files do reuse the tests' sentence frames with other names and objects, and the opposites file teaches the same word pairs the tests ask about, which the README lays out under Keeping the tests out of training.
+The tests themselves live in `evals/`, and the only training input is `corpus/`. The notebook refuses to import a file that contains a test prompt, and my generator refuses to write one, so no test question reaches training word for word. The teaching files do reuse the tests' sentence frames with other names and objects. The word pairs the opposites tests ask about only appear in contrasts like `the cup was cold but the pillow was hot`, since I removed 58 lines from my first version that stated a tested pair outright, corrected a word in a test's direction, or reused a clause from a test story, which the README lays out under Keeping the tests out of training.
 
 ## The files I added
 
@@ -56,7 +56,7 @@ The notebook and `custom_llm.py`, `nanogpt_model.py`, `run_evals.py`, `chat.py`,
 | --- | --- |
 | `scripts/setup.sh` | Builds `.venv` on Python 3.13 and installs the requirements plus the pieces a scripted run needs |
 | `scripts/run_experiment.sh` | Writes the three choices into the notebook and executes it from the top without opening Jupyter |
-| `scripts/make_teaching_corpus.py` | Generates the four teaching files from word lists and sentence frames, with its own leakage checks |
+| `scripts/make_teaching_corpus.py` | Generates the four teaching files from word lists and sentence frames, drops lines that sit too close to a test, and rechecks the written files |
 | `scripts/publish_run.sh` | Copies a finished run folder and the executed notebook into `results/` |
 | `scripts/neighbors.py` | Finds each chosen word's nearest words before and after training by cosine similarity |
 | `scripts/probe_model.py` | Scores seventeen extra prompts of mine on a saved model, to check whether a passing test came from the pattern or from a shortcut |
@@ -69,4 +69,4 @@ The generator is deterministic, so running it again produces the same four files
 
 ## Where the results are explained
 
-The README covers what actually happened, including the two negation tests the corpus-extension model got wrong, the probes that showed which passes came from shortcuts, and the optional run that fixed them by training twice as long. This file stops at what the code does.
+The README covers what actually happened, including the 58 lines I removed from the first version of my teaching files, the two negation tests the corpus-extension model got wrong, the probes that showed which passes came from shortcuts, and the optional run with twice the training steps and a stretched schedule, where most of those shortcuts went away and three of the new phrasings of the starter patterns flipped. This file stops at what the code does.
