@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Start chat.py on the corpus-extension model for a real Terminal session, the one behind
+# Start chat.py on the corpus-extension model for a real Terminal session like the one in
 # results/chat/chat_terminal.png. chat.py seeds each turn from 2026 plus its index, so typing
 # the same prompts in the same order reproduces results/chat/chat_transcript.json.
 # Usage: scripts/terminal_chat.sh [transcript name, default terminal_session]
