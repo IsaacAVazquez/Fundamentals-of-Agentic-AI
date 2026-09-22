@@ -8,16 +8,29 @@ the internal periods, because the notebook splits passages at a period followed 
 whitespace. The tokenizer still separates the periods, so the model sees
 "the cup is not white . it is black . the cup is black ." as one passage.
 
-Nothing here copies a test item. Beyond the notebook's own check, which rejects an
-imported file containing an exact prompt, this script refuses to write a line that
+The files teach the tests' skills with other people, objects, and word pairs, and they
+reuse some of the tests' sentence frames. Beyond the notebook's own check, which rejects
+an imported file containing an exact prompt, this script refuses to write a line that
 contains an eval prompt or the first sentence of an eval story, never pairs the
 three test couples (maya and leo, ella and finn, omar and nina), and never puts a
 test subject with either of its test items (ava with tea or milk, the box with red
 or blue, the door with open or closed). Those words still appear in other stories.
 
+It also drops three kinds of near-copy. A tested opposite pair (hot and cold, empty
+and full, noisy and quiet) never appears in an answer-list frame such as "the
+opposite of cold is hot", in either direction, and only shows up in contrasts like
+"the cup was cold but the pillow was hot". No correction uses a tested pair, so
+nothing is corrected from red to blue, open to closed, or tea to milk, or between
+the two words of a tested opposite pair. And no line reuses a clause from a test
+story, "the person who received the pencil was", "nina answered the call from",
+"leo thanked", or "she bought milk". The filter runs after generation, so it removes
+lines without changing any random choice. main() rereads the written files and
+asserts every rule.
+
 Usage: .venv/bin/python scripts/make_teaching_corpus.py [output folder, default corpus]
 """
 import random
+import re
 import sys
 from pathlib import Path
 
@@ -30,6 +43,9 @@ PROMPTS = {normalized(case["prompt"]) for case in SUITE["cases"]}
 FIRST_SENTENCES = {normalized(case["prompt"].split(" . ")[0]) for case in SUITE["cases"]}
 TEST_STORY_WORDS = {"box": {"red", "blue"}, "door": {"open", "closed"}, "ava": {"tea", "milk"}}
 TEST_PAIRS = [{"maya", "leo"}, {"ella", "finn"}, {"omar", "nina"}]
+TESTED_OPPOSITES = [("hot", "cold"), ("empty", "full"), ("noisy", "quiet")]
+TESTED_CORRECTIONS = [("red", "blue"), ("open", "closed"), ("tea", "milk")]
+TEST_CLAUSES = ["the person who received the pencil was", "nina answered the call from", "leo thanked", "she bought milk"]
 
 PLACES = "store market bank kitchen station office hospital school park beach farm library".split()
 NAMES = {"maya": "she", "leo": "he", "nora": "she", "omar": "he", "ella": "she", "finn": "he",
@@ -147,15 +163,39 @@ def reference(rng):
     return lines
 
 
+def near_copy(text):
+    """True if normalized text states a tested pair, uses a tested correction, or reuses a test's final clause."""
+    pairs = [p for a, b in TESTED_OPPOSITES for p in ((a, b), (b, a))]
+    if any(f" {frame.format(a=a, b=b)} " in text for a, b in pairs for frame in
+           ["the opposite of {a} is {b}", "{a} is the opposite of {b}", "{a} and {b} are opposites", "{a} means not {b}"]):
+        return True
+    if any(re.search(rf" not (\w+ )?(the )?{a} \. \w+ \w+ (the )?{b} ", text) for a, b in pairs + TESTED_CORRECTIONS):
+        return True
+    return any(f" {clause} " in text for clause in TEST_CLAUSES)
+
+
 def clean(lines):
     """Drop anything that overlaps a test item, then dedupe."""
     kept = []
     for line in dict.fromkeys(lines):
         text = normalized(line)
-        if matching_cases(line, SUITE) or any(first in text for first in FIRST_SENTENCES):
+        if matching_cases(line, SUITE) or any(first in text for first in FIRST_SENTENCES) or near_copy(text):
             continue
         kept.append(line)
     return kept
+
+
+def check(folder):
+    """Reread the written files and fail on any line that breaks a rule above."""
+    for path in sorted(folder.glob("*.txt")):
+        assert not matching_cases(path.read_text(encoding="utf-8"), SUITE), path.name
+        for line in path.read_text(encoding="utf-8").splitlines():
+            text = normalized(line)
+            words = set(text.split())
+            assert not any(first in text for first in FIRST_SENTENCES), (path.name, line)
+            assert not near_copy(text), (path.name, line)
+            assert not any(pair <= words for pair in TEST_PAIRS), (path.name, line)
+            assert not any(subject in words and words & items for subject, items in TEST_STORY_WORDS.items()), (path.name, line)
 
 
 def main():
@@ -167,6 +207,8 @@ def main():
         assert not matching_cases("\n".join(chosen), SUITE)
         (out / f"{name}.txt").write_text("\n".join(chosen) + "\n", encoding="utf-8")
         print(f"{name}: {len(chosen)} passages -> {out / f'{name}.txt'}")
+    check(out)
+    print("check passed: no test prompt, first sentence, test couple, test subject with its items, or near-copy")
 
 
 if __name__ == "__main__":

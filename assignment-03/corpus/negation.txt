@@ -109,7 +109,6 @@ maya did not order the beans.she ordered the butter.maya ordered the butter.
 maya did not take the butter.she took the fish.maya took the fish.
 maya did not take the fish.she took the cheese.maya took the cheese.
 mia did not buy coffee.she bought tea.mia bought tea.
-mia did not buy salt.she bought milk.mia bought milk.
 mia did not get milk.she got soup instead.mia got soup.
 mia did not get the fish.she got the bread.mia got the bread.
 mia did not pick coffee.she picked salt.mia picked salt.
@@ -127,9 +126,6 @@ my ball is not green.it is black.my ball is black.
 my ball is not red.it is purple.my ball is purple.
 my bike is not black.it is blue.my bike is blue.
 my bike is not blue.it is pink.my bike is pink.
-my bike is not cold.it is hot.my bike is hot.
-my bike is not open.it is closed.my bike is closed.
-my bike is not red.it is blue.my bike is blue.
 my boat is not black.it is gray.my boat is gray.
 my boat is not blue.it is gray.my boat is gray.
 my boat is not blue.it is red.my boat is red.
@@ -138,7 +134,6 @@ my boat is not wide.it is narrow.my boat is narrow.
 my book is not brown.it is red.my book is red.
 my book is not dirty.it is clean.my book is clean.
 my book is not gray.it is purple.my book is purple.
-my book is not open.it is closed.my book is closed.
 my book is not pink.it is white.my book is white.
 my book is not purple.it is gray.my book is gray.
 my box is not brown.it is green.my box is green.
@@ -177,12 +172,9 @@ my lamp is not white.it is brown.my lamp is brown.
 my lamp is not white.it is gray.my lamp is gray.
 my road is not big.it is small.my road is small.
 my road is not gray.it is brown.my road is brown.
-my road is not hot.it is cold.my road is cold.
 my road is not pink.it is yellow.my road is yellow.
 my road is not wet.it is dry.my road is dry.
 my road is not white.it is gray.my road is gray.
-my shirt is not cold.it is hot.my shirt is hot.
-my shirt is not hot.it is cold.my shirt is cold.
 my shirt is not white.it is purple.my shirt is purple.
 my shirt is not yellow.it is purple.my shirt is purple.
 my wall is not green.it is blue.my wall is blue.
@@ -292,7 +284,6 @@ the bike is not white.it is green.so the bike is green.
 the bike was not brown.it was green.the bike was green.
 the bike was not purple.it was black.the bike was black.
 the bike was not yellow.it was gray.the bike was gray.
-the boat is not empty.it is full.the boat is full.
 the boat is not light.it is heavy.the boat is heavy.
 the boat is not pink.it is black.the boat is black.
 the boat is not red.it is yellow.the boat is yellow.
@@ -336,14 +327,12 @@ the coat is not purple.it is pink.so the coat is pink.
 the coat was not blue.it was white.the coat was white.
 the coat was not purple.it was gray.the coat was gray.
 the cup is not blue.it is green.the cup is green.
-the cup is not full.it is empty.so the cup is empty.
 the cup is not gray.it is red.so the cup is red.
 the cup is not green.it is gray.so the cup is gray.
 the cup is not pink.it is green.the cup is green.
 the cup is not pink.it is white.so the cup is white.
 the cup is not red.it is white.so the cup is white.
 the cup is not yellow.it is white.the cup is white.
-the cup was not hot.it was cold.the cup was cold.
 the cup was not red.it was gray.the cup was gray.
 the cup was not white.it was pink.the cup was pink.
 the door is not black.it is gray.the door is gray.
@@ -359,7 +348,6 @@ the gate is not black.it is red.the gate is red.
 the gate is not black.it is yellow.the gate is yellow.
 the gate is not blue.it is pink.so the gate is pink.
 the gate is not blue.it is red.so the gate is red.
-the gate is not cold.it is hot.so the gate is hot.
 the gate is not gray.it is blue.so the gate is blue.
 the gate is not gray.it is green.the gate is green.
 the gate is not green.it is blue.the gate is blue.
@@ -417,7 +405,6 @@ the road is not green.it is red.the road is red.
 the road is not pink.it is gray.so the road is gray.
 the road is not white.it is blue.so the road is blue.
 the road was not black.it was white.the road was white.
-the road was not red.it was blue.the road was blue.
 the shirt is not blue.it is black.so the shirt is black.
 the shirt is not blue.it is green.so the shirt is green.
 the shirt is not closed.it is open.so the shirt is open.
@@ -428,7 +415,6 @@ the shirt is not red.it is pink.the shirt is pink.
 the shirt is not unlocked.it is locked.the shirt is locked.
 the shirt was not blue.it was brown.the shirt was brown.
 the shirt was not clean.it was dirty.the shirt was dirty.
-the shirt was not full.it was empty.the shirt was empty.
 the shirt was not green.it was gray.the shirt was gray.
 the shirt was not pink.it was green.the shirt was green.
 the shirt was not purple.it was pink.the shirt was pink.
@@ -475,21 +461,18 @@ this box is not pink.it is green.this box is green.
 this box is not white.it is yellow.this box is yellow.
 this car is not black.it is green.this car is green.
 this car is not blue.it is green.this car is green.
-this car is not empty.it is full.this car is full.
 this car is not here.it is missing.this car is missing.
 this car is not purple.it is green.this car is green.
 this car is not white.it is blue.this car is blue.
 this car is not yellow.it is white.this car is white.
 this chair is not black.it is brown.this chair is brown.
 this chair is not black.it is pink.this chair is pink.
-this chair is not open.it is closed.this chair is closed.
 this coat is not big.it is small.this coat is small.
 this coat is not gray.it is yellow.this coat is yellow.
 this coat is not pink.it is brown.this coat is brown.
 this coat is not purple.it is white.this coat is white.
 this coat is not red.it is yellow.this coat is yellow.
 this cup is not broken.it is fixed.this cup is fixed.
-this cup is not red.it is blue.this cup is blue.
 this door is not gray.it is purple.this door is purple.
 this door is not yellow.it is gray.this door is gray.
 this door is not yellow.it is pink.this door is pink.
@@ -512,7 +495,6 @@ this house is not black.it is purple.this house is purple.
 this house is not missing.it is here.this house is here.
 this key is not blue.it is purple.this key is purple.
 this key is not blue.it is yellow.this key is yellow.
-this key is not empty.it is full.this key is full.
 this lamp is not blue.it is white.this lamp is white.
 this lamp is not broken.it is fixed.this lamp is fixed.
 this lamp is not old.it is new.this lamp is new.
@@ -523,7 +505,6 @@ this road is not purple.it is green.this road is green.
 this road is not purple.it is yellow.this road is yellow.
 this road is not unlocked.it is locked.this road is locked.
 this shirt is not green.it is blue.this shirt is blue.
-this wall is not full.it is empty.this wall is empty.
 this wall is not new.it is old.this wall is old.
 this wall is not pink.it is purple.this wall is purple.
 this wall is not yellow.it is brown.this wall is brown.
