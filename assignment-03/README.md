@@ -342,7 +342,7 @@ The interface is the course's [chat.py](chat.py), a terminal loop that loads a s
 .venv/bin/python chat.py --model results/expanded/model.pt --transcript results/chat/my-session.json
 ```
 
-The saved evidence is a session of five prompts against [results/expanded/model.pt](results/expanded/model.pt), the corpus-extension run's trained model, whose weights hash to `912c9cf493c3...`. I first ran it through [scripts/chat_demo.py](scripts/chat_demo.py), which starts `chat.py` in a pseudo-terminal and types each prompt as a person would, so the transcript, [results/chat/chat_transcript.json](results/chat/chat_transcript.json), was written by `chat.py` itself, and the screen text is in [results/chat/chat_session.log](results/chat/chat_session.log). I then typed the same five prompts myself in Terminal, and got the same replies, since `chat.py` seeds each turn from 2026 plus the turn's number. The screenshot below is that window, and its own transcript is [results/chat/terminal_session.json](results/chat/terminal_session.json).
+The saved evidence is a session of five prompts against [results/expanded/model.pt](results/expanded/model.pt), the corpus-extension run's trained model, whose weights hash to `912c9cf493c3...`. I first ran it through [scripts/chat_demo.py](scripts/chat_demo.py), which starts `chat.py` in a pseudo-terminal and types each prompt as a person would, so the transcript, [results/chat/chat_transcript.json](results/chat/chat_transcript.json), was written by `chat.py` itself, and the screen text is in [results/chat/chat_session.log](results/chat/chat_session.log). I then typed the same five prompts myself in Terminal, through [scripts/terminal_chat.sh](scripts/terminal_chat.sh), which starts `chat.py` on this model and prints the five prompts, and got the same replies, since `chat.py` seeds each turn from 2026 plus the turn's number. The screenshot below is that window, and its own transcript is [results/chat/terminal_session.json](results/chat/terminal_session.json).
 
 ![chat.py running in Terminal against the corpus-extension model, with the five prompts and replies](results/chat/chat_terminal.png)
 
@@ -384,7 +384,7 @@ The next experiment I'd run, beyond the one I already did, is the remaining four
 | [corpus/](corpus/) | The four teaching files |
 | [evals/language_evals.json](evals/language_evals.json) and [evals/README.md](evals/README.md) | The course's fixed 48-case suite and its guide, unchanged |
 | [run_evals.py](run_evals.py) and [chat.py](chat.py) | The course's eval runner and terminal chat, unchanged |
-| [scripts/](scripts/) | `setup.sh`, `run_experiment.sh`, `publish_run.sh`, `make_teaching_corpus.py`, `neighbors.py`, `probe_model.py`, `chat_demo.py`, and `render_session.py` |
+| [scripts/](scripts/) | `setup.sh`, `run_experiment.sh`, `publish_run.sh`, `make_teaching_corpus.py`, `neighbors.py`, `probe_model.py`, `chat_demo.py`, `terminal_chat.sh`, and `render_session.py` |
 | [ASSIGNMENT.md](ASSIGNMENT.md) | My copy of the assignment brief |
 | [EXPLAINER.md](EXPLAINER.md) | A plain-language walkthrough of what the notebook and scripts do |
 

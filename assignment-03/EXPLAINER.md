@@ -61,6 +61,7 @@ The notebook and `custom_llm.py`, `nanogpt_model.py`, `run_evals.py`, `chat.py`,
 | `scripts/neighbors.py` | Finds each chosen word's nearest words before and after training by cosine similarity |
 | `scripts/probe_model.py` | Scores seventeen extra prompts of mine on a saved model, to check whether a passing test came from the pattern or from a shortcut |
 | `scripts/chat_demo.py` | Runs the course's `chat.py` in a pseudo-terminal, types the prompts, and saves what the screen showed |
+| `scripts/terminal_chat.sh` | Opens `chat.py` on the trained model for a person to type into, and prints the five prompts behind the Terminal screenshot |
 | `scripts/render_session.py` | Draws a saved chat session log as an image |
 | `corpus/` | The four teaching files |
 | `results/` | The published evidence from the starter run, the corpus-extension run, the optional 6,000-step run, the setup check, the eval reruns, and the chat sessions |
