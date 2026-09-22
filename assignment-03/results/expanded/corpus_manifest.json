@@ -1,0 +1,53 @@
+{
+  "files": [
+    {
+      "file": "grammar.txt",
+      "bytes": 22581,
+      "sha256": "41132ce04a07854918e1c0997a9a53ab9da4c41df6d77647e800b00f78e1b970",
+      "warnings": [],
+      "characters": 22581,
+      "passages": 812,
+      "unique_passages": 812,
+      "preview": "a bird is busy .\na bird is calm .\na bird is quiet .\na bird is wet .\na cat is busy .\na cat is cold .\na cat is early .\na cat is quiet .\na cow is early .\na cow is happy .\na cow is hungry .\na cow is quiet .\na dog is asleep .\na dog is awake .\na dog is busy .\na dog is clean .\na duck is awake .\na duck is l"
+    },
+    {
+      "file": "negation.txt",
+      "bytes": 30759,
+      "sha256": "feb266d0ebda418cd6c073f8be6697e3893143c1e81f502c7656a1f1ddcfe7d8",
+      "warnings": [],
+      "characters": 30759,
+      "passages": 542,
+      "unique_passages": 542,
+      "preview": "ava did not buy cheese.she bought meat.ava bought meat.\nava did not buy fish.she bought apples.ava bought apples.\nava did not drink corn.she drank tea instead.ava drank tea.\nava did not drink the rice.she drank the pears.ava drank the pears.\nava did not order the cheese.she ordered the meat.ava orde"
+    },
+    {
+      "file": "opposites.txt",
+      "bytes": 11053,
+      "sha256": "3559dfe299ea6ef31dcf1194f1bee9d2347986c9f229b2e72af961bcd0e59d26",
+      "warnings": [],
+      "characters": 11053,
+      "passages": 333,
+      "unique_passages": 333,
+      "preview": "a bag can be old or new .\na bell can be early or late .\na bell can be full or empty .\na bell can be long or short .\na bell can be new or old .\na bell can be sweet or sour .\na bread can be hard or soft .\na bread can be soft or hard .\na bread can be tall or short .\na car can be quiet or loud .\na car c"
+    },
+    {
+      "file": "reference.txt",
+      "bytes": 28430,
+      "sha256": "be1caec05a92a31ed5aa92262438eef36278ceefc8d1e1e22fdac06a0c609aba",
+      "warnings": [],
+      "characters": 28430,
+      "passages": 528,
+      "unique_passages": 528,
+      "preview": "ava called hugo.hugo picked up the call from ava.\nava called ivan.ivan answered and thanked ava.\nava called luca.luca answered the call from ava.\nava called nina.nina answered and thanked ava.\nava gave finn a pen.finn thanked ava.\nava gave leo a letter.the person who received the letter was leo.\nava"
+    }
+  ],
+  "ignored": [],
+  "external_passages": 2215,
+  "mode": "classroom",
+  "base_passages": 6200,
+  "unique_passages": 6807,
+  "new_unique_passages": 2215,
+  "duplicates_removed": 1608,
+  "max_passage_tokens": 47,
+  "split_unit": "deduplicated passage, not source file"
+}

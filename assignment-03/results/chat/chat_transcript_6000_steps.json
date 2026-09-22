@@ -1,0 +1,38 @@
+{
+  "model": "results/expanded-6000-steps/model.pt",
+  "model_sha256": "3a5295d9850d26eb8d200575c0f534e6ed1f8370b9ddd6965d6a476de5626dfa",
+  "completed_steps": 6000,
+  "fresh_context_per_prompt": true,
+  "temperature": 0.8,
+  "max_tokens": 24,
+  "turns": [
+    {
+      "prompt": "the cup is not white . it is black . the cup is",
+      "seed": 2026,
+      "response": "black .",
+      "unknown_prompt_words": [],
+      "prompt_truncated": false
+    },
+    {
+      "prompt": "nora gave omar a coin . the person who gave the coin was",
+      "seed": 2027,
+      "response": "nora .",
+      "unknown_prompt_words": [],
+      "prompt_truncated": false
+    },
+    {
+      "prompt": "the customer",
+      "seed": 2028,
+      "response": "reviewed the merchandise after checking the price .",
+      "unknown_prompt_words": [],
+      "prompt_truncated": false
+    },
+    {
+      "prompt": "the surgeon and the mango walked to the bank",
+      "seed": 2029,
+      "response": ".",
+      "unknown_prompt_words": [],
+      "prompt_truncated": false
+    }
+  ]
+}
