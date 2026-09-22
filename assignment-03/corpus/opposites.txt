@@ -1,0 +1,333 @@
+a bag can be old or new .
+a bell can be early or late .
+a bell can be full or empty .
+a bell can be long or short .
+a bell can be new or old .
+a bell can be sweet or sour .
+a bread can be hard or soft .
+a bread can be soft or hard .
+a bread can be tall or short .
+a car can be quiet or loud .
+a car can be short or tall .
+a car can be thick or thin .
+a coffee can be dirty or clean .
+a coffee can be early or late .
+a hill can be strong or weak .
+a hill can be tall or short .
+a hill can be warm or cool .
+a house can be hard or soft .
+a house can be weak or strong .
+a pillow can be low or high .
+a pillow can be rich or poor .
+a road can be poor or rich .
+a road can be quiet or noisy .
+a road can be square or round .
+a song can be long or short .
+a song can be old or young .
+a song can be young or old .
+a soup can be big or small .
+a soup can be clean or dirty .
+a stone can be hot or cold .
+a stone can be late or early .
+a stone can be poor or rich .
+a street can be dirty or clean .
+a street can be square or round .
+a tea can be round or square .
+a tea can be short or tall .
+a voice can be early or late .
+a voice can be low or high .
+a voice can be short or tall .
+a voice can be tall or short .
+a voice can be wet or dry .
+a water can be dark or bright .
+a water can be dry or wet .
+a water can be thin or thick .
+big and small are opposites .
+big is the opposite of small .
+big means not small .
+bright and dark are opposites .
+bright is the opposite of dark .
+bright means not dark .
+clean and dirty are opposites .
+clean is the opposite of dirty .
+clean means not dirty .
+closed and open are opposites .
+closed is the opposite of open .
+closed means not open .
+cold and hot are opposites .
+cold is the opposite of hot .
+cold means not hot .
+cool and warm are opposites .
+cool is the opposite of warm .
+cool means not warm .
+dark and bright are opposites .
+dark is the opposite of bright .
+dark means not bright .
+dirty and clean are opposites .
+dirty is the opposite of clean .
+dirty means not clean .
+dry and wet are opposites .
+dry is the opposite of wet .
+dry means not wet .
+early and late are opposites .
+early is the opposite of late .
+early means not late .
+empty and full are opposites .
+empty is the opposite of full .
+empty means not full .
+fast and slow are opposites .
+fast is the opposite of slow .
+fast means not slow .
+full and empty are opposites .
+full is the opposite of empty .
+full means not empty .
+hard and soft are opposites .
+hard is the opposite of soft .
+hard means not soft .
+heavy and light are opposites .
+heavy is the opposite of light .
+heavy means not light .
+high and low are opposites .
+high is the opposite of low .
+high means not low .
+hot and cold are opposites .
+hot is the opposite of cold .
+hot means not cold .
+if the bag is not new then it is old .
+if the bell is not bright then it is dark .
+if the bell is not cool then it is warm .
+if the bell is not heavy then it is light .
+if the bell is not high then it is low .
+if the bell is not short then it is long .
+if the bell is not thick then it is thin .
+if the box is not sweet then it is sour .
+if the bread is not full then it is empty .
+if the bread is not slow then it is fast .
+if the car is not empty then it is full .
+if the car is not low then it is high .
+if the car is not old then it is young .
+if the car is not small then it is big .
+if the coffee is not hard then it is soft .
+if the coffee is not poor then it is rich .
+if the hill is not dry then it is wet .
+if the house is not fast then it is slow .
+if the house is not long then it is short .
+if the house is not young then it is old .
+if the path is not clean then it is dirty .
+if the path is not warm then it is cool .
+if the pillow is not light then it is heavy .
+if the pillow is not loud then it is quiet .
+if the pillow is not quiet then it is noisy .
+if the road is not short then it is long .
+if the room is not dark then it is bright .
+if the room is not noisy then it is quiet .
+if the song is not bright then it is dark .
+if the soup is not noisy then it is quiet .
+if the soup is not old then it is new .
+if the soup is not wet then it is dry .
+if the stone is not high then it is low .
+if the street is not closed then it is open .
+if the voice is not big then it is small .
+if the voice is not old then it is young .
+if the water is not fast then it is slow .
+if the water is not soft then it is hard .
+if the water is not strong then it is weak .
+late and early are opposites .
+late is the opposite of early .
+late means not early .
+light and heavy are opposites .
+light is the opposite of heavy .
+light means not heavy .
+long and short are opposites .
+long is the opposite of short .
+long means not short .
+loud and quiet are opposites .
+loud is the opposite of quiet .
+loud means not quiet .
+low and high are opposites .
+low is the opposite of high .
+low means not high .
+new and old are opposites .
+new is the opposite of old .
+new means not old .
+noisy and quiet are opposites .
+noisy is the opposite of quiet .
+noisy means not quiet .
+old and new are opposites .
+old and young are opposites .
+old is the opposite of new .
+old is the opposite of young .
+old means not new .
+old means not young .
+open and closed are opposites .
+open is the opposite of closed .
+open means not closed .
+poor and rich are opposites .
+poor is the opposite of rich .
+poor means not rich .
+quiet and loud are opposites .
+quiet and noisy are opposites .
+quiet is the opposite of loud .
+quiet is the opposite of noisy .
+quiet means not loud .
+quiet means not noisy .
+rich and poor are opposites .
+rich is the opposite of poor .
+rich means not poor .
+round and square are opposites .
+round is the opposite of square .
+round means not square .
+short and long are opposites .
+short and tall are opposites .
+short is the opposite of long .
+short is the opposite of tall .
+short means not long .
+short means not tall .
+slow and fast are opposites .
+slow is the opposite of fast .
+slow means not fast .
+small and big are opposites .
+small is the opposite of big .
+small means not big .
+soft and hard are opposites .
+soft is the opposite of hard .
+soft means not hard .
+sour and sweet are opposites .
+sour is the opposite of sweet .
+sour means not sweet .
+square and round are opposites .
+square is the opposite of round .
+square means not round .
+strong and weak are opposites .
+strong is the opposite of weak .
+strong means not weak .
+sweet and sour are opposites .
+sweet is the opposite of sour .
+sweet means not sour .
+tall and short are opposites .
+tall is the opposite of short .
+tall means not short .
+the bag was closed but the path was open .
+the bag was rich but the coffee was poor .
+the bag was weak but the path was strong .
+the bell was warm but the box was cool .
+the box was empty but the coffee was full .
+the car was round but the cup was square .
+the coffee was quiet but the song was loud .
+the coffee was sour but the house was sweet .
+the cup was cold but the pillow was hot .
+the cup was cool but the road was warm .
+the cup was sour but the pillow was sweet .
+the hill was bright but the pillow was dark .
+the house was square but the coffee was round .
+the house was wet but the box was dry .
+the opposite of big is small .
+the opposite of bright is dark .
+the opposite of clean is dirty .
+the opposite of closed is open .
+the opposite of cold is hot .
+the opposite of cool is warm .
+the opposite of dark is bright .
+the opposite of dirty is clean .
+the opposite of dry is wet .
+the opposite of early is late .
+the opposite of fast is slow .
+the opposite of full is empty .
+the opposite of hard is soft .
+the opposite of heavy is light .
+the opposite of high is low .
+the opposite of late is early .
+the opposite of light is heavy .
+the opposite of long is short .
+the opposite of loud is quiet .
+the opposite of low is high .
+the opposite of new is old .
+the opposite of old is new .
+the opposite of old is young .
+the opposite of open is closed .
+the opposite of poor is rich .
+the opposite of quiet is loud .
+the opposite of quiet is noisy .
+the opposite of rich is poor .
+the opposite of round is square .
+the opposite of short is long .
+the opposite of short is tall .
+the opposite of slow is fast .
+the opposite of small is big .
+the opposite of soft is hard .
+the opposite of sour is sweet .
+the opposite of square is round .
+the opposite of strong is weak .
+the opposite of sweet is sour .
+the opposite of tall is short .
+the opposite of thick is thin .
+the opposite of thin is thick .
+the opposite of warm is cool .
+the opposite of weak is strong .
+the opposite of wet is dry .
+the opposite of young is old .
+the path was cool but the room was warm .
+the path was dirty but the bell was clean .
+the path was dry but the road was wet .
+the path was full but the bag was empty .
+the pillow was soft but the bag was hard .
+the road was high but the pillow was low .
+the room was sweet but the pillow was sour .
+the soup was dark but the hill was bright .
+the soup was thin but the song was thick .
+the street was thin but the bell was thick .
+the tea was big but the room was small .
+the tea was old but the pillow was new .
+the voice was loud but the song was quiet .
+the voice was slow but the bag was fast .
+the voice was thick but the street was thin .
+the water was empty but the stone was full .
+the water was round but the box was square .
+thick and thin are opposites .
+thick is the opposite of thin .
+thick means not thin .
+thin and thick are opposites .
+thin is the opposite of thick .
+thin means not thick .
+warm and cool are opposites .
+warm is the opposite of cool .
+warm means not cool .
+weak and strong are opposites .
+weak is the opposite of strong .
+weak means not strong .
+wet and dry are opposites .
+wet is the opposite of dry .
+wet means not dry .
+when the bag is clean it is not dirty .
+when the bell is hot it is not cold .
+when the bell is rich it is not poor .
+when the bell is small it is not big .
+when the box is light it is not heavy .
+when the bread is cold it is not hot .
+when the bread is fast it is not slow .
+when the bread is late it is not early .
+when the car is noisy it is not quiet .
+when the cup is new it is not old .
+when the hill is light it is not heavy .
+when the hill is quiet it is not noisy .
+when the hill is short it is not long .
+when the house is slow it is not fast .
+when the house is strong it is not weak .
+when the path is open it is not closed .
+when the path is small it is not big .
+when the pillow is cold it is not hot .
+when the room is closed it is not open .
+when the room is open it is not closed .
+when the room is weak it is not strong .
+when the song is loud it is not quiet .
+when the song is sour it is not sweet .
+when the stone is young it is not old .
+when the street is heavy it is not light .
+when the tea is heavy it is not light .
+when the tea is quiet it is not loud .
+when the voice is hot it is not cold .
+when the voice is late it is not early .
+when the voice is open it is not closed .
+young and old are opposites .
+young is the opposite of old .
+young means not old .

@@ -1,0 +1,812 @@
+a bird is busy .
+a bird is calm .
+a bird is quiet .
+a bird is wet .
+a cat is busy .
+a cat is cold .
+a cat is early .
+a cat is quiet .
+a cow is early .
+a cow is happy .
+a cow is hungry .
+a cow is quiet .
+a dog is asleep .
+a dog is awake .
+a dog is busy .
+a dog is clean .
+a duck is awake .
+a duck is late .
+a duck is warm .
+a duck is wet .
+a frog is calm .
+a frog is clean .
+a frog is happy .
+a frog is wet .
+a goat is clean .
+a goat is dry .
+a goat is small .
+a goat is warm .
+a hen is asleep .
+a hen is cold .
+a hen is dirty .
+a hen is dry .
+a horse is asleep .
+a horse is big .
+a horse is hungry .
+a horse is quiet .
+a lamb is awake .
+a lamb is busy .
+a lamb is happy .
+a lamb is warm .
+a pig is asleep .
+a pig is big .
+a pig is hungry .
+a pig is loud .
+a rabbit is big .
+a rabbit is busy .
+a rabbit is clean .
+a rabbit is dirty .
+every day he cleans to the farm .
+every day he cleans to the library .
+every day he cleans to the school .
+every day he cooks to the bank .
+every day he cooks to the library .
+every day he cooks to the school .
+every day he jumps to the hospital .
+every day he jumps to the park .
+every day he jumps to the station .
+every day he laughs to the farm .
+every day he laughs to the library .
+every day he laughs to the school .
+every day he listens to the library .
+every day he listens to the park .
+every day he listens to the school .
+every day he looks to the hospital .
+every day he looks to the park .
+every day he looks to the school .
+every day he plays to the beach .
+every day he plays to the hospital .
+every day he plays to the school .
+every day he rests to the farm .
+every day he rests to the station .
+every day he rests to the store .
+every day he talks to the beach .
+every day he talks to the hospital .
+every day he talks to the school .
+every day he waits to the market .
+every day he waits to the park .
+every day he waits to the store .
+every day he walks to the hospital .
+every day he walks to the market .
+every day he walks to the park .
+every day he works to the beach .
+every day he works to the kitchen .
+every day he works to the store .
+every day they clean to the farm .
+every day they clean to the library .
+every day they clean to the school .
+every day they cook to the bank .
+every day they cook to the library .
+every day they cook to the school .
+every day they jump to the hospital .
+every day they jump to the park .
+every day they jump to the station .
+every day they laugh to the farm .
+every day they laugh to the library .
+every day they laugh to the school .
+every day they listen to the library .
+every day they listen to the park .
+every day they listen to the school .
+every day they look to the hospital .
+every day they look to the park .
+every day they look to the school .
+every day they play to the beach .
+every day they play to the hospital .
+every day they play to the school .
+every day they rest to the farm .
+every day they rest to the station .
+every day they rest to the store .
+every day they talk to the beach .
+every day they talk to the hospital .
+every day they talk to the school .
+every day they wait to the market .
+every day they wait to the park .
+every day they wait to the store .
+every day they walk to the hospital .
+every day they walk to the market .
+every day they walk to the park .
+every day they work to the beach .
+every day they work to the kitchen .
+every day they work to the store .
+he is asleep today .
+he is awake today .
+he is big today .
+he is busy today .
+he is calm today .
+he is clean today .
+he is cold today .
+he is dirty today .
+he is dry today .
+he is early today .
+he is happy today .
+he is hungry today .
+he is late today .
+he is loud today .
+he is quiet today .
+he is ready today .
+he is small today .
+he is tired today .
+he is warm today .
+he is wet today .
+he was asleep yesterday .
+he was awake yesterday .
+he was big yesterday .
+he was busy yesterday .
+he was calm yesterday .
+he was clean yesterday .
+he was cold yesterday .
+he was dirty yesterday .
+he was dry yesterday .
+he was early yesterday .
+he was happy yesterday .
+he was hungry yesterday .
+he was late yesterday .
+he was loud yesterday .
+he was quiet yesterday .
+he was ready yesterday .
+he was small yesterday .
+he was tired yesterday .
+he was warm yesterday .
+he was wet yesterday .
+i am asleep today .
+i am awake today .
+i am big today .
+i am busy today .
+i am calm today .
+i am clean today .
+i am cold today .
+i am dirty today .
+i am dry today .
+i am early today .
+i am happy today .
+i am hungry today .
+i am late today .
+i am loud today .
+i am quiet today .
+i am ready today .
+i am small today .
+i am tired today .
+i am warm today .
+i am wet today .
+last week he cleaned to the farm .
+last week he cleaned to the library .
+last week he cleaned to the school .
+last week he cooked to the bank .
+last week he cooked to the library .
+last week he cooked to the school .
+last week he jumped to the hospital .
+last week he jumped to the park .
+last week he jumped to the station .
+last week he laughed to the farm .
+last week he laughed to the library .
+last week he laughed to the school .
+last week he listened to the library .
+last week he listened to the park .
+last week he listened to the school .
+last week he looked to the hospital .
+last week he looked to the park .
+last week he looked to the school .
+last week he played to the beach .
+last week he played to the hospital .
+last week he played to the school .
+last week he rested to the farm .
+last week he rested to the station .
+last week he rested to the store .
+last week he talked to the beach .
+last week he talked to the hospital .
+last week he talked to the school .
+last week he waited to the market .
+last week he waited to the park .
+last week he waited to the store .
+last week he walked to the hospital .
+last week he walked to the market .
+last week he walked to the park .
+last week he worked to the beach .
+last week he worked to the kitchen .
+last week he worked to the store .
+many birds are busy .
+many birds are calm .
+many birds are quiet .
+many birds are wet .
+many cats are busy .
+many cats are cold .
+many cats are early .
+many cats are quiet .
+many cows are early .
+many cows are happy .
+many cows are hungry .
+many cows are quiet .
+many dogs are asleep .
+many dogs are awake .
+many dogs are busy .
+many dogs are clean .
+many ducks are awake .
+many ducks are late .
+many ducks are warm .
+many ducks are wet .
+many frogs are calm .
+many frogs are clean .
+many frogs are happy .
+many frogs are wet .
+many goats are clean .
+many goats are dry .
+many goats are small .
+many goats are warm .
+many hens are asleep .
+many hens are cold .
+many hens are dirty .
+many hens are dry .
+many horses are asleep .
+many horses are big .
+many horses are hungry .
+many horses are quiet .
+many lambs are awake .
+many lambs are busy .
+many lambs are happy .
+many lambs are warm .
+many pigs are asleep .
+many pigs are big .
+many pigs are hungry .
+many pigs are loud .
+many rabbits are big .
+many rabbits are busy .
+many rabbits are clean .
+many rabbits are dirty .
+one cat is busy .
+one cat is cold .
+one cat is early .
+one cat is quiet .
+one cat was busy yesterday .
+one cat was cold yesterday .
+one cat was early yesterday .
+one cat was quiet yesterday .
+one cow is early .
+one cow is happy .
+one cow is hungry .
+one cow is quiet .
+one cow was early yesterday .
+one cow was happy yesterday .
+one cow was hungry yesterday .
+one cow was quiet yesterday .
+one dog is asleep .
+one dog is awake .
+one dog is busy .
+one dog is clean .
+one dog was asleep yesterday .
+one dog was awake yesterday .
+one dog was busy yesterday .
+one dog was clean yesterday .
+one duck is awake .
+one duck is late .
+one duck is warm .
+one duck is wet .
+one duck was awake yesterday .
+one duck was late yesterday .
+one duck was warm yesterday .
+one duck was wet yesterday .
+one frog is calm .
+one frog is clean .
+one frog is happy .
+one frog is wet .
+one frog was calm yesterday .
+one frog was clean yesterday .
+one frog was happy yesterday .
+one frog was wet yesterday .
+one goat is clean .
+one goat is dry .
+one goat is small .
+one goat is warm .
+one goat was clean yesterday .
+one goat was dry yesterday .
+one goat was small yesterday .
+one goat was warm yesterday .
+one hen is asleep .
+one hen is cold .
+one hen is dirty .
+one hen is dry .
+one hen was asleep yesterday .
+one hen was cold yesterday .
+one hen was dirty yesterday .
+one hen was dry yesterday .
+one horse is asleep .
+one horse is big .
+one horse is hungry .
+one horse is quiet .
+one horse was asleep yesterday .
+one horse was big yesterday .
+one horse was hungry yesterday .
+one horse was quiet yesterday .
+one lamb is awake .
+one lamb is busy .
+one lamb is happy .
+one lamb is warm .
+one lamb was awake yesterday .
+one lamb was busy yesterday .
+one lamb was happy yesterday .
+one lamb was warm yesterday .
+one pig is asleep .
+one pig is big .
+one pig is hungry .
+one pig is loud .
+one pig was asleep yesterday .
+one pig was big yesterday .
+one pig was hungry yesterday .
+one pig was loud yesterday .
+one rabbit is big .
+one rabbit is busy .
+one rabbit is clean .
+one rabbit is dirty .
+one rabbit was big yesterday .
+one rabbit was busy yesterday .
+one rabbit was clean yesterday .
+one rabbit was dirty yesterday .
+she cleaned at the farm yesterday .
+she cleaned at the library yesterday .
+she cleaned at the school yesterday .
+she cooked at the bank yesterday .
+she cooked at the library yesterday .
+she cooked at the school yesterday .
+she is asleep today .
+she is awake today .
+she is big today .
+she is busy today .
+she is calm today .
+she is clean today .
+she is cleaning at the farm now .
+she is cleaning at the library now .
+she is cleaning at the school now .
+she is cold today .
+she is cooking at the bank now .
+she is cooking at the library now .
+she is cooking at the school now .
+she is dirty today .
+she is dry today .
+she is early today .
+she is happy today .
+she is hungry today .
+she is jumping at the hospital now .
+she is jumping at the park now .
+she is jumping at the station now .
+she is late today .
+she is laughing at the farm now .
+she is laughing at the library now .
+she is laughing at the school now .
+she is listening at the library now .
+she is listening at the park now .
+she is listening at the school now .
+she is looking at the hospital now .
+she is looking at the park now .
+she is looking at the school now .
+she is loud today .
+she is playing at the beach now .
+she is playing at the hospital now .
+she is playing at the school now .
+she is quiet today .
+she is ready today .
+she is resting at the farm now .
+she is resting at the station now .
+she is resting at the store now .
+she is small today .
+she is talking at the beach now .
+she is talking at the hospital now .
+she is talking at the school now .
+she is tired today .
+she is waiting at the market now .
+she is waiting at the park now .
+she is waiting at the store now .
+she is walking at the hospital now .
+she is walking at the market now .
+she is walking at the park now .
+she is warm today .
+she is wet today .
+she is working at the beach now .
+she is working at the kitchen now .
+she is working at the store now .
+she jumped at the hospital yesterday .
+she jumped at the park yesterday .
+she jumped at the station yesterday .
+she laughed at the farm yesterday .
+she laughed at the library yesterday .
+she laughed at the school yesterday .
+she listened at the library yesterday .
+she listened at the park yesterday .
+she listened at the school yesterday .
+she looked at the hospital yesterday .
+she looked at the park yesterday .
+she looked at the school yesterday .
+she played at the beach yesterday .
+she played at the hospital yesterday .
+she played at the school yesterday .
+she rested at the farm yesterday .
+she rested at the station yesterday .
+she rested at the store yesterday .
+she talked at the beach yesterday .
+she talked at the hospital yesterday .
+she talked at the school yesterday .
+she waited at the market yesterday .
+she waited at the park yesterday .
+she waited at the store yesterday .
+she walked at the hospital yesterday .
+she walked at the market yesterday .
+she walked at the park yesterday .
+she worked at the beach yesterday .
+she worked at the kitchen yesterday .
+she worked at the store yesterday .
+the bird is busy .
+the bird is calm .
+the bird is quiet .
+the bird is wet .
+the birds are busy .
+the birds are calm .
+the birds are quiet .
+the birds are wet .
+the birds were busy yesterday .
+the birds were calm yesterday .
+the birds were quiet yesterday .
+the birds were wet yesterday .
+the cat is busy .
+the cat is cold .
+the cat is early .
+the cat is quiet .
+the cats are busy .
+the cats are cold .
+the cats are early .
+the cats are quiet .
+the cats were busy yesterday .
+the cats were cold yesterday .
+the cats were early yesterday .
+the cats were quiet yesterday .
+the cow is early .
+the cow is happy .
+the cow is hungry .
+the cow is quiet .
+the cows are early .
+the cows are happy .
+the cows are hungry .
+the cows are quiet .
+the cows were early yesterday .
+the cows were happy yesterday .
+the cows were hungry yesterday .
+the cows were quiet yesterday .
+the dog is asleep .
+the dog is awake .
+the dog is busy .
+the dog is clean .
+the duck is awake .
+the duck is late .
+the duck is warm .
+the duck is wet .
+the ducks are awake .
+the ducks are late .
+the ducks are warm .
+the ducks are wet .
+the ducks were awake yesterday .
+the ducks were late yesterday .
+the ducks were warm yesterday .
+the ducks were wet yesterday .
+the frog is calm .
+the frog is clean .
+the frog is happy .
+the frog is wet .
+the frogs are calm .
+the frogs are clean .
+the frogs are happy .
+the frogs are wet .
+the frogs were calm yesterday .
+the frogs were clean yesterday .
+the frogs were happy yesterday .
+the frogs were wet yesterday .
+the goat is clean .
+the goat is dry .
+the goat is small .
+the goat is warm .
+the goats are clean .
+the goats are dry .
+the goats are small .
+the goats are warm .
+the goats were clean yesterday .
+the goats were dry yesterday .
+the goats were small yesterday .
+the goats were warm yesterday .
+the hen is asleep .
+the hen is cold .
+the hen is dirty .
+the hen is dry .
+the hens are asleep .
+the hens are cold .
+the hens are dirty .
+the hens are dry .
+the hens were asleep yesterday .
+the hens were cold yesterday .
+the hens were dirty yesterday .
+the hens were dry yesterday .
+the horse is asleep .
+the horse is big .
+the horse is hungry .
+the horse is quiet .
+the horses are asleep .
+the horses are big .
+the horses are hungry .
+the horses are quiet .
+the horses were asleep yesterday .
+the horses were big yesterday .
+the horses were hungry yesterday .
+the horses were quiet yesterday .
+the lamb is awake .
+the lamb is busy .
+the lamb is happy .
+the lamb is warm .
+the lambs are awake .
+the lambs are busy .
+the lambs are happy .
+the lambs are warm .
+the lambs were awake yesterday .
+the lambs were busy yesterday .
+the lambs were happy yesterday .
+the lambs were warm yesterday .
+the pig is asleep .
+the pig is big .
+the pig is hungry .
+the pig is loud .
+the pigs are asleep .
+the pigs are big .
+the pigs are hungry .
+the pigs are loud .
+the pigs were asleep yesterday .
+the pigs were big yesterday .
+the pigs were hungry yesterday .
+the pigs were loud yesterday .
+the rabbit is big .
+the rabbit is busy .
+the rabbit is clean .
+the rabbit is dirty .
+the rabbits are big .
+the rabbits are busy .
+the rabbits are clean .
+the rabbits are dirty .
+the rabbits were big yesterday .
+the rabbits were busy yesterday .
+the rabbits were clean yesterday .
+the rabbits were dirty yesterday .
+they are cleaning at the farm now .
+they are cleaning at the library now .
+they are cleaning at the school now .
+they are cooking at the bank now .
+they are cooking at the library now .
+they are cooking at the school now .
+they are jumping at the hospital now .
+they are jumping at the park now .
+they are jumping at the station now .
+they are laughing at the farm now .
+they are laughing at the library now .
+they are laughing at the school now .
+they are listening at the library now .
+they are listening at the park now .
+they are listening at the school now .
+they are looking at the hospital now .
+they are looking at the park now .
+they are looking at the school now .
+they are playing at the beach now .
+they are playing at the hospital now .
+they are playing at the school now .
+they are resting at the farm now .
+they are resting at the station now .
+they are resting at the store now .
+they are talking at the beach now .
+they are talking at the hospital now .
+they are talking at the school now .
+they are waiting at the market now .
+they are waiting at the park now .
+they are waiting at the store now .
+they are walking at the hospital now .
+they are walking at the market now .
+they are walking at the park now .
+they are working at the beach now .
+they are working at the kitchen now .
+they are working at the store now .
+they were asleep yesterday .
+they were awake yesterday .
+they were big yesterday .
+they were busy yesterday .
+they were calm yesterday .
+they were clean yesterday .
+they were cold yesterday .
+they were dirty yesterday .
+they were dry yesterday .
+they were early yesterday .
+they were happy yesterday .
+they were hungry yesterday .
+they were late yesterday .
+they were loud yesterday .
+they were quiet yesterday .
+they were ready yesterday .
+they were small yesterday .
+they were tired yesterday .
+they were warm yesterday .
+they were wet yesterday .
+today she cleans at the farm .
+today she cleans at the library .
+today she cleans at the school .
+today she cooks at the bank .
+today she cooks at the library .
+today she cooks at the school .
+today she jumps at the hospital .
+today she jumps at the park .
+today she jumps at the station .
+today she laughs at the farm .
+today she laughs at the library .
+today she laughs at the school .
+today she listens at the library .
+today she listens at the park .
+today she listens at the school .
+today she looks at the hospital .
+today she looks at the park .
+today she looks at the school .
+today she plays at the beach .
+today she plays at the hospital .
+today she plays at the school .
+today she rests at the farm .
+today she rests at the station .
+today she rests at the store .
+today she talks at the beach .
+today she talks at the hospital .
+today she talks at the school .
+today she waits at the market .
+today she waits at the park .
+today she waits at the store .
+today she walks at the hospital .
+today she walks at the market .
+today she walks at the park .
+today she works at the beach .
+today she works at the kitchen .
+today she works at the store .
+today we clean at the farm .
+today we clean at the library .
+today we clean at the school .
+today we cook at the bank .
+today we cook at the library .
+today we cook at the school .
+today we jump at the hospital .
+today we jump at the park .
+today we jump at the station .
+today we laugh at the farm .
+today we laugh at the library .
+today we laugh at the school .
+today we listen at the library .
+today we listen at the park .
+today we listen at the school .
+today we look at the hospital .
+today we look at the park .
+today we look at the school .
+today we play at the beach .
+today we play at the hospital .
+today we play at the school .
+today we rest at the farm .
+today we rest at the station .
+today we rest at the store .
+today we talk at the beach .
+today we talk at the hospital .
+today we talk at the school .
+today we wait at the market .
+today we wait at the park .
+today we wait at the store .
+today we walk at the hospital .
+today we walk at the market .
+today we walk at the park .
+today we work at the beach .
+today we work at the kitchen .
+today we work at the store .
+two birds are busy .
+two birds are calm .
+two birds are quiet .
+two birds are wet .
+two cats are busy .
+two cats are cold .
+two cats are early .
+two cats are quiet .
+two cows are early .
+two cows are happy .
+two cows are hungry .
+two cows are quiet .
+two dogs are asleep .
+two dogs are awake .
+two dogs are busy .
+two dogs are clean .
+two ducks are awake .
+two ducks are late .
+two ducks are warm .
+two ducks are wet .
+two frogs are calm .
+two frogs are clean .
+two frogs are happy .
+two frogs are wet .
+two goats are clean .
+two goats are dry .
+two goats are small .
+two goats are warm .
+two hens are asleep .
+two hens are cold .
+two hens are dirty .
+two hens are dry .
+two horses are asleep .
+two horses are big .
+two horses are hungry .
+two horses are quiet .
+two lambs are awake .
+two lambs are busy .
+two lambs are happy .
+two lambs are warm .
+two pigs are asleep .
+two pigs are big .
+two pigs are hungry .
+two pigs are loud .
+two rabbits are big .
+two rabbits are busy .
+two rabbits are clean .
+two rabbits are dirty .
+we are asleep today .
+we are awake today .
+we are big today .
+we are busy today .
+we are calm today .
+we are clean today .
+we are cold today .
+we are dirty today .
+we are dry today .
+we are early today .
+we are happy today .
+we are hungry today .
+we are late today .
+we are loud today .
+we are quiet today .
+we are ready today .
+we are small today .
+we are tired today .
+we are warm today .
+we are wet today .
+yesterday he cooked at the library .
+yesterday i looked at the park .
+yesterday i waited at the market .
+yesterday the driver cooked at the bank .
+yesterday the driver jumped at the hospital .
+yesterday the driver laughed at the farm .
+yesterday the driver laughed at the school .
+yesterday the driver played at the school .
+yesterday the driver talked at the hospital .
+yesterday the driver walked at the hospital .
+yesterday the driver walked at the market .
+yesterday the driver walked at the park .
+yesterday the driver worked at the kitchen .
+yesterday the driver worked at the store .
+yesterday the nurse cleaned at the farm .
+yesterday the nurse jumped at the station .
+yesterday the nurse rested at the store .
+yesterday the nurse waited at the store .
+yesterday the teacher cleaned at the school .
+yesterday the teacher jumped at the park .
+yesterday the teacher laughed at the library .
+yesterday the teacher played at the beach .
+yesterday the teacher played at the hospital .
+yesterday the teacher rested at the farm .
+yesterday the teacher talked at the beach .
+yesterday the teacher waited at the park .
+yesterday they cooked at the school .
+yesterday they listened at the park .
+yesterday they looked at the school .
+yesterday they rested at the station .
+yesterday they worked at the beach .
+yesterday we cleaned at the library .
+yesterday we listened at the library .
+yesterday we listened at the school .
+yesterday we looked at the hospital .
+yesterday we talked at the school .

@@ -999,227 +999,49 @@ If you can write those three sentences, you can explain the core mechanism of ev
 - Changing the query changes the weights.
 - You can connect the toy example to a sentence in an LLM.
 
-# Assignment 3: Train Your Own Small Language Model
+# Assignment 3: Train Your Own Tiny LLM
 
-## Build a GPT From Scratch
+Note: the course site's deck was revised after this copy was first pulled on 2026-09-13, when this section described building a character-level GPT from scratch. The slides below are the section as it read on 2026-09-21, and the full brief is in [assignment-03/ASSIGNMENT.md](assignment-03/ASSIGNMENT.md).
 
-**Important**
+**[1. Assignment Doc ↗](https://docs.google.com/document/d/1MQ3YQl2ywWZF7W5_l_91FiIp7pTYPO_3viI2JVapRcc/edit?tab=t.0#heading=h.2bt0qteg90iz)** Read the requirements.
 
-**Write a transformer from scratch and train it into a working language model** — every component on today’s slides, as code you can point at, on a corpus you choose.
+**[2. Code Repository ↗](https://github.com/pepealonso95/custom-llm)** Get the starter and examples.
 
-- Implement a **character-level GPT** in PyTorch: embeddings, positional encoding, multi-head causal self-attention, residual connections, LayerNorm
-- **Auto-detect your hardware** — Apple Silicon (MPS), NVIDIA GPU (CUDA), or CPU — the same `device.py` pattern as Pac-Man
-- Train on **any plain-text corpus you pick**, ~100KB to 2MB
-- At fixed steps, **write a text sample to disk** — so `samples/` becomes a timeline of the model learning English
-- Plot train vs validation loss and read the gap
-- No cloud, no API key — **runs entirely on your laptop**
+**[3. Open in Colab ↗](https://colab.research.google.com/github/pepealonso95/custom-llm/blob/main/custom_llm.ipynb)** Save a copy and run it.
 
-Last week you trained an agent to *act*. This week you train a model to *speak* — and the whole thing is about 200 lines of code you wrote.
+**Your task:** choose text, train the supplied tiny language model, and explain what changed using your own outputs.
 
-## This Is What Step 0 Looks Like
+- **Start with:** the classroom corpus, **3,000 steps**, learning rate **0.001**.
+- **Hand in:** one public GitHub repository with your executed notebook, results, and README.
 
-Before any training, the model samples characters at random from its vocabulary. This is what a transformer with random weights “writes”:
+The notebook supplies the model. A CPU is enough; no model API is needed.
 
-    WtjV'V$
-    -iD ;VqC',S:DHIc:SixyeFh3LCCtda-CFugTrsvKKM,nDHDkR M;vXokvHR?mP
-    zAVryEPPzqPcJ mzWUNV:HT3g-IJclY.IgfC'Vj;V hCmLE.Nqxo
+## Run It, Then Inspect What Changed
 
-By step 5000, the same model — same architecture, same code, only the weights changed — writes lines with words, punctuation, and dialogue structure. Your job: make that happen, and keep the receipts.
+1. **Choose and predict.** Use the classroom text or add your own corpus. Set the steps and learning rate; write what you expect to happen.
+2. **Train.** Try **10 steps** to check setup, then **3,000** as a starting budget. Select **Run All** and let the notebook finish.
+3. **Compare.** Look at the untrained, halfway, and final samples, both loss curves, and the temperature comparison.
 
-## Setup
+**Tip**
 
-``` bash
-mkdir tiny-gpt
-cd tiny-gpt
+**Follow one real example:** word → token ID → embedding → next-token prediction. Show one gradient and weight update, then compare the vector and prediction after training.
 
-# Pick one:
-claude --dangerously-skip-permissions   # Claude Code
-codex --yolo                            # OpenAI Codex
-```
+Keep the data split and baseline generation settings fixed so the comparison is fair.
 
-**Note**
+## Submit One Repository with Visible Evidence
 
-**Requires Python 3.10+.** No dataset download, no API key, no account — just PyTorch and a text file.
+- **Executed notebook:** save after the final run, with all outputs visible.
+- **Results:** before / halfway / final samples, training + validation loss plot and table, and the temperature comparison.
+- **README:** record your corpus and settings; use actual values to explain tokens, embeddings, attention, predictions, and a weight update. Finish with **one limitation and one next experiment**.
 
-**Installing PyTorch for your platform**
+**In Colab:** download the results ZIP **and** the executed notebook separately. Add the notebook, README, and selected evidence to your public repository.
 
-- **macOS (Apple Silicon):** `pip install torch` — MPS support is built-in since PyTorch 2.0
-- **Linux (NVIDIA GPU):** `pip install torch --index-url https://download.pytorch.org/whl/cu121`
-- **Windows / CPU:** `pip install torch`
-
-Same install as Pac-Man. If you already have it, you’re ready.
-
-## Pick Your Corpus
-
-The model learns the statistics of whatever text you give it. Choose something you will recognize in the output:
-
-- **Tiny Shakespeare** (~1.1MB, the default) — every line of dialogue in the plays, and the standard benchmark for this exact build
-- **A public-domain book** from Project Gutenberg — pick an author with a voice you know
-- **Your own writing** — essays, notes, emails you have exported
-- **Transcripts** — earnings calls, podcasts, or interview notes in your industry
-
-Aim for **100KB–2MB of plain text**. Below that it memorizes; far above it and you will not finish training tonight.
-
-**Warning**
-
-Use a corpus you can inspect and are free to use. **No confidential, proprietary, or personal data** — same rule as the Knowledge Hub in Class 5.
-
-## The Prompt
-
-Paste this into Claude Code (click **Copy** then paste):
-
-Copy
-
-/plan Build a small GPT language model from scratch and train it.\
-Use Python and PyTorch only — no Hugging Face, no pretrained\
-weights, no transformers library. The point is that every part of\
-the architecture is written out in our own code. This runs locally\
-on the student's laptop.\
-\
-Stack:\
-- PyTorch (detect and use best available device)\
-- matplotlib for the loss curves\
-- requests (only to download the default corpus)\
-\
-The project should have these files:\
-\
-1. device.py — Device detection module:\
-   - Detect OS via platform.system() (macOS, Linux, Windows)\
-   - Detect best torch device: CUDA (NVIDIA GPU) → MPS (Apple\
-     Silicon) → CPU\
-   - Print a startup banner: OS, device type, torch version\
-   - Export a DEVICE variable used by all other modules\
-   - If only CPU is available, print a warning recommending the\
-     small config (see config.py)\
-\
-2. config.py — All hyperparameters in one place, with two presets:\
-   - DEFAULT (GPU/MPS): n_layer=6, n_head=6, n_embd=384,\
-     block_size=256, batch_size=64, lr=3e-4, dropout=0.2,\
-     max_steps=5000   (~10M parameters)\
-   - SMALL (CPU): n_layer=4, n_head=4, n_embd=128,\
-     block_size=128, batch_size=32, lr=3e-4, dropout=0.1,\
-     max_steps=3000\
-   - Select via a --config flag, defaulting to DEFAULT when a\
-     GPU or MPS device is detected and SMALL otherwise\
-   - Print the resulting parameter count at startup\
-\
-3. data.py — Corpus handling:\
-   - Load a plain-text file from data/input.txt\
-   - If it is missing, download Tiny Shakespeare into it\
-   - Build the character vocabulary (sorted set of characters)\
-   - encode(str) -\> list\[int\] and decode(list\[int\]) -\> str\
-   - 90/10 train/validation split\
-   - get_batch(split) returning random (x, y) tensors of shape\
-     (batch_size, block_size) on the detected device\
-\
-4. model.py — The GPT itself, written out explicitly. Do NOT use\
-   nn.Transformer or nn.MultiheadAttention — implement these:\
-   - Token embedding table (vocab_size, n_embd)\
-   - Learned positional embedding table (block_size, n_embd)\
-   - Head: linear key/query/value projections, scaled dot-product\
-     attention (scores @ / sqrt(head_size)), a causal mask via\
-     tril so a position can never see the future, softmax, dropout,\
-     weighted sum of values\
-   - MultiHeadAttention: n_head heads in parallel, concatenated,\
-     then a projection\
-   - FeedForward: Linear(n_embd, 4\*n_embd) -\> ReLU -\>\
-     Linear(4\*n_embd, n_embd) -\> dropout\
-   - Block: x = x + attention(layernorm(x)); x = x + ffwd(layernorm(x))\
-     — keep the residual additions on their own lines with a comment\
-     naming them, and use pre-norm LayerNorm\
-   - GPT: embeddings -\> n_layer Blocks -\> final LayerNorm -\>\
-     Linear to vocab logits; cross-entropy loss when targets given\
-   - generate(idx, max_new_tokens, temperature=1.0): crop context\
-     to block_size, take the last position's logits, divide by\
-     temperature, softmax, multinomial sample, append, repeat\
-\
-5. train.py — Training loop:\
-   - Print the device banner and parameter count at startup\
-   - AdamW optimizer\
-   - Every eval_interval steps, estimate mean train AND validation\
-     loss over several batches (model.eval() / model.train())\
-     and append both to a history list\
-   - BEFORE the first optimizer step, write a sample from the\
-     UNTRAINED model to samples/step_0000.txt so the student sees\
-     pure noise first\
-   - Write a 500-character sample to samples/step_XXXX.txt at\
-     steps 0, 500, 2000, and max_steps\
-   - Save checkpoints to checkpoints/ (model state, config, vocab)\
-   - Save the loss history to a JSON file for plot.py\
-   - On Ctrl+C: save a checkpoint, write a final sample, exit cleanly\
-\
-6. generate.py — Load a checkpoint and write new text:\
-   - --checkpoint, --tokens (default 1000), and --temperature\
-     (default 0.8) flags\
-   - Print the sample to stdout\
-   - Include a --compare flag that prints the same prompt sampled\
-     at temperature 0.2, 0.8, and 1.5 side by side\
-\
-7. plot.py — Save training_curves.png:\
-   - Train loss and validation loss on the same axes vs step\
-   - Annotate the step where validation loss stops improving,\
-     if it does\
-\
-Include requirements.txt.\
-Include README.md with:\
-- Platform-specific install instructions\
-- How to swap in your own corpus (drop a .txt at data/input.txt)\
-- How to train: python train.py\
-- How to generate: python generate.py --temperature 0.8\
-- How to plot: python plot.py\
-- Expected sample quality at each checkpoint\
-- Estimated training times by device\
-\
-IMPORTANT: model.py must be readable line by line — a student\
-should be able to point at the attention computation, the\
-positional embedding, and a residual connection. Add short\
-comments naming each one. The samples/ folder is the key\
-deliverable: it is the model learning to write, on disk.\
-
-## What to Expect
-
-**Training times by device**
-
-| Device                  | Config                | Estimated time |
-|-------------------------|-----------------------|----------------|
-| **NVIDIA GPU (CUDA)**   | default (~10M params) | ~10–15 minutes |
-| **Apple Silicon (MPS)** | default (~10M params) | ~20–35 minutes |
-| **CPU only**            | small (~1M params)    | ~30–60 minutes |
-
-What lands in `samples/` along the way:
-
-- **Step 0:** Pure noise. Random characters, random spacing.
-- **Step 500:** Spacing and line breaks are already right. Common short words appear — *the, and, is* — while longer words are still garbled.
-- **Step 2000:** Most words are real and correctly spelled. Speaker names and punctuation land in plausible places.
-- **Step 5000:** Lines with structure — sentences that nearly parse, and dialogue that looks like the source.
-
-**Note**
-
-**Why this matters:** Nobody taught it spelling, or that a space follows a period, or that `ROMEO:` starts a line. It learned all of it from **next-character prediction alone** — the scaling hypothesis from earlier today, at a scale you can watch on a laptop. GPT-4 is this file with more layers, more data, and a hundred million dollars of compute.
-
-## Definition of Done
-
-- **Samples from at least three checkpoints**, showing the progression from noise to structure
-- **`training_curves.png`**, plus one sentence on whether train and validation loss diverged — and what that told you
-- You can **point at the lines in `model.py`** that are the attention computation, the positional embedding, and a residual connection
-- You can explain, in plain English, **why long words are still garbled at step 500** when short ones are already correct
-- You can say what changed when you moved the **temperature** dial, and why
-
-## Go Further — Optional, Ungraded
-
-Two experiments if you want to keep pulling the thread:
-
-- **Swap the tokenizer.** Replace characters with the BPE vocabulary from earlier today. Same step count, bigger vocabulary, much longer effective context — compare the samples.
-- **Sketch the scaling law.** Train the small config and the default config on the same corpus, then plot final validation loss against parameter count. Two points is not a law, but it is the same curve Kaplan and Chinchilla drew.
-
-## Submit Your Assignment
-
-**[→ Submit your homework](https://submissions-portal-eight.vercel.app)** — sign in with GitHub, submit your GitHub repo URL. Include your `samples/` timeline and your `training_curves.png`.
+**Submit your GitHub repository URL through the Class 4 assignment on bCourses.**
 
 ## Thank You & What’s Next
 
-Thank you for being here — giving up your personal time to learn this. It matters, and it will pay off.
+Thank you for being here: giving up your personal time to learn this. It matters, and it will pay off.
 
-You now have the full picture of **how** these models work — neurons, backprop, embeddings, attention, transformers, scale — and by next week you will have **built one**. Next class we stop studying the machinery and start **using** it, at the other end of the scale: why prompts work, why they fail, how context windows behave, and how retrieval gives a model grounded information it can actually cite. That `--temperature` flag in your `generate.py` is where we pick up.
+You have seen the pieces of a language model: neurons, learning, embeddings, attention, and transformers. The assignment connects those pieces in a tiny model you can train and inspect. Next class we use larger models: why prompts work, why they fail, how context windows behave, and how retrieval supplies information a model can cite. Your notebook’s temperature comparison is where we pick up.
 
 **[Next: Class 5 — LLM Behavior, Prompting & Retrieval →](https://haas-ai-classes-fall-26.vercel.app/class5.html)**

@@ -63,18 +63,18 @@ Where single agents hit walls. The three axes of "more than one": specialization
 
 ## Assignments
 
-Times are Pacific. Status is as of 2026-09-13.
+Times are Pacific. Status is as of 2026-09-21.
 
 | Assignment | Due | Points | Status | Prompt |
 | --- | --- | --- | --- | --- |
-| [Assignment 1](https://bcourses.berkeley.edu/courses/1555592/assignments/9130917) | 9/8, 11:59 PM | 10 | Submitted 9/8, 11:24 PM, not graded yet | [assignment-01/ASSIGNMENT.md](assignment-01/ASSIGNMENT.md) |
-| [Assignment 2](https://bcourses.berkeley.edu/courses/1555592/assignments/9130935) | 9/15, 11:59 PM | 10 | Unsubmitted | [assignment-02/ASSIGNMENT.md](assignment-02/ASSIGNMENT.md) |
-| [Assignment 3](https://bcourses.berkeley.edu/courses/1555592/assignments/9130938) | 9/22, 11:59 PM | 10 | Unsubmitted | No description posted yet |
+| [Assignment 1](https://bcourses.berkeley.edu/courses/1555592/assignments/9130917) | 9/8, 11:59 PM | 10 | Submitted 9/8, 11:24 PM, not graded as of 9/21 | [assignment-01/ASSIGNMENT.md](assignment-01/ASSIGNMENT.md) |
+| [Assignment 2](https://bcourses.berkeley.edu/courses/1555592/assignments/9130935) | 9/15, 11:59 PM | 10 | Submitted 9/14, 12:53 AM, not graded as of 9/21 | [assignment-02/ASSIGNMENT.md](assignment-02/ASSIGNMENT.md) |
+| [Assignment 3](https://bcourses.berkeley.edu/courses/1555592/assignments/9130938) | 9/22, 11:59 PM | 10 | Work in [assignment-03/](assignment-03/), unsubmitted as of 9/21 | [assignment-03/ASSIGNMENT.md](assignment-03/ASSIGNMENT.md) |
 | [Assignment 4](https://bcourses.berkeley.edu/courses/1555592/assignments/9130939) | 9/29, 11:59 PM | 10 | Unsubmitted | No description posted yet |
 | [Assignment 5](https://bcourses.berkeley.edu/courses/1555592/assignments/9130940) | 10/13, 11:59 PM | 20 | Unsubmitted | No description posted yet |
 | [Academic Integrity Assignment](https://bcourses.berkeley.edu/courses/1555592/assignments/9145855) | 9/26, 12:59 AM | 1 (not counted) | Unsubmitted | Completed through the Academic Integrity tool in the bCourses course nav |
 
-All five numbered assignments are submitted as a URL.
+All five numbered assignments are submitted as a URL. The Assignment 3 brief was posted as a Google Doc after 9/13 and revised on 9/16, when a bCourses announcement added the 48 fixed evals and the chat interface, and the Class 4 deck's assignment slides changed with it, so the section at the end of [class4.md](class4.md) was refreshed on 9/21.
 
 ## What bCourses has that isn't here
 

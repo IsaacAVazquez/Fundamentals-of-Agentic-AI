@@ -1,0 +1,146 @@
+{
+  "customer": {
+    "token_id": 28,
+    "cosine_before_vs_after": 0.197,
+    "neighbors_before": [
+      [
+        "bus",
+        0.213
+      ],
+      [
+        "educator",
+        0.203
+      ],
+      [
+        "helped",
+        0.202
+      ],
+      [
+        "bank",
+        0.201
+      ],
+      [
+        "risk",
+        0.198
+      ]
+    ],
+    "neighbors_after": [
+      [
+        "shopper",
+        0.978
+      ],
+      [
+        "client",
+        0.977
+      ],
+      [
+        "buyer",
+        0.977
+      ],
+      [
+        "subscriber",
+        0.971
+      ],
+      [
+        "consumer",
+        0.97
+      ]
+    ]
+  },
+  "surgeon": {
+    "token_id": 112,
+    "cosine_before_vs_after": 0.349,
+    "neighbors_before": [
+      [
+        "local",
+        0.31
+      ],
+      [
+        "route",
+        0.292
+      ],
+      [
+        "checking",
+        0.286
+      ],
+      [
+        "selected",
+        0.286
+      ],
+      [
+        "our",
+        0.271
+      ]
+    ],
+    "neighbors_after": [
+      [
+        "dentist",
+        0.964
+      ],
+      [
+        "physician",
+        0.958
+      ],
+      [
+        "nurse",
+        0.958
+      ],
+      [
+        "doctor",
+        0.957
+      ],
+      [
+        "therapist",
+        0.95
+      ]
+    ]
+  },
+  "mango": {
+    "token_id": 64,
+    "cosine_before_vs_after": 0.399,
+    "neighbors_before": [
+      [
+        "different",
+        0.296
+      ],
+      [
+        "product",
+        0.21
+      ],
+      [
+        "consumer",
+        0.201
+      ],
+      [
+        "system",
+        0.2
+      ],
+      [
+        "bank",
+        0.193
+      ]
+    ],
+    "neighbors_after": [
+      [
+        "peach",
+        0.973
+      ],
+      [
+        "banana",
+        0.968
+      ],
+      [
+        "orange",
+        0.963
+      ],
+      [
+        "pear",
+        0.963
+      ],
+      [
+        "apple",
+        0.957
+      ]
+    ]
+  }
+}
