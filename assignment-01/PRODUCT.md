@@ -22,7 +22,7 @@ Every account sees only its own contacts, and that promise is enforced inside Po
 
 ## Operating Context
 
-Sign up, sign in, and sign out run on email and password through Neon's managed Better Auth, proxied through the app's own `/api/auth` route so the session cookie is first party. Contacts are read and written from the browser straight to the Neon Data API with a short lived JWT. The list sorts by name, company, priority, or date added, filters by search text and by priority, and add and edit happen in a dialog. Delete asks for confirmation. Below 768px the table stacks into labeled cards. The app is deployed on Vercel at https://networking-tracker-lyart.vercel.app and graded from that alias. The README in this directory is the written companion the grader reads alongside the app.
+Sign up, sign in, and sign out run on email and password through Neon's managed Better Auth, proxied through the app's own `/api/auth` route so the session cookie is first party. Contacts are read and written from the browser straight to the Neon Data API with a short lived JWT. The list sorts by name, company, priority, or date added, filters by search text and by priority, and add and edit happen in a dialog. Delete asks for confirmation. Below 768px the two-column listing becomes one column and the priority filter moves under the running head. The app is deployed on Vercel at https://networking-tracker-lyart.vercel.app and graded from that alias. The README in this directory is the written companion the grader reads alongside the app.
 
 ## Capabilities and Constraints
 
@@ -30,11 +30,11 @@ The feature set is fixed at what ships on 2026-09-08. Design work reworks how th
 
 ## Brand Commitments
 
-The product name is Networking Tracker. The page description reads "A private list of the people you want to stay connected with at Berkeley." The written voice across the app and README is first person and plain. There are no logo, color, or typeface commitments yet, and the current look is the shadcn default, which I have decided to replace rather than refine. Berkeley is a real place in the product's story, not a decorative reference.
+The product name is Networking Tracker. The page description reads "A private list of the people you want to stay connected with at Berkeley." The written voice across the app and README is first person and plain. The look is the class directory recorded in `DESIGN.md`, meaning Berkeley Blue and California Gold on the band and the thumb index, white listing pages, Libre Franklin for text and controls, and Archivo Narrow for running heads and tabs, which replaced the shadcn default on 2026-09-08. There is still no logo. Berkeley is a real place in the product's story, not a decorative reference.
 
 ## Evidence on Hand
 
-Screenshots of the live site and the local walkthrough are in `docs/screenshots`, including the sign in page, the contacts list at desktop and at 390px, the add and edit dialogs, a rejected blank name, the delete confirmation, and a second account seeing an empty list. The README carries a transcript of the two account privacy check, run in both directions against the Data API with real JWTs on 2026-09-13, and the output of the five test cases in `tests/contacts.test.ts`. The test accounts behind that check are designreview@example.com, which owns four contacts, and privacy-b-20260913@example.com, which owns one. There are no testimonials, user counts, or customer names, and none should be invented.
+Screenshots of the live site are in `docs/screenshots`, including the sign in page, the contacts list at desktop and at 390px, the add and edit dialogs, a rejected blank name, the delete confirmation, and a second account seeing an empty list. The README carries a transcript of the two account privacy check, run in both directions against the Data API with real JWTs on 2026-09-13, and the output of the seven test cases in `tests/contacts.test.ts`. The test accounts behind that check are designreview@example.com, which owns four contacts, and privacy-b-20260913@example.com, which owns one. There are no testimonials, user counts, or customer names, and none should be invented.
 
 ## Product Principles
 
@@ -42,4 +42,4 @@ Privacy is the product, so nothing on screen should imply the list is shared or 
 
 ## Accessibility & Inclusion
 
-Dialogs, sortable headers, form errors, and the loading region already carry ARIA roles and labels, and the redesign keeps them. Contrast has to hold at WCAG AA in whatever palette replaces the default, and the native select elements stay native because they work best on phones.
+Dialogs, the sort select and its direction toggle, form errors, and the loading region already carry ARIA roles and labels, and the redesign keeps them. Contrast has to hold at WCAG AA in whatever palette replaces the default, and the native select elements stay native because they work best on phones.
