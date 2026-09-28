@@ -19,7 +19,7 @@ import { Input } from '@/components/ui/input';
 import { Skeleton } from '@/components/ui/skeleton';
 import { ContactForm, capitalize, selectClassName } from '@/components/contact-form';
 import { authClient, runAuth } from '@/lib/auth/client';
-import { describeDbError, PRIORITIES, type Contact, type Priority } from '@/lib/contacts';
+import { describeDbError, isAuthProblem, PRIORITIES, type Contact, type Priority } from '@/lib/contacts';
 import { clearToken, db } from '@/lib/neon';
 import { cn } from '@/lib/utils';
 
@@ -30,9 +30,6 @@ type Filter = 'all' | Priority;
 const PRIORITY_RANK: Record<Priority, number> = { high: 0, medium: 1, low: 2 };
 const SORT_LABELS: Record<SortKey, string> = { name: 'Name', company: 'Company', priority: 'Priority', created_at: 'Date added' };
 const CONDENSED = 'font-condensed uppercase tracking-[0.12em]';
-
-const isAuthProblem = (error: { code?: string; message?: string }) =>
-  error.code === 'PGRST301' || /authentication required/i.test(error.message ?? '');
 
 const formatDate = (iso: string) =>
   new Date(iso).toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' });
@@ -47,6 +44,7 @@ export function ContactsPage() {
   const [sort, setSort] = useState<Sort>({ key: 'created_at', dir: 'desc' });
   const [editor, setEditor] = useState<{ open: boolean; contact: Contact | null }>({ open: false, contact: null });
   const [deleting, setDeleting] = useState<Contact | null>(null);
+  const [deletePending, setDeletePending] = useState(false);
 
   const load = useCallback(() => {
     // State updates happen inside the promise callback, never synchronously in an effect.
@@ -56,6 +54,7 @@ export function ContactsPage() {
       .then(({ data, error }) => {
         if (error) {
           if (isAuthProblem(error)) {
+            clearToken();
             router.push('/sign-in');
             return;
           }
@@ -86,7 +85,10 @@ export function ContactsPage() {
     return rows.sort((a, b) => {
       if (sort.key === 'priority') return (PRIORITY_RANK[a.priority] - PRIORITY_RANK[b.priority]) * direction;
       if (sort.key === 'created_at') return a.created_at.localeCompare(b.created_at) * direction;
-      return (a[sort.key] ?? '').localeCompare(b[sort.key] ?? '', undefined, { sensitivity: 'base' }) * direction;
+      const left = a[sort.key] ?? '';
+      const right = b[sort.key] ?? '';
+      if (!left !== !right) return left ? -1 : 1; // a contact without a company sorts last either way
+      return left.localeCompare(right, undefined, { sensitivity: 'base' }) * direction;
     });
   }, [contacts, query, priorityFilter, sort]);
 
@@ -100,23 +102,38 @@ export function ContactsPage() {
   }, [contacts]);
 
   function onSaved(saved: Contact, mode: 'created' | 'updated') {
-    setContacts((list) =>
-      mode === 'created' ? [saved, ...(list ?? [])] : (list ?? []).map((c) => (c.id === saved.id ? saved : c)),
-    );
+    if (contacts === null) {
+      // The list never loaded, so fetch it now instead of building one from a single row.
+      load();
+    } else {
+      setContacts((list) =>
+        mode === 'created' ? [saved, ...(list ?? [])] : (list ?? []).map((c) => (c.id === saved.id ? saved : c)),
+      );
+    }
     toast.success(mode === 'created' ? `Added ${saved.name}.` : `Saved changes to ${saved.name}.`);
   }
 
   async function confirmDelete() {
-    if (!deleting) return;
+    if (!deleting || deletePending) return;
     const target = deleting;
-    const { error } = await db.from('contacts').delete().eq('id', target.id);
-    setDeleting(null);
-    if (error) {
-      toast.error(describeDbError(error));
-      return;
+    setDeletePending(true);
+    try {
+      const { error } = await db.from('contacts').delete().eq('id', target.id);
+      if (error && isAuthProblem(error)) {
+        clearToken();
+        router.push('/sign-in');
+        return;
+      }
+      setDeleting(null);
+      if (error) {
+        toast.error(describeDbError(error));
+        return;
+      }
+      setContacts((list) => list?.filter((c) => c.id !== target.id) ?? null);
+      toast.success(`Deleted ${target.name}.`);
+    } finally {
+      setDeletePending(false);
     }
-    setContacts((list) => list?.filter((c) => c.id !== target.id) ?? null);
-    toast.success(`Deleted ${target.name}.`);
   }
 
   async function signOut() {
@@ -202,7 +219,7 @@ export function ContactsPage() {
           <div className="flex flex-wrap items-center gap-x-4 gap-y-3 border-b border-rule py-4">
             <p aria-live="polite" className={cn(CONDENSED, 'text-sm font-semibold tabular-nums')}>
               {contacts === null ? (
-                <span className="text-muted-foreground">Loading entries</span>
+                <span className="text-muted-foreground">{loadError ? 'Entries unavailable' : 'Loading entries'}</span>
               ) : (
                 <span key={`${visible.length}-${counts.all}-${counts.high}`} className="inline-block animate-in fade-in-0 duration-300">
                   {filtered ? `${visible.length} of ${counts.all}` : counts.all} {counts.all === 1 && !filtered ? 'entry' : 'entries'}
@@ -331,16 +348,16 @@ export function ContactsPage() {
         onSaved={onSaved}
       />
 
-      <AlertDialog open={deleting !== null} onOpenChange={(open) => !open && setDeleting(null)}>
+      <AlertDialog open={deleting !== null} onOpenChange={(open) => !open && !deletePending && setDeleting(null)}>
         <AlertDialogContent>
           <AlertDialogHeader>
             <AlertDialogTitle className={cn(CONDENSED, 'text-lg font-bold')}>Delete {deleting?.name}?</AlertDialogTitle>
             <AlertDialogDescription>This removes the contact from your list. There is no undo.</AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
-            <AlertDialogCancel>Cancel</AlertDialogCancel>
-            <AlertDialogAction variant="destructive" onClick={confirmDelete}>
-              Delete
+            <AlertDialogCancel disabled={deletePending}>Cancel</AlertDialogCancel>
+            <AlertDialogAction variant="destructive" onClick={confirmDelete} disabled={deletePending}>
+              {deletePending ? 'Deleting' : 'Delete'}
             </AlertDialogAction>
           </AlertDialogFooter>
         </AlertDialogContent>

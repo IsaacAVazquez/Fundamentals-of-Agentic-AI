@@ -35,14 +35,14 @@ If someone forged a request for another person's contact, Postgres would return 
 | `components/contacts-page.tsx` | The list itself, with search, the priority filter, sorting, counts, delete confirmation, and sign out |
 | `app/layout.tsx`, `app/page.tsx`, `app/sign-in`, `app/sign-up` | The page shell, the fonts, the toast host, and the three routes |
 | `app/globals.css` | Tailwind setup and the color and type tokens the design uses |
-| `components/ui/` | Generated shadcn components, meaning the buttons, inputs, dialogs, and table primitives |
-| `tests/contacts.test.ts` | Four tests for the validation rules plus one that proves the database rejects bad rows on its own |
+| `components/ui/` | Generated shadcn components, meaning the buttons, inputs, labels, dialogs, skeletons, and the toast host |
+| `tests/contacts.test.ts` | Six tests for the validation rules and the error translator, plus one that proves the database rejects bad rows on its own |
 
 ## Validation happens in two places on purpose
 
 `validateContact` in `lib/contacts.ts` is a pure function, meaning it takes form values and returns either a cleaned contact or a set of field errors, with no database and no side effects. It trims whitespace, requires a name, requires the priority to be high, medium, or low, turns empty optional fields into `null`, and enforces length limits. Because it's pure, the test file can check it directly without a browser or a network.
 
-The same two hard rules are also written into the table as CHECK constraints, which is deliberate. The form check is there so you get a useful message next to the field, and the database check is there so a request that skips the form still fails. The last test in `tests/contacts.test.ts` proves the second half by inserting a blank name and an invalid priority straight into Postgres and asserting both come back as constraint violations. That test only runs when `DATABASE_URL` is set, so the suite still passes offline.
+The same rules, meaning the non-blank name, the priority set, and the length limits, are also written into the table as CHECK constraints, which is deliberate. The form check is there so you get a useful message next to the field, and the database check is there so a request that skips the form still fails. The last test in `tests/contacts.test.ts` proves the second half by inserting a blank name, a tab-only name, an invalid priority, and an over-long name straight into Postgres and asserting each comes back as a constraint violation. That test only runs when `DATABASE_URL` is set, so the suite still passes offline.
 
 When the database does reject something, `describeDbError` maps the Postgres error code to a sentence a person can act on, so code `23514` becomes a note about name and priority rather than a raw error string.
 
@@ -50,7 +50,7 @@ When the database does reject something, `describeDbError` maps the Postgres err
 
 `components/contacts-page.tsx` loads every row once, newest first, and then does the searching, filtering, and sorting in the browser over that list. For a personal contact list that's the simpler choice, and it means typing in the search box doesn't hit the network. The priority tabs down the right edge are both a filter and a live count of each group.
 
-After you add or edit a contact, the page updates its copy of the list from the row the database returned rather than reloading everything, which is why the change appears immediately. Deleting asks for confirmation first, then removes the row and shows a toast. Signing out clears the cached token in addition to ending the session, so nothing stale is left in memory. If a database call comes back with an expired session, the page sends you to sign-in instead of showing a broken list.
+After you add or edit a contact, the page updates its copy of the list from the row the database returned rather than reloading everything, which is why the change appears immediately. Deleting asks for confirmation first, then removes the row and shows a toast. Signing out clears the cached token in addition to ending the session, so nothing stale is left in memory. If any database call, whether the first load, a save, or a delete, comes back with an expired session, the page clears its cached token and sends you to sign-in instead of showing a broken list.
 
 ## The design files
 

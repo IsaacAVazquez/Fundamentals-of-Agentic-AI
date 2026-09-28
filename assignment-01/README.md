@@ -98,7 +98,7 @@ This is User B, the 2026-09-13 test account, right after it was created on the l
 - View contacts as a directory listing that sorts by name, company, priority, or date added, in either direction, and filters by search text and by priority.
 - Edit and delete your own contacts, with a confirmation step before a delete.
 - Contacts live in Neon Postgres, so they survive a refresh, a new tab, or a different device.
-- A blank name or a priority outside the allowed set fails with a clear message in the form, and fails again at the database if the form is bypassed.
+- A blank name, a priority outside the allowed set, or a field past its length limit fails with a clear message in the form, and fails again at the database if the form is bypassed.
 - Loading, empty, no-match, success, and error states each have their own visible treatment.
 - The layout works on a phone. Below 768px the two-column listing becomes one column and the priority filter moves under the running head.
 
@@ -160,7 +160,7 @@ The contacts table has Row Level Security enabled and four separate policies, on
 
 The Data API is the only path from the browser into Postgres, and it always connects as `authenticated`, so those policies apply to every request the app makes. The migration script connects as the table owner over `DATABASE_URL`, which bypasses RLS, and that is exactly why that string stays on my machine and is never given to Vercel.
 
-Validation has two layers on purpose. `lib/contacts.ts` checks the name and priority in the browser so the form can show a specific message under the field, and the `NOT NULL` and `CHECK` constraints in the schema enforce the same rules in the database so a crafted request fails too. The UI maps the Postgres error codes for a check violation, a missing required value, and an RLS denial to plain sentences.
+Validation has two layers on purpose. `lib/contacts.ts` checks the name, the priority, and the length limits in the browser so the form can show a specific message under the field, and the `NOT NULL` and `CHECK` constraints in the schema enforce the same rules in the database so a crafted request fails too. The name constraint treats tabs and newlines as blank, the way the form does, and the length constraint carries the form's limits. `db/schema.sql` drops and re-adds both, so a database created before 2026-09-28 picks them up on its next `npm run db:migrate`. The UI maps the Postgres error codes for a check violation, a missing required value, and an RLS denial to plain sentences, and a request that never reached the database to a sentence about the connection.
 
 ## Tests
 
@@ -168,25 +168,26 @@ Validation has two layers on purpose. `lib/contacts.ts` checks the name and prio
 npm test
 ```
 
-The test file is `tests/contacts.test.ts` and it runs on Node's built-in runner. Four cases cover `validateContact`. They verify that a valid contact is accepted with text trimmed and blanks stored as null, that an empty or whitespace-only name is rejected with the message the form shows, that a priority outside high, medium, and low is rejected, and that over-long fields are rejected. A fifth case connects to the database when `DATABASE_URL` is set and proves the `CHECK` constraints reject a blank name and an invalid priority at the Postgres level. Without `DATABASE_URL` that case is skipped, so the suite still passes on a machine without credentials.
+The test file is `tests/contacts.test.ts` and it runs on Node's built-in runner. Six cases cover `validateContact`, `describeDbError`, and `isAuthProblem`. They verify that a valid contact is accepted with text trimmed and blanks stored as null, that an empty or whitespace-only name is rejected with the message the form shows, a tab or a newline included, that a priority outside high, medium, and low is rejected, that every field passes at its length limit and fails one character past it, that each database error code becomes the sentence the page shows, and that a missing or expired session is recognized. A seventh case connects to the database when `DATABASE_URL` is set and proves the `CHECK` constraints reject a blank name, a tab-only name, an invalid priority, and an over-long name at the Postgres level. Without `DATABASE_URL` that case is skipped, so the suite still passes on a machine without credentials.
 
-Output from my machine on 2026-09-08, with `DATABASE_URL` set:
+Output from a run on 2026-09-28 without `DATABASE_URL`, so the database case is skipped. The 2026-09-08 run on my machine with `DATABASE_URL` set passed the database case as it stood then, with a blank name and an invalid priority, and the schema's new name and length constraints were checked on 2026-09-28 against a local Postgres 16, where applying `db/schema.sql` twice was clean and each bad insert failed on the constraint meant for it.
 
 ```
 $ npm test
-✔ accepts a valid contact, trims text, and stores blanks as null (0.554167ms)
-✔ rejects an empty or whitespace-only name (0.075958ms)
-✔ rejects a priority outside high, medium, and low (0.06975ms)
-✔ rejects fields past their length limits (0.089125ms)
-✔ database CHECK constraints reject a blank name and an invalid priority (393.928292ms)
-ℹ tests 5
+✔ accepts a valid contact, trims text, and stores blanks as null (2.440379ms)
+✔ rejects an empty or whitespace-only name (0.315264ms)
+✔ rejects a priority outside high, medium, and low (0.277572ms)
+✔ rejects fields past their length limits (0.480417ms)
+✔ describes database errors as sentences (0.49895ms)
+✔ recognizes a missing or expired session (0.224271ms)
+﹣ database CHECK constraints reject a blank name, an invalid priority, and an over-long field (0.163647ms) # DATABASE_URL not set
+ℹ tests 7
 ℹ suites 0
-ℹ pass 5
+ℹ pass 6
 ℹ fail 0
 ℹ cancelled 0
-ℹ skipped 0
+ℹ skipped 1
 ℹ todo 0
-ℹ duration_ms 510.461
 ```
 
 ## Local setup

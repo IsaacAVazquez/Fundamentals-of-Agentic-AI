@@ -7,7 +7,7 @@ const franklin = Libre_Franklin({ variable: '--font-franklin', subsets: ['latin'
 const archivo = Archivo_Narrow({ variable: '--font-archivo', subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Networking Tracker',
+  title: { default: 'Networking Tracker', template: '%s · Networking Tracker' },
   description: 'A private list of the people you want to stay connected with at Berkeley.',
 };
 

@@ -6,7 +6,8 @@ Run it with the notebook's Python on a finished run folder:
 It reuses the notebook's own game, network, and move-choice code. Every saved checkpoint is
 compared on 30 validation games, and the best one is then measured on 50 separate test games.
 None of those games is a training game or one of the five leaderboard games. The leaderboard
-games are only replayed to confirm this script scores exactly like the notebook and to count moves.
+games are only replayed to confirm this script scores exactly like the notebook and to count moves,
+and the script stops if those scores do not reproduce the run's comparison.json.
 """
 
 import json
@@ -25,6 +26,8 @@ CODE_TAGS = {"imports", "settings", "environment", "network", "actions"}
 
 
 def main():
+    if len(sys.argv) != 2:
+        sys.exit(f"usage: {sys.argv[0]} pacman_runs/<run folder>")
     run = Path(sys.argv[1])
     nb = {}
     for cell in nbformat.read(ROOT / "pacman_dqn.ipynb", as_version=4).cells:
@@ -79,8 +82,13 @@ def main():
         result["matches_comparison_json"] = result["scores"] == comparison[key]["scores"]
         report["leaderboard_games"][name] = result
         print(f"leaderboard games, {name}: {result['scores']} matches comparison.json: {result['matches_comparison_json']}", flush=True)
+    mismatched = [name for name, result in report["leaderboard_games"].items() if not result["matches_comparison_json"]]
+    if mismatched:
+        sys.exit(f"{', '.join(mismatched)} did not reproduce comparison.json, so this script is not scoring games the way the notebook did")
 
     checkpoints = ["untrained.pt"] + sorted(path.name for path in run.glob("episode_*.pt"))
+    if len(checkpoints) < 2:
+        sys.exit(f"{run} has no episode_*.pt checkpoints; the notebook saves one every 25 games")
     for name in checkpoints:
         report["validation"][name] = play(load(name), VALIDATION_SEEDS)
         print(f"validation, {name}: mean {report['validation'][name]['mean']:.1f}", flush=True)

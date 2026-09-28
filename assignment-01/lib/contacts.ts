@@ -36,8 +36,8 @@ export function isPriority(value: string): value is Priority {
 
 /**
  * Pure validation shared by the form and the automated test.
- * The database enforces the same two hard rules (non-blank name, priority in the allowed set)
- * with CHECK constraints, so a request that skips this function still fails safely.
+ * The database enforces the same hard rules (a name that isn't blank, a priority in the allowed set,
+ * and the length limits) with CHECK constraints, so a request that skips this function still fails safely.
  */
 export function validateContact(
   input: ContactInput,
@@ -68,11 +68,16 @@ export function validateContact(
   };
 }
 
+/** True when the Data API says the session is missing or expired, which the UI answers with a trip to sign-in. */
+export function isAuthProblem(error: { code?: string; message?: string } | null | undefined): boolean {
+  return error?.code === 'PGRST301' || /authentication required/i.test(error?.message ?? '');
+}
+
 /** Turns a Data API (PostgREST) error into a sentence the UI can show. */
 export function describeDbError(error: { code?: string; message?: string } | null | undefined): string {
   switch (error?.code) {
     case '23514':
-      return 'The database rejected this contact. Name must not be blank and priority must be high, medium, or low.';
+      return 'The database rejected this contact. Name must not be blank, priority must be high, medium, or low, and no field may be over its length limit.';
     case '23502':
       return 'A required field was missing.';
     case '42501':
@@ -80,6 +85,9 @@ export function describeDbError(error: { code?: string; message?: string } | nul
     case 'PGRST301':
       return 'Your session has expired. Sign in again.';
     default:
+      if (/failed to fetch|network ?error|load failed/i.test(error?.message ?? '')) {
+        return "Couldn't reach the database. Check your connection and try again.";
+      }
       return error?.message || 'Something went wrong. Try again.';
   }
 }

@@ -23,6 +23,8 @@ CODE_TAGS = {"imports", "settings", "preview-settings", "environment", "network"
 
 
 def main():
+    if len(sys.argv) != 3:
+        sys.exit(f"usage: {sys.argv[0]} pacman_runs/<run folder> results/<N>-games/move_shares.json")
     run, out = Path(sys.argv[1]), Path(sys.argv[2])
     nb = {}
     for cell in nbformat.read(ROOT / "pacman_dqn.ipynb", as_version=4).cells:

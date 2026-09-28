@@ -11,3 +11,5 @@ Course materials pulled from bCourses and the course site, meaning the syllabus,
 | 3 | Word-token nanoGPT from the course notebook, trained twice on a laptop CPU, once on the classroom corpus and once with four generated teaching files for grammar, opposites, negation, and reference, scored on the course's 48 fixed language evals before and after each run, with an optional third run at twice the steps | [assignment-03/README.md](assignment-03/README.md) has the settings, all the eval result sets, the traced token, embedding, gradient, and update, the chat transcripts, and the explanation |
 
 Each assignment folder is self-contained with its own dependencies and its own README, so the README inside the folder is the place to start. Each one also has an `EXPLAINER.md`, which is a plain-language walkthrough of what the code in that folder is doing, written for someone reading it without a background in the stack it uses.
+
+The root also holds `mnist_from_scratch.ipynb`, the Class 3 companion notebook from the course's Colab link, saved with its outputs on 2026-09-08. It isn't an assignment, so it has no folder of its own.

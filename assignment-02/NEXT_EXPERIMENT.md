@@ -110,7 +110,7 @@ On 2026-09-22 I applied both sets of edits to scratch copies of the notebook and
 
 ## How to run it
 
-1. Check the environment. The venv is uv on Homebrew Python 3.13, and `scripts/setup.sh` rebuilds it if it's gone. On 2026-09-22 this printed `3.13.15 2.14.0 1.3.0 0.11.2 True`.
+1. Check the environment. The venv is uv on Python 3.13, Homebrew's on this Mac, and `scripts/setup.sh` rebuilds it if it's gone. On 2026-09-22 this printed `3.13.15 2.14.0 1.3.0 0.11.2 True`.
 
    ```bash
    cd ~/Fundamentals-of-Agentic-AI/assignment-02
@@ -125,7 +125,7 @@ On 2026-09-22 I applied both sets of edits to scratch copies of the notebook and
 
 3. Before starting, write down a prediction for the five-game mean and for which checkpoint will win validation, since the README has to show that the expectation came before the result.
 
-4. Run the whole notebook headless with the Mac plugged in, since caffeinate's `-s` only keeps the Mac awake on AC power. The kernel is `python3` because the notebook's metadata names a `py313` kernel that doesn't exist on this machine. The venv has no Tk, so every gameplay sample prints "Popup unavailable in this kernel," which is harmless. The run lands in a new `pacman_runs/<timestamp>/` folder with a ZIP next to it, and `pacman_runs/` is gitignored.
+4. Run the whole notebook headless with the Mac plugged in, since caffeinate's `-s` only keeps the Mac awake on AC power. The kernel is `python3` because the notebook's metadata names a `py313` kernel that didn't exist on this machine when I ran it. `scripts/setup.sh` now registers one, so either name works after a fresh setup. The venv has no Tk, so every gameplay sample prints "Popup unavailable in this kernel," which is harmless. The run lands in a new `pacman_runs/<timestamp>/` folder with a ZIP next to it, and `pacman_runs/` is gitignored.
 
    ```bash
    caffeinate -is .venv/bin/jupyter-nbconvert --to notebook --execute --inplace --allow-errors \
