@@ -23,7 +23,7 @@ The sections below follow the order of the assignment's README requirements. Thi
 
 The executed notebook is [pacman_dqn.ipynb](pacman_dqn.ipynb), from the final 450-game run. It keeps every output from that run, including the baseline, all 450 training lines, the progress GIFs, the dashboard, and the final comparison, so none of it needs rerunning to inspect. One catch is that GitHub's notebook viewer can't display the notebook's GIF outputs and shows the text `<IPython.core.display.Image object>` in each of those 20 spots instead, so every one of those GIFs is also embedded in this README and saved in [results/450-games/demos/](results/450-games/demos/). The first run's executed notebook is [results/500-games/pacman_dqn_500_games.ipynb](results/500-games/pacman_dqn_500_games.ipynb), and I left its explanation cell at the end as the course's blank template, since this README covers both runs.
 
-To run it again locally, clone the repository and set up Python 3.13 in this folder. I used `scripts/setup.sh`, which builds `.venv` with uv from Homebrew's Python 3.13 and installs `requirements.txt` plus the Jupyter pieces a scripted run needs. The course's own instructions use a plain virtual environment and pip instead, and either way the notebook's setup cell installs anything that's missing.
+To run it again locally, clone the repository and set up Python 3.13 in this folder. I used `scripts/setup.sh`, which builds `.venv` with uv on whichever Python 3.13 uv finds or downloads, or the one named in `PYTHON=`, installs `requirements.txt` plus the Jupyter pieces a scripted run needs, and registers the `py313` kernel the notebook's metadata names. On my Mac that Python is Homebrew's. The course's own instructions use a plain virtual environment and pip instead, and either way the notebook's setup cell installs anything that's missing.
 
 ```
 git clone https://github.com/IsaacAVazquez/Fundamentals-of-Agentic-AI.git
@@ -45,7 +45,7 @@ In Colab, the route from the Class 3 setup slide is File, then Upload notebook, 
 
 ```
 .venv/bin/python scripts/check_checkpoints.py pacman_runs/<run folder>
-.venv/bin/python scripts/eval_move_shares.py pacman_runs/<run folder> results/450-games/move_shares.json
+.venv/bin/python scripts/eval_move_shares.py pacman_runs/<run folder> results/<N>-games/move_shares.json
 ```
 
 ## My three choices
@@ -204,7 +204,7 @@ What the agent learns is an estimate of how many future points each of the nine 
 
 The limitation I saw most clearly is that the agent never settled on a way of playing. The move it chose most often kept switching between checkpoints, and across the first run's 20 checkpoints, the same 30 validation games averaged anywhere from 418 to 1,182 depending on which checkpoint played them, with no steady climb, so where a run happens to stop decides most of the result. Stopping at 450 games worked around that for this submission, but it doesn't remove the swings, and the best stopping point probably moves with any other change to the settings. My guess at the cause is the small replay memory, which holds the last 5,000 decisions, or only about eight games at this agent's pace, so each update mostly reflects the last few games. I haven't tested that guess.
 
-The next experiment I'd run changes only the learning rate, from 0.0001 to 0.00005, and keeps 10% exploration and 450 episodes. The replay memory size isn't one of my three choices, and smaller updates are the closest lever I have to make each checkpoint less of a reaction to the last few games, so I'd expect the checkpoints' validation averages to swing less, even if they climb more slowly. I'd judge it with `scripts/check_checkpoints.py`, looking for a narrower spread across checkpoints and a final agent that holds a gain on the 50 test games.
+The next experiment I'd run changes only the learning rate, from 0.0001 to 0.00005, and keeps 10% exploration and 450 episodes. The replay memory size isn't one of my three choices, and smaller updates are the closest lever I have to make each checkpoint less of a reaction to the last few games, so I'd expect the checkpoints' validation averages to swing less, even if they climb more slowly. I'd judge it with `scripts/check_checkpoints.py`, looking for a narrower spread across checkpoints and a final agent that holds a gain on the 50 test games. Since then I've written up a bigger plan in [NEXT_EXPERIMENT.md](NEXT_EXPERIMENT.md), dated 2026-09-22 after grading, which keeps the learning rate and instead changes the replay memory, the number of games, and how a lost life is treated.
 
 ## Files and checkpoints
 
@@ -212,13 +212,15 @@ The next experiment I'd run changes only the learning rate, from 0.0001 to 0.000
 | --- | --- |
 | [pacman_dqn.ipynb](pacman_dqn.ipynb) | The final 450-game run, executed with every output saved |
 | [results/450-games/](results/450-games/) | The final run's `config.json`, `training.csv`, `training_summary.json`, `baseline.json`, `comparison.json`, `demo_scores.json`, `move_shares.json`, `training_dashboard.png`, and every gameplay GIF in `demos/` |
-| [results/500-games/](results/500-games/) | The same files from the first run, plus its executed notebook, `pacman_dqn_500_games.ipynb`, and `checkpoint_check.json` from the checkpoint check |
+| [results/500-games/](results/500-games/) | The same files from the first run except `move_shares.json`, plus its executed notebook, `pacman_dqn_500_games.ipynb`, and `checkpoint_check.json` from the checkpoint check |
 | [scripts/check_checkpoints.py](scripts/check_checkpoints.py) | Replays a run's saved agents on 30 validation games and 50 test games |
 | [scripts/eval_move_shares.py](scripts/eval_move_shares.py) | Replays a run's untrained and final agents on the five evaluation games and counts the moves they chose |
 | [ASSIGNMENT.md](ASSIGNMENT.md) | My copy of the assignment brief |
+| [EXPLAINER.md](EXPLAINER.md) | A plain-language walkthrough of what the notebook and scripts do |
+| [NEXT_EXPERIMENT.md](NEXT_EXPERIMENT.md) | My plan for a stronger run, written on 2026-09-22 after grading |
 
 The model checkpoints aren't in the repository, because each one is about 6.8 MB and the first run alone saved 22 of them. The final agent and the untrained network it started from are attached to the [assignment-02-checkpoints release](https://github.com/IsaacAVazquez/Fundamentals-of-Agentic-AI/releases/tag/assignment-02-checkpoints) as `pacman-dqn-450-games-trained.pt` and `pacman-dqn-untrained.pt`, and every other checkpoint from both runs stays in the run ZIPs on my laptop. Either file loads with `torch.load(path, weights_only=True)`, and its `model` entry goes into the notebook's `DQN` class.
 
 ## Where the code comes from
 
-The notebook, `pacman_player.py`, `requirements.txt`, and `tests/verify_notebook.py` come from the course's project at https://github.com/pepealonso95/pacman-dqn. I checked on 2026-09-13 that `pacman_player.py`, `requirements.txt`, `tests/verify_notebook.py`, `.gitignore`, and `.vscode/extensions.json` match that repository's main branch byte for byte. In the notebook, the only code change is the two values in section 1, exploration 0.10 and episodes 450, and the only text I changed is the explanation cell at the end, which I filled in after the run. `ASSIGNMENT.md` is my copy of the assignment brief, which I checked against the live Google Doc on 2026-09-13, and `scripts/` holds my shortcuts for setup, the five-game check, JupyterLab, and the checkpoint check.
+The notebook, `pacman_player.py`, `requirements.txt`, and `tests/verify_notebook.py` come from the course's project at https://github.com/pepealonso95/pacman-dqn. I checked on 2026-09-13 that `pacman_player.py`, `requirements.txt`, `tests/verify_notebook.py`, `.gitignore`, and `.vscode/extensions.json` match that repository's main branch byte for byte. In the notebook, the only code change is the two values in section 1, exploration 0.10 and episodes 450, and the only text I changed is the explanation cell at the end, which I filled in after the run. `ASSIGNMENT.md` is my copy of the assignment brief, which I checked against the live Google Doc on 2026-09-13, and `scripts/` holds my shortcuts for setup, the five-game check, JupyterLab, the checkpoint check, and the move count.

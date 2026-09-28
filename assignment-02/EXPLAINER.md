@@ -32,7 +32,8 @@ The reward is the game's own points. For learning, each decision's reward is cli
 | `evaluate()` | Plays the five fixed evaluation games and optionally records a GIF |
 | `train_one_episode()` | Plays one training game and learns while it plays |
 | The training loop | Runs that for every episode, writing the log, the GIFs, the checkpoints, and the plot as it goes |
-| The comparison cell | Re-evaluates the trained agent and writes `comparison.json` |
+| The final evaluation cell | Loads the saved trained agent and replays the five evaluation games |
+| The comparison cell | Writes `comparison.json` and prints the before-and-after table |
 | The download cell | Zips the run folder |
 
 ## The learning step in detail
@@ -59,14 +60,14 @@ The notebook and `pacman_player.py`, `requirements.txt`, and `tests/verify_noteb
 
 | File | What it does |
 | --- | --- |
-| `scripts/setup.sh` | Builds `.venv` on Python 3.13 and installs the requirements plus the pieces a scripted run needs |
+| `scripts/setup.sh` | Builds `.venv` on Python 3.13, installs the requirements plus the pieces a scripted run needs, and registers the `py313` kernel the notebook names |
 | `scripts/verify.sh` | Runs the course's five-game check, which executes the whole notebook and inspects its artifacts |
 | `scripts/lab.sh` | Opens the notebook in JupyterLab |
-| `scripts/check_checkpoints.py` | Replays every saved checkpoint on 30 validation games and 50 test games that were never used for training or grading, which is how I chose 450 episodes |
+| `scripts/check_checkpoints.py` | Replays every saved checkpoint on 30 validation games, then the best of them, the final agent, and the untrained network on 50 test games, none of which were used for training or grading, which is how I chose 450 episodes |
 | `scripts/eval_move_shares.py` | Replays a run's untrained and final agents on the five evaluation games and counts which moves they chose |
 | `results/450-games/` and `results/500-games/` | The published evidence from both runs |
 
-Both of my replay scripts import the notebook's own tagged cells and run its code rather than reimplementing it, and both check themselves by reproducing the scores in `comparison.json` before they report anything. That's the only reason to trust a number they produce.
+Both of my replay scripts import the notebook's own tagged cells for the game, the network, and the move choice, and replay games with a loop that mirrors the notebook's `evaluate()`. Both check themselves by replaying the five evaluation games first and stop if the scores don't reproduce the ones in `comparison.json`. That's the only reason to trust a number they produce.
 
 ## Where the results are explained
 
