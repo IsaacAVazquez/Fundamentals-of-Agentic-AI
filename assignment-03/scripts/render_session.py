@@ -8,10 +8,23 @@ import sys
 
 from PIL import Image, ImageDraw, ImageFont
 
+
+def load_font(size):
+    """Menlo on a Mac, DejaVu Sans Mono on Linux, and Pillow's built-in font anywhere else."""
+    for path in ("/System/Library/Fonts/Menlo.ttc", "/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf"):
+        try:
+            return ImageFont.truetype(path, size)
+        except OSError:
+            continue
+    return ImageFont.load_default(size=size)
+
+
+if len(sys.argv) < 3:
+    sys.exit(f"usage: {sys.argv[0]} LOG PNG [TITLE]")
 log, png = sys.argv[1], sys.argv[2]
 title = sys.argv[3] if len(sys.argv) > 3 else "chat.py"
 lines = open(log, encoding="utf-8").read().rstrip("\n").split("\n")
-font = ImageFont.truetype("/System/Library/Fonts/Menlo.ttc", 26)
+font = load_font(26)
 pad, line_height, bar = 30, 38, 56
 width = max(font.getlength(line) for line in lines + [title]) + 2 * pad
 image = Image.new("RGB", (int(width), bar + pad + line_height * len(lines) + pad), (30, 30, 30))

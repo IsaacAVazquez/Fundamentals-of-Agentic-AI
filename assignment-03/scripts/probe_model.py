@@ -46,12 +46,21 @@ def main():
         tokens = word_tokens(prompt)
         unknown = [t for t in tokens + choices if t not in stoi]
         row = {"label": label, "prompt": prompt, "choices": choices, "expected": expected, "unknown_words": unknown}
-        if not unknown:
+        # Mirrors run_evals.py: only the prompt enters the model, a prompt past the context window is not scored,
+        # the pick is the highest unrounded probability, and a top two within 1e-10 of each other is a tie.
+        if len(tokens) + 1 > model.config.block_size:
+            row["status"] = "context_too_long"
+        elif not unknown:
             ids = [stoi["<BOS>"]] + [stoi[t] for t in tokens]
             probs = torch.softmax(model(torch.tensor([ids]))[0][0, -1].float(), -1)
-            row["choice_probabilities"] = {c: round(probs[stoi[c]].item(), 4) for c in choices}
-            row["predicted"] = max(row["choice_probabilities"], key=row["choice_probabilities"].get)
-            row["correct"] = row["predicted"] == expected
+            exact = {c: probs[stoi[c]].item() for c in choices}
+            row["choice_probabilities"] = {c: round(p, 4) for c, p in exact.items()}
+            ranked = sorted(exact, key=exact.get, reverse=True)
+            if abs(exact[ranked[0]] - exact[ranked[1]]) <= 1e-10:
+                row["status"] = "tied"
+            else:
+                row["predicted"] = ranked[0]
+                row["correct"] = row["predicted"] == expected
         row["generated_text"] = generate_reply(model, vocabulary, prompt, seed=3026 + index)["response"]
         rows.append(row)
         print(f"{label:<26} {prompt!r}\n{'':<26} -> {row.get('predicted')} {'ok' if row.get('correct') else 'X'} {row.get('choice_probabilities')} | gen: {row['generated_text']!r}")

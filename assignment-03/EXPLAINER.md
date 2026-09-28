@@ -50,7 +50,7 @@ The tests themselves live in `evals/`, and the only training input is `corpus/`.
 
 ## The files I added
 
-The notebook and `custom_llm.py`, `nanogpt_model.py`, `run_evals.py`, `chat.py`, `evals/`, and the viewer come from the course. Everything below is mine.
+The notebook and `custom_llm.py`, `nanogpt_model.py`, `NANOGPT_LICENSE`, `run_evals.py`, `chat.py`, `evals/`, `corpus/README.md`, `requirements.txt`, the viewer and its build script `build_embedding_viewer.py`, the notebook's build script `build_notebook.py`, and the course's three test files, `test_corpus.py`, `test_language_evals.py`, and `test_embedding_viewer.cjs`, come from the course. Everything below is mine.
 
 | File | What it does |
 | --- | --- |

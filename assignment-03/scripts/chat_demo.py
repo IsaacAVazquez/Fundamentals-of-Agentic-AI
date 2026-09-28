@@ -9,13 +9,18 @@ import pty
 import select
 import sys
 import time
+from pathlib import Path
+
+CHAT = Path(__file__).resolve().parents[1] / "chat.py"  # so the script works from any directory
 
 
 def main():
+    if len(sys.argv) < 5:
+        sys.exit(f"usage: {sys.argv[0]} MODEL TRANSCRIPT LOG PROMPT [PROMPT ...]")
     model, transcript, log, *prompts = sys.argv[1:]
     pid, fd = pty.fork()
     if pid == 0:
-        os.execv(sys.executable, [sys.executable, "chat.py", "--model", model, "--transcript", transcript])
+        os.execv(sys.executable, [sys.executable, str(CHAT), "--model", model, "--transcript", transcript])
     screen = b""
 
     def pump(until=None, timeout=60):
