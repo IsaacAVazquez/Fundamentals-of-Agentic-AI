@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, type FormEvent } from 'react';
+import { useRouter } from 'next/navigation';
 import { toast } from 'sonner';
 import { labelClassName } from '@/components/auth-form';
 import { Button } from '@/components/ui/button';
@@ -15,9 +16,10 @@ import {
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
-import { db } from '@/lib/neon';
+import { clearToken, db } from '@/lib/neon';
 import {
   describeDbError,
+  isAuthProblem,
   LABELS,
   PRIORITIES,
   validateContact,
@@ -80,6 +82,7 @@ function Fields({
   onDone: () => void;
   onSaved: Props['onSaved'];
 }) {
+  const router = useRouter();
   const [values, setValues] = useState<ContactInput>(() => toInput(contact));
   const [errors, setErrors] = useState<FieldErrors>({});
   const [pending, setPending] = useState(false);
@@ -101,6 +104,11 @@ function Fields({
       : await db.from('contacts').insert(result.value).select().single();
     setPending(false);
     if (error || !data) {
+      if (isAuthProblem(error)) {
+        clearToken();
+        router.push('/sign-in');
+        return;
+      }
       toast.error(describeDbError(error));
       return;
     }
@@ -132,7 +140,7 @@ function Fields({
 
   return (
     <form onSubmit={onSubmit} noValidate className="grid gap-4">
-      {field('name', { autoFocus: true })}
+      {field('name', { autoFocus: true, required: true })}
       <div className="grid gap-4 sm:grid-cols-2">
         {field('company')}
         {field('role')}
@@ -148,6 +156,7 @@ function Fields({
           value={values.priority}
           onChange={(event) => update('priority', event.target.value)}
           aria-invalid={Boolean(errors.priority)}
+          aria-describedby={errors.priority ? 'priority-error' : undefined}
           className={selectClassName}
         >
           {PRIORITIES.map((priority) => (
@@ -157,7 +166,7 @@ function Fields({
           ))}
         </select>
         {errors.priority && (
-          <p role="alert" className="text-sm text-destructive">
+          <p id="priority-error" role="alert" className="text-sm text-destructive">
             {errors.priority}
           </p>
         )}
@@ -173,9 +182,10 @@ function Fields({
           value={values.notes}
           onChange={(event) => update('notes', event.target.value)}
           aria-invalid={Boolean(errors.notes)}
+          aria-describedby={errors.notes ? 'notes-error' : undefined}
         />
         {errors.notes && (
-          <p role="alert" className="text-sm text-destructive">
+          <p id="notes-error" role="alert" className="text-sm text-destructive">
             {errors.notes}
           </p>
         )}

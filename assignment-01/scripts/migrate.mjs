@@ -8,7 +8,7 @@ if (!url) {
 }
 
 const schema = readFileSync(new URL('../db/schema.sql', import.meta.url), 'utf8');
-// The Data API-style HTTP driver runs one statement per call, so strip the SQL comments and split on semicolons.
+// Neon's serverless HTTP driver runs one statement per call, so strip the SQL comments and split on semicolons.
 const statements = schema
   .replace(/--.*$/gm, '')
   .split(';')
