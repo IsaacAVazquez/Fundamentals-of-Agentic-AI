@@ -11,6 +11,7 @@ Most of the course lives outside bCourses. The bCourses syllabus tab is only a l
 | [syllabus.md](syllabus.md), [SYLLABUS.pdf](SYLLABUS.pdf) | https://haas-ai-classes-fall-26.vercel.app/syllabus.html |
 | [orientation.md](orientation.md) | https://haas-ai-classes-fall-26.vercel.app/orientation.html |
 | [class1.md](class1.md) through [class7.md](class7.md) | https://haas-ai-classes-fall-26.vercel.app/class1.html through class7.html |
+| [mnist_from_scratch.ipynb](mnist_from_scratch.ipynb) | https://colab.research.google.com/github/pepealonso95/mnist-from-scratch/blob/main/mnist_from_scratch.ipynb, the Class 3 companion notebook, saved with its outputs on 2026-09-08 |
 
 The slide decks are Quarto reveal.js pages converted to markdown, with images left pointing at the course site. Interactive embeds, like the 3D agent-pattern diagrams in Class 7, don't survive the conversion, so the source page is the place to see those.
 
