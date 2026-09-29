@@ -1,0 +1,44 @@
+{
+  "schema": "questions/1",
+  "written_on": "2026-09-29",
+  "note": "Written before retrieval was built. This file lives outside the vault so the harness can never retrieve the answer key.",
+  "defaults": {"k": 6, "scope": "all", "mode": "local"},
+  "questions": [
+    {
+      "id": "T1",
+      "question": "What hardware did I train the nanoGPT model on for Assignment 3?",
+      "expected_behavior": "answer",
+      "expected_sources": ["raw/Custom LLM README.md"],
+      "expected_headings": ["Training budget and hardware"],
+      "expected_keywords": ["M4 Pro", "CPU"],
+      "notes": "Direct question answered by one source. Custom LLM README, 'Training budget and hardware': an Apple M4 Pro laptop with 12 CPU cores and 24 GB of memory running macOS 26.3, on the CPU, capped at four threads."
+    },
+    {
+      "id": "T2",
+      "question": "Why did the last Ms. Pac-Man run stop at fewer games than the first one?",
+      "expected_behavior": "answer",
+      "expected_sources": ["raw/Pac-Man DQN README.md"],
+      "expected_headings": ["My three choices", "Checking the checkpoints on games the notebook never plays", "The final run, 450 games"],
+      "expected_keywords": ["450", "checkpoint"],
+      "notes": "Phrased differently from the source, which says 'changed episodes to 450 and nothing else' because the checkpoint saved after 450 games was the best of the 20 on 30 validation games, confirmed on 50 more games (1,033 against 454)."
+    },
+    {
+      "id": "T3",
+      "question": "What machine did I use for Assignments 2 and 3, and did either use the GPU?",
+      "expected_behavior": "answer",
+      "expected_sources": ["raw/Pac-Man DQN README.md", "raw/Custom LLM README.md"],
+      "require_all_sources": true,
+      "expected_headings": ["Training budget and hardware"],
+      "expected_keywords": ["M4 Pro", "MPS", "CPU"],
+      "notes": "Connects two sources. Both READMEs name the same Apple M4 Pro laptop; the Pac-Man DQN used the Apple GPU through PyTorch's MPS backend, the nanoGPT run used the CPU only."
+    },
+    {
+      "id": "T4",
+      "question": "What grade did I receive on Assignment 2?",
+      "expected_behavior": "insufficient",
+      "expected_sources": [],
+      "expected_keywords": [],
+      "notes": "Plausible for a coursework wiki, but no raw source states a grade. COURSE.md, which holds grades, was deliberately left out of the vault. The expected reply starts with 'Insufficient evidence'. Retrieval will still return Pac-Man score passages, and the model must not present a game score as a grade."
+    }
+  ]
+}

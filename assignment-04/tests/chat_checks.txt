@@ -1,0 +1,13 @@
+# Chat mode checks. Lines starting with # are comments. "# expect:" applies to the next message and is recorded in the transcript.
+# expect: retrieval=no
+what can you help me with?
+# expect: retrieval=no
+Write a three-sentence plan for the evening before next week's class.
+# expect: retrieval=no
+Make that shorter.
+# expect: retrieval=yes cite=0.0001
+What learning rate did I use for the DQN?
+# expect: retrieval=no
+My Pac-Man agent scored 5,000 points on the leaderboard.
+# expect: retrieval=yes cite=946
+/notes What did my final Pac-Man agent average on the five evaluation games?

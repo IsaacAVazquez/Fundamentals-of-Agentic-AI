@@ -1,0 +1,32 @@
+{
+  "schema": "sources/1",
+  "copied_on": "2026-09-29",
+  "copied_from_commit": "4e333d32c8d93433eb9708e640b6fe554405deca",
+  "note": "Each raw file is a byte-identical copy of a file in this repository at the commit above. The copies are never edited; corrections go into the wiki notes.",
+  "sources": [
+    {
+      "file": "raw/Networking Tracker README.md",
+      "copied_from": "assignment-01/README.md",
+      "sha256": "74a345428e79e97dbf42f9cf77ea7d277df32dd213f6d22299cd07f2b222bae8",
+      "description": "My Assignment 1 write-up: the networking tracker on Next.js, Neon Postgres, managed Better Auth, and the Neon Data API, with its schema, security checks, tests, and deployment."
+    },
+    {
+      "file": "raw/Pac-Man DQN README.md",
+      "copied_from": "assignment-02/README.md",
+      "sha256": "cd469243a82e4f8b831e84de0e0e23277841ebb23499bde0585bb31c84a7fd69",
+      "description": "My Assignment 2 write-up: the Ms. Pac-Man Deep Q-Network trained on my M4 Pro laptop, the 500-game and 450-game runs, the checkpoint check, and the evaluation scores."
+    },
+    {
+      "file": "raw/Custom LLM README.md",
+      "copied_from": "assignment-03/README.md",
+      "sha256": "0293ff499fdd970bee6aeb0310c48a81919cb8028af1272b13bf71c8ae71110e",
+      "description": "My Assignment 3 write-up: the word-token nanoGPT trained on the laptop CPU, the teaching corpus, the 48 language evals, the traced embedding and gradient, and the chat sessions."
+    },
+    {
+      "file": "raw/Class 5 Prompting and Retrieval Notes.md",
+      "copied_from": "class5.md",
+      "sha256": "535af3de2b0afdda285bcf17d3bfbb3850936db0c8ef4fed9584cff5f7c34a1c",
+      "description": "The Class 5 deck as markdown: LLM behavior, fine-tuning and prompting, context windows, hallucination defenses, retrieval-augmented generation, embeddings, and the Assignment 4 brief."
+    }
+  ]
+}

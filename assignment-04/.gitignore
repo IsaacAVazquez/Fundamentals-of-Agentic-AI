@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+*.pyc
+*.egg-info/
+build/
+/index/
+/vault/.obsidian/
+/results/*/vault-before/
+.DS_Store

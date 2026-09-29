@@ -1,0 +1,2 @@
+# The harness itself runs on the standard library. pytest is only for tests/.
+pytest>=8,<9
