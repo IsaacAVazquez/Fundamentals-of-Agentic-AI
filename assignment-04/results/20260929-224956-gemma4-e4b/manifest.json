@@ -1,0 +1,633 @@
+{
+  "schema": "run-manifest/1",
+  "run_id": "20260929-224956-gemma4-e4b",
+  "created_at": "2026-09-30T05:58:32Z",
+  "results_dir": "/Users/isaacvazquez/Fundamentals-of-Agentic-AI/assignment-04/results/20260929-224956-gemma4-e4b",
+  "files": [
+    "ask/S1.json",
+    "ask/S1.md",
+    "ask/T1.json",
+    "ask/T1.md",
+    "ask/T2.json",
+    "ask/T2.md",
+    "ask/T3.json",
+    "ask/T3.md",
+    "ask/T4.json",
+    "ask/T4.md",
+    "ask/summary.json",
+    "ask/summary.md",
+    "chat/chat_checks.json",
+    "chat/chat_checks.md",
+    "compare-gemma4-e2b/ask/T1.json",
+    "compare-gemma4-e2b/ask/T1.md",
+    "compare-gemma4-e2b/ask/T2.json",
+    "compare-gemma4-e2b/ask/T2.md",
+    "compare-gemma4-e2b/ask/T3.json",
+    "compare-gemma4-e2b/ask/T3.md",
+    "compare-gemma4-e2b/ask/T4.json",
+    "compare-gemma4-e2b/ask/T4.md",
+    "compare-gemma4-e2b/ask/summary.json",
+    "compare-gemma4-e2b/ask/summary.md",
+    "device.txt",
+    "doctor-2.json",
+    "doctor.json",
+    "ingest/calls/224957-001-plan-class-5-prompting-and-retrieval-notes.json",
+    "ingest/calls/224957-002-plan-class-5-prompting-and-retrieval-notes.json",
+    "ingest/calls/224957-003-note-class-5-prompting-and-retrieval-notes-llm-behavior-and-probabilistic-nature.json",
+    "ingest/calls/224957-004-note-class-5-prompting-and-retrieval-notes-model-customization-techniques-compariso.json",
+    "ingest/calls/224957-005-note-class-5-prompting-and-retrieval-notes-prompting-as-probability-steering.json",
+    "ingest/calls/224957-006-note-class-5-prompting-and-retrieval-notes-structuring-prompts-as-product-interface.json",
+    "ingest/calls/224957-007-note-class-5-prompting-and-retrieval-notes-advanced-retrieval-and-knowledge-hub.json",
+    "ingest/calls/224957-008-plan-custom-llm-readme.json",
+    "ingest/calls/224957-009-plan-custom-llm-readme.json",
+    "ingest/calls/224957-010-note-custom-llm-readme-assignment-model-training-overview.json",
+    "ingest/calls/224957-011-note-custom-llm-readme-model-performance-and-results.json",
+    "ingest/calls/224957-012-note-custom-llm-readme-training-budget-and-hardware-details.json",
+    "ingest/calls/224957-013-note-custom-llm-readme-model-learning-mechanics-explained.json",
+    "ingest/calls/224957-014-note-custom-llm-readme-interacting-with-trained-model.json",
+    "ingest/calls/224957-015-plan-networking-tracker-readme.json",
+    "ingest/calls/224957-016-plan-networking-tracker-readme.json",
+    "ingest/calls/224957-017-note-networking-tracker-readme-assignment-overview-and-requirements.json",
+    "ingest/calls/224957-018-note-networking-tracker-readme-web-app-walkthrough-screenshots.json",
+    "ingest/calls/224957-019-note-networking-tracker-readme-technology-stack-and-architecture.json",
+    "ingest/calls/224957-020-note-networking-tracker-readme-database-schema-and-auth.json",
+    "ingest/calls/224957-021-note-networking-tracker-readme-local-setup-and-deployment-details.json",
+    "ingest/calls/224957-022-plan-pac-man-dqn-readme.json",
+    "ingest/calls/224957-023-plan-pac-man-dqn-readme.json",
+    "ingest/calls/224957-024-note-pac-man-dqn-readme-assignment-overview-and-requirements-pac.json",
+    "ingest/calls/224957-025-note-pac-man-dqn-readme-running-the-dqn-notebook.json",
+    "ingest/calls/224957-026-note-pac-man-dqn-readme-agent-hyperparameter-tuning-choices.json",
+    "ingest/calls/224957-027-note-pac-man-dqn-readme-performance-analysis-before-runs.json",
+    "ingest/calls/224957-028-note-pac-man-dqn-readme-agent-training-results-and-limitations.json",
+    "ingest/ingest_log-2.json",
+    "ingest/ingest_log-2.md",
+    "ingest/ingest_log.json",
+    "ingest/ingest_log.md",
+    "search/pac-man-evaluation-score.json",
+    "search/pac-man-evaluation-score.md",
+    "steps.jsonl",
+    "terminal.txt",
+    "vault-before/wiki/Concepts/.gitkeep",
+    "vault-before/wiki/Course/.gitkeep",
+    "vault-before/wiki/Projects/.gitkeep",
+    "vault-before/wiki/Sources/.gitkeep"
+  ],
+  "doctor": {
+    "doctor.json": {
+      "schema": "doctor/1",
+      "run_id": "20260929-224956-gemma4-e4b",
+      "created_at": "2026-09-30T05:49:57Z",
+      "ok": true,
+      "exit_code": 0,
+      "checks": [
+        {
+          "name": "wiki",
+          "ok": true,
+          "detail": "personal_wiki 0.1.0 at /Users/isaacvazquez/Fundamentals-of-Agentic-AI/assignment-04",
+          "critical": true
+        },
+        {
+          "name": "python",
+          "ok": true,
+          "detail": "3.13.15 (/Users/isaacvazquez/Fundamentals-of-Agentic-AI/assignment-04/.venv/bin/python)",
+          "critical": true
+        },
+        {
+          "name": "vault",
+          "ok": true,
+          "detail": "/Users/isaacvazquez/Fundamentals-of-Agentic-AI/assignment-04/vault: 4 raw source(s), 0 wiki note(s), index.md missing (run wiki ingest)",
+          "critical": true
+        },
+        {
+          "name": "sources",
+          "ok": true,
+          "detail": "4 raw file(s) match sources.json",
+          "critical": false
+        },
+        {
+          "name": "research rules",
+          "ok": true,
+          "detail": "/Users/isaacvazquez/Fundamentals-of-Agentic-AI/assignment-04/wiki-instructions.md",
+          "critical": true
+        },
+        {
+          "name": "persona",
+          "ok": true,
+          "detail": "/Users/isaacvazquez/Fundamentals-of-Agentic-AI/assignment-04/persona.md",
+          "critical": true
+        },
+        {
+          "name": "index",
+          "ok": true,
+          "detail": "22 passages built 2026-09-30T05:48:32Z, stale (rebuilt automatically on next use)",
+          "critical": false
+        },
+        {
+          "name": "ollama",
+          "ok": true,
+          "detail": "Ollama 0.35.0: model gemma4:e4b Q4_K_M 8.0B present (digest c6eb396dbd5992bbe3f…)",
+          "critical": true
+        },
+        {
+          "name": "offline",
+          "ok": true,
+          "detail": "no probe reached the internet",
+          "critical": true
+        },
+        {
+          "name": "device",
+          "ok": true,
+          "detail": "Apple M4 Pro, 12 cores, 24 GiB memory, Darwin 26.3",
+          "critical": false
+        }
+      ],
+      "internet": {
+        "internet_reachable": false,
+        "probes": {
+          "tcp 1.1.1.1:443": "failed (OSError: [Errno 51] Network is unreachable)",
+          "tcp 8.8.8.8:53": "failed (OSError: [Errno 51] Network is unreachable)",
+          "dns pypi.org": "failed ([Errno 8] nodename nor servname provided, or not known)",
+          "https example.com": "failed (URLError)"
+        },
+        "checked_at": "2026-09-30T05:49:57Z",
+        "require_offline": true
+      },
+      "device": {
+        "system": "Darwin",
+        "release": "25.3.0",
+        "machine": "arm64",
+        "python": "3.13.15",
+        "hostname": "Isaacs-MacBook-Pro-M4Pro.local",
+        "macos": "26.3",
+        "cpu": "Apple M4 Pro",
+        "memory_bytes": 25769803776,
+        "cores": 12,
+        "memory_available_bytes": 4180262912,
+        "gpu": "Apple Silicon unified memory (shared with the CPU)",
+        "disk_free_bytes": 10918608896
+      },
+      "ollama": {
+        "backend": "ollama",
+        "host": "http://localhost:11434",
+        "model": "gemma4:e4b",
+        "ok": true,
+        "message": "Ollama 0.35.0: model gemma4:e4b Q4_K_M 8.0B present (digest c6eb396dbd5992bbe3f…)",
+        "version": "0.35.0",
+        "model_info": {
+          "backend": "ollama",
+          "tag": "gemma4:e4b",
+          "digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb",
+          "parameter_size": "8.0B",
+          "quantization_level": "Q4_K_M",
+          "family": "gemma4",
+          "context_length": 131072,
+          "ollama_version": "0.35.0",
+          "size_bytes": 9608350718
+        },
+        "installed": [
+          "gemma4:e2b",
+          "gemma4:e4b"
+        ]
+      },
+      "settings": {
+        "vault": "/Users/isaacvazquez/Fundamentals-of-Agentic-AI/assignment-04/vault",
+        "index_dir": "/Users/isaacvazquez/Fundamentals-of-Agentic-AI/assignment-04/index",
+        "results_dir": "/Users/isaacvazquez/Fundamentals-of-Agentic-AI/assignment-04/results",
+        "model": "gemma4:e4b",
+        "backend": "ollama",
+        "host": "http://localhost:11434",
+        "k": 6,
+        "num_ctx": 8192
+      }
+    },
+    "doctor-2.json": {
+      "schema": "doctor/1",
+      "run_id": "20260929-224956-gemma4-e4b",
+      "created_at": "2026-09-30T05:58:18Z",
+      "ok": true,
+      "exit_code": 0,
+      "checks": [
+        {
+          "name": "wiki",
+          "ok": true,
+          "detail": "personal_wiki 0.1.0 at /Users/isaacvazquez/Fundamentals-of-Agentic-AI/assignment-04",
+          "critical": true
+        },
+        {
+          "name": "python",
+          "ok": true,
+          "detail": "3.13.15 (/Users/isaacvazquez/Fundamentals-of-Agentic-AI/assignment-04/.venv/bin/python)",
+          "critical": true
+        },
+        {
+          "name": "vault",
+          "ok": true,
+          "detail": "/Users/isaacvazquez/Fundamentals-of-Agentic-AI/assignment-04/vault: 4 raw source(s), 20 wiki note(s), index.md present",
+          "critical": true
+        },
+        {
+          "name": "sources",
+          "ok": true,
+          "detail": "4 raw file(s) match sources.json",
+          "critical": false
+        },
+        {
+          "name": "research rules",
+          "ok": true,
+          "detail": "/Users/isaacvazquez/Fundamentals-of-Agentic-AI/assignment-04/wiki-instructions.md",
+          "critical": true
+        },
+        {
+          "name": "persona",
+          "ok": true,
+          "detail": "/Users/isaacvazquez/Fundamentals-of-Agentic-AI/assignment-04/persona.md",
+          "critical": true
+        },
+        {
+          "name": "index",
+          "ok": true,
+          "detail": "324 passages built 2026-09-30T05:57:37Z, fresh",
+          "critical": false
+        },
+        {
+          "name": "ollama",
+          "ok": true,
+          "detail": "Ollama 0.35.0: model gemma4:e4b Q4_K_M 8.0B present (digest c6eb396dbd5992bbe3f…)",
+          "critical": true
+        },
+        {
+          "name": "offline",
+          "ok": true,
+          "detail": "no probe reached the internet",
+          "critical": true
+        },
+        {
+          "name": "device",
+          "ok": true,
+          "detail": "Apple M4 Pro, 12 cores, 24 GiB memory, Darwin 26.3",
+          "critical": false
+        }
+      ],
+      "internet": {
+        "internet_reachable": false,
+        "probes": {
+          "tcp 1.1.1.1:443": "failed (OSError: [Errno 51] Network is unreachable)",
+          "tcp 8.8.8.8:53": "failed (OSError: [Errno 51] Network is unreachable)",
+          "dns pypi.org": "failed ([Errno 8] nodename nor servname provided, or not known)",
+          "https example.com": "failed (URLError)"
+        },
+        "checked_at": "2026-09-30T05:58:18Z",
+        "require_offline": true
+      },
+      "device": {
+        "system": "Darwin",
+        "release": "25.3.0",
+        "machine": "arm64",
+        "python": "3.13.15",
+        "hostname": "Isaacs-MacBook-Pro-M4Pro.local",
+        "macos": "26.3",
+        "cpu": "Apple M4 Pro",
+        "memory_bytes": 25769803776,
+        "cores": 12,
+        "memory_available_bytes": 3397812224,
+        "gpu": "Apple Silicon unified memory (shared with the CPU)",
+        "disk_free_bytes": 12734820352
+      },
+      "ollama": {
+        "backend": "ollama",
+        "host": "http://localhost:11434",
+        "model": "gemma4:e4b",
+        "ok": true,
+        "message": "Ollama 0.35.0: model gemma4:e4b Q4_K_M 8.0B present (digest c6eb396dbd5992bbe3f…)",
+        "version": "0.35.0",
+        "model_info": {
+          "backend": "ollama",
+          "tag": "gemma4:e4b",
+          "digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb",
+          "parameter_size": "8.0B",
+          "quantization_level": "Q4_K_M",
+          "family": "gemma4",
+          "context_length": 131072,
+          "ollama_version": "0.35.0",
+          "size_bytes": 9608350718
+        },
+        "installed": [
+          "gemma4:e2b",
+          "gemma4:e4b"
+        ]
+      },
+      "settings": {
+        "vault": "/Users/isaacvazquez/Fundamentals-of-Agentic-AI/assignment-04/vault",
+        "index_dir": "/Users/isaacvazquez/Fundamentals-of-Agentic-AI/assignment-04/index",
+        "results_dir": "/Users/isaacvazquez/Fundamentals-of-Agentic-AI/assignment-04/results",
+        "model": "gemma4:e4b",
+        "backend": "ollama",
+        "host": "http://localhost:11434",
+        "k": 6,
+        "num_ctx": 8192
+      }
+    }
+  },
+  "device": {
+    "system": "Darwin",
+    "release": "25.3.0",
+    "machine": "arm64",
+    "python": "3.13.15",
+    "hostname": "Isaacs-MacBook-Pro-M4Pro.local",
+    "macos": "26.3",
+    "cpu": "Apple M4 Pro",
+    "memory_bytes": 25769803776,
+    "cores": 12,
+    "memory_available_bytes": 4180262912,
+    "gpu": "Apple Silicon unified memory (shared with the CPU)",
+    "disk_free_bytes": 10918608896
+  },
+  "ollama": {
+    "backend": "ollama",
+    "host": "http://localhost:11434",
+    "model": "gemma4:e4b",
+    "ok": true,
+    "message": "Ollama 0.35.0: model gemma4:e4b Q4_K_M 8.0B present (digest c6eb396dbd5992bbe3f…)",
+    "version": "0.35.0",
+    "model_info": {
+      "backend": "ollama",
+      "tag": "gemma4:e4b",
+      "digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb",
+      "parameter_size": "8.0B",
+      "quantization_level": "Q4_K_M",
+      "family": "gemma4",
+      "context_length": 131072,
+      "ollama_version": "0.35.0",
+      "size_bytes": 9608350718
+    },
+    "installed": [
+      "gemma4:e2b",
+      "gemma4:e4b"
+    ]
+  },
+  "steps": [
+    {
+      "name": "device",
+      "command": "scripts/device_report.sh results/20260929-224956-gemma4-e4b",
+      "started_at": 1790747396,
+      "ended_at": 1790747397,
+      "wall_s": 1,
+      "exit_code": 0
+    },
+    {
+      "name": "doctor",
+      "command": ".venv/bin/wiki doctor --require-offline --save",
+      "started_at": 1790747397,
+      "ended_at": 1790747397,
+      "wall_s": 0,
+      "exit_code": 0
+    },
+    {
+      "name": "ingest-1",
+      "command": ".venv/bin/wiki ingest",
+      "started_at": 1790747397,
+      "ended_at": 1790747857,
+      "wall_s": 460,
+      "exit_code": 0
+    },
+    {
+      "name": "ingest-2",
+      "command": ".venv/bin/wiki ingest",
+      "started_at": 1790747857,
+      "ended_at": 1790747857,
+      "wall_s": 0,
+      "exit_code": 0
+    },
+    {
+      "name": "eval",
+      "command": ".venv/bin/wiki eval tests/questions.json",
+      "started_at": 1790747857,
+      "ended_at": 1790747877,
+      "wall_s": 20,
+      "exit_code": 0
+    },
+    {
+      "name": "chat",
+      "command": ".venv/bin/wiki chat --script tests/chat_checks.txt",
+      "started_at": 1790747877,
+      "ended_at": 1790747893,
+      "wall_s": 16,
+      "exit_code": 0
+    },
+    {
+      "name": "search",
+      "command": ".venv/bin/wiki search Pac-Man evaluation score",
+      "started_at": 1790747893,
+      "ended_at": 1790747893,
+      "wall_s": 0,
+      "exit_code": 0
+    },
+    {
+      "name": "ask-S1",
+      "command": ".venv/bin/wiki ask --id S1 What did my final Pac-Man agent average on the five evaluation games?",
+      "started_at": 1790747893,
+      "ended_at": 1790747898,
+      "wall_s": 5,
+      "exit_code": 0
+    },
+    {
+      "name": "doctor-2",
+      "command": ".venv/bin/wiki doctor --require-offline --save",
+      "started_at": 1790747898,
+      "ended_at": 1790747898,
+      "wall_s": 0,
+      "exit_code": 0
+    },
+    {
+      "name": "eval-compare",
+      "command": "env WIKI_MODEL=gemma4:e2b WIKI_RUN_ID=20260929-224956-gemma4-e4b/compare-gemma4-e2b .venv/bin/wiki eval tests/questions.json",
+      "started_at": 1790747898,
+      "ended_at": 1790747912,
+      "wall_s": 14,
+      "exit_code": 0
+    }
+  ],
+  "ingest": {
+    "runs": [
+      {
+        "file": "ingest/ingest_log-2.json",
+        "started_at": "2026-09-30T05:57:37Z",
+        "model": "gemma4:e4b",
+        "totals": {
+          "sources": 4,
+          "ingested": 0,
+          "up_to_date": 4,
+          "notes_written": 0,
+          "notes_drafted": 0,
+          "notes_in_vault": 20,
+          "calls": 0,
+          "total_wall_s": 0.0,
+          "prompt_tokens": 0,
+          "generated_tokens": 0,
+          "median_tokens_per_s": null,
+          "max_ollama_size_bytes": null,
+          "max_ollama_process_rss_bytes": null,
+          "harness_max_rss_bytes": null,
+          "max_payload_chars": 0,
+          "payload_capped_calls": 0,
+          "index_passages": 324,
+          "index_wiki_passages": 92
+        },
+        "budgets": {
+          "plan_outline_chars": 6000,
+          "note_text_chars": 12000,
+          "num_ctx": 8192,
+          "num_predict": {
+            "ask": 400,
+            "chat": 500,
+            "route": 60,
+            "plan": 1200,
+            "note": 1400
+          }
+        }
+      },
+      {
+        "file": "ingest/ingest_log.json",
+        "started_at": "2026-09-30T05:49:57Z",
+        "model": "gemma4:e4b",
+        "totals": {
+          "sources": 4,
+          "ingested": 4,
+          "up_to_date": 0,
+          "notes_written": 20,
+          "notes_drafted": 0,
+          "notes_in_vault": 20,
+          "calls": 28,
+          "total_wall_s": 459.82,
+          "prompt_tokens": 56073,
+          "generated_tokens": 20955,
+          "median_tokens_per_s": 53.2,
+          "max_ollama_size_bytes": 3237478399,
+          "max_ollama_process_rss_bytes": 605765632,
+          "harness_max_rss_bytes": 33357824,
+          "max_payload_chars": 12063,
+          "payload_capped_calls": 5,
+          "index_passages": 324,
+          "index_wiki_passages": 92
+        },
+        "budgets": {
+          "plan_outline_chars": 6000,
+          "note_text_chars": 12000,
+          "num_ctx": 8192,
+          "num_predict": {
+            "ask": 400,
+            "chat": 500,
+            "route": 60,
+            "plan": 1200,
+            "note": 1400
+          }
+        }
+      }
+    ],
+    "generation": {
+      "sources": 4,
+      "ingested": 4,
+      "up_to_date": 0,
+      "notes_written": 20,
+      "notes_drafted": 0,
+      "notes_in_vault": 20,
+      "calls": 28,
+      "total_wall_s": 459.82,
+      "prompt_tokens": 56073,
+      "generated_tokens": 20955,
+      "median_tokens_per_s": 53.2,
+      "max_ollama_size_bytes": 3237478399,
+      "max_ollama_process_rss_bytes": 605765632,
+      "harness_max_rss_bytes": 33357824,
+      "max_payload_chars": 12063,
+      "payload_capped_calls": 5,
+      "index_passages": 324,
+      "index_wiki_passages": 92
+    },
+    "generation_log": "ingest/ingest_log.json",
+    "idempotence_check": {
+      "sources": 4,
+      "ingested": 0,
+      "up_to_date": 4,
+      "notes_written": 0,
+      "notes_drafted": 0,
+      "notes_in_vault": 20,
+      "calls": 0,
+      "total_wall_s": 0.0,
+      "prompt_tokens": 0,
+      "generated_tokens": 0,
+      "median_tokens_per_s": null,
+      "max_ollama_size_bytes": null,
+      "max_ollama_process_rss_bytes": null,
+      "harness_max_rss_bytes": null,
+      "max_payload_chars": 0,
+      "payload_capped_calls": 0,
+      "index_passages": 324,
+      "index_wiki_passages": 92
+    }
+  },
+  "ask": [
+    {
+      "id": "S1",
+      "status": "supported",
+      "verdict": null,
+      "wall_s": 4.519,
+      "tokens_per_s": 55.8,
+      "model": "gemma4:e4b",
+      "card": "ask/S1.json"
+    },
+    {
+      "id": "T1",
+      "status": "supported",
+      "verdict": "pass",
+      "wall_s": 6.06,
+      "tokens_per_s": 54.6,
+      "model": "gemma4:e4b",
+      "card": "ask/T1.json"
+    },
+    {
+      "id": "T2",
+      "status": "supported",
+      "verdict": "pass",
+      "wall_s": 5.088,
+      "tokens_per_s": 55.6,
+      "model": "gemma4:e4b",
+      "card": "ask/T2.json"
+    },
+    {
+      "id": "T3",
+      "status": "supported",
+      "verdict": "check",
+      "wall_s": 4.872,
+      "tokens_per_s": 56.3,
+      "model": "gemma4:e4b",
+      "card": "ask/T3.json"
+    },
+    {
+      "id": "T4",
+      "status": "insufficient",
+      "verdict": "pass",
+      "wall_s": 3.496,
+      "tokens_per_s": 56.8,
+      "model": "gemma4:e4b",
+      "card": "ask/T4.json"
+    }
+  ],
+  "chat": [
+    {
+      "transcript": "chat/chat_checks.json",
+      "turns": 6,
+      "checks": {
+        "total": 8,
+        "passed": 8
+      }
+    }
+  ],
+  "search": [
+    {
+      "query": "Pac-Man evaluation score",
+      "hits": 6,
+      "file": "search/pac-man-evaluation-score.json"
+    }
+  ]
+}

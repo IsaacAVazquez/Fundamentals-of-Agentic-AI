@@ -1,0 +1,58 @@
+{
+  "kind": "note",
+  "label": "Core Functionality and Features",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You write one note for a personal wiki from text the owner wrote. Reply with the note body in Markdown and nothing else, using exactly these three headings in this order:\n\n## Summary\nTwo to four sentences: what this note covers and its main result or point.\n\n## Details\nThe substance, in short paragraphs or bullet lists. Keep every number, name, date, and setting exactly as the source text gives it. Keep the owner's first-person voice (\"I trained ...\"). Do not add facts, opinions, or background that the source text does not contain. Leave out anything that is not in the source text you were given.\n\n## Related\nZero to three lines, each \"- Title: why it relates\", using only titles from the allowed list, copied exactly. Write \"- none\" if nothing on the list relates.\n\nDo not write a top-level title, frontmatter, a Sources section, tables wider than four columns, or code blocks longer than five lines. Do not refer to \"the source\" or \"this note\"; just present the content. At most 400 words."
+    },
+    {
+      "role": "user",
+      "content": "Note title: Core Functionality and Features\nPlanned summary: Summarizes what the networking tracker application is capable of doing.\nAllowed related titles: Assignment Overview and Requirements; Web App Walkthrough Screenshots; Technology Stack and Architecture; Database and Setup Details; Model Customization Techniques Comparison; Model Learning Mechanics Explained; Prompting as Probability Steering; Structuring Prompts as Product Interfaces; LLM Behavior and Probabilistic Nature; Advanced Retrieval and Knowledge Hub; Assignment Model Training Overview; Interacting with Trained Model; Model Performance and Results; Training Budget and Hardware Details\nSource file: Networking Tracker README\nSections included: \"What it does\"\n\nSource text:\n## What it does\n- Sign up, sign in, and sign out with email and password through Neon's managed Better Auth.\n- Add a contact with name, company, role, where you met, notes, and a priority of high, medium, or low.\n- View contacts as a directory listing that sorts by name, company, priority, or date added, in either direction, and filters by search text and by priority.\n- Edit and delete your own contacts, with a confirmation step before a delete.\n- Contacts live in Neon Postgres, so they survive a refresh, a new tab, or a different device.\n- A blank name, a priority outside the allowed set, or a field past its length limit fails with a clear message in the form, and fails again at the database if the form is bypassed.\n- Loading, empty, no-match, success, and error states each have their own visible treatment.\n- The layout works on a phone. Below 768px the two-column listing becomes one column and the priority filter moves under the running head."
+    }
+  ],
+  "response": "## Summary\nThe networking tracker application provides core functionality for managing contacts. Users can sign up, sign in, and sign out using Neon's managed Better Auth. Key features include adding detailed contacts, viewing them in a sortable and filterable directory, and managing personal contact records.\n\n## Details\n- Sign up, sign in, and sign out with email and password through Neon's managed Better Auth.\n- Add a contact with name, company, role, where you met, notes, and a priority of high, medium, or low.\n- View contacts as a directory listing that sorts by name, company, priority, or date added, in either direction, and filters by search text and by priority.\n- Edit and delete your own contacts, with a confirmation step before a delete.\n- Contacts live in Neon Postgres, so they survive a refresh, a new tab, or a different device.\n- A blank name, a priority outside the allowed set, or a field past its length limit fails with a clear message in the form, and fails again at the database if the form is bypassed.\n- Loading, empty, no-match, success, and error states each have their own visible treatment.\n- The layout works on a phone. Below 768px the two-column listing becomes one column and the priority filter moves under the running head.\n\n## Related\n- none",
+  "error": null,
+  "model": {
+    "backend": "ollama",
+    "tag": "gemma4:e4b",
+    "digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb",
+    "parameter_size": "8.0B",
+    "quantization_level": "Q4_K_M",
+    "family": "gemma4",
+    "context_length": 131072,
+    "ollama_version": "0.35.0",
+    "size_bytes": 9608350718
+  },
+  "record": {
+    "kind": "note",
+    "attempt": 1,
+    "system_chars": 998,
+    "user_chars": 1706,
+    "payload_chars": 958,
+    "payload_capped": false,
+    "est_prompt_tokens": 676,
+    "timing": {
+      "wall_s": 8.508,
+      "total_duration_s": 8.5039,
+      "load_duration_s": 0.0102,
+      "prompt_eval_count": 598,
+      "prompt_eval_duration_s": 0.8379,
+      "eval_count": 289,
+      "eval_duration_s": 7.5816,
+      "tokens_per_s": 38.1,
+      "prompt_tokens_per_s": 713.7
+    },
+    "memory": {
+      "ollama_model_size_bytes": 3237478399,
+      "ollama_size_vram_bytes": 3237478399,
+      "ollama_process_rss_bytes": 4281352192,
+      "harness_max_rss_bytes": 32702464,
+      "sampled_at": "2026-09-30T02:05:57Z"
+    },
+    "response_chars": 1284,
+    "ok": true,
+    "error": null,
+    "dump_file": "ingest/calls/190033-019-note-networking-tracker-readme-core-functionality-and-features.json"
+  }
+}

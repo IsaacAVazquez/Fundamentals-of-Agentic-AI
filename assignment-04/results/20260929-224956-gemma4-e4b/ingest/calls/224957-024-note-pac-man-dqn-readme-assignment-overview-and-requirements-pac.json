@@ -1,0 +1,58 @@
+{
+  "kind": "note",
+  "label": "Assignment Overview and Requirements Pac-Man",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You write one note for a personal wiki from text the owner wrote. Reply with the note body in Markdown and nothing else, using exactly these three headings in this order:\n\n## Summary\nTwo to four sentences: what this note covers and its main result or point.\n\n## Details\nThe substance, in short paragraphs or bullet lists. Keep every number, name, date, and setting exactly as the source text gives it. Keep the owner's first-person voice (\"I trained ...\"). Do not add facts, opinions, or background that the source text does not contain. Leave out anything that is not in the source text you were given.\n\n## Related\nZero to three lines, each \"- Title: why it relates\", using only titles from the allowed list, copied exactly. Write \"- none\" if nothing on the list relates.\n\nDo not write a top-level title, frontmatter, a Sources section, tables wider than four columns, or code blocks longer than five lines. Do not refer to \"the source\" or \"this note\"; just present the content. At most 400 words."
+    },
+    {
+      "role": "user",
+      "content": "Note title: Assignment Overview and Requirements Pac-Man\nPlanned summary: This section outlines the structure and requirements for the assignment using a reference table.\nAllowed related titles: Running the DQN Notebook; Agent Hyperparameter Tuning Choices; Performance Analysis Before Runs; Agent Training Results and Limitations; Model Customization Techniques Comparison; Model Learning Mechanics Explained; Prompting as Probability Steering; Structuring Prompts as Product Interfaces; LLM Behavior and Probabilistic Nature; Advanced Retrieval and Knowledge Hub; Assignment Model Training Overview; Assignment Overview and Requirements; Database Schema and Auth; Interacting with Trained Model; Local Setup and Deployment Details; Model Performance and Results; Technology Stack and Architecture; Training Budget and Hardware Details; Web App Walkthrough Screenshots\nSource file: Pac-Man DQN README\nSections included: \"Ms. Pac-Man DQN\", \"Where to find each requirement\"\n\nSource text:\n## Ms. Pac-Man DQN\nI trained this agent for Assignment 2 of Fundamentals of Agentic AI. It's the course's Deep Q-Network notebook for Ms. Pac-Man, run on my laptop with 10% exploration and a learning rate of 0.0001. I ran it twice, and the only difference between the two runs is the number of training games. My first run trained for 500 games, and its final agent averaged 400 on the five evaluation games against 492 for the untrained network. When I replayed every checkpoint that run saved on games the notebook never uses, the agent saved after 450 games turned out to be far better than the one the run ended with, so I reran the notebook with 450 games. The notebook in this folder is that second run, executed start to finish with every output saved, and its agent averaged 946 on the same five evaluation games against 492 for the untrained network.\n\n## Where to find each requirement\nThe sections below follow the order of the assignment's README requirements. This table is the short version for anyone grading against the brief.\n\n| Requirement | Where it is |\n| --- | --- |\n| Overview and how to open and run the notebook | The paragraph above, and Open and run the notebook |\n| Exploration, episodes, and learning rate, with a reason for each | My three choices |\n| What I expected before training, then what I observed | What I expected before each run, and What happened |\n| Completed episodes, decisions, learning updates, elapsed time, and hardware | Training budget and hardware |\n| Observations, actions, and rewards in plain language | What the agent sees, does, and gets rewarded for |\n| One observed limitation and one next experiment | One limitation and the next experiment |\n| Untrained, best trained, and intermediate GIFs | Gameplay, under The final run |\n| `training_dashboard.png` | Training dashboard, under The final run, with the first run's under The first run |\n| All five baseline and trained scores, both means, and `comparison.json` | Evaluation scores, under The final run, with the first run's table under The first run |\n| Links to the notebook, `config.json`, `training.csv`, and `training_summary.json`, and whether a run was interrupted | Training budget and hardware, and Files and checkpoints |"
+    }
+  ],
+  "response": "## Summary\nThis note details the process and results of training an agent for Assignment 2 of Fundamentals of Agentic AI using the Deep Q-Network notebook for Ms. Pac-Man. I trained the agent twice, noting that rerunning the notebook with 450 games yielded a significantly better result compared to the initial 500-game run. The note also provides a reference table mapping assignment requirements to specific sections within the notebook.\n\n## Details\nI trained this agent for Assignment 2 of Fundamentals of Agentic AI. It's the course's Deep Q-Network notebook for Ms. Pac-Man, run on my laptop with 10% exploration and a learning rate of 0.0001. I ran it twice, and the only difference between the two runs is the number of training games. My first run trained for 500 games, and its final agent averaged 400 on the five evaluation games against 492 for the untrained network. When I replayed every checkpoint that run saved on games the notebook never uses, the agent saved after 450 games turned out to be far better than the one the run ended with, so I reran the notebook with 450 games. The notebook in this folder is that second run, executed start to finish with every output saved, and its agent averaged 946 on the same five evaluation games against 492 for the untrained network.\n\nThe sections below follow the order of the assignment's README requirements. This table is the short version for anyone grading against the brief.\n\n| Requirement | Where it is |\n| :--- | :--- |\n| Overview and how to open and run the notebook | The paragraph above, and Open and run the notebook |\n| Exploration, episodes, and learning rate, with a reason for each | My three choices |\n| What I expected before training, then what I observed | What I expected before each run, and What happened |\n| Completed episodes, decisions, learning updates, elapsed time, and hardware | Training budget and hardware |\n| Observations, actions, and rewards in plain language | What the agent sees, does, and gets rewarded for |\n| One observed limitation and one next experiment | One limitation and the next experiment |\n| Untrained, best trained, and intermediate GIFs | Gameplay, under The final run |\n| `training_dashboard.png` | Training dashboard, under The final run, with the first run's under The first run |\n| All five baseline and trained scores, both means, and `comparison.json` | Evaluation scores, under The final run, with the first run's table under The first run |\n| Links to the notebook, `config.json`, `training.csv`, and `training_summary.json`, and whether a run was interrupted | Training budget and hardware, and Files and checkpoints |\n\n## Related\n- Assignment Overview and Requirements: This note covers the structure and requirements for the assignment using a reference table.",
+  "error": null,
+  "model": {
+    "backend": "ollama",
+    "tag": "gemma4:e4b",
+    "digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb",
+    "parameter_size": "8.0B",
+    "quantization_level": "Q4_K_M",
+    "family": "gemma4",
+    "context_length": 131072,
+    "ollama_version": "0.35.0",
+    "size_bytes": 9608350718
+  },
+  "record": {
+    "kind": "note",
+    "attempt": 1,
+    "system_chars": 998,
+    "user_chars": 3227,
+    "payload_chars": 2240,
+    "payload_capped": false,
+    "est_prompt_tokens": 1057,
+    "timing": {
+      "wall_s": 13.171,
+      "total_duration_s": 13.1688,
+      "load_duration_s": 0.0017,
+      "prompt_eval_count": 939,
+      "prompt_eval_duration_s": 1.755,
+      "eval_count": 629,
+      "eval_duration_s": 11.3797,
+      "tokens_per_s": 55.3,
+      "prompt_tokens_per_s": 535.0
+    },
+    "memory": {
+      "ollama_model_size_bytes": 3237478399,
+      "ollama_size_vram_bytes": 3237478399,
+      "ollama_process_rss_bytes": 451952640,
+      "harness_max_rss_bytes": 33357824,
+      "sampled_at": "2026-09-30T05:56:36Z"
+    },
+    "response_chars": 2785,
+    "ok": true,
+    "error": null,
+    "dump_file": "ingest/calls/224957-024-note-pac-man-dqn-readme-assignment-overview-and-requirements-pac.json"
+  }
+}

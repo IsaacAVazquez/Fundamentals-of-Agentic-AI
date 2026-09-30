@@ -1,0 +1,250 @@
+{
+  "id": "T4",
+  "run_id": "20260929-224956-gemma4-e4b/compare-gemma4-e2b",
+  "question": "What grade did I receive on Assignment 2?",
+  "mode": "local",
+  "backend": "ollama",
+  "model": {
+    "backend": "ollama",
+    "tag": "gemma4:e2b",
+    "digest": "7fbdbf8f5e45a75bb122155ed546e765b4d9c53a1285f62fd9f506baa1c5a47e",
+    "parameter_size": "5.1B",
+    "quantization_level": "Q4_K_M",
+    "family": "gemma4",
+    "context_length": 131072,
+    "ollama_version": "0.35.0",
+    "size_bytes": 7162405886
+  },
+  "options": {
+    "temperature": 0.0,
+    "num_ctx": 8192,
+    "num_predict": 400,
+    "seed": 0
+  },
+  "retrieval": {
+    "k": 6,
+    "scope": "all",
+    "index_built_at": "2026-09-30T05:57:37Z",
+    "index_passages": 324,
+    "query_terms": [
+      "2",
+      "assignment",
+      "grad",
+      "grade",
+      "point",
+      "receive",
+      "score"
+    ],
+    "passages": [
+      {
+        "n": 1,
+        "path": "wiki/Projects/Assignment Overview and Requirements Pac-Man.md",
+        "kind": "wiki",
+        "heading": "Details",
+        "heading_path": [
+          "Assignment Overview and Requirements Pac-Man",
+          "Details"
+        ],
+        "lines": [
+          30,
+          32
+        ],
+        "score": 6.582,
+        "chars": 988,
+        "matched_terms": [
+          "2",
+          "assignment",
+          "grad"
+        ],
+        "id": "3e18f82ef193",
+        "text": "I trained this agent for Assignment 2 of Fundamentals of Agentic AI. It's the course's Deep Q-Network notebook for Ms. Pac-Man, run on my laptop with 10% exploration and a learning rate of 0.0001. I ran it twice, and the only difference between the two runs is the number of training games. My first run trained for 500 games, and its final agent averaged 400 on the five evaluation games against 492 for the untrained network. When I replayed every checkpoint that run saved on games the notebook never uses, the agent saved after 450 games turned out to be far better than the one the run ended with, so I reran the notebook with 450 games. The notebook in this folder is that second run, executed start to finish with every output saved, and its agent averaged 946 on the same five evaluation games against 492 for the untrained network.\n\nThe sections below follow the order of the assignment's README requirements. This table is the short version for anyone grading against the brief.",
+        "sent_to_model": true
+      },
+      {
+        "n": 2,
+        "path": "raw/Class 5 Prompting and Retrieval Notes.md",
+        "kind": "raw",
+        "heading": "The v1 Boundary",
+        "heading_path": [
+          "Assignment 4: Knowledge Hub v1",
+          "The v1 Boundary"
+        ],
+        "lines": [
+          901,
+          906
+        ],
+        "score": 6.205,
+        "chars": 506,
+        "matched_terms": [
+          "assignment",
+          "grad",
+          "point"
+        ],
+        "id": "1f971846137e",
+        "text": "- In scope: ingest a small set of sources, maintain a clear index, retrieve relevant notes, cite them.\n- Out of scope: autonomous edits, multi-agent coordination, public deployment, and broad web search.\n\n**Tip**\n\nThe boundary is the point. A retrieval system you fully understand beats an agent you can’t debug. The optional v2 (next class) and v3 (Class 7) builds earn the tools and then the team — while the graded capstone, Assignment 5, applies the same discipline to a 10,000-record insight pipeline.",
+        "sent_to_model": true
+      },
+      {
+        "n": 3,
+        "path": "raw/Custom LLM README.md",
+        "kind": "raw",
+        "heading": "Chat with the trained model",
+        "heading_path": [
+          "Custom LLM with nanoGPT",
+          "Chat with the trained model"
+        ],
+        "lines": [
+          363,
+          363
+        ],
+        "score": 6.076,
+        "chars": 971,
+        "matched_terms": [
+          "assignment",
+          "receive"
+        ],
+        "id": "8a55c763ebaf",
+        "text": "The first three replies are what the corpus taught. The fourth is a negation failure. The model drew white, the color the story rejected, but for this exact prompt the probes in [results/expanded/probes.json](results/expanded/probes.json) put black first at 0.479 and white at 0.085, so the reply was an unlikely draw at temperature 0.8. The fifth is the limitation the assignment asks to show. The question's words are mostly outside the vocabulary, the model receives them as unknown tokens, and it replies with `the team discussed the car was`, pieces of a classroom frame and a negation story with no meaning together, because continuing text is the only thing it does and it has no idea of a question. The notebook's own chat cell, section 10, produced one more turn from the same model during Run All, `the customer` followed by `returned the item after checking the price .`, saved in [results/expanded/chat_transcript.json](results/expanded/chat_transcript.json).",
+        "sent_to_model": true
+      },
+      {
+        "n": 4,
+        "path": "wiki/Projects/Assignment Overview and Requirements Pac-Man.md",
+        "kind": "wiki",
+        "heading": "Summary",
+        "heading_path": [
+          "Assignment Overview and Requirements Pac-Man",
+          "Summary"
+        ],
+        "lines": [
+          26,
+          26
+        ],
+        "score": 5.85,
+        "chars": 428,
+        "matched_terms": [
+          "2",
+          "assignment"
+        ],
+        "id": "a87dee452823",
+        "text": "This note details the process and results of training an agent for Assignment 2 of Fundamentals of Agentic AI using the Deep Q-Network notebook for Ms. Pac-Man. I trained the agent twice, noting that rerunning the notebook with 450 games yielded a significantly better result compared to the initial 500-game run. The note also provides a reference table mapping assignment requirements to specific sections within the notebook.",
+        "sent_to_model": true
+      },
+      {
+        "n": 5,
+        "path": "raw/Networking Tracker README.md",
+        "kind": "raw",
+        "heading": "Evidence",
+        "heading_path": [
+          "Networking Tracker",
+          "Evidence"
+        ],
+        "lines": [
+          270,
+          270
+        ],
+        "score": 5.815,
+        "chars": 192,
+        "matched_terms": [
+          "2",
+          "assignment"
+        ],
+        "id": "b697f7d19a63",
+        "text": "The assignment brief asks for seven specific artifacts, and the Definition of Done slide in the Class 2 deck adds an explanation of publishable versus secret values. This is where each one is.",
+        "sent_to_model": true
+      },
+      {
+        "n": 6,
+        "path": "raw/Custom LLM README.md",
+        "kind": "raw",
+        "heading": "Actual continuations",
+        "heading_path": [
+          "Custom LLM with nanoGPT",
+          "The 48 evals across all four result sets",
+          "Actual continuations"
+        ],
+        "lines": [
+          253,
+          253
+        ],
+        "score": 5.592,
+        "chars": 474,
+        "matched_terms": [
+          "receive"
+        ],
+        "id": "4a498091060e",
+        "text": "The continuations for the unscorable cases are worth a look on their own. The model receives those prompts with their unknown words replaced by the `<UNK>` token, and what it writes back is a fragment of whatever frame the known words suggest, `bag is not low .` after the bag prompt, which is the start of one of my negation corrections, and `the person who received the ball was` after the umbrella prompt, which is a piece of my reference frame with nothing to anchor it.",
+        "sent_to_model": true
+      }
+    ]
+  },
+  "prompt": {
+    "system_file": "wiki-instructions.md",
+    "system_sha256": "57bc582fc52f0ff250cb6686d539957d3107e7a6381617b9b45f6f168c69c3c5",
+    "system_chars": 1450,
+    "user_chars": 4195,
+    "passage_chars": 3559,
+    "passages_sent": 6,
+    "estimated_tokens": 1411,
+    "user_message": "Passages:\n\n[1] wiki/Projects/Assignment Overview and Requirements Pac-Man.md # Details (lines 30-32)\nI trained this agent for Assignment 2 of Fundamentals of Agentic AI. It's the course's Deep Q-Network notebook for Ms. Pac-Man, run on my laptop with 10% exploration and a learning rate of 0.0001. I ran it twice, and the only difference between the two runs is the number of training games. My first run trained for 500 games, and its final agent averaged 400 on the five evaluation games against 492 for the untrained network. When I replayed every checkpoint that run saved on games the notebook never uses, the agent saved after 450 games turned out to be far better than the one the run ended with, so I reran the notebook with 450 games. The notebook in this folder is that second run, executed start to finish with every output saved, and its agent averaged 946 on the same five evaluation games against 492 for the untrained network.\n\nThe sections below follow the order of the assignment's README requirements. This table is the short version for anyone grading against the brief.\n\n[2] raw/Class 5 Prompting and Retrieval Notes.md # The v1 Boundary (lines 901-906)\n- In scope: ingest a small set of sources, maintain a clear index, retrieve relevant notes, cite them.\n- Out of scope: autonomous edits, multi-agent coordination, public deployment, and broad web search.\n\n**Tip**\n\nThe boundary is the point. A retrieval system you fully understand beats an agent you can’t debug. The optional v2 (next class) and v3 (Class 7) builds earn the tools and then the team — while the graded capstone, Assignment 5, applies the same discipline to a 10,000-record insight pipeline.\n\n[3] raw/Custom LLM README.md # Chat with the trained model (lines 363-363)\nThe first three replies are what the corpus taught. The fourth is a negation failure. The model drew white, the color the story rejected, but for this exact prompt the probes in [results/expanded/probes.json](results/expanded/probes.json) put black first at 0.479 and white at 0.085, so the reply was an unlikely draw at temperature 0.8. The fifth is the limitation the assignment asks to show. The question's words are mostly outside the vocabulary, the model receives them as unknown tokens, and it replies with `the team discussed the car was`, pieces of a classroom frame and a negation story with no meaning together, because continuing text is the only thing it does and it has no idea of a question. The notebook's own chat cell, section 10, produced one more turn from the same model during Run All, `the customer` followed by `returned the item after checking the price .`, saved in [results/expanded/chat_transcript.json](results/expanded/chat_transcript.json).\n\n[4] wiki/Projects/Assignment Overview and Requirements Pac-Man.md # Summary (lines 26-26)\nThis note details the process and results of training an agent for Assignment 2 of Fundamentals of Agentic AI using the Deep Q-Network notebook for Ms. Pac-Man. I trained the agent twice, noting that rerunning the notebook with 450 games yielded a significantly better result compared to the initial 500-game run. The note also provides a reference table mapping assignment requirements to specific sections within the notebook.\n\n[5] raw/Networking Tracker README.md # Evidence (lines 270-270)\nThe assignment brief asks for seven specific artifacts, and the Definition of Done slide in the Class 2 deck adds an explanation of publishable versus secret values. This is where each one is.\n\n[6] raw/Custom LLM README.md # Actual continuations (lines 253-253)\nThe continuations for the unscorable cases are worth a look on their own. The model receives those prompts with their unknown words replaced by the `<UNK>` token, and what it writes back is a fragment of whatever frame the known words suggest, `bag is not low .` after the bag prompt, which is the start of one of my negation corrections, and `the person who received the ball was` after the umbrella prompt, which is a piece of my reference frame with nothing to anchor it.\n\nQuestion: What grade did I receive on Assignment 2?\n\nAnswer from the passages above with [n] citations, or start with \"Insufficient evidence:\"."
+  },
+  "answer": {
+    "text": "Insufficient evidence: the passages do not state the grade received on Assignment 2.",
+    "raw": "Insufficient evidence: the passages do not state the grade received on Assignment 2."
+  },
+  "citations": [],
+  "citation_check": {
+    "valid": 0,
+    "invalid": [],
+    "cited_paths": [],
+    "insufficient_marker": true,
+    "unverified_numbers": []
+  },
+  "status": "insufficient",
+  "timing": {
+    "wall_s": 1.446,
+    "total_duration_s": 1.4449,
+    "load_duration_s": 0.0099,
+    "prompt_eval_count": 1385,
+    "prompt_eval_duration_s": 1.2377,
+    "eval_count": 17,
+    "eval_duration_s": 0.1711,
+    "tokens_per_s": 99.4,
+    "prompt_tokens_per_s": 1119.0
+  },
+  "memory": {
+    "ollama_model_size_bytes": 7181004963,
+    "ollama_size_vram_bytes": 7181004963,
+    "ollama_process_rss_bytes": 3465412608,
+    "harness_max_rss_bytes": 38125568,
+    "sampled_at": "2026-09-30T05:58:32Z"
+  },
+  "offline": {
+    "source": "live probe",
+    "internet_reachable": false,
+    "probes": {
+      "tcp 1.1.1.1:443": "failed (OSError: [Errno 51] Network is unreachable)",
+      "tcp 8.8.8.8:53": "failed (OSError: [Errno 51] Network is unreachable)",
+      "dns pypi.org": "failed ([Errno 8] nodename nor servname provided, or not known)",
+      "https example.com": "failed (URLError)"
+    },
+    "checked_at": "2026-09-30T05:58:32Z"
+  },
+  "assessment": {
+    "expected_behavior": "insufficient",
+    "expected_sources": [],
+    "retrieval_hit": null,
+    "retrieval_hit_all": null,
+    "retrieved_any": [],
+    "expected_keywords": [],
+    "keywords_found": [],
+    "status_matches_expected": true,
+    "cited_expected_source": null,
+    "verdict": "pass",
+    "notes": "Plausible for a coursework wiki, but no raw source states a grade. COURSE.md, which holds grades, was deliberately left out of the vault. The expected reply starts with 'Insufficient evidence'. Retrieval will still return Pac-Man score passages, and the model must not present a game score as a grade.",
+    "human_assessment": null
+  },
+  "error": null,
+  "created_at": "2026-09-30T05:58:32Z",
+  "schema": "evidence-card/1"
+}

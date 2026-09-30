@@ -1,0 +1,58 @@
+{
+  "kind": "plan",
+  "label": "",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You plan the wiki notes for one source document. You get the document's outline (its headings, each with the first words of its section) and the titles of notes that already exist. Reply with JSON only, shaped:\n{\"notes\": [{\"title\": \"...\", \"folder\": \"Projects\", \"summary\": \"...\", \"sections\": [\"heading\", \"heading\"], \"related\": [{\"title\": \"...\", \"why\": \"...\"}]}]}\n\nRules\n- Plan between 2 and the maximum number of notes. Each note covers a coherent group of the document's sections. Copy section headings exactly from the outline, without the leading # signs and without the text after the dash. Use each section in at most one note; put leftover sections into the closest note.\n- title: 2 to 6 words that name the topic like a chapter title, for example \"Pac-Man DQN Training\" or \"Networking Tracker Security\". No dates, no id-like numbers, no file names, no colons or slashes, no full sentences. Titles must differ from each other.\n- If a title in \"Existing note titles\" or \"Titles previously written from this source\" already fits a group, reuse it exactly; that note will be updated instead of duplicated.\n- folder: \"Projects\" for something the owner built or ran, \"Course\" for class material, lectures, and course logistics, \"Concepts\" for a general idea or technique explained on its own.\n- summary: one plain sentence of at most 25 words saying what the note contains.\n- related: 0 to 3 titles from this plan or from the existing titles, each with a short \"why\" clause such as \"same laptop, trained on the GPU instead\".\n\nExample for a short document with sections \"Overview\", \"Setup\", \"Results\":\n{\"notes\": [{\"title\": \"Garden Sensor Build\", \"folder\": \"Projects\", \"summary\": \"How the soil sensor was assembled and configured.\", \"sections\": [\"Overview\", \"Setup\"], \"related\": [{\"title\": \"Garden Sensor Results\", \"why\": \"the readings this build produced\"}]}, {\"title\": \"Garden Sensor Results\", \"folder\": \"Projects\", \"summary\": \"The two weeks of moisture readings and what they showed.\", \"sections\": [\"Results\"], \"related\": [{\"title\": \"Garden Sensor Build\", \"why\": \"the hardware behind these readings\"}]}]}"
+    },
+    {
+      "role": "user",
+      "content": "Source file: Pac-Man DQN README\nDocument title: Ms. Pac-Man DQN\nMaximum notes: 5\nExisting note titles: Model Customization Techniques Comparison (Concepts); Model Learning Mechanics Explained (Concepts); Prompting as Probability Steering (Concepts); Structuring Prompts as Product Interfaces (Concepts); LLM Behavior and Probabilistic Nature (Course); Advanced Retrieval and Knowledge Hub (Projects); Assignment Model Training Overview (Projects); Assignment Overview and Requirements (Projects); Database Schema and Auth (Projects); Interacting with Trained Model (Projects); Local Setup and Deployment Details (Projects); Model Performance and Results (Projects); Technology Stack and Architecture (Projects); Training Budget and Hardware Details (Projects); Web App Walkthrough Screenshots (Projects)\nTitles previously written from this source: (none)\n\nOutline:\n# Ms. Pac-Man DQN — I trained this agent for Assignment 2 of Fundamentals of Agentic AI. It's the course's Deep Q-Network notebook for Ms. Pac-Man, run on my laptop with 10% exploration and a learning rate of 0.0001. I…\n## Where to find each requirement — The sections below follow the order of the assignment's README requirements. This table is the short version for anyone grading against the brief. | Requirement | Where it is | | --- | --- | | Overvi…\n## Open and run the notebook — The executed notebook is [pacman_dqn.ipynb](pacman_dqn.ipynb), from the final 450-game run. It keeps every output from that run, including the baseline, all 450 training lines, the progress GIFs, the…\n## My three choices — | Setting | Starting value | First run | Final run | | --- | --- | --- | --- | | Exploration | 0.20 | 0.10 | 0.10 | | Episodes | 100 | 500 | 450 | | Learning rate | 0.0001 | 0.0001 | 0.0001 | Everyth…\n## What I expected before each run — I recorded both predictions before the runs started. Before the first run, I expected a clear gain over the untrained network, whose five-game average had been 492 in the 9/8 and 9/9 setup checks, bu…\n## What happened\n### The first run, 500 games — | Evaluation game (seed) | Untrained network | Trained network | | --- | --- | --- | | 1 (seed 101) | 350 | 730 | | 2 (seed 202) | 500 | 190 | | 3 (seed 303) | 320 | 460 | | 4 (seed 404) | 800 | 360…\n### Checking the checkpoints on games the notebook never plays — Five games can't tell a 92-point drop from noise, so I wrote `scripts/check_checkpoints.py` to replay saved agents on more games. It reuses the notebook's own game, network, and move-choice code, and…\n### The final run, 450 games — It did end on that agent. All 450 rows of its training log match the first 450 rows of the first run's log exactly apart from elapsed time, which anyone can check by comparing [results/450-games/trai…\n## Training budget and hardware — | Run | Status | Completed games | Decisions | Learning updates | Training loop time | Whole notebook | | --- | --- | --- | --- | --- | --- | --- | | First, 500 games | completed | 500 | 303,666 | 75…\n## What the agent sees, does, and gets rewarded for — The agent doesn't see the game the way I do. Each observation is the last four game screens, shrunk to 84 by 84 pixels in grayscale and stacked together, because a single still frame shows where ever…\n## One limitation and the next experiment — The limitation I saw most clearly is that the agent never settled on a way of playing. The move it chose most often kept switching between checkpoints, and across the first run's 20 checkpoints, the…\n## Files and checkpoints — | File | What it is | | --- | --- | | [pacman_dqn.ipynb](pacman_dqn.ipynb) | The final 450-game run, executed with every output saved | | [results/450-games/](results/450-games/) | The final run's `c…\n## Where the code comes from — The notebook, `pacman_player.py`, `requirements.txt`, and `tests/verify_notebook.py` come from the course's project at https://github.com/pepealonso95/pacman-dqn. I checked on 2026-09-13 that `pacman…\n\nYour previous plan had these problems, fix them: the reply was not valid JSON (Expecting ',' delimiter: line 52 column 2 (char 3854))"
+    }
+  ],
+  "response": "{\"notes\": [{\"title\": \"Assignment Overview and Requirements\", \"folder\": \"Projects\", \"summary\": \"This section outlines the structure and requirements for the assignment using a reference table.\", \"sections\": [\"Where to find each requirement\"], \"related\": []}, {\"title\": \"Running the DQN Notebook\", \"folder\": \"Projects\", \"summary\": \"Details on executing the final 450-game run notebook and its outputs.\", \"sections\": [\"Open and run the notebook\"], \"related\": []}, {\"title\": \"Agent Hyperparameter Tuning Choices\", \"folder\": \"Projects\", \"summary\": \"A comparison of starting and final values for key training settings like exploration and learning rate.\", \"sections\": [\"My three choices\"], \"related\": []}, {\"title\": \"Performance Analysis Before Runs\", \"folder\": \"Projects\", \"summary\": \"Recording and comparing expected performance metrics before the agent's training runs began.\", \"sections\": [\"What I expected before each run\"], \"related\": []}, {\"title\": \"Agent Training Results and Limitations\", \"folder\": \"Projects\", \"summary\": \"Presenting the results from the first and final training runs, along with observed agent limitations.\", \"sections\": [\"What happened\", \"One limitation and the next experiment\"], \"related\": [{\"title\": \"Model Performance and Results\", \"why\": \"This note details the specific performance metrics observed.\"}]}, {\"title\": \"Training Hardware and Budget Details\", \"folder\": \"Projects\", \"summary\": \"A summary table detailing the computational resources and time spent on the training runs.\", \"sections\": [\"Training budget and hardware\"], \"related\": []}]\n}",
+  "error": null,
+  "model": {
+    "backend": "ollama",
+    "tag": "gemma4:e4b",
+    "digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb",
+    "parameter_size": "8.0B",
+    "quantization_level": "Q4_K_M",
+    "family": "gemma4",
+    "context_length": 131072,
+    "ollama_version": "0.35.0",
+    "size_bytes": 9608350718
+  },
+  "record": {
+    "kind": "plan",
+    "attempt": 1,
+    "system_chars": 2105,
+    "user_chars": 4089,
+    "payload_chars": 3089,
+    "payload_capped": false,
+    "est_prompt_tokens": 1549,
+    "timing": {
+      "wall_s": 6.539,
+      "total_duration_s": 6.5375,
+      "load_duration_s": 0.004,
+      "prompt_eval_count": 1654,
+      "prompt_eval_duration_s": 0.3611,
+      "eval_count": 334,
+      "eval_duration_s": 6.1415,
+      "tokens_per_s": 54.4,
+      "prompt_tokens_per_s": 4580.4
+    },
+    "memory": {
+      "ollama_model_size_bytes": 3237478399,
+      "ollama_size_vram_bytes": 3237478399,
+      "ollama_process_rss_bytes": 519815168,
+      "harness_max_rss_bytes": 33357824,
+      "sampled_at": "2026-09-30T05:56:22Z"
+    },
+    "response_chars": 1572,
+    "ok": true,
+    "error": null,
+    "dump_file": "ingest/calls/224957-023-plan-pac-man-dqn-readme.json"
+  }
+}

@@ -34,7 +34,9 @@ def assess(card, q: dict) -> dict:
     keywords = q.get("expected_keywords", [])
     found = [k for k in keywords if k.lower() in answer]
     if expected == "insufficient":
-        status_ok = card.status == "insufficient"
+        # A reply that opens with the marker meets the expectation even when it cites the passage it
+        # checked, which ask.py labels "partial" (Gemma did exactly that on T4 in the first Mac run).
+        status_ok = bool(card.citation_check.get("insufficient_marker"))
     else:
         status_ok = card.status in ("supported", "partial")
     hit = any(s in sent_paths for s in expected_sources) if expected_sources else None

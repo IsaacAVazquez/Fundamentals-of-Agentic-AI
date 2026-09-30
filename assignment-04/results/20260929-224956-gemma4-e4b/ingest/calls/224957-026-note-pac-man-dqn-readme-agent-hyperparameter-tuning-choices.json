@@ -1,0 +1,58 @@
+{
+  "kind": "note",
+  "label": "Agent Hyperparameter Tuning Choices",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You write one note for a personal wiki from text the owner wrote. Reply with the note body in Markdown and nothing else, using exactly these three headings in this order:\n\n## Summary\nTwo to four sentences: what this note covers and its main result or point.\n\n## Details\nThe substance, in short paragraphs or bullet lists. Keep every number, name, date, and setting exactly as the source text gives it. Keep the owner's first-person voice (\"I trained ...\"). Do not add facts, opinions, or background that the source text does not contain. Leave out anything that is not in the source text you were given.\n\n## Related\nZero to three lines, each \"- Title: why it relates\", using only titles from the allowed list, copied exactly. Write \"- none\" if nothing on the list relates.\n\nDo not write a top-level title, frontmatter, a Sources section, tables wider than four columns, or code blocks longer than five lines. Do not refer to \"the source\" or \"this note\"; just present the content. At most 400 words."
+    },
+    {
+      "role": "user",
+      "content": "Note title: Agent Hyperparameter Tuning Choices\nPlanned summary: A comparison of starting and final values for key training settings like exploration and learning rate.\nAllowed related titles: Assignment Overview and Requirements Pac-Man; Running the DQN Notebook; Performance Analysis Before Runs; Agent Training Results and Limitations; Model Customization Techniques Comparison; Model Learning Mechanics Explained; Prompting as Probability Steering; Structuring Prompts as Product Interfaces; LLM Behavior and Probabilistic Nature; Advanced Retrieval and Knowledge Hub; Assignment Model Training Overview; Assignment Overview and Requirements; Database Schema and Auth; Interacting with Trained Model; Local Setup and Deployment Details; Model Performance and Results; Technology Stack and Architecture; Training Budget and Hardware Details; Web App Walkthrough Screenshots\nSource file: Pac-Man DQN README\nSections included: \"My three choices\"\n\nSource text:\n## My three choices\n| Setting | Starting value | First run | Final run |\n| --- | --- | --- | --- |\n| Exploration | 0.20 | 0.10 | 0.10 |\n| Episodes | 100 | 500 | 450 |\n| Learning rate | 0.0001 | 0.0001 | 0.0001 |\n\nEverything else is exactly as the course ships it, including the five evaluation seeds, the 5% random moves during evaluation, and the cap of 3,000 decisions per game.\n\nI set exploration to 0.10, so one training move in ten is random once the 1,000-move warm-up is over. The course's build-from-scratch prompt decays exploration toward 0.1, and a lower rate keeps practice closer to the way the agent gets scored, since evaluation uses 5% random moves.\n\nI kept the learning rate at 0.0001. It's the notebook's reference value and the rate the course's build-from-scratch prompt starts Adam at, and with a replay memory of only 5,000 decisions I wanted steady updates more than fast ones.\n\nFor the first run I picked 500 episodes because a five-game run only checks the setup, and on this laptop 500 games looked like roughly 20 to 35 minutes, which I thought was long enough for learning to show up in the evaluation games the class leaderboard uses. For the final run I changed episodes to 450 and nothing else, because of what I found when I checked the first run's checkpoints, which is laid out under What happened."
+    }
+  ],
+  "response": "## Summary\nThis note details my specific choices for key hyperparameters during the agent's training process, including exploration, episodes, and learning rate. The main point is that I adjusted these settings—setting exploration to 0.10, keeping the learning rate at 0.0001, and adjusting episodes to 450 for the final run—to better align the training with the evaluation environment.\n\n## Details\n| Setting | Starting value | First run | Final run |\n| :--- | :--- | :--- | :--- |\n| Exploration | 0.20 | 0.10 | 0.10 |\n| Episodes | 100 | 500 | 450 |\n| Learning rate | 0.0001 | 0.0001 | 0.0001 |\n\nEverything else is exactly as the course ships it, including the five evaluation seeds, the 5% random moves during evaluation, and the cap of 3,000 decisions per game.\n\nI set exploration to 0.10, so one training move in ten is random once the 1,000-move warm-up is over. The course's build-from-scratch prompt decays exploration toward 0.1, and a lower rate keeps practice closer to the way the agent gets scored, since evaluation uses 5% random moves.\n\nI kept the learning rate at 0.0001. It's the notebook's reference value and the rate the course's build-from-scratch prompt starts Adam at, and with a replay memory of only 5,000 decisions I wanted steady updates more than fast ones.\n\nFor the first run I picked 500 episodes because a five-game run only checks the setup, and on this laptop 500 games looked like roughly 20 to 35 minutes, which I thought was long enough for learning to show up in the evaluation games the class leaderboard uses. For the final run I changed episodes to 450 and nothing else, because of what I found when I checked the first run's checkpoints, which is laid out under What happened.\n\n## Related\n- Assignment Model Training Overview: This note details my specific choices for key hyperparameters during the agent's training process, including exploration, episodes, and learning rate.",
+  "error": null,
+  "model": {
+    "backend": "ollama",
+    "tag": "gemma4:e4b",
+    "digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb",
+    "parameter_size": "8.0B",
+    "quantization_level": "Q4_K_M",
+    "family": "gemma4",
+    "context_length": 131072,
+    "ollama_version": "0.35.0",
+    "size_bytes": 9608350718
+  },
+  "record": {
+    "kind": "note",
+    "attempt": 1,
+    "system_chars": 998,
+    "user_chars": 2293,
+    "payload_chars": 1332,
+    "payload_capped": false,
+    "est_prompt_tokens": 823,
+    "timing": {
+      "wall_s": 10.72,
+      "total_duration_s": 10.7173,
+      "load_duration_s": 0.0034,
+      "prompt_eval_count": 790,
+      "prompt_eval_duration_s": 1.4736,
+      "eval_count": 505,
+      "eval_duration_s": 9.1516,
+      "tokens_per_s": 55.2,
+      "prompt_tokens_per_s": 536.1
+    },
+    "memory": {
+      "ollama_model_size_bytes": 3237478399,
+      "ollama_size_vram_bytes": 3237478399,
+      "ollama_process_rss_bytes": 535166976,
+      "harness_max_rss_bytes": 33357824,
+      "sampled_at": "2026-09-30T05:57:07Z"
+    },
+    "response_chars": 1916,
+    "ok": true,
+    "error": null,
+    "dump_file": "ingest/calls/224957-026-note-pac-man-dqn-readme-agent-hyperparameter-tuning-choices.json"
+  }
+}

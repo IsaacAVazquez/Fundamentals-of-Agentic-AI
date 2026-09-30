@@ -1,0 +1,11 @@
+{"name":"device","command":"scripts/device_report.sh results/20260929-224956-gemma4-e4b","started_at":1790747396,"ended_at":1790747397,"wall_s":1,"exit_code":0}
+{"name":"doctor","command":".venv/bin/wiki doctor --require-offline --save","started_at":1790747397,"ended_at":1790747397,"wall_s":0,"exit_code":0}
+{"name":"ingest-1","command":".venv/bin/wiki ingest","started_at":1790747397,"ended_at":1790747857,"wall_s":460,"exit_code":0}
+{"name":"ingest-2","command":".venv/bin/wiki ingest","started_at":1790747857,"ended_at":1790747857,"wall_s":0,"exit_code":0}
+{"name":"eval","command":".venv/bin/wiki eval tests/questions.json","started_at":1790747857,"ended_at":1790747877,"wall_s":20,"exit_code":0}
+{"name":"chat","command":".venv/bin/wiki chat --script tests/chat_checks.txt","started_at":1790747877,"ended_at":1790747893,"wall_s":16,"exit_code":0}
+{"name":"search","command":".venv/bin/wiki search Pac-Man evaluation score","started_at":1790747893,"ended_at":1790747893,"wall_s":0,"exit_code":0}
+{"name":"ask-S1","command":".venv/bin/wiki ask --id S1 What did my final Pac-Man agent average on the five evaluation games?","started_at":1790747893,"ended_at":1790747898,"wall_s":5,"exit_code":0}
+{"name":"doctor-2","command":".venv/bin/wiki doctor --require-offline --save","started_at":1790747898,"ended_at":1790747898,"wall_s":0,"exit_code":0}
+{"name":"eval-compare","command":"env WIKI_MODEL=gemma4:e2b WIKI_RUN_ID=20260929-224956-gemma4-e4b/compare-gemma4-e2b .venv/bin/wiki eval tests/questions.json","started_at":1790747898,"ended_at":1790747912,"wall_s":14,"exit_code":0}
+{"name":"manifest","command":".venv/bin/wiki manifest","started_at":1790747912,"ended_at":1790747912,"wall_s":0,"exit_code":0}

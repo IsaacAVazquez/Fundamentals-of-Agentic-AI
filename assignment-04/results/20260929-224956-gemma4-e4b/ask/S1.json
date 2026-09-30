@@ -1,0 +1,295 @@
+{
+  "id": "S1",
+  "run_id": "20260929-224956-gemma4-e4b",
+  "question": "What did my final Pac-Man agent average on the five evaluation games?",
+  "mode": "local",
+  "backend": "ollama",
+  "model": {
+    "backend": "ollama",
+    "tag": "gemma4:e4b",
+    "digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb",
+    "parameter_size": "8.0B",
+    "quantization_level": "Q4_K_M",
+    "family": "gemma4",
+    "context_length": 131072,
+    "ollama_version": "0.35.0",
+    "size_bytes": 9608350718
+  },
+  "options": {
+    "temperature": 0.0,
+    "num_ctx": 8192,
+    "num_predict": 400,
+    "seed": 0
+  },
+  "retrieval": {
+    "k": 6,
+    "scope": "all",
+    "index_built_at": "2026-09-30T05:57:37Z",
+    "index_passages": 324,
+    "query_terms": [
+      "agent",
+      "average",
+      "evaluation",
+      "final",
+      "five",
+      "game",
+      "man",
+      "pac"
+    ],
+    "passages": [
+      {
+        "n": 1,
+        "path": "raw/Pac-Man DQN README.md",
+        "kind": "raw",
+        "heading": "The first run, 500 games",
+        "heading_path": [
+          "Ms. Pac-Man DQN",
+          "What happened",
+          "The first run, 500 games"
+        ],
+        "lines": [
+          90,
+          92
+        ],
+        "score": 25.421,
+        "chars": 766,
+        "matched_terms": [
+          "agent",
+          "evaluation",
+          "final",
+          "five",
+          "game",
+          "man",
+          "pac"
+        ],
+        "id": "356f9d1eefbd",
+        "text": "Looking at which moves the agents chose explained more than the scores did. The untrained network pushes the joystick up and to the left on 96% of its moves across the five evaluation games, so the 492 baseline is really what holding one diagonal gets you. The final 500-game agent mostly chose no move at all, on 70% of its moves across the five games and on 80 to 88% of them in four of the five. Its best game, the 730 on seed 101, is also the game where it held up and to the left the most, and that's the game both of the run's final GIFs show, because the best-of-five GIF and the 500-game progress sample came out as the same file.\n\n![The first run's final agent in its best evaluation game, seed 101, which scored 730](results/500-games/demos/final_best.gif)",
+        "sent_to_model": true
+      },
+      {
+        "n": 2,
+        "path": "raw/Pac-Man DQN README.md",
+        "kind": "raw",
+        "heading": "What I expected before each run",
+        "heading_path": [
+          "Ms. Pac-Man DQN",
+          "What I expected before each run"
+        ],
+        "lines": [
+          69,
+          71
+        ],
+        "score": 24.969,
+        "chars": 727,
+        "matched_terms": [
+          "agent",
+          "average",
+          "final",
+          "five",
+          "game",
+          "man",
+          "pac"
+        ],
+        "id": "6e67b7c3349f",
+        "text": "I recorded both predictions before the runs started. Before the first run, I expected a clear gain over the untrained network, whose five-game average had been 492 in the 9/8 and 9/9 setup checks, but with a lot of swing from one game to the next. My reasoning was that 500 games is a hundred times the five-game check, where the trained agent actually scored worse than the untrained one, and that 10% exploration keeps training closer to the way the agent gets scored.\n\nBefore the final run, I expected its agent to land near the 1,033 average that the 450-game checkpoint had scored on 50 test games, described below, but five games is a small sample, so I wouldn't have been surprised by anything from roughly 500 to 1,500.",
+        "sent_to_model": true
+      },
+      {
+        "n": 3,
+        "path": "raw/Pac-Man DQN README.md",
+        "kind": "raw",
+        "heading": "The final run, 450 games",
+        "heading_path": [
+          "Ms. Pac-Man DQN",
+          "What happened",
+          "The final run, 450 games"
+        ],
+        "lines": [
+          122,
+          135
+        ],
+        "score": 24.843,
+        "chars": 1154,
+        "matched_terms": [
+          "agent",
+          "average",
+          "evaluation",
+          "final",
+          "five",
+          "game",
+          "man",
+          "pac"
+        ],
+        "id": "a02c97c552e8",
+        "text": "It did end on that agent. All 450 rows of its training log match the first 450 rows of the first run's log exactly apart from elapsed time, which anyone can check by comparing [results/450-games/training.csv](results/450-games/training.csv) with [results/500-games/training.csv](results/500-games/training.csv), and its saved weights are identical to the first run's 450-game checkpoint. Its untrained baseline and its 18 progress samples also came out the same as the first run's.\n\nOn the five evaluation games, the final agent beat the untrained network on three and lost on two, and its average came out at 946 against 492, a gain of 454 points. That's in line with the 1,033 I expected from the 50 test games, and since these five games weren't used to pick the checkpoint, it's a fair result, but five games are too few to say much about the exact size of the gain.\n\n#### Evaluation scores\n\n| Evaluation game (seed) | Untrained network | Trained network |\n| --- | --- | --- |\n| 1 (seed 101) | 350 | 540 |\n| 2 (seed 202) | 500 | 440 |\n| 3 (seed 303) | 320 | 1,770 |\n| 4 (seed 404) | 800 | 340 |\n| 5 (seed 505) | 490 | 1,640 |\n| Mean | 492.0 | 946.0 |",
+        "sent_to_model": true
+      },
+      {
+        "n": 4,
+        "path": "raw/Pac-Man DQN README.md",
+        "kind": "raw",
+        "heading": "Ms. Pac-Man DQN",
+        "heading_path": [
+          "Ms. Pac-Man DQN"
+        ],
+        "lines": [
+          3,
+          3
+        ],
+        "score": 24.196,
+        "chars": 840,
+        "matched_terms": [
+          "agent",
+          "evaluation",
+          "final",
+          "five",
+          "game",
+          "man",
+          "pac"
+        ],
+        "id": "363f9b7d5ecc",
+        "text": "I trained this agent for Assignment 2 of Fundamentals of Agentic AI. It's the course's Deep Q-Network notebook for Ms. Pac-Man, run on my laptop with 10% exploration and a learning rate of 0.0001. I ran it twice, and the only difference between the two runs is the number of training games. My first run trained for 500 games, and its final agent averaged 400 on the five evaluation games against 492 for the untrained network. When I replayed every checkpoint that run saved on games the notebook never uses, the agent saved after 450 games turned out to be far better than the one the run ended with, so I reran the notebook with 450 games. The notebook in this folder is that second run, executed start to finish with every output saved, and its agent averaged 946 on the same five evaluation games against 492 for the untrained network.",
+        "sent_to_model": true
+      },
+      {
+        "n": 5,
+        "path": "raw/Pac-Man DQN README.md",
+        "kind": "raw",
+        "heading": "The final run, 450 games",
+        "heading_path": [
+          "Ms. Pac-Man DQN",
+          "What happened",
+          "The final run, 450 games"
+        ],
+        "lines": [
+          145,
+          149
+        ],
+        "score": 23.607,
+        "chars": 1124,
+        "matched_terms": [
+          "agent",
+          "evaluation",
+          "final",
+          "five",
+          "game",
+          "man",
+          "pac"
+        ],
+        "id": "5ad4c3499bdd",
+        "text": "The final agent's best evaluation game was seed 303, which scored 1,770. Across the five evaluation games it chose down-left on 47% of its moves and up-right on 39%, and in this game it reached 1,150 points in the first 20 seconds without losing a life, including a jump from 610 to 1,070 in a couple of seconds right after the ghosts turned blue. It lost its first life at decision 488 of 872, well after the GIF ends. The move counts, and the per-game scores and life losses behind them, are in [results/450-games/move_shares.json](results/450-games/move_shares.json), which `scripts/eval_move_shares.py` wrote by replaying the saved agents on the same five games and reproducing every score in `comparison.json`.\n\n![The final agent in its best evaluation game, seed 303, which scored 1,770](results/450-games/demos/final_best.gif)\n\nThe progress samples below all play evaluation seed 101, one every 25 training games, and they're identical to the first run's samples up to game 450. Their scores bounce between 350 and 1,410 with no steady climb, which is the same instability the checkpoint check measured on more games.",
+        "sent_to_model": true
+      },
+      {
+        "n": 6,
+        "path": "wiki/Projects/Assignment Overview and Requirements Pac-Man.md",
+        "kind": "wiki",
+        "heading": "Details",
+        "heading_path": [
+          "Assignment Overview and Requirements Pac-Man",
+          "Details"
+        ],
+        "lines": [
+          30,
+          32
+        ],
+        "score": 22.745,
+        "chars": 988,
+        "matched_terms": [
+          "agent",
+          "evaluation",
+          "final",
+          "five",
+          "game",
+          "man",
+          "pac"
+        ],
+        "id": "3e18f82ef193",
+        "text": "I trained this agent for Assignment 2 of Fundamentals of Agentic AI. It's the course's Deep Q-Network notebook for Ms. Pac-Man, run on my laptop with 10% exploration and a learning rate of 0.0001. I ran it twice, and the only difference between the two runs is the number of training games. My first run trained for 500 games, and its final agent averaged 400 on the five evaluation games against 492 for the untrained network. When I replayed every checkpoint that run saved on games the notebook never uses, the agent saved after 450 games turned out to be far better than the one the run ended with, so I reran the notebook with 450 games. The notebook in this folder is that second run, executed start to finish with every output saved, and its agent averaged 946 on the same five evaluation games against 492 for the untrained network.\n\nThe sections below follow the order of the assignment's README requirements. This table is the short version for anyone grading against the brief.",
+        "sent_to_model": false
+      }
+    ]
+  },
+  "prompt": {
+    "system_file": "wiki-instructions.md",
+    "system_sha256": "57bc582fc52f0ff250cb6686d539957d3107e7a6381617b9b45f6f168c69c3c5",
+    "system_chars": 1450,
+    "user_chars": 5158,
+    "passage_chars": 4611,
+    "passages_sent": 5,
+    "estimated_tokens": 1652,
+    "user_message": "Passages:\n\n[1] raw/Pac-Man DQN README.md # The first run, 500 games (lines 90-92)\nLooking at which moves the agents chose explained more than the scores did. The untrained network pushes the joystick up and to the left on 96% of its moves across the five evaluation games, so the 492 baseline is really what holding one diagonal gets you. The final 500-game agent mostly chose no move at all, on 70% of its moves across the five games and on 80 to 88% of them in four of the five. Its best game, the 730 on seed 101, is also the game where it held up and to the left the most, and that's the game both of the run's final GIFs show, because the best-of-five GIF and the 500-game progress sample came out as the same file.\n\n![The first run's final agent in its best evaluation game, seed 101, which scored 730](results/500-games/demos/final_best.gif)\n\n[2] raw/Pac-Man DQN README.md # What I expected before each run (lines 69-71)\nI recorded both predictions before the runs started. Before the first run, I expected a clear gain over the untrained network, whose five-game average had been 492 in the 9/8 and 9/9 setup checks, but with a lot of swing from one game to the next. My reasoning was that 500 games is a hundred times the five-game check, where the trained agent actually scored worse than the untrained one, and that 10% exploration keeps training closer to the way the agent gets scored.\n\nBefore the final run, I expected its agent to land near the 1,033 average that the 450-game checkpoint had scored on 50 test games, described below, but five games is a small sample, so I wouldn't have been surprised by anything from roughly 500 to 1,500.\n\n[3] raw/Pac-Man DQN README.md # The final run, 450 games (lines 122-135)\nIt did end on that agent. All 450 rows of its training log match the first 450 rows of the first run's log exactly apart from elapsed time, which anyone can check by comparing [results/450-games/training.csv](results/450-games/training.csv) with [results/500-games/training.csv](results/500-games/training.csv), and its saved weights are identical to the first run's 450-game checkpoint. Its untrained baseline and its 18 progress samples also came out the same as the first run's.\n\nOn the five evaluation games, the final agent beat the untrained network on three and lost on two, and its average came out at 946 against 492, a gain of 454 points. That's in line with the 1,033 I expected from the 50 test games, and since these five games weren't used to pick the checkpoint, it's a fair result, but five games are too few to say much about the exact size of the gain.\n\n#### Evaluation scores\n\n| Evaluation game (seed) | Untrained network | Trained network |\n| --- | --- | --- |\n| 1 (seed 101) | 350 | 540 |\n| 2 (seed 202) | 500 | 440 |\n| 3 (seed 303) | 320 | 1,770 |\n| 4 (seed 404) | 800 | 340 |\n| 5 (seed 505) | 490 | 1,640 |\n| Mean | 492.0 | 946.0 |\n\n[4] raw/Pac-Man DQN README.md # Ms. Pac-Man DQN (lines 3-3)\nI trained this agent for Assignment 2 of Fundamentals of Agentic AI. It's the course's Deep Q-Network notebook for Ms. Pac-Man, run on my laptop with 10% exploration and a learning rate of 0.0001. I ran it twice, and the only difference between the two runs is the number of training games. My first run trained for 500 games, and its final agent averaged 400 on the five evaluation games against 492 for the untrained network. When I replayed every checkpoint that run saved on games the notebook never uses, the agent saved after 450 games turned out to be far better than the one the run ended with, so I reran the notebook with 450 games. The notebook in this folder is that second run, executed start to finish with every output saved, and its agent averaged 946 on the same five evaluation games against 492 for the untrained network.\n\n[5] raw/Pac-Man DQN README.md # The final run, 450 games (lines 145-149)\nThe final agent's best evaluation game was seed 303, which scored 1,770. Across the five evaluation games it chose down-left on 47% of its moves and up-right on 39%, and in this game it reached 1,150 points in the first 20 seconds without losing a life, including a jump from 610 to 1,070 in a couple of seconds right after the ghosts turned blue. It lost its first life at decision 488 of 872, well after the GIF ends. The move counts, and the per-game scores and life losses behind them, are in [results/450-games/move_shares.json](results/450-games/move_shares.json), which `scripts/eval_move_shares.py` wrote by replaying the saved agents on the same five games and reproducing every score in `comparison.json`.\n\n![The final agent in its best evaluation game, seed 303, which scored 1,770](results/450-games/demos/final_best.gif)\n\nThe progress samples below all play evaluation seed 101, one every 25 training games, and they're identical to the first run's samples up to game 450. Their scores bounce between 350 and 1,410 with no steady climb, which is the same instability the checkpoint check measured on more games.\n\nQuestion: What did my final Pac-Man agent average on the five evaluation games?\n\nAnswer from the passages above with [n] citations, or start with \"Insufficient evidence:\"."
+  },
+  "answer": {
+    "text": "The final agent averaged 946.0 on the five evaluation games against an untrained network average of 492.0 [3]. Another source states that the agent averaged 946 on the same five evaluation games against 492 for the untrained network [4].",
+    "raw": "The final agent averaged 946.0 on the five evaluation games against an untrained network average of 492.0 [3]. Another source states that the agent averaged 946 on the same five evaluation games against 492 for the untrained network [4]."
+  },
+  "citations": [
+    {
+      "n": 3,
+      "valid": true,
+      "path": "raw/Pac-Man DQN README.md",
+      "heading": "The final run, 450 games",
+      "lines": [
+        122,
+        135
+      ],
+      "kind": "raw"
+    },
+    {
+      "n": 4,
+      "valid": true,
+      "path": "raw/Pac-Man DQN README.md",
+      "heading": "Ms. Pac-Man DQN",
+      "lines": [
+        3,
+        3
+      ],
+      "kind": "raw"
+    }
+  ],
+  "citation_check": {
+    "valid": 2,
+    "invalid": [],
+    "cited_paths": [
+      "raw/Pac-Man DQN README.md"
+    ],
+    "insufficient_marker": false,
+    "unverified_numbers": []
+  },
+  "status": "supported",
+  "timing": {
+    "wall_s": 4.519,
+    "total_duration_s": 4.5066,
+    "load_duration_s": 0.0026,
+    "prompt_eval_count": 1901,
+    "prompt_eval_duration_s": 3.3024,
+    "eval_count": 60,
+    "eval_duration_s": 1.0751,
+    "tokens_per_s": 55.8,
+    "prompt_tokens_per_s": 575.6
+  },
+  "memory": {
+    "ollama_model_size_bytes": 3237478399,
+    "ollama_size_vram_bytes": 3237478399,
+    "ollama_process_rss_bytes": 776339456,
+    "harness_max_rss_bytes": 38322176,
+    "sampled_at": "2026-09-30T05:58:17Z"
+  },
+  "offline": {
+    "source": "doctor.json",
+    "internet_reachable": false,
+    "probes": {
+      "tcp 1.1.1.1:443": "failed (OSError: [Errno 51] Network is unreachable)",
+      "tcp 8.8.8.8:53": "failed (OSError: [Errno 51] Network is unreachable)",
+      "dns pypi.org": "failed ([Errno 8] nodename nor servname provided, or not known)",
+      "https example.com": "failed (URLError)"
+    },
+    "checked_at": "2026-09-30T05:49:57Z",
+    "require_offline": true
+  },
+  "assessment": null,
+  "error": null,
+  "created_at": "2026-09-30T05:58:17Z",
+  "schema": "evidence-card/1"
+}

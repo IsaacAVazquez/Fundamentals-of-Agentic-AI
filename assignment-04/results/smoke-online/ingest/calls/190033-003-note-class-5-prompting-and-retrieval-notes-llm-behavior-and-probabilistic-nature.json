@@ -1,0 +1,58 @@
+{
+  "kind": "note",
+  "label": "LLM Behavior and Probabilistic Nature",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You write one note for a personal wiki from text the owner wrote. Reply with the note body in Markdown and nothing else, using exactly these three headings in this order:\n\n## Summary\nTwo to four sentences: what this note covers and its main result or point.\n\n## Details\nThe substance, in short paragraphs or bullet lists. Keep every number, name, date, and setting exactly as the source text gives it. Keep the owner's first-person voice (\"I trained ...\"). Do not add facts, opinions, or background that the source text does not contain. Leave out anything that is not in the source text you were given.\n\n## Related\nZero to three lines, each \"- Title: why it relates\", using only titles from the allowed list, copied exactly. Write \"- none\" if nothing on the list relates.\n\nDo not write a top-level title, frontmatter, a Sources section, tables wider than four columns, or code blocks longer than five lines. Do not refer to \"the source\" or \"this note\"; just present the content. At most 400 words."
+    },
+    {
+      "role": "user",
+      "content": "Note title: LLM Behavior and Probabilistic Nature\nPlanned summary: Recapping LLMs as probabilistic token predictors and the role of temperature.\nAllowed related titles: Model Customization Techniques Comparison; Prompting as Probability Steering; Structuring Prompts as Product Interfaces; Advanced Retrieval and Knowledge Hub\nSource file: Class 5 Prompting and Retrieval Notes\nSections included: \"Class 5: LLM Behavior, Prompting & Retrieval\", \"Why This Class?\", \"Yesterday’s “Nice to Have” Is Tomorrow’s “Must Have”\", \"What This Class Gives You\", \"Agenda\", \"Class 4 Recap\", \"Slide 1 of 2: LLMs Predict Tokens\", \"Slide 2 of 2: LLMs Are Probabilistic\", \"“It Knows” Is a Risky Shorthand\", \"The Probability Distribution Is the Steering Surface\", \"Practical Implications\", \"Temperature: The Creativity Dial\", \"What Is Fine-Tuning?\"\n\nSource text:\n## Class 5: LLM Behavior, Prompting & Retrieval\nSource: https://haas-ai-classes-fall-26.vercel.app/class5.html\n\n---\n\n## Why This Class?\n\n\n## Yesterday’s “Nice to Have” Is Tomorrow’s “Must Have”\nWorkplace skills follow a lifecycle: **fringe → resume bullet → expected → invisible baseline.**\n\n- **1995** — “Microsoft Excel” was a legitimate resume bullet\n- **2010** — nobody listed Excel; it was assumed\n- **2015** — “SQL” was the new bullet\n- **2020** — Tableau / PowerBI dashboards were the differentiator\n- **2023** — “uses Zapier / Airtable / no-code” was the new layer\n- **2025** — “uses ChatGPT / Claude daily” was the new bullet\n- **2026 (today)** — **building with AI** — prompts, context, RAG, your own agents — is the current bullet\n- **~2028** — table-stakes. The way Excel is today.\n\n**Important**\n\nThe question isn’t *whether* this becomes the baseline. It’s whether you’re on the curve early enough that it’s still a differentiator **when you graduate**.\n\n## What This Class Gives You\n- **Prompting** — how to steer the probability distribution, with or without thinking mode, so you get useful answers the first time\n- **Context** — why the model forgets, what compaction does, why this limits every AI feature you’ll ship\n- **Fine-tuning, RLHF, alignment** — what labs actually do under the hood, so *“Anthropic values”* and *“OpenAI personality”* become real design choices, not magic\n- **RAG** (Retrieval Augmented Generation) — how to bolt your company’s data onto a general model **without** paying \\$100M to retrain\n- **Embeddings & vector databases** — the retrieval machinery underneath every “chat with your docs” product\n- **Capstone v1** — you start building your own Knowledge Hub: a personal, cited, retrieval-grounded knowledge base\n\nAgents, tool use, MCP, and evals — the machinery that turns all of this into a working product — are **next class**.\n\n**Important**\n\nYou won’t be an ML engineer. You’ll be the MBA who **ships** working AI workflows instead of the one who waits for IT.\n\n## Agenda\n1.  **Recap** — LLMs predict tokens, probabilistically\n2.  **Fine-tuning & RLHF** — how a base model becomes an assistant, and what it costs\n3.  **Prompting** — probability steering, failure modes, voice prompting\n4.  **Prompts are product interfaces** — writing prompts that survive contact with users\n5.  **Context windows** — LotR-sized memory, compaction, token economics\n6.  **Prompt engineering** — .md files, system prompts, CLAUDE.md, the golden rule\n7.  **Thinking models** — when the model plans before it talks\n8.  **Hallucination & RAG** — grounding answers in evidence, with a live demo\n9.  **Embeddings & vector databases** — from TF-IDF to dense vectors\n10. **Capstone: Knowledge Hub v1** — your first retrieval-grounded product\n\n## Class 4 Recap\n\n\n## Slide 1 of 2: LLMs Predict Tokens\nAt the core, an LLM does one thing:\n\n**given the context so far, predict the next token**\n\n- not “look up the truth”\n- not “run a database query”\n- not “execute a plan”\n- just predict what text is most likely to come next\n\n## Slide 2 of 2: LLMs Are Probabilistic\nThe model does not produce one guaranteed answer.\n\nIt produces a **probability distribution** over possible next tokens, then samples from it.\n\n- same prompt can produce different answers\n- better prompts reshape the distribution\n- more context changes what becomes likely\n- exact tasks still need deterministic code\n\n## “It Knows” Is a Risky Shorthand\nAn LLM contains learned statistical structure in its parameters. It does not consult a verified, current, cited database unless you give it one.\n\nThat single sentence explains most of what this class covers:\n\n- **why prompting works** — you’re reshaping which continuation is likely\n- **why hallucination happens** — plausible ≠ verified\n- **why RAG exists** — to bolt a real, cited knowledge source onto the statistical machine\n\n## The Probability Distribution Is the Steering Surface\nPrompts, examples, tools, retrieval, fine-tuning, and decoding settings all influence which continuation becomes likely.\n\nEverything in this class — and the next two — is a different **lever on the same distribution**. Some levers are free and instant (prompts). Some cost millions and take months (fine-tuning). Choosing the right lever is the actual skill.\n\n## Practical Implications\nIf Class 4 explained the machine, Class 5 is about how to use it well.\n\n- **Why prompting matters**: prompts steer the probability distribution\n- **Why exact tasks need code**: probabilities are not enough for precise pipelines\n- **Why context matters**: the model only sees what you put in the window\n\n## Temperature: The Creativity Dial\nEvery API call includes a **temperature** setting — a number that controls how “random” the output is.\n\n|              | Low temp                | High temp                     |\n|--------------|-------------------------|-------------------------------|\n| **Good for** | facts, code, extraction | brainstorming, writing, ideas |\n| **Risk**     | repetitive, boring      | hallucinations, nonsense      |\n\n**Note**\n\nTemperature changes **variety, not intelligence**. Lower temperature favors more likely continuations; higher temperature explores more possibilities and raises variance. It doesn’t make the model smarter or dumber — it changes how adventurous the sampling is.\n\n## What Is Fine-Tuning?\n"
+    }
+  ],
+  "response": "## Summary\nThis note recaps that Large Language Models (LLMs) fundamentally operate by predicting the next token based on a probability distribution, rather than looking up verified facts. The key takeaway is that this probability distribution is the \"steering surface,\" which can be influenced by various methods like prompting or setting the temperature. Understanding this probabilistic nature is crucial for knowing how to guide the model's output effectively.\n\n## Details\nAt the core, an LLM does one thing:\ngiven the context so far, predict the next token\n\nThe model does not produce one guaranteed answer; it produces a **probability distribution** over possible next tokens, then samples from it.\n\n*   **Temperature: The Creativity Dial**\n    *   Every API call includes a **temperature** setting — a number that controls how “random” the output is.\n    *   Low temp is good for facts, code, extraction, but risks being repetitive, boring.\n    *   High temp is good for brainstorming, writing, ideas, but risks hallucinations, nonsense.\n    *   Temperature changes **variety, not intelligence**. Lower temperature favors more likely continuations; higher temperature explores more possibilities and raises variance.\n\n## Related\n- Prompting as Probability Steering: prompts steer the probability distribution\n- Structuring Prompts as Product Interfaces: Prompts are product interfaces\n- Advanced Retrieval and Knowledge Hub: Capstone: Knowledge Hub v1",
+  "error": null,
+  "model": {
+    "backend": "ollama",
+    "tag": "gemma4:e4b",
+    "digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb",
+    "parameter_size": "8.0B",
+    "quantization_level": "Q4_K_M",
+    "family": "gemma4",
+    "context_length": 131072,
+    "ollama_version": "0.35.0",
+    "size_bytes": 9608350718
+  },
+  "record": {
+    "kind": "note",
+    "attempt": 1,
+    "system_chars": 998,
+    "user_chars": 6197,
+    "payload_chars": 5354,
+    "payload_capped": false,
+    "est_prompt_tokens": 1799,
+    "timing": {
+      "wall_s": 8.917,
+      "total_duration_s": 8.9148,
+      "load_duration_s": 0.0021,
+      "prompt_eval_count": 1745,
+      "prompt_eval_duration_s": 3.3199,
+      "eval_count": 289,
+      "eval_duration_s": 5.4984,
+      "tokens_per_s": 52.6,
+      "prompt_tokens_per_s": 525.6
+    },
+    "memory": {
+      "ollama_model_size_bytes": 3237478399,
+      "ollama_size_vram_bytes": 3237478399,
+      "ollama_process_rss_bytes": 4268834816,
+      "harness_max_rss_bytes": 32702464,
+      "sampled_at": "2026-09-30T02:01:09Z"
+    },
+    "response_chars": 1458,
+    "ok": true,
+    "error": null,
+    "dump_file": "ingest/calls/190033-003-note-class-5-prompting-and-retrieval-notes-llm-behavior-and-probabilistic-nature.json"
+  }
+}

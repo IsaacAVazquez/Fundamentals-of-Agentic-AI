@@ -1,0 +1,58 @@
+{
+  "kind": "note",
+  "label": "Agent Observation and Reward System",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You write one note for a personal wiki from text the owner wrote. Reply with the note body in Markdown and nothing else, using exactly these three headings in this order:\n\n## Summary\nTwo to four sentences: what this note covers and its main result or point.\n\n## Details\nThe substance, in short paragraphs or bullet lists. Keep every number, name, date, and setting exactly as the source text gives it. Keep the owner's first-person voice (\"I trained ...\"). Do not add facts, opinions, or background that the source text does not contain. Leave out anything that is not in the source text you were given.\n\n## Related\nZero to three lines, each \"- Title: why it relates\", using only titles from the allowed list, copied exactly. Write \"- none\" if nothing on the list relates.\n\nDo not write a top-level title, frontmatter, a Sources section, tables wider than four columns, or code blocks longer than five lines. Do not refer to \"the source\" or \"this note\"; just present the content. At most 400 words."
+    },
+    {
+      "role": "user",
+      "content": "Note title: Agent Observation and Reward System\nPlanned summary: Explains the visual input and reward structure the agent uses during gameplay.\nAllowed related titles: Assignment DQN Training Overview; Agent Performance Comparison Results; Training Budget and Hardware Details Pac-Man; Agent Limitations and Future Work; Model Customization Techniques Comparison; Model Learning Mechanics Explained; Prompting as Probability Steering; Structuring Prompts as Product Interfaces; Technology Stack and Architecture; LLM Behavior and Probabilistic Nature; Advanced Retrieval and Knowledge Hub; Assignment Model Training Overview; Assignment Overview and Requirements; Core Functionality and Features; Database and Setup Details; Interacting with Trained Model; Model Performance and Results; Training Budget and Hardware Details; Web App Walkthrough Screenshots\nSource file: Pac-Man DQN README\nSections included: \"What the agent sees, does, and gets rewarded for\"\n\nSource text:\n## What the agent sees, does, and gets rewarded for\nThe agent doesn't see the game the way I do. Each observation is the last four game screens, shrunk to 84 by 84 pixels in grayscale and stacked together, because a single still frame shows where everything is but not which way anything is moving. It makes one decision every four frames of the game, and each decision is one of nine joystick moves, which are no move, the four straight directions, and the four diagonals. The controls are sticky, so on each of the four frames behind a decision there's a one in four chance the game keeps the previous frame's move, which means a new move usually takes effect right away but sometimes lands a frame or two late.\n\nThe reward is the points the game hands out for things like pellets, ghosts, and fruit. For learning, the notebook clips each decision's reward to between -1 and +1, so any points at all count as +1 and a ghost teaches the network no more than a pellet does, while every score in this README is the raw game score.\n\nWhat the agent learns is an estimate of how many future points each of the nine moves leads to from the current four screens, and during play it picks the move with the highest estimate unless the exploration setting says to move randomly. Every decision goes into a replay memory that holds the most recent 5,000. After a warm-up of 1,000 random decisions, the network learns every fourth decision from a random batch of 32 remembered decisions, nudging its estimate for the move it took toward the reward it got plus 0.99 times the best estimate for the next screen. That next-screen estimate comes from a copy of the network that only refreshes every 1,000 decisions, which keeps the target from moving every time the network changes, and when the game is over there's no next screen to add."
+    }
+  ],
+  "response": "## Summary\nThis note details the visual input, decision-making process, and reward structure used by the agent during gameplay. The agent processes the last four game screens, making one of nine possible joystick moves every four frames. The reward signal is normalized to help the network learn, and the agent learns by estimating future points from its current observation.\n\n## Details\nThe agent's observation is the last four game screens, shrunk to 84 by 84 pixels in grayscale and stacked together. It makes one decision every four frames, and each decision is one of nine joystick moves: no move, the four straight directions, and the four diagonals. The controls are sticky, meaning on each of the four frames behind a decision, there is a one in four chance the game keeps the previous frame's move.\n\nThe reward is the points the game hands out for things like pellets, ghosts, and fruit. For learning, the notebook clips each decision's reward to between -1 and +1.\n\nThe agent learns an estimate of how many future points each of the nine moves leads to from the current four screens. During play, it picks the move with the highest estimate unless the exploration setting says to move randomly. Every decision goes into a replay memory that holds the most recent 5,000. After a warm-up of 1,000 random decisions, the network learns every fourth decision from a random batch of 32 remembered decisions, nudging its estimate for the move it took toward the reward it got plus 0.99 times the best estimate for the next screen. That next-screen estimate comes from a copy of the network that only refreshes every 1,000 decisions.\n\n## Related\n- Assignment Model Training Overview: The agent learns every fourth decision from a random batch of 32 remembered decisions.\n- Model Learning Mechanics Explained: The agent learns an estimate of how many future points each of the nine moves leads to from the current four screens.",
+  "error": null,
+  "model": {
+    "backend": "ollama",
+    "tag": "gemma4:e4b",
+    "digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb",
+    "parameter_size": "8.0B",
+    "quantization_level": "Q4_K_M",
+    "family": "gemma4",
+    "context_length": 131072,
+    "ollama_version": "0.35.0",
+    "size_bytes": 9608350718
+  },
+  "record": {
+    "kind": "note",
+    "attempt": 1,
+    "system_chars": 998,
+    "user_chars": 2799,
+    "payload_chars": 1825,
+    "payload_capped": false,
+    "est_prompt_tokens": 950,
+    "timing": {
+      "wall_s": 9.606,
+      "total_duration_s": 9.6045,
+      "load_duration_s": 0.0036,
+      "prompt_eval_count": 822,
+      "prompt_eval_duration_s": 1.2512,
+      "eval_count": 411,
+      "eval_duration_s": 8.3024,
+      "tokens_per_s": 49.5,
+      "prompt_tokens_per_s": 657.0
+    },
+    "memory": {
+      "ollama_model_size_bytes": 3237478399,
+      "ollama_size_vram_bytes": 3237478399,
+      "ollama_process_rss_bytes": 4501241856,
+      "harness_max_rss_bytes": 32702464,
+      "sampled_at": "2026-09-30T02:08:09Z"
+    },
+    "response_chars": 1928,
+    "ok": true,
+    "error": null,
+    "dump_file": "ingest/calls/190033-027-note-pac-man-dqn-readme-agent-observation-and-reward-system.json"
+  }
+}
