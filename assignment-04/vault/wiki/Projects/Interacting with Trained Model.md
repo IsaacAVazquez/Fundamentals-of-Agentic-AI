@@ -15,7 +15,7 @@ sections_used:
   - Where the code comes from
 created: 2026-09-30
 updated: 2026-09-30
-reviewed: false
+reviewed: true
 generated_by: gemma4:e4b
 generated_by_digest: c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb
 note_id: custom-llm-readme/interacting-with-trained-model
@@ -29,9 +29,9 @@ This note details the interface for interacting with the final trained model usi
 
 ## Details
 
-The interface is the course's [chat.py](chat.py), a terminal loop that loads a saved `model.pt` with its vocabulary, takes a prompt, prints the model's continuation, and asks for another, with each prompt starting from a fresh context. It labels itself as a tiny language model, reports any prompt words outside the vocabulary, and says when a prompt longer than the 48-token context was truncated to its last 48 tokens. It never trains and never writes anything into `corpus/`. The transcript filename has to be new each time, since the script refuses to overwrite one.
+The interface is the course's `chat.py`, a terminal loop that loads a saved `model.pt` with its vocabulary, takes a prompt, prints the model's continuation, and asks for another, with each prompt starting from a fresh context. It labels itself as a tiny language model, reports any prompt words outside the vocabulary, and says when a prompt longer than the 48-token context was truncated to its last 48 tokens. It never trains and never writes anything into `corpus/`. The transcript filename has to be new each time, since the script refuses to overwrite one.
 
-I first ran it through [scripts/chat_demo.py](scripts/chat_demo.py), which starts `chat.py` in a pseudo-terminal and types each prompt as a person would, so the transcript, [results/chat/chat_transcript.json](results/chat/chat_transcript.json), was written by `chat.py` itself, and the screen text is in [results/chat/chat_session.log](results/chat/chat_session.log). I then ran `chat.py` myself in Terminal on the same model and typed the same five prompts, the fourth without the space before one period, which the tokenizer reads the same way, and got the same replies, since `chat.py` seeds each turn from 2026 plus the turn's number.
+I first ran it through `scripts/chat_demo.py`, which starts `chat.py` in a pseudo-terminal and types each prompt as a person would, so the transcript, `results/chat/chat_transcript.json`, was written by `chat.py` itself, and the screen text is in `results/chat/chat_session.log`. I then ran `chat.py` myself in Terminal on the same model and typed the same five prompts, the fourth without the space before one period, which the tokenizer reads the same way, and got the same replies, since `chat.py` seeds each turn from 2026 plus the turn's number.
 
 The limitation I'd point to is that a passing score on these tests can come from a shortcut. The next experiment I'd run is the remaining four extension skills with the same method, at both 3,000 and 6,000 steps.
 

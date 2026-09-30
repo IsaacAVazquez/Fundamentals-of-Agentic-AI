@@ -12,7 +12,7 @@ sections_used:
   - Training budget and hardware
 created: 2026-09-30
 updated: 2026-09-30
-reviewed: false
+reviewed: true
 generated_by: gemma4:e4b
 generated_by_digest: c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb
 note_id: custom-llm-readme/training-budget-and-hardware-details
@@ -38,7 +38,7 @@ No run was interrupted or failed. The training loop time is `elapsed_seconds` fr
 
 ## Related
 
-- [[Assignment Model Training Overview]]: The setup check is the 10-step run the assignment suggests, whose summary, config, loss table, samples, and eval comparison are in [results/setup-check/](results/setup-check/)
+- [[Assignment Model Training Overview]]: The setup check is the 10-step run the assignment suggests, whose summary, config, loss table, samples, and eval comparison are in `results/setup-check/`
 
 ## Sources
 

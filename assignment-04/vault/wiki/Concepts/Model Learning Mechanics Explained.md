@@ -12,7 +12,7 @@ sections_used:
   - How the model learns, with this run's numbers
 created: 2026-09-30
 updated: 2026-09-30
-reviewed: false
+reviewed: true
 generated_by: gemma4:e4b
 generated_by_digest: c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb
 note_id: custom-llm-readme/model-learning-mechanics-explained
@@ -26,7 +26,7 @@ This note explains the mechanics of how the model learns during training, detail
 
 ## Details
 
-Everything in this section is from the corpus-extension run unless it says otherwise, and the files are [results/expanded/tokenization.json](results/expanded/tokenization.json) and [results/expanded/inspection.json](results/expanded/inspection.json).
+Everything in this section is from the corpus-extension run unless it says otherwise, and the files are `results/expanded/tokenization.json` and `results/expanded/inspection.json`.
 
 The corpus is a collection of short passages, and the network only ever sees passages, one at a time in batches of 32, each one as a sequence of tokens. A token here is a whole word or a punctuation mark, and the vocabulary is the list of every token type that occurred in the training passages, 424 of them plus three special tokens, so the tokenizer turns text into a list of integers by looking each word up in that list. The notebook's own example is the first training passage, `today the station focused on traffic and the important truck .`, which becomes the IDs `1, 376, 366, 343, 133, 254, 379, 8, 366, 173, 383, 3, 2`, where 1 is the start token, 2 is the end token, 3 is the period, and 366 is the both times it appears. An ID is a row number and nothing more. The training example the network gets from that passage is the sequence shifted by one, every token as the input and the following token as the target, so from `today the station` it should predict focused, and so on through the passage.
 
