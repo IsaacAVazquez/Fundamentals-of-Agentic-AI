@@ -1,0 +1,58 @@
+{
+  "kind": "note",
+  "label": "Training Budget and Hardware Details Pac-Man",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You write one note for a personal wiki from text the owner wrote. Reply with the note body in Markdown and nothing else, using exactly these three headings in this order:\n\n## Summary\nTwo to four sentences: what this note covers and its main result or point.\n\n## Details\nThe substance, in short paragraphs or bullet lists. Keep every number, name, date, and setting exactly as the source text gives it. Keep the owner's first-person voice (\"I trained ...\"). Do not add facts, opinions, or background that the source text does not contain. Leave out anything that is not in the source text you were given.\n\n## Related\nZero to three lines, each \"- Title: why it relates\", using only titles from the allowed list, copied exactly. Write \"- none\" if nothing on the list relates.\n\nDo not write a top-level title, frontmatter, a Sources section, tables wider than four columns, or code blocks longer than five lines. Do not refer to \"the source\" or \"this note\"; just present the content. At most 400 words."
+    },
+    {
+      "role": "user",
+      "content": "Note title: Training Budget and Hardware Details Pac-Man\nPlanned summary: Documents the computational resources and time spent training the agent.\nAllowed related titles: Assignment DQN Training Overview; Agent Performance Comparison Results; Agent Observation and Reward System; Agent Limitations and Future Work; Model Customization Techniques Comparison; Model Learning Mechanics Explained; Prompting as Probability Steering; Structuring Prompts as Product Interfaces; Technology Stack and Architecture; LLM Behavior and Probabilistic Nature; Advanced Retrieval and Knowledge Hub; Assignment Model Training Overview; Assignment Overview and Requirements; Core Functionality and Features; Database and Setup Details; Interacting with Trained Model; Model Performance and Results; Training Budget and Hardware Details; Web App Walkthrough Screenshots\nSource file: Pac-Man DQN README\nSections included: \"Training budget and hardware\"\n\nSource text:\n## Training budget and hardware\n| Run | Status | Completed games | Decisions | Learning updates | Training loop time | Whole notebook |\n| --- | --- | --- | --- | --- | --- | --- |\n| First, 500 games | completed | 500 | 303,666 | 75,667 | 837.5 s, about 14.0 minutes | 852 s, about 14.2 minutes |\n| Final, 450 games | completed | 450 | 274,814 | 68,454 | 761.9 s, about 12.7 minutes | 777 s, about 13.0 minutes |\n\nNeither run was interrupted. Learning updates started in the second game of each run, because the 1,000-decision random warm-up ended partway through it. The training loop time comes from `training_summary.json` and includes the progress samples every 25 games, and the whole-notebook time is the wall-clock time of the command above, including setup and both evaluations. The final run's files are [config.json](results/450-games/config.json), [training.csv](results/450-games/training.csv), and [training_summary.json](results/450-games/training_summary.json), and the first run's are [config.json](results/500-games/config.json), [training.csv](results/500-games/training.csv), and [training_summary.json](results/500-games/training_summary.json).\n\nI trained on an Apple M4 Pro laptop with 12 CPU cores and 24 GB of memory, running macOS 26.3, and the notebook's device check picked the Apple GPU through PyTorch's MPS backend. The software was Python 3.13.15, PyTorch 2.14.0, Gymnasium 1.3.0, ale-py 0.11.2, OpenCV headless 4.14.0.94, NumPy 2.5.3, Matplotlib 3.11.1, and Pillow 12.3.0."
+    }
+  ],
+  "response": "## Summary\nThis note details the computational resources and time spent training the agent for Pac-Man. I conducted two training runs, one on 500 games and a final one on 450 games, documenting the resulting metrics and hardware used. The training was performed on an Apple M4 Pro laptop using specific software versions.\n\n## Details\nI trained on an Apple M4 Pro laptop with 12 CPU cores and 24 GB of memory, running macOS 26.3, and the notebook's device check picked the Apple GPU through PyTorch's MPS backend. The software was Python 3.13.15, PyTorch 2.14.0, Gymnasium 1.3.0, ale-py 0.11.2, OpenCV headless 4.14.0.94, NumPy 2.5.3, Matplotlib 3.11.1, and Pillow 12.3.0.\n\nThe training runs were:\n*   **First, 500 games:** Status was completed, with 500 completed games, 303,666 decisions, 75,667 learning updates, a training loop time of 837.5 s (about 14.0 minutes), and a whole notebook time of 852 s (about 14.2 minutes).\n*   **Final, 450 games:** Status was completed, with 450 completed games, 274,814 decisions, 68,454 learning updates, a training loop time of 761.9 s (about 12.7 minutes), and a whole notebook time of 777 s (about 13.0 minutes).\n\nNeither run was interrupted. Learning updates started in the second game of each run, because the 1,000-decision random warm-up ended partway through it. The training loop time comes from `training_summary.json` and includes the progress samples every 25 games, and the whole-notebook time is the wall-clock time of the command above, including setup and both evaluations. The final run's files are [config.json](results/450-games/config.json), [training.csv](results/450-games/training.csv), and [training_summary.json](results/450-games/training_summary.json), and the first run's are [config.json](results/500-games/config.json), [training.csv](results/500-games/training.csv), and [training_summary.json](results/500-games/training_summary.json).\n\n## Related\n- Training Budget and Hardware Details: This note documents the computational resources and time spent training the agent.",
+  "error": null,
+  "model": {
+    "backend": "ollama",
+    "tag": "gemma4:e4b",
+    "digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb",
+    "parameter_size": "8.0B",
+    "quantization_level": "Q4_K_M",
+    "family": "gemma4",
+    "context_length": 131072,
+    "ollama_version": "0.35.0",
+    "size_bytes": 9608350718
+  },
+  "record": {
+    "kind": "note",
+    "attempt": 1,
+    "system_chars": 998,
+    "user_chars": 2450,
+    "payload_chars": 1502,
+    "payload_capped": false,
+    "est_prompt_tokens": 862,
+    "timing": {
+      "wall_s": 13.965,
+      "total_duration_s": 13.9618,
+      "load_duration_s": 0.0134,
+      "prompt_eval_count": 919,
+      "prompt_eval_duration_s": 1.5053,
+      "eval_count": 616,
+      "eval_duration_s": 12.3607,
+      "tokens_per_s": 49.8,
+      "prompt_tokens_per_s": 610.5
+    },
+    "memory": {
+      "ollama_model_size_bytes": 3237478399,
+      "ollama_size_vram_bytes": 3237478399,
+      "ollama_process_rss_bytes": 4299685888,
+      "harness_max_rss_bytes": 32702464,
+      "sampled_at": "2026-09-30T02:07:59Z"
+    },
+    "response_chars": 2041,
+    "ok": true,
+    "error": null,
+    "dump_file": "ingest/calls/190033-026-note-pac-man-dqn-readme-training-budget-and-hardware-details-pac.json"
+  }
+}

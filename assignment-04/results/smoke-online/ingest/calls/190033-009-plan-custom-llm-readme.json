@@ -1,0 +1,58 @@
+{
+  "kind": "plan",
+  "label": "",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You plan the wiki notes for one source document. You get the document's outline (its headings, each with the first words of its section) and the titles of notes that already exist. Reply with JSON only, shaped:\n{\"notes\": [{\"title\": \"...\", \"folder\": \"Projects\", \"summary\": \"...\", \"sections\": [\"heading\", \"heading\"], \"related\": [{\"title\": \"...\", \"why\": \"...\"}]}]}\n\nRules\n- Plan between 2 and the maximum number of notes. Each note covers a coherent group of the document's sections. Copy section headings exactly from the outline, without the leading # signs and without the text after the dash. Use each section in at most one note; put leftover sections into the closest note.\n- title: 2 to 6 words that name the topic like a chapter title, for example \"Pac-Man DQN Training\" or \"Networking Tracker Security\". No dates, no id-like numbers, no file names, no colons or slashes, no full sentences. Titles must differ from each other.\n- If a title in \"Existing note titles\" or \"Titles previously written from this source\" already fits a group, reuse it exactly; that note will be updated instead of duplicated.\n- folder: \"Projects\" for something the owner built or ran, \"Course\" for class material, lectures, and course logistics, \"Concepts\" for a general idea or technique explained on its own.\n- summary: one plain sentence of at most 25 words saying what the note contains.\n- related: 0 to 3 titles from this plan or from the existing titles, each with a short \"why\" clause such as \"same laptop, trained on the GPU instead\".\n\nExample for a short document with sections \"Overview\", \"Setup\", \"Results\":\n{\"notes\": [{\"title\": \"Garden Sensor Build\", \"folder\": \"Projects\", \"summary\": \"How the soil sensor was assembled and configured.\", \"sections\": [\"Overview\", \"Setup\"], \"related\": [{\"title\": \"Garden Sensor Results\", \"why\": \"the readings this build produced\"}]}, {\"title\": \"Garden Sensor Results\", \"folder\": \"Projects\", \"summary\": \"The two weeks of moisture readings and what they showed.\", \"sections\": [\"Results\"], \"related\": [{\"title\": \"Garden Sensor Build\", \"why\": \"the hardware behind these readings\"}]}]}"
+    },
+    {
+      "role": "user",
+      "content": "Source file: Custom LLM README\nDocument title: Custom LLM with nanoGPT\nMaximum notes: 5\nExisting note titles: Model Customization Techniques Comparison (Concepts); Prompting as Probability Steering (Concepts); Structuring Prompts as Product Interfaces (Concepts); LLM Behavior and Probabilistic Nature (Course); Advanced Retrieval and Knowledge Hub (Projects)\nTitles previously written from this source: (none)\n\nOutline:\n# Custom LLM with nanoGPT — I trained this model for Assignment 3 of Fundamentals of Agentic AI. It's the course's word-token nanoGPT notebook, a two-block, four-head transformer with 64-number embeddings and a 48-token context…\n## Where to find each requirement — The sections below follow the order of the assignment's README requirements. This table is the short version for anyone grading against the brief. | Requirement | Where it is | | --- | --- | | Overvi…\n## Open and run the notebook — The executed notebook is [custom_llm.ipynb](custom_llm.ipynb), from the corpus-extension experiment. It keeps every output from that run, including the imported file previews, the token IDs, the untr…\n## My three choices — | Setting | Course's starting value | Starter run | Corpus-extension run | Optional third run | | --- | --- | --- | --- | --- | | Corpus | Classroom sentences | Classroom sentences, no files | Classr…\n## What I expected before each run — I wrote each prediction into the notebook's prediction cell before starting that run, and the executed notebooks keep them. Before the starter run I expected both panel losses to start near 4.9, whic…\n## What happened\n### The starter run — The notebook generated 6,360 classroom sentences, withheld the 160 that contain one of the 16 reserved test prefixes, removed 1,608 duplicates, and kept 4,592 unique passages, which it split into 4,1…\n### The teaching material I added — The 24 extension tests cover eight skills the classroom sentences never touch, and in the starter run every one of them was unscorable, since the runner refuses to score a case whose prompt or answer…\n### The corpus-extension run — | Step | Training panel loss | Validation panel loss | | --- | --- | --- | | 0 | 6.0635 | 6.0459 | | 1,500 | 0.8536 | 1.0449 | | 3,000 | 0.8140 | 0.9557 | Same fixed panels of 20 documents each, draw…\n### The optional 6,000-step run — I first proposed doubling the training steps as my next experiment after my first version's 3,000-step model missed two negation cases and, in the probes, answered several flipped stories with a favo…\n## The 48 evals across all four result sets — The suite is the course's [evals/language_evals.json](evals/language_evals.json), unchanged, which I confirmed by checksum against the course repository, and the runner is the course's [run_evals.py]…\n### Coverage and what changed for which reason — Coverage went from 24 of 48 to 36 of 48 for one reason only, the vocabulary. The 12 cases in my four categories became scorable because every prompt and choice word in them now appears in the trainin…\n### Actual continuations — The score is about the next word, and the free continuation is what the model writes when it keeps going, so the two can disagree. The trained starter model's continuations for the 16 reserved prompt…\n### What the scores do and do not show — A right answer on a four-choice test is a narrow thing, so after training I wrote extra prompts of my own, seventeen in [scripts/probe_model.py](scripts/probe_model.py), twelve at first and five more…\n### Rerunning the evals on the saved models — The four required result sets were produced inside the notebooks, and I reran all four from the saved model files with the course's runner to confirm they are reproducible from the weights alone. ```…\n### Keeping the tests out of training — The 48 prompts, their choices, the answer key, and every eval output live in `evals/` and `results/`, and only `corpus/` is a training input. The notebook rejects a corpus folder that includes `evals…\n## Training budget and hardware — | Run | Status | Completed steps | Training loop time | Whole notebook | Parameters | Vocabulary | | --- | --- | --- | --- | --- | --- | --- | | Setup check | completed | 10 | 0.1 s | 9.7 s | 111,872…\n## How the model learns, with this run's numbers — Everything in this section is from the corpus-extension run unless it says otherwise, and the files are [results/expanded/tokenization.json](results/expanded/tokenization.json) and [results/expanded/…\n## Chat with the trained model — The interface is the course's [chat.py](chat.py), a terminal loop that loads a saved `model.pt` with its vocabulary, takes a prompt, prints the model's continuation, and asks for another, with each p…\n## One limitation and the next experiment — The limitation I'd point to is that a passing score on these tests can come from a shortcut. At 3,000 steps the model passed the ava test with milk, and the probes showed it answered milk for what no…\n## Files and models — | File | What it is | | --- | --- | | [custom_llm.ipynb](custom_llm.ipynb) | The corpus-extension experiment, executed with every output saved | | [results/expanded/](results/expanded/) | That run's…\n## Where the code comes from — The notebook, `custom_llm.py`, `nanogpt_model.py`, `NANOGPT_LICENSE`, `run_evals.py`, `chat.py`, `evals/`, `corpus/README.md`, `embedding-viewer.html`, `requirements.txt`, and the course's test and b…\n\nYour previous plan had these problems, fix them: the reply was not valid JSON (Expecting ',' delimiter: line 23 column 6 (char 1520))"
+    }
+  ],
+  "response": "{\"notes\": [{\"title\": \"Assignment Model Training Overview\", \"folder\": \"Projects\", \"summary\": \"Details the setup and initial training runs for the custom LLM assignment.\", \"sections\": [\"Where to find each requirement\", \"Open and run the notebook\", \"My three choices\", \"What I expected before each run\"], \"related\": []}, {\"title\": \"Model Performance and Results\", \"folder\": \"Projects\", \"summary\": \"Compares results from different training runs and evaluates model performance.\", \"sections\": [\"What happened\", \"The 48 evals across all four result sets\", \"Actual continuations\", \"What the scores do and do not show\"], \"related\": [{\"title\": \"Assignment Model Training Overview\", \"why\": \"These sections detail the results of the training described here.\"}]}, {\"title\": \"Training Budget and Hardware Details\", \"folder\": \"Projects\", \"summary\": \"Documents the computational resources and steps used during model training.\", \"sections\": [\"Training budget and hardware\"], \"related\": []}, {\"title\": \"Model Learning Mechanics Explained\", \"folder\": \"Concepts\", \"summary\": \"Explains how the model learns using specific run numbers and files.\", \"sections\": [\"How the model learns, with this run's numbers\"], \"related\": []}, {\"title\": \"Interacting with Trained Model\", \"folder\": \"Projects\", \"summary\": \"Describes the interface for chatting with the final trained model.\", \"sections\": [\"Chat with the trained model\", \"One limitation and the next experiment\"], \"related\": [{\"title\": \"Model Performance and Results\", \"why\": \"This is the final application of the trained model.\"}]}]\n}",
+  "error": null,
+  "model": {
+    "backend": "ollama",
+    "tag": "gemma4:e4b",
+    "digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb",
+    "parameter_size": "8.0B",
+    "quantization_level": "Q4_K_M",
+    "family": "gemma4",
+    "context_length": 131072,
+    "ollama_version": "0.35.0",
+    "size_bytes": 9608350718
+  },
+  "record": {
+    "kind": "plan",
+    "attempt": 1,
+    "system_chars": 2105,
+    "user_chars": 5533,
+    "payload_chars": 4977,
+    "payload_capped": false,
+    "est_prompt_tokens": 1910,
+    "timing": {
+      "wall_s": 8.632,
+      "total_duration_s": 8.628,
+      "load_duration_s": 0.0036,
+      "prompt_eval_count": 1947,
+      "prompt_eval_duration_s": 0.3424,
+      "eval_count": 343,
+      "eval_duration_s": 8.2489,
+      "tokens_per_s": 41.6,
+      "prompt_tokens_per_s": 5686.3
+    },
+    "memory": {
+      "ollama_model_size_bytes": 3237478399,
+      "ollama_size_vram_bytes": 3237478399,
+      "ollama_process_rss_bytes": 4384407552,
+      "harness_max_rss_bytes": 32702464,
+      "sampled_at": "2026-09-30T02:02:49Z"
+    },
+    "response_chars": 1562,
+    "ok": true,
+    "error": null,
+    "dump_file": "ingest/calls/190033-009-plan-custom-llm-readme.json"
+  }
+}

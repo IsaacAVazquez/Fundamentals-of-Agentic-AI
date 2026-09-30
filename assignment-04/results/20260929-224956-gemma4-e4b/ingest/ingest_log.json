@@ -1,0 +1,1004 @@
+{
+  "schema": "ingest-log/1",
+  "run_id": "20260929-224956-gemma4-e4b",
+  "started_at": "2026-09-30T05:49:57Z",
+  "finished_at": "2026-09-30T05:57:37Z",
+  "model": {
+    "backend": "ollama",
+    "tag": "gemma4:e4b",
+    "digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb",
+    "parameter_size": "8.0B",
+    "quantization_level": "Q4_K_M",
+    "family": "gemma4",
+    "context_length": 131072,
+    "ollama_version": "0.35.0",
+    "size_bytes": 9608350718
+  },
+  "budgets": {
+    "plan_outline_chars": 6000,
+    "note_text_chars": 12000,
+    "num_ctx": 8192,
+    "num_predict": {
+      "ask": 400,
+      "chat": 500,
+      "route": 60,
+      "plan": 1200,
+      "note": 1400
+    }
+  },
+  "totals": {
+    "sources": 4,
+    "ingested": 4,
+    "up_to_date": 0,
+    "notes_written": 20,
+    "notes_drafted": 0,
+    "notes_in_vault": 20,
+    "calls": 28,
+    "total_wall_s": 459.82,
+    "prompt_tokens": 56073,
+    "generated_tokens": 20955,
+    "median_tokens_per_s": 53.2,
+    "max_ollama_size_bytes": 3237478399,
+    "max_ollama_process_rss_bytes": 605765632,
+    "harness_max_rss_bytes": 33357824,
+    "max_payload_chars": 12063,
+    "payload_capped_calls": 5,
+    "index_passages": 324,
+    "index_wiki_passages": 92
+  },
+  "sources": [
+    {
+      "source": "raw/Class 5 Prompting and Retrieval Notes.md",
+      "source_id": "class-5-prompting-and-retrieval-notes",
+      "sha256": "535af3de2b0afdda285bcf17d3bfbb3850936db0c8ef4fed9584cff5f7c34a1c",
+      "action": "ingested",
+      "notes_written": [
+        "LLM Behavior and Probabilistic Nature",
+        "Model Customization Techniques Comparison",
+        "Prompting as Probability Steering",
+        "Structuring Prompts as Product Interfaces",
+        "Advanced Retrieval and Knowledge Hub"
+      ],
+      "notes_drafted": [],
+      "notes_stale": [],
+      "calls": [
+        {
+          "kind": "plan",
+          "attempt": 1,
+          "system_chars": 2105,
+          "user_chars": 3605,
+          "payload_chars": 3386,
+          "payload_capped": false,
+          "est_prompt_tokens": 1428,
+          "timing": {
+            "wall_s": 30.796,
+            "total_duration_s": 30.7922,
+            "load_duration_s": 0.0276,
+            "prompt_eval_count": 1393,
+            "prompt_eval_duration_s": 5.4269,
+            "eval_count": 1200,
+            "eval_duration_s": 23.677,
+            "tokens_per_s": 50.7,
+            "prompt_tokens_per_s": 256.7
+          },
+          "memory": {
+            "ollama_model_size_bytes": 3237478399,
+            "ollama_size_vram_bytes": 3237478399,
+            "ollama_process_rss_bytes": 197738496,
+            "harness_max_rss_bytes": 33357824,
+            "sampled_at": "2026-09-30T05:50:28Z"
+          },
+          "response_chars": 4910,
+          "ok": true,
+          "error": null,
+          "dump_file": "ingest/calls/224957-001-plan-class-5-prompting-and-retrieval-notes.json"
+        },
+        {
+          "kind": "plan",
+          "attempt": 2,
+          "system_chars": 2105,
+          "user_chars": 3740,
+          "payload_chars": 3386,
+          "payload_capped": false,
+          "est_prompt_tokens": 1462,
+          "timing": {
+            "wall_s": 11.253,
+            "total_duration_s": 11.2484,
+            "load_duration_s": 0.0148,
+            "prompt_eval_count": 1430,
+            "prompt_eval_duration_s": 0.2801,
+            "eval_count": 554,
+            "eval_duration_s": 10.9097,
+            "tokens_per_s": 50.8,
+            "prompt_tokens_per_s": 5105.3
+          },
+          "memory": {
+            "ollama_model_size_bytes": 3237478399,
+            "ollama_size_vram_bytes": 3237478399,
+            "ollama_process_rss_bytes": 259997696,
+            "harness_max_rss_bytes": 33357824,
+            "sampled_at": "2026-09-30T05:50:39Z"
+          },
+          "response_chars": 2431,
+          "ok": true,
+          "error": null,
+          "dump_file": "ingest/calls/224957-002-plan-class-5-prompting-and-retrieval-notes.json"
+        },
+        {
+          "kind": "note",
+          "attempt": 1,
+          "system_chars": 998,
+          "user_chars": 6197,
+          "payload_chars": 5354,
+          "payload_capped": false,
+          "est_prompt_tokens": 1799,
+          "timing": {
+            "wall_s": 7.919,
+            "total_duration_s": 7.9169,
+            "load_duration_s": 0.0141,
+            "prompt_eval_count": 1745,
+            "prompt_eval_duration_s": 0.2779,
+            "eval_count": 289,
+            "eval_duration_s": 6.2605,
+            "tokens_per_s": 46.2,
+            "prompt_tokens_per_s": 6279.2
+          },
+          "memory": {
+            "ollama_model_size_bytes": 3237478399,
+            "ollama_size_vram_bytes": 3237478399,
+            "ollama_process_rss_bytes": 186368000,
+            "harness_max_rss_bytes": 33357824,
+            "sampled_at": "2026-09-30T05:50:47Z"
+          },
+          "response_chars": 1458,
+          "ok": true,
+          "error": null,
+          "dump_file": "ingest/calls/224957-003-note-class-5-prompting-and-retrieval-notes-llm-behavior-and-probabilistic-nature.json"
+        },
+        {
+          "kind": "note",
+          "attempt": 1,
+          "system_chars": 998,
+          "user_chars": 6543,
+          "payload_chars": 5875,
+          "payload_capped": false,
+          "est_prompt_tokens": 1886,
+          "timing": {
+            "wall_s": 17.241,
+            "total_duration_s": 17.2382,
+            "load_duration_s": 0.0134,
+            "prompt_eval_count": 1854,
+            "prompt_eval_duration_s": 0.2505,
+            "eval_count": 774,
+            "eval_duration_s": 15.6139,
+            "tokens_per_s": 49.6,
+            "prompt_tokens_per_s": 7401.2
+          },
+          "memory": {
+            "ollama_model_size_bytes": 3237478399,
+            "ollama_size_vram_bytes": 3237478399,
+            "ollama_process_rss_bytes": 198721536,
+            "harness_max_rss_bytes": 33357824,
+            "sampled_at": "2026-09-30T05:51:05Z"
+          },
+          "response_chars": 3172,
+          "ok": true,
+          "error": null,
+          "dump_file": "ingest/calls/224957-004-note-class-5-prompting-and-retrieval-notes-model-customization-techniques-compariso.json"
+        },
+        {
+          "kind": "note",
+          "attempt": 1,
+          "system_chars": 998,
+          "user_chars": 3310,
+          "payload_chars": 2631,
+          "payload_capped": false,
+          "est_prompt_tokens": 1077,
+          "timing": {
+            "wall_s": 11.375,
+            "total_duration_s": 11.3538,
+            "load_duration_s": 0.0028,
+            "prompt_eval_count": 957,
+            "prompt_eval_duration_s": 0.1897,
+            "eval_count": 556,
+            "eval_duration_s": 10.6842,
+            "tokens_per_s": 52.0,
+            "prompt_tokens_per_s": 5044.8
+          },
+          "memory": {
+            "ollama_model_size_bytes": 3237478399,
+            "ollama_size_vram_bytes": 3237478399,
+            "ollama_process_rss_bytes": 202539008,
+            "harness_max_rss_bytes": 33357824,
+            "sampled_at": "2026-09-30T05:51:16Z"
+          },
+          "response_chars": 2493,
+          "ok": true,
+          "error": null,
+          "dump_file": "ingest/calls/224957-005-note-class-5-prompting-and-retrieval-notes-prompting-as-probability-steering.json"
+        },
+        {
+          "kind": "note",
+          "attempt": 1,
+          "system_chars": 998,
+          "user_chars": 4890,
+          "payload_chars": 4165,
+          "payload_capped": false,
+          "est_prompt_tokens": 1472,
+          "timing": {
+            "wall_s": 10.871,
+            "total_duration_s": 10.8681,
+            "load_duration_s": 0.0074,
+            "prompt_eval_count": 1289,
+            "prompt_eval_duration_s": 0.2182,
+            "eval_count": 514,
+            "eval_duration_s": 10.0611,
+            "tokens_per_s": 51.1,
+            "prompt_tokens_per_s": 5907.4
+          },
+          "memory": {
+            "ollama_model_size_bytes": 3237478399,
+            "ollama_size_vram_bytes": 3237478399,
+            "ollama_process_rss_bytes": 206290944,
+            "harness_max_rss_bytes": 33357824,
+            "sampled_at": "2026-09-30T05:51:27Z"
+          },
+          "response_chars": 2491,
+          "ok": true,
+          "error": null,
+          "dump_file": "ingest/calls/224957-006-note-class-5-prompting-and-retrieval-notes-structuring-prompts-as-product-interface.json"
+        },
+        {
+          "kind": "note",
+          "attempt": 1,
+          "system_chars": 998,
+          "user_chars": 14363,
+          "payload_chars": 11850,
+          "payload_capped": true,
+          "est_prompt_tokens": 3841,
+          "timing": {
+            "wall_s": 15.71,
+            "total_duration_s": 15.7079,
+            "load_duration_s": 0.0049,
+            "prompt_eval_count": 3572,
+            "prompt_eval_duration_s": 0.2352,
+            "eval_count": 747,
+            "eval_duration_s": 14.5032,
+            "tokens_per_s": 51.5,
+            "prompt_tokens_per_s": 15187.1
+          },
+          "memory": {
+            "ollama_model_size_bytes": 3237478399,
+            "ollama_size_vram_bytes": 3237478399,
+            "ollama_process_rss_bytes": 246923264,
+            "harness_max_rss_bytes": 33357824,
+            "sampled_at": "2026-09-30T05:51:43Z"
+          },
+          "response_chars": 3476,
+          "ok": true,
+          "error": null,
+          "dump_file": "ingest/calls/224957-007-note-class-5-prompting-and-retrieval-notes-advanced-retrieval-and-knowledge-hub.json"
+        }
+      ],
+      "wall_s": 105.83,
+      "plan_origin": "model-retry",
+      "errors": [],
+      "message": ""
+    },
+    {
+      "source": "raw/Custom LLM README.md",
+      "source_id": "custom-llm-readme",
+      "sha256": "0293ff499fdd970bee6aeb0310c48a81919cb8028af1272b13bf71c8ae71110e",
+      "action": "ingested",
+      "notes_written": [
+        "Assignment Model Training Overview",
+        "Model Performance and Results",
+        "Training Budget and Hardware Details",
+        "Model Learning Mechanics Explained",
+        "Interacting with Trained Model"
+      ],
+      "notes_drafted": [],
+      "notes_stale": [],
+      "calls": [
+        {
+          "kind": "plan",
+          "attempt": 1,
+          "system_chars": 2105,
+          "user_chars": 5398,
+          "payload_chars": 4977,
+          "payload_capped": false,
+          "est_prompt_tokens": 1876,
+          "timing": {
+            "wall_s": 23.698,
+            "total_duration_s": 23.6874,
+            "load_duration_s": 0.0104,
+            "prompt_eval_count": 1910,
+            "prompt_eval_duration_s": 0.4119,
+            "eval_count": 1200,
+            "eval_duration_s": 22.5762,
+            "tokens_per_s": 53.2,
+            "prompt_tokens_per_s": 4637.0
+          },
+          "memory": {
+            "ollama_model_size_bytes": 3237478399,
+            "ollama_size_vram_bytes": 3237478399,
+            "ollama_process_rss_bytes": 254705664,
+            "harness_max_rss_bytes": 33357824,
+            "sampled_at": "2026-09-30T05:52:07Z"
+          },
+          "response_chars": 4756,
+          "ok": true,
+          "error": null,
+          "dump_file": "ingest/calls/224957-008-plan-custom-llm-readme.json"
+        },
+        {
+          "kind": "plan",
+          "attempt": 2,
+          "system_chars": 2105,
+          "user_chars": 5533,
+          "payload_chars": 4977,
+          "payload_capped": false,
+          "est_prompt_tokens": 1910,
+          "timing": {
+            "wall_s": 7.78,
+            "total_duration_s": 7.7773,
+            "load_duration_s": 0.0044,
+            "prompt_eval_count": 1947,
+            "prompt_eval_duration_s": 1.2943,
+            "eval_count": 343,
+            "eval_duration_s": 6.4394,
+            "tokens_per_s": 53.3,
+            "prompt_tokens_per_s": 1504.3
+          },
+          "memory": {
+            "ollama_model_size_bytes": 3237478399,
+            "ollama_size_vram_bytes": 3237478399,
+            "ollama_process_rss_bytes": 359202816,
+            "harness_max_rss_bytes": 33357824,
+            "sampled_at": "2026-09-30T05:52:15Z"
+          },
+          "response_chars": 1562,
+          "ok": true,
+          "error": null,
+          "dump_file": "ingest/calls/224957-009-plan-custom-llm-readme.json"
+        },
+        {
+          "kind": "note",
+          "attempt": 1,
+          "system_chars": 998,
+          "user_chars": 12311,
+          "payload_chars": 11606,
+          "payload_capped": true,
+          "est_prompt_tokens": 3328,
+          "timing": {
+            "wall_s": 12.54,
+            "total_duration_s": 12.5374,
+            "load_duration_s": 0.0035,
+            "prompt_eval_count": 3231,
+            "prompt_eval_duration_s": 0.2367,
+            "eval_count": 617,
+            "eval_duration_s": 11.531,
+            "tokens_per_s": 53.5,
+            "prompt_tokens_per_s": 13650.2
+          },
+          "memory": {
+            "ollama_model_size_bytes": 3237478399,
+            "ollama_size_vram_bytes": 3237478399,
+            "ollama_process_rss_bytes": 262209536,
+            "harness_max_rss_bytes": 33357824,
+            "sampled_at": "2026-09-30T05:52:27Z"
+          },
+          "response_chars": 2518,
+          "ok": true,
+          "error": null,
+          "dump_file": "ingest/calls/224957-010-note-custom-llm-readme-assignment-model-training-overview.json"
+        },
+        {
+          "kind": "note",
+          "attempt": 1,
+          "system_chars": 998,
+          "user_chars": 12482,
+          "payload_chars": 11558,
+          "payload_capped": true,
+          "est_prompt_tokens": 3370,
+          "timing": {
+            "wall_s": 25.532,
+            "total_duration_s": 25.5295,
+            "load_duration_s": 0.0037,
+            "prompt_eval_count": 3163,
+            "prompt_eval_duration_s": 0.2359,
+            "eval_count": 1291,
+            "eval_duration_s": 24.4446,
+            "tokens_per_s": 52.8,
+            "prompt_tokens_per_s": 13408.2
+          },
+          "memory": {
+            "ollama_model_size_bytes": 3237478399,
+            "ollama_size_vram_bytes": 3237478399,
+            "ollama_process_rss_bytes": 263700480,
+            "harness_max_rss_bytes": 33357824,
+            "sampled_at": "2026-09-30T05:52:53Z"
+          },
+          "response_chars": 4968,
+          "ok": true,
+          "error": null,
+          "dump_file": "ingest/calls/224957-011-note-custom-llm-readme-model-performance-and-results.json"
+        },
+        {
+          "kind": "note",
+          "attempt": 1,
+          "system_chars": 998,
+          "user_chars": 2794,
+          "payload_chars": 2201,
+          "payload_capped": false,
+          "est_prompt_tokens": 948,
+          "timing": {
+            "wall_s": 9.827,
+            "total_duration_s": 9.825,
+            "load_duration_s": 0.004,
+            "prompt_eval_count": 1036,
+            "prompt_eval_duration_s": 0.2268,
+            "eval_count": 492,
+            "eval_duration_s": 8.9002,
+            "tokens_per_s": 55.3,
+            "prompt_tokens_per_s": 4567.9
+          },
+          "memory": {
+            "ollama_model_size_bytes": 3237478399,
+            "ollama_size_vram_bytes": 3237478399,
+            "ollama_process_rss_bytes": 605765632,
+            "harness_max_rss_bytes": 33357824,
+            "sampled_at": "2026-09-30T05:53:03Z"
+          },
+          "response_chars": 1627,
+          "ok": true,
+          "error": null,
+          "dump_file": "ingest/calls/224957-012-note-custom-llm-readme-training-budget-and-hardware-details.json"
+        },
+        {
+          "kind": "note",
+          "attempt": 1,
+          "system_chars": 998,
+          "user_chars": 11223,
+          "payload_chars": 10621,
+          "payload_capped": false,
+          "est_prompt_tokens": 3056,
+          "timing": {
+            "wall_s": 27.578,
+            "total_duration_s": 27.5755,
+            "load_duration_s": 0.0031,
+            "prompt_eval_count": 3615,
+            "prompt_eval_duration_s": 0.2678,
+            "eval_count": 1400,
+            "eval_duration_s": 26.3267,
+            "tokens_per_s": 53.2,
+            "prompt_tokens_per_s": 13498.9
+          },
+          "memory": {
+            "ollama_model_size_bytes": 3237478399,
+            "ollama_size_vram_bytes": 3237478399,
+            "ollama_process_rss_bytes": 269041664,
+            "harness_max_rss_bytes": 33357824,
+            "sampled_at": "2026-09-30T05:53:30Z"
+          },
+          "response_chars": 3088,
+          "ok": true,
+          "error": null,
+          "dump_file": "ingest/calls/224957-013-note-custom-llm-readme-model-learning-mechanics-explained.json"
+        },
+        {
+          "kind": "note",
+          "attempt": 1,
+          "system_chars": 998,
+          "user_chars": 10994,
+          "payload_chars": 10320,
+          "payload_capped": false,
+          "est_prompt_tokens": 2998,
+          "timing": {
+            "wall_s": 11.437,
+            "total_duration_s": 11.4351,
+            "load_duration_s": 0.0042,
+            "prompt_eval_count": 3053,
+            "prompt_eval_duration_s": 0.2131,
+            "eval_count": 528,
+            "eval_duration_s": 10.5127,
+            "tokens_per_s": 50.2,
+            "prompt_tokens_per_s": 14326.6
+          },
+          "memory": {
+            "ollama_model_size_bytes": 3237478399,
+            "ollama_size_vram_bytes": 3237478399,
+            "ollama_process_rss_bytes": 274890752,
+            "harness_max_rss_bytes": 33357824,
+            "sampled_at": "2026-09-30T05:53:42Z"
+          },
+          "response_chars": 2256,
+          "ok": true,
+          "error": null,
+          "dump_file": "ingest/calls/224957-014-note-custom-llm-readme-interacting-with-trained-model.json"
+        }
+      ],
+      "wall_s": 118.93,
+      "plan_origin": "model-retry",
+      "errors": [],
+      "message": ""
+    },
+    {
+      "source": "raw/Networking Tracker README.md",
+      "source_id": "networking-tracker-readme",
+      "sha256": "74a345428e79e97dbf42f9cf77ea7d277df32dd213f6d22299cd07f2b222bae8",
+      "action": "ingested",
+      "notes_written": [
+        "Assignment Overview and Requirements",
+        "Web App Walkthrough Screenshots",
+        "Technology Stack and Architecture",
+        "Database Schema and Auth",
+        "Local Setup and Deployment Details"
+      ],
+      "notes_drafted": [],
+      "notes_stale": [],
+      "calls": [
+        {
+          "kind": "plan",
+          "attempt": 1,
+          "system_chars": 2105,
+          "user_chars": 6003,
+          "payload_chars": 5351,
+          "payload_capped": false,
+          "est_prompt_tokens": 2027,
+          "timing": {
+            "wall_s": 23.403,
+            "total_duration_s": 23.4001,
+            "load_duration_s": 0.0042,
+            "prompt_eval_count": 1973,
+            "prompt_eval_duration_s": 0.4307,
+            "eval_count": 1200,
+            "eval_duration_s": 22.4556,
+            "tokens_per_s": 53.4,
+            "prompt_tokens_per_s": 4580.9
+          },
+          "memory": {
+            "ollama_model_size_bytes": 3237478399,
+            "ollama_size_vram_bytes": 3237478399,
+            "ollama_process_rss_bytes": 284803072,
+            "harness_max_rss_bytes": 33357824,
+            "sampled_at": "2026-09-30T05:54:05Z"
+          },
+          "response_chars": 4810,
+          "ok": true,
+          "error": null,
+          "dump_file": "ingest/calls/224957-015-plan-networking-tracker-readme.json"
+        },
+        {
+          "kind": "plan",
+          "attempt": 2,
+          "system_chars": 2105,
+          "user_chars": 6138,
+          "payload_chars": 5351,
+          "payload_capped": false,
+          "est_prompt_tokens": 2061,
+          "timing": {
+            "wall_s": 6.991,
+            "total_duration_s": 6.99,
+            "load_duration_s": 0.0044,
+            "prompt_eval_count": 2010,
+            "prompt_eval_duration_s": 1.2923,
+            "eval_count": 302,
+            "eval_duration_s": 5.6329,
+            "tokens_per_s": 53.6,
+            "prompt_tokens_per_s": 1555.4
+          },
+          "memory": {
+            "ollama_model_size_bytes": 3237478399,
+            "ollama_size_vram_bytes": 3237478399,
+            "ollama_process_rss_bytes": 516980736,
+            "harness_max_rss_bytes": 33357824,
+            "sampled_at": "2026-09-30T05:54:12Z"
+          },
+          "response_chars": 1410,
+          "ok": true,
+          "error": null,
+          "dump_file": "ingest/calls/224957-016-plan-networking-tracker-readme.json"
+        },
+        {
+          "kind": "note",
+          "attempt": 1,
+          "system_chars": 998,
+          "user_chars": 2428,
+          "payload_chars": 1633,
+          "payload_capped": false,
+          "est_prompt_tokens": 857,
+          "timing": {
+            "wall_s": 10.428,
+            "total_duration_s": 10.426,
+            "load_duration_s": 0.0026,
+            "prompt_eval_count": 735,
+            "prompt_eval_duration_s": 1.4421,
+            "eval_count": 491,
+            "eval_duration_s": 8.9533,
+            "tokens_per_s": 54.8,
+            "prompt_tokens_per_s": 509.7
+          },
+          "memory": {
+            "ollama_model_size_bytes": 3237478399,
+            "ollama_size_vram_bytes": 3237478399,
+            "ollama_process_rss_bytes": 318865408,
+            "harness_max_rss_bytes": 33357824,
+            "sampled_at": "2026-09-30T05:54:23Z"
+          },
+          "response_chars": 2288,
+          "ok": true,
+          "error": null,
+          "dump_file": "ingest/calls/224957-017-note-networking-tracker-readme-assignment-overview-and-requirements.json"
+        },
+        {
+          "kind": "note",
+          "attempt": 1,
+          "system_chars": 998,
+          "user_chars": 6184,
+          "payload_chars": 5231,
+          "payload_capped": false,
+          "est_prompt_tokens": 1796,
+          "timing": {
+            "wall_s": 17.225,
+            "total_duration_s": 17.2225,
+            "load_duration_s": 0.0071,
+            "prompt_eval_count": 1746,
+            "prompt_eval_duration_s": 2.8143,
+            "eval_count": 756,
+            "eval_duration_s": 14.2584,
+            "tokens_per_s": 53.0,
+            "prompt_tokens_per_s": 620.4
+          },
+          "memory": {
+            "ollama_model_size_bytes": 3237478399,
+            "ollama_size_vram_bytes": 3237478399,
+            "ollama_process_rss_bytes": 292569088,
+            "harness_max_rss_bytes": 33357824,
+            "sampled_at": "2026-09-30T05:54:40Z"
+          },
+          "response_chars": 3284,
+          "ok": true,
+          "error": null,
+          "dump_file": "ingest/calls/224957-018-note-networking-tracker-readme-web-app-walkthrough-screenshots.json"
+        },
+        {
+          "kind": "note",
+          "attempt": 1,
+          "system_chars": 998,
+          "user_chars": 4893,
+          "payload_chars": 4119,
+          "payload_capped": false,
+          "est_prompt_tokens": 1473,
+          "timing": {
+            "wall_s": 18.355,
+            "total_duration_s": 18.3532,
+            "load_duration_s": 0.0037,
+            "prompt_eval_count": 1303,
+            "prompt_eval_duration_s": 2.0542,
+            "eval_count": 877,
+            "eval_duration_s": 16.0067,
+            "tokens_per_s": 54.8,
+            "prompt_tokens_per_s": 634.3
+          },
+          "memory": {
+            "ollama_model_size_bytes": 3237478399,
+            "ollama_size_vram_bytes": 3237478399,
+            "ollama_process_rss_bytes": 300777472,
+            "harness_max_rss_bytes": 33357824,
+            "sampled_at": "2026-09-30T05:54:59Z"
+          },
+          "response_chars": 3792,
+          "ok": true,
+          "error": null,
+          "dump_file": "ingest/calls/224957-019-note-networking-tracker-readme-technology-stack-and-architecture.json"
+        },
+        {
+          "kind": "note",
+          "attempt": 1,
+          "system_chars": 998,
+          "user_chars": 5928,
+          "payload_chars": 5132,
+          "payload_capped": false,
+          "est_prompt_tokens": 1732,
+          "timing": {
+            "wall_s": 24.6,
+            "total_duration_s": 24.5982,
+            "load_duration_s": 0.0041,
+            "prompt_eval_count": 1750,
+            "prompt_eval_duration_s": 2.8599,
+            "eval_count": 1164,
+            "eval_duration_s": 21.6287,
+            "tokens_per_s": 53.8,
+            "prompt_tokens_per_s": 611.9
+          },
+          "memory": {
+            "ollama_model_size_bytes": 3237478399,
+            "ollama_size_vram_bytes": 3237478399,
+            "ollama_process_rss_bytes": 302546944,
+            "harness_max_rss_bytes": 33357824,
+            "sampled_at": "2026-09-30T05:55:23Z"
+          },
+          "response_chars": 4770,
+          "ok": true,
+          "error": null,
+          "dump_file": "ingest/calls/224957-020-note-networking-tracker-readme-database-schema-and-auth.json"
+        },
+        {
+          "kind": "note",
+          "attempt": 1,
+          "system_chars": 998,
+          "user_chars": 13006,
+          "payload_chars": 12054,
+          "payload_capped": true,
+          "est_prompt_tokens": 3501,
+          "timing": {
+            "wall_s": 26.709,
+            "total_duration_s": 26.7059,
+            "load_duration_s": 0.0039,
+            "prompt_eval_count": 4877,
+            "prompt_eval_duration_s": 8.6056,
+            "eval_count": 955,
+            "eval_duration_s": 18.0027,
+            "tokens_per_s": 53.0,
+            "prompt_tokens_per_s": 566.7
+          },
+          "memory": {
+            "ollama_model_size_bytes": 3237478399,
+            "ollama_size_vram_bytes": 3237478399,
+            "ollama_process_rss_bytes": 317997056,
+            "harness_max_rss_bytes": 33357824,
+            "sampled_at": "2026-09-30T05:55:50Z"
+          },
+          "response_chars": 3674,
+          "ok": true,
+          "error": null,
+          "dump_file": "ingest/calls/224957-021-note-networking-tracker-readme-local-setup-and-deployment-details.json"
+        }
+      ],
+      "wall_s": 128.3,
+      "plan_origin": "model-retry",
+      "errors": [],
+      "message": ""
+    },
+    {
+      "source": "raw/Pac-Man DQN README.md",
+      "source_id": "pac-man-dqn-readme",
+      "sha256": "cd469243a82e4f8b831e84de0e0e23277841ebb23499bde0585bb31c84a7fd69",
+      "action": "ingested",
+      "notes_written": [
+        "Assignment Overview and Requirements Pac-Man",
+        "Running the DQN Notebook",
+        "Agent Hyperparameter Tuning Choices",
+        "Performance Analysis Before Runs",
+        "Agent Training Results and Limitations"
+      ],
+      "notes_drafted": [],
+      "notes_stale": [],
+      "calls": [
+        {
+          "kind": "plan",
+          "attempt": 1,
+          "system_chars": 2105,
+          "user_chars": 3954,
+          "payload_chars": 3089,
+          "payload_capped": false,
+          "est_prompt_tokens": 1515,
+          "timing": {
+            "wall_s": 25.553,
+            "total_duration_s": 25.5504,
+            "load_duration_s": 0.0046,
+            "prompt_eval_count": 1617,
+            "prompt_eval_duration_s": 2.9645,
+            "eval_count": 1200,
+            "eval_duration_s": 22.0031,
+            "tokens_per_s": 54.5,
+            "prompt_tokens_per_s": 545.5
+          },
+          "memory": {
+            "ollama_model_size_bytes": 3237478399,
+            "ollama_size_vram_bytes": 3237478399,
+            "ollama_process_rss_bytes": 380600320,
+            "harness_max_rss_bytes": 33357824,
+            "sampled_at": "2026-09-30T05:56:16Z"
+          },
+          "response_chars": 4090,
+          "ok": true,
+          "error": null,
+          "dump_file": "ingest/calls/224957-022-plan-pac-man-dqn-readme.json"
+        },
+        {
+          "kind": "plan",
+          "attempt": 2,
+          "system_chars": 2105,
+          "user_chars": 4089,
+          "payload_chars": 3089,
+          "payload_capped": false,
+          "est_prompt_tokens": 1549,
+          "timing": {
+            "wall_s": 6.539,
+            "total_duration_s": 6.5375,
+            "load_duration_s": 0.004,
+            "prompt_eval_count": 1654,
+            "prompt_eval_duration_s": 0.3611,
+            "eval_count": 334,
+            "eval_duration_s": 6.1415,
+            "tokens_per_s": 54.4,
+            "prompt_tokens_per_s": 4580.4
+          },
+          "memory": {
+            "ollama_model_size_bytes": 3237478399,
+            "ollama_size_vram_bytes": 3237478399,
+            "ollama_process_rss_bytes": 519815168,
+            "harness_max_rss_bytes": 33357824,
+            "sampled_at": "2026-09-30T05:56:22Z"
+          },
+          "response_chars": 1572,
+          "ok": true,
+          "error": null,
+          "dump_file": "ingest/calls/224957-023-plan-pac-man-dqn-readme.json"
+        },
+        {
+          "kind": "note",
+          "attempt": 1,
+          "system_chars": 998,
+          "user_chars": 3227,
+          "payload_chars": 2240,
+          "payload_capped": false,
+          "est_prompt_tokens": 1057,
+          "timing": {
+            "wall_s": 13.171,
+            "total_duration_s": 13.1688,
+            "load_duration_s": 0.0017,
+            "prompt_eval_count": 939,
+            "prompt_eval_duration_s": 1.755,
+            "eval_count": 629,
+            "eval_duration_s": 11.3797,
+            "tokens_per_s": 55.3,
+            "prompt_tokens_per_s": 535.0
+          },
+          "memory": {
+            "ollama_model_size_bytes": 3237478399,
+            "ollama_size_vram_bytes": 3237478399,
+            "ollama_process_rss_bytes": 451952640,
+            "harness_max_rss_bytes": 33357824,
+            "sampled_at": "2026-09-30T05:56:36Z"
+          },
+          "response_chars": 2785,
+          "ok": true,
+          "error": null,
+          "dump_file": "ingest/calls/224957-024-note-pac-man-dqn-readme-assignment-overview-and-requirements-pac.json"
+        },
+        {
+          "kind": "note",
+          "attempt": 1,
+          "system_chars": 998,
+          "user_chars": 4117,
+          "payload_chars": 3181,
+          "payload_capped": false,
+          "est_prompt_tokens": 1279,
+          "timing": {
+            "wall_s": 20.571,
+            "total_duration_s": 20.5645,
+            "load_duration_s": 0.0043,
+            "prompt_eval_count": 1260,
+            "prompt_eval_duration_s": 2.3548,
+            "eval_count": 988,
+            "eval_duration_s": 18.0817,
+            "tokens_per_s": 54.6,
+            "prompt_tokens_per_s": 535.1
+          },
+          "memory": {
+            "ollama_model_size_bytes": 3237478399,
+            "ollama_size_vram_bytes": 3237478399,
+            "ollama_process_rss_bytes": 348471296,
+            "harness_max_rss_bytes": 33357824,
+            "sampled_at": "2026-09-30T05:56:56Z"
+          },
+          "response_chars": 3869,
+          "ok": true,
+          "error": null,
+          "dump_file": "ingest/calls/224957-025-note-pac-man-dqn-readme-running-the-dqn-notebook.json"
+        },
+        {
+          "kind": "note",
+          "attempt": 1,
+          "system_chars": 998,
+          "user_chars": 2293,
+          "payload_chars": 1332,
+          "payload_capped": false,
+          "est_prompt_tokens": 823,
+          "timing": {
+            "wall_s": 10.72,
+            "total_duration_s": 10.7173,
+            "load_duration_s": 0.0034,
+            "prompt_eval_count": 790,
+            "prompt_eval_duration_s": 1.4736,
+            "eval_count": 505,
+            "eval_duration_s": 9.1516,
+            "tokens_per_s": 55.2,
+            "prompt_tokens_per_s": 536.1
+          },
+          "memory": {
+            "ollama_model_size_bytes": 3237478399,
+            "ollama_size_vram_bytes": 3237478399,
+            "ollama_process_rss_bytes": 535166976,
+            "harness_max_rss_bytes": 33357824,
+            "sampled_at": "2026-09-30T05:57:07Z"
+          },
+          "response_chars": 1916,
+          "ok": true,
+          "error": null,
+          "dump_file": "ingest/calls/224957-026-note-pac-man-dqn-readme-agent-hyperparameter-tuning-choices.json"
+        },
+        {
+          "kind": "note",
+          "attempt": 1,
+          "system_chars": 998,
+          "user_chars": 1727,
+          "payload_chars": 762,
+          "payload_capped": false,
+          "est_prompt_tokens": 682,
+          "timing": {
+            "wall_s": 6.917,
+            "total_duration_s": 6.914,
+            "load_duration_s": 0.0044,
+            "prompt_eval_count": 603,
+            "prompt_eval_duration_s": 1.152,
+            "eval_count": 308,
+            "eval_duration_s": 5.6819,
+            "tokens_per_s": 54.2,
+            "prompt_tokens_per_s": 523.4
+          },
+          "memory": {
+            "ollama_model_size_bytes": 3237478399,
+            "ollama_size_vram_bytes": 3237478399,
+            "ollama_process_rss_bytes": 333479936,
+            "harness_max_rss_bytes": 33357824,
+            "sampled_at": "2026-09-30T05:57:14Z"
+          },
+          "response_chars": 1333,
+          "ok": true,
+          "error": null,
+          "dump_file": "ingest/calls/224957-027-note-pac-man-dqn-readme-performance-analysis-before-runs.json"
+        },
+        {
+          "kind": "note",
+          "attempt": 1,
+          "system_chars": 998,
+          "user_chars": 13317,
+          "payload_chars": 12063,
+          "payload_capped": true,
+          "est_prompt_tokens": 3579,
+          "timing": {
+            "wall_s": 22.666,
+            "total_duration_s": 22.6639,
+            "load_duration_s": 0.0032,
+            "prompt_eval_count": 4621,
+            "prompt_eval_duration_s": 8.2486,
+            "eval_count": 741,
+            "eval_duration_s": 14.315,
+            "tokens_per_s": 51.8,
+            "prompt_tokens_per_s": 560.2
+          },
+          "memory": {
+            "ollama_model_size_bytes": 3237478399,
+            "ollama_size_vram_bytes": 3237478399,
+            "ollama_process_rss_bytes": 321765376,
+            "harness_max_rss_bytes": 33357824,
+            "sampled_at": "2026-09-30T05:57:37Z"
+          },
+          "response_chars": 2577,
+          "ok": true,
+          "error": null,
+          "dump_file": "ingest/calls/224957-028-note-pac-man-dqn-readme-agent-training-results-and-limitations.json"
+        }
+      ],
+      "wall_s": 106.76,
+      "plan_origin": "model-retry",
+      "errors": [],
+      "message": ""
+    }
+  ],
+  "log_file": "ingest/ingest_log.json"
+}

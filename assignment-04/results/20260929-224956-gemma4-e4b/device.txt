@@ -1,0 +1,121 @@
+
+== date (UTC) ==
+2026-09-30T05:49:56Z
+
+== uname ==
+Darwin Isaacs-MacBook-Pro-M4Pro.local 25.3.0 Darwin Kernel Version 25.3.0: Wed Jan 28 20:48:41 PST 2026; root:xnu-12377.81.4~5/RELEASE_ARM64_T6041 arm64
+
+== sw_vers ==
+ProductName:		macOS
+ProductVersion:		26.3
+BuildVersion:		25D125
+
+== sysctl ==
+Apple M4 Pro
+25769803776
+12
+12
+12
+
+== system_profiler SPHardwareDataType ==
+Hardware:
+
+    Hardware Overview:
+
+      Model Name: MacBook Pro
+      Model Identifier: Mac16,8
+      Model Number: MX2E3LL/A
+      Chip: Apple M4 Pro
+      Total Number of Cores: 12 (8 Performance and 4 Efficiency)
+      Memory: 24 GB
+      System Firmware Version: 13822.81.10
+      OS Loader Version: 13822.81.10
+      Serial Number (system): GQ7QG27T4Y
+      Hardware UUID: 5041005E-6357-55F7-9EE6-A3FEEE344E3C
+      Provisioning UDID: 00006040-0006713E11A0801C
+      Activation Lock Status: Enabled
+
+
+== vm_stat ==
+Mach Virtual Memory Statistics: (page size of 16384 bytes)
+Pages free:                                3863.
+Pages active:                            246834.
+Pages inactive:                          224068.
+Pages speculative:                        21612.
+Pages throttled:                              0.
+Pages wired down:                        292016.
+Pages purgeable:                             26.
+"Translation faults":               17981976055.
+Pages copy-on-write:                  556141312.
+Pages zero filled:                   5424187085.
+Pages reactivated:                   4617956587.
+Pages purged:                         609412741.
+File-backed pages:                       183481.
+Anonymous pages:                         309033.
+Pages stored in compressor:             4681639.
+Pages occupied by compressor:            741747.
+Decompressions:                      5241472525.
+Compressions:                        5787450408.
+Pageins:                              346351075.
+Pageouts:                               5673142.
+Swapins:                              107197557.
+Swapouts:                             126674269.
+
+== memory_pressure ==
+The system has 25769803776 (1572864 pages with a page size of 16384).
+
+Stats: 
+Pages free: 3678 
+Pages purgeable: 36 
+Pages purged: 609412741 
+
+Swap I/O:
+Swapins: 107197561 
+Swapouts: 126674269 
+
+Page Q counts:
+Pages active: 247090 
+Pages inactive: 224092 
+Pages speculative: 21623 
+Pages throttled: 0 
+Pages wired down: 292038 
+
+Compressor Stats:
+Pages used by compressor: 741738 
+
+== df -h . ==
+Filesystem      Size    Used   Avail Capacity iused ifree %iused  Mounted on
+/dev/disk3s1   460Gi   394Gi    10Gi    98%    5.0M  107M    4%   /System/Volumes/Data
+
+== wifi power (en0) ==
+Wi-Fi Power (en0): Off
+
+== scutil --nwi (network interfaces in use) ==
+Network information
+
+IPv4 network interface information
+   No IPv4 states found
+
+   REACH : flags 0x00000000 (Not Reachable)
+
+IPv6 network interface information
+   No IPv6 states found
+
+
+   REACH : flags 0x00000000 (Not Reachable)
+
+== ollama --version ==
+ollama version is 0.35.0
+Warning: client version is 0.34.4
+
+== ollama list ==
+NAME          ID              SIZE      MODIFIED    
+gemma4:e2b    7fbdbf8f5e45    7.2 GB    4 hours ago    
+gemma4:e4b    c6eb396dbd59    9.6 GB    4 hours ago    
+
+== ollama ps ==
+NAME          ID              SIZE      PROCESSOR    CONTEXT    UNTIL              
+gemma4:e4b    c6eb396dbd59    3.2 GB    100% GPU     8192       5 minutes from now    
+
+== python ==
+Python 3.13.15

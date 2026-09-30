@@ -1,0 +1,58 @@
+{
+  "kind": "note",
+  "label": "Technology Stack and Architecture",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You write one note for a personal wiki from text the owner wrote. Reply with the note body in Markdown and nothing else, using exactly these three headings in this order:\n\n## Summary\nTwo to four sentences: what this note covers and its main result or point.\n\n## Details\nThe substance, in short paragraphs or bullet lists. Keep every number, name, date, and setting exactly as the source text gives it. Keep the owner's first-person voice (\"I trained ...\"). Do not add facts, opinions, or background that the source text does not contain. Leave out anything that is not in the source text you were given.\n\n## Related\nZero to three lines, each \"- Title: why it relates\", using only titles from the allowed list, copied exactly. Write \"- none\" if nothing on the list relates.\n\nDo not write a top-level title, frontmatter, a Sources section, tables wider than four columns, or code blocks longer than five lines. Do not refer to \"the source\" or \"this note\"; just present the content. At most 400 words."
+    },
+    {
+      "role": "user",
+      "content": "Note title: Technology Stack and Architecture\nPlanned summary: Describes the technologies used and the overall system architecture.\nAllowed related titles: Assignment Overview and Requirements; Web App Walkthrough Screenshots; Core Functionality and Features; Database and Setup Details; Model Customization Techniques Comparison; Model Learning Mechanics Explained; Prompting as Probability Steering; Structuring Prompts as Product Interfaces; LLM Behavior and Probabilistic Nature; Advanced Retrieval and Knowledge Hub; Assignment Model Training Overview; Interacting with Trained Model; Model Performance and Results; Training Budget and Hardware Details\nSource file: Networking Tracker README\nSections included: \"Technology stack and why\", \"Architecture\"\n\nSource text:\n## Technology stack and why\nNext.js 16 with the App Router runs on Vercel, which is the assignment's required host and the path of least friction for a Next.js deploy. The UI uses shadcn/ui components on Tailwind CSS v4, which gave me accessible dialogs and inputs without writing them from scratch and without a heavy component library. On 2026-09-08 I replaced the default look with a visual system of its own, a Berkeley class directory with a blue and gold cover, white listing pages with hanging-indent entries, and the priority filter as a thumb index on the edge of the page. The tokens and rules behind it are written down in `DESIGN.md`, and the product context that shaped it is in `PRODUCT.md`.\n\nNeon Postgres holds the data, Neon's managed Better Auth issues sessions and JSON Web Tokens, and the Neon Data API exposes the contacts table over HTTPS as a PostgREST endpoint that the browser calls directly. I chose that shape because it keeps the trust boundary in the database, which is where the assignment wants it, and because it means the deployed app never holds a Postgres connection string at all. The single dependency for both auth and data is `@neondatabase/neon-js`. Tests run on Node's built-in test runner, which strips TypeScript types natively on Node 22.18 and later, so there is no test framework to install.\n\n## Architecture\nThere is a frontend, a thin server layer, and a database, and the browser cannot skip the protection in any of them.\n\n```\nBrowser (Next.js client components, shadcn/ui)\n  |\n  |  1. sign in / sign up / sign out / get token      2. read and write contacts\n  v                                                    v\nNext.js server on Vercel                              Neon Data API (PostgREST)\n  /api/auth/[...path]  ->  proxies to Neon Auth         Authorization: Bearer <JWT>\n  proxy.ts             ->  guards \"/\" by session         |\n  first-party HttpOnly cookie signed with               v\n  NEON_AUTH_COOKIE_SECRET                              Neon Postgres\n                                                        contacts table, CHECK constraints,\n                                                        Row Level Security on auth.user_id()\n```\n\nThe frontend is a set of client components. The contacts page in `components/contacts-page.tsx` loads rows, sorts and filters them in memory, lays them out as directory entries in two columns on a laptop and one on a phone, and opens a dialog for add and edit. The sign-in and sign-up pages share one form.\n\nThe server layer is Neon's Next.js auth adapter. The route handler at `app/api/auth/[...path]/route.ts` proxies every auth call to Neon's managed Better Auth service and rewrites the returned session cookie so it is first-party, HttpOnly, and signed with a secret that only the server knows. I route sign-in through that proxy because a cookie set by Neon's own domain is a third-party cookie from the app's point of view, and Safari and Chrome's private windows drop those, which would have logged a grader out on refresh. The `proxy.ts` middleware checks that cookie before the contacts page renders and redirects to the sign-in page otherwise.\n\nThe database is where ownership lives. When the browser needs to read or write contacts it first asks its own server for a short-lived JWT at `/api/auth/token`, which the proxy fetches from Neon Auth using the session cookie. The Data API client in `lib/neon.ts` caches that token until shortly before it expires and attaches it as a bearer token on every request. The Data API validates the signature against Neon Auth's public keys, connects to Postgres as the `authenticated` role, and exposes the token's `sub` claim through `auth.user_id()`. Every policy on the contacts table compares that value to the row's `user_id`, so a query can only ever see or change the caller's rows.\n\nHosting is Vercel for the Next.js app and Neon for everything else. The Vercel project holds three environment variables, the two public Neon URLs and the cookie secret. It does not hold `DATABASE_URL`, because nothing in the running app opens a direct database connection."
+    }
+  ],
+  "response": "## Summary\nThis note details the technology stack and overall system architecture for the project. The stack utilizes Next.js 16 on Vercel, with shadcn/ui and Tailwind CSS v4 for the UI, and Neon Postgres for data persistence. The architecture enforces security by ensuring the browser cannot bypass protection layers in the frontend, server, or database.\n\n## Details\n**Technology stack and why**\n*   Next.js 16 with the App Router runs on Vercel, which is the assignment's required host and the path of least friction for a Next.js deploy.\n*   The UI uses shadcn/ui components on Tailwind CSS v4, which gave me accessible dialogs and inputs without writing them from scratch and without a heavy component library.\n*   On 2026-09-08 I replaced the default look with a visual system of its own, a Berkeley class directory with a blue and gold cover, white listing pages with hanging-indent entries, and the priority filter as a thumb index on the edge of the page.\n*   The tokens and rules behind it are written down in `DESIGN.md`, and the product context that shaped it is in `PRODUCT.md`.\n*   Neon Postgres holds the data, Neon's managed Better Auth issues sessions and JSON Web Tokens, and the Neon Data API exposes the contacts table over HTTPS as a PostgREST endpoint that the browser calls directly.\n*   I chose that shape because it keeps the trust boundary in the database, which is where the assignment wants it, and because it means the deployed app never holds a Postgres connection string at all.\n*   The single dependency for both auth and data is `@neondatabase/neon-js`.\n*   Tests run on Node's built-in test runner, which strips TypeScript types natively on Node 22.18 and later, so there is no test framework to install.\n\n**Architecture**\nThe architecture consists of a frontend, a thin server layer, and a database, and the browser cannot skip the protection in any of them.\n\n*   **Browser:** Uses Next.js client components and shadcn/ui. The contacts page in `components/contacts-page.tsx` loads rows, sorts and filters them in memory, lays them out as directory entries in two columns on a laptop and one on a phone, and opens a dialog for add and edit. The sign-in and sign-up pages share one form.\n*   **Next.js server on Vercel:** This layer handles authentication and data requests.\n    *   The route handler at `app/api/auth/[...path]/route.ts` proxies every auth call to Neon's managed Better Auth service and rewrites the returned session cookie so it is first-party, HttpOnly, and signed with a secret that only the server knows.\n    *   The `proxy.ts` middleware checks that cookie before the contacts page renders and redirects to the sign-in page otherwise.\n*   **Database:** Ownership resides here. When the browser needs to read or write contacts, it first asks its own server for a short-lived JWT at `/api/auth/token`, which the proxy fetches from Neon Auth using the session cookie. The Data API client in `lib/neon.ts` caches that token until shortly before it expires and attaches it as a bearer token on every request. The Data API validates the signature against Neon Auth's public keys, connects to Postgres as the `authenticated` role, and exposes the token's `sub` claim through `auth.user_id()`. Every policy on the contacts table compares that value to the row's `user_id`, so a query can only ever see or change the caller's rows.\n*   **Hosting:** Vercel is used for the Next.js app and Neon for everything else. The Vercel project holds three environment variables: the two public Neon URLs and the cookie secret. It does not hold `DATABASE_URL`, because nothing in the running app opens a direct database connection.\n\n## Related\n- Database and Setup Details: Neon Postgres holds the data, Neon's managed Better Auth issues sessions and JSON Web Tokens, and the Neon Data API exposes the contacts table over HTTPS as a PostgREST endpoint that",
+  "error": null,
+  "model": {
+    "backend": "ollama",
+    "tag": "gemma4:e4b",
+    "digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb",
+    "parameter_size": "8.0B",
+    "quantization_level": "Q4_K_M",
+    "family": "gemma4",
+    "context_length": 131072,
+    "ollama_version": "0.35.0",
+    "size_bytes": 9608350718
+  },
+  "record": {
+    "kind": "note",
+    "attempt": 1,
+    "system_chars": 998,
+    "user_chars": 4892,
+    "payload_chars": 4119,
+    "payload_capped": false,
+    "est_prompt_tokens": 1473,
+    "timing": {
+      "wall_s": 20.51,
+      "total_duration_s": 20.5069,
+      "load_duration_s": 0.0039,
+      "prompt_eval_count": 1303,
+      "prompt_eval_duration_s": 2.4596,
+      "eval_count": 900,
+      "eval_duration_s": 17.9623,
+      "tokens_per_s": 50.1,
+      "prompt_tokens_per_s": 529.8
+    },
+    "memory": {
+      "ollama_model_size_bytes": 3237478399,
+      "ollama_size_vram_bytes": 3237478399,
+      "ollama_process_rss_bytes": 4316037120,
+      "harness_max_rss_bytes": 32702464,
+      "sampled_at": "2026-09-30T02:06:17Z"
+    },
+    "response_chars": 3889,
+    "ok": true,
+    "error": null,
+    "dump_file": "ingest/calls/190033-020-note-networking-tracker-readme-technology-stack-and-architecture.json"
+  }
+}

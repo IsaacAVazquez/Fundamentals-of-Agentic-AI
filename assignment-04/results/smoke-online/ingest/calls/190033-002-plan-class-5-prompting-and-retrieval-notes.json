@@ -1,0 +1,58 @@
+{
+  "kind": "plan",
+  "label": "",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You plan the wiki notes for one source document. You get the document's outline (its headings, each with the first words of its section) and the titles of notes that already exist. Reply with JSON only, shaped:\n{\"notes\": [{\"title\": \"...\", \"folder\": \"Projects\", \"summary\": \"...\", \"sections\": [\"heading\", \"heading\"], \"related\": [{\"title\": \"...\", \"why\": \"...\"}]}]}\n\nRules\n- Plan between 2 and the maximum number of notes. Each note covers a coherent group of the document's sections. Copy section headings exactly from the outline, without the leading # signs and without the text after the dash. Use each section in at most one note; put leftover sections into the closest note.\n- title: 2 to 6 words that name the topic like a chapter title, for example \"Pac-Man DQN Training\" or \"Networking Tracker Security\". No dates, no id-like numbers, no file names, no colons or slashes, no full sentences. Titles must differ from each other.\n- If a title in \"Existing note titles\" or \"Titles previously written from this source\" already fits a group, reuse it exactly; that note will be updated instead of duplicated.\n- folder: \"Projects\" for something the owner built or ran, \"Course\" for class material, lectures, and course logistics, \"Concepts\" for a general idea or technique explained on its own.\n- summary: one plain sentence of at most 25 words saying what the note contains.\n- related: 0 to 3 titles from this plan or from the existing titles, each with a short \"why\" clause such as \"same laptop, trained on the GPU instead\".\n\nExample for a short document with sections \"Overview\", \"Setup\", \"Results\":\n{\"notes\": [{\"title\": \"Garden Sensor Build\", \"folder\": \"Projects\", \"summary\": \"How the soil sensor was assembled and configured.\", \"sections\": [\"Overview\", \"Setup\"], \"related\": [{\"title\": \"Garden Sensor Results\", \"why\": \"the readings this build produced\"}]}, {\"title\": \"Garden Sensor Results\", \"folder\": \"Projects\", \"summary\": \"The two weeks of moisture readings and what they showed.\", \"sections\": [\"Results\"], \"related\": [{\"title\": \"Garden Sensor Build\", \"why\": \"the hardware behind these readings\"}]}]}"
+    },
+    {
+      "role": "user",
+      "content": "Source file: Class 5 Prompting and Retrieval Notes\nDocument title: Class 5: LLM Behavior, Prompting & Retrieval\nMaximum notes: 5\nExisting note titles: (none)\nTitles previously written from this source: (none)\n\nOutline:\n# Class 5: LLM Behavior, Prompting & Retrieval\n# Why This Class?\n## Yesterday’s “Nice to Have” Is Tomorrow’s “Must Have”\n## What This Class Gives You\n## Agenda\n# Class 4 Recap\n## Slide 1 of 2: LLMs Predict Tokens\n## Slide 2 of 2: LLMs Are Probabilistic\n## “It Knows” Is a Risky Shorthand\n## The Probability Distribution Is the Steering Surface\n## Practical Implications\n## Temperature: The Creativity Dial\n# What Is Fine-Tuning?\n## Fine-Tuning Reshapes the Distribution\n## RLHF — How Models Learn to Be Helpful\n## Alignment Is Product Design\n## …But It’s Super Expensive\n## Three Levers, Three Jobs\n## The Three Levers — Visually\n## Prompting vs LoRA vs Fine-Tuning — The Decision Table\n# Prompting\n## Prompting Is Probability Steering\n## Don’t Mistake the Mask for the Model\n## Attention Failure — The Model Answers the Wrong Question\n## Why Voice-to-Text Prompts Can Help\n## LLMs Do Not Start Fresh Per Message\n## Context Is Everything\n# Prompts Are Product Interfaces\n## The Prompt Is the Spec\n## A Good Prompt Specifies the Job\n## Context Is Not Background Reading\n## Separate Instructions From Data\n## Instruction Hierarchy Is a Trust Boundary\n## Output Format Is a Reliability Tool\n## Examples Teach a Pattern\n## Constraints Beat Vague Adjectives\n## Prompting Is Experimental Work\n# Context Windows and Memory\n## How Big Is a Context Window?\n## Bigger Context Is Not a Free Solution\n## Context Rot Is Real\n## But Context Fills Up — Enter Compression\n## Put Stable Rules in Stable Places\n## Why Everyone Talks About Tokens\n# Prompt Engineering\n## .md Files — Why They’re Everywhere in AI\n## What Is a System Prompt?\n## CLAUDE.md & Project Files\n## What Gets Sent Each Turn\n## The Golden Rule of Prompting\n# Thinking Models\n## The Biggest Shift Since GPT\n## What Are “Thinking” Models?\n## Same Puzzle, Thinking On — Intent Catches Itself\n## Thinking Is Not a Permission Slip to Skip Evaluation\n## Match the Model to the Task\n## Delegate a Bounded Subproblem\n## Tip: Use Plan Mode\n# Hallucination Is a System Property\n## Why Fluent Systems Can Be Wrong\n## Four Defenses\n# Retrieval Augmented Generation\n## There’s Still a Problem\n## Retrieval Augmented Generation (RAG)\n## You Already Use RAG\n## Why RAG Matters\n## Building a Tiny RAG Demo\n## Retrieval Is a Pipeline, Not a Magic Box\n## Chunk for a Future Question\n## Metadata Prevents Cross-Contamination\n## Retrieval Should Return Evidence, Not Just Confidence\n## “No Answer Found” Is a Successful Result\n## Retrieval Quality Needs Its Own Metric\n## Retrieval Can Fail in Several Ways\n## Grounding Is a User-Visible Feature\n## Privacy Shapes the Architecture\n# Embeddings & Vector Databases\n## TF-IDF Has a Blind Spot\n## From Word Counts to Dense Vectors\n## Same Math, Better Vectors\n## Where Do a Million Vectors Live? — Vector Databases\n## Hybrid Search — Because Meaning Isn’t Everything\n## Hybrid Search — Visually\n# Assignment 4: Knowledge Hub v1\n## The Product\n## Where This Is Going — Your Personal AI Knowledge Hub\n## Architecture\n## The Karpathy Pattern: 3 Layers\n## Why Obsidian\n## Starter Location\n## The v1 Boundary\n## Choose a Corpus You Can Inspect\n## Define Three Answerable Questions\n## Keep Raw Sources Immutable\n## Make the Index a Product Surface\n## Test Retrieval Before Generation\n## Add a Grounded Answer Policy\n## Evidence Card\n## Definition of Done: Knowledge Hub v1\n## Next Class\n## Thank You & What’s Next\n\nYour previous plan had these problems, fix them: the reply was not valid JSON (Expecting ',' delimiter: line 54 column 6 (char 1997))"
+    }
+  ],
+  "response": "{\"notes\": [{\"title\": \"LLM Behavior and Probabilistic Nature\", \"folder\": \"Course\", \"summary\": \"Recapping LLMs as probabilistic token predictors and the role of temperature.\", \"sections\": [\"Slide 1 of 2: LLMs Predict Tokens\", \"Slide 2 of 2: LLMs Are Probabilistic\", \"It Knows Is a Risky Shorthand\", \"The Probability Distribution Is the Steering Surface\", \"Practical Implications\", \"Temperature: The Creativity Dial\"], \"related\": []}, {\"title\": \"Model Customization Techniques Comparison\", \"folder\": \"Concepts\", \"summary\": \"Comparing fine-tuning, LoRA, and prompting for model adaptation.\", \"sections\": [\"Fine-Tuning Reshapes the Distribution\", \"RLHF How Models Learn to Be Helpful\", \"Alignment Is Product Design\", \"But It’s Super Expensive\", \"Three Levers Three Jobs\", \"The Three Levers Visually\", \"Prompting vs LoRA vs Fine-Tuning The Decision Table\"], \"related\": []}, {\"title\": \"Prompting as Probability Steering\", \"folder\": \"Concepts\", \"summary\": \"Understanding prompting as steering the model's probability distribution.\", \"sections\": [\"Prompting Is Probability Steering\", \"Don’t Mistake the Mask for the Model\", \"Attention Failure The Model Answers the Wrong Question\", \"Why Voice-to-Text Prompts Can Help\", \"LLMs Do Not Start Fresh Per Message\", \"Context Is Everything\"], \"related\": []}, {\"title\": \"Structuring Prompts as Product Interfaces\", \"folder\": \"Concepts\", \"summary\": \"Best practices for designing prompts to specify jobs and maintain structure.\", \"sections\": [\"The Prompt Is the Spec\", \"A Good Prompt Specifies the Job\", \"Context Is Not Background Reading\", \"Separate Instructions From Data\", \"Instruction Hierarchy Is a Trust Boundary\", \"Output Format Is a Reliability Tool\", \"Examples Teach a Pattern\", \"Constraints Beat Vague Adjectives\", \"Prompting Is Experimental Work\"], \"related\": []}, {\"title\": \"Advanced Retrieval and Knowledge Hub\", \"folder\": \"Projects\", \"summary\": \"Covering RAG, vector databases, and the architecture for a knowledge hub.\", \"sections\": [\"Context Windows and Memory\", \"Prompt Engineering\", \"Thinking Models\", \"Hallucination Is a System Property\", \"Retrieval Augmented Generation\", \"Embeddings & Vector Databases\", \"Assignment 4: Knowledge Hub v1\"], \"related\": [{\"title\": \"Prompting as Probability Steering\", \"why\": \"Prompting is a core part of the overall system design\"}, {\"title\": \"Structuring Prompts as Product Interfaces\", \"why\": \"The knowledge hub requires structured prompting\"}]}]\n}",
+  "error": null,
+  "model": {
+    "backend": "ollama",
+    "tag": "gemma4:e4b",
+    "digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb",
+    "parameter_size": "8.0B",
+    "quantization_level": "Q4_K_M",
+    "family": "gemma4",
+    "context_length": 131072,
+    "ollama_version": "0.35.0",
+    "size_bytes": 9608350718
+  },
+  "record": {
+    "kind": "plan",
+    "attempt": 1,
+    "system_chars": 2105,
+    "user_chars": 3740,
+    "payload_chars": 3386,
+    "payload_capped": false,
+    "est_prompt_tokens": 1462,
+    "timing": {
+      "wall_s": 10.927,
+      "total_duration_s": 10.9247,
+      "load_duration_s": 0.0056,
+      "prompt_eval_count": 1430,
+      "prompt_eval_duration_s": 0.2316,
+      "eval_count": 554,
+      "eval_duration_s": 10.6552,
+      "tokens_per_s": 52.0,
+      "prompt_tokens_per_s": 6174.4
+    },
+    "memory": {
+      "ollama_model_size_bytes": 3237478399,
+      "ollama_size_vram_bytes": 3237478399,
+      "ollama_process_rss_bytes": 4318871552,
+      "harness_max_rss_bytes": 32702464,
+      "sampled_at": "2026-09-30T02:01:00Z"
+    },
+    "response_chars": 2431,
+    "ok": true,
+    "error": null,
+    "dump_file": "ingest/calls/190033-002-plan-class-5-prompting-and-retrieval-notes.json"
+  }
+}

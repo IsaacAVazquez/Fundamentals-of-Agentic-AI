@@ -27,7 +27,9 @@ CHAT_HISTORY_CHARS = 12000    # about 3,000 tokens at 4 characters per token
 PLAN_OUTLINE_BUDGET = 6000    # characters of outline sent to the ingest plan call
 NOTE_TEXT_BUDGET = 12000      # characters of source text sent per note call
 NUM_CTX = 8192                # context window requested from Ollama on every call
-NUM_PREDICT = {"ask": 400, "chat": 500, "route": 60, "plan": 700, "note": 900}
+NUM_PREDICT = {"ask": 400, "chat": 500, "route": 60, "plan": 1200, "note": 1400}
+# plan was 700 and note was 900 until the first Mac run on 2026-09-29: every first plan hit 700 and was
+# unparseable JSON, and five notes hit 900 and stopped mid-sentence. See the README's design choices.
 FOLDERS = ("Projects", "Concepts", "Course")   # topic folders the plan may choose
 SOURCES_FOLDER = "Sources"                     # catalog notes, one per raw file
 DEFAULT_K = 6

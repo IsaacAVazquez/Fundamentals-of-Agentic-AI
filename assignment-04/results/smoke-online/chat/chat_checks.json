@@ -1,0 +1,451 @@
+{
+  "run_id": "smoke-online",
+  "script": "tests/chat_checks.txt",
+  "model": {
+    "backend": "ollama",
+    "tag": "gemma4:e4b",
+    "digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb",
+    "parameter_size": "8.0B",
+    "quantization_level": "Q4_K_M",
+    "family": "gemma4",
+    "context_length": 131072,
+    "ollama_version": "0.35.0",
+    "size_bytes": 9608350718
+  },
+  "persona_sha256": "17aa2f42c0ec73742b997c5ec1fcbe14ded606ac85973bc498bbf2fa46fabb3c",
+  "started_at": "2026-09-30T05:44:50Z",
+  "ended_at": "2026-09-30T05:45:05Z",
+  "turns": [
+    {
+      "i": 1,
+      "user": "what can you help me with?",
+      "routing": {
+        "decision": "skip",
+        "source": "rule",
+        "reason": "capability or greeting question",
+        "query": ""
+      },
+      "retrieved": [],
+      "assistant": "I run locally on a Gemma model and I can help you with your course notes.\n\nI can answer questions based on the notes using `/notes <question>`, search for matching passages using `/search <words>`, or show you the available commands like `/help`.\n\nIf you want to start, you could ask me about one of your assignments using `/notes`.",
+      "citations": [],
+      "timing": {
+        "wall_s": 2.631,
+        "total_duration_s": 2.6298,
+        "load_duration_s": 0.0045,
+        "prompt_eval_count": 527,
+        "prompt_eval_duration_s": 1.1022,
+        "eval_count": 73,
+        "eval_duration_s": 1.4656,
+        "tokens_per_s": 49.8,
+        "prompt_tokens_per_s": 478.1
+      },
+      "memory": {
+        "ollama_model_size_bytes": 3237478399,
+        "ollama_size_vram_bytes": 3237478399,
+        "ollama_process_rss_bytes": 374063104,
+        "harness_max_rss_bytes": 38551552,
+        "sampled_at": "2026-09-30T05:44:53Z"
+      },
+      "expect": {
+        "retrieval": "no"
+      },
+      "check": {
+        "retrieval_ok": true,
+        "cite_ok": null
+      }
+    },
+    {
+      "i": 2,
+      "user": "Write a three-sentence plan for the evening before next week's class.",
+      "routing": {
+        "decision": "skip",
+        "source": "model",
+        "reason": "routing call",
+        "query": ""
+      },
+      "retrieved": [],
+      "assistant": "Suggestion: Review the lecture slides from the last two weeks to refresh your memory on key concepts. Work through the practice problems associated with the upcoming material to identify weak spots. Finally, read the assigned chapter sections so you are familiar with the terminology before class.",
+      "citations": [],
+      "timing": {
+        "wall_s": 1.808,
+        "total_duration_s": 1.3406,
+        "load_duration_s": 0.0014,
+        "prompt_eval_count": 625,
+        "prompt_eval_duration_s": 0.2872,
+        "eval_count": 52,
+        "eval_duration_s": 1.0073,
+        "tokens_per_s": 51.6,
+        "prompt_tokens_per_s": 2176.2
+      },
+      "memory": {
+        "ollama_model_size_bytes": 3237478399,
+        "ollama_size_vram_bytes": 3237478399,
+        "ollama_process_rss_bytes": 347144192,
+        "harness_max_rss_bytes": 38551552,
+        "sampled_at": "2026-09-30T05:44:56Z"
+      },
+      "expect": {
+        "retrieval": "no"
+      },
+      "check": {
+        "retrieval_ok": true,
+        "cite_ok": null
+      }
+    },
+    {
+      "i": 3,
+      "user": "Make that shorter.",
+      "routing": {
+        "decision": "skip",
+        "source": "rule",
+        "reason": "follow-up on the previous reply",
+        "query": ""
+      },
+      "retrieved": [],
+      "assistant": "Suggestion: Review last week's slides. Work through practice problems. Read the assigned chapter sections.",
+      "citations": [],
+      "timing": {
+        "wall_s": 0.547,
+        "total_duration_s": 0.5453,
+        "load_duration_s": 0.0024,
+        "prompt_eval_count": 690,
+        "prompt_eval_duration_s": 0.1544,
+        "eval_count": 21,
+        "eval_duration_s": 0.3763,
+        "tokens_per_s": 55.8,
+        "prompt_tokens_per_s": 4468.9
+      },
+      "memory": {
+        "ollama_model_size_bytes": 3237478399,
+        "ollama_size_vram_bytes": 3237478399,
+        "ollama_process_rss_bytes": 393248768,
+        "harness_max_rss_bytes": 38551552,
+        "sampled_at": "2026-09-30T05:44:57Z"
+      },
+      "expect": {
+        "retrieval": "no"
+      },
+      "check": {
+        "retrieval_ok": true,
+        "cite_ok": null
+      }
+    },
+    {
+      "i": 4,
+      "user": "What learning rate did I use for the DQN?",
+      "routing": {
+        "decision": "retrieve",
+        "source": "rule",
+        "reason": "notes cue \"did I\"",
+        "query": "What learning rate did I use for the DQN?"
+      },
+      "retrieved": [
+        {
+          "n": 1,
+          "path": "raw/Pac-Man DQN README.md",
+          "kind": "raw",
+          "heading": "My three choices",
+          "heading_path": [
+            "Ms. Pac-Man DQN",
+            "My three choices"
+          ],
+          "lines": [
+            53,
+            63
+          ],
+          "score": 11.934,
+          "chars": 880,
+          "matched_terms": [
+            "dqn",
+            "learn",
+            "rate",
+            "use"
+          ],
+          "id": "253438fcfb25"
+        },
+        {
+          "n": 2,
+          "path": "wiki/Projects/Assignment DQN Training Overview.md",
+          "kind": "wiki",
+          "heading": "Details",
+          "heading_path": [
+            "Assignment DQN Training Overview",
+            "Details"
+          ],
+          "lines": [
+            39,
+            46
+          ],
+          "score": 10.987,
+          "chars": 1040,
+          "matched_terms": [
+            "dqn",
+            "learn",
+            "rate",
+            "use"
+          ],
+          "id": "bc0c1fbc605f"
+        },
+        {
+          "n": 3,
+          "path": "raw/Pac-Man DQN README.md",
+          "kind": "raw",
+          "heading": "Ms. Pac-Man DQN",
+          "heading_path": [
+            "Ms. Pac-Man DQN"
+          ],
+          "lines": [
+            3,
+            3
+          ],
+          "score": 9.644,
+          "chars": 840,
+          "matched_terms": [
+            "dqn",
+            "learn",
+            "rate",
+            "use"
+          ],
+          "id": "363f9b7d5ecc"
+        }
+      ],
+      "assistant": "You used a learning rate of 0.0001 for the DQN [1, 2]. You kept this rate because it was the notebook's reference value and the rate the course's build-from-scratch prompt started Adam at [1, 2]. You wanted steady updates rather than fast ones given the small replay memory of 5,000 decisions [1, 2].",
+      "citations": [
+        {
+          "n": 1,
+          "valid": true,
+          "path": "raw/Pac-Man DQN README.md",
+          "heading": "My three choices"
+        },
+        {
+          "n": 2,
+          "valid": true,
+          "path": "wiki/Projects/Assignment DQN Training Overview.md",
+          "heading": "Details"
+        }
+      ],
+      "timing": {
+        "wall_s": 3.303,
+        "total_duration_s": 3.3013,
+        "load_duration_s": 0.0019,
+        "prompt_eval_count": 1584,
+        "prompt_eval_duration_s": 1.6189,
+        "eval_count": 85,
+        "eval_duration_s": 1.6562,
+        "tokens_per_s": 51.3,
+        "prompt_tokens_per_s": 978.4
+      },
+      "memory": {
+        "ollama_model_size_bytes": 3237478399,
+        "ollama_size_vram_bytes": 3237478399,
+        "ollama_process_rss_bytes": 318750720,
+        "harness_max_rss_bytes": 38551552,
+        "sampled_at": "2026-09-30T05:45:00Z"
+      },
+      "expect": {
+        "retrieval": "yes",
+        "cite": "0.0001"
+      },
+      "check": {
+        "retrieval_ok": true,
+        "cite_ok": true
+      }
+    },
+    {
+      "i": 5,
+      "user": "My Pac-Man agent scored 5,000 points on the leaderboard.",
+      "routing": {
+        "decision": "skip",
+        "source": "model",
+        "reason": "routing call",
+        "query": ""
+      },
+      "retrieved": [],
+      "assistant": "I see. You mentioned your Pac-Man agent scored 5,000 points on the leaderboard.",
+      "citations": [],
+      "timing": {
+        "wall_s": 0.916,
+        "total_duration_s": 0.9147,
+        "load_duration_s": 0.0016,
+        "prompt_eval_count": 888,
+        "prompt_eval_duration_s": 0.4562,
+        "eval_count": 23,
+        "eval_duration_s": 0.4269,
+        "tokens_per_s": 53.9,
+        "prompt_tokens_per_s": 1946.5
+      },
+      "memory": {
+        "ollama_model_size_bytes": 3237478399,
+        "ollama_size_vram_bytes": 3237478399,
+        "ollama_process_rss_bytes": 520880128,
+        "harness_max_rss_bytes": 38551552,
+        "sampled_at": "2026-09-30T05:45:02Z"
+      },
+      "expect": {
+        "retrieval": "no"
+      },
+      "check": {
+        "retrieval_ok": true,
+        "cite_ok": null
+      }
+    },
+    {
+      "i": 6,
+      "user": "/notes What did my final Pac-Man agent average on the five evaluation games?",
+      "routing": {
+        "decision": "retrieve",
+        "source": "rule",
+        "reason": "slash command /notes",
+        "query": "What did my final Pac-Man agent average on the five evaluation games?"
+      },
+      "retrieved": [
+        {
+          "n": 1,
+          "path": "raw/Pac-Man DQN README.md",
+          "kind": "raw",
+          "heading": "The first run, 500 games",
+          "heading_path": [
+            "Ms. Pac-Man DQN",
+            "What happened",
+            "The first run, 500 games"
+          ],
+          "lines": [
+            90,
+            92
+          ],
+          "score": 25.355,
+          "chars": 766,
+          "matched_terms": [
+            "agent",
+            "evaluation",
+            "final",
+            "five",
+            "game",
+            "man",
+            "pac"
+          ],
+          "id": "356f9d1eefbd"
+        },
+        {
+          "n": 2,
+          "path": "raw/Pac-Man DQN README.md",
+          "kind": "raw",
+          "heading": "The final run, 450 games",
+          "heading_path": [
+            "Ms. Pac-Man DQN",
+            "What happened",
+            "The final run, 450 games"
+          ],
+          "lines": [
+            122,
+            135
+          ],
+          "score": 24.769,
+          "chars": 1154,
+          "matched_terms": [
+            "agent",
+            "average",
+            "evaluation",
+            "final",
+            "five",
+            "game",
+            "man",
+            "pac"
+          ],
+          "id": "a02c97c552e8"
+        },
+        {
+          "n": 3,
+          "path": "raw/Pac-Man DQN README.md",
+          "kind": "raw",
+          "heading": "What I expected before each run",
+          "heading_path": [
+            "Ms. Pac-Man DQN",
+            "What I expected before each run"
+          ],
+          "lines": [
+            69,
+            71
+          ],
+          "score": 24.742,
+          "chars": 727,
+          "matched_terms": [
+            "agent",
+            "average",
+            "final",
+            "five",
+            "game",
+            "man",
+            "pac"
+          ],
+          "id": "6e67b7c3349f"
+        },
+        {
+          "n": 4,
+          "path": "raw/Pac-Man DQN README.md",
+          "kind": "raw",
+          "heading": "Ms. Pac-Man DQN",
+          "heading_path": [
+            "Ms. Pac-Man DQN"
+          ],
+          "lines": [
+            3,
+            3
+          ],
+          "score": 23.986,
+          "chars": 840,
+          "matched_terms": [
+            "agent",
+            "evaluation",
+            "final",
+            "five",
+            "game",
+            "man",
+            "pac"
+          ],
+          "id": "363f9b7d5ecc"
+        }
+      ],
+      "assistant": "Your final agent averaged 946.0 on the five evaluation games [2]. This was compared against the untrained network's average of 492.0 [2].",
+      "citations": [
+        {
+          "n": 2,
+          "valid": true,
+          "path": "raw/Pac-Man DQN README.md",
+          "heading": "The final run, 450 games"
+        }
+      ],
+      "timing": {
+        "wall_s": 2.972,
+        "total_duration_s": 2.9693,
+        "load_duration_s": 0.0016,
+        "prompt_eval_count": 2122,
+        "prompt_eval_duration_s": 2.1875,
+        "eval_count": 39,
+        "eval_duration_s": 0.7535,
+        "tokens_per_s": 51.8,
+        "prompt_tokens_per_s": 970.1
+      },
+      "memory": {
+        "ollama_model_size_bytes": 3237478399,
+        "ollama_size_vram_bytes": 3237478399,
+        "ollama_process_rss_bytes": 326057984,
+        "harness_max_rss_bytes": 38551552,
+        "sampled_at": "2026-09-30T05:45:05Z"
+      },
+      "expect": {
+        "retrieval": "yes",
+        "cite": "946"
+      },
+      "check": {
+        "retrieval_ok": true,
+        "cite_ok": true
+      }
+    }
+  ],
+  "checks": {
+    "total": 8,
+    "passed": 8
+  },
+  "schema": "chat-transcript/1"
+}

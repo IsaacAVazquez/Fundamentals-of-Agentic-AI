@@ -1,0 +1,58 @@
+{
+  "kind": "note",
+  "label": "Running the DQN Notebook",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You write one note for a personal wiki from text the owner wrote. Reply with the note body in Markdown and nothing else, using exactly these three headings in this order:\n\n## Summary\nTwo to four sentences: what this note covers and its main result or point.\n\n## Details\nThe substance, in short paragraphs or bullet lists. Keep every number, name, date, and setting exactly as the source text gives it. Keep the owner's first-person voice (\"I trained ...\"). Do not add facts, opinions, or background that the source text does not contain. Leave out anything that is not in the source text you were given.\n\n## Related\nZero to three lines, each \"- Title: why it relates\", using only titles from the allowed list, copied exactly. Write \"- none\" if nothing on the list relates.\n\nDo not write a top-level title, frontmatter, a Sources section, tables wider than four columns, or code blocks longer than five lines. Do not refer to \"the source\" or \"this note\"; just present the content. At most 400 words."
+    },
+    {
+      "role": "user",
+      "content": "Note title: Running the DQN Notebook\nPlanned summary: Details on executing the final 450-game run notebook and its outputs.\nAllowed related titles: Assignment Overview and Requirements Pac-Man; Agent Hyperparameter Tuning Choices; Performance Analysis Before Runs; Agent Training Results and Limitations; Model Customization Techniques Comparison; Model Learning Mechanics Explained; Prompting as Probability Steering; Structuring Prompts as Product Interfaces; LLM Behavior and Probabilistic Nature; Advanced Retrieval and Knowledge Hub; Assignment Model Training Overview; Assignment Overview and Requirements; Database Schema and Auth; Interacting with Trained Model; Local Setup and Deployment Details; Model Performance and Results; Technology Stack and Architecture; Training Budget and Hardware Details; Web App Walkthrough Screenshots\nSource file: Pac-Man DQN README\nSections included: \"Open and run the notebook\"\n\nSource text:\n## Open and run the notebook\nThe executed notebook is [pacman_dqn.ipynb](pacman_dqn.ipynb), from the final 450-game run. It keeps every output from that run, including the baseline, all 450 training lines, the progress GIFs, the dashboard, and the final comparison, so none of it needs rerunning to inspect. One catch is that GitHub's notebook viewer can't display the notebook's GIF outputs and shows the text `<IPython.core.display.Image object>` in each of those 20 spots instead, so every one of those GIFs is also embedded in this README and saved in [results/450-games/demos/](results/450-games/demos/). The first run's executed notebook is [results/500-games/pacman_dqn_500_games.ipynb](results/500-games/pacman_dqn_500_games.ipynb), and I left its explanation cell at the end as the course's blank template, since this README covers both runs.\n\nTo run it again locally, clone the repository and set up Python 3.13 in this folder. I used `scripts/setup.sh`, which builds `.venv` with uv on whichever Python 3.13 uv finds or downloads, or the one named in `PYTHON=`, installs `requirements.txt` plus the Jupyter pieces a scripted run needs, and registers the `py313` kernel the notebook's metadata names. On my Mac that Python is Homebrew's. The course's own instructions use a plain virtual environment and pip instead, and either way the notebook's setup cell installs anything that's missing.\n\n```\ngit clone https://github.com/IsaacAVazquez/Fundamentals-of-Agentic-AI.git\ncd Fundamentals-of-Agentic-AI/assignment-02\nscripts/setup.sh\nscripts/lab.sh\n```\n\n`scripts/lab.sh` opens the notebook in JupyterLab, where Run All repeats the experiment. I ran mine without opening Jupyter's interface, using the command below, which executes every cell in order and writes the outputs back into the notebook. `caffeinate` only keeps the Mac awake until it finishes.\n\n```\ncaffeinate -is .venv/bin/jupyter-nbconvert --to notebook --execute --inplace --allow-errors \\\n  --ExecutePreprocessor.kernel_name=python3 --ExecutePreprocessor.timeout=-1 pacman_dqn.ipynb\n```\n\nIn Colab, the route from the Class 3 setup slide is File, then Upload notebook, then Run all. Any rerun starts a fresh experiment in a new `pacman_runs/` folder and replaces the outputs saved in the notebook, and the notebook itself notes that GPU results can vary even with fixed seeds, so a rerun on different hardware may not reproduce my scores exactly.\n\n`scripts/verify.sh` runs the course's five-game check without touching the notebook, and I ran it on 2026-09-13 before the real runs, when it passed in about 20 seconds. `scripts/check_checkpoints.py` replays a finished run's saved agents on games the notebook never plays, which is how I chose 450 games. It took about nine and a half minutes on this laptop. `scripts/eval_move_shares.py` replays a run's untrained and final agents on the five evaluation games instead, counting which moves each one chose, and it stops if the scores don't match that run's `comparison.json`.\n\n```\n.venv/bin/python scripts/check_checkpoints.py pacman_runs/<run folder>\n.venv/bin/python scripts/eval_move_shares.py pacman_runs/<run folder> results/<N>-games/move_shares.json\n```"
+    }
+  ],
+  "response": "## Summary\nThis note details how to run the final 450-game run notebook, `pacman_dqn.ipynb`, and provides instructions for local execution and verification. The executed notebook retains all outputs, including the baseline, 450 training lines, progress GIFs, dashboard, and final comparison, meaning no rerunning is necessary for inspection. I also detail the commands for running verification scripts like `scripts/check_checkpoints.py` and `scripts/eval_move_shares.py`.\n\n## Details\nThe executed notebook is `pacman_dqn.ipynb`, from the final 450-game run. It keeps every output from that run, including the baseline, all 450 training lines, the progress GIFs, the dashboard, and the final comparison, so none of it needs rerunning to inspect. One catch is that GitHub's notebook viewer can't display the notebook's GIF outputs and shows the text `<IPython.core.display.Image object>` in each of those 20 spots instead, so every one of those GIFs is also embedded in this README and saved in `results/450-games/demos/`. The first run's executed notebook is `results/500-games/pacman_dqn_500_games.ipynb`, and I left its explanation cell at the end as the course's blank template, since this README covers both runs.\n\nTo run it again locally, clone the repository and set up Python 3.13 in this folder. I used `scripts/setup.sh`, which builds `.venv` with uv on whichever Python 3.13 uv finds or downloads, or the one named in `PYTHON=`, installs `requirements.txt` plus the Jupyter pieces a scripted run needs, and registers the `py313` kernel the notebook's metadata names. On my Mac that Python is Homebrew's. The course's own instructions use a plain virtual environment and pip instead, and either way the notebook's setup cell installs anything that's missing.\n\n```\ngit clone https://github.com/IsaacAVazquez/Fundamentals-of-Agentic-AI.git\ncd Fundamentals-of-Agentic-AI/assignment-02\nscripts/setup.sh\nscripts/lab.sh\n```\n\n`scripts/lab.sh` opens the notebook in JupyterLab, where Run All repeats the experiment. I ran mine without opening Jupyter's interface, using the command below, which executes every cell in order and writes the outputs back into the notebook. `caffeinate` only keeps the Mac awake until it finishes.\n\n```\ncaffeinate -is .venv/bin/jupyter-nbconvert --to notebook --execute --inplace --allow-errors \\\n  --ExecutePreprocessor.kernel_name=python3 --ExecutePreprocessor.timeout=-1 pacman_dqn.ipynb\n```\n\nIn Colab, the route from the Class 3 setup slide is File, then Upload notebook, then Run all. Any rerun starts a fresh experiment in a new `pacman_runs/` folder and replaces the outputs saved in the notebook, and the notebook itself notes that GPU results can vary even with fixed seeds, so a rerun on different hardware may not reproduce my scores exactly.\n\n`scripts/verify.sh` runs the course's five-game check without touching the notebook, and I ran it on 2026-09-13 before the real runs, when it passed in about 20 seconds. `scripts/check_checkpoints.py` replays a finished run's saved agents on games the notebook never plays, which is how I chose 450 games. It took about nine and a half minutes on this laptop. `scripts/eval_move_shares.py` replays a run's untrained and final agents on the five evaluation games instead, counting which moves each one chose, and it stops if the scores don't match that run's `comparison.json`.\n\n```\n.venv/bin/python scripts/check_checkpoints.py pacman_runs/<run folder>\n.venv/bin/python scripts/eval_move_shares.py pacman_runs/<run folder> results/<N>-games/move_shares.json\n```\n\n## Related\n- Assignment Overview and Requirements Pac-Man: This note covers the execution of the final 450-game run notebook and its outputs.\n- Model Performance and Results: This note details how to run the final 450-game run notebook, `pacman_dqn.ipynb`, and provides instructions for local execution and verification.",
+  "error": null,
+  "model": {
+    "backend": "ollama",
+    "tag": "gemma4:e4b",
+    "digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb",
+    "parameter_size": "8.0B",
+    "quantization_level": "Q4_K_M",
+    "family": "gemma4",
+    "context_length": 131072,
+    "ollama_version": "0.35.0",
+    "size_bytes": 9608350718
+  },
+  "record": {
+    "kind": "note",
+    "attempt": 1,
+    "system_chars": 998,
+    "user_chars": 4117,
+    "payload_chars": 3181,
+    "payload_capped": false,
+    "est_prompt_tokens": 1279,
+    "timing": {
+      "wall_s": 20.571,
+      "total_duration_s": 20.5645,
+      "load_duration_s": 0.0043,
+      "prompt_eval_count": 1260,
+      "prompt_eval_duration_s": 2.3548,
+      "eval_count": 988,
+      "eval_duration_s": 18.0817,
+      "tokens_per_s": 54.6,
+      "prompt_tokens_per_s": 535.1
+    },
+    "memory": {
+      "ollama_model_size_bytes": 3237478399,
+      "ollama_size_vram_bytes": 3237478399,
+      "ollama_process_rss_bytes": 348471296,
+      "harness_max_rss_bytes": 33357824,
+      "sampled_at": "2026-09-30T05:56:56Z"
+    },
+    "response_chars": 3869,
+    "ok": true,
+    "error": null,
+    "dump_file": "ingest/calls/224957-025-note-pac-man-dqn-readme-running-the-dqn-notebook.json"
+  }
+}

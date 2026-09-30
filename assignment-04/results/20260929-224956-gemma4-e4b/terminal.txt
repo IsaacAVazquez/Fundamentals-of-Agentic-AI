@@ -1,0 +1,262 @@
+offline demo · run 20260929-224956-gemma4-e4b · model gemma4:e4b · Tue Sep 29 22:49:56 PDT 2026
+FRESH=1: backing up vault/wiki and vault/index.md to results/20260929-224956-gemma4-e4b/vault-before, then emptying them
+
+================ device: scripts/device_report.sh results/20260929-224956-gemma4-e4b ================
+wrote results/20260929-224956-gemma4-e4b/device.txt
+
+================ doctor: .venv/bin/wiki doctor --require-offline --save ================
+wiki doctor · run 20260929-224956-gemma4-e4b · 2026-09-30T05:49:57Z
+[ok ] wiki            personal_wiki 0.1.0 at /Users/isaacvazquez/Fundamentals-of-Agentic-AI/assignment-04
+[ok ] python          3.13.15 (/Users/isaacvazquez/Fundamentals-of-Agentic-AI/assignment-04/.venv/bin/python)
+[ok ] vault           /Users/isaacvazquez/Fundamentals-of-Agentic-AI/assignment-04/vault: 4 raw source(s), 0 wiki note(s), index.md missing (run wiki ingest)
+[ok ] sources         4 raw file(s) match sources.json
+[ok ] research rules  /Users/isaacvazquez/Fundamentals-of-Agentic-AI/assignment-04/wiki-instructions.md
+[ok ] persona         /Users/isaacvazquez/Fundamentals-of-Agentic-AI/assignment-04/persona.md
+[ok ] index           22 passages built 2026-09-30T05:48:32Z, stale (rebuilt automatically on next use)
+[ok ] ollama          Ollama 0.35.0: model gemma4:e4b Q4_K_M 8.0B present (digest c6eb396dbd5992bbe3f…)
+[ok ] offline         no probe reached the internet
+[ok ] device          Apple M4 Pro, 12 cores, 24 GiB memory, Darwin 26.3
+all critical checks passed
+Saved: /Users/isaacvazquez/Fundamentals-of-Agentic-AI/assignment-04/results/20260929-224956-gemma4-e4b/doctor.json
+
+================ ingest-1: .venv/bin/wiki ingest ================
+wiki ingest · model gemma4:e4b Q4_K_M 8.0B (ollama, local) · 4 source file(s) · run 20260929-224956-gemma4-e4b
+- raw/Class 5 Prompting and Retrieval Notes.md: ingesting (48,538 chars, sha256 535af3de2b0a…)
+  plan  gemma4:e4b 30.8 s | ~1,428 prompt tok | 1200 gen tok @ 50.7 tok/s | 3.2 GB in Ollama
+  plan  gemma4:e4b 11.3 s | ~1,462 prompt tok | 554 gen tok @ 50.8 tok/s | 3.2 GB in Ollama
+  plan (model-retry): LLM Behavior and Probabilistic Nature [Course]; Model Customization Techniques Comparison [Concepts]; Prompting as Probability Steering [Concepts]; Structuring Prompts as Product Interfaces [Concepts]; Advanced Retrieval and Knowledge Hub [Projects]
+  note  gemma4:e4b 7.9 s | ~1,799 prompt tok | 289 gen tok @ 46.2 tok/s | 3.2 GB in Ollama
+  wrote wiki/Course/LLM Behavior and Probabilistic Nature.md (1,868 chars)
+  note  gemma4:e4b 17.2 s | ~1,886 prompt tok | 774 gen tok @ 49.6 tok/s | 3.2 GB in Ollama
+  wrote wiki/Concepts/Model Customization Techniques Comparison.md (3,605 chars)
+  note  gemma4:e4b 11.4 s | ~1,077 prompt tok | 556 gen tok @ 52.0 tok/s | 3.2 GB in Ollama
+  wrote wiki/Concepts/Prompting as Probability Steering.md (2,908 chars)
+  note  gemma4:e4b 10.9 s | ~1,472 prompt tok | 514 gen tok @ 51.1 tok/s | 3.2 GB in Ollama
+  wrote wiki/Concepts/Structuring Prompts as Product Interfaces.md (2,937 chars)
+  note  gemma4:e4b 15.7 s | ~3,841 prompt tok | 747 gen tok @ 51.5 tok/s | 3.2 GB in Ollama
+  wrote wiki/Projects/Advanced Retrieval and Knowledge Hub.md (3,875 chars)
+- raw/Custom LLM README.md: ingesting (70,348 chars, sha256 0293ff499fdd…)
+  plan  gemma4:e4b 23.7 s | ~1,876 prompt tok | 1200 gen tok @ 53.2 tok/s | 3.2 GB in Ollama
+  plan  gemma4:e4b 7.8 s | ~1,910 prompt tok | 343 gen tok @ 53.3 tok/s | 3.2 GB in Ollama
+  plan (model-retry): Assignment Model Training Overview [Projects]; Model Performance and Results [Projects]; Training Budget and Hardware Details [Projects]; Model Learning Mechanics Explained [Concepts]; Interacting with Trained Model [Projects]
+  note  gemma4:e4b 12.5 s | ~3,328 prompt tok | 617 gen tok @ 53.5 tok/s | 3.2 GB in Ollama
+  wrote wiki/Projects/Assignment Model Training Overview.md (2,819 chars)
+  note  gemma4:e4b 25.5 s | ~3,370 prompt tok | 1291 gen tok @ 52.8 tok/s | 3.2 GB in Ollama
+  wrote wiki/Projects/Model Performance and Results.md (5,410 chars)
+  note  gemma4:e4b 9.8 s | ~948 prompt tok | 492 gen tok @ 55.3 tok/s | 3.2 GB in Ollama
+  wrote wiki/Projects/Training Budget and Hardware Details.md (1,811 chars)
+  note  gemma4:e4b 27.6 s | ~3,056 prompt tok | 1400 gen tok @ 53.2 tok/s | 3.2 GB in Ollama
+  wrote wiki/Concepts/Model Learning Mechanics Explained.md (3,320 chars)
+  note  gemma4:e4b 11.4 s | ~2,998 prompt tok | 528 gen tok @ 50.2 tok/s | 3.2 GB in Ollama
+  wrote wiki/Projects/Interacting with Trained Model.md (2,533 chars)
+- raw/Networking Tracker README.md: ingesting (30,382 chars, sha256 74a345428e79…)
+  plan  gemma4:e4b 23.4 s | ~2,027 prompt tok | 1200 gen tok @ 53.4 tok/s | 3.2 GB in Ollama
+  plan  gemma4:e4b 7.0 s | ~2,061 prompt tok | 302 gen tok @ 53.6 tok/s | 3.2 GB in Ollama
+  plan (model-retry): Assignment Overview and Requirements [Projects]; Web App Walkthrough Screenshots [Projects]; Technology Stack and Architecture [Projects]; Database Schema and Auth [Projects]; Local Setup and Deployment Details [Projects]
+  note  gemma4:e4b 10.4 s | ~857 prompt tok | 491 gen tok @ 54.8 tok/s | 3.2 GB in Ollama
+  wrote wiki/Projects/Assignment Overview and Requirements.md (2,526 chars)
+  note  gemma4:e4b 17.2 s | ~1,796 prompt tok | 756 gen tok @ 53.0 tok/s | 3.2 GB in Ollama
+  wrote wiki/Projects/Web App Walkthrough Screenshots.md (3,629 chars)
+  note  gemma4:e4b 18.4 s | ~1,473 prompt tok | 877 gen tok @ 54.8 tok/s | 3.2 GB in Ollama
+  wrote wiki/Projects/Technology Stack and Architecture.md (4,009 chars)
+  note  gemma4:e4b 24.6 s | ~1,732 prompt tok | 1164 gen tok @ 53.8 tok/s | 3.2 GB in Ollama
+  wrote wiki/Projects/Database Schema and Auth.md (5,031 chars)
+  note  gemma4:e4b 26.7 s | ~3,501 prompt tok | 955 gen tok @ 53.0 tok/s | 3.2 GB in Ollama
+  wrote wiki/Projects/Local Setup and Deployment Details.md (3,994 chars)
+- raw/Pac-Man DQN README.md: ingesting (26,067 chars, sha256 cd469243a82e…)
+  plan  gemma4:e4b 25.6 s | ~1,515 prompt tok | 1200 gen tok @ 54.5 tok/s | 3.2 GB in Ollama
+  plan  gemma4:e4b 6.5 s | ~1,549 prompt tok | 334 gen tok @ 54.4 tok/s | 3.2 GB in Ollama
+  plan (model-retry): Assignment Overview and Requirements Pac-Man [Projects]; Running the DQN Notebook [Projects]; Agent Hyperparameter Tuning Choices [Projects]; Performance Analysis Before Runs [Projects]; Agent Training Results and Limitations [Projects]
+  note  gemma4:e4b 13.2 s | ~1,057 prompt tok | 629 gen tok @ 55.3 tok/s | 3.2 GB in Ollama
+  wrote wiki/Projects/Assignment Overview and Requirements Pac-Man.md (3,001 chars)
+  note  gemma4:e4b 20.6 s | ~1,279 prompt tok | 988 gen tok @ 54.6 tok/s | 3.2 GB in Ollama
+  wrote wiki/Projects/Running the DQN Notebook.md (4,044 chars)
+  note  gemma4:e4b 10.7 s | ~823 prompt tok | 505 gen tok @ 55.2 tok/s | 3.2 GB in Ollama
+  wrote wiki/Projects/Agent Hyperparameter Tuning Choices.md (2,090 chars)
+  note  gemma4:e4b 6.9 s | ~682 prompt tok | 308 gen tok @ 54.2 tok/s | 3.2 GB in Ollama
+  wrote wiki/Projects/Performance Analysis Before Runs.md (1,522 chars)
+  note  gemma4:e4b 22.7 s | ~3,579 prompt tok | 741 gen tok @ 51.8 tok/s | 3.2 GB in Ollama
+  wrote wiki/Projects/Agent Training Results and Limitations.md (3,068 chars)
+
+Done: 4 ingested, 0 up to date, 20 notes written, 20 notes in the vault, 28 model calls, 459.82 s. Index: 324 passages.
+Ingest log: /Users/isaacvazquez/Fundamentals-of-Agentic-AI/assignment-04/results/20260929-224956-gemma4-e4b/ingest/ingest_log.md
+
+================ ingest-2: .venv/bin/wiki ingest ================
+wiki ingest · model gemma4:e4b Q4_K_M 8.0B (ollama, local) · 4 source file(s) · run 20260929-224956-gemma4-e4b
+- raw/Class 5 Prompting and Retrieval Notes.md: up to date (5 notes, source unchanged; use --force to regenerate)
+- raw/Custom LLM README.md: up to date (5 notes, source unchanged; use --force to regenerate)
+- raw/Networking Tracker README.md: up to date (5 notes, source unchanged; use --force to regenerate)
+- raw/Pac-Man DQN README.md: up to date (5 notes, source unchanged; use --force to regenerate)
+
+Done: 0 ingested, 4 up to date, 0 notes written, 20 notes in the vault, 0 model calls, 0.0 s. Index: 324 passages.
+Ingest log: /Users/isaacvazquez/Fundamentals-of-Agentic-AI/assignment-04/results/20260929-224956-gemma4-e4b/ingest/ingest_log-2.md
+
+================ eval: .venv/bin/wiki eval tests/questions.json ================
+wiki eval · 4 questions from tests/questions.json · model gemma4:e4b Q4_K_M 8.0B (ollama, local) · run 20260929-224956-gemma4-e4b
+
+[T1] What hardware did I train the nanoGPT model on for Assignment 3?
+  status supported · verdict pass · retrieval hit True · keywords 2/2 · 6.1 s
+  answer: You trained on an Apple M4 Pro laptop with 12 CPU cores and 24 GB of memory running macOS 26.3 [1][3]. For the custom LLM, you ran the training on the CPU, which is the notebook's default and caps PyTorch at four threads [1][3]. The software used included Python 3.13.15, PyTorch 2.14.0, NumPy 2.5.3,
+
+[T2] Why did the last Ms. Pac-Man run stop at fewer games than the first one?
+  status supported · verdict pass · retrieval hit True · keywords 2/2 · 5.1 s
+  answer: You reran the notebook with 450 games because the agent saved after 450 games was much better than the one the initial 500-game run ended with [3]. You chose 450 games by looking at checkpoints using only extra games, meaning the scores from the five leaderboard games did not influence your decision
+
+[T3] What machine did I use for Assignments 2 and 3, and did either use the GPU?
+  status supported · verdict check · retrieval hit True · keywords 1/3 · 4.9 s
+  answer: For Assignment 2, you trained on a laptop [4]. For Assignment 3, you ran the model on your laptop's CPU [2][3]. The passages indicate that for Assignment 2, you trained on a laptop [4], but they do not specify if a GPU was used for either assignment.
+
+[T4] What grade did I receive on Assignment 2?
+  status insufficient · verdict pass · retrieval hit None · keywords 0/0 · 3.5 s
+  answer: Insufficient evidence: The passages detail the results of training an agent for Assignment 2, including average scores on five evaluation games, but they do not state what grade you received for the assignment.
+
+Cards and summary: /Users/isaacvazquez/Fundamentals-of-Agentic-AI/assignment-04/results/20260929-224956-gemma4-e4b/ask
+
+================ chat: .venv/bin/wiki chat --script tests/chat_checks.txt ================
+wiki chat · model gemma4:e4b (ollama, local) · type /help for commands, /quit to exit
+
+You: what can you help me with?
+Assistant: I run locally on a Gemma model and I can help you with your course notes.
+
+I can answer questions based on the notes using `/notes <question>`, search for matching passages using `/search <words>`, or show you the available commands like `/help`.
+
+If you want to start, you could ask me about one of your assignments using `/notes`.
+  [retrieval: skip (rule: capability or greeting question)]
+  [2.4 s, 73 generated tokens at 57.0 tok/s]
+
+You: Write a three-sentence plan for the evening before next week's class.
+Assistant: Suggestion: Review the lecture slides from the last two weeks to refresh your memory on key concepts. Work through the practice problems associated with the upcoming material to identify weak spots. Finally, read the assigned chapter sections so you are familiar with the terminology before class.
+  [retrieval: skip (model: routing call)]
+  [1.8 s, 52 generated tokens at 57.4 tok/s]
+
+You: Make that shorter.
+Assistant: Suggestion: Review last week's slides. Work through practice problems. Read the assigned chapter sections.
+  [retrieval: skip (rule: follow-up on the previous reply)]
+  [0.8 s, 21 generated tokens at 59.2 tok/s]
+
+You: What learning rate did I use for the DQN?
+Assistant: You used a learning rate of 0.0001 for the DQN [1, 4]. You kept this rate because it was the notebook's reference value and the starting rate for Adam in the course's build-from-scratch prompt [1, 4]. You wanted steady updates rather than fast ones given the small replay memory of 5,000 decisions [1, 4].
+  [retrieved [1] raw/Pac-Man DQN README.md # My three choices; [2] raw/Pac-Man DQN README.md # Ms. Pac-Man DQN; [3] raw/Pac-Man DQN README.md # One limitation and the next experiment; [4] wiki/Projects/Agent Hyperparameter Tuning Choices.md # Details]
+  [3.6 s, 86 generated tokens at 55.0 tok/s]
+
+You: My Pac-Man agent scored 5,000 points on the leaderboard.
+Assistant: I see. You mentioned your Pac-Man agent scored 5,000 points on the leaderboard.
+  [retrieval: skip (model: routing call)]
+  [0.9 s, 23 generated tokens at 55.9 tok/s]
+
+You: /notes What did my final Pac-Man agent average on the five evaluation games?
+Assistant: Your final agent averaged 946.0 on the five evaluation games [3]. This was against an untrained network average of 492.0 [3].
+  [retrieved [1] raw/Pac-Man DQN README.md # The first run, 500 games; [2] raw/Pac-Man DQN README.md # What I expected before each run; [3] raw/Pac-Man DQN README.md # The final run, 450 games; [4] raw/Pac-Man DQN README.md # Ms. Pac-Man DQN]
+  [2.8 s, 36 generated tokens at 56.4 tok/s]
+
+Saved transcript: /Users/isaacvazquez/Fundamentals-of-Agentic-AI/assignment-04/results/20260929-224956-gemma4-e4b/chat/chat_checks.md
+
+================ search: .venv/bin/wiki search Pac-Man evaluation score ================
+search · 6 passage(s) for "Pac-Man evaluation score" · k=6 · scope=all · no model call
+
+[1] raw/Pac-Man DQN README.md # The final run, 450 games (lines 145-149, raw, score 13.56, matched: evaluation, man, pac, score)
+    The final agent's best evaluation game was seed 303, which scored 1,770. Across the five evaluation games it chose down-left on 47% of its moves and up-right on 39%, and in this game it reached 1,150 points in the first 20 seconds without losing a life, including a jump from 610 to 1,070 in a couple of seconds right after the ghosts turned blue. It lost its first life at decision 488 of 872, well after the GIF ends. The move counts, and the per-game scores and life losses behind them, are in [results/450-games/move_shares.json](results/450-games/move_shares.json), which `scripts/eval_move_shares.py` wrote by replaying the saved agents on the same five games and reproducing every score in `comparison.json`.
+    
+    ![The final agent in its best evaluation game, seed 303, which scored 1,770](results/450-games/demos/final_best.gif)
+    
+    The progress samples below all play evaluation seed 101, one every 25 training games, and they're identical to the first run's samples up to game 450. Their scores bounce between 350 and 1,410 with no steady climb, which is the same instability the checkpoint check measured on more games.
+
+[2] raw/Pac-Man DQN README.md # The first run, 500 games (lines 90-92, raw, score 12.69, matched: evaluation, man, pac, score)
+    Looking at which moves the agents chose explained more than the scores did. The untrained network pushes the joystick up and to the left on 96% of its moves across the five evaluation games, so the 492 baseline is really what holding one diagonal gets you. The final 500-game agent mostly chose no move at all, on 70% of its moves across the five games and on 80 to 88% of them in four of the five. Its best game, the 730 on seed 101, is also the game where it held up and to the left the most, and that's the game both of the run's final GIFs show, because the best-of-five GIF and the 500-game progress sample came out as the same file.
+    
+    ![The first run's final agent in its best evaluation game, seed 101, which scored 730](results/500-games/demos/final_best.gif)
+
+[3] wiki/Projects/Assignment Overview and Requirements Pac-Man.md # Details (lines 34-45, wiki, score 12.51, matched: evaluation, man, pac, score)
+    | Requirement | Where it is |
+    | :--- | :--- |
+    | Overview and how to open and run the notebook | The paragraph above, and Open and run the notebook |
+    | Exploration, episodes, and learning rate, with a reason for each | My three choices |
+    | What I expected before training, then what I observed | What I expected before each run, and What happened |
+    | Completed episodes, decisions, learning updates, elapsed time, and hardware | Training budget and hardware |
+    | Observations, actions, and rewards in plain language | What the agent sees, does, and gets rewarded for |
+    | One observed limitation and one next experiment | One limitation and the next experiment |
+    | Untrained, best trained, and intermediate GIFs | Gameplay, under The final run |
+    | `training_dashboard.png` | Training dashboard, under The final run, with the first run's under The first run |
+    | All five baseline and trained scores, both means, and `comparison.json` | Evaluation scores, under The final run, with the first run's table under The first run |
+    | Links to the notebook, `config.json`, `training.csv`, and `training_summary.json`, and whether a run was interrupted | Training budget and hardware, and Files and checkpoints |
+
+[4] raw/Pac-Man DQN README.md # The final run, 450 games (lines 137-143, raw, score 12.43, matched: evaluation, man, pac, score)
+    The full record is in [results/450-games/comparison.json](results/450-games/comparison.json). None of the ten games hit the 3,000-decision time limit.
+    
+    #### Gameplay
+    
+    Every GIF shows only the first 20 seconds of a game at four times speed, while the score beside it counts the whole game. Before training, the network holds the joystick up and to the left on almost every move.
+    
+    ![The untrained network playing evaluation game 1, seed 101, which scored 350](results/450-games/demos/episode_0000.gif)
+
+[5] raw/Pac-Man DQN README.md # Where to find each requirement (lines 9-20, raw, score 12.08, matched: evaluation, man, pac, score)
+    | Requirement | Where it is |
+    | --- | --- |
+    | Overview and how to open and run the notebook | The paragraph above, and Open and run the notebook |
+    | Exploration, episodes, and learning rate, with a reason for each | My three choices |
+    | What I expected before training, then what I observed | What I expected before each run, and What happened |
+    | Completed episodes, decisions, learning updates, elapsed time, and hardware | Training budget and hardware |
+    | Observations, actions, and rewards in plain language | What the agent sees, does, and gets rewarded for |
+    | One observed limitation and one next experiment | One limitation and the next experiment |
+    | Untrained, best trained, and intermediate GIFs | Gameplay, under The final run |
+    | `training_dashboard.png` | Training dashboard, under The final run, with the first run's under The first run |
+    | All five baseline and trained scores, both means, and `comparison.json` | Evaluation scores, under The final run, with the first run's table under The first run |
+    | Links to the notebook, `config.json`, `training.csv`, and `training_summary.json`, and whether a run was interrupted | Training budget and hardware, and Files and checkpoints |
+
+[6] raw/Pac-Man DQN README.md # Ms. Pac-Man DQN (lines 3-3, raw, score 11.49, matched: evaluation, man, pac)
+    I trained this agent for Assignment 2 of Fundamentals of Agentic AI. It's the course's Deep Q-Network notebook for Ms. Pac-Man, run on my laptop with 10% exploration and a learning rate of 0.0001. I ran it twice, and the only difference between the two runs is the number of training games. My first run trained for 500 games, and its final agent averaged 400 on the five evaluation games against 492 for the untrained network. When I replayed every checkpoint that run saved on games the notebook never uses, the agent saved after 450 games turned out to be far better than the one the run ended with, so I reran the notebook with 450 games. The notebook in this folder is that second run, executed start to finish with every output saved, and its agent averaged 946 on the same five evaluation games against 492 for the untrained network.
+
+Saved: /Users/isaacvazquez/Fundamentals-of-Agentic-AI/assignment-04/results/20260929-224956-gemma4-e4b/search/pac-man-evaluation-score.md
+
+================ ask-S1: .venv/bin/wiki ask --id S1 What did my final Pac-Man agent average on the five evaluation games? ================
+model gemma4:e4b (ollama, local) · k=6 · scope=all
+
+The final agent averaged 946.0 on the five evaluation games against an untrained network average of 492.0 [3]. Another source states that the agent averaged 946 on the same five evaluation games against 492 for the untrained network [4].
+
+Sources:
+  [3] raw/Pac-Man DQN README.md # The final run, 450 games (lines 122-135)
+  [4] raw/Pac-Man DQN README.md # Ms. Pac-Man DQN (lines 3-3)
+status: supported · 4.5 s, 60 generated tokens at 55.8 tok/s; ollama 3.2 GB
+Evidence card: /Users/isaacvazquez/Fundamentals-of-Agentic-AI/assignment-04/results/20260929-224956-gemma4-e4b/ask/S1.md
+
+================ doctor-2: .venv/bin/wiki doctor --require-offline --save ================
+wiki doctor · run 20260929-224956-gemma4-e4b · 2026-09-30T05:58:18Z
+[ok ] wiki            personal_wiki 0.1.0 at /Users/isaacvazquez/Fundamentals-of-Agentic-AI/assignment-04
+[ok ] python          3.13.15 (/Users/isaacvazquez/Fundamentals-of-Agentic-AI/assignment-04/.venv/bin/python)
+[ok ] vault           /Users/isaacvazquez/Fundamentals-of-Agentic-AI/assignment-04/vault: 4 raw source(s), 20 wiki note(s), index.md present
+[ok ] sources         4 raw file(s) match sources.json
+[ok ] research rules  /Users/isaacvazquez/Fundamentals-of-Agentic-AI/assignment-04/wiki-instructions.md
+[ok ] persona         /Users/isaacvazquez/Fundamentals-of-Agentic-AI/assignment-04/persona.md
+[ok ] index           324 passages built 2026-09-30T05:57:37Z, fresh
+[ok ] ollama          Ollama 0.35.0: model gemma4:e4b Q4_K_M 8.0B present (digest c6eb396dbd5992bbe3f…)
+[ok ] offline         no probe reached the internet
+[ok ] device          Apple M4 Pro, 12 cores, 24 GiB memory, Darwin 26.3
+all critical checks passed
+Saved: /Users/isaacvazquez/Fundamentals-of-Agentic-AI/assignment-04/results/20260929-224956-gemma4-e4b/doctor-2.json
+
+================ eval-compare: env WIKI_MODEL=gemma4:e2b WIKI_RUN_ID=20260929-224956-gemma4-e4b/compare-gemma4-e2b .venv/bin/wiki eval tests/questions.json ================
+wiki eval · 4 questions from tests/questions.json · model gemma4:e2b Q4_K_M 5.1B (ollama, local) · run 20260929-224956-gemma4-e4b/compare-gemma4-e2b
+
+[T1] What hardware did I train the nanoGPT model on for Assignment 3?
+  status supported · verdict pass · retrieval hit True · keywords 2/2 · 8.5 s
+  answer: You trained the model on an Apple M4 Pro laptop with 12 CPU cores and 24 GB of memory [1][2][3].
+
+[T2] Why did the last Ms. Pac-Man run stop at fewer games than the first one?
+  status insufficient · verdict fail · retrieval hit True · keywords 0/2 · 1.9 s
+  answer: Insufficient evidence: the passages do not explicitly state why the last run stopped at fewer games than the first one.
+
+[T3] What machine did I use for Assignments 2 and 3, and did either use the GPU?
+  status supported · verdict pass · retrieval hit True · keywords 3/3 · 2.0 s
+  answer: You trained on an Apple M4 Pro laptop with 12 CPU cores and 24 GB of memory [1]. The device check picked the Apple GPU through PyTorch's MPS backend [1].
+
+[T4] What grade did I receive on Assignment 2?
+  status insufficient · verdict pass · retrieval hit None · keywords 0/0 · 1.4 s
+  answer: Insufficient evidence: the passages do not state the grade received on Assignment 2.
+
+Cards and summary: /Users/isaacvazquez/Fundamentals-of-Agentic-AI/assignment-04/results/20260929-224956-gemma4-e4b/compare-gemma4-e2b/ask
+
+================ manifest: .venv/bin/wiki manifest ================
+Wrote /Users/isaacvazquez/Fundamentals-of-Agentic-AI/assignment-04/results/20260929-224956-gemma4-e4b/manifest.json
+
+Run folder: results/20260929-224956-gemma4-e4b
+Read: results/20260929-224956-gemma4-e4b/ask/summary.md, results/20260929-224956-gemma4-e4b/chat/chat_checks.md, results/20260929-224956-gemma4-e4b/ingest/ingest_log.md, results/20260929-224956-gemma4-e4b/manifest.json

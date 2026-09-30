@@ -1,0 +1,58 @@
+{
+  "kind": "plan",
+  "label": "",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You plan the wiki notes for one source document. You get the document's outline (its headings, each with the first words of its section) and the titles of notes that already exist. Reply with JSON only, shaped:\n{\"notes\": [{\"title\": \"...\", \"folder\": \"Projects\", \"summary\": \"...\", \"sections\": [\"heading\", \"heading\"], \"related\": [{\"title\": \"...\", \"why\": \"...\"}]}]}\n\nRules\n- Plan between 2 and the maximum number of notes. Each note covers a coherent group of the document's sections. Copy section headings exactly from the outline, without the leading # signs and without the text after the dash. Use each section in at most one note; put leftover sections into the closest note.\n- title: 2 to 6 words that name the topic like a chapter title, for example \"Pac-Man DQN Training\" or \"Networking Tracker Security\". No dates, no id-like numbers, no file names, no colons or slashes, no full sentences. Titles must differ from each other.\n- If a title in \"Existing note titles\" or \"Titles previously written from this source\" already fits a group, reuse it exactly; that note will be updated instead of duplicated.\n- folder: \"Projects\" for something the owner built or ran, \"Course\" for class material, lectures, and course logistics, \"Concepts\" for a general idea or technique explained on its own.\n- summary: one plain sentence of at most 25 words saying what the note contains.\n- related: 0 to 3 titles from this plan or from the existing titles, each with a short \"why\" clause such as \"same laptop, trained on the GPU instead\".\n\nExample for a short document with sections \"Overview\", \"Setup\", \"Results\":\n{\"notes\": [{\"title\": \"Garden Sensor Build\", \"folder\": \"Projects\", \"summary\": \"How the soil sensor was assembled and configured.\", \"sections\": [\"Overview\", \"Setup\"], \"related\": [{\"title\": \"Garden Sensor Results\", \"why\": \"the readings this build produced\"}]}, {\"title\": \"Garden Sensor Results\", \"folder\": \"Projects\", \"summary\": \"The two weeks of moisture readings and what they showed.\", \"sections\": [\"Results\"], \"related\": [{\"title\": \"Garden Sensor Build\", \"why\": \"the hardware behind these readings\"}]}]}"
+    },
+    {
+      "role": "user",
+      "content": "Source file: Networking Tracker README\nDocument title: Networking Tracker\nMaximum notes: 5\nExisting note titles: Model Customization Techniques Comparison (Concepts); Model Learning Mechanics Explained (Concepts); Prompting as Probability Steering (Concepts); Structuring Prompts as Product Interfaces (Concepts); LLM Behavior and Probabilistic Nature (Course); Advanced Retrieval and Knowledge Hub (Projects); Assignment Model Training Overview (Projects); Interacting with Trained Model (Projects); Model Performance and Results (Projects); Training Budget and Hardware Details (Projects)\nTitles previously written from this source: (none)\n\nOutline:\n# Networking Tracker — I built this for Assignment 1 of Fundamentals of Agentic AI. It is a small web app for keeping a private list of the people I want to stay connected with at Berkeley, with a name, company, role, wher…\n## Where to find each requirement — The sections below follow the order of the assignment's README requirements. This table is the short version for anyone grading against the rubric. | Requirement | Where it is | | --- | --- | | Live…\n## Walkthrough — All screenshots are in `docs/screenshots`, and every one of them was taken on the live Vercel site. The sign-up form and the contact screens come from 2026-09-08, after the redesign described under T…\n### Sign up, sign in, and sign out — The next three were taken seconds apart on 2026-09-13 with the test account privacy-b-20260913@example.com. They run from the filled sign-in form, to the list the app opens after sign-in with that em…\n### Adding a contact and surviving a refresh — On the review account these go from the empty list a new account starts with, to the add dialog with name and priority required, to the first saved contact, to the full list after a hard page reload,…\n### Sorting and filtering — The first is the list sorted by priority with high first, and the second is the list filtered to high priority through the thumb index on the right edge, which leaves 2 of 5 entries.\n### Editing and deleting — The edit dialog opens with the contact's current values, and after saving, Marcus Chen's role reads Staff Data Scientist instead of Senior Data Scientist. Deleting asks for confirmation first, and af…\n### Invalid input — Saving with a blank name keeps the dialog open and shows the message under the field. A priority outside high, medium, and low cannot be picked in the form at all, so that case is shown under Evidenc…\n### A phone viewport — At 390px wide the listing drops to one column and the priority filter moves under the running head.\n### A second account — This is User B, the 2026-09-13 test account, right after it was created on the live site. The list is empty even though User A, the review account, had four contacts at that moment. The stronger proo…\n## What it does — - Sign up, sign in, and sign out with email and password through Neon's managed Better Auth. - Add a contact with name, company, role, where you met, notes, and a priority of high, medium, or low. -…\n## Technology stack and why — Next.js 16 with the App Router runs on Vercel, which is the assignment's required host and the path of least friction for a Next.js deploy. The UI uses shadcn/ui components on Tailwind CSS v4, which…\n## Architecture — There is a frontend, a thin server layer, and a database, and the browser cannot skip the protection in any of them. ``` Browser (Next.js client components, shadcn/ui) | | 1. sign in / sign up / sign…\n## Database schema — The full definition is in `db/schema.sql`. The table is `contacts`. | Column | Type | Constraints | Purpose | | --- | --- | --- | --- | | `id` | `uuid` | primary key, default `gen_random_uuid()` | Ro…\n## Authentication and row ownership — Sign-up and sign-in go through Neon's managed Better Auth by way of the app's own `/api/auth` proxy. A successful sign-in produces two things. The first is a session cookie that lives on the app's do…\n## Tests — ``` npm test ``` The test file is `tests/contacts.test.ts` and it runs on Node's built-in runner. Six cases cover `validateContact`, `describeDbError`, and `isAuthProblem`. They verify that a valid c…\n## Local setup — You need Node 22.18 or later, npm, and a Neon account. 1. Clone the repository and install dependencies. ``` git clone https://github.com/IsaacAVazquez/Fundamentals-of-Agentic-AI.git cd Fundamentals-…\n## Environment variables — Real values live in `.env.local`, which is ignored by Git. `.env.example` holds placeholders only. | Name | Where it is used | Notes | | --- | --- | --- | | `NEXT_PUBLIC_NEON_AUTH_URL` | Server (auth…\n### Publishable versus secret values — The two `NEXT_PUBLIC_` URLs are publishable. Next.js can put any variable with that prefix into the browser bundle, and these two only say where the Auth service and the Data API live, so knowing the…\n## Deployment — The app is live at https://networking-tracker-lyart.vercel.app. I deployed with the Vercel CLI from inside `assignment-01`, which is why the repository's root does not need a Vercel configuration. ``…\n## Evidence — The assignment brief asks for seven specific artifacts, and the Definition of Done slide in the Class 2 deck adds an explanation of publishable versus secret values. This is where each one is. | Requ…\n### Two-account privacy check — I ran this against the live URL on the evening of 2026-09-13 Pacific time, which is why the timestamp at the top reads 2026-09-14 in UTC. User A is designreview@example.com, the review account behind…\n### No secrets in the repository — `.env.local` is ignored by Git, `.env.example` has placeholders only, and `DATABASE_URL` was never added to Vercel. Before pushing I searched the working tree and the full Git history for the connect…\n## Known limitations and what I would improve next — There is no email verification and no password reset, so a typo in an email address at sign-up creates an account nobody can recover. Sorting and filtering happen in the browser over the full list, w…\n\nYour previous plan had these problems, fix them: the reply was not valid JSON (Expecting ',' delimiter: line 40 column 6 (char 3781))"
+    }
+  ],
+  "response": "{\"notes\": [{\"title\": \"Assignment Overview and Requirements\", \"folder\": \"Projects\", \"summary\": \"Details the assignment requirements and the structure of the web application.\", \"sections\": [\"Where to find each requirement\"], \"related\": []}, {\"title\": \"Web App Walkthrough Screenshots\", \"folder\": \"Projects\", \"summary\": \"A detailed walkthrough of the app's functionality using various screenshots.\", \"sections\": [\"Walkthrough\"], \"related\": []}, {\"title\": \"Technology Stack and Architecture\", \"folder\": \"Projects\", \"summary\": \"Describes the technologies used and the overall system architecture.\", \"sections\": [\"Technology stack and why\", \"Architecture\"], \"related\": []}, {\"title\": \"Database Schema and Auth\", \"folder\": \"Projects\", \"summary\": \"Covers the database structure, authentication flow, and row ownership.\", \"sections\": [\"Database schema\", \"Authentication and row ownership\"], \"related\": []}, {\"title\": \"Local Setup and Deployment Details\", \"folder\": \"Projects\", \"summary\": \"Instructions for local setup, environment variables, and deployment process.\", \"sections\": [\"Local setup\", \"Environment variables\", \"Deployment\"], \"related\": []}, {\"title\": \"Testing and Limitations Review\", \"folder\": \"Projects\", \"summary\": \"Covers testing procedures, evidence checks, and known areas for future improvement.\", \"sections\": [\"Tests\", \"Evidence\", \"Known limitations and what I would improve next\"], \"related\": []}]\n}",
+  "error": null,
+  "model": {
+    "backend": "ollama",
+    "tag": "gemma4:e4b",
+    "digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb",
+    "parameter_size": "8.0B",
+    "quantization_level": "Q4_K_M",
+    "family": "gemma4",
+    "context_length": 131072,
+    "ollama_version": "0.35.0",
+    "size_bytes": 9608350718
+  },
+  "record": {
+    "kind": "plan",
+    "attempt": 1,
+    "system_chars": 2105,
+    "user_chars": 6138,
+    "payload_chars": 5351,
+    "payload_capped": false,
+    "est_prompt_tokens": 2061,
+    "timing": {
+      "wall_s": 6.991,
+      "total_duration_s": 6.99,
+      "load_duration_s": 0.0044,
+      "prompt_eval_count": 2010,
+      "prompt_eval_duration_s": 1.2923,
+      "eval_count": 302,
+      "eval_duration_s": 5.6329,
+      "tokens_per_s": 53.6,
+      "prompt_tokens_per_s": 1555.4
+    },
+    "memory": {
+      "ollama_model_size_bytes": 3237478399,
+      "ollama_size_vram_bytes": 3237478399,
+      "ollama_process_rss_bytes": 516980736,
+      "harness_max_rss_bytes": 33357824,
+      "sampled_at": "2026-09-30T05:54:12Z"
+    },
+    "response_chars": 1410,
+    "ok": true,
+    "error": null,
+    "dump_file": "ingest/calls/224957-016-plan-networking-tracker-readme.json"
+  }
+}

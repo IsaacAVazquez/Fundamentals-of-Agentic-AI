@@ -54,18 +54,18 @@ if [ "${FRESH:-0}" = 1 ]; then
   rm -f "$VAULT/index.md"
 fi
 
-OFFLINE_FLAG=(--require-offline)
-if [ "${ALLOW_ONLINE:-0}" = 1 ]; then OFFLINE_FLAG=(); fi
+OFFLINE_FLAG="--require-offline"
+if [ "${ALLOW_ONLINE:-0}" = 1 ]; then OFFLINE_FLAG=""; fi   # a plain string: macOS bash 3.2 trips on an empty array under set -u
 
 step device    scripts/device_report.sh "$RUN_DIR"
-step doctor    "${WIKI[@]}" doctor "${OFFLINE_FLAG[@]}" --save
+step doctor    "${WIKI[@]}" doctor $OFFLINE_FLAG --save
 step ingest-1  "${WIKI[@]}" ingest
 step ingest-2  "${WIKI[@]}" ingest
 step eval      "${WIKI[@]}" eval tests/questions.json
 step chat      "${WIKI[@]}" chat --script tests/chat_checks.txt
 step search    "${WIKI[@]}" search "Pac-Man evaluation score"
 step ask-S1    "${WIKI[@]}" ask --id S1 "What did my final Pac-Man agent average on the five evaluation games?"
-step doctor-2  "${WIKI[@]}" doctor "${OFFLINE_FLAG[@]}" --save
+step doctor-2  "${WIKI[@]}" doctor $OFFLINE_FLAG --save
 if [ -n "${COMPARE_MODEL:-}" ]; then
   step eval-compare env WIKI_MODEL="$COMPARE_MODEL" WIKI_RUN_ID="$WIKI_RUN_ID/compare-${COMPARE_MODEL//[^A-Za-z0-9.-]/-}" "${WIKI[@]}" eval tests/questions.json
 fi

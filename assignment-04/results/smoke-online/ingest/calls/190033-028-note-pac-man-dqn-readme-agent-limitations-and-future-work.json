@@ -1,0 +1,58 @@
+{
+  "kind": "note",
+  "label": "Agent Limitations and Future Work",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You write one note for a personal wiki from text the owner wrote. Reply with the note body in Markdown and nothing else, using exactly these three headings in this order:\n\n## Summary\nTwo to four sentences: what this note covers and its main result or point.\n\n## Details\nThe substance, in short paragraphs or bullet lists. Keep every number, name, date, and setting exactly as the source text gives it. Keep the owner's first-person voice (\"I trained ...\"). Do not add facts, opinions, or background that the source text does not contain. Leave out anything that is not in the source text you were given.\n\n## Related\nZero to three lines, each \"- Title: why it relates\", using only titles from the allowed list, copied exactly. Write \"- none\" if nothing on the list relates.\n\nDo not write a top-level title, frontmatter, a Sources section, tables wider than four columns, or code blocks longer than five lines. Do not refer to \"the source\" or \"this note\"; just present the content. At most 400 words."
+    },
+    {
+      "role": "user",
+      "content": "Note title: Agent Limitations and Future Work\nPlanned summary: Discusses observed weaknesses in the agent's playstyle and next steps.\nAllowed related titles: Assignment DQN Training Overview; Agent Performance Comparison Results; Training Budget and Hardware Details Pac-Man; Agent Observation and Reward System; Model Customization Techniques Comparison; Model Learning Mechanics Explained; Prompting as Probability Steering; Structuring Prompts as Product Interfaces; Technology Stack and Architecture; LLM Behavior and Probabilistic Nature; Advanced Retrieval and Knowledge Hub; Assignment Model Training Overview; Assignment Overview and Requirements; Core Functionality and Features; Database and Setup Details; Interacting with Trained Model; Model Performance and Results; Training Budget and Hardware Details; Web App Walkthrough Screenshots\nSource file: Pac-Man DQN README\nSections included: \"One limitation and the next experiment\", \"Files and checkpoints\", \"Where the code comes from\"\n\nSource text:\n## One limitation and the next experiment\nThe limitation I saw most clearly is that the agent never settled on a way of playing. The move it chose most often kept switching between checkpoints, and across the first run's 20 checkpoints, the same 30 validation games averaged anywhere from 418 to 1,182 depending on which checkpoint played them, with no steady climb, so where a run happens to stop decides most of the result. Stopping at 450 games worked around that for this submission, but it doesn't remove the swings, and the best stopping point probably moves with any other change to the settings. My guess at the cause is the small replay memory, which holds the last 5,000 decisions, or only about eight games at this agent's pace, so each update mostly reflects the last few games. I haven't tested that guess.\n\nThe next experiment I'd run changes only the learning rate, from 0.0001 to 0.00005, and keeps 10% exploration and 450 episodes. The replay memory size isn't one of my three choices, and smaller updates are the closest lever I have to make each checkpoint less of a reaction to the last few games, so I'd expect the checkpoints' validation averages to swing less, even if they climb more slowly. I'd judge it with `scripts/check_checkpoints.py`, looking for a narrower spread across checkpoints and a final agent that holds a gain on the 50 test games. Since then I've written up a bigger plan in [NEXT_EXPERIMENT.md](NEXT_EXPERIMENT.md), dated 2026-09-22 after grading, which keeps the learning rate and instead changes the replay memory, the number of games, and how a lost life is treated.\n\n## Files and checkpoints\n| File | What it is |\n| --- | --- |\n| [pacman_dqn.ipynb](pacman_dqn.ipynb) | The final 450-game run, executed with every output saved |\n| [results/450-games/](results/450-games/) | The final run's `config.json`, `training.csv`, `training_summary.json`, `baseline.json`, `comparison.json`, `demo_scores.json`, `move_shares.json`, `training_dashboard.png`, and every gameplay GIF in `demos/` |\n| [results/500-games/](results/500-games/) | The same files from the first run except `move_shares.json`, plus its executed notebook, `pacman_dqn_500_games.ipynb`, and `checkpoint_check.json` from the checkpoint check |\n| [scripts/check_checkpoints.py](scripts/check_checkpoints.py) | Replays a run's saved agents on 30 validation games and 50 test games |\n| [scripts/eval_move_shares.py](scripts/eval_move_shares.py) | Replays a run's untrained and final agents on the five evaluation games and counts the moves they chose |\n| [ASSIGNMENT.md](ASSIGNMENT.md) | My copy of the assignment brief |\n| [EXPLAINER.md](EXPLAINER.md) | A plain-language walkthrough of what the notebook and scripts do |\n| [NEXT_EXPERIMENT.md](NEXT_EXPERIMENT.md) | My plan for a stronger run, written on 2026-09-22 after grading |\n\nThe model checkpoints aren't in the repository, because each one is about 6.8 MB and the first run alone saved 22 of them. The final agent and the untrained network it started from are attached to the [assignment-02-checkpoints release](https://github.com/IsaacAVazquez/Fundamentals-of-Agentic-AI/releases/tag/assignment-02-checkpoints) as `pacman-dqn-450-games-trained.pt` and `pacman-dqn-untrained.pt`, and every other checkpoint from both runs stays in the run ZIPs on my laptop. Either file loads with `torch.load(path, weights_only=True)`, and its `model` entry goes into the notebook's `DQN` class.\n\n## Where the code comes from\nThe notebook, `pacman_player.py`, `requirements.txt`, and `tests/verify_notebook.py` come from the course's project at https://github.com/pepealonso95/pacman-dqn. I checked on 2026-09-13 that `pacman_player.py`, `requirements.txt`, `tests/verify_notebook.py`, `.gitignore`, and `.vscode/extensions.json` match that repository's main branch byte for byte. In the notebook, the only code change is the two values in section 1, exploration 0.10 and episodes 450, and the only text I changed is the explanation cell at the end, which I filled in after the run. `ASSIGNMENT.md` is my copy of the assignment brief, which I checked against the live Google Doc on 2026-09-13, and `scripts/` holds my shortcuts for setup, the five-game check, JupyterLab, the checkpoint check, and the move count."
+    }
+  ],
+  "response": "## Summary\nThe agent's primary limitation is its inconsistent playstyle, as performance varied significantly across checkpoints. To address this, I plan an experiment changing the learning rate and focusing on reducing the influence of recent games by adjusting the replay memory size. The note details the files used, including checkpoints and scripts, and confirms the origin of the code from a specific course repository.\n\n## Details\n**One limitation and the next experiment**\nThe limitation I saw most clearly is that the agent never settled on a way of playing. Across the first run's 20 checkpoints, the same 30 validation games averaged anywhere from 418 to 1,182 depending on which checkpoint played them, with no steady climb. Stopping at 450 games worked around that for this submission, but it doesn't remove the swings. My guess at the cause is the small replay memory, which holds the last 5,000 decisions, or only about eight games at this agent's pace.\n\nThe next experiment I'd run changes only the learning rate, from 0.0001 to 0.00005, and keeps 10% exploration and 450 episodes. I'd expect the checkpoints' validation averages to swing less. I'd judge it with `scripts/check_checkpoints.py`, looking for a narrower spread across checkpoints and a final agent that holds a gain on the 50 test games. I've written up a bigger plan in [NEXT_EXPERIMENT.md], dated 2026-09-22 after grading, which keeps the learning rate and instead changes the replay memory, the number of games, and how a lost life is treated.\n\n**Files and checkpoints**\n*   `[pacman_dqn.ipynb]`: The final 450-game run, executed with every output saved.\n*   `[results/450-games/]`: Contains `config.json`, `training.csv`, `training_summary.json`, `baseline.json`, `comparison.json`, `demo_scores.json`, `move_shares.json`, `training_dashboard.png`, and every gameplay GIF in `demos/`.\n*   `[results/500-games/]`: Contains the same files from the first run except `move_shares.json`, plus its executed notebook, `pacman_dqn_500_games.ipynb`, and `checkpoint_check.json` from the checkpoint check.\n*   `[scripts/check_checkpoints.py]`: Replays a run's saved agents on 30 validation games and 50 test games.\n*   `[scripts/eval_move_shares.py]`: Replays a run's untrained and final agents on the five evaluation games and counts the moves they chose.\n*   `[ASSIGNMENT.md]`: My copy of the assignment brief.\n*   `[EXPLAINER.md]`: A plain-language walkthrough of what the notebook and scripts do.\n*   `[NEXT_EXPERIMENT.md]`: My plan for a stronger run, written on 2026-09-22 after grading.\n\nThe final agent and the untrained network it started from are attached to the [assignment-02-checkpoints release] as `pacman-dqn-450-games-trained.pt` and `pacman-dqn-untrained.pt`.\n\n**Where the code comes from**\nThe notebook, `pacman_player.py`, `requirements.txt`, and `tests/verify_notebook.py` come from the course's project at https://github.com/pepealonso95/pacman-dqn. I checked on 2026-09-13 that `pacman_player.py`, `requirements.txt`, `tests/verify_notebook.py`, `.gitignore`, and `.vscode/extensions.json` match that repository's main branch byte for byte. In the notebook, the only code change is the two values in section 1, exploration 0.10 and episodes 450, and the only text I changed",
+  "error": null,
+  "model": {
+    "backend": "ollama",
+    "tag": "gemma4:e4b",
+    "digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb",
+    "parameter_size": "8.0B",
+    "quantization_level": "Q4_K_M",
+    "family": "gemma4",
+    "context_length": 131072,
+    "ollama_version": "0.35.0",
+    "size_bytes": 9608350718
+  },
+  "record": {
+    "kind": "note",
+    "attempt": 1,
+    "system_chars": 998,
+    "user_chars": 5270,
+    "payload_chars": 4260,
+    "payload_capped": false,
+    "est_prompt_tokens": 1567,
+    "timing": {
+      "wall_s": 21.356,
+      "total_duration_s": 21.3507,
+      "load_duration_s": 0.0027,
+      "prompt_eval_count": 1613,
+      "prompt_eval_duration_s": 2.8306,
+      "eval_count": 900,
+      "eval_duration_s": 18.4954,
+      "tokens_per_s": 48.7,
+      "prompt_tokens_per_s": 569.8
+    },
+    "memory": {
+      "ollama_model_size_bytes": 3237478399,
+      "ollama_size_vram_bytes": 3237478399,
+      "ollama_process_rss_bytes": 4292050944,
+      "harness_max_rss_bytes": 32702464,
+      "sampled_at": "2026-09-30T02:08:30Z"
+    },
+    "response_chars": 3268,
+    "ok": true,
+    "error": null,
+    "dump_file": "ingest/calls/190033-028-note-pac-man-dqn-readme-agent-limitations-and-future-work.json"
+  }
+}

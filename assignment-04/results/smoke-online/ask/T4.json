@@ -1,0 +1,264 @@
+{
+  "id": "T4",
+  "run_id": "smoke-online",
+  "question": "What grade did I receive on Assignment 2?",
+  "mode": "local",
+  "backend": "ollama",
+  "model": {
+    "backend": "ollama",
+    "tag": "gemma4:e4b",
+    "digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb",
+    "parameter_size": "8.0B",
+    "quantization_level": "Q4_K_M",
+    "family": "gemma4",
+    "context_length": 131072,
+    "ollama_version": "0.35.0",
+    "size_bytes": 9608350718
+  },
+  "options": {
+    "temperature": 0.0,
+    "num_ctx": 8192,
+    "num_predict": 400,
+    "seed": 0
+  },
+  "retrieval": {
+    "k": 6,
+    "scope": "all",
+    "index_built_at": "2026-09-30T02:08:30Z",
+    "index_passages": 319,
+    "query_terms": [
+      "2",
+      "assignment",
+      "grad",
+      "grade",
+      "point",
+      "receive",
+      "score"
+    ],
+    "passages": [
+      {
+        "n": 1,
+        "path": "wiki/Projects/Assignment DQN Training Overview.md",
+        "kind": "wiki",
+        "heading": "Summary",
+        "heading_path": [
+          "Assignment DQN Training Overview",
+          "Summary"
+        ],
+        "lines": [
+          28,
+          28
+        ],
+        "score": 7.546,
+        "chars": 297,
+        "matched_terms": [
+          "2",
+          "assignment",
+          "score"
+        ],
+        "id": "ab85bca9ff80",
+        "text": "This note details the setup and execution of the DQN agent for Ms. Pac-Man for Assignment 2. The main result is a comparison between two training runs, showing that rerunning the notebook with 450 games yielded a significantly better average score (946) compared to the initial 500-game run (400).",
+        "sent_to_model": true
+      },
+      {
+        "n": 2,
+        "path": "wiki/Projects/Assignment Overview and Requirements.md",
+        "kind": "wiki",
+        "heading": "Related",
+        "heading_path": [
+          "Assignment Overview and Requirements",
+          "Related"
+        ],
+        "lines": [
+          52,
+          54
+        ],
+        "score": 6.406,
+        "chars": 167,
+        "matched_terms": [
+          "assignment",
+          "grad"
+        ],
+        "id": "b5a0d1aaeb5e",
+        "text": "- [[Core Functionality and Features]]: What it does\n- [[Technology Stack and Architecture]]: Technology stack and why\n- [[Database and Setup Details]]: Database schema",
+        "sent_to_model": true
+      },
+      {
+        "n": 3,
+        "path": "raw/Custom LLM README.md",
+        "kind": "raw",
+        "heading": "Chat with the trained model",
+        "heading_path": [
+          "Custom LLM with nanoGPT",
+          "Chat with the trained model"
+        ],
+        "lines": [
+          363,
+          363
+        ],
+        "score": 6.104,
+        "chars": 971,
+        "matched_terms": [
+          "assignment",
+          "receive"
+        ],
+        "id": "8a55c763ebaf",
+        "text": "The first three replies are what the corpus taught. The fourth is a negation failure. The model drew white, the color the story rejected, but for this exact prompt the probes in [results/expanded/probes.json](results/expanded/probes.json) put black first at 0.479 and white at 0.085, so the reply was an unlikely draw at temperature 0.8. The fifth is the limitation the assignment asks to show. The question's words are mostly outside the vocabulary, the model receives them as unknown tokens, and it replies with `the team discussed the car was`, pieces of a classroom frame and a negation story with no meaning together, because continuing text is the only thing it does and it has no idea of a question. The notebook's own chat cell, section 10, produced one more turn from the same model during Run All, `the customer` followed by `returned the item after checking the price .`, saved in [results/expanded/chat_transcript.json](results/expanded/chat_transcript.json).",
+        "sent_to_model": true
+      },
+      {
+        "n": 4,
+        "path": "wiki/Projects/Assignment Overview and Requirements.md",
+        "kind": "wiki",
+        "heading": "Details",
+        "heading_path": [
+          "Assignment Overview and Requirements",
+          "Details"
+        ],
+        "lines": [
+          34,
+          48
+        ],
+        "score": 6.045,
+        "chars": 819,
+        "matched_terms": [
+          "assignment",
+          "grad"
+        ],
+        "id": "c8ba176683bd",
+        "text": "The following sections map to the assignment's README requirements:\n*   Live Vercel URL: Above, and again under Deployment\n*   Screenshots or walkthrough: Walkthrough\n*   Feature list: What it does\n*   Technology stack and why: Technology stack and why\n*   Architecture summary: Architecture\n*   Local setup through `npm run dev`: Local setup\n*   Environment variable names: Environment variables\n*   Publishable versus secret values: Environment variables\n*   Schema with every column: Database schema\n*   Authentication and RLS ownership: Authentication and row ownership\n*   Test command and what it verifies: Tests\n*   Deployment instructions: Deployment\n*   Known limitations: Known limitations and what I would improve next\n*   Grading evidence: Evidence, which maps each required artifact to a file or transcript",
+        "sent_to_model": true
+      },
+      {
+        "n": 5,
+        "path": "raw/Class 5 Prompting and Retrieval Notes.md",
+        "kind": "raw",
+        "heading": "The v1 Boundary",
+        "heading_path": [
+          "Assignment 4: Knowledge Hub v1",
+          "The v1 Boundary"
+        ],
+        "lines": [
+          901,
+          906
+        ],
+        "score": 6.043,
+        "chars": 506,
+        "matched_terms": [
+          "assignment",
+          "grad",
+          "point"
+        ],
+        "id": "1f971846137e",
+        "text": "- In scope: ingest a small set of sources, maintain a clear index, retrieve relevant notes, cite them.\n- Out of scope: autonomous edits, multi-agent coordination, public deployment, and broad web search.\n\n**Tip**\n\nThe boundary is the point. A retrieval system you fully understand beats an agent you can’t debug. The optional v2 (next class) and v3 (Class 7) builds earn the tools and then the team — while the graded capstone, Assignment 5, applies the same discipline to a 10,000-record insight pipeline.",
+        "sent_to_model": true
+      },
+      {
+        "n": 6,
+        "path": "wiki/Projects/Assignment Overview and Requirements.md",
+        "kind": "wiki",
+        "heading": "Summary",
+        "heading_path": [
+          "Assignment Overview and Requirements",
+          "Summary"
+        ],
+        "lines": [
+          26,
+          26
+        ],
+        "score": 6.029,
+        "chars": 347,
+        "matched_terms": [
+          "assignment",
+          "grad"
+        ],
+        "id": "67e39c509a23",
+        "text": "This note details the \"Networking Tracker\" web app built for Assignment 1 of Fundamentals of Agentic AI. The app functions as a private contact list for Berkeley connections, enforcing data privacy using Postgres Row Level Security. The technology stack includes Next.js on Vercel, Neon Postgres, Neon's managed Better Auth, and the Neon Data API.",
+        "sent_to_model": true
+      }
+    ]
+  },
+  "prompt": {
+    "system_file": "wiki-instructions.md",
+    "system_sha256": "57bc582fc52f0ff250cb6686d539957d3107e7a6381617b9b45f6f168c69c3c5",
+    "system_chars": 1450,
+    "user_chars": 3755,
+    "passage_chars": 3107,
+    "passages_sent": 6,
+    "estimated_tokens": 1301,
+    "user_message": "Passages:\n\n[1] wiki/Projects/Assignment DQN Training Overview.md # Summary (lines 28-28)\nThis note details the setup and execution of the DQN agent for Ms. Pac-Man for Assignment 2. The main result is a comparison between two training runs, showing that rerunning the notebook with 450 games yielded a significantly better average score (946) compared to the initial 500-game run (400).\n\n[2] wiki/Projects/Assignment Overview and Requirements.md # Related (lines 52-54)\n- [[Core Functionality and Features]]: What it does\n- [[Technology Stack and Architecture]]: Technology stack and why\n- [[Database and Setup Details]]: Database schema\n\n[3] raw/Custom LLM README.md # Chat with the trained model (lines 363-363)\nThe first three replies are what the corpus taught. The fourth is a negation failure. The model drew white, the color the story rejected, but for this exact prompt the probes in [results/expanded/probes.json](results/expanded/probes.json) put black first at 0.479 and white at 0.085, so the reply was an unlikely draw at temperature 0.8. The fifth is the limitation the assignment asks to show. The question's words are mostly outside the vocabulary, the model receives them as unknown tokens, and it replies with `the team discussed the car was`, pieces of a classroom frame and a negation story with no meaning together, because continuing text is the only thing it does and it has no idea of a question. The notebook's own chat cell, section 10, produced one more turn from the same model during Run All, `the customer` followed by `returned the item after checking the price .`, saved in [results/expanded/chat_transcript.json](results/expanded/chat_transcript.json).\n\n[4] wiki/Projects/Assignment Overview and Requirements.md # Details (lines 34-48)\nThe following sections map to the assignment's README requirements:\n*   Live Vercel URL: Above, and again under Deployment\n*   Screenshots or walkthrough: Walkthrough\n*   Feature list: What it does\n*   Technology stack and why: Technology stack and why\n*   Architecture summary: Architecture\n*   Local setup through `npm run dev`: Local setup\n*   Environment variable names: Environment variables\n*   Publishable versus secret values: Environment variables\n*   Schema with every column: Database schema\n*   Authentication and RLS ownership: Authentication and row ownership\n*   Test command and what it verifies: Tests\n*   Deployment instructions: Deployment\n*   Known limitations: Known limitations and what I would improve next\n*   Grading evidence: Evidence, which maps each required artifact to a file or transcript\n\n[5] raw/Class 5 Prompting and Retrieval Notes.md # The v1 Boundary (lines 901-906)\n- In scope: ingest a small set of sources, maintain a clear index, retrieve relevant notes, cite them.\n- Out of scope: autonomous edits, multi-agent coordination, public deployment, and broad web search.\n\n**Tip**\n\nThe boundary is the point. A retrieval system you fully understand beats an agent you can’t debug. The optional v2 (next class) and v3 (Class 7) builds earn the tools and then the team — while the graded capstone, Assignment 5, applies the same discipline to a 10,000-record insight pipeline.\n\n[6] wiki/Projects/Assignment Overview and Requirements.md # Summary (lines 26-26)\nThis note details the \"Networking Tracker\" web app built for Assignment 1 of Fundamentals of Agentic AI. The app functions as a private contact list for Berkeley connections, enforcing data privacy using Postgres Row Level Security. The technology stack includes Next.js on Vercel, Neon Postgres, Neon's managed Better Auth, and the Neon Data API.\n\nQuestion: What grade did I receive on Assignment 2?\n\nAnswer from the passages above with [n] citations, or start with \"Insufficient evidence:\"."
+  },
+  "answer": {
+    "text": "Insufficient evidence: The passages mention a comparison of two training runs for the DQN agent for Ms. Pac-Man for Assignment 2, showing a better average score of 946 with 450 games compared to 400 with 500 games [1], but they do not state what grade you received.",
+    "raw": "Insufficient evidence: The passages mention a comparison of two training runs for the DQN agent for Ms. Pac-Man for Assignment 2, showing a better average score of 946 with 450 games compared to 400 with 500 games [1], but they do not state what grade you received."
+  },
+  "citations": [
+    {
+      "n": 1,
+      "valid": true,
+      "path": "wiki/Projects/Assignment DQN Training Overview.md",
+      "heading": "Summary",
+      "lines": [
+        28,
+        28
+      ],
+      "kind": "wiki"
+    }
+  ],
+  "citation_check": {
+    "valid": 1,
+    "invalid": [],
+    "cited_paths": [
+      "wiki/Projects/Assignment DQN Training Overview.md"
+    ],
+    "insufficient_marker": true,
+    "unverified_numbers": []
+  },
+  "status": "partial",
+  "timing": {
+    "wall_s": 3.705,
+    "total_duration_s": 3.7034,
+    "load_duration_s": 0.0066,
+    "prompt_eval_count": 1265,
+    "prompt_eval_duration_s": 2.3084,
+    "eval_count": 69,
+    "eval_duration_s": 1.3151,
+    "tokens_per_s": 52.5,
+    "prompt_tokens_per_s": 548.0
+  },
+  "memory": {
+    "ollama_model_size_bytes": 3237478399,
+    "ollama_size_vram_bytes": 3237478399,
+    "ollama_process_rss_bytes": 409665536,
+    "harness_max_rss_bytes": 38551552,
+    "sampled_at": "2026-09-30T05:44:50Z"
+  },
+  "offline": {
+    "source": "live probe",
+    "internet_reachable": true,
+    "probes": {
+      "tcp 1.1.1.1:443": "connected",
+      "tcp 8.8.8.8:53": "connected",
+      "dns pypi.org": "resolved (not counted; caches can answer offline)",
+      "https example.com": "HTTP 200"
+    },
+    "checked_at": "2026-09-30T05:44:50Z"
+  },
+  "assessment": {
+    "expected_behavior": "insufficient",
+    "expected_sources": [],
+    "retrieval_hit": null,
+    "retrieval_hit_all": null,
+    "retrieved_any": [],
+    "expected_keywords": [],
+    "keywords_found": [],
+    "status_matches_expected": false,
+    "cited_expected_source": null,
+    "verdict": "fail",
+    "notes": "Plausible for a coursework wiki, but no raw source states a grade. COURSE.md, which holds grades, was deliberately left out of the vault. The expected reply starts with 'Insufficient evidence'. Retrieval will still return Pac-Man score passages, and the model must not present a game score as a grade.",
+    "human_assessment": null
+  },
+  "error": null,
+  "created_at": "2026-09-30T05:44:50Z",
+  "schema": "evidence-card/1"
+}

@@ -1,0 +1,58 @@
+{
+  "kind": "note",
+  "label": "Structuring Prompts as Product Interfaces",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You write one note for a personal wiki from text the owner wrote. Reply with the note body in Markdown and nothing else, using exactly these three headings in this order:\n\n## Summary\nTwo to four sentences: what this note covers and its main result or point.\n\n## Details\nThe substance, in short paragraphs or bullet lists. Keep every number, name, date, and setting exactly as the source text gives it. Keep the owner's first-person voice (\"I trained ...\"). Do not add facts, opinions, or background that the source text does not contain. Leave out anything that is not in the source text you were given.\n\n## Related\nZero to three lines, each \"- Title: why it relates\", using only titles from the allowed list, copied exactly. Write \"- none\" if nothing on the list relates.\n\nDo not write a top-level title, frontmatter, a Sources section, tables wider than four columns, or code blocks longer than five lines. Do not refer to \"the source\" or \"this note\"; just present the content. At most 400 words."
+    },
+    {
+      "role": "user",
+      "content": "Note title: Structuring Prompts as Product Interfaces\nPlanned summary: Best practices for designing prompts to specify jobs and maintain structure.\nAllowed related titles: LLM Behavior and Probabilistic Nature; Model Customization Techniques Comparison; Prompting as Probability Steering; Advanced Retrieval and Knowledge Hub\nSource file: Class 5 Prompting and Retrieval Notes\nSections included: \"The Prompt Is the Spec\", \"A Good Prompt Specifies the Job\", \"Context Is Not Background Reading\", \"Separate Instructions From Data\", \"Instruction Hierarchy Is a Trust Boundary\", \"Output Format Is a Reliability Tool\", \"Examples Teach a Pattern\", \"Constraints Beat Vague Adjectives\", \"Prompting Is Experimental Work\"\n\nSource text:\n## The Prompt Is the Spec\nSo far, prompting has been a personal skill — *you*, talking to a chatbot. But the moment a prompt ships inside a product, it stops being a message and becomes an **interface**: thousands of users’ inputs flow through it, and downstream code consumes what comes out.\n\nThat changes the standard. A product prompt has to work on the input you didn’t anticipate, written by the user you never met, on the model version that shipped last night.\n\n**Important**\n\nTreat every prompt that ships like an API contract: specified, versioned, and tested. The next eight slides are the contract clauses.\n\n## A Good Prompt Specifies the Job\n```\nYou are reviewing a customer escalation.\nReturn: risk level, evidence, recommended next action, and unanswered questions.\n```\n\nNotice what this does: it names the **role**, the **task**, and the **exact deliverables**. No adjectives, no “please be thorough” — just the shape of the work, the way you’d brief a new analyst.\n\n## Context Is Not Background Reading\nAnything included in the context competes for the model’s attention. Put in the material that should influence this response.\n\nDumping the whole wiki “just in case” isn’t diligence — it’s noise that buries the two paragraphs that actually matter. Remember the car-wash failure: attention goes where the context points it.\n\n**Note**\n\n**Learn the term: context engineering.** The industry has largely stopped saying “prompt engineering” for this work. The job is no longer writing one clever instruction — it is deciding **what occupies the context window on every single call**: system rules, retrieved evidence, tool results, conversation history, and what gets dropped when space runs out. Prompt engineering is one slide in that job. Context engineering is the whole job, and it is what Classes 6 and 7 are really about.\n\n## Separate Instructions From Data\n```\nSYSTEM: Follow these operating rules.\nUSER: Here is the customer request.\nREFERENCE: Here are the approved policy excerpts.\n```\n\nThree channels, three levels of trust. The system rules come from you. The user request comes from someone you mostly trust. The reference material might come from anywhere — keep the roles visibly separate so the model (and your future debugging self) can tell them apart.\n\n## Instruction Hierarchy Is a Trust Boundary\nSystem-level rules, application policy, user requests, and retrieved text should not have equal authority. Untrusted content may inform an answer; it must not rewrite the operating rules.\n\n**Warning**\n\nThis is your first taste of **prompt injection** — a retrieved document that says *“ignore your instructions and…”*. We’ll treat it as a full security topic in Class 7. For now: **retrieved text is data, never instructions.**\n\n## Output Format Is a Reliability Tool\nAsk for a schema when another system needs to consume the result.\n\n``` json\n{\"risk\": \"low|medium|high\", \"evidence\": [\"...\"], \"next_action\": \"...\"}\n```\n\nFree-form prose is for humans. The moment a program parses the output, a fixed schema turns “usually works” into “verifiable” — code can check every field before anything downstream trusts it. (Next class this becomes a whole section: structured output.)\n\n## Examples Teach a Pattern\nFew-shot examples are especially useful when judgment, style, or a label taxonomy must be consistent.\n\nOne good example is worth a paragraph of description. Three examples that cover the edge cases — the sarcastic complaint, the bilingual email, the empty message — are worth a page.\n\n## Constraints Beat Vague Adjectives\n“Cite only supplied sources; say ‘insufficient evidence’ if none apply” is more useful than “be accurate.”\n\n**Tip**\n\nAdjectives describe a wish; constraints describe a **test**. If you can’t tell whether an output followed your instruction, the model can’t either.\n\n## Prompting Is Experimental Work\nMake a small test set, change one variable, inspect failures, and keep the version that improves the metric you care about.\n\nThis is the scientific method applied to prompts — and it’s the seed of the **evals** discipline we’ll build out properly next class. Vibes don’t survive a model upgrade. Test sets do."
+    }
+  ],
+  "response": "## Summary\nDesigning prompts for product use requires treating them as versioned API contracts rather than simple messages. The core principle is to specify the job clearly by defining the role, task, and exact deliverables, while rigorously separating instructions from data. The main result is that structured, testable prompts lead to reliable, predictable outputs that can be consumed by downstream systems.\n\n## Details\n*   **The Prompt Is the Spec**: A product prompt must work on unanticipated user inputs and on the model version that shipped last night. I must treat every prompt that ships like an API contract: specified, versioned, and tested.\n*   **A Good Prompt Specifies the Job**: I should name the **role**, the **task**, and the **exact deliverables**, avoiding adjectives like “please be thorough.”\n*   **Context Is Not Background Reading**: I must put in the material that should influence the response, as dumping the whole wiki is noise. I learned the term: **context engineering**. The job is deciding **what occupies the context window on every single call**: system rules, retrieved evidence, tool results, conversation history, and what gets dropped when space runs out.\n*   **Separate Instructions From Data**: I should use visible separation, such as `SYSTEM:`, `USER:`, and `REFERENCE:`, to keep roles distinct.\n*   **Instruction Hierarchy Is a Trust Boundary**: I must remember that **retrieved text is data, never instructions**, to prevent prompt injection.\n*   **Output Format Is a Reliability Tool**: When another system needs to consume the result, I should ask for a schema, like `{\"risk\": \"low|medium|high\", \"evidence\": [\"...\"], \"next_action\": \"...\"}`.\n*   **Examples Teach a Pattern**: Few-shot examples are useful for consistency, and three examples covering edge cases are better than a page of description.\n*   **Constraints Beat Vague Adjectives**: I should use constraints like “Cite only supplied sources; say ‘insufficient evidence’ if none apply” instead of vague adjectives.\n*   **Prompting Is Experimental Work**: I must make a small test set, change one variable, inspect failures, and keep the version that improves the metric I care about.\n\n## Related\n- Prompting as Probability Steering: The concept of treating prompts as specifications and testing variables relates to steering model behavior.\n- Model Customization Techniques Comparison: The discussion of different input channels (SYSTEM, USER, REFERENCE) relates to structuring inputs.",
+  "error": null,
+  "model": {
+    "backend": "ollama",
+    "tag": "gemma4:e4b",
+    "digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb",
+    "parameter_size": "8.0B",
+    "quantization_level": "Q4_K_M",
+    "family": "gemma4",
+    "context_length": 131072,
+    "ollama_version": "0.35.0",
+    "size_bytes": 9608350718
+  },
+  "record": {
+    "kind": "note",
+    "attempt": 1,
+    "system_chars": 998,
+    "user_chars": 4890,
+    "payload_chars": 4165,
+    "payload_capped": false,
+    "est_prompt_tokens": 1472,
+    "timing": {
+      "wall_s": 10.871,
+      "total_duration_s": 10.8681,
+      "load_duration_s": 0.0074,
+      "prompt_eval_count": 1289,
+      "prompt_eval_duration_s": 0.2182,
+      "eval_count": 514,
+      "eval_duration_s": 10.0611,
+      "tokens_per_s": 51.1,
+      "prompt_tokens_per_s": 5907.4
+    },
+    "memory": {
+      "ollama_model_size_bytes": 3237478399,
+      "ollama_size_vram_bytes": 3237478399,
+      "ollama_process_rss_bytes": 206290944,
+      "harness_max_rss_bytes": 33357824,
+      "sampled_at": "2026-09-30T05:51:27Z"
+    },
+    "response_chars": 2491,
+    "ok": true,
+    "error": null,
+    "dump_file": "ingest/calls/224957-006-note-class-5-prompting-and-retrieval-notes-structuring-prompts-as-product-interface.json"
+  }
+}

@@ -71,7 +71,7 @@ Times are Pacific. Status is as of 2026-09-29.
 | [Assignment 1](https://bcourses.berkeley.edu/courses/1555592/assignments/9130917) | 9/8, 11:59 PM | 10 | Submitted 9/8, 11:24 PM, graded 10 of 10 on 9/14 | [assignment-01/ASSIGNMENT.md](assignment-01/ASSIGNMENT.md) |
 | [Assignment 2](https://bcourses.berkeley.edu/courses/1555592/assignments/9130935) | 9/15, 11:59 PM | 10 | Submitted 9/14, 12:53 AM, graded 9.81 of 10 on 9/20 | [assignment-02/ASSIGNMENT.md](assignment-02/ASSIGNMENT.md) |
 | [Assignment 3](https://bcourses.berkeley.edu/courses/1555592/assignments/9130938) | 9/22, 11:59 PM | 10 | Submitted 9/22, 3:37 PM, from [assignment-03/](assignment-03/) | [assignment-03/ASSIGNMENT.md](assignment-03/ASSIGNMENT.md) |
-| [Assignment 4](https://bcourses.berkeley.edu/courses/1555592/assignments/9130939) | 9/29, 11:59 PM | 10 | In progress, from [assignment-04/](assignment-04/) | [assignment-04/ASSIGNMENT.md](assignment-04/ASSIGNMENT.md) |
+| [Assignment 4](https://bcourses.berkeley.edu/courses/1555592/assignments/9130939) | 9/29, 11:59 PM | 10 | Submitted 9/29 from [assignment-04/](assignment-04/) | [assignment-04/ASSIGNMENT.md](assignment-04/ASSIGNMENT.md) |
 | [Assignment 5](https://bcourses.berkeley.edu/courses/1555592/assignments/9130940) | 10/13, 11:59 PM | 20 | Unsubmitted | No description posted yet |
 | [Academic Integrity Assignment](https://bcourses.berkeley.edu/courses/1555592/assignments/9145855) | 9/26, 12:59 AM | 1 (not counted) | Unsubmitted | Completed through the Academic Integrity tool in the bCourses course nav |
 

@@ -1,0 +1,58 @@
+{
+  "kind": "note",
+  "label": "Training Budget and Hardware Details",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You write one note for a personal wiki from text the owner wrote. Reply with the note body in Markdown and nothing else, using exactly these three headings in this order:\n\n## Summary\nTwo to four sentences: what this note covers and its main result or point.\n\n## Details\nThe substance, in short paragraphs or bullet lists. Keep every number, name, date, and setting exactly as the source text gives it. Keep the owner's first-person voice (\"I trained ...\"). Do not add facts, opinions, or background that the source text does not contain. Leave out anything that is not in the source text you were given.\n\n## Related\nZero to three lines, each \"- Title: why it relates\", using only titles from the allowed list, copied exactly. Write \"- none\" if nothing on the list relates.\n\nDo not write a top-level title, frontmatter, a Sources section, tables wider than four columns, or code blocks longer than five lines. Do not refer to \"the source\" or \"this note\"; just present the content. At most 400 words."
+    },
+    {
+      "role": "user",
+      "content": "Note title: Training Budget and Hardware Details\nPlanned summary: Documents the computational resources and steps used during model training.\nAllowed related titles: Assignment Model Training Overview; Model Performance and Results; Model Learning Mechanics Explained; Interacting with Trained Model; Model Customization Techniques Comparison; Prompting as Probability Steering; Structuring Prompts as Product Interfaces; LLM Behavior and Probabilistic Nature; Advanced Retrieval and Knowledge Hub\nSource file: Custom LLM README\nSections included: \"Training budget and hardware\"\n\nSource text:\n## Training budget and hardware\n| Run | Status | Completed steps | Training loop time | Whole notebook | Parameters | Vocabulary |\n| --- | --- | --- | --- | --- | --- | --- |\n| Setup check | completed | 10 | 0.1 s | 9.7 s | 111,872 | 136 |\n| Starter corpus | completed | 3,000 | 7.6 s | 11.7 s | 111,872 | 136 |\n| Corpus extension | completed | 3,000 | 12.2 s | 17.3 s | 130,496 | 427 |\n| Optional, 6,000 steps | completed | 6,000 | 23.0 s | 27.8 s | 130,496 | 427 |\n\nNo run was interrupted or failed. The training loop time is `elapsed_seconds` from each run's `training_summary.json`, and the whole-notebook time is the wall-clock time my shell reported for the run script, which no file records and which includes starting the kernel, generating the corpus, both eval passes, the inspection, and saving the ZIP. For the two expanded runs a repeat of each at the same settings produced the same weights. The setup check is the 10-step run the assignment suggests, whose summary, config, loss table, samples, and eval comparison are in [results/setup-check/](results/setup-check/). Its evals stayed at 9 of 48 after 10 steps, with the losses only down from 4.93 to 4.21, which is what a setup check should look like. The starter run's files are [config.json](results/starter/config.json), [training.csv](results/starter/training.csv), and [training_summary.json](results/starter/training_summary.json), the corpus-extension run's are [config.json](results/expanded/config.json), [training.csv](results/expanded/training.csv), and [training_summary.json](results/expanded/training_summary.json), and the optional run's are [config.json](results/expanded-6000-steps/config.json), [training.csv](results/expanded-6000-steps/training.csv), and [training_summary.json](results/expanded-6000-steps/training_summary.json).\n\nI trained on an Apple M4 Pro laptop with 12 CPU cores and 24 GB of memory running macOS 26.3, on the CPU, which is the notebook's default and caps PyTorch at four threads. The software was Python 3.13.15, PyTorch 2.14.0, NumPy 2.5.3, and pypdf 6.19.0. The course's reference run was on a Mac with the same PyTorch version, which is probably why the starter run reproduced it exactly."
+    }
+  ],
+  "response": "## Summary\nThis note details the computational resources and steps used during model training, presenting a table summarizing four distinct runs. The main point is that I trained on an Apple M4 Pro laptop using specific software versions, and the results for the expanded runs were reproducible.\n\n## Details\nI trained on an Apple M4 Pro laptop with 12 CPU cores and 24 GB of memory running macOS 26.3, on the CPU, which is the notebook's default and caps PyTorch at four threads. The software was Python 3.13.15, PyTorch 2.14.0, NumPy 2.5.3, and pypdf 6.19.0. The course's reference run was on a Mac with the same PyTorch version, which is probably why the starter run reproduced it exactly.\n\nThe training runs were:\n*   Setup check: completed, 10 steps, 0.1 s, 9.7 s, 111,872 parameters, 136 vocabulary.\n*   Starter corpus: completed, 3,000 steps, 7.6 s, 11.7 s, 111,872 parameters, 136 vocabulary.\n*   Corpus extension: completed, 3,000 steps, 12.2 s, 17.3 s, 130,496 parameters, 427 vocabulary.\n*   Optional, 6,000 steps: completed, 6,000 steps, 23.0 s, 27.8 s, 130,496 parameters, 427 vocabulary.\n\nNo run was interrupted or failed. The training loop time is `elapsed_seconds` from each run's `training_summary.json`, and the whole-notebook time is the wall-clock time my shell reported for the run script. For the two expanded runs a repeat of each at the same settings produced the same weights.\n\n## Related\n- Assignment Model Training Overview: The setup check is the 10-step run the assignment suggests, whose summary, config, loss table, samples, and eval comparison are in [results/setup-check/](results/setup-check/).",
+  "error": null,
+  "model": {
+    "backend": "ollama",
+    "tag": "gemma4:e4b",
+    "digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb",
+    "parameter_size": "8.0B",
+    "quantization_level": "Q4_K_M",
+    "family": "gemma4",
+    "context_length": 131072,
+    "ollama_version": "0.35.0",
+    "size_bytes": 9608350718
+  },
+  "record": {
+    "kind": "note",
+    "attempt": 1,
+    "system_chars": 998,
+    "user_chars": 2794,
+    "payload_chars": 2201,
+    "payload_capped": false,
+    "est_prompt_tokens": 948,
+    "timing": {
+      "wall_s": 15.859,
+      "total_duration_s": 15.8539,
+      "load_duration_s": 0.0138,
+      "prompt_eval_count": 1036,
+      "prompt_eval_duration_s": 2.4799,
+      "eval_count": 492,
+      "eval_duration_s": 13.275,
+      "tokens_per_s": 37.1,
+      "prompt_tokens_per_s": 417.8
+    },
+    "memory": {
+      "ollama_model_size_bytes": 3237478399,
+      "ollama_size_vram_bytes": 3237478399,
+      "ollama_process_rss_bytes": 4320854016,
+      "harness_max_rss_bytes": 32702464,
+      "sampled_at": "2026-09-30T02:03:58Z"
+    },
+    "response_chars": 1627,
+    "ok": true,
+    "error": null,
+    "dump_file": "ingest/calls/190033-012-note-custom-llm-readme-training-budget-and-hardware-details.json"
+  }
+}

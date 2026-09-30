@@ -1,0 +1,58 @@
+{
+  "kind": "note",
+  "label": "Performance Analysis Before Runs",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You write one note for a personal wiki from text the owner wrote. Reply with the note body in Markdown and nothing else, using exactly these three headings in this order:\n\n## Summary\nTwo to four sentences: what this note covers and its main result or point.\n\n## Details\nThe substance, in short paragraphs or bullet lists. Keep every number, name, date, and setting exactly as the source text gives it. Keep the owner's first-person voice (\"I trained ...\"). Do not add facts, opinions, or background that the source text does not contain. Leave out anything that is not in the source text you were given.\n\n## Related\nZero to three lines, each \"- Title: why it relates\", using only titles from the allowed list, copied exactly. Write \"- none\" if nothing on the list relates.\n\nDo not write a top-level title, frontmatter, a Sources section, tables wider than four columns, or code blocks longer than five lines. Do not refer to \"the source\" or \"this note\"; just present the content. At most 400 words."
+    },
+    {
+      "role": "user",
+      "content": "Note title: Performance Analysis Before Runs\nPlanned summary: Recording and comparing expected performance metrics before the agent's training runs began.\nAllowed related titles: Assignment Overview and Requirements Pac-Man; Running the DQN Notebook; Agent Hyperparameter Tuning Choices; Agent Training Results and Limitations; Model Customization Techniques Comparison; Model Learning Mechanics Explained; Prompting as Probability Steering; Structuring Prompts as Product Interfaces; LLM Behavior and Probabilistic Nature; Advanced Retrieval and Knowledge Hub; Assignment Model Training Overview; Assignment Overview and Requirements; Database Schema and Auth; Interacting with Trained Model; Local Setup and Deployment Details; Model Performance and Results; Technology Stack and Architecture; Training Budget and Hardware Details; Web App Walkthrough Screenshots\nSource file: Pac-Man DQN README\nSections included: \"What I expected before each run\"\n\nSource text:\n## What I expected before each run\nI recorded both predictions before the runs started. Before the first run, I expected a clear gain over the untrained network, whose five-game average had been 492 in the 9/8 and 9/9 setup checks, but with a lot of swing from one game to the next. My reasoning was that 500 games is a hundred times the five-game check, where the trained agent actually scored worse than the untrained one, and that 10% exploration keeps training closer to the way the agent gets scored.\n\nBefore the final run, I expected its agent to land near the 1,033 average that the 450-game checkpoint had scored on 50 test games, described below, but five games is a small sample, so I wouldn't have been surprised by anything from roughly 500 to 1,500."
+    }
+  ],
+  "response": "## Summary\nThis note details the expected performance metrics recorded before the agent's training runs. The initial expectation was a significant improvement over the untrained network, which showed high variance across five-game checks. For the final run, I anticipated the agent's score to be near the 1,033 average achieved by the 450-game checkpoint on 50 test games.\n\n## Details\nI recorded both predictions before the runs started.\n\nBefore the first run, I expected a clear gain over the untrained network, whose five-game average had been 492 in the 9/8 and 9/9 setup checks, but with a lot of swing from one game to the next. My reasoning was that 500 games is a hundred times the five-game check, where the trained agent actually scored worse than the untrained one, and that 10% exploration keeps training closer to the way the agent gets scored.\n\nBefore the final run, I expected its agent to land near the 1,033 average that the 450-game checkpoint had scored on 50 test games, described below, but five games is a small sample, so I wouldn't have been surprised by anything from roughly 500 to 1,500.\n\n## Related\n- Assignment Model Training Overview: This note discusses performance expectations before training runs.\n- Model Performance and Results: The note compares expected performance to previous checkpoint scores.",
+  "error": null,
+  "model": {
+    "backend": "ollama",
+    "tag": "gemma4:e4b",
+    "digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb",
+    "parameter_size": "8.0B",
+    "quantization_level": "Q4_K_M",
+    "family": "gemma4",
+    "context_length": 131072,
+    "ollama_version": "0.35.0",
+    "size_bytes": 9608350718
+  },
+  "record": {
+    "kind": "note",
+    "attempt": 1,
+    "system_chars": 998,
+    "user_chars": 1727,
+    "payload_chars": 762,
+    "payload_capped": false,
+    "est_prompt_tokens": 682,
+    "timing": {
+      "wall_s": 6.917,
+      "total_duration_s": 6.914,
+      "load_duration_s": 0.0044,
+      "prompt_eval_count": 603,
+      "prompt_eval_duration_s": 1.152,
+      "eval_count": 308,
+      "eval_duration_s": 5.6819,
+      "tokens_per_s": 54.2,
+      "prompt_tokens_per_s": 523.4
+    },
+    "memory": {
+      "ollama_model_size_bytes": 3237478399,
+      "ollama_size_vram_bytes": 3237478399,
+      "ollama_process_rss_bytes": 333479936,
+      "harness_max_rss_bytes": 33357824,
+      "sampled_at": "2026-09-30T05:57:14Z"
+    },
+    "response_chars": 1333,
+    "ok": true,
+    "error": null,
+    "dump_file": "ingest/calls/224957-027-note-pac-man-dqn-readme-performance-analysis-before-runs.json"
+  }
+}

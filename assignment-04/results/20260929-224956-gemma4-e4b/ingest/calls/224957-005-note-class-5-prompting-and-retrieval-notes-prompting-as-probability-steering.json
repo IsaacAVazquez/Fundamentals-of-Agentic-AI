@@ -1,0 +1,58 @@
+{
+  "kind": "note",
+  "label": "Prompting as Probability Steering",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You write one note for a personal wiki from text the owner wrote. Reply with the note body in Markdown and nothing else, using exactly these three headings in this order:\n\n## Summary\nTwo to four sentences: what this note covers and its main result or point.\n\n## Details\nThe substance, in short paragraphs or bullet lists. Keep every number, name, date, and setting exactly as the source text gives it. Keep the owner's first-person voice (\"I trained ...\"). Do not add facts, opinions, or background that the source text does not contain. Leave out anything that is not in the source text you were given.\n\n## Related\nZero to three lines, each \"- Title: why it relates\", using only titles from the allowed list, copied exactly. Write \"- none\" if nothing on the list relates.\n\nDo not write a top-level title, frontmatter, a Sources section, tables wider than four columns, or code blocks longer than five lines. Do not refer to \"the source\" or \"this note\"; just present the content. At most 400 words."
+    },
+    {
+      "role": "user",
+      "content": "Note title: Prompting as Probability Steering\nPlanned summary: Understanding prompting as steering the model's probability distribution.\nAllowed related titles: LLM Behavior and Probabilistic Nature; Model Customization Techniques Comparison; Structuring Prompts as Product Interfaces; Advanced Retrieval and Knowledge Hub\nSource file: Class 5 Prompting and Retrieval Notes\nSections included: \"Prompting Is Probability Steering\", \"Don’t Mistake the Mask for the Model\", \"Attention Failure — The Model Answers the Wrong Question\", \"Why Voice-to-Text Prompts Can Help\", \"LLMs Do Not Start Fresh Per Message\", \"Context Is Everything\", \"Prompts Are Product Interfaces\"\n\nSource text:\n## Prompting Is Probability Steering\nPrompting is not magic. It is guidance.\n\nWhen you add detail, examples, constraints, and formatting requirements, you are shrinking the space of acceptable continuations and making the “right” answer more likely.\n\n**Theoretical Reason Specific Prompts Work**\n\nSpecific prompts reduce ambiguity. Less ambiguity means lower entropy in the next-token distribution, so the model is less likely to wander into the wrong answer shape.\n\n## Don’t Mistake the Mask for the Model\n**Important**\n\nWhatever polite, helpful voice comes out of the API — underneath is a **next-token predictor trained on the internet**, shaped by RLHF into something that sounds human. Prompt it like a tool, not a colleague. You’ll design better.\n\n## Attention Failure — The Model Answers the Wrong Question\nSame prompt, two tries. The first misses the intent entirely — only a follow-up aligns it.\n\n**Important**\n\nThe model isn’t stupid — it’s **under-specified**. Attention latched onto *“should I drive or walk”* (a distance question) and ignored that the car is the whole point. This is the everyday failure mode prompting exists to fix.\n\n## Why Voice-to-Text Prompts Can Help\nMany people get better results when they **talk** to the model instead of typing a short command.\n\nWhy?\n\n- speech naturally includes more context\n- people say the edge cases they would have omitted\n- they explain intent, not just task labels\n- longer natural prompts often reduce ambiguity\n\n**How to do it**\n\n- **WhisperFlow** — free app, transcribes anywhere you can type (works system-wide)\n- **Mac dictation** — press 🎤 on the keyboard or double-tap Fn\n- **Claude / ChatGPT voice** — tap the mic icon in the app to speak your prompt directly\n\nDictate the messy version first. Then tighten it into bullets, constraints, examples, and output format.\n\n## LLMs Do Not Start Fresh Per Message\nOne of the most important chat mental models:\n\nthe model does **not** think of your second message as “a totally new brain state.”\n\nIt starts fresh per **API request**, but the request usually includes the conversation so far.\n\n- chat apps feel continuous\n- the model itself is still stateless between requests\n- continuity comes from resending context\n- that is why earlier messages still affect later answers\n\n## Context Is Everything\nEvery word the model reads — system prompt, chat history, your latest message — is **context**. Context is what steers the probability distribution toward the right answer.\n\nThis is why good prompts work: they add context. Vague prompts fail because they leave the model guessing.\n\n## Prompts Are Product Interfaces\n"
+    }
+  ],
+  "response": "## Summary\nPrompting functions as guidance, effectively steering the model's probability distribution by reducing ambiguity. When you add detail, examples, constraints, and formatting requirements, you make the desired answer more probable. The core concept is that context, which is provided through prompts, is what directs the model's output.\n\n## Details\n*   **Prompting Is Probability Steering**\n    *   When you add detail, examples, constraints, and formatting requirements, you are shrinking the space of acceptable continuations and making the “right” answer more likely.\n    *   Specific prompts reduce ambiguity. Less ambiguity means lower entropy in the next-token distribution, so the model is less likely to wander into the wrong answer shape.\n*   **Don’t Mistake the Mask for the Model**\n    *   Underneath is a **next-token predictor trained on the internet**, shaped by RLHF into something that sounds human. Prompt it like a tool, not a colleague.\n*   **Attention Failure — The Model Answers the Wrong Question**\n    *   The model isn’t stupid — it’s **under-specified**.\n*   **Why Voice-to-Text Prompts Can Help**\n    *   People get better results when they **talk** to the model instead of typing a short command because speech naturally includes more context, people say the edge cases they would have omitted, they explain intent, not just task labels, and longer natural prompts often reduce ambiguity.\n    *   To do it: Use **WhisperFlow** (free app, transcribes anywhere you can type), **Mac dictation** (press 🎤 on the keyboard or double-tap Fn), or **Claude / ChatGPT voice** (tap the mic icon in the app).\n    *   Dictate the messy version first. Then tighten it into bullets, constraints, examples, and output format.\n*   **LLMs Do Not Start Fresh Per Message**\n    *   The model does **not** think of your second message as “a totally new brain state.”\n    *   It starts fresh per **API request**, but the request usually includes the conversation so far.\n    *   Continuity comes from resending context.\n*   **Context Is Everything**\n    *   Every word the model reads — system prompt, chat history, your latest message — is **context**. Context is what steers the probability distribution toward the right answer.\n*   **Prompts Are Product Interfaces**\n\n## Related\n- LLM Behavior and Probabilistic Nature: Prompting Is Probability Steering\n- Context Is Everything: Context Is Everything\n- Structuring Prompts as Product Interfaces: Prompts Are Product Interfaces",
+  "error": null,
+  "model": {
+    "backend": "ollama",
+    "tag": "gemma4:e4b",
+    "digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb",
+    "parameter_size": "8.0B",
+    "quantization_level": "Q4_K_M",
+    "family": "gemma4",
+    "context_length": 131072,
+    "ollama_version": "0.35.0",
+    "size_bytes": 9608350718
+  },
+  "record": {
+    "kind": "note",
+    "attempt": 1,
+    "system_chars": 998,
+    "user_chars": 3310,
+    "payload_chars": 2631,
+    "payload_capped": false,
+    "est_prompt_tokens": 1077,
+    "timing": {
+      "wall_s": 11.375,
+      "total_duration_s": 11.3538,
+      "load_duration_s": 0.0028,
+      "prompt_eval_count": 957,
+      "prompt_eval_duration_s": 0.1897,
+      "eval_count": 556,
+      "eval_duration_s": 10.6842,
+      "tokens_per_s": 52.0,
+      "prompt_tokens_per_s": 5044.8
+    },
+    "memory": {
+      "ollama_model_size_bytes": 3237478399,
+      "ollama_size_vram_bytes": 3237478399,
+      "ollama_process_rss_bytes": 202539008,
+      "harness_max_rss_bytes": 33357824,
+      "sampled_at": "2026-09-30T05:51:16Z"
+    },
+    "response_chars": 2493,
+    "ok": true,
+    "error": null,
+    "dump_file": "ingest/calls/224957-005-note-class-5-prompting-and-retrieval-notes-prompting-as-probability-steering.json"
+  }
+}

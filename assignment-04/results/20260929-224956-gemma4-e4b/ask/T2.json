@@ -1,0 +1,321 @@
+{
+  "id": "T2",
+  "run_id": "20260929-224956-gemma4-e4b",
+  "question": "Why did the last Ms. Pac-Man run stop at fewer games than the first one?",
+  "mode": "local",
+  "backend": "ollama",
+  "model": {
+    "backend": "ollama",
+    "tag": "gemma4:e4b",
+    "digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb",
+    "parameter_size": "8.0B",
+    "quantization_level": "Q4_K_M",
+    "family": "gemma4",
+    "context_length": 131072,
+    "ollama_version": "0.35.0",
+    "size_bytes": 9608350718
+  },
+  "options": {
+    "temperature": 0.0,
+    "num_ctx": 8192,
+    "num_predict": 400,
+    "seed": 0
+  },
+  "retrieval": {
+    "k": 6,
+    "scope": "all",
+    "index_built_at": "2026-09-30T05:57:37Z",
+    "index_passages": 324,
+    "query_terms": [
+      "fewer",
+      "first",
+      "game",
+      "last",
+      "man",
+      "ms",
+      "one",
+      "pac",
+      "run",
+      "stop"
+    ],
+    "passages": [
+      {
+        "n": 1,
+        "path": "raw/Pac-Man DQN README.md",
+        "kind": "raw",
+        "heading": "One limitation and the next experiment",
+        "heading_path": [
+          "Ms. Pac-Man DQN",
+          "One limitation and the next experiment"
+        ],
+        "lines": [
+          205,
+          205
+        ],
+        "score": 26.392,
+        "chars": 777,
+        "matched_terms": [
+          "first",
+          "game",
+          "last",
+          "man",
+          "ms",
+          "one",
+          "pac",
+          "run",
+          "stop"
+        ],
+        "id": "3adb8f2c88a9",
+        "text": "The limitation I saw most clearly is that the agent never settled on a way of playing. The move it chose most often kept switching between checkpoints, and across the first run's 20 checkpoints, the same 30 validation games averaged anywhere from 418 to 1,182 depending on which checkpoint played them, with no steady climb, so where a run happens to stop decides most of the result. Stopping at 450 games worked around that for this submission, but it doesn't remove the swings, and the best stopping point probably moves with any other change to the settings. My guess at the cause is the small replay memory, which holds the last 5,000 decisions, or only about eight games at this agent's pace, so each update mostly reflects the last few games. I haven't tested that guess.",
+        "sent_to_model": true
+      },
+      {
+        "n": 2,
+        "path": "raw/Pac-Man DQN README.md",
+        "kind": "raw",
+        "heading": "The first run, 500 games",
+        "heading_path": [
+          "Ms. Pac-Man DQN",
+          "What happened",
+          "The first run, 500 games"
+        ],
+        "lines": [
+          90,
+          92
+        ],
+        "score": 20.082,
+        "chars": 766,
+        "matched_terms": [
+          "first",
+          "game",
+          "man",
+          "ms",
+          "one",
+          "pac",
+          "run"
+        ],
+        "id": "356f9d1eefbd",
+        "text": "Looking at which moves the agents chose explained more than the scores did. The untrained network pushes the joystick up and to the left on 96% of its moves across the five evaluation games, so the 492 baseline is really what holding one diagonal gets you. The final 500-game agent mostly chose no move at all, on 70% of its moves across the five games and on 80 to 88% of them in four of the five. Its best game, the 730 on seed 101, is also the game where it held up and to the left the most, and that's the game both of the run's final GIFs show, because the best-of-five GIF and the 500-game progress sample came out as the same file.\n\n![The first run's final agent in its best evaluation game, seed 101, which scored 730](results/500-games/demos/final_best.gif)",
+        "sent_to_model": true
+      },
+      {
+        "n": 3,
+        "path": "raw/Pac-Man DQN README.md",
+        "kind": "raw",
+        "heading": "Ms. Pac-Man DQN",
+        "heading_path": [
+          "Ms. Pac-Man DQN"
+        ],
+        "lines": [
+          3,
+          3
+        ],
+        "score": 20.042,
+        "chars": 840,
+        "matched_terms": [
+          "first",
+          "game",
+          "man",
+          "ms",
+          "one",
+          "pac",
+          "run"
+        ],
+        "id": "363f9b7d5ecc",
+        "text": "I trained this agent for Assignment 2 of Fundamentals of Agentic AI. It's the course's Deep Q-Network notebook for Ms. Pac-Man, run on my laptop with 10% exploration and a learning rate of 0.0001. I ran it twice, and the only difference between the two runs is the number of training games. My first run trained for 500 games, and its final agent averaged 400 on the five evaluation games against 492 for the untrained network. When I replayed every checkpoint that run saved on games the notebook never uses, the agent saved after 450 games turned out to be far better than the one the run ended with, so I reran the notebook with 450 games. The notebook in this folder is that second run, executed start to finish with every output saved, and its agent averaged 946 on the same five evaluation games against 492 for the untrained network.",
+        "sent_to_model": true
+      },
+      {
+        "n": 4,
+        "path": "raw/Pac-Man DQN README.md",
+        "kind": "raw",
+        "heading": "The first run, 500 games",
+        "heading_path": [
+          "Ms. Pac-Man DQN",
+          "What happened",
+          "The first run, 500 games"
+        ],
+        "lines": [
+          77,
+          88
+        ],
+        "score": 19.939,
+        "chars": 986,
+        "matched_terms": [
+          "first",
+          "game",
+          "last",
+          "man",
+          "ms",
+          "pac",
+          "run"
+        ],
+        "id": "8ef9bda8866a",
+        "text": "| Evaluation game (seed) | Untrained network | Trained network |\n| --- | --- | --- |\n| 1 (seed 101) | 350 | 730 |\n| 2 (seed 202) | 500 | 190 |\n| 3 (seed 303) | 320 | 460 |\n| 4 (seed 404) | 800 | 360 |\n| 5 (seed 505) | 490 | 260 |\n| Mean | 492.0 | 400.0 |\n\nThe full record is in [results/500-games/comparison.json](results/500-games/comparison.json). The trained agent beat the untrained network on two of the five games and lost on three, and its average came out 92 points lower. Its training scores never climbed for long either. In the dashboard below, the 25-game average stays between about 580 and 1,020 from the fifth game to the last, while the loss rose from about 0.02 to about 0.13, which fits the notebook's warning that lower loss doesn't mean better play, or in this case that higher loss doesn't mean worse play.\n\n![Training dashboard for the first run, with raw training scores, mean update loss, and exploration over 500 games](results/500-games/training_dashboard.png)",
+        "sent_to_model": true
+      },
+      {
+        "n": 5,
+        "path": "raw/Pac-Man DQN README.md",
+        "kind": "raw",
+        "heading": "Checking the checkpoints on games the notebook never plays",
+        "heading_path": [
+          "Ms. Pac-Man DQN",
+          "What happened",
+          "Checking the checkpoints on games the notebook never plays"
+        ],
+        "lines": [
+          118,
+          118
+        ],
+        "score": 19.921,
+        "chars": 559,
+        "matched_terms": [
+          "first",
+          "game",
+          "man",
+          "ms",
+          "one",
+          "pac",
+          "run"
+        ],
+        "id": "af4e5bbc06a7",
+        "text": "Training on this laptop also repeats exactly. When I reran the first 25 games with the same settings, every game's score, decision count, and loss matched, and so did the network's weights afterward, which meant a 450-game run should end on that same 450-game agent. Episodes is one of the three settings the assignment lets me choose. The first run's weak score on the five leaderboard games is what sent me looking at the checkpoints, but I picked 450 using only these extra games, so the leaderboard games' scores played no part in choosing the checkpoint.",
+        "sent_to_model": true
+      },
+      {
+        "n": 6,
+        "path": "raw/Pac-Man DQN README.md",
+        "kind": "raw",
+        "heading": "What I expected before each run",
+        "heading_path": [
+          "Ms. Pac-Man DQN",
+          "What I expected before each run"
+        ],
+        "lines": [
+          69,
+          71
+        ],
+        "score": 19.658,
+        "chars": 727,
+        "matched_terms": [
+          "first",
+          "game",
+          "man",
+          "ms",
+          "one",
+          "pac",
+          "run"
+        ],
+        "id": "6e67b7c3349f",
+        "text": "I recorded both predictions before the runs started. Before the first run, I expected a clear gain over the untrained network, whose five-game average had been 492 in the 9/8 and 9/9 setup checks, but with a lot of swing from one game to the next. My reasoning was that 500 games is a hundred times the five-game check, where the trained agent actually scored worse than the untrained one, and that 10% exploration keeps training closer to the way the agent gets scored.\n\nBefore the final run, I expected its agent to land near the 1,033 average that the 450-game checkpoint had scored on 50 test games, described below, but five games is a small sample, so I wouldn't have been surprised by anything from roughly 500 to 1,500.",
+        "sent_to_model": true
+      }
+    ]
+  },
+  "prompt": {
+    "system_file": "wiki-instructions.md",
+    "system_sha256": "57bc582fc52f0ff250cb6686d539957d3107e7a6381617b9b45f6f168c69c3c5",
+    "system_chars": 1450,
+    "user_chars": 5326,
+    "passage_chars": 4655,
+    "passages_sent": 6,
+    "estimated_tokens": 1694,
+    "user_message": "Passages:\n\n[1] raw/Pac-Man DQN README.md # One limitation and the next experiment (lines 205-205)\nThe limitation I saw most clearly is that the agent never settled on a way of playing. The move it chose most often kept switching between checkpoints, and across the first run's 20 checkpoints, the same 30 validation games averaged anywhere from 418 to 1,182 depending on which checkpoint played them, with no steady climb, so where a run happens to stop decides most of the result. Stopping at 450 games worked around that for this submission, but it doesn't remove the swings, and the best stopping point probably moves with any other change to the settings. My guess at the cause is the small replay memory, which holds the last 5,000 decisions, or only about eight games at this agent's pace, so each update mostly reflects the last few games. I haven't tested that guess.\n\n[2] raw/Pac-Man DQN README.md # The first run, 500 games (lines 90-92)\nLooking at which moves the agents chose explained more than the scores did. The untrained network pushes the joystick up and to the left on 96% of its moves across the five evaluation games, so the 492 baseline is really what holding one diagonal gets you. The final 500-game agent mostly chose no move at all, on 70% of its moves across the five games and on 80 to 88% of them in four of the five. Its best game, the 730 on seed 101, is also the game where it held up and to the left the most, and that's the game both of the run's final GIFs show, because the best-of-five GIF and the 500-game progress sample came out as the same file.\n\n![The first run's final agent in its best evaluation game, seed 101, which scored 730](results/500-games/demos/final_best.gif)\n\n[3] raw/Pac-Man DQN README.md # Ms. Pac-Man DQN (lines 3-3)\nI trained this agent for Assignment 2 of Fundamentals of Agentic AI. It's the course's Deep Q-Network notebook for Ms. Pac-Man, run on my laptop with 10% exploration and a learning rate of 0.0001. I ran it twice, and the only difference between the two runs is the number of training games. My first run trained for 500 games, and its final agent averaged 400 on the five evaluation games against 492 for the untrained network. When I replayed every checkpoint that run saved on games the notebook never uses, the agent saved after 450 games turned out to be far better than the one the run ended with, so I reran the notebook with 450 games. The notebook in this folder is that second run, executed start to finish with every output saved, and its agent averaged 946 on the same five evaluation games against 492 for the untrained network.\n\n[4] raw/Pac-Man DQN README.md # The first run, 500 games (lines 77-88)\n| Evaluation game (seed) | Untrained network | Trained network |\n| --- | --- | --- |\n| 1 (seed 101) | 350 | 730 |\n| 2 (seed 202) | 500 | 190 |\n| 3 (seed 303) | 320 | 460 |\n| 4 (seed 404) | 800 | 360 |\n| 5 (seed 505) | 490 | 260 |\n| Mean | 492.0 | 400.0 |\n\nThe full record is in [results/500-games/comparison.json](results/500-games/comparison.json). The trained agent beat the untrained network on two of the five games and lost on three, and its average came out 92 points lower. Its training scores never climbed for long either. In the dashboard below, the 25-game average stays between about 580 and 1,020 from the fifth game to the last, while the loss rose from about 0.02 to about 0.13, which fits the notebook's warning that lower loss doesn't mean better play, or in this case that higher loss doesn't mean worse play.\n\n![Training dashboard for the first run, with raw training scores, mean update loss, and exploration over 500 games](results/500-games/training_dashboard.png)\n\n[5] raw/Pac-Man DQN README.md # Checking the checkpoints on games the notebook never plays (lines 118-118)\nTraining on this laptop also repeats exactly. When I reran the first 25 games with the same settings, every game's score, decision count, and loss matched, and so did the network's weights afterward, which meant a 450-game run should end on that same 450-game agent. Episodes is one of the three settings the assignment lets me choose. The first run's weak score on the five leaderboard games is what sent me looking at the checkpoints, but I picked 450 using only these extra games, so the leaderboard games' scores played no part in choosing the checkpoint.\n\n[6] raw/Pac-Man DQN README.md # What I expected before each run (lines 69-71)\nI recorded both predictions before the runs started. Before the first run, I expected a clear gain over the untrained network, whose five-game average had been 492 in the 9/8 and 9/9 setup checks, but with a lot of swing from one game to the next. My reasoning was that 500 games is a hundred times the five-game check, where the trained agent actually scored worse than the untrained one, and that 10% exploration keeps training closer to the way the agent gets scored.\n\nBefore the final run, I expected its agent to land near the 1,033 average that the 450-game checkpoint had scored on 50 test games, described below, but five games is a small sample, so I wouldn't have been surprised by anything from roughly 500 to 1,500.\n\nQuestion: Why did the last Ms. Pac-Man run stop at fewer games than the first one?\n\nAnswer from the passages above with [n] citations, or start with \"Insufficient evidence:\"."
+  },
+  "answer": {
+    "text": "You reran the notebook with 450 games because the agent saved after 450 games was much better than the one the initial 500-game run ended with [3]. You chose 450 games by looking at checkpoints using only extra games, meaning the scores from the five leaderboard games did not influence your decision on the checkpoint [5].",
+    "raw": "You reran the notebook with 450 games because the agent saved after 450 games was much better than the one the initial 500-game run ended with [3]. You chose 450 games by looking at checkpoints using only extra games, meaning the scores from the five leaderboard games did not influence your decision on the checkpoint [5]."
+  },
+  "citations": [
+    {
+      "n": 3,
+      "valid": true,
+      "path": "raw/Pac-Man DQN README.md",
+      "heading": "Ms. Pac-Man DQN",
+      "lines": [
+        3,
+        3
+      ],
+      "kind": "raw"
+    },
+    {
+      "n": 5,
+      "valid": true,
+      "path": "raw/Pac-Man DQN README.md",
+      "heading": "Checking the checkpoints on games the notebook never plays",
+      "lines": [
+        118,
+        118
+      ],
+      "kind": "raw"
+    }
+  ],
+  "citation_check": {
+    "valid": 2,
+    "invalid": [],
+    "cited_paths": [
+      "raw/Pac-Man DQN README.md"
+    ],
+    "insufficient_marker": false,
+    "unverified_numbers": []
+  },
+  "status": "supported",
+  "timing": {
+    "wall_s": 5.088,
+    "total_duration_s": 5.0866,
+    "load_duration_s": 0.0014,
+    "prompt_eval_count": 1860,
+    "prompt_eval_duration_s": 3.3255,
+    "eval_count": 77,
+    "eval_duration_s": 1.3854,
+    "tokens_per_s": 55.6,
+    "prompt_tokens_per_s": 559.3
+  },
+  "memory": {
+    "ollama_model_size_bytes": 3237478399,
+    "ollama_size_vram_bytes": 3237478399,
+    "ollama_process_rss_bytes": 641335296,
+    "harness_max_rss_bytes": 38109184,
+    "sampled_at": "2026-09-30T05:57:49Z"
+  },
+  "offline": {
+    "source": "doctor.json",
+    "internet_reachable": false,
+    "probes": {
+      "tcp 1.1.1.1:443": "failed (OSError: [Errno 51] Network is unreachable)",
+      "tcp 8.8.8.8:53": "failed (OSError: [Errno 51] Network is unreachable)",
+      "dns pypi.org": "failed ([Errno 8] nodename nor servname provided, or not known)",
+      "https example.com": "failed (URLError)"
+    },
+    "checked_at": "2026-09-30T05:49:57Z",
+    "require_offline": true
+  },
+  "assessment": {
+    "expected_behavior": "answer",
+    "expected_sources": [
+      "raw/Pac-Man DQN README.md"
+    ],
+    "retrieval_hit": true,
+    "retrieval_hit_all": true,
+    "retrieved_any": [
+      "raw/Pac-Man DQN README.md"
+    ],
+    "expected_keywords": [
+      "450",
+      "checkpoint"
+    ],
+    "keywords_found": [
+      "450",
+      "checkpoint"
+    ],
+    "status_matches_expected": true,
+    "cited_expected_source": true,
+    "verdict": "pass",
+    "notes": "Phrased differently from the source, which says 'changed episodes to 450 and nothing else' because the checkpoint saved after 450 games was the best of the 20 on 30 validation games, confirmed on 50 more games (1,033 against 454).",
+    "human_assessment": null
+  },
+  "error": null,
+  "created_at": "2026-09-30T05:57:49Z",
+  "schema": "evidence-card/1"
+}

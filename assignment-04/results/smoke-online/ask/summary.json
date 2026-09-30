@@ -1,0 +1,75 @@
+{
+  "schema": "eval-summary/1",
+  "run_id": "smoke-online",
+  "questions_file": "tests/questions.json",
+  "results": [
+    {
+      "id": "T1",
+      "question": "What hardware did I train the nanoGPT model on for Assignment 3?",
+      "status": "supported",
+      "verdict": "check",
+      "retrieval_hit": true,
+      "keywords_found": [
+        "CPU"
+      ],
+      "cited_paths": [
+        "raw/Custom LLM README.md"
+      ],
+      "wall_s": 10.28,
+      "tokens_per_s": 51.7,
+      "model": "gemma4:e4b"
+    },
+    {
+      "id": "T2",
+      "question": "Why did the last Ms. Pac-Man run stop at fewer games than the first one?",
+      "status": "supported",
+      "verdict": "pass",
+      "retrieval_hit": true,
+      "keywords_found": [
+        "450",
+        "checkpoint"
+      ],
+      "cited_paths": [
+        "raw/Pac-Man DQN README.md"
+      ],
+      "wall_s": 4.777,
+      "tokens_per_s": 51.8,
+      "model": "gemma4:e4b"
+    },
+    {
+      "id": "T3",
+      "question": "What machine did I use for Assignments 2 and 3, and did either use the GPU?",
+      "status": "supported",
+      "verdict": "pass",
+      "retrieval_hit": true,
+      "keywords_found": [
+        "M4 Pro",
+        "MPS",
+        "CPU"
+      ],
+      "cited_paths": [
+        "raw/Custom LLM README.md",
+        "raw/Pac-Man DQN README.md",
+        "wiki/Projects/Assignment Model Training Overview.md",
+        "wiki/Projects/Training Budget and Hardware Details Pac-Man.md"
+      ],
+      "wall_s": 4.886,
+      "tokens_per_s": 51.8,
+      "model": "gemma4:e4b"
+    },
+    {
+      "id": "T4",
+      "question": "What grade did I receive on Assignment 2?",
+      "status": "partial",
+      "verdict": "fail",
+      "retrieval_hit": null,
+      "keywords_found": [],
+      "cited_paths": [
+        "wiki/Projects/Assignment DQN Training Overview.md"
+      ],
+      "wall_s": 3.705,
+      "tokens_per_s": 52.5,
+      "model": "gemma4:e4b"
+    }
+  ]
+}
