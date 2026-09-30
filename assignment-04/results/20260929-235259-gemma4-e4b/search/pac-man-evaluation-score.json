@@ -1,0 +1,167 @@
+{
+  "schema": "search/1",
+  "query": "Pac-Man evaluation score",
+  "k": 6,
+  "scope": "all",
+  "index": {
+    "built_at": "2026-09-30T06:53:01Z",
+    "passages": 321,
+    "raw_passages": 232,
+    "wiki_passages": 89,
+    "terms": 2891,
+    "files": 24
+  },
+  "created_at": "2026-09-30T06:53:27Z",
+  "model_called": false,
+  "hits": [
+    {
+      "n": 1,
+      "path": "wiki/Projects/Pac-Man DQN Results and Limitations.md",
+      "kind": "wiki",
+      "heading": "The final run, 450 games",
+      "heading_path": [
+        "Pac-Man DQN Results and Limitations",
+        "Details",
+        "The final run, 450 games"
+      ],
+      "lines": [
+        45,
+        45
+      ],
+      "score": 13.084,
+      "chars": 317,
+      "matched_terms": [
+        "evaluation",
+        "man",
+        "pac",
+        "score"
+      ],
+      "id": "c02cc6ecbc42",
+      "text": "On the five evaluation games, the final agent beat the untrained network on three and lost on two, with an average of 946 against 492, a gain of 454 points. The final agent's best evaluation game was seed 303, which scored 1,770. The progress samples showed scores bouncing between 350 and 1,410 with no steady climb."
+    },
+    {
+      "n": 2,
+      "path": "raw/Pac-Man DQN README.md",
+      "kind": "raw",
+      "heading": "The final run, 450 games",
+      "heading_path": [
+        "Ms. Pac-Man DQN",
+        "What happened",
+        "The final run, 450 games"
+      ],
+      "lines": [
+        145,
+        149
+      ],
+      "score": 12.647,
+      "chars": 1124,
+      "matched_terms": [
+        "evaluation",
+        "man",
+        "pac",
+        "score"
+      ],
+      "id": "5ad4c3499bdd",
+      "text": "The final agent's best evaluation game was seed 303, which scored 1,770. Across the five evaluation games it chose down-left on 47% of its moves and up-right on 39%, and in this game it reached 1,150 points in the first 20 seconds without losing a life, including a jump from 610 to 1,070 in a couple of seconds right after the ghosts turned blue. It lost its first life at decision 488 of 872, well after the GIF ends. The move counts, and the per-game scores and life losses behind them, are in [results/450-games/move_shares.json](results/450-games/move_shares.json), which `scripts/eval_move_shares.py` wrote by replaying the saved agents on the same five games and reproducing every score in `comparison.json`.\n\n![The final agent in its best evaluation game, seed 303, which scored 1,770](results/450-games/demos/final_best.gif)\n\nThe progress samples below all play evaluation seed 101, one every 25 training games, and they're identical to the first run's samples up to game 450. Their scores bounce between 350 and 1,410 with no steady climb, which is the same instability the checkpoint check measured on more games."
+    },
+    {
+      "n": 3,
+      "path": "raw/Pac-Man DQN README.md",
+      "kind": "raw",
+      "heading": "The first run, 500 games",
+      "heading_path": [
+        "Ms. Pac-Man DQN",
+        "What happened",
+        "The first run, 500 games"
+      ],
+      "lines": [
+        90,
+        92
+      ],
+      "score": 11.696,
+      "chars": 766,
+      "matched_terms": [
+        "evaluation",
+        "man",
+        "pac",
+        "score"
+      ],
+      "id": "356f9d1eefbd",
+      "text": "Looking at which moves the agents chose explained more than the scores did. The untrained network pushes the joystick up and to the left on 96% of its moves across the five evaluation games, so the 492 baseline is really what holding one diagonal gets you. The final 500-game agent mostly chose no move at all, on 70% of its moves across the five games and on 80 to 88% of them in four of the five. Its best game, the 730 on seed 101, is also the game where it held up and to the left the most, and that's the game both of the run's final GIFs show, because the best-of-five GIF and the 500-game progress sample came out as the same file.\n\n![The first run's final agent in its best evaluation game, seed 101, which scored 730](results/500-games/demos/final_best.gif)"
+    },
+    {
+      "n": 4,
+      "path": "wiki/Projects/Pac-Man DQN Requirements.md",
+      "kind": "wiki",
+      "heading": "Details",
+      "heading_path": [
+        "Pac-Man DQN Requirements",
+        "Details"
+      ],
+      "lines": [
+        35,
+        46
+      ],
+      "score": 11.551,
+      "chars": 1199,
+      "matched_terms": [
+        "evaluation",
+        "man",
+        "pac",
+        "score"
+      ],
+      "id": "6ef4039e3e34",
+      "text": "| Requirement | Where it is |\n| :--- | :--- |\n| Overview and how to open and run the notebook | The paragraph above, and Open and run the notebook |\n| Exploration, episodes, and learning rate, with a reason for each | My three choices |\n| What I expected before training, then what I observed | What I expected before each run, and What happened |\n| Completed episodes, decisions, learning updates, elapsed time, and hardware | Training budget and hardware |\n| Observations, actions, and rewards in plain language | What the agent sees, does, and gets rewarded for |\n| One observed limitation and one next experiment | One limitation and the next experiment |\n| Untrained, best trained, and intermediate GIFs | Gameplay, under The final run |\n| `training_dashboard.png` | Training dashboard, under The final run, with the first run's under The first run |\n| All five baseline and trained scores, both means, and `comparison.json` | Evaluation scores, under The final run, with the first run's table under The first run |\n| Links to the notebook, `config.json`, `training.csv`, and `training_summary.json`, and whether a run was interrupted | Training budget and hardware, and Files and checkpoints |"
+    },
+    {
+      "n": 5,
+      "path": "wiki/Projects/Pac-Man DQN Results and Limitations.md",
+      "kind": "wiki",
+      "heading": "The first run, 500 games",
+      "heading_path": [
+        "Pac-Man DQN Results and Limitations",
+        "Details",
+        "The first run, 500 games"
+      ],
+      "lines": [
+        39,
+        39
+      ],
+      "score": 11.516,
+      "chars": 503,
+      "matched_terms": [
+        "evaluation",
+        "man",
+        "pac",
+        "score"
+      ],
+      "id": "94d2b191a7c2",
+      "text": "The trained agent beat the untrained network on two of the five games and lost on three, with an average score 92 points lower than the untrained network. The 25-game average stayed between about 580 and 1,020 from the fifth game to the last, and the loss rose from about 0.02 to about 0.13. The untrained network pushed the joystick up and to the left on 96% of its moves across the five evaluation games. The final 500-game agent mostly chose no move at all, on 70% of its moves across the five games."
+    },
+    {
+      "n": 6,
+      "path": "raw/Pac-Man DQN README.md",
+      "kind": "raw",
+      "heading": "The final run, 450 games",
+      "heading_path": [
+        "Ms. Pac-Man DQN",
+        "What happened",
+        "The final run, 450 games"
+      ],
+      "lines": [
+        137,
+        143
+      ],
+      "score": 11.382,
+      "chars": 499,
+      "matched_terms": [
+        "evaluation",
+        "man",
+        "pac",
+        "score"
+      ],
+      "id": "dbffa04edc47",
+      "text": "The full record is in [results/450-games/comparison.json](results/450-games/comparison.json). None of the ten games hit the 3,000-decision time limit.\n\n#### Gameplay\n\nEvery GIF shows only the first 20 seconds of a game at four times speed, while the score beside it counts the whole game. Before training, the network holds the joystick up and to the left on almost every move.\n\n![The untrained network playing evaluation game 1, seed 101, which scored 350](results/450-games/demos/episode_0000.gif)"
+    }
+  ]
+}

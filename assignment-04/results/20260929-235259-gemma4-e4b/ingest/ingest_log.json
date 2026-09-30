@@ -1,0 +1,132 @@
+{
+  "schema": "ingest-log/1",
+  "run_id": "20260929-235259-gemma4-e4b",
+  "started_at": "2026-09-30T06:53:00Z",
+  "finished_at": "2026-09-30T06:53:00Z",
+  "model": {
+    "backend": "ollama",
+    "tag": "gemma4:e4b",
+    "digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb",
+    "parameter_size": "8.0B",
+    "quantization_level": "Q4_K_M",
+    "family": "gemma4",
+    "context_length": 131072,
+    "ollama_version": "0.35.0",
+    "size_bytes": 9608350718
+  },
+  "budgets": {
+    "plan_outline_chars": 6000,
+    "note_text_chars": 12000,
+    "num_ctx": 8192,
+    "num_predict": {
+      "ask": 400,
+      "chat": 500,
+      "route": 60,
+      "plan": 1200,
+      "note": 1400
+    }
+  },
+  "totals": {
+    "sources": 4,
+    "ingested": 0,
+    "up_to_date": 4,
+    "notes_written": 0,
+    "notes_drafted": 0,
+    "notes_in_vault": 20,
+    "calls": 0,
+    "total_wall_s": 0.01,
+    "prompt_tokens": 0,
+    "generated_tokens": 0,
+    "median_tokens_per_s": null,
+    "max_ollama_size_bytes": null,
+    "max_ollama_process_rss_bytes": null,
+    "harness_max_rss_bytes": null,
+    "max_payload_chars": 0,
+    "payload_capped_calls": 0,
+    "index_passages": 321,
+    "index_wiki_passages": 89
+  },
+  "sources": [
+    {
+      "source": "raw/Class 5 Prompting and Retrieval Notes.md",
+      "source_id": "class-5-prompting-and-retrieval-notes",
+      "sha256": "535af3de2b0afdda285bcf17d3bfbb3850936db0c8ef4fed9584cff5f7c34a1c",
+      "action": "up-to-date",
+      "notes_written": [
+        "Model Customization Techniques Comparison",
+        "Prompting as Probability Steering",
+        "Structuring Prompts as Product Interfaces",
+        "LLM Behavior and Probabilistic Nature",
+        "Advanced Retrieval and Knowledge Hub"
+      ],
+      "notes_drafted": [],
+      "notes_stale": [],
+      "calls": [],
+      "wall_s": 0.01,
+      "plan_origin": null,
+      "errors": [],
+      "message": "up to date (5 notes, source unchanged; use --force to regenerate)"
+    },
+    {
+      "source": "raw/Custom LLM README.md",
+      "source_id": "custom-llm-readme",
+      "sha256": "0293ff499fdd970bee6aeb0310c48a81919cb8028af1272b13bf71c8ae71110e",
+      "action": "up-to-date",
+      "notes_written": [
+        "How the Custom LLM Learns",
+        "Custom LLM Chat Interface",
+        "Custom LLM Results",
+        "Custom LLM Training Hardware",
+        "Custom LLM Training Runs"
+      ],
+      "notes_drafted": [],
+      "notes_stale": [],
+      "calls": [],
+      "wall_s": 0.0,
+      "plan_origin": null,
+      "errors": [],
+      "message": "up to date (5 notes, source unchanged; use --force to regenerate)"
+    },
+    {
+      "source": "raw/Networking Tracker README.md",
+      "source_id": "networking-tracker-readme",
+      "sha256": "74a345428e79e97dbf42f9cf77ea7d277df32dd213f6d22299cd07f2b222bae8",
+      "action": "up-to-date",
+      "notes_written": [
+        "Database Schema and Auth",
+        "Local Setup and Deployment Details",
+        "Networking Tracker Requirements",
+        "Technology Stack and Architecture",
+        "Web App Walkthrough Screenshots"
+      ],
+      "notes_drafted": [],
+      "notes_stale": [],
+      "calls": [],
+      "wall_s": 0.0,
+      "plan_origin": null,
+      "errors": [],
+      "message": "up to date (5 notes, source unchanged; use --force to regenerate)"
+    },
+    {
+      "source": "raw/Pac-Man DQN README.md",
+      "source_id": "pac-man-dqn-readme",
+      "sha256": "cd469243a82e4f8b831e84de0e0e23277841ebb23499bde0585bb31c84a7fd69",
+      "action": "up-to-date",
+      "notes_written": [
+        "Pac-Man DQN Hyperparameters",
+        "Pac-Man DQN Predictions",
+        "Pac-Man DQN Requirements",
+        "Pac-Man DQN Results and Limitations",
+        "Running the DQN Notebook"
+      ],
+      "notes_drafted": [],
+      "notes_stale": [],
+      "calls": [],
+      "wall_s": 0.0,
+      "plan_origin": null,
+      "errors": [],
+      "message": "up to date (5 notes, source unchanged; use --force to regenerate)"
+    }
+  ],
+  "log_file": "ingest/ingest_log.json"
+}

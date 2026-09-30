@@ -1,0 +1,62 @@
+{
+  "schema": "eval-summary/1",
+  "run_id": "20260929-235259-gemma4-e4b/compare-gemma4-e2b",
+  "questions_file": "tests/questions.json",
+  "results": [
+    {
+      "id": "T1",
+      "question": "What hardware did I train the nanoGPT model on for Assignment 3?",
+      "status": "supported",
+      "verdict": "pass",
+      "retrieval_hit": true,
+      "keywords_found": [
+        "M4 Pro",
+        "CPU"
+      ],
+      "cited_paths": [
+        "raw/Custom LLM README.md",
+        "raw/Pac-Man DQN README.md",
+        "wiki/Projects/Custom LLM Training Hardware.md"
+      ],
+      "wall_s": 5.019,
+      "tokens_per_s": 91.7,
+      "model": "gemma4:e2b"
+    },
+    {
+      "id": "T2",
+      "question": "Why did the last Ms. Pac-Man run stop at fewer games than the first one?",
+      "status": "insufficient",
+      "verdict": "fail",
+      "retrieval_hit": true,
+      "keywords_found": [],
+      "cited_paths": [],
+      "wall_s": 1.982,
+      "tokens_per_s": 89.8,
+      "model": "gemma4:e2b"
+    },
+    {
+      "id": "T3",
+      "question": "What machine did I use for Assignments 2 and 3, and did either use the GPU?",
+      "status": "insufficient",
+      "verdict": "fail",
+      "retrieval_hit": true,
+      "keywords_found": [],
+      "cited_paths": [],
+      "wall_s": 2.014,
+      "tokens_per_s": 92.3,
+      "model": "gemma4:e2b"
+    },
+    {
+      "id": "T4",
+      "question": "What grade did I receive on Assignment 2?",
+      "status": "insufficient",
+      "verdict": "pass",
+      "retrieval_hit": null,
+      "keywords_found": [],
+      "cited_paths": [],
+      "wall_s": 1.452,
+      "tokens_per_s": 98.1,
+      "model": "gemma4:e2b"
+    }
+  ]
+}

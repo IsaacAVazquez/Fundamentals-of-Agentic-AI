@@ -1,0 +1,317 @@
+{
+  "id": "T1",
+  "run_id": "20260929-235259-gemma4-e4b",
+  "question": "What hardware did I train the nanoGPT model on for Assignment 3?",
+  "mode": "local",
+  "backend": "ollama",
+  "model": {
+    "backend": "ollama",
+    "tag": "gemma4:e4b",
+    "digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb",
+    "parameter_size": "8.0B",
+    "quantization_level": "Q4_K_M",
+    "family": "gemma4",
+    "context_length": 131072,
+    "ollama_version": "0.35.0",
+    "size_bytes": 9608350718
+  },
+  "options": {
+    "temperature": 0.0,
+    "num_ctx": 8192,
+    "num_predict": 400,
+    "seed": 0
+  },
+  "retrieval": {
+    "k": 6,
+    "scope": "all",
+    "index_built_at": "2026-09-30T06:53:01Z",
+    "index_passages": 321,
+    "query_terms": [
+      "3",
+      "assignment",
+      "chip",
+      "core",
+      "hardware",
+      "laptop",
+      "model",
+      "nanogpt",
+      "train"
+    ],
+    "passages": [
+      {
+        "n": 1,
+        "path": "raw/Custom LLM README.md",
+        "kind": "raw",
+        "heading": "Training budget and hardware",
+        "heading_path": [
+          "Custom LLM with nanoGPT",
+          "Training budget and hardware"
+        ],
+        "lines": [
+          293,
+          295
+        ],
+        "score": 12.937,
+        "chars": 983,
+        "matched_terms": [
+          "3",
+          "core",
+          "hardware",
+          "laptop",
+          "nanogpt",
+          "train"
+        ],
+        "id": "19e222af24da",
+        "text": "The starter run's files are [config.json](results/starter/config.json), [training.csv](results/starter/training.csv), and [training_summary.json](results/starter/training_summary.json), the corpus-extension run's are [config.json](results/expanded/config.json), [training.csv](results/expanded/training.csv), and [training_summary.json](results/expanded/training_summary.json), and the optional run's are [config.json](results/expanded-6000-steps/config.json), [training.csv](results/expanded-6000-steps/training.csv), and [training_summary.json](results/expanded-6000-steps/training_summary.json).\n\nI trained on an Apple M4 Pro laptop with 12 CPU cores and 24 GB of memory running macOS 26.3, on the CPU, which is the notebook's default and caps PyTorch at four threads. The software was Python 3.13.15, PyTorch 2.14.0, NumPy 2.5.3, and pypdf 6.19.0. The course's reference run was on a Mac with the same PyTorch version, which is probably why the starter run reproduced it exactly.",
+        "sent_to_model": true
+      },
+      {
+        "n": 2,
+        "path": "wiki/Projects/Custom LLM Training Hardware.md",
+        "kind": "wiki",
+        "heading": "Details",
+        "heading_path": [
+          "Custom LLM Training Hardware",
+          "Details"
+        ],
+        "lines": [
+          30,
+          38
+        ],
+        "score": 12.757,
+        "chars": 1092,
+        "matched_terms": [
+          "3",
+          "core",
+          "hardware",
+          "laptop",
+          "model",
+          "train"
+        ],
+        "id": "a55fb8544d71",
+        "text": "I trained on an Apple M4 Pro laptop with 12 CPU cores and 24 GB of memory running macOS 26.3, on the CPU, which is the notebook's default and caps PyTorch at four threads. The software was Python 3.13.15, PyTorch 2.14.0, NumPy 2.5.3, and pypdf 6.19.0. The course's reference run was on a Mac with the same PyTorch version, which is probably why the starter run reproduced it exactly.\n\nThe training runs were:\n*   Setup check: completed, 10 steps, 0.1 s, 9.7 s, 111,872 parameters, 136 vocabulary.\n*   Starter corpus: completed, 3,000 steps, 7.6 s, 11.7 s, 111,872 parameters, 136 vocabulary.\n*   Corpus extension: completed, 3,000 steps, 12.2 s, 17.3 s, 130,496 parameters, 427 vocabulary.\n*   Optional, 6,000 steps: completed, 6,000 steps, 23.0 s, 27.8 s, 130,496 parameters, 427 vocabulary.\n\nNo run was interrupted or failed. The training loop time is `elapsed_seconds` from each run's `training_summary.json`, and the whole-notebook time is the wall-clock time my shell reported for the run script. For the two expanded runs a repeat of each at the same settings produced the same weights.",
+        "sent_to_model": true
+      },
+      {
+        "n": 3,
+        "path": "raw/Pac-Man DQN README.md",
+        "kind": "raw",
+        "heading": "Training budget and hardware",
+        "heading_path": [
+          "Ms. Pac-Man DQN",
+          "Training budget and hardware"
+        ],
+        "lines": [
+          193,
+          193
+        ],
+        "score": 12.741,
+        "chars": 337,
+        "matched_terms": [
+          "3",
+          "core",
+          "hardware",
+          "laptop",
+          "train"
+        ],
+        "id": "d86db42dca70",
+        "text": "I trained on an Apple M4 Pro laptop with 12 CPU cores and 24 GB of memory, running macOS 26.3, and the notebook's device check picked the Apple GPU through PyTorch's MPS backend. The software was Python 3.13.15, PyTorch 2.14.0, Gymnasium 1.3.0, ale-py 0.11.2, OpenCV headless 4.14.0.94, NumPy 2.5.3, Matplotlib 3.11.1, and Pillow 12.3.0.",
+        "sent_to_model": true
+      },
+      {
+        "n": 4,
+        "path": "wiki/Projects/Custom LLM Training Hardware.md",
+        "kind": "wiki",
+        "heading": "Related",
+        "heading_path": [
+          "Custom LLM Training Hardware",
+          "Related"
+        ],
+        "lines": [
+          42,
+          42
+        ],
+        "score": 11.911,
+        "chars": 185,
+        "matched_terms": [
+          "assignment",
+          "hardware",
+          "model",
+          "train"
+        ],
+        "id": "8b56a03e36b1",
+        "text": "- [[Custom LLM Training Runs]]: The setup check is the 10-step run the assignment suggests, whose summary, config, loss table, samples, and eval comparison are in `results/setup-check/`",
+        "sent_to_model": true
+      },
+      {
+        "n": 5,
+        "path": "raw/Custom LLM README.md",
+        "kind": "raw",
+        "heading": "Custom LLM with nanoGPT",
+        "heading_path": [
+          "Custom LLM with nanoGPT"
+        ],
+        "lines": [
+          3,
+          3
+        ],
+        "score": 11.902,
+        "chars": 926,
+        "matched_terms": [
+          "3",
+          "assignment",
+          "laptop",
+          "model",
+          "nanogpt",
+          "train"
+        ],
+        "id": "187ce06b3b12",
+        "text": "I trained this model for Assignment 3 of Fundamentals of Agentic AI. It's the course's word-token nanoGPT notebook, a two-block, four-head transformer with 64-number embeddings and a 48-token context, run on my laptop's CPU. The assignment asks for two experiments on the same 48 fixed language tests. In the first I trained on the course's classroom corpus for 3,000 steps at a learning rate of 0.001, and the trained model got 20 of the 48 tests right, with 24 of the 48 unscorable because their words were not in the vocabulary. Its weights came out identical to the course's published reference model, which I checked by hash. In the second I added 2,215 teaching passages of my own for four of the eight extension skills, grammar, opposites, negation, and reference, and trained a fresh model with the same two settings. That made 12 more tests scorable and the trained model got 35 of 48, with the one miss in reference.",
+        "sent_to_model": true
+      },
+      {
+        "n": 6,
+        "path": "raw/Custom LLM README.md",
+        "kind": "raw",
+        "heading": "Training budget and hardware",
+        "heading_path": [
+          "Custom LLM with nanoGPT",
+          "Training budget and hardware"
+        ],
+        "lines": [
+          286,
+          293
+        ],
+        "score": 11.795,
+        "chars": 1185,
+        "matched_terms": [
+          "3",
+          "assignment",
+          "hardware",
+          "nanogpt",
+          "train"
+        ],
+        "id": "c84d870cf356",
+        "text": "| Run | Status | Completed steps | Training loop time | Whole notebook | Parameters | Vocabulary |\n| --- | --- | --- | --- | --- | --- | --- |\n| Setup check | completed | 10 | 0.1 s | 9.7 s | 111,872 | 136 |\n| Starter corpus | completed | 3,000 | 7.6 s | 11.7 s | 111,872 | 136 |\n| Corpus extension | completed | 3,000 | 12.2 s | 17.3 s | 130,496 | 427 |\n| Optional, 6,000 steps | completed | 6,000 | 23.0 s | 27.8 s | 130,496 | 427 |\n\nNo run was interrupted or failed. The training loop time is `elapsed_seconds` from each run's `training_summary.json`, and the whole-notebook time is the wall-clock time my shell reported for the run script, which no file records and which includes starting the kernel, generating the corpus, both eval passes, the inspection, and saving the ZIP. For the two expanded runs a repeat of each at the same settings produced the same weights. The setup check is the 10-step run the assignment suggests, whose summary, config, loss table, samples, and eval comparison are in [results/setup-check/](results/setup-check/). Its evals stayed at 9 of 48 after 10 steps, with the losses only down from 4.93 to 4.21, which is what a setup check should look like.",
+        "sent_to_model": true
+      }
+    ]
+  },
+  "prompt": {
+    "system_file": "wiki-instructions.md",
+    "system_sha256": "57bc582fc52f0ff250cb6686d539957d3107e7a6381617b9b45f6f168c69c3c5",
+    "system_chars": 1450,
+    "user_chars": 5341,
+    "passage_chars": 4708,
+    "passages_sent": 6,
+    "estimated_tokens": 1697,
+    "user_message": "Passages:\n\n[1] raw/Custom LLM README.md # Training budget and hardware (lines 293-295)\nThe starter run's files are [config.json](results/starter/config.json), [training.csv](results/starter/training.csv), and [training_summary.json](results/starter/training_summary.json), the corpus-extension run's are [config.json](results/expanded/config.json), [training.csv](results/expanded/training.csv), and [training_summary.json](results/expanded/training_summary.json), and the optional run's are [config.json](results/expanded-6000-steps/config.json), [training.csv](results/expanded-6000-steps/training.csv), and [training_summary.json](results/expanded-6000-steps/training_summary.json).\n\nI trained on an Apple M4 Pro laptop with 12 CPU cores and 24 GB of memory running macOS 26.3, on the CPU, which is the notebook's default and caps PyTorch at four threads. The software was Python 3.13.15, PyTorch 2.14.0, NumPy 2.5.3, and pypdf 6.19.0. The course's reference run was on a Mac with the same PyTorch version, which is probably why the starter run reproduced it exactly.\n\n[2] wiki/Projects/Custom LLM Training Hardware.md # Details (lines 30-38)\nI trained on an Apple M4 Pro laptop with 12 CPU cores and 24 GB of memory running macOS 26.3, on the CPU, which is the notebook's default and caps PyTorch at four threads. The software was Python 3.13.15, PyTorch 2.14.0, NumPy 2.5.3, and pypdf 6.19.0. The course's reference run was on a Mac with the same PyTorch version, which is probably why the starter run reproduced it exactly.\n\nThe training runs were:\n*   Setup check: completed, 10 steps, 0.1 s, 9.7 s, 111,872 parameters, 136 vocabulary.\n*   Starter corpus: completed, 3,000 steps, 7.6 s, 11.7 s, 111,872 parameters, 136 vocabulary.\n*   Corpus extension: completed, 3,000 steps, 12.2 s, 17.3 s, 130,496 parameters, 427 vocabulary.\n*   Optional, 6,000 steps: completed, 6,000 steps, 23.0 s, 27.8 s, 130,496 parameters, 427 vocabulary.\n\nNo run was interrupted or failed. The training loop time is `elapsed_seconds` from each run's `training_summary.json`, and the whole-notebook time is the wall-clock time my shell reported for the run script. For the two expanded runs a repeat of each at the same settings produced the same weights.\n\n[3] raw/Pac-Man DQN README.md # Training budget and hardware (lines 193-193)\nI trained on an Apple M4 Pro laptop with 12 CPU cores and 24 GB of memory, running macOS 26.3, and the notebook's device check picked the Apple GPU through PyTorch's MPS backend. The software was Python 3.13.15, PyTorch 2.14.0, Gymnasium 1.3.0, ale-py 0.11.2, OpenCV headless 4.14.0.94, NumPy 2.5.3, Matplotlib 3.11.1, and Pillow 12.3.0.\n\n[4] wiki/Projects/Custom LLM Training Hardware.md # Related (lines 42-42)\n- [[Custom LLM Training Runs]]: The setup check is the 10-step run the assignment suggests, whose summary, config, loss table, samples, and eval comparison are in `results/setup-check/`\n\n[5] raw/Custom LLM README.md # Custom LLM with nanoGPT (lines 3-3)\nI trained this model for Assignment 3 of Fundamentals of Agentic AI. It's the course's word-token nanoGPT notebook, a two-block, four-head transformer with 64-number embeddings and a 48-token context, run on my laptop's CPU. The assignment asks for two experiments on the same 48 fixed language tests. In the first I trained on the course's classroom corpus for 3,000 steps at a learning rate of 0.001, and the trained model got 20 of the 48 tests right, with 24 of the 48 unscorable because their words were not in the vocabulary. Its weights came out identical to the course's published reference model, which I checked by hash. In the second I added 2,215 teaching passages of my own for four of the eight extension skills, grammar, opposites, negation, and reference, and trained a fresh model with the same two settings. That made 12 more tests scorable and the trained model got 35 of 48, with the one miss in reference.\n\n[6] raw/Custom LLM README.md # Training budget and hardware (lines 286-293)\n| Run | Status | Completed steps | Training loop time | Whole notebook | Parameters | Vocabulary |\n| --- | --- | --- | --- | --- | --- | --- |\n| Setup check | completed | 10 | 0.1 s | 9.7 s | 111,872 | 136 |\n| Starter corpus | completed | 3,000 | 7.6 s | 11.7 s | 111,872 | 136 |\n| Corpus extension | completed | 3,000 | 12.2 s | 17.3 s | 130,496 | 427 |\n| Optional, 6,000 steps | completed | 6,000 | 23.0 s | 27.8 s | 130,496 | 427 |\n\nNo run was interrupted or failed. The training loop time is `elapsed_seconds` from each run's `training_summary.json`, and the whole-notebook time is the wall-clock time my shell reported for the run script, which no file records and which includes starting the kernel, generating the corpus, both eval passes, the inspection, and saving the ZIP. For the two expanded runs a repeat of each at the same settings produced the same weights. The setup check is the 10-step run the assignment suggests, whose summary, config, loss table, samples, and eval comparison are in [results/setup-check/](results/setup-check/). Its evals stayed at 9 of 48 after 10 steps, with the losses only down from 4.93 to 4.21, which is what a setup check should look like.\n\nQuestion: What hardware did I train the nanoGPT model on for Assignment 3?\n\nAnswer from the passages above with [n] citations, or start with \"Insufficient evidence:\"."
+  },
+  "answer": {
+    "text": "You trained the nanoGPT model for Assignment 3 on your laptop's CPU [5]. Specifically, you trained it on an Apple M4 Pro laptop with 12 CPU cores and 24 GB of memory running macOS 26.3, on the CPU [1][2]. The software used included Python 3.13.15, PyTorch 2.14.0, NumPy 2.5.3, and pypdf 6.19.0 [1][2].",
+    "raw": "You trained the nanoGPT model for Assignment 3 on your laptop's CPU [5]. Specifically, you trained it on an Apple M4 Pro laptop with 12 CPU cores and 24 GB of memory running macOS 26.3, on the CPU [1][2]. The software used included Python 3.13.15, PyTorch 2.14.0, NumPy 2.5.3, and pypdf 6.19.0 [1][2]."
+  },
+  "citations": [
+    {
+      "n": 5,
+      "valid": true,
+      "path": "raw/Custom LLM README.md",
+      "heading": "Custom LLM with nanoGPT",
+      "lines": [
+        3,
+        3
+      ],
+      "kind": "raw"
+    },
+    {
+      "n": 1,
+      "valid": true,
+      "path": "raw/Custom LLM README.md",
+      "heading": "Training budget and hardware",
+      "lines": [
+        293,
+        295
+      ],
+      "kind": "raw"
+    },
+    {
+      "n": 2,
+      "valid": true,
+      "path": "wiki/Projects/Custom LLM Training Hardware.md",
+      "heading": "Details",
+      "lines": [
+        30,
+        38
+      ],
+      "kind": "wiki"
+    }
+  ],
+  "citation_check": {
+    "valid": 3,
+    "invalid": [],
+    "cited_paths": [
+      "raw/Custom LLM README.md",
+      "wiki/Projects/Custom LLM Training Hardware.md"
+    ],
+    "insufficient_marker": false,
+    "unverified_numbers": []
+  },
+  "status": "supported",
+  "timing": {
+    "wall_s": 3.196,
+    "total_duration_s": 3.1942,
+    "load_duration_s": 0.0175,
+    "prompt_eval_count": 2055,
+    "prompt_eval_duration_s": 1.0065,
+    "eval_count": 109,
+    "eval_duration_s": 2.0352,
+    "tokens_per_s": 53.6,
+    "prompt_tokens_per_s": 2041.7
+  },
+  "memory": {
+    "ollama_model_size_bytes": 3237478399,
+    "ollama_size_vram_bytes": 3237478399,
+    "ollama_process_rss_bytes": 384745472,
+    "harness_max_rss_bytes": 38191104,
+    "sampled_at": "2026-09-30T06:53:04Z"
+  },
+  "offline": {
+    "source": "doctor.json",
+    "internet_reachable": false,
+    "probes": {
+      "tcp 1.1.1.1:443": "failed (OSError: [Errno 51] Network is unreachable)",
+      "tcp 8.8.8.8:53": "failed (OSError: [Errno 51] Network is unreachable)",
+      "dns pypi.org": "failed ([Errno 8] nodename nor servname provided, or not known)",
+      "https example.com": "failed (URLError)"
+    },
+    "checked_at": "2026-09-30T06:53:00Z",
+    "require_offline": true
+  },
+  "assessment": {
+    "expected_behavior": "answer",
+    "expected_sources": [
+      "raw/Custom LLM README.md"
+    ],
+    "retrieval_hit": true,
+    "retrieval_hit_all": true,
+    "retrieved_any": [
+      "raw/Custom LLM README.md"
+    ],
+    "expected_keywords": [
+      "M4 Pro",
+      "CPU"
+    ],
+    "keywords_found": [
+      "M4 Pro",
+      "CPU"
+    ],
+    "status_matches_expected": true,
+    "cited_expected_source": true,
+    "verdict": "pass",
+    "notes": "Direct question answered by one source. Custom LLM README, 'Training budget and hardware': an Apple M4 Pro laptop with 12 CPU cores and 24 GB of memory running macOS 26.3, on the CPU, capped at four threads.",
+    "human_assessment": null
+  },
+  "error": null,
+  "created_at": "2026-09-30T06:53:04Z",
+  "schema": "evidence-card/1"
+}

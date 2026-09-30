@@ -1,0 +1,16 @@
+Ingest log: /Users/isaacvazquez/Fundamentals-of-Agentic-AI/assignment-04/results/20260929-235259-gemma4-e4b/reingest/ingest/ingest_log.md
+wiki ingest · model gemma4:e4b Q4_K_M 8.0B (ollama, local) · 1 source file(s) · run 20260929-235259-gemma4-e4b/reingest
+- raw/Networking Tracker README.md: regenerating (30,382 chars, sha256 74a345428e79…)
+  plan (stored): Database Schema and Auth [Projects]; Local Setup and Deployment Details [Projects]; Networking Tracker Requirements [Projects]; Technology Stack and Architecture [Projects]; Web App Walkthrough Screenshots [Projects]
+  note  gemma4:e4b 18.2 s | ~1,756 prompt tok | 616 gen tok @ 54.4 tok/s | 3.2 GB in Ollama
+  wrote wiki/Projects/Database Schema and Auth.md (2,836 chars)
+  note  gemma4:e4b 30.1 s | ~3,525 prompt tok | 1113 gen tok @ 53.0 tok/s | 3.2 GB in Ollama
+  wrote wiki/Projects/Local Setup and Deployment Details.md (4,691 chars)
+  note  gemma4:e4b 10.8 s | ~881 prompt tok | 481 gen tok @ 52.9 tok/s | 3.2 GB in Ollama
+  wrote wiki/Projects/Networking Tracker Requirements.md (2,465 chars)
+  note  gemma4:e4b 22.5 s | ~1,497 prompt tok | 873 gen tok @ 44.1 tok/s | 3.2 GB in Ollama
+  wrote wiki/Projects/Technology Stack and Architecture.md (3,986 chars)
+  note  gemma4:e4b 20.0 s | ~1,820 prompt tok | 811 gen tok @ 48.9 tok/s | 3.2 GB in Ollama
+  wrote wiki/Projects/Web App Walkthrough Screenshots.md (3,764 chars)
+
+Done: 1 ingested, 0 up to date, 5 notes written, 20 notes in the vault, 5 model calls, 101.99 s. Index: 320 passages.

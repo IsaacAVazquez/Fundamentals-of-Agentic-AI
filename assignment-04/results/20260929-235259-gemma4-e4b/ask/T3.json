@@ -1,0 +1,326 @@
+{
+  "id": "T3",
+  "run_id": "20260929-235259-gemma4-e4b",
+  "question": "What machine did I use for Assignments 2 and 3, and did either use the GPU?",
+  "mode": "local",
+  "backend": "ollama",
+  "model": {
+    "backend": "ollama",
+    "tag": "gemma4:e4b",
+    "digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb",
+    "parameter_size": "8.0B",
+    "quantization_level": "Q4_K_M",
+    "family": "gemma4",
+    "context_length": 131072,
+    "ollama_version": "0.35.0",
+    "size_bytes": 9608350718
+  },
+  "options": {
+    "temperature": 0.0,
+    "num_ctx": 8192,
+    "num_predict": 400,
+    "seed": 0
+  },
+  "retrieval": {
+    "k": 6,
+    "scope": "all",
+    "index_built_at": "2026-09-30T06:53:01Z",
+    "index_passages": 321,
+    "query_terms": [
+      "2",
+      "3",
+      "assignment",
+      "computer",
+      "cuda",
+      "either",
+      "gpu",
+      "laptop",
+      "machine",
+      "metal",
+      "mps",
+      "use"
+    ],
+    "passages": [
+      {
+        "n": 1,
+        "path": "raw/Pac-Man DQN README.md",
+        "kind": "raw",
+        "heading": "Training budget and hardware",
+        "heading_path": [
+          "Ms. Pac-Man DQN",
+          "Training budget and hardware"
+        ],
+        "lines": [
+          193,
+          193
+        ],
+        "score": 14.166,
+        "chars": 337,
+        "matched_terms": [
+          "2",
+          "3",
+          "gpu",
+          "laptop",
+          "mps"
+        ],
+        "id": "d86db42dca70",
+        "text": "I trained on an Apple M4 Pro laptop with 12 CPU cores and 24 GB of memory, running macOS 26.3, and the notebook's device check picked the Apple GPU through PyTorch's MPS backend. The software was Python 3.13.15, PyTorch 2.14.0, Gymnasium 1.3.0, ale-py 0.11.2, OpenCV headless 4.14.0.94, NumPy 2.5.3, Matplotlib 3.11.1, and Pillow 12.3.0.",
+        "sent_to_model": true
+      },
+      {
+        "n": 2,
+        "path": "raw/Custom LLM README.md",
+        "kind": "raw",
+        "heading": "Custom LLM with nanoGPT",
+        "heading_path": [
+          "Custom LLM with nanoGPT"
+        ],
+        "lines": [
+          3,
+          3
+        ],
+        "score": 8.226,
+        "chars": 926,
+        "matched_terms": [
+          "2",
+          "3",
+          "assignment",
+          "laptop"
+        ],
+        "id": "187ce06b3b12",
+        "text": "I trained this model for Assignment 3 of Fundamentals of Agentic AI. It's the course's word-token nanoGPT notebook, a two-block, four-head transformer with 64-number embeddings and a 48-token context, run on my laptop's CPU. The assignment asks for two experiments on the same 48 fixed language tests. In the first I trained on the course's classroom corpus for 3,000 steps at a learning rate of 0.001, and the trained model got 20 of the 48 tests right, with 24 of the 48 unscorable because their words were not in the vocabulary. Its weights came out identical to the course's published reference model, which I checked by hash. In the second I added 2,215 teaching passages of my own for four of the eight extension skills, grammar, opposites, negation, and reference, and trained a fresh model with the same two settings. That made 12 more tests scorable and the trained model got 35 of 48, with the one miss in reference.",
+        "sent_to_model": true
+      },
+      {
+        "n": 3,
+        "path": "raw/Pac-Man DQN README.md",
+        "kind": "raw",
+        "heading": "Files and checkpoints",
+        "heading_path": [
+          "Ms. Pac-Man DQN",
+          "Files and checkpoints"
+        ],
+        "lines": [
+          222,
+          222
+        ],
+        "score": 7.842,
+        "chars": 604,
+        "matched_terms": [
+          "assignment",
+          "either",
+          "laptop"
+        ],
+        "id": "4fd7a15023de",
+        "text": "The model checkpoints aren't in the repository, because each one is about 6.8 MB and the first run alone saved 22 of them. The final agent and the untrained network it started from are attached to the [assignment-02-checkpoints release](https://github.com/IsaacAVazquez/Fundamentals-of-Agentic-AI/releases/tag/assignment-02-checkpoints) as `pacman-dqn-450-games-trained.pt` and `pacman-dqn-untrained.pt`, and every other checkpoint from both runs stays in the run ZIPs on my laptop. Either file loads with `torch.load(path, weights_only=True)`, and its `model` entry goes into the notebook's `DQN` class.",
+        "sent_to_model": true
+      },
+      {
+        "n": 4,
+        "path": "wiki/Projects/Pac-Man DQN Requirements.md",
+        "kind": "wiki",
+        "heading": "Details",
+        "heading_path": [
+          "Pac-Man DQN Requirements",
+          "Details"
+        ],
+        "lines": [
+          31,
+          33
+        ],
+        "score": 7.609,
+        "chars": 988,
+        "matched_terms": [
+          "2",
+          "assignment",
+          "laptop",
+          "use"
+        ],
+        "id": "ebf992eeac68",
+        "text": "I trained this agent for Assignment 2 of Fundamentals of Agentic AI. It's the course's Deep Q-Network notebook for Ms. Pac-Man, run on my laptop with 10% exploration and a learning rate of 0.0001. I ran it twice, and the only difference between the two runs is the number of training games. My first run trained for 500 games, and its final agent averaged 400 on the five evaluation games against 492 for the untrained network. When I replayed every checkpoint that run saved on games the notebook never uses, the agent saved after 450 games turned out to be far better than the one the run ended with, so I reran the notebook with 450 games. The notebook in this folder is that second run, executed start to finish with every output saved, and its agent averaged 946 on the same five evaluation games against 492 for the untrained network.\n\nThe sections below follow the order of the assignment's README requirements. This table is the short version for anyone grading against the brief.",
+        "sent_to_model": true
+      },
+      {
+        "n": 5,
+        "path": "wiki/Projects/Custom LLM Training Runs.md",
+        "kind": "wiki",
+        "heading": "Details",
+        "heading_path": [
+          "Custom LLM Training Runs",
+          "Details"
+        ],
+        "lines": [
+          34,
+          40
+        ],
+        "score": 7.383,
+        "chars": 1101,
+        "matched_terms": [
+          "2",
+          "3",
+          "assignment",
+          "laptop"
+        ],
+        "id": "fe5f2869111b",
+        "text": "I trained this model for Assignment 3 of Fundamentals of Agentic AI. It's the course's word-token nanoGPT notebook, a two-block, four-head transformer with 64-number embeddings and a 48-token context, run on my laptop's CPU.\n\nIn the first run, I trained on the course's classroom corpus for 3,000 steps at a learning rate of 0.001, and the trained model got 20 of the 48 tests right, with 24 of the 48 unscorable because their words were not in the vocabulary. Its weights came out identical to the course's published reference model, which I checked by hash.\n\nIn the second run, I added 2,215 teaching passages of my own for four of the eight extension skills, grammar, opposites, negation, and reference, and trained a fresh model with the same two settings. That made 12 more tests scorable and the trained model got 35 of 48, with the one miss in reference.\n\nFor an optional third experiment, I doubled the steps to 6,000 and changed nothing else I set. It got all 12 of the extension tests in the four skills I taught but lost 1 of the 8 new phrasings of the starter patterns, for 35 of 48 again.",
+        "sent_to_model": true
+      },
+      {
+        "n": 6,
+        "path": "raw/Pac-Man DQN README.md",
+        "kind": "raw",
+        "heading": "Ms. Pac-Man DQN",
+        "heading_path": [
+          "Ms. Pac-Man DQN"
+        ],
+        "lines": [
+          3,
+          3
+        ],
+        "score": 7.325,
+        "chars": 840,
+        "matched_terms": [
+          "2",
+          "assignment",
+          "laptop",
+          "use"
+        ],
+        "id": "363f9b7d5ecc",
+        "text": "I trained this agent for Assignment 2 of Fundamentals of Agentic AI. It's the course's Deep Q-Network notebook for Ms. Pac-Man, run on my laptop with 10% exploration and a learning rate of 0.0001. I ran it twice, and the only difference between the two runs is the number of training games. My first run trained for 500 games, and its final agent averaged 400 on the five evaluation games against 492 for the untrained network. When I replayed every checkpoint that run saved on games the notebook never uses, the agent saved after 450 games turned out to be far better than the one the run ended with, so I reran the notebook with 450 games. The notebook in this folder is that second run, executed start to finish with every output saved, and its agent averaged 946 on the same five evaluation games against 492 for the untrained network.",
+        "sent_to_model": true
+      }
+    ]
+  },
+  "prompt": {
+    "system_file": "wiki-instructions.md",
+    "system_sha256": "57bc582fc52f0ff250cb6686d539957d3107e7a6381617b9b45f6f168c69c3c5",
+    "system_chars": 1450,
+    "user_chars": 5410,
+    "passage_chars": 4796,
+    "passages_sent": 6,
+    "estimated_tokens": 1715,
+    "user_message": "Passages:\n\n[1] raw/Pac-Man DQN README.md # Training budget and hardware (lines 193-193)\nI trained on an Apple M4 Pro laptop with 12 CPU cores and 24 GB of memory, running macOS 26.3, and the notebook's device check picked the Apple GPU through PyTorch's MPS backend. The software was Python 3.13.15, PyTorch 2.14.0, Gymnasium 1.3.0, ale-py 0.11.2, OpenCV headless 4.14.0.94, NumPy 2.5.3, Matplotlib 3.11.1, and Pillow 12.3.0.\n\n[2] raw/Custom LLM README.md # Custom LLM with nanoGPT (lines 3-3)\nI trained this model for Assignment 3 of Fundamentals of Agentic AI. It's the course's word-token nanoGPT notebook, a two-block, four-head transformer with 64-number embeddings and a 48-token context, run on my laptop's CPU. The assignment asks for two experiments on the same 48 fixed language tests. In the first I trained on the course's classroom corpus for 3,000 steps at a learning rate of 0.001, and the trained model got 20 of the 48 tests right, with 24 of the 48 unscorable because their words were not in the vocabulary. Its weights came out identical to the course's published reference model, which I checked by hash. In the second I added 2,215 teaching passages of my own for four of the eight extension skills, grammar, opposites, negation, and reference, and trained a fresh model with the same two settings. That made 12 more tests scorable and the trained model got 35 of 48, with the one miss in reference.\n\n[3] raw/Pac-Man DQN README.md # Files and checkpoints (lines 222-222)\nThe model checkpoints aren't in the repository, because each one is about 6.8 MB and the first run alone saved 22 of them. The final agent and the untrained network it started from are attached to the [assignment-02-checkpoints release](https://github.com/IsaacAVazquez/Fundamentals-of-Agentic-AI/releases/tag/assignment-02-checkpoints) as `pacman-dqn-450-games-trained.pt` and `pacman-dqn-untrained.pt`, and every other checkpoint from both runs stays in the run ZIPs on my laptop. Either file loads with `torch.load(path, weights_only=True)`, and its `model` entry goes into the notebook's `DQN` class.\n\n[4] wiki/Projects/Pac-Man DQN Requirements.md # Details (lines 31-33)\nI trained this agent for Assignment 2 of Fundamentals of Agentic AI. It's the course's Deep Q-Network notebook for Ms. Pac-Man, run on my laptop with 10% exploration and a learning rate of 0.0001. I ran it twice, and the only difference between the two runs is the number of training games. My first run trained for 500 games, and its final agent averaged 400 on the five evaluation games against 492 for the untrained network. When I replayed every checkpoint that run saved on games the notebook never uses, the agent saved after 450 games turned out to be far better than the one the run ended with, so I reran the notebook with 450 games. The notebook in this folder is that second run, executed start to finish with every output saved, and its agent averaged 946 on the same five evaluation games against 492 for the untrained network.\n\nThe sections below follow the order of the assignment's README requirements. This table is the short version for anyone grading against the brief.\n\n[5] wiki/Projects/Custom LLM Training Runs.md # Details (lines 34-40)\nI trained this model for Assignment 3 of Fundamentals of Agentic AI. It's the course's word-token nanoGPT notebook, a two-block, four-head transformer with 64-number embeddings and a 48-token context, run on my laptop's CPU.\n\nIn the first run, I trained on the course's classroom corpus for 3,000 steps at a learning rate of 0.001, and the trained model got 20 of the 48 tests right, with 24 of the 48 unscorable because their words were not in the vocabulary. Its weights came out identical to the course's published reference model, which I checked by hash.\n\nIn the second run, I added 2,215 teaching passages of my own for four of the eight extension skills, grammar, opposites, negation, and reference, and trained a fresh model with the same two settings. That made 12 more tests scorable and the trained model got 35 of 48, with the one miss in reference.\n\nFor an optional third experiment, I doubled the steps to 6,000 and changed nothing else I set. It got all 12 of the extension tests in the four skills I taught but lost 1 of the 8 new phrasings of the starter patterns, for 35 of 48 again.\n\n[6] raw/Pac-Man DQN README.md # Ms. Pac-Man DQN (lines 3-3)\nI trained this agent for Assignment 2 of Fundamentals of Agentic AI. It's the course's Deep Q-Network notebook for Ms. Pac-Man, run on my laptop with 10% exploration and a learning rate of 0.0001. I ran it twice, and the only difference between the two runs is the number of training games. My first run trained for 500 games, and its final agent averaged 400 on the five evaluation games against 492 for the untrained network. When I replayed every checkpoint that run saved on games the notebook never uses, the agent saved after 450 games turned out to be far better than the one the run ended with, so I reran the notebook with 450 games. The notebook in this folder is that second run, executed start to finish with every output saved, and its agent averaged 946 on the same five evaluation games against 492 for the untrained network.\n\nQuestion: What machine did I use for Assignments 2 and 3, and did either use the GPU?\n\nAnswer from the passages above with [n] citations, or start with \"Insufficient evidence:\"."
+  },
+  "answer": {
+    "text": "For Assignment 2, you ran the agent on your laptop [4][6]. For Assignment 3, you trained the model on your laptop's CPU [2][5]. The passages indicate that for the Pac-Man DQN, you ran it on your laptop [4][6], but they do not specify if the GPU was used for either Assignment 2 or Assignment 3.",
+    "raw": "For Assignment 2, you ran the agent on your laptop [4][6]. For Assignment 3, you trained the model on your laptop's CPU [2][5]. The passages indicate that for the Pac-Man DQN, you ran it on your laptop [4][6], but they do not specify if the GPU was used for either Assignment 2 or Assignment 3."
+  },
+  "citations": [
+    {
+      "n": 4,
+      "valid": true,
+      "path": "wiki/Projects/Pac-Man DQN Requirements.md",
+      "heading": "Details",
+      "lines": [
+        31,
+        33
+      ],
+      "kind": "wiki"
+    },
+    {
+      "n": 6,
+      "valid": true,
+      "path": "raw/Pac-Man DQN README.md",
+      "heading": "Ms. Pac-Man DQN",
+      "lines": [
+        3,
+        3
+      ],
+      "kind": "raw"
+    },
+    {
+      "n": 2,
+      "valid": true,
+      "path": "raw/Custom LLM README.md",
+      "heading": "Custom LLM with nanoGPT",
+      "lines": [
+        3,
+        3
+      ],
+      "kind": "raw"
+    },
+    {
+      "n": 5,
+      "valid": true,
+      "path": "wiki/Projects/Custom LLM Training Runs.md",
+      "heading": "Details",
+      "lines": [
+        34,
+        40
+      ],
+      "kind": "wiki"
+    }
+  ],
+  "citation_check": {
+    "valid": 4,
+    "invalid": [],
+    "cited_paths": [
+      "raw/Custom LLM README.md",
+      "raw/Pac-Man DQN README.md",
+      "wiki/Projects/Custom LLM Training Runs.md",
+      "wiki/Projects/Pac-Man DQN Requirements.md"
+    ],
+    "insufficient_marker": false,
+    "unverified_numbers": []
+  },
+  "status": "supported",
+  "timing": {
+    "wall_s": 1.6,
+    "total_duration_s": 1.5978,
+    "load_duration_s": 0.0026,
+    "prompt_eval_count": 1859,
+    "prompt_eval_duration_s": 0.0987,
+    "eval_count": 80,
+    "eval_duration_s": 1.4356,
+    "tokens_per_s": 55.7,
+    "prompt_tokens_per_s": 18834.9
+  },
+  "memory": {
+    "ollama_model_size_bytes": 3237478399,
+    "ollama_size_vram_bytes": 3237478399,
+    "ollama_process_rss_bytes": 632619008,
+    "harness_max_rss_bytes": 38191104,
+    "sampled_at": "2026-09-30T06:53:07Z"
+  },
+  "offline": {
+    "source": "doctor.json",
+    "internet_reachable": false,
+    "probes": {
+      "tcp 1.1.1.1:443": "failed (OSError: [Errno 51] Network is unreachable)",
+      "tcp 8.8.8.8:53": "failed (OSError: [Errno 51] Network is unreachable)",
+      "dns pypi.org": "failed ([Errno 8] nodename nor servname provided, or not known)",
+      "https example.com": "failed (URLError)"
+    },
+    "checked_at": "2026-09-30T06:53:00Z",
+    "require_offline": true
+  },
+  "assessment": {
+    "expected_behavior": "answer",
+    "expected_sources": [
+      "raw/Pac-Man DQN README.md",
+      "raw/Custom LLM README.md"
+    ],
+    "retrieval_hit": true,
+    "retrieval_hit_all": true,
+    "retrieved_any": [
+      "raw/Pac-Man DQN README.md",
+      "raw/Custom LLM README.md"
+    ],
+    "expected_keywords": [
+      "M4 Pro",
+      "MPS",
+      "CPU"
+    ],
+    "keywords_found": [
+      "CPU"
+    ],
+    "status_matches_expected": true,
+    "cited_expected_source": true,
+    "verdict": "check",
+    "notes": "Connects two sources. Both READMEs name the same Apple M4 Pro laptop; the Pac-Man DQN used the Apple GPU through PyTorch's MPS backend, the nanoGPT run used the CPU only.",
+    "human_assessment": null
+  },
+  "error": null,
+  "created_at": "2026-09-30T06:53:07Z",
+  "schema": "evidence-card/1"
+}
