@@ -13,7 +13,7 @@ section() { printf '\n== %s ==\n' "$1"; }
   if [ "$(uname)" = Darwin ] && command -v sysctl >/dev/null; then
     section "sysctl"; sysctl -n machdep.cpu.brand_string hw.memsize hw.ncpu hw.physicalcpu hw.logicalcpu 2>/dev/null || true
   fi
-  if command -v system_profiler >/dev/null; then section "system_profiler SPHardwareDataType"; system_profiler SPHardwareDataType 2>/dev/null || true; fi
+  if command -v system_profiler >/dev/null; then section "system_profiler SPHardwareDataType"; system_profiler SPHardwareDataType 2>/dev/null | sed -E 's/^( *(Serial Number \(system\)|Hardware UUID|Provisioning UDID): ).*/\1[redacted]/' || true; fi
   if command -v vm_stat >/dev/null; then section "vm_stat"; vm_stat; fi
   if command -v memory_pressure >/dev/null; then section "memory_pressure"; memory_pressure 2>/dev/null | head -20 || true; fi
   if [ -r /proc/cpuinfo ]; then section "cpuinfo"; grep -m1 'model name' /proc/cpuinfo || true; nproc; fi
