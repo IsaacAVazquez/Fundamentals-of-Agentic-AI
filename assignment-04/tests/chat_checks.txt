@@ -1,5 +1,7 @@
 # Chat mode checks. Lines starting with # are comments. "# expect:" applies to the next message and is recorded in the transcript.
 # expect: retrieval=no
+what can we do?
+# expect: retrieval=no
 what can you help me with?
 # expect: retrieval=no
 Write a three-sentence plan for the evening before next week's class.

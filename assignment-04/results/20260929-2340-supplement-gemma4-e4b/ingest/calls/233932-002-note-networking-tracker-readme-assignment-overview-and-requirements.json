@@ -1,0 +1,58 @@
+{
+  "kind": "note",
+  "label": "Assignment Overview and Requirements",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You write one note for a personal wiki from text the owner wrote. Reply with the note body in Markdown and nothing else, using exactly these three headings in this order:\n\n## Summary\nTwo to four sentences: what this note covers and its main result or point.\n\n## Details\nThe substance, in short paragraphs or bullet lists. Keep every number, name, date, and setting exactly as the source text gives it. Keep the owner's first-person voice (\"I trained ...\"). Do not add facts, opinions, or background that the source text does not contain. Leave out anything that is not in the source text you were given.\n\n## Related\nZero to three lines, each \"- Title: why it relates\", using only titles from the allowed list, copied exactly. Write \"- none\" if nothing on the list relates.\n\nDo not write a top-level title, frontmatter, a Sources section, tables wider than four columns, or code blocks longer than five lines. Do not refer to \"the source\" or \"this note\"; just present the content. At most 400 words."
+    },
+    {
+      "role": "user",
+      "content": "Note title: Assignment Overview and Requirements\nPlanned summary: This section details the structure of the assignment requirements following the provided rubric.\nAllowed related titles: Web App Walkthrough Screenshots; Core Functionality and Features; Technology Stack and Architecture; Data Persistence and Security Details; Model Customization Techniques Comparison; Model Learning Mechanics Explained; Prompting as Probability Steering; Structuring Prompts as Product Interfaces; LLM Behavior and Probabilistic Nature; Advanced Retrieval and Knowledge Hub; Agent Hyperparameter Tuning Choices; Agent Training Results and Limitations; Assignment Model Training Overview; Assignment Overview and Requirements Pac-Man; Database Schema and Auth; Interacting with Trained Model; Local Setup and Deployment Details; Model Performance and Results; Performance Analysis Before Runs; Running the DQN Notebook; Training Budget and Hardware Details\nSource file: Networking Tracker README\nSections included: \"Networking Tracker\", \"Where to find each requirement\"\n\nSource text:\n## Networking Tracker\nI built this for Assignment 1 of Fundamentals of Agentic AI. It is a small web app for keeping a private list of the people I want to stay connected with at Berkeley, with a name, company, role, where we met, a note, and a priority for each person. Every account sees only its own contacts, and that promise is enforced inside Postgres with Row Level Security, so even a request that skips the UI and talks to the database API directly gets only the caller's rows. The stack is Next.js on Vercel, Neon Postgres, Neon's managed Better Auth, and the Neon Data API.\n\nLive app: https://networking-tracker-lyart.vercel.app\n\n## Where to find each requirement\nThe sections below follow the order of the assignment's README requirements. This table is the short version for anyone grading against the rubric.\n\n| Requirement | Where it is |\n| --- | --- |\n| Live Vercel URL | Above, and again under Deployment |\n| Screenshots or walkthrough | Walkthrough |\n| Feature list | What it does |\n| Technology stack and why | Technology stack and why |\n| Architecture summary | Architecture |\n| Local setup through `npm run dev` | Local setup |\n| Environment variable names | Environment variables |\n| Publishable versus secret values | Environment variables |\n| Schema with every column | Database schema |\n| Authentication and RLS ownership | Authentication and row ownership |\n| Test command and what it verifies | Tests |\n| Deployment instructions | Deployment |\n| Known limitations | Known limitations and what I would improve next |\n| Grading evidence | Evidence, which maps each required artifact to a file or transcript |"
+    }
+  ],
+  "response": "## Summary\nThis note details the structure and components of the \"Networking Tracker\" web app, which was built for Assignment 1 of Fundamentals of Agentic AI. The app functions as a private contact list for Berkeley connections, ensuring data privacy through Postgres Row Level Security. The technology stack includes Next.js on Vercel, Neon Postgres, Neon's managed Better Auth, and the Neon Data API.\n\n## Details\nThe Networking Tracker is a small web app for keeping a private list of people I want to stay connected with at Berkeley. Each contact requires a name, company, role, where we met, a note, and a priority. Every account sees only its own contacts, and this is enforced inside Postgres with Row Level Security, meaning even a request that skips the UI and talks to the database API directly gets only the caller's rows.\n\nThe stack used is:\n*   Next.js on Vercel\n*   Neon Postgres\n*   Neon's managed Better Auth\n*   Neon Data API\n\nThe live app is available at: https://networking-tracker-lyart.vercel.app\n\nThe following sections map to the assignment's README requirements:\n*   Live Vercel URL: Above, and again under Deployment\n*   Screenshots or walkthrough: Walkthrough\n*   Feature list: What it does\n*   Technology stack and why: Technology stack and why\n*   Architecture summary: Architecture\n*   Local setup through `npm run dev`: Local setup\n*   Environment variable names: Environment variables\n*   Publishable versus secret values: Environment variables\n*   Schema with every column: Database schema\n*   Authentication and RLS ownership: Authentication and row ownership\n*   Test command and what it verifies: Tests\n*   Deployment instructions: Deployment\n*   Known limitations: Known limitations and what I would improve next\n*   Grading evidence: Evidence, which maps each required artifact to a file or transcript\n\n## Related\n- Core Functionality and Features: What it does\n- Technology Stack and Architecture: Technology stack and why\n- Data Persistence and Security Details: Authentication and row ownership",
+  "error": null,
+  "model": {
+    "backend": "ollama",
+    "tag": "gemma4:e4b",
+    "digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb",
+    "parameter_size": "8.0B",
+    "quantization_level": "Q4_K_M",
+    "family": "gemma4",
+    "context_length": 131072,
+    "ollama_version": "0.35.0",
+    "size_bytes": 9608350718
+  },
+  "record": {
+    "kind": "note",
+    "attempt": 1,
+    "system_chars": 998,
+    "user_chars": 2702,
+    "payload_chars": 1633,
+    "payload_capped": false,
+    "est_prompt_tokens": 925,
+    "timing": {
+      "wall_s": 10.438,
+      "total_duration_s": 10.428,
+      "load_duration_s": 0.0039,
+      "prompt_eval_count": 779,
+      "prompt_eval_duration_s": 1.5025,
+      "eval_count": 440,
+      "eval_duration_s": 8.8744,
+      "tokens_per_s": 49.6,
+      "prompt_tokens_per_s": 518.5
+    },
+    "memory": {
+      "ollama_model_size_bytes": 3237478399,
+      "ollama_size_vram_bytes": 3237478399,
+      "ollama_process_rss_bytes": 4353392640,
+      "harness_max_rss_bytes": 33013760,
+      "sampled_at": "2026-09-30T06:39:58Z"
+    },
+    "response_chars": 2033,
+    "ok": true,
+    "error": null,
+    "dump_file": "ingest/calls/233932-002-note-networking-tracker-readme-assignment-overview-and-requirements.json"
+  }
+}

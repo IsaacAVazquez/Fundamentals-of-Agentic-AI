@@ -1,0 +1,262 @@
+{
+  "schema": "ingest-log/1",
+  "run_id": "20260929-2340-supplement-gemma4-e4b",
+  "started_at": "2026-09-30T06:39:32Z",
+  "finished_at": "2026-09-30T06:41:25Z",
+  "model": {
+    "backend": "ollama",
+    "tag": "gemma4:e4b",
+    "digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb",
+    "parameter_size": "8.0B",
+    "quantization_level": "Q4_K_M",
+    "family": "gemma4",
+    "context_length": 131072,
+    "ollama_version": "0.35.0",
+    "size_bytes": 9608350718
+  },
+  "budgets": {
+    "plan_outline_chars": 6000,
+    "note_text_chars": 12000,
+    "num_ctx": 8192,
+    "num_predict": {
+      "ask": 400,
+      "chat": 500,
+      "route": 60,
+      "plan": 1200,
+      "note": 1400
+    }
+  },
+  "totals": {
+    "sources": 1,
+    "ingested": 1,
+    "up_to_date": 0,
+    "notes_written": 5,
+    "notes_drafted": 0,
+    "notes_in_vault": 22,
+    "calls": 6,
+    "total_wall_s": 113.21,
+    "prompt_tokens": 10090,
+    "generated_tokens": 4351,
+    "median_tokens_per_s": 46.9,
+    "max_ollama_size_bytes": 3237478399,
+    "max_ollama_process_rss_bytes": 4353392640,
+    "harness_max_rss_bytes": 33013760,
+    "max_payload_chars": 11902,
+    "payload_capped_calls": 1,
+    "index_passages": 333,
+    "index_wiki_passages": 101
+  },
+  "sources": [
+    {
+      "source": "raw/Networking Tracker README.md",
+      "source_id": "networking-tracker-readme",
+      "sha256": "74a345428e79e97dbf42f9cf77ea7d277df32dd213f6d22299cd07f2b222bae8",
+      "action": "ingested",
+      "notes_written": [
+        "Assignment Overview and Requirements",
+        "Web App Walkthrough Screenshots",
+        "Core Functionality and Features",
+        "Technology Stack and Architecture",
+        "Data Persistence and Security Details"
+      ],
+      "notes_drafted": [],
+      "notes_stale": [
+        "Database Schema and Auth",
+        "Local Setup and Deployment Details"
+      ],
+      "calls": [
+        {
+          "kind": "plan",
+          "attempt": 1,
+          "system_chars": 2105,
+          "user_chars": 6624,
+          "payload_chars": 5351,
+          "payload_capped": false,
+          "est_prompt_tokens": 2183,
+          "timing": {
+            "wall_s": 16.278,
+            "total_duration_s": 16.2744,
+            "load_duration_s": 0.0021,
+            "prompt_eval_count": 2073,
+            "prompt_eval_duration_s": 3.9012,
+            "eval_count": 566,
+            "eval_duration_s": 12.1604,
+            "tokens_per_s": 46.5,
+            "prompt_tokens_per_s": 531.4
+          },
+          "memory": {
+            "ollama_model_size_bytes": 3237478399,
+            "ollama_size_vram_bytes": 3237478399,
+            "ollama_process_rss_bytes": 4300734464,
+            "harness_max_rss_bytes": 33013760,
+            "sampled_at": "2026-09-30T06:39:48Z"
+          },
+          "response_chars": 2392,
+          "ok": true,
+          "error": null,
+          "dump_file": "ingest/calls/233932-001-plan-networking-tracker-readme.json"
+        },
+        {
+          "kind": "note",
+          "attempt": 1,
+          "system_chars": 998,
+          "user_chars": 2702,
+          "payload_chars": 1633,
+          "payload_capped": false,
+          "est_prompt_tokens": 925,
+          "timing": {
+            "wall_s": 10.438,
+            "total_duration_s": 10.428,
+            "load_duration_s": 0.0039,
+            "prompt_eval_count": 779,
+            "prompt_eval_duration_s": 1.5025,
+            "eval_count": 440,
+            "eval_duration_s": 8.8744,
+            "tokens_per_s": 49.6,
+            "prompt_tokens_per_s": 518.5
+          },
+          "memory": {
+            "ollama_model_size_bytes": 3237478399,
+            "ollama_size_vram_bytes": 3237478399,
+            "ollama_process_rss_bytes": 4353392640,
+            "harness_max_rss_bytes": 33013760,
+            "sampled_at": "2026-09-30T06:39:58Z"
+          },
+          "response_chars": 2033,
+          "ok": true,
+          "error": null,
+          "dump_file": "ingest/calls/233932-002-note-networking-tracker-readme-assignment-overview-and-requirements.json"
+        },
+        {
+          "kind": "note",
+          "attempt": 1,
+          "system_chars": 998,
+          "user_chars": 5497,
+          "payload_chars": 4271,
+          "payload_capped": false,
+          "est_prompt_tokens": 1624,
+          "timing": {
+            "wall_s": 19.554,
+            "total_duration_s": 19.5512,
+            "load_duration_s": 0.0053,
+            "prompt_eval_count": 1565,
+            "prompt_eval_duration_s": 3.2386,
+            "eval_count": 766,
+            "eval_duration_s": 16.2309,
+            "tokens_per_s": 47.2,
+            "prompt_tokens_per_s": 483.2
+          },
+          "memory": {
+            "ollama_model_size_bytes": 3237478399,
+            "ollama_size_vram_bytes": 3237478399,
+            "ollama_process_rss_bytes": 4300210176,
+            "harness_max_rss_bytes": 33013760,
+            "sampled_at": "2026-09-30T06:40:18Z"
+          },
+          "response_chars": 3360,
+          "ok": true,
+          "error": null,
+          "dump_file": "ingest/calls/233932-003-note-networking-tracker-readme-web-app-walkthrough-screenshots.json"
+        },
+        {
+          "kind": "note",
+          "attempt": 1,
+          "system_chars": 998,
+          "user_chars": 1978,
+          "payload_chars": 958,
+          "payload_capped": false,
+          "est_prompt_tokens": 744,
+          "timing": {
+            "wall_s": 8.743,
+            "total_duration_s": 8.7293,
+            "load_duration_s": 0.003,
+            "prompt_eval_count": 642,
+            "prompt_eval_duration_s": 1.4036,
+            "eval_count": 327,
+            "eval_duration_s": 7.1978,
+            "tokens_per_s": 45.4,
+            "prompt_tokens_per_s": 457.4
+          },
+          "memory": {
+            "ollama_model_size_bytes": 3237478399,
+            "ollama_size_vram_bytes": 3237478399,
+            "ollama_process_rss_bytes": 4283940864,
+            "harness_max_rss_bytes": 33013760,
+            "sampled_at": "2026-09-30T06:40:27Z"
+          },
+          "response_chars": 1513,
+          "ok": true,
+          "error": null,
+          "dump_file": "ingest/calls/233932-004-note-networking-tracker-readme-core-functionality-and-features.json"
+        },
+        {
+          "kind": "note",
+          "attempt": 1,
+          "system_chars": 998,
+          "user_chars": 5182,
+          "payload_chars": 4119,
+          "payload_capped": false,
+          "est_prompt_tokens": 1545,
+          "timing": {
+            "wall_s": 24.434,
+            "total_duration_s": 24.4249,
+            "load_duration_s": 0.0134,
+            "prompt_eval_count": 1353,
+            "prompt_eval_duration_s": 2.6608,
+            "eval_count": 980,
+            "eval_duration_s": 21.6977,
+            "tokens_per_s": 45.2,
+            "prompt_tokens_per_s": 508.5
+          },
+          "memory": {
+            "ollama_model_size_bytes": 3237478399,
+            "ollama_size_vram_bytes": 3237478399,
+            "ollama_process_rss_bytes": 4280205312,
+            "harness_max_rss_bytes": 33013760,
+            "sampled_at": "2026-09-30T06:40:51Z"
+          },
+          "response_chars": 4280,
+          "ok": true,
+          "error": null,
+          "dump_file": "ingest/calls/233932-005-note-networking-tracker-readme-technology-stack-and-architecture.json"
+        },
+        {
+          "kind": "note",
+          "attempt": 1,
+          "system_chars": 998,
+          "user_chars": 13190,
+          "payload_chars": 11902,
+          "payload_capped": true,
+          "est_prompt_tokens": 3547,
+          "timing": {
+            "wall_s": 33.298,
+            "total_duration_s": 33.2953,
+            "load_duration_s": 0.0044,
+            "prompt_eval_count": 3678,
+            "prompt_eval_duration_s": 6.9933,
+            "eval_count": 1272,
+            "eval_duration_s": 26.1739,
+            "tokens_per_s": 48.6,
+            "prompt_tokens_per_s": 525.9
+          },
+          "memory": {
+            "ollama_model_size_bytes": 3237478399,
+            "ollama_size_vram_bytes": 3237478399,
+            "ollama_process_rss_bytes": 4305125376,
+            "harness_max_rss_bytes": 33013760,
+            "sampled_at": "2026-09-30T06:41:25Z"
+          },
+          "response_chars": 5149,
+          "ok": true,
+          "error": null,
+          "dump_file": "ingest/calls/233932-006-note-networking-tracker-readme-data-persistence-and-security-details.json"
+        }
+      ],
+      "wall_s": 113.21,
+      "plan_origin": "model",
+      "errors": [],
+      "message": ""
+    }
+  ],
+  "log_file": "ingest/ingest_log.json"
+}

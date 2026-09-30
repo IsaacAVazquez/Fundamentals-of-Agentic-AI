@@ -50,7 +50,7 @@ class NotePlan:
     source_id: str
     source_name: str
     notes: list
-    origin: str          # model | model-retry | heuristic
+    origin: str          # model | model-retry | heuristic | stored
 
 
 @dataclass
@@ -421,7 +421,12 @@ class Ingester:
         # PLAN ---------------------------------------------------------------------------
         plan = None
         problems: list = []
-        for attempt in (1, 2):
+        if mine and all(n.frontmatter.get("source_sha256") == sha for n in mine):
+            # --force on an unchanged source: reuse the stored plan so a fresh model plan cannot rename notes into duplicates
+            plan = NotePlan(source_id, name, [NotePlanItem(n.title, n.folder, str(n.frontmatter.get("summary", "")),
+                                                           list(n.frontmatter.get("sections_used") or []))
+                                              for n in mine], "stored")
+        for attempt in (1, 2) if plan is None else ():
             messages = build_plan_messages(name, doc_title, outline, existing_titles, previous_titles, self.max_notes)
             if attempt == 2 and problems:
                 messages[-1]["content"] += "\n\nYour previous plan had these problems, fix them: " + "; ".join(problems[:8])

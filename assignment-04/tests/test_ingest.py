@@ -82,6 +82,20 @@ def test_reviewed_note_protected(fake_settings, fake_backend):
     assert read_note(note.path).frontmatter["reviewed"] is False
 
 
+def test_force_unchanged_source_reuses_stored_plan(fake_settings, fake_backend):
+    run_ingest(fake_settings, fake_backend, [])
+    before = sorted(p.path.name for p in list_notes(fake_settings.vault))
+
+    class NoPlan(FakeBackend):
+        def generate(self, messages, *, kind, **kw):
+            assert kind != "plan", "an unchanged source must not be re-planned"
+            return super().generate(messages, kind=kind, **kw)
+
+    log = run_ingest(fake_settings, NoPlan(), [], force=True)
+    assert sorted(p.path.name for p in list_notes(fake_settings.vault)) == before
+    assert {s["plan_origin"] for s in log["sources"] if s["action"] == "ingested"} == {"stored"}
+
+
 def test_unsupported_extension_reported(fake_settings, fake_backend):
     (fake_settings.vault / "raw/notes.pdf").write_bytes(b"%PDF-1.4 fake")
     log = run_ingest(fake_settings, fake_backend, [])
