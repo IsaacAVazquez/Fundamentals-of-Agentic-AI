@@ -6,15 +6,15 @@ source_id: custom-llm-readme
 source_sha256: 0293ff499fdd970bee6aeb0310c48a81919cb8028af1272b13bf71c8ae71110e
 copied_from: assignment-03/README.md
 copied_on: 2026-09-29
-ingested: 2026-09-30T05:57:37Z
+ingested: 2026-09-30T06:48:39Z
 generated_by: gemma4:e4b
 generated_by_digest: c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb
 notes:
-  - Custom LLM Training Runs
   - Custom LLM Chat Interface
-  - How the Custom LLM Learns
   - Custom LLM Results
   - Custom LLM Training Hardware
+  - Custom LLM Training Runs
+  - How the Custom LLM Learns
 ---
 # Custom LLM README
 
@@ -23,11 +23,11 @@ Catalog entry for one raw source. The original is unchanged at [[raw/Custom LLM 
 My Assignment 3 write-up: the word-token nanoGPT trained on the laptop CPU, the teaching corpus, the 48 language evals, the traced embedding and gradient, and the chat sessions.
 
 ## Notes derived from this source
-- [[Custom LLM Training Runs]]: Details the setup and initial training runs for the custom LLM assignment.
 - [[Custom LLM Chat Interface]]: Describes the interface for chatting with the final trained model.
-- [[How the Custom LLM Learns]]: Explains how the model learns using specific run numbers and files.
 - [[Custom LLM Results]]: Compares results from different training runs and evaluates model performance.
 - [[Custom LLM Training Hardware]]: Documents the computational resources and steps used during model training.
+- [[Custom LLM Training Runs]]: Details the setup and initial training runs for the custom LLM assignment.
+- [[How the Custom LLM Learns]]: Explains how the model learns using specific run numbers and files.
 
 ## Sections of the source
 - Custom LLM with nanoGPT (lines 1-4), in [[Custom LLM Training Runs]]
