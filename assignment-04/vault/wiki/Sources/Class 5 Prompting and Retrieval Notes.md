@@ -6,7 +6,7 @@ source_id: class-5-prompting-and-retrieval-notes
 source_sha256: 535af3de2b0afdda285bcf17d3bfbb3850936db0c8ef4fed9584cff5f7c34a1c
 copied_from: class5.md
 copied_on: 2026-09-29
-ingested: 2026-09-30T06:48:39Z
+ingested: 2026-09-30T06:53:01Z
 generated_by: gemma4:e4b
 generated_by_digest: c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb
 notes:
