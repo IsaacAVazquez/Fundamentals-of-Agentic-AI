@@ -10,7 +10,7 @@ ingested: 2026-09-30T05:57:37Z
 generated_by: gemma4:e4b
 generated_by_digest: c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb
 notes:
-  - Assignment Overview and Requirements
+  - Networking Tracker Requirements
   - Database Schema and Auth
   - Local Setup and Deployment Details
   - Technology Stack and Architecture
@@ -23,15 +23,15 @@ Catalog entry for one raw source. The original is unchanged at [[raw/Networking 
 My Assignment 1 write-up: the networking tracker on Next.js, Neon Postgres, managed Better Auth, and the Neon Data API, with its schema, security checks, tests, and deployment.
 
 ## Notes derived from this source
-- [[Assignment Overview and Requirements]]: Details the assignment requirements and the structure of the web application.
+- [[Networking Tracker Requirements]]: Details the assignment requirements and the structure of the web application.
 - [[Database Schema and Auth]]: Covers the database structure, authentication flow, and row ownership.
 - [[Local Setup and Deployment Details]]: Instructions for local setup, environment variables, and deployment process.
 - [[Technology Stack and Architecture]]: Describes the technologies used and the overall system architecture.
 - [[Web App Walkthrough Screenshots]]: A detailed walkthrough of the app's functionality using various screenshots.
 
 ## Sections of the source
-- Networking Tracker (lines 1-6), in [[Assignment Overview and Requirements]]
-- Where to find each requirement (lines 7-27), in [[Assignment Overview and Requirements]]
+- Networking Tracker (lines 1-6), in [[Networking Tracker Requirements]]
+- Where to find each requirement (lines 7-27), in [[Networking Tracker Requirements]]
 - Walkthrough (lines 28-31), in [[Web App Walkthrough Screenshots]]
 - Sign up, sign in, and sign out (lines 32-43), in [[Web App Walkthrough Screenshots]]
 - Adding a contact and surviving a refresh (lines 44-55), in [[Web App Walkthrough Screenshots]]

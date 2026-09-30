@@ -1,6 +1,7 @@
 ---
-title: Assignment Model Training Overview
+title: Custom LLM Training Runs
 aliases:
+  - Assignment Model Training Overview
   - assignment-model-training-overview
 topic: Projects
 summary: Details the setup and initial training runs for the custom LLM assignment.
@@ -22,7 +23,7 @@ generated_by_digest: c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf
 note_id: custom-llm-readme/assignment-model-training-overview
 plan_origin: model-retry
 ---
-# Assignment Model Training Overview
+# Custom LLM Training Runs
 
 ## Summary
 
@@ -42,8 +43,8 @@ I kept the corpus as the classroom sentences for the first run because the assig
 
 ## Related
 
-- [[Model Performance and Results]]: This note details the setup and initial training runs for the custom LLM assignment
-- [[Training Budget and Hardware Details]]: I kept 3,000 steps for both required runs because it's the course's starting budget
+- [[Custom LLM Results]]: This note details the setup and initial training runs for the custom LLM assignment
+- [[Custom LLM Training Hardware]]: I kept 3,000 steps for both required runs because it's the course's starting budget
 - [[Model Customization Techniques Comparison]]: For the second run I kept the classroom sentences and added my files on top
 
 ## Sources

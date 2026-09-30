@@ -55,8 +55,7 @@ In Colab, the route from the Class 3 setup slide is File, then Upload notebook, 
 
 ## Related
 
-- [[Assignment Overview and Requirements Pac-Man]]: This note covers the execution of the final 450-game run notebook and its outputs
-- [[Model Performance and Results]]: This note details how to run the final 450-game run notebook, `pacman_dqn.ipynb`, and provides instructions for local execution and verification
+- [[Pac-Man DQN Requirements]]: This note covers the execution of the final 450-game run notebook and its outputs
 
 ## Sources
 

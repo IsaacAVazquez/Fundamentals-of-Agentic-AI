@@ -1,6 +1,7 @@
 ---
-title: Assignment Overview and Requirements Pac-Man
+title: Pac-Man DQN Requirements
 aliases:
+  - Assignment Overview and Requirements Pac-Man
   - assignment-overview-and-requirements-pac-man
 topic: Projects
 summary: This section outlines the structure and requirements for the assignment using a reference table.
@@ -19,7 +20,7 @@ generated_by_digest: c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf
 note_id: pac-man-dqn-readme/assignment-overview-and-requirements-pac-man
 plan_origin: model-retry
 ---
-# Assignment Overview and Requirements Pac-Man
+# Pac-Man DQN Requirements
 
 ## Summary
 
@@ -46,7 +47,7 @@ The sections below follow the order of the assignment's README requirements. Thi
 
 ## Related
 
-- [[Assignment Overview and Requirements]]: This note covers the structure and requirements for the assignment using a reference table
+- [[Running the DQN Notebook]]: how to run the notebook these requirements point to
 
 ## Sources
 

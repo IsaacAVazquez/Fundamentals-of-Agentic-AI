@@ -1,6 +1,7 @@
 ---
-title: Assignment Overview and Requirements
+title: Networking Tracker Requirements
 aliases:
+  - Assignment Overview and Requirements
   - assignment-overview-and-requirements
 topic: Projects
 summary: Details the assignment requirements and the structure of the web application.
@@ -19,7 +20,7 @@ generated_by_digest: c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf
 note_id: networking-tracker-readme/assignment-overview-and-requirements
 plan_origin: model-retry
 ---
-# Assignment Overview and Requirements
+# Networking Tracker Requirements
 
 ## Summary
 

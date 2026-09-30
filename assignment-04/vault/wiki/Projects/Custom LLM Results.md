@@ -1,6 +1,7 @@
 ---
-title: Model Performance and Results
+title: Custom LLM Results
 aliases:
+  - Model Performance and Results
   - model-performance-and-results
 topic: Projects
 summary: Compares results from different training runs and evaluates model performance.
@@ -28,7 +29,7 @@ generated_by_digest: c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf
 note_id: custom-llm-readme/model-performance-and-results
 plan_origin: model-retry
 ---
-# Model Performance and Results
+# Custom LLM Results
 
 ## Summary
 
@@ -65,12 +66,10 @@ Adding the files took the corpus to 6,807 unique passages, 4,592 from the classr
 
 Same fixed panels of 20 documents each, drawn from this run's split, so these numbers are not comparable to the starter run's, and the brief says as much about different corpora. The starting loss is again about the log of the vocabulary size, which is 6.06 for 427 words. The validation panel ended about 0.14 above the training panel, 0.9557 against 0.8140. The table is `results/expanded/history.json` and the plot is `results/expanded/training_curves.svg`.
 
-- Assignment Model Training Overview: This note compares results from different training runs and evaluates model performance.
-- Model Learning Mechanics Explained: This section details the specific skills taught (grammar, opposites, negation, and reference) and how they were implemented in the corpus.
 
 ## Related
 
-- [[Assignment Model Training Overview]]: These sections detail the results of the training described here
+- [[Custom LLM Training Runs]]: These sections detail the results of the training described here
 
 ## Sources
 

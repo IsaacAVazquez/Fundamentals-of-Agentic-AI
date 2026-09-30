@@ -1,6 +1,7 @@
 ---
-title: Interacting with Trained Model
+title: Custom LLM Chat Interface
 aliases:
+  - Interacting with Trained Model
   - interacting-with-trained-model
 topic: Projects
 summary: Describes the interface for chatting with the final trained model.
@@ -21,7 +22,7 @@ generated_by_digest: c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf
 note_id: custom-llm-readme/interacting-with-trained-model
 plan_origin: model-retry
 ---
-# Interacting with Trained Model
+# Custom LLM Chat Interface
 
 ## Summary
 
@@ -37,9 +38,8 @@ The limitation I'd point to is that a passing score on these tests can come from
 
 ## Related
 
-- [[Model Performance and Results]]: The chat transcripts and session logs, the Terminal screenshot, and the drawing of the 6,000-step session
-- [[Model Learning Mechanics Explained]]: The corpus-extension experiment, executed with every output saved
-- [[Advanced Retrieval and Knowledge Hub]]: The chat transcripts and session logs, the Terminal screenshot, and the drawing of the 6,000-step session
+- [[Custom LLM Results]]: The chat transcripts and session logs, the Terminal screenshot, and the drawing of the 6,000-step session
+- [[How the Custom LLM Learns]]: The corpus-extension experiment, executed with every output saved
 
 ## Sources
 

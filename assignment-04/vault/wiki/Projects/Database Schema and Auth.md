@@ -57,8 +57,6 @@ Validation has two layers on purpose. `lib/contacts.ts` checks the name, the pri
 **Tests**
 The test file is `tests/contacts.test.ts` and it runs on Node's built-in runner. Six cases cover `validateContact`, `describeDbError`, and `isAuthProblem`. They verify that a valid contact is accepted with text trimmed and blanks stored as null, that an empty or whitespace-only name is rejected with the message the form shows, a tab or a newline included, that a priority outside high, medium, and low is rejected, that every field passes at its length limit and fails one character past it, that each database error code becomes the sentence the page shows, and that a missing or expired session is recognized. A seventh case connects to the database when `DATABASE_URL` is set and proves the `CHECK` constraints reject a blank name, a tab-only name, an invalid priority, and an over-long name at the Postgres level. Without `DATABASE_URL` that case is skipped, so the suite still passes on a machine without credentials.
 
-- Assignment Overview and Requirements: This note covers the database structure, authentication flow, and row ownership.
-- Technology Stack and Architecture: This note details the database schema for the `contacts` table, the authentication flow, and the implementation of row ownership using Row Level Security (RLS).
 
 ## Related
 

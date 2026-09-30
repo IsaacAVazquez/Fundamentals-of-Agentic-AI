@@ -59,9 +59,8 @@ This is User B, the 2026-09-13 test account, right after it was created on the l
 
 ## Related
 
-- [[Assignment Overview and Requirements]]: This note details the functionality of the web app
+- [[Networking Tracker Requirements]]: This note details the functionality of the web app
 - [[Local Setup and Deployment Details]]: The screenshots were taken on the live Vercel site
-- [[Model Performance and Results]]: The walkthrough demonstrates the app's operational results
 
 ## Sources
 

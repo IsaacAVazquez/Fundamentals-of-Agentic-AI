@@ -1,6 +1,7 @@
 ---
-title: Model Learning Mechanics Explained
+title: How the Custom LLM Learns
 aliases:
+  - Model Learning Mechanics Explained
   - model-learning-mechanics-explained
 topic: Concepts
 summary: Explains how the model learns using specific run numbers and files.
@@ -18,7 +19,7 @@ generated_by_digest: c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf
 note_id: custom-llm-readme/model-learning-mechanics-explained
 plan_origin: model-retry
 ---
-# Model Learning Mechanics Explained
+# How the Custom LLM Learns
 
 ## Summary
 

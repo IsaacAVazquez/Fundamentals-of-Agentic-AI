@@ -1,6 +1,7 @@
 ---
-title: Performance Analysis Before Runs
+title: Pac-Man DQN Predictions
 aliases:
+  - Performance Analysis Before Runs
   - performance-analysis-before-runs
 topic: Projects
 summary: Recording and comparing expected performance metrics before the agent's training runs began.
@@ -18,7 +19,7 @@ generated_by_digest: c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf
 note_id: pac-man-dqn-readme/performance-analysis-before-runs
 plan_origin: model-retry
 ---
-# Performance Analysis Before Runs
+# Pac-Man DQN Predictions
 
 ## Summary
 
@@ -34,8 +35,7 @@ Before the final run, I expected its agent to land near the 1,033 average that t
 
 ## Related
 
-- [[Assignment Model Training Overview]]: This note discusses performance expectations before training runs
-- [[Model Performance and Results]]: The note compares expected performance to previous checkpoint scores
+- [[Pac-Man DQN Results and Limitations]]: the actual scores these predictions were made about
 
 ## Sources
 

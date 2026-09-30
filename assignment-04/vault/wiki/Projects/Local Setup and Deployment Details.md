@@ -91,7 +91,6 @@ I ran this against the live URL on the evening of 2026-09-13 Pacific time. User 
 
 - [[Technology Stack and Architecture]]: This note covers the entire setup and deployment process
 - [[Database Schema and Auth]]: The setup requires creating the contacts table, its constraints, and RLS policies
-- [[Assignment Model Training Overview]]: The deployment process is the final step after local setup
 
 ## Sources
 

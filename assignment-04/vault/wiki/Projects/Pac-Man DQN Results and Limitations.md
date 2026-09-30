@@ -1,6 +1,7 @@
 ---
-title: Agent Training Results and Limitations
+title: Pac-Man DQN Results and Limitations
 aliases:
+  - Agent Training Results and Limitations
   - agent-training-results-and-limitations
 topic: Projects
 summary: Presenting the results from the first and final training runs, along with observed agent limitations.
@@ -26,7 +27,7 @@ generated_by_digest: c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf
 note_id: pac-man-dqn-readme/agent-training-results-and-limitations
 plan_origin: model-retry
 ---
-# Agent Training Results and Limitations
+# Pac-Man DQN Results and Limitations
 
 ## Summary
 
@@ -49,12 +50,11 @@ On the five evaluation games, the final agent beat the untrained network on thre
 | First, 500 games | completed | 500 | 303,666 | 75,667 | 837.5 s, about 14.0 minutes | 852 s, about 14.2 minutes |
 | Final, 450 games | completed | 450 | 274,814 | 68,454 | 761.9 s, about 12.7 minutes | 777 s, about 13.0 minutes |
 
-- Model Performance and Results: This note presents the results from the first and final training runs, along with observed agent limitations.
-- Assignment Model Training Overview: The note details the process of checking checkpoints and comparing the 450-game run to the 500-game run.
 
 ## Related
 
-- [[Model Performance and Results]]: This note details the specific performance metrics observed
+- [[Pac-Man DQN Predictions]]: what I expected before these runs
+- [[Pac-Man DQN Hyperparameters]]: the settings used for these runs
 
 ## Sources
 

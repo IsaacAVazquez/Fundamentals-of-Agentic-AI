@@ -1,6 +1,7 @@
 ---
-title: Agent Hyperparameter Tuning Choices
+title: Pac-Man DQN Hyperparameters
 aliases:
+  - Agent Hyperparameter Tuning Choices
   - agent-hyperparameter-tuning-choices
 topic: Projects
 summary: A comparison of starting and final values for key training settings like exploration and learning rate.
@@ -18,7 +19,7 @@ generated_by_digest: c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf
 note_id: pac-man-dqn-readme/agent-hyperparameter-tuning-choices
 plan_origin: model-retry
 ---
-# Agent Hyperparameter Tuning Choices
+# Pac-Man DQN Hyperparameters
 
 ## Summary
 
@@ -42,7 +43,7 @@ For the first run I picked 500 episodes because a five-game run only checks the 
 
 ## Related
 
-- [[Assignment Model Training Overview]]: This note details my specific choices for key hyperparameters during the agent's training process, including exploration, episodes, and learning rate
+- [[Pac-Man DQN Results and Limitations]]: the scores the agent reached with these settings
 
 ## Sources
 
