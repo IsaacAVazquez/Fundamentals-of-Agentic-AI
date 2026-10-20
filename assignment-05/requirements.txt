@@ -1,0 +1,7 @@
+# The pipeline itself runs on the Python standard library. These are the optional pieces.
+anthropic>=0.80        # Claude backend (--backend anthropic)
+openai>=1.60           # OpenAI backend (--backend openai), untested here
+fastapi>=0.115         # dashboard backend
+uvicorn>=0.30          # local dashboard server
+psycopg[binary]>=3.2   # Postgres (Neon) for the deployed dashboard; SQLite needs nothing
+pytest>=8,<9           # tests/

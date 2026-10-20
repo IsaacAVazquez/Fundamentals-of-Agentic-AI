@@ -1,0 +1,14 @@
+{
+  "ts": "2026-10-20T06:21:16Z",
+  "phase": "resume",
+  "moment": "before",
+  "statuses": {
+    "pending": 0,
+    "completed": 99,
+    "quarantined": 1
+  },
+  "completed_count": 99,
+  "completed_ids_sha256": "aa61d90d53e7ad6841b6f1666c5c20b17027442589e25402ab2caed2def0cc0c",
+  "classify_calls_so_far": 2,
+  "classify_spend_so_far_usd": 0.0
+}

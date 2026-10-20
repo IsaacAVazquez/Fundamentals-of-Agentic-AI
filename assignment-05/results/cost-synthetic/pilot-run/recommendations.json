@@ -1,0 +1,171 @@
+{
+  "generated_at": "2026-10-20T06:21:16Z",
+  "model": "fake:fake-deterministic-v1",
+  "effort": "low",
+  "priority_issue_id": "ISS-playback",
+  "recommendation": "Prioritize fake issue name",
+  "alternatives": [
+    "ISS-billing",
+    "ISS-usability"
+  ],
+  "cited_claims": [
+    "C10",
+    "C11",
+    "C13",
+    "C17",
+    "C19",
+    "C2",
+    "C23",
+    "C3",
+    "C7"
+  ],
+  "memo_check_passed": true,
+  "evidence_pack": {
+    "ISS-playback": [
+      {
+        "review_id": "syn-0000013",
+        "severity": 4,
+        "intent": "complaint",
+        "quote": "Songs stop halfway through and the app crashes when I switch tracks"
+      },
+      {
+        "review_id": "syn-0000027",
+        "severity": 3,
+        "intent": "complaint",
+        "quote": "Playback lags constantly on wifi, skips every few seconds"
+      },
+      {
+        "review_id": "syn-0000032",
+        "severity": 3,
+        "intent": "complaint",
+        "quote": "App freezes whenever I open a playlist and music stutters"
+      },
+      {
+        "review_id": "syn-0000039",
+        "severity": 3,
+        "intent": "complaint",
+        "quote": "App freezes whenever I open a playlist and music stutters"
+      },
+      {
+        "review_id": "syn-0000046",
+        "severity": 3,
+        "intent": "complaint",
+        "quote": "App freezes whenever I open a playlist and music stutters"
+      }
+    ],
+    "ISS-billing": [
+      {
+        "review_id": "syn-0000026",
+        "severity": 5,
+        "intent": "complaint",
+        "quote": "Charged twice this month for premium and still shows the free plan"
+      },
+      {
+        "review_id": "syn-0000066",
+        "severity": 5,
+        "intent": "complaint",
+        "quote": "Charged twice this month for premium and still shows the free plan"
+      },
+      {
+        "review_id": "syn-0000075",
+        "severity": 5,
+        "intent": "complaint",
+        "quote": "Charged twice this month for premium and still shows the free plan"
+      },
+      {
+        "review_id": "syn-0000086",
+        "severity": 5,
+        "intent": "complaint",
+        "quote": "Charged twice this month for premium and still shows the free plan"
+      },
+      {
+        "review_id": "syn-0000094",
+        "severity": 5,
+        "intent": "complaint",
+        "quote": "Charged twice this month for premium and still shows the free plan"
+      }
+    ],
+    "ISS-usability": [
+      {
+        "review_id": "syn-0000003",
+        "severity": 2,
+        "intent": "cancellation",
+        "quote": "The new layout hides the shuffle button and the ads are every two songs now Cancelling my subscription"
+      },
+      {
+        "review_id": "syn-0000009",
+        "severity": 2,
+        "intent": "cancellation",
+        "quote": "The new layout hides the shuffle button and the ads are every two songs now I'm switching to another service"
+      },
+      {
+        "review_id": "syn-0000019",
+        "severity": 2,
+        "intent": "cancellation",
+        "quote": "The new layout hides the shuffle button and the ads are every two songs now Cancelling my subscription"
+      },
+      {
+        "review_id": "syn-0000024",
+        "severity": 2,
+        "intent": "complaint",
+        "quote": "Too many ads, and the interface keeps changing for no reason"
+      },
+      {
+        "review_id": "syn-0000030",
+        "severity": 2,
+        "intent": "complaint",
+        "quote": "Too many ads, and the interface keeps changing for no reason"
+      }
+    ],
+    "ISS-downloads": [
+      {
+        "review_id": "syn-0000005",
+        "severity": 4,
+        "intent": "complaint",
+        "quote": "Saved music won't play without internet anymore"
+      },
+      {
+        "review_id": "syn-0000008",
+        "severity": 4,
+        "intent": "complaint",
+        "quote": "Saved music won't play without internet anymore"
+      },
+      {
+        "review_id": "syn-0000014",
+        "severity": 4,
+        "intent": "complaint",
+        "quote": "Offline mode says downloads are unavailable even though storage is fine"
+      },
+      {
+        "review_id": "syn-0000016",
+        "severity": 4,
+        "intent": "complaint",
+        "quote": "Saved music won't play without internet anymore"
+      },
+      {
+        "review_id": "syn-0000034",
+        "severity": 4,
+        "intent": "complaint",
+        "quote": "Saved music won't play without internet anymore"
+      }
+    ]
+  },
+  "scope": {
+    "completed_records": 99,
+    "quarantined_records": 1,
+    "pending_records": 0,
+    "partial_months": [
+      "2022-05",
+      "2023-10"
+    ],
+    "synthetic_input": true,
+    "limitations": [
+      "Reviews are self-selected public app store posts, not a customer population.",
+      "No account, plan, revenue, or cancellation data exists; cancellation intent is expressed, not observed.",
+      "Labels come from a model checked against a 50-review golden set and a verifier sample; see evals/.",
+      "Quarantined and pending records are not classified and are excluded from every count.",
+      "THE INPUT WAS SYNTHETIC TEST DATA; nothing here describes Spotify."
+    ]
+  },
+  "memo_markdown": "## Recommendation\n\nPut the next quarter of product effort on [ISS-playback] (fake issue name).\n\n## Why this issue\n\nIt has 15 [C7] complaint records with a mean severity of 3.066667 [C10], for a score of 46 [C11], the highest of the 8 issues. Review syn-0000013 says \"Songs stop halfway through and the app crashes when I switch tracks\" (severity 4). Review syn-0000027 says \"Playback lags constantly on wifi, skips every few seconds\" (severity 3).\n\n## Alternatives considered\n\n[ISS-billing] scored 41 [C17] on 12 [C13] complaints. [ISS-usability] scored 40 [C23] on 20 [C19] complaints.\n\n## Limitations\n\nOnly 99 [C2] records were classified and 1 [C3] were quarantined. Reviews are self-selected and nothing here measures revenue or churn."
+}

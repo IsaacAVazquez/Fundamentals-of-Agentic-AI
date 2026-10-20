@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-10-20T06:14:08Z",
+  "seed": 20261020,
+  "sample_requested": 40,
+  "sample_size": 40,
+  "compared": 40,
+  "verifier_failures": 0,
+  "model": "fake:fake-deterministic-v1",
+  "effort": "low",
+  "agreement": {
+    "topic": 1.0,
+    "intent": 1.0,
+    "severity_exact": 1.0
+  },
+  "severity_mae": 0.0,
+  "sentiment_mae": 0.0,
+  "disagreement_count": 0,
+  "disagreement_rate": 0.0,
+  "planted_error_caught": true,
+  "cost_usd": 0.0
+}

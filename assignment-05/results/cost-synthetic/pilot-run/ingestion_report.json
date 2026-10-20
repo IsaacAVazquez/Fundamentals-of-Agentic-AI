@@ -1,0 +1,62 @@
+{
+  "generated_at": "2026-10-20T06:21:16Z",
+  "source_file": "/tmp/claude-0/-home-user-Fundamentals-of-Agentic-AI/ec44ca5c-665c-5673-bf45-66c272bb4165/scratchpad/syn100.csv",
+  "source_sha256": "c9bce8b566e55f1042211c9242048e9920e3d34cfba4e39a7061f398b201430d",
+  "source_bytes": 11267,
+  "columns": [
+    "review_id",
+    "review_text",
+    "review_rating",
+    "review_likes",
+    "app_version",
+    "review_timestamp"
+  ],
+  "header_ok": true,
+  "rows": 100,
+  "unique_review_ids": 100,
+  "duplicate_review_ids_skipped": 0,
+  "empty_review_texts": 1,
+  "nonempty_reviews": 99,
+  "distinct_nonempty_texts": 42,
+  "exact_duplicate_nonempty_texts": 57,
+  "missing_app_version": 27,
+  "rating_counts": {
+    "1": 27,
+    "2": 16,
+    "3": 21,
+    "4": 18,
+    "5": 18
+  },
+  "rows_by_month": {
+    "2022-05": 6,
+    "2022-06": 6,
+    "2022-07": 2,
+    "2022-08": 4,
+    "2022-09": 8,
+    "2022-10": 7,
+    "2022-11": 4,
+    "2022-12": 9,
+    "2023-01": 4,
+    "2023-02": 3,
+    "2023-03": 4,
+    "2023-04": 8,
+    "2023-05": 8,
+    "2023-06": 3,
+    "2023-07": 4,
+    "2023-08": 9,
+    "2023-09": 9,
+    "2023-10": 2
+  },
+  "row_hash_definition": "sha256(utf8(review_id + US + review_text + US + review_rating + US + review_likes + US + app_version + US + review_timestamp)), US = \\x1f",
+  "text_hash_definition": "sha256(utf8(review_text))",
+  "expected_full_corpus": {
+    "rows": 660622,
+    "nonempty": 660609,
+    "empty": 13,
+    "distinct_nonempty_texts": 484189,
+    "missing_app_version": 159701,
+    "source_file": "spotify_reviews_18months.csv",
+    "source_bytes": 97400616
+  },
+  "matches_full_corpus_profile": false
+}

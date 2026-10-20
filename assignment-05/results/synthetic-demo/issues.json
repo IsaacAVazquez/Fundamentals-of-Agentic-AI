@@ -1,0 +1,61 @@
+{
+  "grouping_rule": "issue_id = 'ISS-' + topic for every completed record whose intent is complaint or cancellation; one issue per review",
+  "issues": [
+    {
+      "issue_id": "ISS-access",
+      "topic": "access",
+      "name": "fake issue name",
+      "description": "fake description from examples",
+      "named_by": "fake:fake-deterministic-v1"
+    },
+    {
+      "issue_id": "ISS-usability",
+      "topic": "usability",
+      "name": "fake issue name",
+      "description": "fake description from examples",
+      "named_by": "fake:fake-deterministic-v1"
+    },
+    {
+      "issue_id": "ISS-playback",
+      "topic": "playback",
+      "name": "fake issue name",
+      "description": "fake description from examples",
+      "named_by": "fake:fake-deterministic-v1"
+    },
+    {
+      "issue_id": "ISS-downloads",
+      "topic": "downloads",
+      "name": "fake issue name",
+      "description": "fake description from examples",
+      "named_by": "fake:fake-deterministic-v1"
+    },
+    {
+      "issue_id": "ISS-catalog",
+      "topic": "catalog",
+      "name": "fake issue name",
+      "description": "fake description from examples",
+      "named_by": "fake:fake-deterministic-v1"
+    },
+    {
+      "issue_id": "ISS-billing",
+      "topic": "billing",
+      "name": "fake issue name",
+      "description": "fake description from examples",
+      "named_by": "fake:fake-deterministic-v1"
+    },
+    {
+      "issue_id": "ISS-support",
+      "topic": "support",
+      "name": "fake issue name",
+      "description": "fake description from examples",
+      "named_by": "fake:fake-deterministic-v1"
+    },
+    {
+      "issue_id": "ISS-other",
+      "topic": "other",
+      "name": "other problems",
+      "description": "anything that fits none of the above, including praise and generic comments",
+      "named_by": "code"
+    }
+  ]
+}

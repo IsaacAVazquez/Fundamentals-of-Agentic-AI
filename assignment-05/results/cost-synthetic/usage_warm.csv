@@ -1,0 +1,5 @@
+stage,provider,model,effort,label_config,requests,succeeded,failed,records_requested,usage_unknown,input_tokens,cached_input_tokens,cache_write_tokens,output_tokens,duration_ms_sum
+classify,fake,fake-deterministic-v1,low,fake:fake-deterministic-v1|effort=low|prompt=v1|schema=v1,2,2,0,42,0,2773,0,0,2655,1
+verify,fake,fake-deterministic-v1,low,fake:fake-deterministic-v1|effort=low|prompt=v1|schema=v1,2,2,0,20,0,2286,0,0,1310,0
+group,fake,fake-deterministic-v1,low,fake:fake-deterministic-v1|effort=low|prompt=v1|schema=v1,14,14,0,106,0,4322,0,0,266,0
+memo,fake,fake-deterministic-v1,low,fake:fake-deterministic-v1|effort=low|prompt=v1|schema=v1,2,2,0,0,0,5260,0,0,494,0

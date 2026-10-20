@@ -1,0 +1,9 @@
+rank,issue_id,name,complaint_count,severity_sum,mean_severity,score
+1,ISS-access,fake issue name,121,484,4.000000,484
+2,ISS-playback,fake issue name,134,443,3.305970,443
+3,ISS-downloads,fake issue name,119,430,3.613445,430
+4,ISS-billing,fake issue name,120,409,3.408333,409
+5,ISS-usability,fake issue name,142,284,2.000000,284
+6,ISS-catalog,fake issue name,118,204,1.728814,204
+7,ISS-support,fake issue name,123,123,1.000000,123
+8,ISS-other,other problems,0,0,0.000000,0

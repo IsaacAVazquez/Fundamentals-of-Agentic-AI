@@ -1,0 +1,101 @@
+{
+  "exported_at": "2026-10-20T06:21:16Z",
+  "run_id": "run1",
+  "synthetic_input": true,
+  "source": {
+    "file": "syn.csv",
+    "sha256": "8d8ed8c68906d3543cec2bb219eb6c12d77d2be83d23146f35218515c200dea3",
+    "bytes": 113053
+  },
+  "row_hash_definition": "sha256(utf8(review_id + US + review_text + US + review_rating + US + review_likes + US + app_version + US + review_timestamp)), US = \\x1f",
+  "label_config": "fake:fake-deterministic-v1|effort=low|prompt=v1|schema=v1",
+  "controls": {
+    "backend": "fake",
+    "model": "fake-deterministic-v1",
+    "effort": "low",
+    "batch_size": 25,
+    "workers": 2,
+    "max_spend_usd": 5.0,
+    "max_output_tokens": 4000,
+    "max_batches": null,
+    "max_reviews": null,
+    "time_limit_s": null,
+    "fallback_model": null,
+    "fallback_fraction": 0.02,
+    "rates_path": null,
+    "backoff_tries": 3,
+    "label_config": "fake:fake-deterministic-v1|effort=low|prompt=v1|schema=v1"
+  },
+  "models": {
+    "fake:fake-deterministic-v1": {
+      "calls": 16,
+      "stages": [
+        "classify",
+        "group",
+        "memo",
+        "verify"
+      ]
+    }
+  },
+  "phases": [
+    {
+      "phase": "initial",
+      "started_at": "2026-10-20T06:14:08Z",
+      "before": {
+        "ts": "2026-10-20T06:14:08Z",
+        "phase": "initial",
+        "moment": "before",
+        "statuses": {
+          "pending": 998,
+          "completed": 0,
+          "quarantined": 2
+        },
+        "completed_count": 0,
+        "completed_ids_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "classify_calls_so_far": 0,
+        "classify_spend_so_far_usd": 0.0
+      },
+      "finished_at": "2026-10-20T06:14:08Z",
+      "stop_reason": "no_pending",
+      "after": {
+        "ts": "2026-10-20T06:14:08Z",
+        "phase": "initial",
+        "moment": "after",
+        "statuses": {
+          "pending": 0,
+          "completed": 998,
+          "quarantined": 2
+        },
+        "completed_count": 998,
+        "completed_ids_sha256": "792b4d173c143f6f3d99e75e19917bdebe9ee3b2372114ff60dc36c2c9c77648",
+        "classify_calls_so_far": 6,
+        "classify_spend_so_far_usd": 0.0
+      },
+      "batches": 6,
+      "completed_this_run": 998,
+      "cache_hits": 888,
+      "wall_clock_s": 0.035
+    }
+  ],
+  "counts": {
+    "source_rows": 1000,
+    "nonempty_rows": 998,
+    "pending": 0,
+    "completed": 998,
+    "quarantined": 2,
+    "classified_nonempty": 998,
+    "completed_via_exact_text_cache": 888
+  },
+  "enrichment_limit_per_request": 50,
+  "files": [
+    "run.json",
+    "ingestion.json",
+    "records.jsonl.gz",
+    "membership.csv",
+    "ranking.csv",
+    "claims.csv",
+    "calls.jsonl",
+    "checkpoint_before.json",
+    "checkpoint_after.json"
+  ]
+}

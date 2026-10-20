@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Review Insight Dashboard</title>
+<style>
+  :root { --bg: #f6f6f3; --panel: #ffffff; --ink: #1c1c1a; --muted: #6b6b66; --line: #e2e2dc; --accent: #1d6b4b; --warn: #b4572a; --bar: #cfe3d8; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg: #141412; --panel: #1e1e1b; --ink: #ececec; --muted: #a2a29a; --line: #33332f; --accent: #6fc39a; --warn: #e2a27e; --bar: #234a3a; } }
+  :root[data-theme="dark"] { --bg: #141412; --panel: #1e1e1b; --ink: #ececec; --muted: #a2a29a; --line: #33332f; --accent: #6fc39a; --warn: #e2a27e; --bar: #234a3a; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.5 -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; }
+  main { max-width: 1100px; margin: 0 auto; padding: 24px 16px 64px; }
+  h1 { font-size: 1.5rem; margin: 0 0 4px; } h2 { font-size: 1.1rem; margin: 28px 0 10px; }
+  .sub { color: var(--muted); margin: 0 0 16px; }
+  .banner { background: var(--warn); color: #fff; padding: 8px 12px; border-radius: 6px; margin-bottom: 16px; display: none; }
+  .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
+  .tile { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 12px; }
+  .tile .k { color: var(--muted); font-size: 12px; } .tile .v { font-size: 1.35rem; font-weight: 600; }
+  table { width: 100%; border-collapse: collapse; background: var(--panel); border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+  th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { color: var(--muted); font-weight: 500; font-size: 12px; } tr:last-child td { border-bottom: 0; }
+  tr.issue { cursor: pointer; } tr.issue:hover td { background: color-mix(in srgb, var(--accent) 8%, transparent); }
+  .bar { height: 8px; background: var(--bar); border-radius: 4px; } .bar > i { display: block; height: 100%; background: var(--accent); border-radius: 4px; }
+  .memo { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 16px; white-space: pre-wrap; }
+  .pill { display: inline-block; padding: 1px 8px; border-radius: 10px; font-size: 12px; border: 1px solid var(--line); color: var(--muted); margin-right: 4px; }
+  .ok { color: var(--accent); } .bad { color: var(--warn); }
+  details { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 10px 14px; margin: 8px 0; }
+  summary { cursor: pointer; } code { font-size: 13px; }
+  .wrap { overflow-x: auto; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Where should Spotify's next quarter of product effort go?</h1>
+  <p class="sub" id="runline">Loading the latest run from the database…</p>
+  <div class="banner" id="banner"></div>
+
+  <h2>Overall metrics</h2>
+  <div class="tiles" id="tiles"></div>
+
+  <h2>Issue ranking</h2>
+  <p class="sub">score = complaint count × mean severity = severity sum, computed by code from the saved records. Click an issue for its claims, evidence, and monthly trend.</p>
+  <div class="wrap"><table id="issues"><thead><tr><th>#</th><th>Issue</th><th>Complaints</th><th>Cancellation intent</th><th>Mean severity</th><th>Score</th><th></th></tr></thead><tbody></tbody></table></div>
+  <div id="detail"></div>
+
+  <h2>AI-generated recommendation</h2>
+  <p class="sub" id="recline"></p>
+  <div class="memo" id="memo"></div>
+  <details><summary>Memo check (code-verified citations)</summary><pre id="check"></pre></details>
+
+  <h2>All claims</h2>
+  <p class="sub">Every number the memo may cite, with how it was computed.</p>
+  <div class="wrap"><table id="claims"><thead><tr><th>Claim</th><th>Issue</th><th>Metric</th><th>Value</th><th>Computation</th></tr></thead><tbody></tbody></table></div>
+</main>
+<script>
+const $ = (s) => document.querySelector(s);
+const fmt = (v) => (typeof v === "number" && Number.isInteger(v)) ? v.toLocaleString() : (v == null ? "–" : v);
+const esc = (s) => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+async function get(path) { const r = await fetch(path); if (!r.ok) throw new Error(path + " → " + r.status + " " + (await r.text())); return r.json(); }
+
+async function main() {
+  try {
+    const [sum, iss, rec, cl] = await Promise.all([get("/api/summary"), get("/api/issues"), get("/api/recommendations"), get("/api/claims")]);
+    const m = sum.metrics;
+    $("#runline").textContent = `Run ${sum.run.run_id}, loaded ${sum.run.loaded_at}. Labels: ${m.label_config || "?"}. Months ${m.months_covered || "?"}.`;
+    if (sum.run.synthetic) { const b = $("#banner"); b.style.display = "block"; b.textContent = "This run used synthetic test reviews, not the Spotify dataset. Numbers here demonstrate the pipeline only."; }
+    const tiles = [
+      ["Source rows", m.source_rows], ["Classified", m.completed], ["Quarantined", m.quarantined], ["Pending", m.pending],
+      ["Share of nonempty classified", m.classified_share_of_nonempty != null ? (100 * m.classified_share_of_nonempty).toFixed(2) + "%" : null],
+      ["Exact-text cache copies", m.completed_via_exact_text_cache], ["Complaint records", m.complaint_records],
+      ["Total API cost (USD)", m.total_cost_usd], ["Golden topic agreement", m.golden_topic_agreement], ["Golden severity exact", m.golden_severity_exact_agreement],
+      ["Verifier sample", m.verifier_sample], ["Verifier disagreement", m.verifier_disagreement_rate],
+    ];
+    $("#tiles").innerHTML = tiles.map(([k, v]) => `<div class="tile"><div class="k">${esc(k)}</div><div class="v">${esc(fmt(v))}</div></div>`).join("");
+    const max = Math.max(1, ...iss.issues.map(i => i.score));
+    $("#issues tbody").innerHTML = iss.issues.map(i => `<tr class="issue" data-id="${esc(i.issue_id)}"><td>${i.rank}</td><td><b>${esc(i.name)}</b><br><span class="pill">${esc(i.issue_id)}</span><span class="pill">${esc(i.topic)}</span></td><td>${fmt(i.complaint_count)}</td><td>${fmt(i.cancellation_count)}</td><td>${esc(i.mean_severity)}</td><td>${fmt(i.score)}</td><td style="min-width:120px"><div class="bar"><i style="width:${(100 * i.score / max).toFixed(1)}%"></i></div></td></tr>`).join("");
+    document.querySelectorAll("tr.issue").forEach(tr => tr.addEventListener("click", () => showIssue(tr.dataset.id)));
+    const r = rec.recommendation;
+    if (r) {
+      const ok = r.memo_check && r.memo_check.passed;
+      $("#recline").innerHTML = `Priority <b>${esc(r.priority_issue_id)}</b>: ${esc(r.recommendation)} <span class="pill">${esc(r.model)}</span> <span class="${ok ? "ok" : "bad"}">${ok ? "all cited numbers match saved calculations" : "memo check found problems"}</span>`;
+      $("#memo").textContent = r.memo_markdown;
+      $("#check").textContent = JSON.stringify(r.memo_check, null, 2);
+    } else { $("#recline").textContent = "No recommendation loaded for this run."; }
+    $("#claims tbody").innerHTML = cl.claims.map(c => `<tr><td><code>${esc(c.claim_id)}</code></td><td>${esc(c.issue_id)}</td><td>${esc(c.metric)}</td><td>${esc(c.value)}</td><td>${esc(c.computation)}</td></tr>`).join("");
+  } catch (e) { $("#runline").textContent = "Could not load the run: " + e.message; }
+}
+async function showIssue(id) {
+  const d = await get("/api/issues/" + encodeURIComponent(id));
+  const i = d.issue;
+  $("#detail").innerHTML = `<details open><summary><b>${esc(i.name)}</b> (${esc(id)}) — ${esc(i.description || "")}</summary>
+    <p>${d.claims.map(c => `<span class="pill"><code>${esc(c.claim_id)}</code> ${esc(c.metric)} = ${esc(c.value)}</span>`).join(" ")}</p>
+    <div class="wrap"><table><thead><tr><th>Review</th><th>Severity</th><th>Intent</th><th>Evidence quote (exact substring of the review)</th><th>Stars</th><th>When</th></tr></thead><tbody>
+    ${d.evidence.map(e => `<tr><td><code>${esc(e.review_id)}</code></td><td>${e.severity}</td><td>${esc(e.intent)}</td><td>${esc(e.quote)}</td><td>${esc(e.review_rating)}</td><td>${esc(e.review_timestamp)}</td></tr>`).join("")}
+    </tbody></table></div>
+    <p class="sub">Monthly complaint share (complaints in the issue ÷ all classified records that month; first and last months are partial):</p>
+    <div class="wrap"><table><thead><tr><th>Month</th><th>Complaints</th><th>All classified</th><th>Share</th><th>Partial</th></tr></thead><tbody>
+    ${d.trend.map(t => `<tr><td>${esc(t.month)}</td><td>${fmt(t.complaints)}</td><td>${fmt(t.month_total)}</td><td>${esc(t.share)}</td><td>${t.partial ? "yes" : ""}</td></tr>`).join("")}
+    </tbody></table></div></details>`;
+  $("#detail").scrollIntoView({ behavior: "smooth", block: "start" });
+}
+main();
+</script>
+</body>
+</html>

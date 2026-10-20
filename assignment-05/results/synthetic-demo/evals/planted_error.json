@@ -1,0 +1,19 @@
+{
+  "synthetic_test": true,
+  "excluded_from_aggregates": true,
+  "review_id": "syn-0000006",
+  "original": {
+    "topic": "catalog",
+    "severity": 3
+  },
+  "planted_wrong": {
+    "topic": "access",
+    "severity": 1
+  },
+  "verifier": {
+    "topic": "catalog",
+    "intent": "complaint",
+    "severity": 3
+  },
+  "caught": true
+}

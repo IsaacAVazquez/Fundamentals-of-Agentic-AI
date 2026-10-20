@@ -1,0 +1,14 @@
+.env
+.env.*
+!.env.example
+.venv/
+__pycache__/
+*.pyc
+*.egg-info/
+build/
+.pytest_cache/
+.DS_Store
+# The 97.4 MB source CSV and the rest of the dataset ZIP stay out of git; see README for where to put them.
+/data/
+# Run outputs are large. The committed evidence lives under results/ and grading/.
+/runs/

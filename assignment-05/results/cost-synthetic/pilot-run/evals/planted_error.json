@@ -1,0 +1,19 @@
+{
+  "synthetic_test": true,
+  "excluded_from_aggregates": true,
+  "review_id": "syn-0000009",
+  "original": {
+    "topic": "usability",
+    "severity": 2
+  },
+  "planted_wrong": {
+    "topic": "access",
+    "severity": 5
+  },
+  "verifier": {
+    "topic": "usability",
+    "intent": "cancellation",
+    "severity": 2
+  },
+  "caught": true
+}

@@ -1,0 +1,591 @@
+{
+  "replayed_at": "2026-10-20T06:22:39Z",
+  "rates_file": "results/cost-synthetic/rates.csv",
+  "api_calls_made": 0,
+  "priced_as": "anthropic:claude-haiku-5-5",
+  "runs": {
+    "cold": {
+      "measured": {
+        "label": "cold",
+        "measured_at": "2026-10-20T06:21:16Z",
+        "input": "/tmp/claude-0/-home-user-Fundamentals-of-Agentic-AI/ec44ca5c-665c-5673-bf45-66c272bb4165/scratchpad/syn100.csv",
+        "synthetic_input": true,
+        "rows": 100,
+        "statuses": {
+          "pending": 0,
+          "completed": 99,
+          "quarantined": 1
+        },
+        "stage_seconds": {
+          "prepare": 0.011,
+          "classify": 0.016,
+          "verify": 0.005,
+          "group": 0.007,
+          "rank": 0.004,
+          "memo": 0.005
+        },
+        "wall_clock_seconds": 0.049,
+        "new_enrichment_calls_this_run": 2,
+        "classify_stop_reason": "no_pending",
+        "verifier": {
+          "sample_size": 10,
+          "agreement": {
+            "topic": 1.0,
+            "intent": 1.0,
+            "severity_exact": 1.0
+          },
+          "disagreement_rate": 0.0,
+          "planted_error_caught": true
+        },
+        "controls": {
+          "workers": 1,
+          "batch_size": 25,
+          "effort": "low",
+          "model": "fake-deterministic-v1",
+          "backend": "fake",
+          "max_output_tokens": 4000
+        }
+      },
+      "stages": [
+        {
+          "stage": "classify",
+          "provider": "fake",
+          "model": "fake-deterministic-v1",
+          "effort": "low",
+          "label_config": "fake:fake-deterministic-v1|effort=low|prompt=v1|schema=v1",
+          "requests": "2",
+          "succeeded": "2",
+          "failed": "0",
+          "records_requested": "42",
+          "usage_unknown": "0",
+          "input_tokens": 2773,
+          "cached_input_tokens": 0,
+          "cache_write_tokens": 0,
+          "output_tokens": 2655,
+          "duration_ms_sum": "1",
+          "api_cost_usd": 0.001605,
+          "priced": true,
+          "billing_items": [
+            {
+              "unit": "input",
+              "tokens": 2773,
+              "usd_per_million": 0.1,
+              "usd": 0.000277
+            },
+            {
+              "unit": "cached_input",
+              "tokens": 0,
+              "usd_per_million": 0.01,
+              "usd": 0.0
+            },
+            {
+              "unit": "cache_write",
+              "tokens": 0,
+              "usd_per_million": 0.125,
+              "usd": 0.0
+            },
+            {
+              "unit": "output",
+              "tokens": 2655,
+              "usd_per_million": 0.5,
+              "usd": 0.001327
+            }
+          ]
+        },
+        {
+          "stage": "verify",
+          "provider": "fake",
+          "model": "fake-deterministic-v1",
+          "effort": "low",
+          "label_config": "fake:fake-deterministic-v1|effort=low|prompt=v1|schema=v1",
+          "requests": "1",
+          "succeeded": "1",
+          "failed": "0",
+          "records_requested": "10",
+          "usage_unknown": "0",
+          "input_tokens": 1143,
+          "cached_input_tokens": 0,
+          "cache_write_tokens": 0,
+          "output_tokens": 655,
+          "duration_ms_sum": "0",
+          "api_cost_usd": 0.000442,
+          "priced": true,
+          "billing_items": [
+            {
+              "unit": "input",
+              "tokens": 1143,
+              "usd_per_million": 0.1,
+              "usd": 0.000114
+            },
+            {
+              "unit": "cached_input",
+              "tokens": 0,
+              "usd_per_million": 0.01,
+              "usd": 0.0
+            },
+            {
+              "unit": "cache_write",
+              "tokens": 0,
+              "usd_per_million": 0.125,
+              "usd": 0.0
+            },
+            {
+              "unit": "output",
+              "tokens": 655,
+              "usd_per_million": 0.5,
+              "usd": 0.000327
+            }
+          ]
+        },
+        {
+          "stage": "group",
+          "provider": "fake",
+          "model": "fake-deterministic-v1",
+          "effort": "low",
+          "label_config": "fake:fake-deterministic-v1|effort=low|prompt=v1|schema=v1",
+          "requests": "7",
+          "succeeded": "7",
+          "failed": "0",
+          "records_requested": "53",
+          "usage_unknown": "0",
+          "input_tokens": 2161,
+          "cached_input_tokens": 0,
+          "cache_write_tokens": 0,
+          "output_tokens": 133,
+          "duration_ms_sum": "0",
+          "api_cost_usd": 0.000283,
+          "priced": true,
+          "billing_items": [
+            {
+              "unit": "input",
+              "tokens": 2161,
+              "usd_per_million": 0.1,
+              "usd": 0.000216
+            },
+            {
+              "unit": "cached_input",
+              "tokens": 0,
+              "usd_per_million": 0.01,
+              "usd": 0.0
+            },
+            {
+              "unit": "cache_write",
+              "tokens": 0,
+              "usd_per_million": 0.125,
+              "usd": 0.0
+            },
+            {
+              "unit": "output",
+              "tokens": 133,
+              "usd_per_million": 0.5,
+              "usd": 6.7e-05
+            }
+          ]
+        },
+        {
+          "stage": "memo",
+          "provider": "fake",
+          "model": "fake-deterministic-v1",
+          "effort": "low",
+          "label_config": "fake:fake-deterministic-v1|effort=low|prompt=v1|schema=v1",
+          "requests": "1",
+          "succeeded": "1",
+          "failed": "0",
+          "records_requested": "0",
+          "usage_unknown": "0",
+          "input_tokens": 2630,
+          "cached_input_tokens": 0,
+          "cache_write_tokens": 0,
+          "output_tokens": 247,
+          "duration_ms_sum": "0",
+          "api_cost_usd": 0.000387,
+          "priced": true,
+          "billing_items": [
+            {
+              "unit": "input",
+              "tokens": 2630,
+              "usd_per_million": 0.1,
+              "usd": 0.000263
+            },
+            {
+              "unit": "cached_input",
+              "tokens": 0,
+              "usd_per_million": 0.01,
+              "usd": 0.0
+            },
+            {
+              "unit": "cache_write",
+              "tokens": 0,
+              "usd_per_million": 0.125,
+              "usd": 0.0
+            },
+            {
+              "unit": "output",
+              "tokens": 247,
+              "usd_per_million": 0.5,
+              "usd": 0.000123
+            }
+          ]
+        }
+      ],
+      "api_cost_usd": 0.002717,
+      "enrichment_api_cost_usd": 0.001605,
+      "cost_per_1000_inputs_usd": 0.01605,
+      "cost_per_completed_record_usd": 2.744e-05,
+      "throughput_records_per_minute": 121224.49,
+      "wall_clock_seconds": 0.049,
+      "summed_call_duration_seconds": 0.001,
+      "local_compute_estimate_usd": 0.0,
+      "unknown_costs": false,
+      "note": "API spend = billed tokens x rates.csv. Summed call durations are not wall-clock when calls overlap."
+    },
+    "warm": {
+      "measured": {
+        "label": "warm",
+        "measured_at": "2026-10-20T06:21:16Z",
+        "input": "/tmp/claude-0/-home-user-Fundamentals-of-Agentic-AI/ec44ca5c-665c-5673-bf45-66c272bb4165/scratchpad/syn100.csv",
+        "synthetic_input": true,
+        "rows": 100,
+        "statuses": {
+          "pending": 0,
+          "completed": 99,
+          "quarantined": 1
+        },
+        "stage_seconds": {
+          "prepare": 0.001,
+          "classify": 0.006,
+          "verify": 0.006,
+          "group": 0.007,
+          "rank": 0.004,
+          "memo": 0.007
+        },
+        "wall_clock_seconds": 0.031,
+        "new_enrichment_calls_this_run": 0,
+        "classify_stop_reason": "no_pending",
+        "verifier": {
+          "sample_size": 10,
+          "agreement": {
+            "topic": 1.0,
+            "intent": 1.0,
+            "severity_exact": 1.0
+          },
+          "disagreement_rate": 0.0,
+          "planted_error_caught": true
+        },
+        "controls": {
+          "workers": 1,
+          "batch_size": 25,
+          "effort": "low",
+          "model": "fake-deterministic-v1",
+          "backend": "fake",
+          "max_output_tokens": 4000
+        }
+      },
+      "stages": [
+        {
+          "stage": "classify",
+          "provider": "fake",
+          "model": "fake-deterministic-v1",
+          "effort": "low",
+          "label_config": "fake:fake-deterministic-v1|effort=low|prompt=v1|schema=v1",
+          "requests": "2",
+          "succeeded": "2",
+          "failed": "0",
+          "records_requested": "42",
+          "usage_unknown": "0",
+          "input_tokens": 2773,
+          "cached_input_tokens": 0,
+          "cache_write_tokens": 0,
+          "output_tokens": 2655,
+          "duration_ms_sum": "1",
+          "api_cost_usd": 0.001605,
+          "priced": true,
+          "billing_items": [
+            {
+              "unit": "input",
+              "tokens": 2773,
+              "usd_per_million": 0.1,
+              "usd": 0.000277
+            },
+            {
+              "unit": "cached_input",
+              "tokens": 0,
+              "usd_per_million": 0.01,
+              "usd": 0.0
+            },
+            {
+              "unit": "cache_write",
+              "tokens": 0,
+              "usd_per_million": 0.125,
+              "usd": 0.0
+            },
+            {
+              "unit": "output",
+              "tokens": 2655,
+              "usd_per_million": 0.5,
+              "usd": 0.001327
+            }
+          ]
+        },
+        {
+          "stage": "verify",
+          "provider": "fake",
+          "model": "fake-deterministic-v1",
+          "effort": "low",
+          "label_config": "fake:fake-deterministic-v1|effort=low|prompt=v1|schema=v1",
+          "requests": "2",
+          "succeeded": "2",
+          "failed": "0",
+          "records_requested": "20",
+          "usage_unknown": "0",
+          "input_tokens": 2286,
+          "cached_input_tokens": 0,
+          "cache_write_tokens": 0,
+          "output_tokens": 1310,
+          "duration_ms_sum": "0",
+          "api_cost_usd": 0.000884,
+          "priced": true,
+          "billing_items": [
+            {
+              "unit": "input",
+              "tokens": 2286,
+              "usd_per_million": 0.1,
+              "usd": 0.000229
+            },
+            {
+              "unit": "cached_input",
+              "tokens": 0,
+              "usd_per_million": 0.01,
+              "usd": 0.0
+            },
+            {
+              "unit": "cache_write",
+              "tokens": 0,
+              "usd_per_million": 0.125,
+              "usd": 0.0
+            },
+            {
+              "unit": "output",
+              "tokens": 1310,
+              "usd_per_million": 0.5,
+              "usd": 0.000655
+            }
+          ]
+        },
+        {
+          "stage": "group",
+          "provider": "fake",
+          "model": "fake-deterministic-v1",
+          "effort": "low",
+          "label_config": "fake:fake-deterministic-v1|effort=low|prompt=v1|schema=v1",
+          "requests": "14",
+          "succeeded": "14",
+          "failed": "0",
+          "records_requested": "106",
+          "usage_unknown": "0",
+          "input_tokens": 4322,
+          "cached_input_tokens": 0,
+          "cache_write_tokens": 0,
+          "output_tokens": 266,
+          "duration_ms_sum": "0",
+          "api_cost_usd": 0.000565,
+          "priced": true,
+          "billing_items": [
+            {
+              "unit": "input",
+              "tokens": 4322,
+              "usd_per_million": 0.1,
+              "usd": 0.000432
+            },
+            {
+              "unit": "cached_input",
+              "tokens": 0,
+              "usd_per_million": 0.01,
+              "usd": 0.0
+            },
+            {
+              "unit": "cache_write",
+              "tokens": 0,
+              "usd_per_million": 0.125,
+              "usd": 0.0
+            },
+            {
+              "unit": "output",
+              "tokens": 266,
+              "usd_per_million": 0.5,
+              "usd": 0.000133
+            }
+          ]
+        },
+        {
+          "stage": "memo",
+          "provider": "fake",
+          "model": "fake-deterministic-v1",
+          "effort": "low",
+          "label_config": "fake:fake-deterministic-v1|effort=low|prompt=v1|schema=v1",
+          "requests": "2",
+          "succeeded": "2",
+          "failed": "0",
+          "records_requested": "0",
+          "usage_unknown": "0",
+          "input_tokens": 5260,
+          "cached_input_tokens": 0,
+          "cache_write_tokens": 0,
+          "output_tokens": 494,
+          "duration_ms_sum": "0",
+          "api_cost_usd": 0.000773,
+          "priced": true,
+          "billing_items": [
+            {
+              "unit": "input",
+              "tokens": 5260,
+              "usd_per_million": 0.1,
+              "usd": 0.000526
+            },
+            {
+              "unit": "cached_input",
+              "tokens": 0,
+              "usd_per_million": 0.01,
+              "usd": 0.0
+            },
+            {
+              "unit": "cache_write",
+              "tokens": 0,
+              "usd_per_million": 0.125,
+              "usd": 0.0
+            },
+            {
+              "unit": "output",
+              "tokens": 494,
+              "usd_per_million": 0.5,
+              "usd": 0.000247
+            }
+          ]
+        }
+      ],
+      "api_cost_usd": 0.003827,
+      "enrichment_api_cost_usd": 0.001605,
+      "cost_per_1000_inputs_usd": 0.01605,
+      "cost_per_completed_record_usd": 3.866e-05,
+      "throughput_records_per_minute": 191612.9,
+      "wall_clock_seconds": 0.031,
+      "summed_call_duration_seconds": 0.001,
+      "local_compute_estimate_usd": 0.0,
+      "unknown_costs": false,
+      "note": "API spend = billed tokens x rates.csv. Summed call durations are not wall-clock when calls overlap."
+    }
+  },
+  "projection": {
+    "basis": {
+      "pilot_rows": 100,
+      "pilot_completed": 99,
+      "model": "fake:fake-deterministic-v1",
+      "effort": "low",
+      "per_record_tokens": {
+        "input": 28.01,
+        "cached_input": 0.0,
+        "cache_write": 0.0,
+        "output": 26.82
+      },
+      "per_record_api_usd": 1.621e-05,
+      "seconds_per_record_one_worker": 0.0002,
+      "prices_usd_per_million": {
+        "input": 0.1,
+        "cached_input": 0.01,
+        "cache_write": 0.125,
+        "output": 0.5
+      }
+    },
+    "volume": {
+      "rows": 660622,
+      "nonempty": 660609,
+      "empty": 13,
+      "distinct_nonempty_texts": 484189
+    },
+    "controls": {
+      "spending_limit_usd": 100.0,
+      "output_token_cap_per_request": 4000,
+      "workers": 4,
+      "fallback_fraction": 0.02
+    },
+    "scenarios": [
+      {
+        "scenario": "base_with_reuse",
+        "exact_text_reuse": true,
+        "first_pass_records": 484189,
+        "token_multiplier": 1.0,
+        "retry_rate": 0.02,
+        "enrichment_usd": 8.01,
+        "verification_usd": 0.02,
+        "fallback_usd": 3.14,
+        "grouping_and_memo_usd": 0.0073,
+        "fixed_overhead_usd": 0.0,
+        "api_total_usd": 11.17,
+        "exceeds_spending_limit": false,
+        "hours_one_worker": 0.19,
+        "hours_with_workers": 0.05,
+        "workers": 4,
+        "local_compute_usd": 0.0,
+        "note": "worker speedup is modeled, not measured; rate limits can make more workers slower"
+      },
+      {
+        "scenario": "base_no_reuse",
+        "exact_text_reuse": false,
+        "first_pass_records": 660609,
+        "token_multiplier": 1.0,
+        "retry_rate": 0.02,
+        "enrichment_usd": 10.92,
+        "verification_usd": 0.02,
+        "fallback_usd": 4.28,
+        "grouping_and_memo_usd": 0.0073,
+        "fixed_overhead_usd": 0.0,
+        "api_total_usd": 15.23,
+        "exceeds_spending_limit": false,
+        "hours_one_worker": 0.2,
+        "hours_with_workers": 0.05,
+        "workers": 4,
+        "local_compute_usd": 0.0,
+        "note": "worker speedup is modeled, not measured; rate limits can make more workers slower"
+      },
+      {
+        "scenario": "conservative_with_reuse",
+        "exact_text_reuse": true,
+        "first_pass_records": 484189,
+        "token_multiplier": 1.5,
+        "retry_rate": 0.05,
+        "enrichment_usd": 12.36,
+        "verification_usd": 0.03,
+        "fallback_usd": 4.71,
+        "grouping_and_memo_usd": 0.0073,
+        "fixed_overhead_usd": 0.0,
+        "api_total_usd": 17.11,
+        "exceeds_spending_limit": false,
+        "hours_one_worker": 0.2,
+        "hours_with_workers": 0.05,
+        "workers": 4,
+        "local_compute_usd": 0.0,
+        "note": "worker speedup is modeled, not measured; rate limits can make more workers slower"
+      },
+      {
+        "scenario": "conservative_no_reuse",
+        "exact_text_reuse": false,
+        "first_pass_records": 660609,
+        "token_multiplier": 1.5,
+        "retry_rate": 0.05,
+        "enrichment_usd": 16.87,
+        "verification_usd": 0.03,
+        "fallback_usd": 6.43,
+        "grouping_and_memo_usd": 0.0073,
+        "fixed_overhead_usd": 0.0,
+        "api_total_usd": 23.33,
+        "exceeds_spending_limit": false,
+        "hours_one_worker": 0.21,
+        "hours_with_workers": 0.05,
+        "workers": 4,
+        "local_compute_usd": 0.0,
+        "note": "worker speedup is modeled, not measured; rate limits can make more workers slower"
+      }
+    ],
+    "memo_note": "One memo and eight grouping calls are counted once; the memo cost is never multiplied by the review count."
+  }
+}

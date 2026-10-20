@@ -1,0 +1,24 @@
+{
+  "cited_claims": [
+    "C10",
+    "C11",
+    "C13",
+    "C17",
+    "C19",
+    "C2",
+    "C23",
+    "C3",
+    "C7"
+  ],
+  "unknown_claims": [],
+  "unknown_issues": [],
+  "unmatched_numbers": [],
+  "number_claim_mismatches": [],
+  "cited_review_ids": [
+    "syn-0000013",
+    "syn-0000027"
+  ],
+  "unknown_review_ids": [],
+  "forbidden_phrases": [],
+  "passed": true
+}
