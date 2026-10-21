@@ -1,11 +1,12 @@
 import csv
 import gzip
 import json
+import sqlite3
 
 import pytest
 
 from insight_pipeline.classify import Controls, run_classify
-from insight_pipeline.evals import field_checks, injection_test, reproducibility, resume_demo
+from insight_pipeline.evals import field_checks, golden_template, injection_test, reproducibility, resume_demo
 from insight_pipeline.export import export_grading
 from insight_pipeline.group import run_group
 from insight_pipeline.memo import check_memo, run_memo
@@ -151,16 +152,37 @@ def test_downstream_stages_and_export(synthetic_csv, tmp_path, fake_controls):
     assert fc["needs_review_vs_golden_label_miss"]["truth_positive"] == (picked[0]["severity"] != 3)
     assert fc["needs_review_vs_golden_ambiguous_notes"]["truth_positive"] == 1
     assert fc["quote_support"]["rows"] == 3 and fc["quote_support"]["human_judgments_filled"] == 0
+    # A rerun keeps a judgment a person typed into the worksheet.
+    sheet = tmp_path / "fields" / "golden_fields_per_case.csv"
+    rows = list(csv.DictReader(open(sheet, newline="", encoding="utf-8")))
+    rows[1]["human_quote_supports_label"] = "yes"
+    with open(sheet, "w", newline="", encoding="utf-8") as fh:
+        w = csv.DictWriter(fh, fieldnames=list(rows[0].keys())); w.writeheader(); w.writerows(rows)
+    again = field_checks(golden, out / "records.jsonl.gz", None, tmp_path / "fields")
+    assert again["quote_support"]["human_judgments_filled"] == 1
+    assert list(csv.DictReader(open(sheet, newline="", encoding="utf-8")))[1]["human_quote_supports_label"] == "yes"
 
 
-def test_read_only_commands_refuse_a_folder_without_state(tmp_path):
+def test_commands_refuse_a_folder_without_a_prepared_run(tmp_path, fake_controls):
+    """A committed results/ copy has saved outputs and no state.sqlite. Only prepare may create one, and an empty
+    database (as an older version left behind) must not unlock the read-only commands either."""
     saved = tmp_path / "results-copy"
     saved.mkdir()
     (saved / "ranking.csv").write_text("rank,issue_id\n1,ISS-billing\n")
-    with pytest.raises(SystemExit, match="state.sqlite not found"):
-        run_rank(saved)
-    assert not (saved / "state.sqlite").exists()
-    assert (saved / "ranking.csv").read_text() == "rank,issue_id\n1,ISS-billing\n"
+    (saved / "issues.json").write_text('{"issues": [{"issue_id": "ISS-billing", "name": "a model-written name"}]}')
+    before = {p.name: p.read_bytes() for p in saved.iterdir()}
+    steps = [lambda: run_rank(saved), lambda: golden_template(saved, tmp_path / "golden.csv"),
+             lambda: run_group(saved, fake_controls), lambda: run_classify(saved, fake_controls), lambda: export_grading(saved)]
+    for step in steps:
+        with pytest.raises(SystemExit, match="has no prepared run"):
+            step()
+        assert not (saved / "state.sqlite").exists()
+    sqlite3.connect(saved / "state.sqlite").close()
+    for step in steps:
+        with pytest.raises(SystemExit, match="has no prepared run"):
+            step()
+    assert {p.name: p.read_bytes() for p in saved.iterdir() if p.name in before} == before
+    assert not (saved / "grading").exists()
 
 
 def test_memo_checker_rejects_bad_numbers():

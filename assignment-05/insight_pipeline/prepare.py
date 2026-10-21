@@ -43,7 +43,7 @@ def file_sha256(path: Path) -> str:
 
 def prepare(input_csv: Path, run_dir: Path, chunk_rows: int = 5000, limit: int | None = None) -> dict:
     input_csv = Path(input_csv)
-    store = Store(run_dir)
+    store = Store(run_dir, create=True)
     if store.get_meta("prepared"):
         report = json.loads((Path(run_dir) / "ingestion_report.json").read_text())
         store.close()

@@ -47,7 +47,7 @@ def score_golden(run_dir: Path, golden_csv: Path, out_dir: Path | None = None) -
     """Compare the run's saved predictions with the human labels. Nothing here feeds a prompt."""
     run_dir = Path(run_dir)
     out_dir = Path(out_dir) if out_dir else run_dir / "evals"
-    store = Store(run_dir, create=False)
+    store = Store(run_dir)
     out_dir.mkdir(exist_ok=True)
     rows = list(csv.DictReader(open(golden_csv, newline="", encoding="utf-8")))
     labeled = [r for r in rows if r.get("human_topic") and r.get("human_intent") and r.get("human_severity")]
@@ -145,6 +145,10 @@ def field_checks(golden_csv: Path, records_path: Path, verifier_dir: Path | None
             r = json.loads(line)
             if r["review_id"] in wanted and r["status"] == "completed":
                 records[r["review_id"]] = r
+    out_dir = Path(out_dir)
+    sheet = out_dir / "golden_fields_per_case.csv"
+    # A rerun keeps the quote judgments a person has already typed into the worksheet.
+    kept = {r["review_id"]: r for r in csv.DictReader(open(sheet, newline="", encoding="utf-8"))} if sheet.exists() else {}
 
     cases = []
     for g in golden:
@@ -162,7 +166,8 @@ def field_checks(golden_csv: Path, records_path: Path, verifier_dir: Path | None
                       "pred_needs_review": bool(rec["needs_review"]),
                       "pred_entities": json.dumps(rec["entities"], ensure_ascii=False), "entities_not_in_text": json.dumps(absent, ensure_ascii=False),
                       "pred_quote": rec["evidence_quote"], "quote_is_substring": bool(rec["evidence_quote"]) and rec["evidence_quote"] in text,
-                      "human_quote_supports_label": "", "human_quote_note": "", "notes": g.get("notes", "")})
+                      "human_quote_supports_label": kept.get(g["review_id"], {}).get("human_quote_supports_label", ""),
+                      "human_quote_note": kept.get(g["review_id"], {}).get("human_quote_note", ""), "notes": g.get("notes", "")})
     flags = [c["pred_needs_review"] for c in cases]
     v_ids = sorted(verifier_ids & records.keys())
     absent_all = [(c["review_id"], e) for c in cases for e in json.loads(c["entities_not_in_text"])]
@@ -181,10 +186,9 @@ def field_checks(golden_csv: Path, records_path: Path, verifier_dir: Path | None
                           "rule": "a person fills human_quote_supports_label with yes, partly or no for whether pred_quote supports the predicted topic, intent and severity"},
         "note": "Golden human labels are the ones in golden_50.csv; the README describes how they were made. The verifier comparison uses the enricher's own needs_review flag from the records file.",
     }
-    out_dir = Path(out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
     (out_dir / "field_checks.json").write_text(json.dumps(report, indent=2, ensure_ascii=False))
-    with open(out_dir / "golden_fields_per_case.csv", "w", newline="", encoding="utf-8") as fh:
+    with open(sheet, "w", newline="", encoding="utf-8") as fh:
         w = csv.DictWriter(fh, fieldnames=list(cases[0].keys()) if cases else ["review_id"])
         w.writeheader()
         w.writerows(cases)

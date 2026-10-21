@@ -287,7 +287,7 @@ def checkpoint_refresh(cost_dir: Path, run_dir: Path, label: str) -> dict:
     cost_dir, run_dir = Path(cost_dir), Path(run_dir)
     summary = json.loads((run_dir / "run_summary.json").read_text())
     projection = json.loads((cost_dir / "projection.json").read_text()) if (cost_dir / "projection.json").exists() else dict(DEFAULT_PROJECTION)
-    store = Store(run_dir, create=False)
+    store = Store(run_dir)
     rows = store.review_count()
     direct = store.conn.execute("SELECT COUNT(*) FROM records WHERE status='completed' AND cache_source_id IS NULL").fetchone()[0]
     cached = store.conn.execute("SELECT COUNT(*) FROM records WHERE status='completed' AND cache_source_id IS NOT NULL").fetchone()[0]

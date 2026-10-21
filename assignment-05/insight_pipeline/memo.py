@@ -70,7 +70,7 @@ def check_memo(memo: str, claims: list[dict], issue_ids: set[str], members: dict
 def recheck_memo(run_dir: Path) -> dict:
     """Re-run the code checks on the saved memo.md with no model call; rewrites memo_check.json and the flag in recommendations.json."""
     run_dir = Path(run_dir)
-    store = Store(run_dir, create=False)
+    store = Store(run_dir)
     ranking = json.loads((run_dir / "ranking.json").read_text())
     claims = list(csv.DictReader(open(run_dir / "claims.csv", newline="")))
     members: dict[str, set[str]] = {}

@@ -95,7 +95,7 @@ def _write_tables(out_dir: Path, ranked: list[dict], claims: list[dict]) -> None
 
 def run_rank(run_dir: Path) -> dict:
     run_dir = Path(run_dir)
-    store = Store(run_dir, create=False)
+    store = Store(run_dir)
     members = defaultdict(set)
     for iid, rid in store.membership():
         members[iid].add(rid)
@@ -139,10 +139,11 @@ def rank_from_export(export_dir: Path, out_dir: Path | None = None, issues_path:
     which supplies the issue names for aggregates.csv; without it the name column repeats the issue id."""
     export_dir = Path(export_dir)
     out_dir = Path(out_dir) if out_dir else export_dir / "rerank"
-    out_dir.mkdir(parents=True, exist_ok=True)
     rec_path = next((p for p in (export_dir / "records.jsonl.gz", export_dir / "records.jsonl") if p.exists()), None)
     if rec_path is None or not (export_dir / "membership.csv").exists():
         raise SystemExit(f"{export_dir} needs records.jsonl.gz (or records.jsonl) and membership.csv from `pipeline export`")
+    if issues_path and not Path(issues_path).exists():
+        raise SystemExit(f"{issues_path} not found")
     members = defaultdict(set)
     with open(export_dir / "membership.csv", newline="") as fh:
         for row in csv.DictReader(fh):
@@ -168,6 +169,7 @@ def rank_from_export(export_dir: Path, out_dir: Path | None = None, issues_path:
 
     ranked = _aggregate(issues, members, records)
     claims = _claims(ranked, members, statuses, total_rows)
+    out_dir.mkdir(parents=True, exist_ok=True)  # only once every input has checked out, so a wrong path writes nothing
     _write_tables(out_dir, ranked, claims)
     result = {
         "generated_at": now_iso(), "source": str(export_dir), "records_file": rec_path.name, "issues_file": str(issues_path) if issues_path else None,

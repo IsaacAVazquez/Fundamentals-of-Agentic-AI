@@ -69,7 +69,7 @@ def default_url(url: str | None) -> str:
 
 def load_run(run_dir: Path, database_url: str | None = None, evidence_per_issue: int = 12) -> dict:
     run_dir = Path(run_dir)
-    store = Store(run_dir, create=False)
+    store = Store(run_dir)
     db = DB(default_url(database_url))
     for ddl in DDL:
         db.execute(ddl)

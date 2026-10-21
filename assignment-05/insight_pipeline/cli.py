@@ -167,7 +167,7 @@ def main(argv=None) -> None:
         print(json.dumps(export_grading(Path(a.run_dir), Path(a.out) if a.out else None, compress=not a.no_gzip, ingestion=Path(a.ingestion) if a.ingestion else None), indent=2))
     elif a.cmd == "status":
         from .store import Store
-        s = Store(Path(a.run_dir), create=False)
+        s = Store(Path(a.run_dir))
         print(json.dumps({"statuses": s.status_counts(), "rows": s.review_count(), "spend_usd": round(s.spend(), 6),
                           "phases": s.get_meta("phases", []), "controls": s.get_meta("controls")}, indent=2))
         s.close()

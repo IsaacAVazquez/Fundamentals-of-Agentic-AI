@@ -69,7 +69,7 @@ def export_grading(run_dir: Path, out_dir: Path | None = None, compress: bool = 
     input is a sample; the contract wants the full-file profile in every grading folder. Omit for the full run."""
     run_dir = Path(run_dir)
     out = Path(out_dir) if out_dir else run_dir / "grading"
-    store = Store(run_dir, create=False)
+    store = Store(run_dir)
     out.mkdir(parents=True, exist_ok=True)
     run_id = store.get_meta("run_id") or run_dir.name
     controls = store.get_meta("controls") or {}
