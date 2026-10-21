@@ -1,0 +1,19 @@
+{
+  "synthetic_test": true,
+  "excluded_from_aggregates": true,
+  "review_id": "016a0f20-ccf2-48e3-98c8-e38398198d6b",
+  "original": {
+    "topic": "billing",
+    "severity": 3
+  },
+  "planted_wrong": {
+    "topic": "access",
+    "severity": 1
+  },
+  "verifier": {
+    "topic": "billing",
+    "intent": "cancellation",
+    "severity": 2
+  },
+  "caught": true
+}

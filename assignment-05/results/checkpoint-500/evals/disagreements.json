@@ -1,0 +1,143 @@
+[
+  {
+    "review_id": "0b716a9d-85bf-4f4e-8e2e-be71e4a379a6",
+    "kind": "label_disagreement",
+    "first": {
+      "topic": "catalog",
+      "intent": "complaint",
+      "severity": 3,
+      "sentiment": -0.8
+    },
+    "verifier": {
+      "topic": "other",
+      "intent": "complaint",
+      "severity": 2,
+      "sentiment": -0.7
+    },
+    "text": "This is rubbish the app is empty"
+  },
+  {
+    "review_id": "56f6a4a1-7aa3-4e61-a361-0f1f7c754fac",
+    "kind": "label_disagreement",
+    "first": {
+      "topic": "other",
+      "intent": "praise",
+      "severity": 1,
+      "sentiment": 0.8
+    },
+    "verifier": {
+      "topic": "catalog",
+      "intent": "praise",
+      "severity": 1,
+      "sentiment": 0.6
+    },
+    "text": "Love Vern gosdin."
+  },
+  {
+    "review_id": "78adfe35-9414-4c3c-8521-4ea85902c349",
+    "kind": "label_disagreement",
+    "first": {
+      "topic": "other",
+      "intent": "praise",
+      "severity": 1,
+      "sentiment": 0.5
+    },
+    "verifier": {
+      "topic": "other",
+      "intent": "unclear",
+      "severity": 1,
+      "sentiment": 0.2
+    },
+    "text": "It lets you play your own music"
+  },
+  {
+    "review_id": "7d5ddaf5-2f4f-4883-9ddb-e46a2b584ac0",
+    "kind": "label_disagreement",
+    "first": {
+      "topic": "other",
+      "intent": "unclear",
+      "severity": 1,
+      "sentiment": 0.1
+    },
+    "verifier": {
+      "topic": "other",
+      "intent": "praise",
+      "severity": 1,
+      "sentiment": 0.5
+    },
+    "text": "All iz well"
+  },
+  {
+    "review_id": "7f27bbab-ef19-4fb1-80d8-cd014da3e002",
+    "kind": "label_disagreement",
+    "first": {
+      "topic": "playback",
+      "intent": "complaint",
+      "severity": 3,
+      "sentiment": -0.9
+    },
+    "verifier": {
+      "topic": "catalog",
+      "intent": "complaint",
+      "severity": 3,
+      "sentiment": -0.9
+    },
+    "text": "I HATE the new update , the app is also not showing lyrics and I also can't add songs to queue. Listening to music on Spotify is now a painful experience."
+  },
+  {
+    "review_id": "89ea2c30-db8b-459d-8ab7-bbcb7f92c774",
+    "kind": "verifier_failed",
+    "detail": "quote_not_substring"
+  },
+  {
+    "review_id": "a78d831a-69f4-428a-9235-cfdd9775c509",
+    "kind": "label_disagreement",
+    "first": {
+      "topic": "playback",
+      "intent": "complaint",
+      "severity": 3,
+      "sentiment": -0.8
+    },
+    "verifier": {
+      "topic": "billing",
+      "intent": "complaint",
+      "severity": 3,
+      "sentiment": -0.9
+    },
+    "text": "You can't even listen to music you want it just shuffles it, like what the hell? This app is killing it self and forcing you to pay premium for basic things like just listening to music."
+  },
+  {
+    "review_id": "bcdf315e-c82d-41f0-9fcd-ba5933dfe77e",
+    "kind": "label_disagreement",
+    "first": {
+      "topic": "access",
+      "intent": "complaint",
+      "severity": 4,
+      "sentiment": -0.7
+    },
+    "verifier": {
+      "topic": "playback",
+      "intent": "complaint",
+      "severity": 4,
+      "sentiment": -0.7
+    },
+    "text": "Keeps saying that there's no internet connection when my internet works fine for all other apps?"
+  },
+  {
+    "review_id": "d87536c5-6fe0-4b38-b0b1-c47936e4a0d8",
+    "kind": "label_disagreement",
+    "first": {
+      "topic": "access",
+      "intent": "complaint",
+      "severity": 5,
+      "sentiment": -0.9
+    },
+    "verifier": {
+      "topic": "billing",
+      "intent": "complaint",
+      "severity": 5,
+      "sentiment": -0.8
+    },
+    "text": "Top algorithm, but again hacked ,can't even recover the playlists set by me last week ,cost over three hundred dollars,per week for nothing ,"
+  }
+]

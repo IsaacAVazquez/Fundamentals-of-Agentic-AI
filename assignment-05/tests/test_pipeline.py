@@ -108,10 +108,10 @@ def test_downstream_stages_and_export(synthetic_csv, tmp_path, fake_controls):
     g = run_group(rd, fake_controls, name_with_model=True)
     assert g["member_count"] > 0
     r = run_rank(rd)
-    scores = [a["score"] for a in r["ranking"]]
+    scores = [a["priority_score"] for a in r["ranking"]]
     assert scores == sorted(scores, reverse=True)
     for a in r["ranking"]:
-        assert a["score"] == a["severity_sum"]
+        assert a["priority_score"] == a["severity_sum"]
         assert round(a["complaint_count"] * float(a["mean_severity"])) == a["severity_sum"]
     m = run_memo(rd, fake_controls)
     assert m["memo_check_passed"] is True
@@ -134,6 +134,10 @@ def test_memo_checker_rejects_bad_numbers():
     assert good["passed"]
     bad = check_memo("Billing has 1,300 [C1] complaints and 9,999 more.", claims, {"ISS-billing"}, {}, set())
     assert not bad["passed"] and bad["number_claim_mismatches"] and "9,999" in bad["unmatched_numbers"]
+    comma = check_memo("Billing has 1,200 [C1] complaints, one cancellation, and [C1] again.", claims, {"ISS-billing"}, {}, set())
+    assert comma["passed"], comma
+    months = check_memo("Billing has 1,200 [C1] complaints; 2023-11 and 2022-06-01 are partial.", claims, {"ISS-billing"}, {}, set())
+    assert months["passed"], months
     unknown = check_memo("See [C7] and [ISS-magic]; revenue at risk is high.", claims, {"ISS-billing"}, {}, set())
     assert unknown["unknown_claims"] == ["C7"] and unknown["unknown_issues"] == ["ISS-magic"] and unknown["forbidden_phrases"]
 

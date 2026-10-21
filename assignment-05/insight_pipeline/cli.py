@@ -38,7 +38,7 @@ def _add_model_args(p, with_limits=True):
     p.add_argument("--batch-size", type=int, default=25, help="reviews per request, at most 50")
     p.add_argument("--workers", type=int, default=1)
     p.add_argument("--max-spend", type=float, default=5.0, help="USD cap for the classify stage of this run")
-    p.add_argument("--max-output-tokens", type=int, default=4000)
+    p.add_argument("--max-output-tokens", type=int, default=8000)
     p.add_argument("--rates", default=None, help="rates.csv to price calls (default cost/rates.csv in the run or built-in)")
     if with_limits:
         p.add_argument("--max-batches", type=int, default=None)
@@ -73,12 +73,16 @@ def main(argv=None) -> None:
     p = sub.add_parser("memo", help="stage 6: decision memo from aggregates (model call), then code checks")
     p.add_argument("--run-dir", required=True); _add_model_args(p, with_limits=False)
 
+    p = sub.add_parser("memo-check", help="re-run the code checks on a saved memo.md (no model)")
+    p.add_argument("--run-dir", required=True)
+
     p = sub.add_parser("run", help="all six stages on an input CSV")
     p.add_argument("--input", required=True); p.add_argument("--run-dir", required=True); p.add_argument("--synthetic", action="store_true")
     p.add_argument("--verify-sample", type=int, default=200); p.add_argument("--limit", type=int, default=None); _add_model_args(p)
 
     p = sub.add_parser("export", help="write the grading/ folder from saved state (no model)")
     p.add_argument("--run-dir", required=True); p.add_argument("--out", default=None); p.add_argument("--no-gzip", action="store_true")
+    p.add_argument("--ingestion", default=None, help="full-corpus profile from check_submission.py, for runs on a sample")
 
     p = sub.add_parser("status", help="counts, spend, and phases for a run")
     p.add_argument("--run-dir", required=True)
@@ -97,6 +101,7 @@ def main(argv=None) -> None:
     c.add_argument("--warm", action="store_true", help="rerun on the saved state to show zero new enrichment calls"); c.add_argument("--synthetic", action="store_true"); c.add_argument("--i-understand-this-is-paid", action="store_true"); _add_model_args(c, with_limits=False)
     c = cs.add_parser("replay", help="recompute costs and projections from saved files; no API key"); c.add_argument("--cost-dir", required=True); c.add_argument("--rates", default=None); c.add_argument("--projection", default=None)
     c.add_argument("--price-as", default=None, help="reprice measured usage at another model, e.g. anthropic:claude-haiku-5-5")
+    c = cs.add_parser("checkpoint", help="offline: record a finished checkpoint run's measured cost and throughput next to the pilot"); c.add_argument("--cost-dir", required=True); c.add_argument("--run-dir", required=True); c.add_argument("--label", required=True)
 
     p = sub.add_parser("dashboard-load", help="load a run's saved outputs into the dashboard database")
     p.add_argument("--run-dir", required=True); p.add_argument("--database-url", default=None, help="postgres://... or sqlite:///path; default $DATABASE_URL or sqlite:///dashboard/dashboard.sqlite")
@@ -118,11 +123,14 @@ def main(argv=None) -> None:
     elif a.cmd == "rank":
         from .rank import run_rank
         r = run_rank(Path(a.run_dir))
-        print(json.dumps([{k: x[k] for k in ("rank", "issue_id", "complaint_count", "mean_severity", "score")} for x in r["ranking"]], indent=2))
+        print(json.dumps([{k: x[k] for k in ("rank", "issue_id", "complaint_count", "mean_severity", "priority_score")} for x in r["ranking"]], indent=2))
     elif a.cmd == "memo":
         from .memo import run_memo
         r = run_memo(Path(a.run_dir), _controls(a))
         print(json.dumps({k: r[k] for k in ("priority_issue_id", "recommendation", "memo_check_passed")}, indent=2))
+    elif a.cmd == "memo-check":
+        from .memo import recheck_memo
+        print(json.dumps(recheck_memo(Path(a.run_dir)), indent=2))
     elif a.cmd == "run":
         from .export import export_grading
         from .group import run_group
@@ -144,7 +152,7 @@ def main(argv=None) -> None:
         print(json.dumps(export_grading(rd), indent=2))
     elif a.cmd == "export":
         from .export import export_grading
-        print(json.dumps(export_grading(Path(a.run_dir), Path(a.out) if a.out else None, compress=not a.no_gzip), indent=2))
+        print(json.dumps(export_grading(Path(a.run_dir), Path(a.out) if a.out else None, compress=not a.no_gzip, ingestion=Path(a.ingestion) if a.ingestion else None), indent=2))
     elif a.cmd == "status":
         from .store import Store
         s = Store(Path(a.run_dir))
@@ -172,6 +180,8 @@ def main(argv=None) -> None:
                 raise SystemExit("cost pilot with a real backend spends money; add --i-understand-this-is-paid")
             r = cost.run_pilot(Path(a.input), Path(a.cost_dir), _controls(a), warm=a.warm, synthetic=a.synthetic)
             print(json.dumps({k: r[k] for k in ("label", "rows", "statuses", "wall_clock_seconds", "new_enrichment_calls_this_run")}, indent=2))
+        elif a.which == "checkpoint":
+            print(json.dumps(cost.checkpoint_refresh(Path(a.cost_dir), Path(a.run_dir), a.label), indent=2))
         else:
             r = cost.replay(Path(a.cost_dir), Path(a.rates) if a.rates else None, Path(a.projection) if a.projection else None, price_as=a.price_as)
             print(json.dumps({k: {kk: vv for kk, vv in v.items() if kk in ("api_cost_usd", "cost_per_1000_inputs_usd", "wall_clock_seconds")} for k, v in r["runs"].items()}, indent=2))

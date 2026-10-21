@@ -1,0 +1,41 @@
+{
+  "label": "cold",
+  "measured_at": "2026-10-20T23:25:56Z",
+  "input": "data/cost_100.csv",
+  "synthetic_input": false,
+  "rows": 100,
+  "statuses": {
+    "pending": 0,
+    "completed": 100,
+    "quarantined": 0
+  },
+  "stage_seconds": {
+    "prepare": 0.004,
+    "classify": 35.894,
+    "verify": 4.332,
+    "group": 10.139,
+    "rank": 0.006,
+    "memo": 6.169
+  },
+  "wall_clock_seconds": 56.545,
+  "new_enrichment_calls_this_run": 4,
+  "classify_stop_reason": "no_pending",
+  "verifier": {
+    "sample_size": 10,
+    "agreement": {
+      "topic": 1.0,
+      "intent": 1.0,
+      "severity_exact": 0.9
+    },
+    "disagreement_rate": 0.0,
+    "planted_error_caught": true
+  },
+  "controls": {
+    "workers": 1,
+    "batch_size": 25,
+    "effort": "low",
+    "model": "claude-haiku-5-5",
+    "backend": "anthropic",
+    "max_output_tokens": 8000
+  }
+}

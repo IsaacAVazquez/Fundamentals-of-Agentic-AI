@@ -54,16 +54,17 @@ def run_group(run_dir: Path, controls: Controls | None = None, name_with_model: 
                 res = backend.complete(system=GROUPER_SYSTEM, user=user, schema=NAME_SCHEMA, model=model,
                                        effort=controls.effort, max_output_tokens=300)
             except TransientError as exc:
-                store.log_call({"stage": "group", "phase": "initial", "role": "grouper", "provider": backend.provider, "model": model,
+                store.log_call({"stage": "group", "phase": "initial", "role": "group", "provider": backend.provider, "model": model,
                                 "effort": controls.effort, "label_config": lc, "attempt": 1, "request_ids": [rid for _, rid, _ in ex],
                                 "started_at": started, "duration_ms": int((time.time() - t0) * 1000), "status": "transient_error",
                                 "error": str(exc)[:300], "usage_known": 0, "cost_usd": 0.0, "worker": 0})
                 continue
             cost, _ = call_cost(rates, backend.provider, model, res.usage())
-            store.log_call({"stage": "group", "phase": "initial", "role": "grouper", "provider": backend.provider, "model": model,
+            store.log_call({"stage": "group", "phase": "initial", "role": "group", "provider": backend.provider, "model": model,
                             "effort": controls.effort, "label_config": lc, "attempt": 1, "request_ids": [rid for _, rid, _ in ex],
                             "started_at": started, "duration_ms": int((time.time() - t0) * 1000), "status": "ok", "error": None,
-                            **res.usage(), "usage_known": int(res.usage_known), "cost_usd": cost, "worker": 0})
+                            **res.usage(), "usage_known": int(res.usage_known), "cost_usd": cost, "worker": 0,
+                            "provider_request_id": res.extra.get("request_id")})
             try:
                 data = json.loads(res.text)
                 name, desc = str(data["name"])[:80], str(data["description"])[:300]

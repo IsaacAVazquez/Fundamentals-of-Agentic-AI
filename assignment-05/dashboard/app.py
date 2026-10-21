@@ -4,14 +4,38 @@ from __future__ import annotations
 
 import json
 import os
-import sys
+import sqlite3
 from pathlib import Path
 
 from fastapi import FastAPI, HTTPException
 from fastapi.responses import FileResponse, JSONResponse
 
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-from insight_pipeline.dashboard_load import DB, default_url  # noqa: E402
+
+def default_url(url: str | None) -> str:
+    return url or os.environ.get("DATABASE_URL") or "sqlite:///dashboard/dashboard.sqlite"
+
+
+class DB:
+    """Read-only connection: '?' placeholders for SQLite, '%s' for psycopg. The deploy root is dashboard/, so this
+    file cannot import the writer in insight_pipeline/dashboard_load.py; the two stay small on purpose."""
+
+    def __init__(self, url: str):
+        self.url = url
+        if url.startswith("sqlite"):
+            self.conn = sqlite3.connect(url.split("///", 1)[1] if "///" in url else url.split("sqlite:", 1)[1])
+            self.conn.row_factory = sqlite3.Row
+            self.ph = "?"
+        else:
+            import psycopg
+            from psycopg.rows import dict_row
+            self.conn = psycopg.connect(url, row_factory=dict_row)
+            self.ph = "%s"
+
+    def fetchall(self, sql: str, params=()):
+        return [dict(r) for r in self.conn.execute(sql.replace("?", self.ph) if self.ph != "?" else sql, params).fetchall()]
+
+    def close(self):
+        self.conn.close()
 
 app = FastAPI(title="Spotify review insight dashboard", docs_url="/api/docs")
 STATIC = Path(__file__).resolve().parent / "static"

@@ -1,14 +1,14 @@
 {
-  "replayed_at": "2026-10-20T06:22:39Z",
-  "rates_file": "results/cost-synthetic/rates.csv",
+  "replayed_at": "2026-10-20T23:02:40Z",
+  "rates_file": "/private/tmp/claude-501/-Users-isaacvazquez-Fundamentals-of-Agentic-AI/475d26cb-83ba-4581-a72d-c9c156fac8c5/scratchpad/cost-synthetic/rates.csv",
   "api_calls_made": 0,
   "priced_as": null,
   "runs": {
     "cold": {
       "measured": {
         "label": "cold",
-        "measured_at": "2026-10-20T06:21:16Z",
-        "input": "/tmp/claude-0/-home-user-Fundamentals-of-Agentic-AI/ec44ca5c-665c-5673-bf45-66c272bb4165/scratchpad/syn100.csv",
+        "measured_at": "2026-10-20T23:02:40Z",
+        "input": "/private/tmp/claude-501/-Users-isaacvazquez-Fundamentals-of-Agentic-AI/475d26cb-83ba-4581-a72d-c9c156fac8c5/scratchpad/syn100.csv",
         "synthetic_input": true,
         "rows": 100,
         "statuses": {
@@ -18,13 +18,13 @@
         },
         "stage_seconds": {
           "prepare": 0.011,
-          "classify": 0.016,
-          "verify": 0.005,
-          "group": 0.007,
-          "rank": 0.004,
-          "memo": 0.005
+          "classify": 0.009,
+          "verify": 0.002,
+          "group": 0.008,
+          "rank": 0.002,
+          "memo": 0.002
         },
-        "wall_clock_seconds": 0.049,
+        "wall_clock_seconds": 0.035,
         "new_enrichment_calls_this_run": 2,
         "classify_stop_reason": "no_pending",
         "verifier": {
@@ -56,19 +56,19 @@
           "requests": "2",
           "succeeded": "2",
           "failed": "0",
-          "records_requested": "42",
+          "records_requested": "48",
           "usage_unknown": "0",
-          "input_tokens": 2773,
+          "input_tokens": 2959,
           "cached_input_tokens": 0,
           "cache_write_tokens": 0,
-          "output_tokens": 2655,
-          "duration_ms_sum": "1",
+          "output_tokens": 2987,
+          "duration_ms_sum": "0",
           "api_cost_usd": 0.0,
           "priced": true,
           "billing_items": [
             {
               "unit": "input",
-              "tokens": 2773,
+              "tokens": 2959,
               "usd_per_million": 0.0,
               "usd": 0.0
             },
@@ -86,7 +86,7 @@
             },
             {
               "unit": "output",
-              "tokens": 2655,
+              "tokens": 2987,
               "usd_per_million": 0.0,
               "usd": 0.0
             }
@@ -103,17 +103,17 @@
           "failed": "0",
           "records_requested": "10",
           "usage_unknown": "0",
-          "input_tokens": 1143,
+          "input_tokens": 1107,
           "cached_input_tokens": 0,
           "cache_write_tokens": 0,
-          "output_tokens": 655,
+          "output_tokens": 627,
           "duration_ms_sum": "0",
           "api_cost_usd": 0.0,
           "priced": true,
           "billing_items": [
             {
               "unit": "input",
-              "tokens": 1143,
+              "tokens": 1107,
               "usd_per_million": 0.0,
               "usd": 0.0
             },
@@ -131,7 +131,7 @@
             },
             {
               "unit": "output",
-              "tokens": 655,
+              "tokens": 627,
               "usd_per_million": 0.0,
               "usd": 0.0
             }
@@ -146,9 +146,9 @@
           "requests": "7",
           "succeeded": "7",
           "failed": "0",
-          "records_requested": "53",
+          "records_requested": "54",
           "usage_unknown": "0",
-          "input_tokens": 2161,
+          "input_tokens": 2166,
           "cached_input_tokens": 0,
           "cache_write_tokens": 0,
           "output_tokens": 133,
@@ -158,7 +158,7 @@
           "billing_items": [
             {
               "unit": "input",
-              "tokens": 2161,
+              "tokens": 2166,
               "usd_per_million": 0.0,
               "usd": 0.0
             },
@@ -193,17 +193,17 @@
           "failed": "0",
           "records_requested": "0",
           "usage_unknown": "0",
-          "input_tokens": 2630,
+          "input_tokens": 2670,
           "cached_input_tokens": 0,
           "cache_write_tokens": 0,
-          "output_tokens": 247,
+          "output_tokens": 249,
           "duration_ms_sum": "0",
           "api_cost_usd": 0.0,
           "priced": true,
           "billing_items": [
             {
               "unit": "input",
-              "tokens": 2630,
+              "tokens": 2670,
               "usd_per_million": 0.0,
               "usd": 0.0
             },
@@ -221,7 +221,7 @@
             },
             {
               "unit": "output",
-              "tokens": 247,
+              "tokens": 249,
               "usd_per_million": 0.0,
               "usd": 0.0
             }
@@ -232,9 +232,9 @@
       "enrichment_api_cost_usd": 0.0,
       "cost_per_1000_inputs_usd": 0.0,
       "cost_per_completed_record_usd": 0.0,
-      "throughput_records_per_minute": 121224.49,
-      "wall_clock_seconds": 0.049,
-      "summed_call_duration_seconds": 0.001,
+      "throughput_records_per_minute": 169714.29,
+      "wall_clock_seconds": 0.035,
+      "summed_call_duration_seconds": 0.0,
       "local_compute_estimate_usd": 0.0,
       "unknown_costs": false,
       "note": "API spend = billed tokens x rates.csv. Summed call durations are not wall-clock when calls overlap."
@@ -242,8 +242,8 @@
     "warm": {
       "measured": {
         "label": "warm",
-        "measured_at": "2026-10-20T06:21:16Z",
-        "input": "/tmp/claude-0/-home-user-Fundamentals-of-Agentic-AI/ec44ca5c-665c-5673-bf45-66c272bb4165/scratchpad/syn100.csv",
+        "measured_at": "2026-10-20T23:02:40Z",
+        "input": "/private/tmp/claude-501/-Users-isaacvazquez-Fundamentals-of-Agentic-AI/475d26cb-83ba-4581-a72d-c9c156fac8c5/scratchpad/syn100.csv",
         "synthetic_input": true,
         "rows": 100,
         "statuses": {
@@ -253,13 +253,13 @@
         },
         "stage_seconds": {
           "prepare": 0.001,
-          "classify": 0.006,
-          "verify": 0.006,
-          "group": 0.007,
-          "rank": 0.004,
-          "memo": 0.007
+          "classify": 0.005,
+          "verify": 0.002,
+          "group": 0.002,
+          "rank": 0.002,
+          "memo": 0.003
         },
-        "wall_clock_seconds": 0.031,
+        "wall_clock_seconds": 0.015,
         "new_enrichment_calls_this_run": 0,
         "classify_stop_reason": "no_pending",
         "verifier": {
@@ -291,19 +291,19 @@
           "requests": "2",
           "succeeded": "2",
           "failed": "0",
-          "records_requested": "42",
+          "records_requested": "48",
           "usage_unknown": "0",
-          "input_tokens": 2773,
+          "input_tokens": 2959,
           "cached_input_tokens": 0,
           "cache_write_tokens": 0,
-          "output_tokens": 2655,
-          "duration_ms_sum": "1",
+          "output_tokens": 2987,
+          "duration_ms_sum": "0",
           "api_cost_usd": 0.0,
           "priced": true,
           "billing_items": [
             {
               "unit": "input",
-              "tokens": 2773,
+              "tokens": 2959,
               "usd_per_million": 0.0,
               "usd": 0.0
             },
@@ -321,7 +321,7 @@
             },
             {
               "unit": "output",
-              "tokens": 2655,
+              "tokens": 2987,
               "usd_per_million": 0.0,
               "usd": 0.0
             }
@@ -338,17 +338,17 @@
           "failed": "0",
           "records_requested": "20",
           "usage_unknown": "0",
-          "input_tokens": 2286,
+          "input_tokens": 2214,
           "cached_input_tokens": 0,
           "cache_write_tokens": 0,
-          "output_tokens": 1310,
+          "output_tokens": 1254,
           "duration_ms_sum": "0",
           "api_cost_usd": 0.0,
           "priced": true,
           "billing_items": [
             {
               "unit": "input",
-              "tokens": 2286,
+              "tokens": 2214,
               "usd_per_million": 0.0,
               "usd": 0.0
             },
@@ -366,7 +366,7 @@
             },
             {
               "unit": "output",
-              "tokens": 1310,
+              "tokens": 1254,
               "usd_per_million": 0.0,
               "usd": 0.0
             }
@@ -381,9 +381,9 @@
           "requests": "14",
           "succeeded": "14",
           "failed": "0",
-          "records_requested": "106",
+          "records_requested": "108",
           "usage_unknown": "0",
-          "input_tokens": 4322,
+          "input_tokens": 4332,
           "cached_input_tokens": 0,
           "cache_write_tokens": 0,
           "output_tokens": 266,
@@ -393,7 +393,7 @@
           "billing_items": [
             {
               "unit": "input",
-              "tokens": 4322,
+              "tokens": 4332,
               "usd_per_million": 0.0,
               "usd": 0.0
             },
@@ -428,17 +428,17 @@
           "failed": "0",
           "records_requested": "0",
           "usage_unknown": "0",
-          "input_tokens": 5260,
+          "input_tokens": 5340,
           "cached_input_tokens": 0,
           "cache_write_tokens": 0,
-          "output_tokens": 494,
+          "output_tokens": 498,
           "duration_ms_sum": "0",
           "api_cost_usd": 0.0,
           "priced": true,
           "billing_items": [
             {
               "unit": "input",
-              "tokens": 5260,
+              "tokens": 5340,
               "usd_per_million": 0.0,
               "usd": 0.0
             },
@@ -456,7 +456,7 @@
             },
             {
               "unit": "output",
-              "tokens": 494,
+              "tokens": 498,
               "usd_per_million": 0.0,
               "usd": 0.0
             }
@@ -467,9 +467,9 @@
       "enrichment_api_cost_usd": 0.0,
       "cost_per_1000_inputs_usd": 0.0,
       "cost_per_completed_record_usd": 0.0,
-      "throughput_records_per_minute": 191612.9,
-      "wall_clock_seconds": 0.031,
-      "summed_call_duration_seconds": 0.001,
+      "throughput_records_per_minute": 396000.0,
+      "wall_clock_seconds": 0.015,
+      "summed_call_duration_seconds": 0.0,
       "local_compute_estimate_usd": 0.0,
       "unknown_costs": false,
       "note": "API spend = billed tokens x rates.csv. Summed call durations are not wall-clock when calls overlap."
@@ -482,13 +482,13 @@
       "model": "fake:fake-deterministic-v1",
       "effort": "low",
       "per_record_tokens": {
-        "input": 28.01,
+        "input": 29.89,
         "cached_input": 0.0,
         "cache_write": 0.0,
-        "output": 26.82
+        "output": 30.17
       },
       "per_record_api_usd": 0.0,
-      "seconds_per_record_one_worker": 0.0002,
+      "seconds_per_record_one_worker": 0.0001,
       "prices_usd_per_million": {
         "input": 0.0,
         "cached_input": 0.0,
@@ -522,8 +522,8 @@
         "fixed_overhead_usd": 0.0,
         "api_total_usd": 0.0,
         "exceeds_spending_limit": false,
-        "hours_one_worker": 0.19,
-        "hours_with_workers": 0.05,
+        "hours_one_worker": 0.18,
+        "hours_with_workers": 0.04,
         "workers": 4,
         "local_compute_usd": 0.0,
         "note": "worker speedup is modeled, not measured; rate limits can make more workers slower"
@@ -541,7 +541,7 @@
         "fixed_overhead_usd": 0.0,
         "api_total_usd": 0.0,
         "exceeds_spending_limit": false,
-        "hours_one_worker": 0.2,
+        "hours_one_worker": 0.18,
         "hours_with_workers": 0.05,
         "workers": 4,
         "local_compute_usd": 0.0,
@@ -560,7 +560,7 @@
         "fixed_overhead_usd": 0.0,
         "api_total_usd": 0.0,
         "exceeds_spending_limit": false,
-        "hours_one_worker": 0.2,
+        "hours_one_worker": 0.19,
         "hours_with_workers": 0.05,
         "workers": 4,
         "local_compute_usd": 0.0,
@@ -579,7 +579,7 @@
         "fixed_overhead_usd": 0.0,
         "api_total_usd": 0.0,
         "exceeds_spending_limit": false,
-        "hours_one_worker": 0.21,
+        "hours_one_worker": 0.19,
         "hours_with_workers": 0.05,
         "workers": 4,
         "local_compute_usd": 0.0,

@@ -1,0 +1,19 @@
+{
+  "synthetic_test": true,
+  "excluded_from_aggregates": true,
+  "review_id": "06d4c78d-73b4-4b54-9ef3-3d5a0d18cb96",
+  "original": {
+    "topic": "playback",
+    "severity": 4
+  },
+  "planted_wrong": {
+    "topic": "access",
+    "severity": 1
+  },
+  "verifier": {
+    "topic": "playback",
+    "intent": "complaint",
+    "severity": 4
+  },
+  "caught": true
+}

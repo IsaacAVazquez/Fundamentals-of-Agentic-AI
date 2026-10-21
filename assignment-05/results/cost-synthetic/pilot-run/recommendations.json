@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-10-20T06:21:16Z",
+  "generated_at": "2026-10-20T23:02:40Z",
   "model": "fake:fake-deterministic-v1",
   "effort": "low",
   "priority_issue_id": "ISS-playback",
   "recommendation": "Prioritize fake issue name",
   "alternatives": [
-    "ISS-billing",
-    "ISS-usability"
+    "ISS-downloads",
+    "ISS-access"
   ],
   "cited_claims": [
     "C10",
@@ -23,130 +23,130 @@
   "evidence_pack": {
     "ISS-playback": [
       {
-        "review_id": "syn-0000013",
+        "review_id": "syn-0000018",
         "severity": 4,
         "intent": "complaint",
         "quote": "Songs stop halfway through and the app crashes when I switch tracks"
       },
       {
-        "review_id": "syn-0000027",
-        "severity": 3,
+        "review_id": "syn-0000030",
+        "severity": 4,
         "intent": "complaint",
-        "quote": "Playback lags constantly on wifi, skips every few seconds"
+        "quote": "Songs stop halfway through and the app crashes when I switch tracks"
       },
       {
-        "review_id": "syn-0000032",
-        "severity": 3,
+        "review_id": "syn-0000042",
+        "severity": 4,
         "intent": "complaint",
-        "quote": "App freezes whenever I open a playlist and music stutters"
-      },
-      {
-        "review_id": "syn-0000039",
-        "severity": 3,
-        "intent": "complaint",
-        "quote": "App freezes whenever I open a playlist and music stutters"
+        "quote": "Songs stop halfway through and the app crashes when I switch tracks"
       },
       {
         "review_id": "syn-0000046",
-        "severity": 3,
+        "severity": 4,
         "intent": "complaint",
-        "quote": "App freezes whenever I open a playlist and music stutters"
+        "quote": "Songs stop halfway through and the app crashes when I switch tracks"
+      },
+      {
+        "review_id": "syn-0000048",
+        "severity": 4,
+        "intent": "complaint",
+        "quote": "Songs stop halfway through and the app crashes when I switch tracks"
       }
     ],
-    "ISS-billing": [
+    "ISS-downloads": [
       {
-        "review_id": "syn-0000026",
-        "severity": 5,
-        "intent": "complaint",
-        "quote": "Charged twice this month for premium and still shows the free plan"
+        "review_id": "syn-0000004",
+        "severity": 4,
+        "intent": "cancellation",
+        "quote": "Offline mode says downloads are unavailable even though storage is fine Done with this app, unsubscribing"
       },
       {
-        "review_id": "syn-0000066",
-        "severity": 5,
+        "review_id": "syn-0000021",
+        "severity": 4,
         "intent": "complaint",
-        "quote": "Charged twice this month for premium and still shows the free plan"
+        "quote": "Offline mode says downloads are unavailable even though storage is fine"
       },
       {
-        "review_id": "syn-0000075",
-        "severity": 5,
+        "review_id": "syn-0000060",
+        "severity": 4,
         "intent": "complaint",
-        "quote": "Charged twice this month for premium and still shows the free plan"
+        "quote": "Offline mode says downloads are unavailable even though storage is fine"
       },
       {
-        "review_id": "syn-0000086",
-        "severity": 5,
+        "review_id": "syn-0000069",
+        "severity": 4,
         "intent": "complaint",
-        "quote": "Charged twice this month for premium and still shows the free plan"
+        "quote": "Saved music won't play without internet anymore"
       },
       {
-        "review_id": "syn-0000094",
-        "severity": 5,
+        "review_id": "syn-0000073",
+        "severity": 4,
         "intent": "complaint",
-        "quote": "Charged twice this month for premium and still shows the free plan"
+        "quote": "Saved music won't play without internet anymore"
+      }
+    ],
+    "ISS-access": [
+      {
+        "review_id": "syn-0000001",
+        "severity": 4,
+        "intent": "complaint",
+        "quote": "Logged out every day and the two factor code never arrives"
+      },
+      {
+        "review_id": "syn-0000015",
+        "severity": 4,
+        "intent": "cancellation",
+        "quote": "Logged out every day and the two factor code never arrives Cancelling my subscription"
+      },
+      {
+        "review_id": "syn-0000032",
+        "severity": 4,
+        "intent": "complaint",
+        "quote": "Logged out every day and the two factor code never arrives"
+      },
+      {
+        "review_id": "syn-0000037",
+        "severity": 4,
+        "intent": "complaint",
+        "quote": "Account got locked and the login page just spins forever"
+      },
+      {
+        "review_id": "syn-0000047",
+        "severity": 4,
+        "intent": "complaint",
+        "quote": "Can't log in since the update, keeps saying wrong password even after reset"
       }
     ],
     "ISS-usability": [
       {
-        "review_id": "syn-0000003",
+        "review_id": "syn-0000002",
         "severity": 2,
-        "intent": "cancellation",
-        "quote": "The new layout hides the shuffle button and the ads are every two songs now Cancelling my subscription"
+        "intent": "complaint",
+        "quote": "The new layout hides the shuffle button and the ads are every two songs now"
       },
       {
-        "review_id": "syn-0000009",
+        "review_id": "syn-0000006",
         "severity": 2,
-        "intent": "cancellation",
-        "quote": "The new layout hides the shuffle button and the ads are every two songs now I'm switching to another service"
+        "intent": "complaint",
+        "quote": "Too many ads, and the interface keeps changing for no reason"
+      },
+      {
+        "review_id": "syn-0000011",
+        "severity": 2,
+        "intent": "complaint",
+        "quote": "Navigation is confusing, took me five minutes to find my library"
       },
       {
         "review_id": "syn-0000019",
         "severity": 2,
-        "intent": "cancellation",
-        "quote": "The new layout hides the shuffle button and the ads are every two songs now Cancelling my subscription"
+        "intent": "complaint",
+        "quote": "Navigation is confusing, took me five minutes to find my library"
       },
       {
         "review_id": "syn-0000024",
         "severity": 2,
         "intent": "complaint",
         "quote": "Too many ads, and the interface keeps changing for no reason"
-      },
-      {
-        "review_id": "syn-0000030",
-        "severity": 2,
-        "intent": "complaint",
-        "quote": "Too many ads, and the interface keeps changing for no reason"
-      }
-    ],
-    "ISS-downloads": [
-      {
-        "review_id": "syn-0000005",
-        "severity": 4,
-        "intent": "complaint",
-        "quote": "Saved music won't play without internet anymore"
-      },
-      {
-        "review_id": "syn-0000008",
-        "severity": 4,
-        "intent": "complaint",
-        "quote": "Saved music won't play without internet anymore"
-      },
-      {
-        "review_id": "syn-0000014",
-        "severity": 4,
-        "intent": "complaint",
-        "quote": "Offline mode says downloads are unavailable even though storage is fine"
-      },
-      {
-        "review_id": "syn-0000016",
-        "severity": 4,
-        "intent": "complaint",
-        "quote": "Saved music won't play without internet anymore"
-      },
-      {
-        "review_id": "syn-0000034",
-        "severity": 4,
-        "intent": "complaint",
-        "quote": "Saved music won't play without internet anymore"
       }
     ]
   },
@@ -167,5 +167,5 @@
       "THE INPUT WAS SYNTHETIC TEST DATA; nothing here describes Spotify."
     ]
   },
-  "memo_markdown": "## Recommendation\n\nPut the next quarter of product effort on [ISS-playback] (fake issue name).\n\n## Why this issue\n\nIt has 15 [C7] complaint records with a mean severity of 3.066667 [C10], for a score of 46 [C11], the highest of the 8 issues. Review syn-0000013 says \"Songs stop halfway through and the app crashes when I switch tracks\" (severity 4). Review syn-0000027 says \"Playback lags constantly on wifi, skips every few seconds\" (severity 3).\n\n## Alternatives considered\n\n[ISS-billing] scored 41 [C17] on 12 [C13] complaints. [ISS-usability] scored 40 [C23] on 20 [C19] complaints.\n\n## Limitations\n\nOnly 99 [C2] records were classified and 1 [C3] were quarantined. Reviews are self-selected and nothing here measures revenue or churn."
+  "memo_markdown": "## Recommendation\n\nPut the next quarter of product effort on [ISS-playback] (fake issue name).\n\n## Why this issue\n\nIt has 19 [C7] complaint records with a mean severity of 3.421053 [C10], for a score of 65 [C11], the highest of the 8 issues. Review syn-0000018 says \"Songs stop halfway through and the app crashes when I switch tracks\" (severity 4). Review syn-0000030 says \"Songs stop halfway through and the app crashes when I switch tracks\" (severity 4).\n\n## Alternatives considered\n\n[ISS-downloads] scored 49 [C17] on 14 [C13] complaints. [ISS-access] scored 44 [C23] on 11 [C19] complaints.\n\n## Limitations\n\nOnly 99 [C2] records were classified and 1 [C3] were quarantined. Reviews are self-selected and nothing here measures revenue or churn."
 }

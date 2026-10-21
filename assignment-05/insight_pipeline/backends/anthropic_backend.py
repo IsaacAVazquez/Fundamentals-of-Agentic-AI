@@ -18,7 +18,10 @@ class AnthropicBackend(Backend):
         if not os.environ.get("ANTHROPIC_API_KEY"):
             raise SystemExit("ANTHROPIC_API_KEY is not set; copy .env.example to .env and load it")
         self._anthropic = anthropic
-        self.client = anthropic.Anthropic(max_retries=0)  # the orchestrator owns retries and logs each attempt
+        # The orchestrator owns retries and logs each attempt. A user-scoped key (sk-ant-usr-...) must name
+        # its workspace in a header; ANTHROPIC_WORKSPACE_ID carries it.
+        ws = os.environ.get("ANTHROPIC_WORKSPACE_ID")
+        self.client = anthropic.Anthropic(max_retries=0, default_headers={"anthropic-workspace-id": ws} if ws else None)
 
     def complete(self, *, system: str, user: str, schema: dict | None, model: str, effort: str,
                  max_output_tokens: int) -> CallResult:
@@ -30,6 +33,11 @@ class AnthropicBackend(Backend):
             messages=[{"role": "user", "content": user}],
             output_config={"effort": effort},
         )
+        # Haiku 5.5 thinks by default and the thinking tokens count against max_tokens, which truncated a
+        # 25-review batch at 4,000 tokens in the first pilot. Disabled thinking is supported on Haiku 5.5 at
+        # effort high or below; Sonnet 5.5 rejects "disabled", so it keeps adaptive thinking at the given effort.
+        if "haiku" in model:
+            kwargs["thinking"] = {"type": "disabled"}
         if schema is not None:
             kwargs["output_config"]["format"] = {"type": "json_schema", "schema": schema}
         try:
@@ -50,4 +58,5 @@ class AnthropicBackend(Backend):
             output_tokens=int(getattr(u, "output_tokens", 0) or 0),
             usage_known=True,
             stop_reason=str(resp.stop_reason),
+            extra={"request_id": getattr(resp, "_request_id", None)},
         )

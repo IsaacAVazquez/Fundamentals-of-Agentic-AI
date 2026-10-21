@@ -1,0 +1,17 @@
+provider,model,unit,usd_per_million_tokens,currency,source_and_date
+anthropic,claude-haiku-5-5,input,0.1,USD,"https://www.anthropic.com/pricing (2026-10-06, prompts up to 100K tokens)"
+anthropic,claude-haiku-5-5,cached_input,0.01,USD,"https://www.anthropic.com/pricing (2026-10-06, cache read = 0.1x input)"
+anthropic,claude-haiku-5-5,cache_write,0.125,USD,"https://www.anthropic.com/pricing (2026-10-06, 5-minute cache write = 1.25x input)"
+anthropic,claude-haiku-5-5,output,0.5,USD,https://www.anthropic.com/pricing (2026-10-06)
+anthropic,claude-sonnet-5-5,input,2.0,USD,https://www.anthropic.com/pricing (2026-10-06)
+anthropic,claude-sonnet-5-5,cached_input,0.2,USD,https://www.anthropic.com/pricing (2026-10-06)
+anthropic,claude-sonnet-5-5,cache_write,2.5,USD,"https://www.anthropic.com/pricing (2026-10-06, 5-minute cache write = 1.25x input)"
+anthropic,claude-sonnet-5-5,output,10.0,USD,https://www.anthropic.com/pricing (2026-10-06)
+openai,gpt-6-luna,input,0.0,USD,FILL IN from https://developers.openai.com/api/docs/models/gpt-6-luna before a paid run
+openai,gpt-6-luna,cached_input,0.0,USD,FILL IN from https://developers.openai.com/api/docs/models/gpt-6-luna before a paid run
+openai,gpt-6-luna,cache_write,0.0,USD,not billed separately by OpenAI
+openai,gpt-6-luna,output,0.0,USD,FILL IN from https://developers.openai.com/api/docs/models/gpt-6-luna before a paid run
+fake,fake-deterministic-v1,input,0.0,USD,"local deterministic backend, no API charge"
+fake,fake-deterministic-v1,cached_input,0.0,USD,"local deterministic backend, no API charge"
+fake,fake-deterministic-v1,cache_write,0.0,USD,"local deterministic backend, no API charge"
+fake,fake-deterministic-v1,output,0.0,USD,"local deterministic backend, no API charge"

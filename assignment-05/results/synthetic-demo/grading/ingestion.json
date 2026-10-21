@@ -1,33 +1,15 @@
 {
-  "generated_at": "2026-10-20T06:14:08Z",
-  "source_file": "/tmp/claude-0/-home-user-Fundamentals-of-Agentic-AI/ec44ca5c-665c-5673-bf45-66c272bb4165/scratchpad/syn.csv",
-  "source_sha256": "8d8ed8c68906d3543cec2bb219eb6c12d77d2be83d23146f35218515c200dea3",
-  "source_bytes": 113053,
-  "columns": [
-    "review_id",
-    "review_text",
-    "review_rating",
-    "review_likes",
-    "app_version",
-    "review_timestamp"
-  ],
-  "header_ok": true,
-  "rows": 1000,
-  "unique_review_ids": 1000,
-  "duplicate_review_ids_skipped": 0,
-  "empty_review_texts": 2,
-  "nonempty_reviews": 998,
-  "distinct_nonempty_texts": 110,
-  "exact_duplicate_nonempty_texts": 888,
-  "missing_app_version": 246,
-  "rating_counts": {
-    "1": 305,
-    "2": 169,
-    "3": 155,
-    "4": 164,
-    "5": 207
+  "counts": {
+    "duplicate_review_ids": 0,
+    "empty_review_text": 2,
+    "missing_app_version": 246,
+    "records": 1000
   },
-  "rows_by_month": {
+  "file_sha256": "8d8ed8c68906d3543cec2bb219eb6c12d77d2be83d23146f35218515c200dea3",
+  "first_review": "2022-05-01 03:10:00",
+  "last_review": "2023-10-21 18:49:00",
+  "parsed_rows_sha256": "e2fa95e5b9edc1f3d32db51643d323a3a2f892596541df0afcbc7123ff956e20",
+  "reviews_by_month": {
     "2022-05": 62,
     "2022-06": 55,
     "2022-07": 72,
@@ -47,16 +29,11 @@
     "2023-09": 55,
     "2023-10": 36
   },
-  "row_hash_definition": "sha256(utf8(review_id + US + review_text + US + review_rating + US + review_likes + US + app_version + US + review_timestamp)), US = \\x1f",
-  "text_hash_definition": "sha256(utf8(review_text))",
-  "expected_full_corpus": {
-    "rows": 660622,
-    "nonempty": 660609,
-    "empty": 13,
-    "distinct_nonempty_texts": 484189,
-    "missing_app_version": 159701,
-    "source_file": "spotify_reviews_18months.csv",
-    "source_bytes": 97400616
-  },
-  "matches_full_corpus_profile": false
+  "reviews_by_rating": {
+    "1": 305,
+    "2": 169,
+    "3": 155,
+    "4": 164,
+    "5": 207
+  }
 }

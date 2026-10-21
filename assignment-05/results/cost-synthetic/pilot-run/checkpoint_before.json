@@ -1,14 +1,1 @@
-{
-  "ts": "2026-10-20T06:21:16Z",
-  "phase": "resume",
-  "moment": "before",
-  "statuses": {
-    "pending": 0,
-    "completed": 99,
-    "quarantined": 1
-  },
-  "completed_count": 99,
-  "completed_ids_sha256": "aa61d90d53e7ad6841b6f1666c5c20b17027442589e25402ab2caed2def0cc0c",
-  "classify_calls_so_far": 2,
-  "classify_spend_so_far_usd": 0.0
-}
+{"ts": "2026-10-20T23:02:40Z", "phase": "resume", "moment": "before", "statuses": {"pending": 0, "completed": 99, "quarantined": 1}, "completed_count": 99, "completed_ids_sha256": "aa61d90d53e7ad6841b6f1666c5c20b17027442589e25402ab2caed2def0cc0c", "classify_calls_so_far": 2, "classify_spend_so_far_usd": 0.0, "completed_ids": ["syn-0000001", "syn-0000002", "syn-0000003", "syn-0000004", "syn-0000005", "syn-0000006", "syn-0000007", "syn-0000008", "syn-0000009", "syn-0000010", "syn-0000011", "syn-0000012", "syn-0000013", "syn-0000014", "syn-0000015", "syn-0000016", "syn-0000017", "syn-0000018", "syn-0000019", "syn-0000020", "syn-0000021", "syn-0000022", "syn-0000023", "syn-0000024", "syn-0000025", "syn-0000026", "syn-0000027", "syn-0000028", "syn-0000029", "syn-0000030", "syn-0000031", "syn-0000032", "syn-0000033", "syn-0000034", "syn-0000035", "syn-0000036", "syn-0000037", "syn-0000038", "syn-0000039", "syn-0000040", "syn-0000041", "syn-0000042", "syn-0000043", "syn-0000044", "syn-0000045", "syn-0000046", "syn-0000047", "syn-0000048", "syn-0000049", "syn-0000050", "syn-0000051", "syn-0000052", "syn-0000053", "syn-0000054", "syn-0000055", "syn-0000056", "syn-0000057", "syn-0000058", "syn-0000059", "syn-0000060", "syn-0000061", "syn-0000062", "syn-0000063", "syn-0000064", "syn-0000065", "syn-0000066", "syn-0000067", "syn-0000068", "syn-0000069", "syn-0000070", "syn-0000071", "syn-0000072", "syn-0000073", "syn-0000074", "syn-0000075", "syn-0000076", "syn-0000077", "syn-0000078", "syn-0000079", "syn-0000080", "syn-0000081", "syn-0000082", "syn-0000083", "syn-0000084", "syn-0000085", "syn-0000086", "syn-0000087", "syn-0000088", "syn-0000089", "syn-0000090", "syn-0000091", "syn-0000092", "syn-0000093", "syn-0000094", "syn-0000095", "syn-0000096", "syn-0000097", "syn-0000098", "syn-0000099"]}

@@ -1,0 +1,188 @@
+{
+  "generated_at": "2026-10-21T04:14:20Z",
+  "model": "anthropic:claude-sonnet-5-5",
+  "effort": "low",
+  "priority_issue_id": "ISS-usability",
+  "recommendation": "Focus next quarter's product effort on ISS-usability (playback controls broken after recent updates), which ranks first on priority score, with ISS-playback as the closest alternative.",
+  "alternatives": [
+    "ISS-playback",
+    "ISS-other",
+    "ISS-billing",
+    "ISS-access"
+  ],
+  "cited_claims": [
+    "C1",
+    "C10",
+    "C11",
+    "C13",
+    "C16",
+    "C17",
+    "C19",
+    "C2",
+    "C22",
+    "C23",
+    "C25",
+    "C26",
+    "C29",
+    "C3",
+    "C35",
+    "C37",
+    "C4",
+    "C40",
+    "C41",
+    "C47",
+    "C5",
+    "C53",
+    "C7",
+    "C8",
+    "C9"
+  ],
+  "memo_check_passed": true,
+  "evidence_pack": {
+    "ISS-usability": [
+      {
+        "review_id": "18308b6c-2b30-4e54-a95f-2a246b49376c",
+        "severity": 5,
+        "intent": "complaint",
+        "quote": "Even the playlist which I had saved for years just got vanished."
+      },
+      {
+        "review_id": "19624a6c-e065-4155-a7ba-5b1d4ad98988",
+        "severity": 5,
+        "intent": "complaint",
+        "quote": "Not just your taste in music, but also EVERYTHING else, you do on your phone."
+      },
+      {
+        "review_id": "1d6050e6-fe8b-4554-a801-96dac23a160e",
+        "severity": 5,
+        "intent": "complaint",
+        "quote": "this app stole your data so don't use this app!"
+      },
+      {
+        "review_id": "25c2686b-9948-4e01-a006-25ae1f3cc4ca",
+        "severity": 5,
+        "intent": "cancellation",
+        "quote": "I lost all of my data just to find out that the problem is still not fixed. Extremely infuriated with this and will not be paying for premium or using basic plan again."
+      },
+      {
+        "review_id": "40484260-50c5-4a14-b4fd-0983b1e7e16a",
+        "severity": 5,
+        "intent": "complaint",
+        "quote": "I just decimated part of my playlist by accident"
+      }
+    ],
+    "ISS-playback": [
+      {
+        "review_id": "0116f142-57d4-488e-8c79-6c38a4521e31",
+        "severity": 5,
+        "intent": "cancellation",
+        "quote": "Recently added songs to my liked playlist won't play, but also when I do shuffle my liked playlist, it's playing songs I unliked MONTHS ago. What am I paying 9.99$ a month for, and you have the nerve to up the price in October?"
+      },
+      {
+        "review_id": "0377db91-97c1-41f5-ad41-97543d5df5ac",
+        "severity": 5,
+        "intent": "complaint",
+        "quote": "No songs will play, all my play list are gone"
+      },
+      {
+        "review_id": "06b887c0-d131-496c-b24d-2e8721b5ba7d",
+        "severity": 5,
+        "intent": "complaint",
+        "quote": "Why am I paying you $10 a month for a broken app? Fix this!"
+      },
+      {
+        "review_id": "07f60ec3-2a42-4903-862a-4de5265803d6",
+        "severity": 5,
+        "intent": "complaint",
+        "quote": "all my playlists and old account were deleted idk how"
+      },
+      {
+        "review_id": "0834a740-a550-4e67-b4ef-128a78940f6b",
+        "severity": 5,
+        "intent": "complaint",
+        "quote": "all my play lists had been wipped clean"
+      }
+    ],
+    "ISS-other": [
+      {
+        "review_id": "06368cfa-d76c-4244-b0fc-fba6f48dcf97",
+        "severity": 5,
+        "intent": "cancellation",
+        "quote": "Download this app if you want every personal information about you sold for profit to Facebook and Google"
+      },
+      {
+        "review_id": "08f88c90-d6a8-459c-bf27-4c4f81426f11",
+        "severity": 5,
+        "intent": "complaint",
+        "quote": "Track you and records you passwords contacts"
+      },
+      {
+        "review_id": "09b8319b-8e7a-41a0-af25-3d2b7de21ee8",
+        "severity": 5,
+        "intent": "complaint",
+        "quote": "all of my library is gone"
+      },
+      {
+        "review_id": "0a1ea741-8a5e-42c4-b4b9-d9efcef01d0e",
+        "severity": 5,
+        "intent": "complaint",
+        "quote": "mera sara data waste ho gya"
+      },
+      {
+        "review_id": "0a84a621-4636-452c-a5c8-97b6c1321af2",
+        "severity": 5,
+        "intent": "complaint",
+        "quote": "all my songs are gone!!!!"
+      }
+    ],
+    "ISS-billing": [
+      {
+        "review_id": "000c2b9a-d116-45dc-b8a8-7b3818d6e834",
+        "severity": 5,
+        "intent": "complaint",
+        "quote": "they charged me double ( took me off student plan) without notifying me"
+      },
+      {
+        "review_id": "008289e3-0451-4f52-ac67-7409c67d12c1",
+        "severity": 5,
+        "intent": "complaint",
+        "quote": "I am being charged for premium on old device that I do not own anymore"
+      },
+      {
+        "review_id": "00924d14-8608-4fe2-853f-44ebbb975362",
+        "severity": 5,
+        "intent": "cancellation",
+        "quote": "them and the play store like to steal your money after you cancelled the subscription."
+      },
+      {
+        "review_id": "00eaee0f-d8a3-43f8-b5f8-a5bf7bd2c7bd",
+        "severity": 5,
+        "intent": "complaint",
+        "quote": "I charged for my subscription then also I don't get it"
+      },
+      {
+        "review_id": "0101a3b2-043d-4b9c-b2ad-43d0095877fb",
+        "severity": 5,
+        "intent": "cancellation",
+        "quote": "I even bought a premium didn't get the benefits and at the time couldn't find a soul to speak with to simply correct it. Bye bye."
+      }
+    ]
+  },
+  "scope": {
+    "completed_records": 660144,
+    "quarantined_records": 478,
+    "pending_records": 0,
+    "partial_months": [
+      "2022-05",
+      "2023-11"
+    ],
+    "synthetic_input": false,
+    "limitations": [
+      "Reviews are self-selected public app store posts, not a customer population.",
+      "No account, plan, revenue, or cancellation data exists; cancellation intent is expressed, not observed.",
+      "Labels come from a model checked against a 50-review golden set and a verifier sample; see evals/.",
+      "Quarantined and pending records are not classified and are excluded from every count."
+    ]
+  },
+  "memo_markdown": "## Recommendation\n\nPut next quarter's product effort on [ISS-usability], \"Playback controls broken after recent updates.\" It ranks first with a priority score of 155358 [C11], from 68832 complaints [C7] and a mean severity of 2.257061 [C10].\n\n## Why this issue\n\n- It has the highest priority score of the eight issues, 155358 [C11], and a severity sum of 155358 [C9].\n- Expressed cancellation intent is 5571 [C8]. That is not the largest count of the set, so this is a ranking on the overall score, not a claim of dominance on every measure.\n- The evidence pack shows data-loss themes. One reviewer (review 25c2686b-9948-4e01-a006-25ae1f3cc4ca) wrote: \"I lost all of my data just to find out that the problem is still not fixed.\" Another (review 18308b6c-2b30-4e54-a95f-2a246b49376c) wrote: \"Even the playlist which I had saved for years just got vanished.\"\n- The gap to second place is modest: 155358 [C11] versus 144846 [C17]. Treat the ordering as directional.\n\n## Alternatives considered\n\n- **[ISS-playback]** (rank 2): priority score 144846 [C17], with 45188 complaints [C13] and a higher mean severity of 3.205409 [C16]. It is the closest alternative and the right second bet. Sample quotes (e.g. review 0377db91-97c1-41f5-ad41-97543d5df5ac, \"No songs will play, all my play list are gone\") overlap with the usability theme, so some of the work may be shared.\n- **[ISS-other]** (rank 3): the most complaints, 84647 [C19], but the lowest mean severity among the top four, 1.691247 [C22]. Its score is 143159 [C23]. The category is a catch-all, so it is hard to assign to one team.\n- **[ISS-billing]** (rank 4): score 114549 [C29], but the highest cancellation-intent count, 8206 [C26], from 43410 complaints [C25]. If leadership weights stated cancellation intent above overall score, this is the strongest case for switching. Review 00924d14-8608-4fe2-853f-44ebbb975362 describes being charged after cancelling.\n- **[ISS-access]**: mean severity is the highest, 3.897331 [C40], but only 12214 complaints [C37], so the score is 47602 [C41]. Worth a targeted fix for account recovery rather than a full quarter.\n\nOther issues ([ISS-catalog], [ISS-downloads], [ISS-support]) score lower, at 60860 [C35], 25106 [C47] and 2240 [C53].\n\n## Limitations\n\n- Reviews are self-selected public app store posts, not a customer population.\n- The data holds no account, plan, spend or subscription-status information. Cancellation intent is stated in text, not observed, so this memo cannot size business impact in money terms.\n- Labels come from a model checked against a 50-review golden set and a verifier sample, so some misclassification is possible. The category names overlap: playlist-loss quotes appear under several issues, including [ISS-other] and [ISS-playback].\n- Of 660622 source rows [C1], 660144 were completed [C2] and 478 were quarantined [C3]; pending records number 0 [C4]. Quarantined records are excluded from every count. Complaint records total 286629 [C5].\n- Partial months (2022-05 and 2023-11) may skew totals.\n- The priority score equals the severity sum, so volume and severity are blended and the top three are close."
+}

@@ -1,10 +1,10 @@
 {
   "source": {
     "file": "syn100.csv",
-    "sha256": "c9bce8b566e55f1042211c9242048e9920e3d34cfba4e39a7061f398b201430d",
-    "bytes": 11267
+    "sha256": "a37787be8a89b15a7afa51ec38df384af008edb5db6b19a5ff08a52b6bbfdfd1",
+    "bytes": 11338
   },
-  "prepared_at": "2026-10-20T06:21:16Z",
+  "prepared_at": "2026-10-20T23:02:40Z",
   "rows": 100,
   "pending_ids": "records.status = 'pending' in state.sqlite"
 }

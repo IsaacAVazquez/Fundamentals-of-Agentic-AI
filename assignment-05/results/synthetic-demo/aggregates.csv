@@ -1,4 +1,4 @@
-issue_id,name,topic,complaint_count,cancellation_count,severity_sum,mean_severity,score,mean_sentiment,needs_review_count,share_of_complaint_records,rank
+issue_id,name,topic,complaint_count,cancellation_count,severity_sum,mean_severity,priority_score,mean_sentiment,needs_review_count,share_of_complaint_records,rank
 ISS-access,fake issue name,access,121,22,484,4.000000,484,-0.800000,0,0.137970,1
 ISS-playback,fake issue name,playback,134,29,443,3.305970,443,-0.591791,0,0.152794,2
 ISS-downloads,fake issue name,downloads,119,18,430,3.613445,430,-0.684034,0,0.135690,3

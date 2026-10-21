@@ -43,7 +43,7 @@ CREATE TABLE IF NOT EXISTS calls (
     attempt INTEGER, request_ids TEXT, started_at TEXT, duration_ms INTEGER,
     status TEXT, error TEXT,
     input_tokens INTEGER, cached_input_tokens INTEGER, cache_write_tokens INTEGER, output_tokens INTEGER,
-    usage_known INTEGER, cost_usd REAL, worker INTEGER
+    usage_known INTEGER, cost_usd REAL, worker INTEGER, provider_request_id TEXT
 );
 CREATE TABLE IF NOT EXISTS membership (
     issue_id TEXT NOT NULL, review_id TEXT NOT NULL,
@@ -123,11 +123,14 @@ class Store:
         for i in range(0, len(text_hashes), 500):
             chunk = text_hashes[i:i + 500]
             marks = ",".join("?" * len(chunk))
+            # Drive from the text-hash index: with hundreds of thousands of completed rows the planner otherwise
+            # scanned records by status and this lookup took five seconds per loop on the full corpus.
             rows = self.conn.execute(
-                "SELECT r.text_sha256 AS h, c.* FROM records c JOIN reviews r ON r.review_id = c.review_id "
-                f"WHERE c.status = 'completed' AND c.label_config = ? AND r.text_sha256 IN ({marks}) "
+                "SELECT r.text_sha256 AS h, c.* FROM reviews r INDEXED BY reviews_text_hash "
+                "JOIN records c ON c.review_id = r.review_id "
+                f"WHERE r.text_sha256 IN ({marks}) AND c.status = 'completed' AND c.label_config = ? "
                 "ORDER BY r.row_index",
-                [label_config, *chunk],
+                [*chunk, label_config],
             ).fetchall()
             for row in rows:
                 out.setdefault(row["h"], row)
@@ -185,7 +188,7 @@ class Store:
     def log_call(self, call: dict) -> int:
         cols = ["stage", "phase", "role", "provider", "model", "effort", "label_config", "attempt", "request_ids",
                 "started_at", "duration_ms", "status", "error", "input_tokens", "cached_input_tokens",
-                "cache_write_tokens", "output_tokens", "usage_known", "cost_usd", "worker"]
+                "cache_write_tokens", "output_tokens", "usage_known", "cost_usd", "worker", "provider_request_id"]
         values = [call.get(c) for c in cols]
         if isinstance(values[8], list):
             values[8] = json.dumps(values[8])

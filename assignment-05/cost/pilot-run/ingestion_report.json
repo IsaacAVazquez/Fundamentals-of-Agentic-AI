@@ -1,0 +1,102 @@
+{
+  "generated_at": "2026-10-20T23:24:59Z",
+  "source_file": "data/cost_100.csv",
+  "source_sha256": "c884ac3b9be5066995d5063f96ad9af6e5e082975788c1684c4f6b6ea661dd0e",
+  "source_bytes": 15466,
+  "columns": [
+    "review_id",
+    "review_text",
+    "review_rating",
+    "review_likes",
+    "app_version",
+    "review_timestamp"
+  ],
+  "header_ok": true,
+  "rows": 100,
+  "unique_review_ids": 100,
+  "duplicate_review_ids_skipped": 0,
+  "empty_review_texts": 0,
+  "nonempty_reviews": 100,
+  "distinct_nonempty_texts": 100,
+  "exact_duplicate_nonempty_texts": 0,
+  "missing_app_version": 18,
+  "rating_counts": {
+    "1": 33,
+    "2": 8,
+    "3": 6,
+    "4": 10,
+    "5": 43
+  },
+  "rows_by_month": {
+    "2022-06": 5,
+    "2022-07": 5,
+    "2022-08": 6,
+    "2022-09": 5,
+    "2022-10": 4,
+    "2022-11": 1,
+    "2022-12": 2,
+    "2023-01": 4,
+    "2023-02": 4,
+    "2023-03": 7,
+    "2023-04": 4,
+    "2023-05": 5,
+    "2023-06": 4,
+    "2023-07": 11,
+    "2023-08": 3,
+    "2023-09": 6,
+    "2023-10": 19,
+    "2023-11": 5
+  },
+  "row_hash_definition": "sha256(utf8(json.dumps([review_id, review_text, review_rating, review_likes, app_version, review_timestamp], ensure_ascii=False, separators=(",
+  ", ": ")))), the row_sha helper in check_submission.py",
+  "text_hash_definition": "sha256(utf8(review_text))",
+  "expected_full_corpus": {
+    "rows": 660622,
+    "nonempty": 660609,
+    "empty": 13,
+    "distinct_nonempty_texts": 484189,
+    "missing_app_version": 159701,
+    "source_file": "spotify_reviews_18months.csv",
+    "source_bytes": 97400616
+  },
+  "matches_full_corpus_profile": false,
+  "contract_profile": {
+    "file_sha256": "c884ac3b9be5066995d5063f96ad9af6e5e082975788c1684c4f6b6ea661dd0e",
+    "parsed_rows_sha256": "23f840350257c058a03a508754384902373a593c09dbac3d1bd0481651fa1733",
+    "counts": {
+      "records": 100,
+      "duplicate_review_ids": 0,
+      "empty_review_text": 0,
+      "missing_app_version": 18
+    },
+    "reviews_by_month": {
+      "2023-07": 11,
+      "2023-02": 4,
+      "2023-09": 6,
+      "2023-04": 4,
+      "2022-10": 4,
+      "2023-10": 19,
+      "2023-11": 5,
+      "2022-12": 2,
+      "2022-09": 5,
+      "2023-06": 4,
+      "2023-03": 7,
+      "2022-07": 5,
+      "2023-05": 5,
+      "2023-08": 3,
+      "2022-06": 5,
+      "2023-01": 4,
+      "2022-08": 6,
+      "2022-11": 1
+    },
+    "reviews_by_rating": {
+      "3": 6,
+      "5": 43,
+      "1": 33,
+      "2": 8,
+      "4": 10
+    },
+    "first_review": "2022-06-02 10:30:18",
+    "last_review": "2023-11-13 15:07:19"
+  }
+}

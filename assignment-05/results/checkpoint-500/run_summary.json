@@ -1,0 +1,173 @@
+{
+  "generated_at": "2026-10-20T23:17:12Z",
+  "run_id": "checkpoint-500",
+  "source": {
+    "file": "checkpoint_500.csv",
+    "sha256": "a94e31663ee7b7eaa77e23b7a8425b530cc0c866ed5e714953172a0afef6a12f",
+    "bytes": 76170
+  },
+  "statuses": {
+    "pending": 0,
+    "completed": 500,
+    "quarantined": 0
+  },
+  "stages": {
+    "classify": {
+      "calls": 21,
+      "succeeded": 21,
+      "failed": 0,
+      "input_tokens": 32909,
+      "cached_input_tokens": 34797,
+      "cache_write_tokens": 0,
+      "output_tokens": 50081,
+      "cost_usd": 0.028679,
+      "usage_unknown_calls": 0,
+      "duration_ms": 173933,
+      "models": {
+        "anthropic:claude-haiku-5-5": 21
+      }
+    },
+    "verify": {
+      "calls": 2,
+      "succeeded": 2,
+      "failed": 0,
+      "input_tokens": 3714,
+      "cached_input_tokens": 3354,
+      "cache_write_tokens": 0,
+      "output_tokens": 5615,
+      "cost_usd": 0.003213,
+      "usage_unknown_calls": 0,
+      "duration_ms": 18962,
+      "models": {
+        "anthropic:claude-haiku-5-5": 2
+      }
+    },
+    "group": {
+      "calls": 7,
+      "succeeded": 7,
+      "failed": 0,
+      "input_tokens": 5730,
+      "cached_input_tokens": 0,
+      "cache_write_tokens": 0,
+      "output_tokens": 557,
+      "cost_usd": 0.000851,
+      "usage_unknown_calls": 0,
+      "duration_ms": 10259,
+      "models": {
+        "anthropic:claude-haiku-5-5": 7
+      }
+    },
+    "memo": {
+      "calls": 1,
+      "succeeded": 1,
+      "failed": 0,
+      "input_tokens": 4474,
+      "cached_input_tokens": 775,
+      "cache_write_tokens": 0,
+      "output_tokens": 1117,
+      "cost_usd": 0.001014,
+      "usage_unknown_calls": 0,
+      "duration_ms": 5808,
+      "models": {
+        "anthropic:claude-haiku-5-5": 1
+      }
+    }
+  },
+  "total_cost_usd": 0.033757,
+  "controls": {
+    "backend": "anthropic",
+    "model": "claude-haiku-5-5",
+    "effort": "low",
+    "batch_size": 25,
+    "workers": 4,
+    "max_spend_usd": 5.0,
+    "max_output_tokens": 8000,
+    "max_batches": null,
+    "max_reviews": null,
+    "time_limit_s": null,
+    "fallback_model": null,
+    "fallback_fraction": 0.02,
+    "rates_path": null,
+    "backoff_tries": 3,
+    "label_config": "anthropic:claude-haiku-5-5|effort=low|prompt=v1|schema=v1"
+  },
+  "phases": [
+    {
+      "phase": "initial",
+      "started_at": "2026-10-20T23:15:37Z",
+      "before": {
+        "ts": "2026-10-20T23:15:37Z",
+        "phase": "initial",
+        "moment": "before",
+        "statuses": {
+          "pending": 500,
+          "completed": 0,
+          "quarantined": 0
+        },
+        "completed_count": 0,
+        "completed_ids_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "classify_calls_so_far": 0,
+        "classify_spend_so_far_usd": 0.0
+      },
+      "finished_at": "2026-10-20T23:15:46Z",
+      "stop_reason": "max_batches",
+      "after": {
+        "ts": "2026-10-20T23:15:46Z",
+        "phase": "initial",
+        "moment": "after",
+        "statuses": {
+          "pending": 450,
+          "completed": 50,
+          "quarantined": 0
+        },
+        "completed_count": 50,
+        "completed_ids_sha256": "1a0d9d4d3271651c80c649ac935ec88546aaa84a10ef1cd55b1fabe7de8e4342",
+        "classify_calls_so_far": 2,
+        "classify_spend_so_far_usd": 0.002916
+      },
+      "batches": 2,
+      "completed_this_run": 50,
+      "cache_hits": 0,
+      "wall_clock_s": 9.151
+    },
+    {
+      "phase": "resume",
+      "started_at": "2026-10-20T23:15:47Z",
+      "before": {
+        "ts": "2026-10-20T23:15:47Z",
+        "phase": "resume",
+        "moment": "before",
+        "statuses": {
+          "pending": 450,
+          "completed": 50,
+          "quarantined": 0
+        },
+        "completed_count": 50,
+        "completed_ids_sha256": "1a0d9d4d3271651c80c649ac935ec88546aaa84a10ef1cd55b1fabe7de8e4342",
+        "classify_calls_so_far": 2,
+        "classify_spend_so_far_usd": 0.002916
+      },
+      "finished_at": "2026-10-20T23:16:35Z",
+      "stop_reason": "no_pending",
+      "after": {
+        "ts": "2026-10-20T23:16:35Z",
+        "phase": "resume",
+        "moment": "after",
+        "statuses": {
+          "pending": 0,
+          "completed": 500,
+          "quarantined": 0
+        },
+        "completed_count": 500,
+        "completed_ids_sha256": "19c4d84c545fb2c85118487e84486e401f829b51d7a27892181456c1ef96d5cd",
+        "classify_calls_so_far": 21,
+        "classify_spend_so_far_usd": 0.028679
+      },
+      "batches": 19,
+      "completed_this_run": 450,
+      "cache_hits": 21,
+      "wall_clock_s": 47.942
+    }
+  ],
+  "synthetic_input": false
+}

@@ -1,0 +1,1 @@
+{"ts": "2026-10-20T23:25:00Z", "phase": "initial", "moment": "before", "statuses": {"pending": 100, "completed": 0, "quarantined": 0}, "completed_count": 0, "completed_ids_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", "classify_calls_so_far": 0, "classify_spend_so_far_usd": 0.0, "completed_ids": []}

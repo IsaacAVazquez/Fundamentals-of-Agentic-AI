@@ -1,54 +1,33 @@
-claim_id,issue_id,metric,value,computation
-C1,,source_rows,1000,count of rows ingested
-C2,,completed_records,998,records with status completed
-C3,,quarantined_records,2,records with status quarantined (incl. empty texts)
-C4,,pending_records,0,records not yet classified
-C5,,complaint_records,877,completed records with intent complaint or cancellation
-C6,ISS-access,rank,1,"position after sorting by score desc, issue_id asc"
-C7,ISS-access,complaint_count,121,members of the issue
-C8,ISS-access,cancellation_count,22,members with intent cancellation
-C9,ISS-access,severity_sum,484,sum of member severities
-C10,ISS-access,mean_severity,4.000000,"severity_sum / complaint_count, 6 decimals half-up"
-C11,ISS-access,score,484,complaint_count x mean_severity = severity_sum
-C12,ISS-playback,rank,2,"position after sorting by score desc, issue_id asc"
-C13,ISS-playback,complaint_count,134,members of the issue
-C14,ISS-playback,cancellation_count,29,members with intent cancellation
-C15,ISS-playback,severity_sum,443,sum of member severities
-C16,ISS-playback,mean_severity,3.305970,"severity_sum / complaint_count, 6 decimals half-up"
-C17,ISS-playback,score,443,complaint_count x mean_severity = severity_sum
-C18,ISS-downloads,rank,3,"position after sorting by score desc, issue_id asc"
-C19,ISS-downloads,complaint_count,119,members of the issue
-C20,ISS-downloads,cancellation_count,18,members with intent cancellation
-C21,ISS-downloads,severity_sum,430,sum of member severities
-C22,ISS-downloads,mean_severity,3.613445,"severity_sum / complaint_count, 6 decimals half-up"
-C23,ISS-downloads,score,430,complaint_count x mean_severity = severity_sum
-C24,ISS-billing,rank,4,"position after sorting by score desc, issue_id asc"
-C25,ISS-billing,complaint_count,120,members of the issue
-C26,ISS-billing,cancellation_count,63,members with intent cancellation
-C27,ISS-billing,severity_sum,409,sum of member severities
-C28,ISS-billing,mean_severity,3.408333,"severity_sum / complaint_count, 6 decimals half-up"
-C29,ISS-billing,score,409,complaint_count x mean_severity = severity_sum
-C30,ISS-usability,rank,5,"position after sorting by score desc, issue_id asc"
-C31,ISS-usability,complaint_count,142,members of the issue
-C32,ISS-usability,cancellation_count,29,members with intent cancellation
-C33,ISS-usability,severity_sum,284,sum of member severities
-C34,ISS-usability,mean_severity,2.000000,"severity_sum / complaint_count, 6 decimals half-up"
-C35,ISS-usability,score,284,complaint_count x mean_severity = severity_sum
-C36,ISS-catalog,rank,6,"position after sorting by score desc, issue_id asc"
-C37,ISS-catalog,complaint_count,118,members of the issue
-C38,ISS-catalog,cancellation_count,30,members with intent cancellation
-C39,ISS-catalog,severity_sum,204,sum of member severities
-C40,ISS-catalog,mean_severity,1.728814,"severity_sum / complaint_count, 6 decimals half-up"
-C41,ISS-catalog,score,204,complaint_count x mean_severity = severity_sum
-C42,ISS-support,rank,7,"position after sorting by score desc, issue_id asc"
-C43,ISS-support,complaint_count,123,members of the issue
-C44,ISS-support,cancellation_count,33,members with intent cancellation
-C45,ISS-support,severity_sum,123,sum of member severities
-C46,ISS-support,mean_severity,1.000000,"severity_sum / complaint_count, 6 decimals half-up"
-C47,ISS-support,score,123,complaint_count x mean_severity = severity_sum
-C48,ISS-other,rank,8,"position after sorting by score desc, issue_id asc"
-C49,ISS-other,complaint_count,0,members of the issue
-C50,ISS-other,cancellation_count,0,members with intent cancellation
-C51,ISS-other,severity_sum,0,sum of member severities
-C52,ISS-other,mean_severity,0.000000,"severity_sum / complaint_count, 6 decimals half-up"
-C53,ISS-other,score,0,complaint_count x mean_severity = severity_sum
+claim_id,issue_id,metric,value
+C7,ISS-access,complaint_count,121
+C9,ISS-access,severity_sum,484
+C10,ISS-access,mean_severity,4.000000
+C11,ISS-access,priority_score,484
+C13,ISS-playback,complaint_count,134
+C15,ISS-playback,severity_sum,443
+C16,ISS-playback,mean_severity,3.305970
+C17,ISS-playback,priority_score,443
+C19,ISS-downloads,complaint_count,119
+C21,ISS-downloads,severity_sum,430
+C22,ISS-downloads,mean_severity,3.613445
+C23,ISS-downloads,priority_score,430
+C25,ISS-billing,complaint_count,120
+C27,ISS-billing,severity_sum,409
+C28,ISS-billing,mean_severity,3.408333
+C29,ISS-billing,priority_score,409
+C31,ISS-usability,complaint_count,142
+C33,ISS-usability,severity_sum,284
+C34,ISS-usability,mean_severity,2.000000
+C35,ISS-usability,priority_score,284
+C37,ISS-catalog,complaint_count,118
+C39,ISS-catalog,severity_sum,204
+C40,ISS-catalog,mean_severity,1.728814
+C41,ISS-catalog,priority_score,204
+C43,ISS-support,complaint_count,123
+C45,ISS-support,severity_sum,123
+C46,ISS-support,mean_severity,1.000000
+C47,ISS-support,priority_score,123
+C49,ISS-other,complaint_count,0
+C51,ISS-other,severity_sum,0
+C52,ISS-other,mean_severity,0.000000
+C53,ISS-other,priority_score,0

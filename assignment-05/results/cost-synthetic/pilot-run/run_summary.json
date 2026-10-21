@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-10-20T06:21:16Z",
+  "generated_at": "2026-10-20T23:02:40Z",
   "run_id": "pilot-run",
   "source": {
     "file": "syn100.csv",
-    "sha256": "c9bce8b566e55f1042211c9242048e9920e3d34cfba4e39a7061f398b201430d",
-    "bytes": 11267
+    "sha256": "a37787be8a89b15a7afa51ec38df384af008edb5db6b19a5ff08a52b6bbfdfd1",
+    "bytes": 11338
   },
   "statuses": {
     "pending": 0,
@@ -16,13 +16,13 @@
       "calls": 2,
       "succeeded": 2,
       "failed": 0,
-      "input_tokens": 2773,
+      "input_tokens": 2959,
       "cached_input_tokens": 0,
       "cache_write_tokens": 0,
-      "output_tokens": 2655,
+      "output_tokens": 2987,
       "cost_usd": 0.0,
       "usage_unknown_calls": 0,
-      "duration_ms": 1,
+      "duration_ms": 0,
       "models": {
         "fake:fake-deterministic-v1": 2
       }
@@ -31,10 +31,10 @@
       "calls": 2,
       "succeeded": 2,
       "failed": 0,
-      "input_tokens": 2286,
+      "input_tokens": 2214,
       "cached_input_tokens": 0,
       "cache_write_tokens": 0,
-      "output_tokens": 1310,
+      "output_tokens": 1254,
       "cost_usd": 0.0,
       "usage_unknown_calls": 0,
       "duration_ms": 0,
@@ -46,7 +46,7 @@
       "calls": 14,
       "succeeded": 14,
       "failed": 0,
-      "input_tokens": 4322,
+      "input_tokens": 4332,
       "cached_input_tokens": 0,
       "cache_write_tokens": 0,
       "output_tokens": 266,
@@ -61,10 +61,10 @@
       "calls": 2,
       "succeeded": 2,
       "failed": 0,
-      "input_tokens": 5260,
+      "input_tokens": 5340,
       "cached_input_tokens": 0,
       "cache_write_tokens": 0,
-      "output_tokens": 494,
+      "output_tokens": 498,
       "cost_usd": 0.0,
       "usage_unknown_calls": 0,
       "duration_ms": 0,
@@ -87,16 +87,16 @@
     "time_limit_s": null,
     "fallback_model": null,
     "fallback_fraction": 0.02,
-    "rates_path": "/tmp/claude-0/-home-user-Fundamentals-of-Agentic-AI/ec44ca5c-665c-5673-bf45-66c272bb4165/scratchpad/cost-synthetic/rates.csv",
+    "rates_path": "/private/tmp/claude-501/-Users-isaacvazquez-Fundamentals-of-Agentic-AI/475d26cb-83ba-4581-a72d-c9c156fac8c5/scratchpad/cost-synthetic/rates.csv",
     "backoff_tries": 3,
     "label_config": "fake:fake-deterministic-v1|effort=low|prompt=v1|schema=v1"
   },
   "phases": [
     {
       "phase": "initial",
-      "started_at": "2026-10-20T06:21:16Z",
+      "started_at": "2026-10-20T23:02:40Z",
       "before": {
-        "ts": "2026-10-20T06:21:16Z",
+        "ts": "2026-10-20T23:02:40Z",
         "phase": "initial",
         "moment": "before",
         "statuses": {
@@ -109,10 +109,10 @@
         "classify_calls_so_far": 0,
         "classify_spend_so_far_usd": 0.0
       },
-      "finished_at": "2026-10-20T06:21:16Z",
+      "finished_at": "2026-10-20T23:02:40Z",
       "stop_reason": "no_pending",
       "after": {
-        "ts": "2026-10-20T06:21:16Z",
+        "ts": "2026-10-20T23:02:40Z",
         "phase": "initial",
         "moment": "after",
         "statuses": {
@@ -127,14 +127,14 @@
       },
       "batches": 2,
       "completed_this_run": 99,
-      "cache_hits": 57,
-      "wall_clock_s": 0.009
+      "cache_hits": 51,
+      "wall_clock_s": 0.003
     },
     {
       "phase": "resume",
-      "started_at": "2026-10-20T06:21:16Z",
+      "started_at": "2026-10-20T23:02:40Z",
       "before": {
-        "ts": "2026-10-20T06:21:16Z",
+        "ts": "2026-10-20T23:02:40Z",
         "phase": "resume",
         "moment": "before",
         "statuses": {
@@ -147,10 +147,10 @@
         "classify_calls_so_far": 2,
         "classify_spend_so_far_usd": 0.0
       },
-      "finished_at": "2026-10-20T06:21:16Z",
+      "finished_at": "2026-10-20T23:02:40Z",
       "stop_reason": "no_pending",
       "after": {
-        "ts": "2026-10-20T06:21:16Z",
+        "ts": "2026-10-20T23:02:40Z",
         "phase": "resume",
         "moment": "after",
         "statuses": {
@@ -166,7 +166,7 @@
       "batches": 0,
       "completed_this_run": 0,
       "cache_hits": 0,
-      "wall_clock_s": 0.001
+      "wall_clock_s": 0.0
     }
   ],
   "synthetic_input": true

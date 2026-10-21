@@ -1,0 +1,61 @@
+{
+  "grouping_rule": "issue_id = 'ISS-' + topic for every completed record whose intent is complaint or cancellation; one issue per review",
+  "issues": [
+    {
+      "issue_id": "ISS-access",
+      "topic": "access",
+      "name": "Users unable to log into accounts",
+      "description": "The examples describe users being locked out of their accounts through login errors, logouts, phone number rejections, and false no-connection messages, with some losing access to saved content and playlists.",
+      "named_by": "anthropic:claude-haiku-5-5"
+    },
+    {
+      "issue_id": "ISS-usability",
+      "topic": "usability",
+      "name": "Free users blocked from choosing or replaying songs",
+      "description": "Examples describe free-tier limits such as capped skips, no song selection within playlists, no repeat or loop, and navigation problems after an update, all frustrating basic playback control.",
+      "named_by": "anthropic:claude-haiku-5-5"
+    },
+    {
+      "issue_id": "ISS-playback",
+      "topic": "playback",
+      "name": "Music playback stops or fails unexpectedly",
+      "description": "Reviewers report playback that randomly stops mid-song or show, shows a black screen, or says it is playing without producing audio, often requiring reinstalling or restarting the app to recover.",
+      "named_by": "anthropic:claude-haiku-5-5"
+    },
+    {
+      "issue_id": "ISS-downloads",
+      "topic": "downloads",
+      "name": "Downloaded content disappearing or failing to sync",
+      "description": "The examples report downloaded music and offline content vanishing, failing to save, or getting stuck during download, often after storage changes or app backgrounding.",
+      "named_by": "anthropic:claude-haiku-5-5"
+    },
+    {
+      "issue_id": "ISS-catalog",
+      "topic": "catalog",
+      "name": "Missing songs and artists in catalog",
+      "description": "Reviewers report that favourite songs, regional music such as Bollywood tracks, and previously available content are missing or removed from the app's catalog, and some report songs playing unexpectedly or only short clips.",
+      "named_by": "anthropic:claude-haiku-5-5"
+    },
+    {
+      "issue_id": "ISS-billing",
+      "topic": "billing",
+      "name": "Premium purchase flow fails or blocks access",
+      "description": "Several examples describe users who cannot complete a premium subscription purchase, see a blank or pause screen after paying, or find free features restricted so the app feels unusable without premium.",
+      "named_by": "anthropic:claude-haiku-5-5"
+    },
+    {
+      "issue_id": "ISS-support",
+      "topic": "support",
+      "name": "support problems",
+      "description": "contacting support, response time, quality of support answers",
+      "named_by": "code"
+    },
+    {
+      "issue_id": "ISS-other",
+      "topic": "other",
+      "name": "Recent update removed features and broke app",
+      "description": "Several reviewers call the app worst or useless, with the most specific complaints tying the decline to a recent update that removed features or needs rework.",
+      "named_by": "anthropic:claude-haiku-5-5"
+    }
+  ]
+}

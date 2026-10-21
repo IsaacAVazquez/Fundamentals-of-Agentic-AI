@@ -1,0 +1,10 @@
+{
+  "source": {
+    "file": "spotify_reviews_18months.csv",
+    "sha256": "1fc85de68a304dd8978b537cfa58793d5f41cbaf417fa32cb53899f83a2fcef6",
+    "bytes": 97400616
+  },
+  "prepared_at": "2026-10-20T23:02:45Z",
+  "rows": 660622,
+  "pending_ids": "records.status = 'pending' in state.sqlite"
+}

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-20T06:21:16Z",
+  "generated_at": "2026-10-20T23:02:40Z",
   "ranking": [
     {
       "issue_id": "ISS-access",
@@ -9,7 +9,7 @@
       "cancellation_count": 22,
       "severity_sum": 484,
       "mean_severity": "4.000000",
-      "score": 484,
+      "priority_score": 484,
       "mean_sentiment": "-0.800000",
       "needs_review_count": 0,
       "share_of_complaint_records": "0.137970",
@@ -23,7 +23,7 @@
       "cancellation_count": 29,
       "severity_sum": 443,
       "mean_severity": "3.305970",
-      "score": 443,
+      "priority_score": 443,
       "mean_sentiment": "-0.591791",
       "needs_review_count": 0,
       "share_of_complaint_records": "0.152794",
@@ -37,7 +37,7 @@
       "cancellation_count": 18,
       "severity_sum": 430,
       "mean_severity": "3.613445",
-      "score": 430,
+      "priority_score": 430,
       "mean_sentiment": "-0.684034",
       "needs_review_count": 0,
       "share_of_complaint_records": "0.135690",
@@ -51,7 +51,7 @@
       "cancellation_count": 63,
       "severity_sum": 409,
       "mean_severity": "3.408333",
-      "score": 409,
+      "priority_score": 409,
       "mean_sentiment": "-0.603333",
       "needs_review_count": 0,
       "share_of_complaint_records": "0.136830",
@@ -65,7 +65,7 @@
       "cancellation_count": 29,
       "severity_sum": 284,
       "mean_severity": "2.000000",
-      "score": 284,
+      "priority_score": 284,
       "mean_sentiment": "-0.300000",
       "needs_review_count": 0,
       "share_of_complaint_records": "0.161916",
@@ -79,7 +79,7 @@
       "cancellation_count": 30,
       "severity_sum": 204,
       "mean_severity": "1.728814",
-      "score": 204,
+      "priority_score": 204,
       "mean_sentiment": "-0.182203",
       "needs_review_count": 0,
       "share_of_complaint_records": "0.134550",
@@ -93,7 +93,7 @@
       "cancellation_count": 33,
       "severity_sum": 123,
       "mean_severity": "1.000000",
-      "score": 123,
+      "priority_score": 123,
       "mean_sentiment": "0.000000",
       "needs_review_count": 0,
       "share_of_complaint_records": "0.140251",
@@ -107,7 +107,7 @@
       "cancellation_count": 0,
       "severity_sum": 0,
       "mean_severity": "0.000000",
-      "score": 0,
+      "priority_score": 0,
       "mean_sentiment": "0.000000",
       "needs_review_count": 0,
       "share_of_complaint_records": "0.000000",
@@ -188,7 +188,7 @@
     {
       "claim_id": "C11",
       "issue_id": "ISS-access",
-      "metric": "score",
+      "metric": "priority_score",
       "value": 484,
       "computation": "complaint_count x mean_severity = severity_sum"
     },
@@ -230,7 +230,7 @@
     {
       "claim_id": "C17",
       "issue_id": "ISS-playback",
-      "metric": "score",
+      "metric": "priority_score",
       "value": 443,
       "computation": "complaint_count x mean_severity = severity_sum"
     },
@@ -272,7 +272,7 @@
     {
       "claim_id": "C23",
       "issue_id": "ISS-downloads",
-      "metric": "score",
+      "metric": "priority_score",
       "value": 430,
       "computation": "complaint_count x mean_severity = severity_sum"
     },
@@ -314,7 +314,7 @@
     {
       "claim_id": "C29",
       "issue_id": "ISS-billing",
-      "metric": "score",
+      "metric": "priority_score",
       "value": 409,
       "computation": "complaint_count x mean_severity = severity_sum"
     },
@@ -356,7 +356,7 @@
     {
       "claim_id": "C35",
       "issue_id": "ISS-usability",
-      "metric": "score",
+      "metric": "priority_score",
       "value": 284,
       "computation": "complaint_count x mean_severity = severity_sum"
     },
@@ -398,7 +398,7 @@
     {
       "claim_id": "C41",
       "issue_id": "ISS-catalog",
-      "metric": "score",
+      "metric": "priority_score",
       "value": 204,
       "computation": "complaint_count x mean_severity = severity_sum"
     },
@@ -440,7 +440,7 @@
     {
       "claim_id": "C47",
       "issue_id": "ISS-support",
-      "metric": "score",
+      "metric": "priority_score",
       "value": 123,
       "computation": "complaint_count x mean_severity = severity_sum"
     },
@@ -482,7 +482,7 @@
     {
       "claim_id": "C53",
       "issue_id": "ISS-other",
-      "metric": "score",
+      "metric": "priority_score",
       "value": 0,
       "computation": "complaint_count x mean_severity = severity_sum"
     }
@@ -492,7 +492,7 @@
     "completed": 998,
     "quarantined": 2
   },
-  "formula": "score = complaint_count x mean_severity = severity_sum; sort score desc, issue_id asc",
+  "formula": "priority_score = complaint_count x mean_severity = severity_sum; sort priority_score desc, issue_id asc",
   "months": [
     "2022-05",
     "2022-06",

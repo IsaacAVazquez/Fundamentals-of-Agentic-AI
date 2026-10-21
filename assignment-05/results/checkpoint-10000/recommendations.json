@@ -1,0 +1,183 @@
+{
+  "generated_at": "2026-10-20T23:24:34Z",
+  "model": "anthropic:claude-haiku-5-5",
+  "effort": "low",
+  "priority_issue_id": "ISS-usability",
+  "recommendation": "Prioritize ISS-usability (priority score 2474 [C11]) for next quarter, with a scoped fix for ISS-billing charges-after-cancellation given its 119 expressed cancellation intents [C26].",
+  "alternatives": [
+    "ISS-playback",
+    "ISS-other",
+    "ISS-billing"
+  ],
+  "cited_claims": [
+    "C10",
+    "C11",
+    "C12",
+    "C13",
+    "C14",
+    "C16",
+    "C17",
+    "C18",
+    "C19",
+    "C22",
+    "C23",
+    "C24",
+    "C25",
+    "C26",
+    "C28",
+    "C29",
+    "C3",
+    "C4",
+    "C7",
+    "C8",
+    "C9"
+  ],
+  "memo_check_passed": true,
+  "evidence_pack": {
+    "ISS-usability": [
+      {
+        "review_id": "ee11e1df-cb73-4c3a-b5e8-7268c7872b01",
+        "severity": 5,
+        "intent": "complaint",
+        "quote": "my playlist, that had hundreds of songs that took years to put together, just vanished"
+      },
+      {
+        "review_id": "056c340f-c7ad-42d8-a275-37e46f1f4f24",
+        "severity": 4,
+        "intent": "complaint",
+        "quote": "It won't show any of my Playlists or library-- the screen is black and no songs are available."
+      },
+      {
+        "review_id": "263885b2-8240-437d-8ba6-c09471c052fc",
+        "severity": 4,
+        "intent": "complaint",
+        "quote": "Can't even use it now"
+      },
+      {
+        "review_id": "2826b218-e3b1-458f-a2a0-af18583ef2ef",
+        "severity": 4,
+        "intent": "complaint",
+        "quote": "The new UI design update makes it unusable."
+      },
+      {
+        "review_id": "286a0ec8-ba6c-4133-90bc-64b6cb99b1b0",
+        "severity": 4,
+        "intent": "complaint",
+        "quote": "After latest update the app is not opening and stuck with black screen, please fix this issue."
+      }
+    ],
+    "ISS-playback": [
+      {
+        "review_id": "3896312d-c6a1-41a2-89b6-f69ac8319bff",
+        "severity": 5,
+        "intent": "complaint",
+        "quote": "Also has deleted my downloaded songs multiple times which is a pain"
+      },
+      {
+        "review_id": "d6937e1c-b5e7-493f-ac72-720e152eabad",
+        "severity": 5,
+        "intent": "complaint",
+        "quote": "I would like a refund for this month at the minimum."
+      },
+      {
+        "review_id": "004d1c8a-a8c8-4746-b975-cd2f31c2a730",
+        "severity": 4,
+        "intent": "complaint",
+        "quote": "now it's not even playing songs"
+      },
+      {
+        "review_id": "0148ad58-a4de-4f28-b81b-073ce9a24a68",
+        "severity": 4,
+        "intent": "complaint",
+        "quote": "Not working on my phone now after updating the damn app"
+      },
+      {
+        "review_id": "014b25ee-99ce-4866-89a8-f4f249dcbf34",
+        "severity": 4,
+        "intent": "complaint",
+        "quote": "It's not playing songs properly and it's stopping in the middle while listening to songs"
+      }
+    ],
+    "ISS-other": [
+      {
+        "review_id": "9ec6712e-a862-4605-ae0e-e6998105f921",
+        "severity": 5,
+        "intent": "complaint",
+        "quote": "I want my personal information Deleted! Please fix this."
+      },
+      {
+        "review_id": "1c4d38cb-9e3f-4f46-99d4-9b4d4880492f",
+        "severity": 4,
+        "intent": "complaint",
+        "quote": "it completely stopped working!"
+      },
+      {
+        "review_id": "287b526a-a596-4ee0-a1b8-cc01dd53d2ac",
+        "severity": 4,
+        "intent": "complaint",
+        "quote": "Does not work anymore"
+      },
+      {
+        "review_id": "36c30013-aeb5-4fc1-a7a8-649c1c36eaec",
+        "severity": 4,
+        "intent": "complaint",
+        "quote": "doesn't work, cannot open links"
+      },
+      {
+        "review_id": "49e5378c-8e57-4ecb-b49b-b35fd8460e4f",
+        "severity": 4,
+        "intent": "complaint",
+        "quote": "you only disabled it for INDIA one of YOUR TOP 5 MOST STREAMING COUNTRYS EVER."
+      }
+    ],
+    "ISS-billing": [
+      {
+        "review_id": "01bae9e0-2ad4-4ce4-98ee-aaac1fa9235a",
+        "severity": 5,
+        "intent": "complaint",
+        "quote": "Yo estoy pagando el Spotify premium, para que me cuenten el stream que hago y ahorita le quitan eso"
+      },
+      {
+        "review_id": "19781735-5ee7-414a-a034-bc33ccf91101",
+        "severity": 5,
+        "intent": "complaint",
+        "quote": "did I get charged again a couple days"
+      },
+      {
+        "review_id": "41c0c736-6617-466a-8e4d-3a2b551185e5",
+        "severity": 5,
+        "intent": "complaint",
+        "quote": "I had unsubscribed, and Spotify stole My money!!!"
+      },
+      {
+        "review_id": "55ca2253-6b70-49d9-9e0a-104b08d1eaab",
+        "severity": 5,
+        "intent": "complaint",
+        "quote": "i purchased premium duo twice to listen song with my friends.. In mobile app it show your package is active and in web it say no package purchase"
+      },
+      {
+        "review_id": "6985febf-75fa-47e9-9a86-c62f47a18554",
+        "severity": 5,
+        "intent": "complaint",
+        "quote": "NUEVAMENTE LE COBRARON A JAIME ROSALES, QUE ES GRATIS SUPUESTAMENTE Y ÉL NO LO USA"
+      }
+    ]
+  },
+  "scope": {
+    "completed_records": 9994,
+    "quarantined_records": 6,
+    "pending_records": 0,
+    "partial_months": [
+      "2022-05",
+      "2023-11"
+    ],
+    "synthetic_input": false,
+    "limitations": [
+      "Reviews are self-selected public app store posts, not a customer population.",
+      "No account, plan, revenue, or cancellation data exists; cancellation intent is expressed, not observed.",
+      "Labels come from a model checked against a 50-review golden set and a verifier sample; see evals/.",
+      "Quarantined and pending records are not classified and are excluded from every count."
+    ]
+  },
+  "memo_markdown": "## Recommendation\nPrioritize ISS-usability (playback controls restricted for free users) for next quarter's product effort. It has the highest priority score of 2474 [C11], the most severity mass with a summed severity of 2474 [C9], and 1094 complaints [C7]. Pair it with a targeted fix for ISS-playback, which has the highest mean severity among high-volume issues at 3.259045 [C16].\n\n## Why this issue\nISS-usability ranks first on priority score, 2474 [C11], and on complaint volume, 1094 complaints [C7]. Its mean severity is 2.261426 [C10], so the average complaint is less intense than in ISS-playback, but the volume outweighs that. It also carries 87 expressed cancellation intents [C8]. Representative evidence includes a user saying a playlist \"that had hundreds of songs that took years to put together, just vanished\" (ee11e1df-cb73-4c3a-b5e8-7268c7872b01, severity 5) and \"The new UI design update makes it unusable\" (2826b218-e3b1-458f-a2a0-af18583ef2ef, severity 4). These quotes describe loss and inability to use the product, which supports the ranking.\n\nISS-playback is second with 691 complaints [C13] and a priority score of 2252 [C17]. Its mean severity of 3.259045 [C16] is the highest among the top three issues, and it has 53 expressed cancellation intents [C14]. Users report songs that stop mid-play (014b25ee-99ce-4866-89a8-f4f249dcbf34), which is a core-function failure.\n\nISS-other has more complaints than either, 1246 [C19], but a lower mean severity of 1.744783 [C22] and a priority score of 2174 [C23], so it ranks third. Its diffuse \"features missing or broken after update\" label is harder to act on directly.\n\n## Alternatives considered\n- ISS-playback [C12]: strong severity and core-function impact, with 691 complaints [C13]. Good candidate for the second workstream.\n- ISS-other [C18]: largest complaint count, 1246 [C19], but lower severity and a vague scope that needs triage before it can be owned.\n- ISS-billing [C24]: 684 complaints [C25] with a mean severity of 2.622807 [C28] and 119 expressed cancellation intents [C26], the highest cancellation count of any issue. Users report being charged after cancelling (41c0c736-6617-466a-8e4d-3a2b551185e5). This deserves a fast, scoped fix even though its priority score of 1794 [C29] ranks it fourth.\n- ISS-access, ISS-downloads, ISS-support: lower volume and priority scores [C41, C47, C53] and should be handled through normal backlog.\n\n## Limitations\nThe analysis uses 9994 completed records out of 10000 source rows [C2, C1], with 6 quarantined [C3] and 0 pending [C4]; quarantined records are excluded from every count. Reviews are self-selected public app store posts, not a representative customer population. The data contains no account, plan, billing, revenue, or actual cancellation records; cancellation counts reflect expressed intent in review text only, so they cannot show what users actually did. Labels come from a model checked against a 50-review golden set and a verifier sample, so classification error is possible. Partial months 2022-05 and 2023-11 are included and may skew totals."
+}

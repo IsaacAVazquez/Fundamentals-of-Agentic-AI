@@ -38,14 +38,14 @@ class Controls:
     batch_size: int = DEFAULT_BATCH_SIZE
     workers: int = 1
     max_spend_usd: float = 5.0
-    max_output_tokens: int = 4000
+    max_output_tokens: int = 8000
     max_batches: int | None = None
     max_reviews: int | None = None
     time_limit_s: float | None = None
     fallback_model: str | None = None
     fallback_fraction: float = 0.02
     rates_path: Path | None = None
-    backoff_tries: int = 3
+    backoff_tries: int = 6  # 1,2,4,8,16,30 s with jitter: long enough to ride out a per-minute token limit
 
     def resolved_model(self) -> str:
         return self.model or DEFAULT_MODEL[self.backend]
@@ -84,8 +84,9 @@ def _checkpoint(store: Store, run_dir: Path, phase: str, moment: str) -> dict:
     ck = Path(run_dir) / "checkpoints"
     ck.mkdir(exist_ok=True)
     n = len(store.get_meta("phases", []))
-    (ck / f"{n:02d}_{phase}_{moment}.json").write_text(json.dumps(snap, indent=2))
-    (Path(run_dir) / f"checkpoint_{moment}.json").write_text(json.dumps(snap, indent=2))
+    # The files carry the full completed_ids list (GRADING_CONTRACT.md); the in-database phase record keeps only the hash.
+    (ck / f"{n:02d}_{phase}_{moment}.json").write_text(json.dumps({**snap, "completed_ids": ids}))
+    (Path(run_dir) / f"checkpoint_{moment}.json").write_text(json.dumps({**snap, "completed_ids": ids}))
     return snap
 
 
@@ -108,24 +109,25 @@ def _call_with_backoff(backend, controls: Controls, model: str, system: str, use
                                    effort=controls.effort, max_output_tokens=controls.max_output_tokens)
         except TransientError as exc:
             last_err = exc
-            logs.append({"stage": "classify", "phase": phase, "role": "enricher", "provider": backend.provider,
+            logs.append({"stage": "classify", "phase": phase, "role": "enrich", "provider": backend.provider,
                          "model": model, "effort": controls.effort, "label_config": lc, "attempt": attempt,
                          "request_ids": request_ids, "started_at": started, "duration_ms": int((time.time() - t0) * 1000),
                          "status": "transient_error", "error": str(exc)[:500], "usage_known": 0, "cost_usd": 0.0, "worker": worker})
             time.sleep(min(30.0, (2 ** tries) + random.random()))
             continue
         except Exception as exc:  # non-retryable provider error
-            logs.append({"stage": "classify", "phase": phase, "role": "enricher", "provider": backend.provider,
+            logs.append({"stage": "classify", "phase": phase, "role": "enrich", "provider": backend.provider,
                          "model": model, "effort": controls.effort, "label_config": lc, "attempt": attempt,
                          "request_ids": request_ids, "started_at": started, "duration_ms": int((time.time() - t0) * 1000),
                          "status": "error", "error": f"{type(exc).__name__}: {str(exc)[:500]}", "usage_known": 0, "cost_usd": 0.0, "worker": worker})
             return None, logs
         cost, priced = call_cost(rates, backend.provider, model, res.usage())
-        logs.append({"stage": "classify", "phase": phase, "role": "enricher", "provider": backend.provider,
+        logs.append({"stage": "classify", "phase": phase, "role": "enrich", "provider": backend.provider,
                      "model": model, "effort": controls.effort, "label_config": lc, "attempt": attempt,
                      "request_ids": request_ids, "started_at": started, "duration_ms": int((time.time() - t0) * 1000),
                      "status": "ok", "error": None if priced else "unpriced_units", **res.usage(),
-                     "usage_known": int(res.usage_known), "cost_usd": cost, "worker": worker})
+                     "usage_known": int(res.usage_known), "cost_usd": cost, "worker": worker,
+                     "provider_request_id": res.extra.get("request_id")})
         return res, logs
     logs[-1]["error"] = f"gave up after {controls.backoff_tries} transient errors: {last_err}"
     return None, logs

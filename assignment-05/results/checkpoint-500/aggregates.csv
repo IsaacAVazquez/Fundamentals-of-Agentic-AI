@@ -1,0 +1,8 @@
+issue_id,name,topic,complaint_count,cancellation_count,severity_sum,mean_severity,priority_score,mean_sentiment,needs_review_count,share_of_complaint_records,rank
+ISS-usability,Free users blocked from choosing or replaying songs,usability,68,5,157,2.308824,157,-0.614706,3,0.291845,1
+ISS-playback,Music playback stops or fails unexpectedly,playback,37,5,126,3.405405,126,-0.681081,2,0.158798,2
+ISS-other,Recent update removed features and broke app,other,58,7,107,1.844828,107,-0.744828,8,0.248927,3
+ISS-billing,Premium purchase flow fails or blocks access,billing,31,4,80,2.580645,80,-0.690323,1,0.133047,4
+ISS-catalog,Missing songs and artists in catalog,catalog,22,0,55,2.500000,55,-0.568182,1,0.094421,5
+ISS-access,Users unable to log into accounts,access,12,2,50,4.166667,50,-0.758333,0,0.051502,6
+ISS-downloads,Downloaded content disappearing or failing to sync,downloads,5,2,18,3.600000,18,-0.620000,0,0.021459,7

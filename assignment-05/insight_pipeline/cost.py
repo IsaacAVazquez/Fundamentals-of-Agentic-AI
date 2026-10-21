@@ -20,6 +20,7 @@ from .memo import run_memo
 from .prepare import prepare
 from .rank import run_rank
 from .rates import UNITS, call_cost, load_rates, write_default_rates
+from .export import contract_call, contract_record
 from .store import Store, now_iso
 from .verify import run_verify
 
@@ -32,7 +33,7 @@ DEFAULT_PROJECTION = {
     "fallback_price_multiplier": 20.0, "retry_rate": 0.02,
     "fixed_overhead_usd": 0.0, "fixed_overhead_seconds": 600,
     "memo_calls": 1, "grouping_calls": 8,
-    "workers": 4, "spending_limit_usd": 100.0, "output_token_cap_per_request": 4000,
+    "workers": 4, "spending_limit_usd": 100.0, "output_token_cap_per_request": 8000,
     "conservative_token_multiplier": 1.5, "conservative_retry_rate": 0.05,
     "local_compute_usd_per_hour": 0.0,
 }
@@ -59,6 +60,7 @@ def run_pilot(input_csv: Path, cost_dir: Path, controls: Controls, warm: bool = 
     t = time.time(); prepare(input_csv, run_dir); stage_times["prepare"] = round(time.time() - t, 3)
     store = Store(run_dir)
     calls_before = store.conn.execute("SELECT COUNT(*) FROM calls WHERE stage='classify'").fetchone()[0]
+    last_call_id = store.conn.execute("SELECT COALESCE(MAX(call_id), 0) FROM calls").fetchone()[0]
     store.close()
     t = time.time(); c = run_classify(run_dir, controls, synthetic=synthetic); stage_times["classify"] = round(time.time() - t, 3)
     t = time.time(); v = run_verify(run_dir, controls, sample_size=10, seed=100, plant=True); stage_times["verify"] = round(time.time() - t, 3)
@@ -69,23 +71,28 @@ def run_pilot(input_csv: Path, cost_dir: Path, controls: Controls, warm: bool = 
     store = Store(run_dir)
     calls_after = store.conn.execute("SELECT COUNT(*) FROM calls WHERE stage='classify'").fetchone()[0]
     label = "warm" if warm else "cold"
+    run_id = f"pilot-{label}-{cost_dir.name}"
+    # pilot_records: the contract's row hash and common labels per pilot id (COST_CALCULATOR.md section 5).
     with open(cost_dir / f"pilot_records_{label}.jsonl", "w") as fh:
         for r in store.iter_records():
-            fh.write(json.dumps({"review_id": r["review_id"], "status": r["status"], "attempts": r["attempts"], "label_config": r["label_config"],
-                                 "cache_source_id": r["cache_source_id"], "quarantine_reason": r["reason"]}) + "\n")
+            fh.write(json.dumps({"pilot_run": label, **contract_record(r)}, ensure_ascii=False) + "\n")
+    # pilot_calls: only the attempts this run made (the warm run shares the cold run's state file).
     with open(cost_dir / f"pilot_calls_{label}.jsonl", "w") as fh:
         for row in store.iter_calls():
-            d = dict(row)
-            d["request_ids"] = json.loads(d["request_ids"]) if d["request_ids"] else []
-            fh.write(json.dumps(d) + "\n")
+            if row["call_id"] > last_call_id:
+                fh.write(json.dumps({"pilot_run": label, "run_id": run_id, **contract_call(row, run_id)}) + "\n")
     usage = _usage_rows(store)
     with open(cost_dir / f"usage_{label}.csv", "w", newline="") as fh:
         w = csv.DictWriter(fh, fieldnames=list(usage[0].keys()) if usage else ["stage"])
         w.writeheader(); w.writerows(usage)
     if not warm:
         shutil.copy(cost_dir / "pilot_records_cold.jsonl", cost_dir / "pilot_records.jsonl")
-        shutil.copy(cost_dir / "pilot_calls_cold.jsonl", cost_dir / "pilot_calls.jsonl")
         shutil.copy(cost_dir / "usage_cold.csv", cost_dir / "usage.csv")
+    # pilot_calls.jsonl holds every attempt of both runs, each line tagged with its pilot_run.
+    with open(cost_dir / "pilot_calls.jsonl", "w") as fh:
+        for name in ("pilot_calls_cold.jsonl", "pilot_calls_warm.jsonl"):
+            if (cost_dir / name).exists():
+                fh.write((cost_dir / name).read_text())
     measured = {
         "label": label, "measured_at": now_iso(), "input": str(input_csv), "synthetic_input": synthetic,
         "rows": store.review_count(), "statuses": store.status_counts(), "stage_seconds": stage_times, "wall_clock_seconds": wall,
@@ -249,3 +256,43 @@ def _report_md(out: dict, p: dict) -> str:
             lines.append(f"| {s['scenario']} | {s['exact_text_reuse']} | {s['first_pass_records']:,} | {s['enrichment_usd']} | {s['verification_usd']} | {s['fallback_usd']} | {s['api_total_usd']} | {s['exceeds_spending_limit']} | {s['hours_one_worker']} | {s['hours_with_workers']} |")
         lines += ["", proj["memo_note"], "", "Worker speedup is modeled, not measured. Refresh this projection after the 500 and 10,000 checkpoints."]
     return "\n".join(lines) + "\n"
+
+
+def checkpoint_refresh(cost_dir: Path, run_dir: Path, label: str) -> dict:
+    """Offline. Record a finished checkpoint run's measured enrichment cost and throughput next to the pilot and
+    extrapolate the full run from it. Appends to cost/checkpoints.json; never touches the pilot files."""
+    cost_dir, run_dir = Path(cost_dir), Path(run_dir)
+    summary = json.loads((run_dir / "run_summary.json").read_text())
+    projection = json.loads((cost_dir / "projection.json").read_text()) if (cost_dir / "projection.json").exists() else dict(DEFAULT_PROJECTION)
+    store = Store(run_dir)
+    rows = store.review_count()
+    direct = store.conn.execute("SELECT COUNT(*) FROM records WHERE status='completed' AND cache_source_id IS NULL").fetchone()[0]
+    cached = store.conn.execute("SELECT COUNT(*) FROM records WHERE status='completed' AND cache_source_id IS NOT NULL").fetchone()[0]
+    store.close()
+    classify = summary["stages"].get("classify", {})
+    phases = summary.get("phases", [])
+    wall = sum(p.get("wall_clock_s", 0) for p in phases)
+    workers = (summary.get("controls") or {}).get("workers")
+    per_direct_usd = classify.get("cost_usd", 0) / direct if direct else None
+    per_direct_s = wall / direct if direct else None
+    first_pass = projection["distinct_nonempty_texts"] if projection.get("exact_text_reuse", True) else projection["nonempty"]
+    entry = {
+        "label": label, "run_dir": str(run_dir), "recorded_at": now_iso(), "rows": rows, "statuses": summary["statuses"],
+        "directly_classified": direct, "cache_copies": cached, "workers": workers,
+        "classify_calls": classify.get("calls"), "classify_failed_calls": classify.get("failed"),
+        "classify_cost_usd": round(classify.get("cost_usd", 0), 6), "total_cost_usd": summary.get("total_cost_usd"),
+        "classify_wall_clock_s": round(wall, 3), "phases": [{k: p.get(k) for k in ("phase", "stop_reason", "batches", "wall_clock_s")} for p in phases],
+        "usd_per_directly_classified_record": round(per_direct_usd, 8) if per_direct_usd else None,
+        "seconds_per_directly_classified_record_at_this_concurrency": round(per_direct_s, 4) if per_direct_s else None,
+        "full_run_extrapolation": {
+            "first_pass_records": first_pass,
+            "enrichment_usd": round(first_pass * per_direct_usd, 2) if per_direct_usd else None,
+            "hours_at_this_concurrency": round(first_pass * per_direct_s / 3600, 2) if per_direct_s else None,
+            "note": "measured at the checkpoint's own worker count; the pilot projection models workers, this does not",
+        },
+    }
+    path = cost_dir / "checkpoints.json"
+    entries = json.loads(path.read_text()) if path.exists() else []
+    entries = [e for e in entries if e["label"] != label] + [entry]
+    path.write_text(json.dumps(entries, indent=2))
+    return entry

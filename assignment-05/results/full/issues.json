@@ -1,0 +1,61 @@
+{
+  "grouping_rule": "issue_id = 'ISS-' + topic for every completed record whose intent is complaint or cancellation; one issue per review",
+  "issues": [
+    {
+      "issue_id": "ISS-access",
+      "topic": "access",
+      "name": "Accounts hacked, disabled, or deleted without recovery",
+      "description": "Users lose access to their accounts, whether through hacking, unexplained disabling, or deletion, and support either fails to respond or offers no way to recover the account or premium subscription.",
+      "named_by": "anthropic:claude-haiku-5-5"
+    },
+    {
+      "issue_id": "ISS-usability",
+      "topic": "usability",
+      "name": "Playback controls broken after recent updates",
+      "description": "Reviewers report that after the update they cannot pause, skip, repeat, or shuffle songs, cannot view lyrics, and cannot manage playlists, making the app unusable.",
+      "named_by": "anthropic:claude-haiku-5-5"
+    },
+    {
+      "issue_id": "ISS-playback",
+      "topic": "playback",
+      "name": "Music playback stops, crashes, or fails to load",
+      "description": "Reviewers report the app crashing, freezing, or cutting off audio during playback, including after an update, when the phone locks, with Bluetooth headphones, or when playlists will not load.",
+      "named_by": "anthropic:claude-haiku-5-5"
+    },
+    {
+      "issue_id": "ISS-downloads",
+      "topic": "downloads",
+      "name": "Downloaded songs unexpectedly deleted from library",
+      "description": "Several reviewers report that downloaded songs and playlists vanish without warning, often after restarts, updates, or storage changes, with no clear cause.",
+      "named_by": "anthropic:claude-haiku-5-5"
+    },
+    {
+      "issue_id": "ISS-catalog",
+      "topic": "catalog",
+      "name": "Music library content disappearing or missing features",
+      "description": "The examples share a theme of catalog and content problems, where songs vanish, search or add-to-playlist fails, features like lyrics, Canvas, or Sessions don't appear, shared links show nothing, and audiobooks are misclassified as music.",
+      "named_by": "anthropic:claude-haiku-5-5"
+    },
+    {
+      "issue_id": "ISS-billing",
+      "topic": "billing",
+      "name": "Charged after cancelling or without consent",
+      "description": "Customers are being billed for premium subscriptions they cancelled, opted out of, never used, or were never clearly told about, and report difficulty stopping the charges or getting refunds.",
+      "named_by": "anthropic:claude-haiku-5-5"
+    },
+    {
+      "issue_id": "ISS-support",
+      "topic": "support",
+      "name": "Unreachable human support for account billing problems",
+      "description": "Reviewers across these examples say they cannot reach a live person to resolve account issues such as overcharges, duplicate billing, stolen accounts, or lost library access, and describe support as bots, unhelpful, or rude.",
+      "named_by": "anthropic:claude-haiku-5-5"
+    },
+    {
+      "issue_id": "ISS-other",
+      "topic": "other",
+      "name": "App fails to launch or work",
+      "description": "Most examples report that the app does not work or crashes on launch, often after an update, with one showing a runtime exception and one mentioning car stereo connection after an update.",
+      "named_by": "anthropic:claude-haiku-5-5"
+    }
+  ]
+}

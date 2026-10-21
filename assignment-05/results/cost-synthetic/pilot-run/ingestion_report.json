@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-10-20T06:21:16Z",
-  "source_file": "/tmp/claude-0/-home-user-Fundamentals-of-Agentic-AI/ec44ca5c-665c-5673-bf45-66c272bb4165/scratchpad/syn100.csv",
-  "source_sha256": "c9bce8b566e55f1042211c9242048e9920e3d34cfba4e39a7061f398b201430d",
-  "source_bytes": 11267,
+  "generated_at": "2026-10-20T23:02:40Z",
+  "source_file": "/private/tmp/claude-501/-Users-isaacvazquez-Fundamentals-of-Agentic-AI/475d26cb-83ba-4581-a72d-c9c156fac8c5/scratchpad/syn100.csv",
+  "source_sha256": "a37787be8a89b15a7afa51ec38df384af008edb5db6b19a5ff08a52b6bbfdfd1",
+  "source_bytes": 11338,
   "columns": [
     "review_id",
     "review_text",
@@ -17,37 +17,38 @@
   "duplicate_review_ids_skipped": 0,
   "empty_review_texts": 1,
   "nonempty_reviews": 99,
-  "distinct_nonempty_texts": 42,
-  "exact_duplicate_nonempty_texts": 57,
-  "missing_app_version": 27,
+  "distinct_nonempty_texts": 48,
+  "exact_duplicate_nonempty_texts": 51,
+  "missing_app_version": 26,
   "rating_counts": {
-    "1": 27,
-    "2": 16,
-    "3": 21,
-    "4": 18,
-    "5": 18
+    "1": 26,
+    "2": 19,
+    "3": 17,
+    "4": 16,
+    "5": 22
   },
   "rows_by_month": {
-    "2022-05": 6,
+    "2022-05": 8,
     "2022-06": 6,
-    "2022-07": 2,
-    "2022-08": 4,
-    "2022-09": 8,
-    "2022-10": 7,
-    "2022-11": 4,
-    "2022-12": 9,
-    "2023-01": 4,
-    "2023-02": 3,
-    "2023-03": 4,
-    "2023-04": 8,
-    "2023-05": 8,
+    "2022-07": 3,
+    "2022-08": 3,
+    "2022-09": 12,
+    "2022-10": 9,
+    "2022-11": 6,
+    "2022-12": 3,
+    "2023-01": 8,
+    "2023-02": 5,
+    "2023-03": 5,
+    "2023-04": 5,
+    "2023-05": 6,
     "2023-06": 3,
     "2023-07": 4,
-    "2023-08": 9,
-    "2023-09": 9,
-    "2023-10": 2
+    "2023-08": 4,
+    "2023-09": 6,
+    "2023-10": 4
   },
-  "row_hash_definition": "sha256(utf8(review_id + US + review_text + US + review_rating + US + review_likes + US + app_version + US + review_timestamp)), US = \\x1f",
+  "row_hash_definition": "sha256(utf8(json.dumps([review_id, review_text, review_rating, review_likes, app_version, review_timestamp], ensure_ascii=False, separators=(",
+  ", ": ")))), the row_sha helper in check_submission.py",
   "text_hash_definition": "sha256(utf8(review_text))",
   "expected_full_corpus": {
     "rows": 660622,
@@ -58,5 +59,44 @@
     "source_file": "spotify_reviews_18months.csv",
     "source_bytes": 97400616
   },
-  "matches_full_corpus_profile": false
+  "matches_full_corpus_profile": false,
+  "contract_profile": {
+    "file_sha256": "a37787be8a89b15a7afa51ec38df384af008edb5db6b19a5ff08a52b6bbfdfd1",
+    "parsed_rows_sha256": "e62213060609c0c39dcbd742d17509e4938de81810fef58358ad5355de7385fb",
+    "counts": {
+      "records": 100,
+      "duplicate_review_ids": 0,
+      "empty_review_text": 1,
+      "missing_app_version": 26
+    },
+    "reviews_by_month": {
+      "2023-01": 8,
+      "2023-06": 3,
+      "2023-09": 6,
+      "2022-10": 9,
+      "2023-03": 5,
+      "2023-04": 5,
+      "2023-02": 5,
+      "2022-08": 3,
+      "2022-09": 12,
+      "2022-12": 3,
+      "2023-05": 6,
+      "2023-07": 4,
+      "2023-08": 4,
+      "2023-10": 4,
+      "2022-11": 6,
+      "2022-07": 3,
+      "2022-06": 6,
+      "2022-05": 8
+    },
+    "reviews_by_rating": {
+      "1": 26,
+      "3": 17,
+      "4": 16,
+      "2": 19,
+      "5": 22
+    },
+    "first_review": "2022-05-07 08:08:00",
+    "last_review": "2023-10-21 18:49:00"
+  }
 }

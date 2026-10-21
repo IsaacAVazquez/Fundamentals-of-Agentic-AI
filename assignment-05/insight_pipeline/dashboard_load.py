@@ -106,7 +106,7 @@ def load_run(run_dir: Path, database_url: str | None = None, evidence_per_issue:
     db.executemany("INSERT INTO metrics VALUES (?,?,?)", [(run_id, k, json.dumps(v)) for k, v in metrics.items()])
     db.executemany("INSERT INTO issues VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)", [
         (run_id, a["issue_id"], a["rank"], a["name"], a["topic"], issues.get(a["issue_id"], {}).get("description"), a["complaint_count"],
-         a["cancellation_count"], a["severity_sum"], a["mean_severity"], a["score"], a["mean_sentiment"], a["needs_review_count"],
+         a["cancellation_count"], a["severity_sum"], a["mean_severity"], a["priority_score"], a["mean_sentiment"], a["needs_review_count"],
          a["share_of_complaint_records"]) for a in ranking["ranking"]])
     db.executemany("INSERT INTO claims VALUES (?,?,?,?,?,?)", [(run_id, c["claim_id"], c["issue_id"], c["metric"], str(c["value"]), c["computation"]) for c in ranking["claims"]])
     ev = []

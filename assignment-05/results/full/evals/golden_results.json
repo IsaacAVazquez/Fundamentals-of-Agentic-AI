@@ -1,0 +1,50 @@
+{
+  "generated_at": "2026-10-21T05:14:26Z",
+  "golden_file": "evals/golden_50.csv",
+  "rows_in_file": 50,
+  "rows_with_human_labels": 50,
+  "compared": 49,
+  "missing_or_not_completed": 1,
+  "ambiguous_cases": 14,
+  "topic_agreement": 0.898,
+  "intent_agreement": 0.9388,
+  "severity_exact_agreement": 0.8776,
+  "severity_mae": 0.1224,
+  "sentiment_tolerance": 0.5,
+  "sentiment_mae": 0.0939,
+  "sentiment_rows": 49,
+  "quote_substring_failures": 0,
+  "per_topic_human_counts": {
+    "catalog": 7,
+    "other": 26,
+    "usability": 9,
+    "playback": 4,
+    "billing": 3,
+    "downloads": 1
+  },
+  "topic_confusion": {
+    "catalog": {
+      "catalog": 7
+    },
+    "other": {
+      "other": 25,
+      "usability": 1
+    },
+    "usability": {
+      "usability": 6,
+      "billing": 1,
+      "playback": 1
+    },
+    "playback": {
+      "playback": 4
+    },
+    "billing": {
+      "usability": 2,
+      "billing": 1
+    },
+    "downloads": {
+      "downloads": 1
+    }
+  },
+  "note": "Fifty cases are a diagnostic sample, not a population accuracy estimate. Golden labels were never used in any prompt."
+}

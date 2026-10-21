@@ -1,5 +1,8 @@
 import csv
 import json
+from pathlib import Path
+
+import pytest
 
 from insight_pipeline.prepare import prepare, source_hash
 from insight_pipeline.store import Store
@@ -38,3 +41,20 @@ def test_multiline_text_survives(tmp_path):
     s = Store(tmp_path / "run")
     assert s.conn.execute("SELECT review_text FROM reviews").fetchone()[0] == "line one\nline two, with a comma"
     s.close()
+
+
+def test_row_hash_and_profile_match_the_course_checker(tmp_path):
+    """source_hash and contract_profile must equal check_submission.py's row_sha and profile byte for byte."""
+    import importlib.util
+    import sys
+    helper = Path(__file__).resolve().parent.parent / "data" / "check_submission.py"
+    if not helper.exists():
+        pytest.skip("dataset ZIP not unpacked into data/")
+    spec = importlib.util.spec_from_file_location("check_submission", helper)
+    checker = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(checker)
+    sample = helper.parent / "cost_100.csv"
+    rows = list(csv.DictReader(open(sample, newline="", encoding="utf-8")))
+    assert all(source_hash(r) == checker.row_sha(r) for r in rows)
+    report = prepare(sample, tmp_path / "run")
+    assert report["contract_profile"] == checker.profile(sample)

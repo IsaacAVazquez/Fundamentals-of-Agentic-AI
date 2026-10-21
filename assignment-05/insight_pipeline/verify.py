@@ -35,7 +35,8 @@ def _label_batch(store, backend, controls, model, rows, rates, stage, role, syst
     store.log_call({"stage": stage, "phase": "initial", "role": role, "provider": backend.provider, "model": model,
                     "effort": controls.effort, "label_config": lc, "attempt": 1, "request_ids": [r["review_id"] for r in rows],
                     "started_at": started, "duration_ms": int((time.time() - t0) * 1000), "status": "ok", "error": None,
-                    **res.usage(), "usage_known": int(res.usage_known), "cost_usd": cost, "worker": 0})
+                    **res.usage(), "usage_known": int(res.usage_known), "cost_usd": cost, "worker": 0,
+                    "provider_request_id": res.extra.get("request_id")})
     out = {}
     try:
         items = parse_batch_output(res.text)
@@ -74,7 +75,7 @@ def run_verify(run_dir: Path, controls: Controls, sample_size: int = 200, seed: 
     predictions: dict[str, dict] = {}
     size = min(controls.batch_size, MAX_REVIEWS_PER_REQUEST)
     for i in range(0, len(rows), size):
-        predictions.update(_label_batch(store, backend, controls, model, rows[i:i + size], rates, "verify", "verifier", VERIFIER_SYSTEM))
+        predictions.update(_label_batch(store, backend, controls, model, rows[i:i + size], rates, "verify", "verify", VERIFIER_SYSTEM))
 
     agree = {"topic": 0, "intent": 0, "severity_exact": 0}
     sev_abs = 0.0

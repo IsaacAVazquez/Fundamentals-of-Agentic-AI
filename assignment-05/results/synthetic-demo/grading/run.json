@@ -1,13 +1,20 @@
 {
-  "exported_at": "2026-10-20T06:21:16Z",
-  "run_id": "run1",
+  "version": "a5-audit-v1",
+  "analysis_count": 1000,
+  "analysis_sha256": "8d8ed8c68906d3543cec2bb219eb6c12d77d2be83d23146f35218515c200dea3",
+  "classification_input_fields": [
+    "review_text"
+  ],
+  "allow_multi_issue": false,
+  "exported_at": "2026-10-20T23:02:40Z",
+  "run_id": "synthetic-demo",
   "synthetic_input": true,
   "source": {
     "file": "syn.csv",
     "sha256": "8d8ed8c68906d3543cec2bb219eb6c12d77d2be83d23146f35218515c200dea3",
     "bytes": 113053
   },
-  "row_hash_definition": "sha256(utf8(review_id + US + review_text + US + review_rating + US + review_likes + US + app_version + US + review_timestamp)), US = \\x1f",
+  "row_hash_definition": "sha256(utf8(json.dumps([review_id, review_text, review_rating, review_likes, app_version, review_timestamp], ensure_ascii=False, separators=(",
   "label_config": "fake:fake-deterministic-v1|effort=low|prompt=v1|schema=v1",
   "controls": {
     "backend": "fake",
@@ -28,9 +35,9 @@
   },
   "models": {
     "fake:fake-deterministic-v1": {
-      "calls": 16,
-      "stages": [
-        "classify",
+      "calls": 15,
+      "roles": [
+        "enrich",
         "group",
         "memo",
         "verify"
@@ -40,9 +47,9 @@
   "phases": [
     {
       "phase": "initial",
-      "started_at": "2026-10-20T06:14:08Z",
+      "started_at": "2026-10-20T23:02:40Z",
       "before": {
-        "ts": "2026-10-20T06:14:08Z",
+        "ts": "2026-10-20T23:02:40Z",
         "phase": "initial",
         "moment": "before",
         "statuses": {
@@ -55,11 +62,49 @@
         "classify_calls_so_far": 0,
         "classify_spend_so_far_usd": 0.0
       },
-      "finished_at": "2026-10-20T06:14:08Z",
+      "finished_at": "2026-10-20T23:02:40Z",
+      "stop_reason": "max_batches",
+      "after": {
+        "ts": "2026-10-20T23:02:40Z",
+        "phase": "initial",
+        "moment": "after",
+        "statuses": {
+          "pending": 948,
+          "completed": 50,
+          "quarantined": 2
+        },
+        "completed_count": 50,
+        "completed_ids_sha256": "645286d1b569385ef1f7068c3cb24dd99d7ee6f9b531253d58e8aa1625dd5c29",
+        "classify_calls_so_far": 2,
+        "classify_spend_so_far_usd": 0.0
+      },
+      "batches": 2,
+      "completed_this_run": 50,
+      "cache_hits": 0,
+      "wall_clock_s": 0.003
+    },
+    {
+      "phase": "resume",
+      "started_at": "2026-10-20T23:02:40Z",
+      "before": {
+        "ts": "2026-10-20T23:02:40Z",
+        "phase": "resume",
+        "moment": "before",
+        "statuses": {
+          "pending": 948,
+          "completed": 50,
+          "quarantined": 2
+        },
+        "completed_count": 50,
+        "completed_ids_sha256": "645286d1b569385ef1f7068c3cb24dd99d7ee6f9b531253d58e8aa1625dd5c29",
+        "classify_calls_so_far": 2,
+        "classify_spend_so_far_usd": 0.0
+      },
+      "finished_at": "2026-10-20T23:02:40Z",
       "stop_reason": "no_pending",
       "after": {
-        "ts": "2026-10-20T06:14:08Z",
-        "phase": "initial",
+        "ts": "2026-10-20T23:02:40Z",
+        "phase": "resume",
         "moment": "after",
         "statuses": {
           "pending": 0,
@@ -68,13 +113,13 @@
         },
         "completed_count": 998,
         "completed_ids_sha256": "792b4d173c143f6f3d99e75e19917bdebe9ee3b2372114ff60dc36c2c9c77648",
-        "classify_calls_so_far": 6,
+        "classify_calls_so_far": 5,
         "classify_spend_so_far_usd": 0.0
       },
-      "batches": 6,
-      "completed_this_run": 998,
+      "batches": 3,
+      "completed_this_run": 948,
       "cache_hits": 888,
-      "wall_clock_s": 0.035
+      "wall_clock_s": 0.014
     }
   ],
   "counts": {
@@ -87,6 +132,7 @@
     "completed_via_exact_text_cache": 888
   },
   "enrichment_limit_per_request": 50,
+  "group_and_memo_inputs": "group calls carry the example review ids they were sent; the memo call consumes claims.csv, ranking.json, and the evidence pack in recommendations.json, so its review_ids is empty",
   "files": [
     "run.json",
     "ingestion.json",
@@ -94,6 +140,7 @@
     "membership.csv",
     "ranking.csv",
     "claims.csv",
+    "claims_context.csv",
     "calls.jsonl",
     "checkpoint_before.json",
     "checkpoint_after.json"

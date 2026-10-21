@@ -1,0 +1,61 @@
+{
+  "grouping_rule": "issue_id = 'ISS-' + topic for every completed record whose intent is complaint or cancellation; one issue per review",
+  "issues": [
+    {
+      "issue_id": "ISS-access",
+      "topic": "access",
+      "name": "Users logged out and losing playlists",
+      "description": "Reviewers describe being logged out of their accounts, unable to log back in, and losing saved playlists, liked songs, or favourites, with some also reporting being unable to use the service in certain countries.",
+      "named_by": "anthropic:claude-haiku-5-5"
+    },
+    {
+      "issue_id": "ISS-usability",
+      "topic": "usability",
+      "name": "Playback controls restricted for free users",
+      "description": "The examples share complaints that the app limits or removes basic controls such as skipping, choosing specific songs, and sleep timers, often after an update or for non-premium users, making it hard to use.",
+      "named_by": "anthropic:claude-haiku-5-5"
+    },
+    {
+      "issue_id": "ISS-playback",
+      "topic": "playback",
+      "name": "Songs and playlists fail to play",
+      "description": "Reviewers report that playback stops abruptly, specific playlists won't load or play, or the app won't work at all, preventing them from listening to songs of their choice.",
+      "named_by": "anthropic:claude-haiku-5-5"
+    },
+    {
+      "issue_id": "ISS-downloads",
+      "topic": "downloads",
+      "name": "Downloaded music disappearing or failing to play offline",
+      "description": "Reviewers report that songs they downloaded were deleted, un-downloaded, or became unplayable, often after an update or storage move, forcing them to re-download content they had already paid for.",
+      "named_by": "anthropic:claude-haiku-5-5"
+    },
+    {
+      "issue_id": "ISS-catalog",
+      "topic": "catalog",
+      "name": "Search fails and catalog content missing",
+      "description": "Users report being unable to search for songs, artists, or podcasts, with errors like no internet connection or crashes, and songs or liked tracks appearing missing or limited.",
+      "named_by": "anthropic:claude-haiku-5-5"
+    },
+    {
+      "issue_id": "ISS-billing",
+      "topic": "billing",
+      "name": "Payments failing and charges continuing after cancellation",
+      "description": "Users report being unable to pay or renew, being charged after canceling, or losing premium access despite paying, all stemming from billing and subscription status errors.",
+      "named_by": "anthropic:claude-haiku-5-5"
+    },
+    {
+      "issue_id": "ISS-support",
+      "topic": "support",
+      "name": "Unhelpful customer support across multiple channels",
+      "description": "Users across these reviews report that support is hard to reach, slow or unresponsive, gives repetitive unhelpful replies, or has broken email, and that they are sometimes left with unexpected billing or subscription outcomes.",
+      "named_by": "anthropic:claude-haiku-5-5"
+    },
+    {
+      "issue_id": "ISS-other",
+      "topic": "other",
+      "name": "Features missing or broken after app update",
+      "description": "Several reviewers say that after an update, features they relied on, such as liked songs, playlists, and lyrics, are missing or no longer load, leaving the app unusable for them.",
+      "named_by": "anthropic:claude-haiku-5-5"
+    }
+  ]
+}

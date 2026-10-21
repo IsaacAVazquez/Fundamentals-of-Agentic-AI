@@ -1,0 +1,464 @@
+{
+  "generated_at": "2026-10-20T23:26:11Z",
+  "ranking": [
+    {
+      "issue_id": "ISS-playback",
+      "name": "Music playback stops, skips, or won't start",
+      "topic": "playback",
+      "complaint_count": 10,
+      "cancellation_count": 1,
+      "severity_sum": 33,
+      "mean_severity": "3.300000",
+      "priority_score": 33,
+      "mean_sentiment": "-0.750000",
+      "needs_review_count": 0,
+      "share_of_complaint_records": "0.196078",
+      "rank": 1
+    },
+    {
+      "issue_id": "ISS-usability",
+      "name": "Frequent ads and removed music player features",
+      "topic": "usability",
+      "complaint_count": 15,
+      "cancellation_count": 2,
+      "severity_sum": 32,
+      "mean_severity": "2.133333",
+      "priority_score": 32,
+      "mean_sentiment": "-0.586667",
+      "needs_review_count": 0,
+      "share_of_complaint_records": "0.294118",
+      "rank": 2
+    },
+    {
+      "issue_id": "ISS-other",
+      "name": "Vague negative reviews after recent update",
+      "topic": "other",
+      "complaint_count": 13,
+      "cancellation_count": 2,
+      "severity_sum": 23,
+      "mean_severity": "1.769231",
+      "priority_score": 23,
+      "mean_sentiment": "-0.761538",
+      "needs_review_count": 1,
+      "share_of_complaint_records": "0.254902",
+      "rank": 3
+    },
+    {
+      "issue_id": "ISS-access",
+      "name": "Users unable to log in or connect",
+      "topic": "access",
+      "complaint_count": 3,
+      "cancellation_count": 0,
+      "severity_sum": 12,
+      "mean_severity": "4.000000",
+      "priority_score": 12,
+      "mean_sentiment": "-0.700000",
+      "needs_review_count": 0,
+      "share_of_complaint_records": "0.058824",
+      "rank": 4
+    },
+    {
+      "issue_id": "ISS-catalog",
+      "name": "Missing songs and inconsistent lyrics availability",
+      "topic": "catalog",
+      "complaint_count": 5,
+      "cancellation_count": 0,
+      "severity_sum": 11,
+      "mean_severity": "2.200000",
+      "priority_score": 11,
+      "mean_sentiment": "-0.220000",
+      "needs_review_count": 0,
+      "share_of_complaint_records": "0.098039",
+      "rank": 5
+    },
+    {
+      "issue_id": "ISS-billing",
+      "name": "Core features locked behind premium paywall",
+      "topic": "billing",
+      "complaint_count": 3,
+      "cancellation_count": 2,
+      "severity_sum": 8,
+      "mean_severity": "2.666667",
+      "priority_score": 8,
+      "mean_sentiment": "-0.900000",
+      "needs_review_count": 1,
+      "share_of_complaint_records": "0.058824",
+      "rank": 6
+    },
+    {
+      "issue_id": "ISS-downloads",
+      "name": "Offline downloads stall and fail to complete",
+      "topic": "downloads",
+      "complaint_count": 2,
+      "cancellation_count": 1,
+      "severity_sum": 6,
+      "mean_severity": "3.000000",
+      "priority_score": 6,
+      "mean_sentiment": "-0.600000",
+      "needs_review_count": 0,
+      "share_of_complaint_records": "0.039216",
+      "rank": 7
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "C1",
+      "issue_id": "",
+      "metric": "source_rows",
+      "value": 100,
+      "computation": "count of rows ingested"
+    },
+    {
+      "claim_id": "C2",
+      "issue_id": "",
+      "metric": "completed_records",
+      "value": 100,
+      "computation": "records with status completed"
+    },
+    {
+      "claim_id": "C3",
+      "issue_id": "",
+      "metric": "quarantined_records",
+      "value": 0,
+      "computation": "records with status quarantined (incl. empty texts)"
+    },
+    {
+      "claim_id": "C4",
+      "issue_id": "",
+      "metric": "pending_records",
+      "value": 0,
+      "computation": "records not yet classified"
+    },
+    {
+      "claim_id": "C5",
+      "issue_id": "",
+      "metric": "complaint_records",
+      "value": 51,
+      "computation": "completed records with intent complaint or cancellation"
+    },
+    {
+      "claim_id": "C6",
+      "issue_id": "ISS-playback",
+      "metric": "rank",
+      "value": 1,
+      "computation": "position after sorting by score desc, issue_id asc"
+    },
+    {
+      "claim_id": "C7",
+      "issue_id": "ISS-playback",
+      "metric": "complaint_count",
+      "value": 10,
+      "computation": "members of the issue"
+    },
+    {
+      "claim_id": "C8",
+      "issue_id": "ISS-playback",
+      "metric": "cancellation_count",
+      "value": 1,
+      "computation": "members with intent cancellation"
+    },
+    {
+      "claim_id": "C9",
+      "issue_id": "ISS-playback",
+      "metric": "severity_sum",
+      "value": 33,
+      "computation": "sum of member severities"
+    },
+    {
+      "claim_id": "C10",
+      "issue_id": "ISS-playback",
+      "metric": "mean_severity",
+      "value": "3.300000",
+      "computation": "severity_sum / complaint_count, 6 decimals half-up"
+    },
+    {
+      "claim_id": "C11",
+      "issue_id": "ISS-playback",
+      "metric": "priority_score",
+      "value": 33,
+      "computation": "complaint_count x mean_severity = severity_sum"
+    },
+    {
+      "claim_id": "C12",
+      "issue_id": "ISS-usability",
+      "metric": "rank",
+      "value": 2,
+      "computation": "position after sorting by score desc, issue_id asc"
+    },
+    {
+      "claim_id": "C13",
+      "issue_id": "ISS-usability",
+      "metric": "complaint_count",
+      "value": 15,
+      "computation": "members of the issue"
+    },
+    {
+      "claim_id": "C14",
+      "issue_id": "ISS-usability",
+      "metric": "cancellation_count",
+      "value": 2,
+      "computation": "members with intent cancellation"
+    },
+    {
+      "claim_id": "C15",
+      "issue_id": "ISS-usability",
+      "metric": "severity_sum",
+      "value": 32,
+      "computation": "sum of member severities"
+    },
+    {
+      "claim_id": "C16",
+      "issue_id": "ISS-usability",
+      "metric": "mean_severity",
+      "value": "2.133333",
+      "computation": "severity_sum / complaint_count, 6 decimals half-up"
+    },
+    {
+      "claim_id": "C17",
+      "issue_id": "ISS-usability",
+      "metric": "priority_score",
+      "value": 32,
+      "computation": "complaint_count x mean_severity = severity_sum"
+    },
+    {
+      "claim_id": "C18",
+      "issue_id": "ISS-other",
+      "metric": "rank",
+      "value": 3,
+      "computation": "position after sorting by score desc, issue_id asc"
+    },
+    {
+      "claim_id": "C19",
+      "issue_id": "ISS-other",
+      "metric": "complaint_count",
+      "value": 13,
+      "computation": "members of the issue"
+    },
+    {
+      "claim_id": "C20",
+      "issue_id": "ISS-other",
+      "metric": "cancellation_count",
+      "value": 2,
+      "computation": "members with intent cancellation"
+    },
+    {
+      "claim_id": "C21",
+      "issue_id": "ISS-other",
+      "metric": "severity_sum",
+      "value": 23,
+      "computation": "sum of member severities"
+    },
+    {
+      "claim_id": "C22",
+      "issue_id": "ISS-other",
+      "metric": "mean_severity",
+      "value": "1.769231",
+      "computation": "severity_sum / complaint_count, 6 decimals half-up"
+    },
+    {
+      "claim_id": "C23",
+      "issue_id": "ISS-other",
+      "metric": "priority_score",
+      "value": 23,
+      "computation": "complaint_count x mean_severity = severity_sum"
+    },
+    {
+      "claim_id": "C24",
+      "issue_id": "ISS-access",
+      "metric": "rank",
+      "value": 4,
+      "computation": "position after sorting by score desc, issue_id asc"
+    },
+    {
+      "claim_id": "C25",
+      "issue_id": "ISS-access",
+      "metric": "complaint_count",
+      "value": 3,
+      "computation": "members of the issue"
+    },
+    {
+      "claim_id": "C26",
+      "issue_id": "ISS-access",
+      "metric": "cancellation_count",
+      "value": 0,
+      "computation": "members with intent cancellation"
+    },
+    {
+      "claim_id": "C27",
+      "issue_id": "ISS-access",
+      "metric": "severity_sum",
+      "value": 12,
+      "computation": "sum of member severities"
+    },
+    {
+      "claim_id": "C28",
+      "issue_id": "ISS-access",
+      "metric": "mean_severity",
+      "value": "4.000000",
+      "computation": "severity_sum / complaint_count, 6 decimals half-up"
+    },
+    {
+      "claim_id": "C29",
+      "issue_id": "ISS-access",
+      "metric": "priority_score",
+      "value": 12,
+      "computation": "complaint_count x mean_severity = severity_sum"
+    },
+    {
+      "claim_id": "C30",
+      "issue_id": "ISS-catalog",
+      "metric": "rank",
+      "value": 5,
+      "computation": "position after sorting by score desc, issue_id asc"
+    },
+    {
+      "claim_id": "C31",
+      "issue_id": "ISS-catalog",
+      "metric": "complaint_count",
+      "value": 5,
+      "computation": "members of the issue"
+    },
+    {
+      "claim_id": "C32",
+      "issue_id": "ISS-catalog",
+      "metric": "cancellation_count",
+      "value": 0,
+      "computation": "members with intent cancellation"
+    },
+    {
+      "claim_id": "C33",
+      "issue_id": "ISS-catalog",
+      "metric": "severity_sum",
+      "value": 11,
+      "computation": "sum of member severities"
+    },
+    {
+      "claim_id": "C34",
+      "issue_id": "ISS-catalog",
+      "metric": "mean_severity",
+      "value": "2.200000",
+      "computation": "severity_sum / complaint_count, 6 decimals half-up"
+    },
+    {
+      "claim_id": "C35",
+      "issue_id": "ISS-catalog",
+      "metric": "priority_score",
+      "value": 11,
+      "computation": "complaint_count x mean_severity = severity_sum"
+    },
+    {
+      "claim_id": "C36",
+      "issue_id": "ISS-billing",
+      "metric": "rank",
+      "value": 6,
+      "computation": "position after sorting by score desc, issue_id asc"
+    },
+    {
+      "claim_id": "C37",
+      "issue_id": "ISS-billing",
+      "metric": "complaint_count",
+      "value": 3,
+      "computation": "members of the issue"
+    },
+    {
+      "claim_id": "C38",
+      "issue_id": "ISS-billing",
+      "metric": "cancellation_count",
+      "value": 2,
+      "computation": "members with intent cancellation"
+    },
+    {
+      "claim_id": "C39",
+      "issue_id": "ISS-billing",
+      "metric": "severity_sum",
+      "value": 8,
+      "computation": "sum of member severities"
+    },
+    {
+      "claim_id": "C40",
+      "issue_id": "ISS-billing",
+      "metric": "mean_severity",
+      "value": "2.666667",
+      "computation": "severity_sum / complaint_count, 6 decimals half-up"
+    },
+    {
+      "claim_id": "C41",
+      "issue_id": "ISS-billing",
+      "metric": "priority_score",
+      "value": 8,
+      "computation": "complaint_count x mean_severity = severity_sum"
+    },
+    {
+      "claim_id": "C42",
+      "issue_id": "ISS-downloads",
+      "metric": "rank",
+      "value": 7,
+      "computation": "position after sorting by score desc, issue_id asc"
+    },
+    {
+      "claim_id": "C43",
+      "issue_id": "ISS-downloads",
+      "metric": "complaint_count",
+      "value": 2,
+      "computation": "members of the issue"
+    },
+    {
+      "claim_id": "C44",
+      "issue_id": "ISS-downloads",
+      "metric": "cancellation_count",
+      "value": 1,
+      "computation": "members with intent cancellation"
+    },
+    {
+      "claim_id": "C45",
+      "issue_id": "ISS-downloads",
+      "metric": "severity_sum",
+      "value": 6,
+      "computation": "sum of member severities"
+    },
+    {
+      "claim_id": "C46",
+      "issue_id": "ISS-downloads",
+      "metric": "mean_severity",
+      "value": "3.000000",
+      "computation": "severity_sum / complaint_count, 6 decimals half-up"
+    },
+    {
+      "claim_id": "C47",
+      "issue_id": "ISS-downloads",
+      "metric": "priority_score",
+      "value": 6,
+      "computation": "complaint_count x mean_severity = severity_sum"
+    }
+  ],
+  "statuses": {
+    "pending": 0,
+    "completed": 100,
+    "quarantined": 0
+  },
+  "formula": "priority_score = complaint_count x mean_severity = severity_sum; sort priority_score desc, issue_id asc",
+  "months": [
+    "2022-06",
+    "2022-07",
+    "2022-08",
+    "2022-09",
+    "2022-10",
+    "2022-11",
+    "2022-12",
+    "2023-01",
+    "2023-02",
+    "2023-03",
+    "2023-04",
+    "2023-05",
+    "2023-06",
+    "2023-07",
+    "2023-08",
+    "2023-09",
+    "2023-10",
+    "2023-11"
+  ],
+  "partial_months": [
+    "2022-06",
+    "2023-11"
+  ]
+}

@@ -1,0 +1,22 @@
+claim_id,issue_id,metric,value,computation
+C1,,source_rows,1000,count of rows ingested
+C2,,completed_records,998,records with status completed
+C3,,quarantined_records,2,records with status quarantined (incl. empty texts)
+C4,,pending_records,0,records not yet classified
+C5,,complaint_records,877,completed records with intent complaint or cancellation
+C6,ISS-access,rank,1,"position after sorting by score desc, issue_id asc"
+C8,ISS-access,cancellation_count,22,members with intent cancellation
+C12,ISS-playback,rank,2,"position after sorting by score desc, issue_id asc"
+C14,ISS-playback,cancellation_count,29,members with intent cancellation
+C18,ISS-downloads,rank,3,"position after sorting by score desc, issue_id asc"
+C20,ISS-downloads,cancellation_count,18,members with intent cancellation
+C24,ISS-billing,rank,4,"position after sorting by score desc, issue_id asc"
+C26,ISS-billing,cancellation_count,63,members with intent cancellation
+C30,ISS-usability,rank,5,"position after sorting by score desc, issue_id asc"
+C32,ISS-usability,cancellation_count,29,members with intent cancellation
+C36,ISS-catalog,rank,6,"position after sorting by score desc, issue_id asc"
+C38,ISS-catalog,cancellation_count,30,members with intent cancellation
+C42,ISS-support,rank,7,"position after sorting by score desc, issue_id asc"
+C44,ISS-support,cancellation_count,33,members with intent cancellation
+C48,ISS-other,rank,8,"position after sorting by score desc, issue_id asc"
+C50,ISS-other,cancellation_count,0,members with intent cancellation

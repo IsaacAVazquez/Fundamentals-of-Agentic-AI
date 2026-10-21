@@ -1,0 +1,178 @@
+{
+  "generated_at": "2026-10-20T23:17:12Z",
+  "model": "anthropic:claude-haiku-5-5",
+  "effort": "low",
+  "priority_issue_id": "ISS-usability",
+  "recommendation": "Make the free-user song choice and replay restriction [ISS-usability] the top priority for next quarter, since it leads on priority score (157) [C11] and complaint count (68) [C7].",
+  "alternatives": [
+    "ISS-playback",
+    "ISS-other",
+    "ISS-billing"
+  ],
+  "cited_claims": [
+    "C10",
+    "C11",
+    "C13",
+    "C14",
+    "C16",
+    "C17",
+    "C19",
+    "C2",
+    "C22",
+    "C23",
+    "C25",
+    "C29",
+    "C3",
+    "C4",
+    "C7",
+    "C8"
+  ],
+  "memo_check_passed": true,
+  "evidence_pack": {
+    "ISS-usability": [
+      {
+        "review_id": "cc39673b-e332-4f1d-a6c6-ce378a715dcb",
+        "severity": 4,
+        "intent": "complaint",
+        "quote": "can't play the song I want , can't hear the same song on repeat and it doesn't let me change songs too"
+      },
+      {
+        "review_id": "0853c56b-0fa1-4d12-9cb9-6817d52233f5",
+        "severity": 3,
+        "intent": "complaint",
+        "quote": "This app is so hard to navigate on phone if I click a a song a have liked it goes to didn't song I never heard or it might play a demo of the song that is dumb it should play the song"
+      },
+      {
+        "review_id": "08d3a5a9-1ec1-4b10-a5c8-393da33843e1",
+        "severity": 3,
+        "intent": "complaint",
+        "quote": "will not let you go to any random song in a playlist while on mobile, except for the first few uses"
+      },
+      {
+        "review_id": "0e71515c-ecf1-4b23-b783-00f58e51d96a",
+        "severity": 3,
+        "intent": "complaint",
+        "quote": "The new home screen is terrible, I was listening to a playlist I had found the previous day and now I am unable to find it again because of the new update."
+      },
+      {
+        "review_id": "11ad400f-4487-4dfa-a9da-c8d624f4f107",
+        "severity": 3,
+        "intent": "complaint",
+        "quote": "you only get 6 skips a day, you can't pick the song you want from your playlist, you can't skip forward"
+      }
+    ],
+    "ISS-playback": [
+      {
+        "review_id": "039112fc-bbed-4540-83cc-890fcb129751",
+        "severity": 4,
+        "intent": "complaint",
+        "quote": "keeps stopping mid show"
+      },
+      {
+        "review_id": "065c418e-7f18-42a3-b241-fe693b7a2b0c",
+        "severity": 4,
+        "intent": "complaint",
+        "quote": "Black screen of death. Having to Uninstaller and reinstall after closing and opening app 5x to see if it would work."
+      },
+      {
+        "review_id": "06d4c78d-73b4-4b54-9ef3-3d5a0d18cb96",
+        "severity": 4,
+        "intent": "complaint",
+        "quote": "when I want to play my playlist, it does NOT play?! I have to delete the app and reinstall again and again for it to work but it just happens again!"
+      },
+      {
+        "review_id": "179d79f7-d052-490f-a9d6-f97525b32642",
+        "severity": 4,
+        "intent": "complaint",
+        "quote": "it keeps randomly stopping"
+      },
+      {
+        "review_id": "1cdc5bb2-8e8d-4267-8853-6c1dd4c7ef13",
+        "severity": 4,
+        "intent": "cancellation",
+        "quote": "It stops randomly. Sometimes 10 minutes, sometimes 2 hours."
+      }
+    ],
+    "ISS-other": [
+      {
+        "review_id": "02777996-211f-447b-94c4-99b61f049f78",
+        "severity": 3,
+        "intent": "complaint",
+        "quote": "some features are missing in updated version"
+      },
+      {
+        "review_id": "45c561b9-cc47-4d80-95d3-f0d20bc84af3",
+        "severity": 3,
+        "intent": "complaint",
+        "quote": "The update made the app useless"
+      },
+      {
+        "review_id": "00363dc8-2117-4565-9af9-efadf8fa90cf",
+        "severity": 2,
+        "intent": "complaint",
+        "quote": "Worst"
+      },
+      {
+        "review_id": "0575ce08-ab04-46f0-aa8a-fbf9cd27e8da",
+        "severity": 2,
+        "intent": "complaint",
+        "quote": "I hate this application"
+      },
+      {
+        "review_id": "06a45bd5-3ed9-43af-b7f2-8b9487e2ffff",
+        "severity": 2,
+        "intent": "complaint",
+        "quote": "Worst app"
+      }
+    ],
+    "ISS-billing": [
+      {
+        "review_id": "16929558-ce1e-4b87-8738-a1de3f557f66",
+        "severity": 4,
+        "intent": "complaint",
+        "quote": "I paid my subscription and im still getting a pause subscription screen and can't access my music"
+      },
+      {
+        "review_id": "1d1480fb-0142-46da-8570-45bf3983bf6d",
+        "severity": 4,
+        "intent": "complaint",
+        "quote": "I cant sign up for individual premium.. Whenever i click on the plan it doesnt give me the prompt to pay :/"
+      },
+      {
+        "review_id": "57aca404-d58b-4bb4-97b1-c64db92f054a",
+        "severity": 4,
+        "intent": "complaint",
+        "quote": "I cant't buy premium correctly. it show that my internet is poor."
+      },
+      {
+        "review_id": "98d936e1-fd1d-475a-89ee-0e1517cb60d3",
+        "severity": 4,
+        "intent": "complaint",
+        "quote": "it absolutely refuses to play music"
+      },
+      {
+        "review_id": "074efbfd-f69e-46ca-9cea-e5204a192a2a",
+        "severity": 3,
+        "intent": "complaint",
+        "quote": "It's impossible to use the app without prime And the recommended song is so bad"
+      }
+    ]
+  },
+  "scope": {
+    "completed_records": 500,
+    "quarantined_records": 0,
+    "pending_records": 0,
+    "partial_months": [
+      "2022-05",
+      "2023-11"
+    ],
+    "synthetic_input": false,
+    "limitations": [
+      "Reviews are self-selected public app store posts, not a customer population.",
+      "No account, plan, revenue, or cancellation data exists; cancellation intent is expressed, not observed.",
+      "Labels come from a model checked against a 50-review golden set and a verifier sample; see evals/.",
+      "Quarantined and pending records are not classified and are excluded from every count."
+    ]
+  },
+  "memo_markdown": "## Recommendation\nPrioritize the free-user restriction on choosing and replaying songs [ISS-usability], which has the highest priority score (157) [C11] and the most complaints (68) [C7] among the 500 completed records [C2]. Scope the next quarter's effort to this issue, with playback stability [ISS-playback] as the closely watched second item.\n\n## Why this issue\n[ISS-usability] ranks first on priority score (157) [C11] and complaint count (68) [C7], with a mean severity of 2.308824 [C10]. Its evidence quotes describe users unable to pick or repeat songs and a navigation problem that sends them to unexpected tracks, for example review cc39673b-e332-4f1d-a6c6-ce378a715dcb and 08d3a5a9-1ec1-4b10-a5c8-393da33843e1. Playback [ISS-playback] has a higher mean severity (3.405405) [C16] and a priority score of 126 [C17], and its quotes describe stops and crashes, for example 179d79f7-d052-490f-a9d6-f97525b32642. Mean severity alone would favor playback, so the choice rests on the combined score and complaint volume.\n\n## Alternatives considered\n- [ISS-playback]: priority score 126 [C17], 37 complaints [C13], 5 cancellation-intent records [C14]. Strong severity signal; a credible alternative if the team weights severity over volume.\n- [ISS-other]: priority score 107 [C23], 58 complaints [C19], reflecting broad update-related dissatisfaction. Its mean severity is the lowest (1.844828) [C22], and its theme is diffuse, so it is harder to act on.\n- [ISS-billing]: priority score 80 [C29], 31 complaints [C25], with quotes about premium purchase failures such as 1d1480fb-0142-46da-8570-45bf3983bf6d. Its concrete purchase-blocking failures make it a candidate for a targeted fix.\n\n## Limitations\n- Reviews are self-selected public app store posts, not a representative customer population.\n- The data contains no account, plan, or cancellation records, so cancellation intent is expressed in reviews and not observed. Counts such as 5 cancellation-intent records for [ISS-usability] [C8] describe stated intent only.\n- Labels come from a model checked against a 50-review golden set and a verifier sample; see evals/.\n- Quarantined records [C3] and pending records [C4] are zero in this run. Partial months 2022-05 and 2023-11 are flagged in the scope and may affect trend reading.\n- The ranking reflects the sampled reviews only and does not establish how much any issue affects users overall."
+}

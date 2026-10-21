@@ -1,0 +1,19 @@
+{
+  "synthetic_test": true,
+  "excluded_from_aggregates": true,
+  "review_id": "00257803-caee-4430-8321-ce319811d49c",
+  "original": {
+    "topic": "playback",
+    "severity": 3
+  },
+  "planted_wrong": {
+    "topic": "access",
+    "severity": 1
+  },
+  "verifier": {
+    "topic": "playback",
+    "intent": "complaint",
+    "severity": 3
+  },
+  "caught": true
+}

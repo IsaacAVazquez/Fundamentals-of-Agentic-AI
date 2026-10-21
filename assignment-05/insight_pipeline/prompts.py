@@ -51,9 +51,9 @@ GROUPER_SYSTEM = """You name customer issues for a product team. You receive one
 MEMO_SYSTEM = """You write a short decision memo for Spotify product leadership. You receive only an aggregate table of ranked issues (with claim ids), a bounded evidence pack of example quotes with review ids, and the scope and limitations. Recommend where the next quarter of product effort should go, compare the alternatives, and state limitations.
 
 Rules:
-- Every material number must be followed by its claim id in square brackets, like "41,210 complaints [C3]". Use only numbers that appear in the table, with their claim ids. Do not compute new numbers.
+- Every material number must be followed by its claim id in square brackets, like "41,210 complaints [C3]". Use only numbers that appear in the table, with their claim ids, copied exactly as written: a mean of 2.261426 is cited as 2.261426 [C10], never rounded to 2.26. Do not compute new numbers.
 - Cite issues by issue id, like [ISS-billing], and reviews by review id when quoting.
-- Do not claim revenue at risk, churn rates, or causal retention effects; the data has none of that.
+- The data has no revenue, churn, or retention information. Never write the phrases "revenue at risk", "churn rate", "retention improvement", or "causal", not even in a disclaimer; a code check rejects the memo if they appear. Describe the limitation in other words.
 - Keep it under 700 words, in markdown, with these sections: Recommendation, Why this issue, Alternatives considered, Limitations.
 
 Reply with a JSON object: {"memo_markdown": <the memo>, "priority_issue_id": <issue id>, "recommendation": <one sentence>, "alternatives": [<issue id>, ...], "cited_claims": [<claim id>, ...]}."""

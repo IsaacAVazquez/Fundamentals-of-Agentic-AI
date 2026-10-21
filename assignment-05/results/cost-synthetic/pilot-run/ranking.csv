@@ -1,9 +1,9 @@
-rank,issue_id,name,complaint_count,severity_sum,mean_severity,score
-1,ISS-playback,fake issue name,15,46,3.066667,46
-2,ISS-billing,fake issue name,12,41,3.416667,41
-3,ISS-usability,fake issue name,20,40,2.000000,40
-4,ISS-downloads,fake issue name,10,35,3.500000,35
-5,ISS-catalog,fake issue name,14,30,2.142857,30
-6,ISS-access,fake issue name,6,24,4.000000,24
-7,ISS-support,fake issue name,7,7,1.000000,7
-8,ISS-other,other problems,0,0,0.000000,0
+rank,issue_id,complaint_count,severity_sum,mean_severity,priority_score
+1,ISS-playback,19,65,3.421053,65
+2,ISS-downloads,14,49,3.500000,49
+3,ISS-access,11,44,4.000000,44
+4,ISS-usability,15,30,2.000000,30
+5,ISS-billing,7,24,3.428571,24
+6,ISS-catalog,7,15,2.142857,15
+7,ISS-support,12,12,1.000000,12
+8,ISS-other,0,0,0.000000,0

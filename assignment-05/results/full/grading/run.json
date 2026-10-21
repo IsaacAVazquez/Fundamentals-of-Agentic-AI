@@ -1,0 +1,305 @@
+{
+  "version": "a5-audit-v1",
+  "analysis_count": 660622,
+  "analysis_sha256": "1fc85de68a304dd8978b537cfa58793d5f41cbaf417fa32cb53899f83a2fcef6",
+  "classification_input_fields": [
+    "review_text"
+  ],
+  "allow_multi_issue": false,
+  "exported_at": "2026-10-21T04:14:28Z",
+  "run_id": "full",
+  "synthetic_input": false,
+  "source": {
+    "file": "spotify_reviews_18months.csv",
+    "sha256": "1fc85de68a304dd8978b537cfa58793d5f41cbaf417fa32cb53899f83a2fcef6",
+    "bytes": 97400616
+  },
+  "row_hash_definition": "sha256(utf8(json.dumps([review_id, review_text, review_rating, review_likes, app_version, review_timestamp], ensure_ascii=False, separators=(",
+  "label_config": "anthropic:claude-haiku-5-5|effort=low|prompt=v1|schema=v1",
+  "controls": {
+    "backend": "anthropic",
+    "model": "claude-haiku-5-5",
+    "effort": "low",
+    "batch_size": 25,
+    "workers": 20,
+    "max_spend_usd": 100.0,
+    "max_output_tokens": 8000,
+    "max_batches": null,
+    "max_reviews": null,
+    "time_limit_s": null,
+    "fallback_model": null,
+    "fallback_fraction": 0.02,
+    "rates_path": "runs/full/cost/rates.csv",
+    "backoff_tries": 6,
+    "label_config": "anthropic:claude-haiku-5-5|effort=low|prompt=v1|schema=v1"
+  },
+  "models": {
+    "anthropic:claude-haiku-5-5": {
+      "calls": 19978,
+      "roles": [
+        "enrich",
+        "group",
+        "verify"
+      ]
+    },
+    "anthropic:claude-sonnet-5-5": {
+      "calls": 1,
+      "roles": [
+        "memo"
+      ]
+    }
+  },
+  "phases": [
+    {
+      "phase": "initial",
+      "started_at": "2026-10-20T23:26:37Z",
+      "before": {
+        "ts": "2026-10-20T23:26:37Z",
+        "phase": "initial",
+        "moment": "before",
+        "statuses": {
+          "pending": 660609,
+          "completed": 0,
+          "quarantined": 13
+        },
+        "completed_count": 0,
+        "completed_ids_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "classify_calls_so_far": 0,
+        "classify_spend_so_far_usd": 0.0
+      },
+      "finished_at": "2026-10-20T23:26:48Z",
+      "stop_reason": "max_batches",
+      "after": {
+        "ts": "2026-10-20T23:26:48Z",
+        "phase": "initial",
+        "moment": "after",
+        "statuses": {
+          "pending": 660459,
+          "completed": 150,
+          "quarantined": 13
+        },
+        "completed_count": 150,
+        "completed_ids_sha256": "a0caf628934af645274b9d74551b9a3b92da15e1d38db510a7747cbd6aa72aa8",
+        "classify_calls_so_far": 6,
+        "classify_spend_so_far_usd": 0.008804
+      },
+      "batches": 6,
+      "completed_this_run": 150,
+      "cache_hits": 0,
+      "wall_clock_s": 10.462
+    },
+    {
+      "phase": "resume",
+      "started_at": "2026-10-20T23:26:50Z",
+      "before": {
+        "ts": "2026-10-20T23:26:50Z",
+        "phase": "resume",
+        "moment": "before",
+        "statuses": {
+          "pending": 660459,
+          "completed": 150,
+          "quarantined": 13
+        },
+        "completed_count": 150,
+        "completed_ids_sha256": "a0caf628934af645274b9d74551b9a3b92da15e1d38db510a7747cbd6aa72aa8",
+        "classify_calls_so_far": 6,
+        "classify_spend_so_far_usd": 0.008804
+      },
+      "finished_at": "2026-10-21T00:10:31Z",
+      "stop_reason": "interrupted",
+      "after": {
+        "ts": "2026-10-21T00:10:31Z",
+        "phase": "resume",
+        "moment": "after",
+        "statuses": {
+          "pending": 559697,
+          "completed": 100912,
+          "quarantined": 13
+        },
+        "completed_count": 100912,
+        "completed_ids_sha256": "df01aca06f4976a023ad79c41924eb39a15769e4e1b89a88af24973188050a5b",
+        "classify_calls_so_far": 3046,
+        "classify_spend_so_far_usd": 4.610438
+      },
+      "batches": 3040,
+      "completed_this_run": 100762,
+      "cache_hits": 25034,
+      "wall_clock_s": 2621.507
+    },
+    {
+      "phase": "resume",
+      "started_at": "2026-10-21T00:10:37Z",
+      "before": {
+        "ts": "2026-10-21T00:10:37Z",
+        "phase": "resume",
+        "moment": "before",
+        "statuses": {
+          "pending": 559697,
+          "completed": 100912,
+          "quarantined": 13
+        },
+        "completed_count": 100912,
+        "completed_ids_sha256": "df01aca06f4976a023ad79c41924eb39a15769e4e1b89a88af24973188050a5b",
+        "classify_calls_so_far": 3046,
+        "classify_spend_so_far_usd": 4.610438
+      },
+      "finished_at": "2026-10-21T00:11:49Z",
+      "stop_reason": "provider_unavailable",
+      "after": {
+        "ts": "2026-10-21T00:11:49Z",
+        "phase": "resume",
+        "moment": "after",
+        "statuses": {
+          "pending": 554254,
+          "completed": 106355,
+          "quarantined": 13
+        },
+        "completed_count": 106355,
+        "completed_ids_sha256": "339d9aba36114acdef031100da531f037556a530c196c5ddb885a42c2a5ff46f",
+        "classify_calls_so_far": 3331,
+        "classify_spend_so_far_usd": 4.688529
+      },
+      "batches": 128,
+      "completed_this_run": 5443,
+      "cache_hits": 4179,
+      "wall_clock_s": 71.622
+    },
+    {
+      "phase": "resume",
+      "started_at": "2026-10-21T00:12:20Z",
+      "before": {
+        "ts": "2026-10-21T00:12:20Z",
+        "phase": "resume",
+        "moment": "before",
+        "statuses": {
+          "pending": 554254,
+          "completed": 106355,
+          "quarantined": 13
+        },
+        "completed_count": 106355,
+        "completed_ids_sha256": "339d9aba36114acdef031100da531f037556a530c196c5ddb885a42c2a5ff46f",
+        "classify_calls_so_far": 3331,
+        "classify_spend_so_far_usd": 4.688529
+      },
+      "finished_at": "2026-10-21T00:17:37Z",
+      "stop_reason": "interrupted",
+      "after": {
+        "ts": "2026-10-21T00:17:37Z",
+        "phase": "resume",
+        "moment": "after",
+        "statuses": {
+          "pending": 540564,
+          "completed": 120045,
+          "quarantined": 13
+        },
+        "completed_count": 120045,
+        "completed_ids_sha256": "f430e73bf54398708a9b91cdc400645a8ca00e9b3d17dadd3e17549eaea904d1",
+        "classify_calls_so_far": 4015,
+        "classify_spend_so_far_usd": 5.366043
+      },
+      "batches": 448,
+      "completed_this_run": 13690,
+      "cache_hits": 2517,
+      "wall_clock_s": 317.198
+    },
+    {
+      "phase": "resume",
+      "started_at": "2026-10-21T00:17:46Z",
+      "before": {
+        "ts": "2026-10-21T00:17:46Z",
+        "phase": "resume",
+        "moment": "before",
+        "statuses": {
+          "pending": 540564,
+          "completed": 120045,
+          "quarantined": 13
+        },
+        "completed_count": 120045,
+        "completed_ids_sha256": "f430e73bf54398708a9b91cdc400645a8ca00e9b3d17dadd3e17549eaea904d1",
+        "classify_calls_so_far": 4015,
+        "classify_spend_so_far_usd": 5.366043
+      },
+      "finished_at": "2026-10-21T03:05:26Z",
+      "stop_reason": "interrupted",
+      "after": {
+        "ts": "2026-10-21T03:05:26Z",
+        "phase": "resume",
+        "moment": "after",
+        "statuses": {
+          "pending": 213169,
+          "completed": 447440,
+          "quarantined": 13
+        },
+        "completed_count": 447440,
+        "completed_ids_sha256": "479bd18e5f6242e555ed6351c5a1872169e55595ec9a6cf28b397d07fa6cd1e4",
+        "classify_calls_so_far": 13175,
+        "classify_spend_so_far_usd": 19.327966
+      },
+      "batches": 9160,
+      "completed_this_run": 327395,
+      "cache_hits": 99331,
+      "wall_clock_s": 10060.581
+    },
+    {
+      "phase": "resume",
+      "started_at": "2026-10-21T03:05:28Z",
+      "before": {
+        "ts": "2026-10-21T03:05:28Z",
+        "phase": "resume",
+        "moment": "before",
+        "statuses": {
+          "pending": 213169,
+          "completed": 447440,
+          "quarantined": 13
+        },
+        "completed_count": 447440,
+        "completed_ids_sha256": "479bd18e5f6242e555ed6351c5a1872169e55595ec9a6cf28b397d07fa6cd1e4",
+        "classify_calls_so_far": 13175,
+        "classify_spend_so_far_usd": 19.327966
+      },
+      "finished_at": "2026-10-21T04:07:43Z",
+      "stop_reason": "no_pending",
+      "after": {
+        "ts": "2026-10-21T04:07:42Z",
+        "phase": "resume",
+        "moment": "after",
+        "statuses": {
+          "pending": 0,
+          "completed": 660144,
+          "quarantined": 478
+        },
+        "completed_count": 660144,
+        "completed_ids_sha256": "02646adadbf198d37094b0feace8598457cf2620b61cf289d2b0038d66a9ade3",
+        "classify_calls_so_far": 19930,
+        "classify_spend_so_far_usd": 29.977426
+      },
+      "batches": 6755,
+      "completed_this_run": 212704,
+      "cache_hits": 45357,
+      "wall_clock_s": 3734.419
+    }
+  ],
+  "counts": {
+    "source_rows": 660622,
+    "nonempty_rows": 660609,
+    "pending": 0,
+    "completed": 660144,
+    "quarantined": 478,
+    "classified_nonempty": 660144,
+    "completed_via_exact_text_cache": 176418
+  },
+  "enrichment_limit_per_request": 50,
+  "group_and_memo_inputs": "group calls carry the example review ids they were sent; the memo call consumes claims.csv, ranking.json, and the evidence pack in recommendations.json, so its review_ids is empty",
+  "files": [
+    "run.json",
+    "ingestion.json",
+    "records.jsonl.gz",
+    "membership.csv",
+    "ranking.csv",
+    "claims.csv",
+    "claims_context.csv",
+    "calls.jsonl",
+    "checkpoint_before.json",
+    "checkpoint_after.json"
+  ]
+}

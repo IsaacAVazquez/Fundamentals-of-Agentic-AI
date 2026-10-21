@@ -1,7 +1,7 @@
 {
   "label": "cold",
-  "measured_at": "2026-10-20T06:21:16Z",
-  "input": "/tmp/claude-0/-home-user-Fundamentals-of-Agentic-AI/ec44ca5c-665c-5673-bf45-66c272bb4165/scratchpad/syn100.csv",
+  "measured_at": "2026-10-20T23:02:40Z",
+  "input": "/private/tmp/claude-501/-Users-isaacvazquez-Fundamentals-of-Agentic-AI/475d26cb-83ba-4581-a72d-c9c156fac8c5/scratchpad/syn100.csv",
   "synthetic_input": true,
   "rows": 100,
   "statuses": {
@@ -11,13 +11,13 @@
   },
   "stage_seconds": {
     "prepare": 0.011,
-    "classify": 0.016,
-    "verify": 0.005,
-    "group": 0.007,
-    "rank": 0.004,
-    "memo": 0.005
+    "classify": 0.009,
+    "verify": 0.002,
+    "group": 0.008,
+    "rank": 0.002,
+    "memo": 0.002
   },
-  "wall_clock_seconds": 0.049,
+  "wall_clock_seconds": 0.035,
   "new_enrichment_calls_this_run": 2,
   "classify_stop_reason": "no_pending",
   "verifier": {

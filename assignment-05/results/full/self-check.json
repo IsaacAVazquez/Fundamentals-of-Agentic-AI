@@ -1,0 +1,124 @@
+{
+  "audit_script_sha256": "d60bd66d84922d934c65b3d42b2c7d36cc738e8c75e2d6f2b2f58bca3141c26d",
+  "audit_version": "a5-audit-v1",
+  "automatic_grade": null,
+  "calculated_ranking": [
+    {
+      "complaint_count": 68832,
+      "issue_id": "ISS-usability",
+      "mean_severity": "2.257061",
+      "priority_score": 155358,
+      "rank": 1,
+      "severity_sum": 155358
+    },
+    {
+      "complaint_count": 45188,
+      "issue_id": "ISS-playback",
+      "mean_severity": "3.205409",
+      "priority_score": 144846,
+      "rank": 2,
+      "severity_sum": 144846
+    },
+    {
+      "complaint_count": 84647,
+      "issue_id": "ISS-other",
+      "mean_severity": "1.691247",
+      "priority_score": 143159,
+      "rank": 3,
+      "severity_sum": 143159
+    },
+    {
+      "complaint_count": 43410,
+      "issue_id": "ISS-billing",
+      "mean_severity": "2.638770",
+      "priority_score": 114549,
+      "rank": 4,
+      "severity_sum": 114549
+    },
+    {
+      "complaint_count": 23909,
+      "issue_id": "ISS-catalog",
+      "mean_severity": "2.545485",
+      "priority_score": 60860,
+      "rank": 5,
+      "severity_sum": 60860
+    },
+    {
+      "complaint_count": 12214,
+      "issue_id": "ISS-access",
+      "mean_severity": "3.897331",
+      "priority_score": 47602,
+      "rank": 6,
+      "severity_sum": 47602
+    },
+    {
+      "complaint_count": 7551,
+      "issue_id": "ISS-downloads",
+      "mean_severity": "3.324858",
+      "priority_score": 25106,
+      "rank": 7,
+      "severity_sum": 25106
+    },
+    {
+      "complaint_count": 878,
+      "issue_id": "ISS-support",
+      "mean_severity": "2.551253",
+      "priority_score": 2240,
+      "rank": 8,
+      "severity_sum": 2240
+    }
+  ],
+  "coverage": {
+    "accounted_fraction": 1.0,
+    "duplicate_ids": 0,
+    "expected": 660622,
+    "invalid_or_unresolved": 0,
+    "labelable": 660609,
+    "labelable_completion_fraction": 0.999296,
+    "missing": 0,
+    "quarantined": 478,
+    "received_lines": 660622,
+    "unique_expected_ids": 660622,
+    "valid_cache_reuses": 176418,
+    "valid_completed": 660144,
+    "valid_completion_fraction": 0.999276
+  },
+  "examples": [
+    {
+      "code": "unfinished_classification",
+      "detail": "465"
+    }
+  ],
+  "hash_convention": "Reference/benchmark: canonical UTF-8 JSON via canonical(); input files and audit script: exact bytes.",
+  "input_files_sha256": {
+    "calls.jsonl": "ba4117d989d4f7cb05e388d931ca944cfb216ae02f85c822512c40580bfbbdc7",
+    "checkpoint_after.json": "9a1437e5a89190710d4bbef8b00653b169c469efaeb32a77fe4ce55e3f3350d3",
+    "checkpoint_before.json": "5551e8be6de99a659747b1ca2c8e5d06f6305719157f12c632e4f13cd7f95027",
+    "claims.csv": "27b8a341902f6502e6219106e5f572253cd9ffc2418efe548a3d894ada482d6e",
+    "claims_context.csv": "5edb89ca6c4d848151a488bba1c30c3d674e5eb720e3c25c52bdb62dd88fad8a",
+    "ingestion.json": "5512dd793b0bde3bd51f28b20b440108f3c9bab31233819bea5f32ce19482153",
+    "membership.csv": "5b53f09201c64d785fbda5c3d02e0a2d17824fed7bb785e5f17f4e9669e74be2",
+    "ranking.csv": "069f2f4aa669650d287df2c4efdf125973a8e5ec6a8a7f71b3b8be11d499f85c",
+    "records.jsonl.gz": "c0bcc71780a3611a69fd8fa8eaa18a046423ccf00f7647baedffa8b4abf0ee40",
+    "run.json": "e2c86e018d7def5b3f7ae48587487a30e7d36eb1e903b2cb416f4f215a84f888"
+  },
+  "issue_counts": {
+    "unfinished_classification": 1
+  },
+  "limits": [
+    "Artifacts do not prove actual model execution, authorship, cost, or independent verification.",
+    "Exact quote membership does not prove that the quote supports the label.",
+    "Claims export checks numbers; a person must check that all memo claims are represented.",
+    "Benchmark agreement is diagnostic; final 4/3/3 grades require rubric review."
+  ],
+  "quality": {
+    "official": false,
+    "status": "not_supplied"
+  },
+  "reference_sha256": "bb31d47db9b9a85cd97b3ba6e880915aff41a6127c3accee719c139ab34b7e97",
+  "reported_calls": 19979,
+  "reported_input_tokens": 35410076,
+  "reported_output_tokens": 52353494,
+  "status": "review_required",
+  "working_coverage_point_candidate": 0.9996
+}

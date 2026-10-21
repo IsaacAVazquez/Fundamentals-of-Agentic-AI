@@ -1,0 +1,19 @@
+{
+  "synthetic_test": true,
+  "excluded_from_aggregates": true,
+  "review_id": "2ffdf599-a0d5-4c01-bf26-025215d44c06",
+  "original": {
+    "topic": "downloads",
+    "severity": 2
+  },
+  "planted_wrong": {
+    "topic": "access",
+    "severity": 5
+  },
+  "verifier": {
+    "topic": "downloads",
+    "intent": "cancellation",
+    "severity": 3
+  },
+  "caught": true
+}

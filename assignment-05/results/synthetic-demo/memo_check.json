@@ -12,10 +12,7 @@
   ],
   "unknown_claims": [],
   "unknown_issues": [],
-  "unmatched_numbers": [
-    "0000003",
-    "0000016"
-  ],
+  "unmatched_numbers": [],
   "number_claim_mismatches": [],
   "cited_review_ids": [
     "syn-0000003",
@@ -23,5 +20,5 @@
   ],
   "unknown_review_ids": [],
   "forbidden_phrases": [],
-  "passed": false
+  "passed": true
 }

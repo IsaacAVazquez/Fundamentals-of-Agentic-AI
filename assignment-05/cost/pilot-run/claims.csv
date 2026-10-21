@@ -1,0 +1,48 @@
+claim_id,issue_id,metric,value,computation
+C1,,source_rows,100,count of rows ingested
+C2,,completed_records,100,records with status completed
+C3,,quarantined_records,0,records with status quarantined (incl. empty texts)
+C4,,pending_records,0,records not yet classified
+C5,,complaint_records,51,completed records with intent complaint or cancellation
+C6,ISS-playback,rank,1,"position after sorting by score desc, issue_id asc"
+C7,ISS-playback,complaint_count,10,members of the issue
+C8,ISS-playback,cancellation_count,1,members with intent cancellation
+C9,ISS-playback,severity_sum,33,sum of member severities
+C10,ISS-playback,mean_severity,3.300000,"severity_sum / complaint_count, 6 decimals half-up"
+C11,ISS-playback,priority_score,33,complaint_count x mean_severity = severity_sum
+C12,ISS-usability,rank,2,"position after sorting by score desc, issue_id asc"
+C13,ISS-usability,complaint_count,15,members of the issue
+C14,ISS-usability,cancellation_count,2,members with intent cancellation
+C15,ISS-usability,severity_sum,32,sum of member severities
+C16,ISS-usability,mean_severity,2.133333,"severity_sum / complaint_count, 6 decimals half-up"
+C17,ISS-usability,priority_score,32,complaint_count x mean_severity = severity_sum
+C18,ISS-other,rank,3,"position after sorting by score desc, issue_id asc"
+C19,ISS-other,complaint_count,13,members of the issue
+C20,ISS-other,cancellation_count,2,members with intent cancellation
+C21,ISS-other,severity_sum,23,sum of member severities
+C22,ISS-other,mean_severity,1.769231,"severity_sum / complaint_count, 6 decimals half-up"
+C23,ISS-other,priority_score,23,complaint_count x mean_severity = severity_sum
+C24,ISS-access,rank,4,"position after sorting by score desc, issue_id asc"
+C25,ISS-access,complaint_count,3,members of the issue
+C26,ISS-access,cancellation_count,0,members with intent cancellation
+C27,ISS-access,severity_sum,12,sum of member severities
+C28,ISS-access,mean_severity,4.000000,"severity_sum / complaint_count, 6 decimals half-up"
+C29,ISS-access,priority_score,12,complaint_count x mean_severity = severity_sum
+C30,ISS-catalog,rank,5,"position after sorting by score desc, issue_id asc"
+C31,ISS-catalog,complaint_count,5,members of the issue
+C32,ISS-catalog,cancellation_count,0,members with intent cancellation
+C33,ISS-catalog,severity_sum,11,sum of member severities
+C34,ISS-catalog,mean_severity,2.200000,"severity_sum / complaint_count, 6 decimals half-up"
+C35,ISS-catalog,priority_score,11,complaint_count x mean_severity = severity_sum
+C36,ISS-billing,rank,6,"position after sorting by score desc, issue_id asc"
+C37,ISS-billing,complaint_count,3,members of the issue
+C38,ISS-billing,cancellation_count,2,members with intent cancellation
+C39,ISS-billing,severity_sum,8,sum of member severities
+C40,ISS-billing,mean_severity,2.666667,"severity_sum / complaint_count, 6 decimals half-up"
+C41,ISS-billing,priority_score,8,complaint_count x mean_severity = severity_sum
+C42,ISS-downloads,rank,7,"position after sorting by score desc, issue_id asc"
+C43,ISS-downloads,complaint_count,2,members of the issue
+C44,ISS-downloads,cancellation_count,1,members with intent cancellation
+C45,ISS-downloads,severity_sum,6,sum of member severities
+C46,ISS-downloads,mean_severity,3.000000,"severity_sum / complaint_count, 6 decimals half-up"
+C47,ISS-downloads,priority_score,6,complaint_count x mean_severity = severity_sum

@@ -1,7 +1,7 @@
 {
   "synthetic_test": true,
-  "run_dir": "/tmp/resume-e78rrvkf",
-  "input": "/tmp/claude-0/-home-user-Fundamentals-of-Agentic-AI/ec44ca5c-665c-5673-bf45-66c272bb4165/scratchpad/syn.csv",
+  "run_dir": "/var/folders/f0/7ryz8txs2bq0hnjzmzz34wr80000gn/T/resume-_7mljkel",
+  "input": "/private/tmp/claude-501/-Users-isaacvazquez-Fundamentals-of-Agentic-AI/475d26cb-83ba-4581-a72d-c9c156fac8c5/scratchpad/syn.csv",
   "phase_initial": {
     "stop_reason": "max_batches",
     "batches": 2,
@@ -26,9 +26,9 @@
   "checkpoints": [
     {
       "phase": "initial",
-      "started_at": "2026-10-20T06:21:15Z",
+      "started_at": "2026-10-20T23:02:40Z",
       "before": {
-        "ts": "2026-10-20T06:21:15Z",
+        "ts": "2026-10-20T23:02:40Z",
         "phase": "initial",
         "moment": "before",
         "statuses": {
@@ -41,10 +41,10 @@
         "classify_calls_so_far": 0,
         "classify_spend_so_far_usd": 0.0
       },
-      "finished_at": "2026-10-20T06:21:15Z",
+      "finished_at": "2026-10-20T23:02:40Z",
       "stop_reason": "max_batches",
       "after": {
-        "ts": "2026-10-20T06:21:15Z",
+        "ts": "2026-10-20T23:02:40Z",
         "phase": "initial",
         "moment": "after",
         "statuses": {
@@ -60,13 +60,13 @@
       "batches": 2,
       "completed_this_run": 50,
       "cache_hits": 0,
-      "wall_clock_s": 0.008
+      "wall_clock_s": 0.003
     },
     {
       "phase": "resume",
-      "started_at": "2026-10-20T06:21:15Z",
+      "started_at": "2026-10-20T23:02:40Z",
       "before": {
-        "ts": "2026-10-20T06:21:15Z",
+        "ts": "2026-10-20T23:02:40Z",
         "phase": "resume",
         "moment": "before",
         "statuses": {
@@ -79,10 +79,10 @@
         "classify_calls_so_far": 2,
         "classify_spend_so_far_usd": 0.0
       },
-      "finished_at": "2026-10-20T06:21:15Z",
+      "finished_at": "2026-10-20T23:02:40Z",
       "stop_reason": "no_pending",
       "after": {
-        "ts": "2026-10-20T06:21:15Z",
+        "ts": "2026-10-20T23:02:40Z",
         "phase": "resume",
         "moment": "after",
         "statuses": {
@@ -98,7 +98,7 @@
       "batches": 3,
       "completed_this_run": 948,
       "cache_hits": 888,
-      "wall_clock_s": 0.034
+      "wall_clock_s": 0.021
     }
   ],
   "passed": true

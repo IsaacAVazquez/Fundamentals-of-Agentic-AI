@@ -1,0 +1,42 @@
+{
+  "cited_claims": [
+    "C1",
+    "C10",
+    "C11",
+    "C13",
+    "C16",
+    "C17",
+    "C19",
+    "C2",
+    "C22",
+    "C23",
+    "C25",
+    "C26",
+    "C29",
+    "C3",
+    "C35",
+    "C37",
+    "C4",
+    "C40",
+    "C41",
+    "C47",
+    "C5",
+    "C53",
+    "C7",
+    "C8",
+    "C9"
+  ],
+  "unknown_claims": [],
+  "unknown_issues": [],
+  "unmatched_numbers": [],
+  "number_claim_mismatches": [],
+  "cited_review_ids": [
+    "00924d14-8608-4fe2-853f-44ebbb975362",
+    "0377db91-97c1-41f5-ad41-97543d5df5ac",
+    "18308b6c-2b30-4e54-a95f-2a246b49376c",
+    "25c2686b-9948-4e01-a006-25ae1f3cc4ca"
+  ],
+  "unknown_review_ids": [],
+  "forbidden_phrases": [],
+  "passed": true
+}

@@ -1,0 +1,9 @@
+issue_id,name,topic,complaint_count,cancellation_count,severity_sum,mean_severity,priority_score,mean_sentiment,needs_review_count,share_of_complaint_records,rank
+ISS-usability,Playback controls broken after recent updates,usability,68832,5571,155358,2.257061,155358,-0.576289,4248,0.240143,1
+ISS-playback,"Music playback stops, crashes, or fails to load",playback,45188,3450,144846,3.205409,144846,-0.657055,2824,0.157653,2
+ISS-other,App fails to launch or work,other,84647,7543,143159,1.691247,143159,-0.729446,20412,0.295319,3
+ISS-billing,Charged after cancelling or without consent,billing,43410,8206,114549,2.638770,114549,-0.696690,3856,0.151450,4
+ISS-catalog,Music library content disappearing or missing features,catalog,23909,1303,60860,2.545485,60860,-0.517874,2216,0.083414,5
+ISS-access,"Accounts hacked, disabled, or deleted without recovery",access,12214,622,47602,3.897331,47602,-0.708981,773,0.042613,6
+ISS-downloads,Downloaded songs unexpectedly deleted from library,downloads,7551,335,25106,3.324858,25106,-0.560118,695,0.026344,7
+ISS-support,Unreachable human support for account billing problems,support,878,104,2240,2.551253,2240,-0.721355,146,0.003063,8

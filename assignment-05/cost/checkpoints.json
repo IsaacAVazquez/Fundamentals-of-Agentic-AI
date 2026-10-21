@@ -1,0 +1,149 @@
+[
+  {
+    "label": "checkpoint_500",
+    "run_dir": "runs/checkpoint-500",
+    "recorded_at": "2026-10-20T23:17:24Z",
+    "rows": 500,
+    "statuses": {
+      "pending": 0,
+      "completed": 500,
+      "quarantined": 0
+    },
+    "directly_classified": 479,
+    "cache_copies": 21,
+    "workers": 4,
+    "classify_calls": 21,
+    "classify_failed_calls": 0,
+    "classify_cost_usd": 0.028679,
+    "total_cost_usd": 0.033757,
+    "classify_wall_clock_s": 57.093,
+    "phases": [
+      {
+        "phase": "initial",
+        "stop_reason": "max_batches",
+        "batches": 2,
+        "wall_clock_s": 9.151
+      },
+      {
+        "phase": "resume",
+        "stop_reason": "no_pending",
+        "batches": 19,
+        "wall_clock_s": 47.942
+      }
+    ],
+    "usd_per_directly_classified_record": 5.987e-05,
+    "seconds_per_directly_classified_record_at_this_concurrency": 0.1192,
+    "full_run_extrapolation": {
+      "first_pass_records": 484189,
+      "enrichment_usd": 28.99,
+      "hours_at_this_concurrency": 16.03,
+      "note": "measured at the checkpoint's own worker count; the pilot projection models workers, this does not"
+    }
+  },
+  {
+    "label": "analysis_10000",
+    "run_dir": "runs/checkpoint-10000",
+    "recorded_at": "2026-10-20T23:23:52Z",
+    "rows": 10000,
+    "statuses": {
+      "pending": 0,
+      "completed": 9994,
+      "quarantined": 6
+    },
+    "directly_classified": 8442,
+    "cache_copies": 1552,
+    "workers": 12,
+    "classify_calls": 339,
+    "classify_failed_calls": 0,
+    "classify_cost_usd": 0.508419,
+    "total_cost_usd": 0.522747,
+    "classify_wall_clock_s": 280.152,
+    "phases": [
+      {
+        "phase": "initial",
+        "stop_reason": "max_batches",
+        "batches": 6,
+        "wall_clock_s": 9.441
+      },
+      {
+        "phase": "resume",
+        "stop_reason": "no_pending",
+        "batches": 333,
+        "wall_clock_s": 270.711
+      }
+    ],
+    "usd_per_directly_classified_record": 6.022e-05,
+    "seconds_per_directly_classified_record_at_this_concurrency": 0.0332,
+    "full_run_extrapolation": {
+      "first_pass_records": 484189,
+      "enrichment_usd": 29.16,
+      "hours_at_this_concurrency": 4.46,
+      "note": "measured at the checkpoint's own worker count; the pilot projection models workers, this does not"
+    }
+  },
+  {
+    "label": "full_corpus",
+    "run_dir": "runs/full",
+    "recorded_at": "2026-10-21T04:14:40Z",
+    "rows": 660622,
+    "statuses": {
+      "pending": 0,
+      "completed": 660144,
+      "quarantined": 478
+    },
+    "directly_classified": 483726,
+    "cache_copies": 176418,
+    "workers": 20,
+    "classify_calls": 19930,
+    "classify_failed_calls": 470,
+    "classify_cost_usd": 29.977053,
+    "total_cost_usd": 30.065654,
+    "classify_wall_clock_s": 16815.789,
+    "phases": [
+      {
+        "phase": "initial",
+        "stop_reason": "max_batches",
+        "batches": 6,
+        "wall_clock_s": 10.462
+      },
+      {
+        "phase": "resume",
+        "stop_reason": "interrupted",
+        "batches": 3040,
+        "wall_clock_s": 2621.507
+      },
+      {
+        "phase": "resume",
+        "stop_reason": "provider_unavailable",
+        "batches": 128,
+        "wall_clock_s": 71.622
+      },
+      {
+        "phase": "resume",
+        "stop_reason": "interrupted",
+        "batches": 448,
+        "wall_clock_s": 317.198
+      },
+      {
+        "phase": "resume",
+        "stop_reason": "interrupted",
+        "batches": 9160,
+        "wall_clock_s": 10060.581
+      },
+      {
+        "phase": "resume",
+        "stop_reason": "no_pending",
+        "batches": 6755,
+        "wall_clock_s": 3734.419
+      }
+    ],
+    "usd_per_directly_classified_record": 6.197e-05,
+    "seconds_per_directly_classified_record_at_this_concurrency": 0.0348,
+    "full_run_extrapolation": {
+      "first_pass_records": 484189,
+      "enrichment_usd": 30.01,
+      "hours_at_this_concurrency": 4.68,
+      "note": "measured at the checkpoint's own worker count; the pilot projection models workers, this does not"
+    }
+  }
+]

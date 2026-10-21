@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-10-20T23:16:54Z",
+  "seed": 20261020,
+  "sample_requested": 50,
+  "sample_size": 50,
+  "compared": 49,
+  "verifier_failures": 1,
+  "model": "anthropic:claude-haiku-5-5",
+  "effort": "low",
+  "agreement": {
+    "topic": 0.8776,
+    "intent": 0.9592,
+    "severity_exact": 0.9388
+  },
+  "severity_mae": 0.0612,
+  "sentiment_mae": 0.0755,
+  "disagreement_count": 8,
+  "disagreement_rate": 0.1633,
+  "planted_error_caught": true,
+  "cost_usd": 0.003212
+}

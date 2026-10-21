@@ -104,9 +104,9 @@ def _fake_memo(user: str) -> str:
     ev = " ".join(f'Review {q["review_id"]} says "{q["quote"]}" (severity {q["severity"]}).' for q in quotes)
     memo = (f"## Recommendation\n\nPut the next quarter of product effort on [{top['issue_id']}] ({top['name']}).\n\n"
             f"## Why this issue\n\nIt has {cite(top['issue_id'], 'complaint_count')} complaint records with a mean severity of "
-            f"{cite(top['issue_id'], 'mean_severity')}, for a score of {cite(top['issue_id'], 'score')}, the highest of the "
+            f"{cite(top['issue_id'], 'mean_severity')}, for a score of {cite(top['issue_id'], 'priority_score')}, the highest of the "
             f"{len(ranked)} issues. {ev}\n\n## Alternatives considered\n\n"
-            + " ".join(f"[{a['issue_id']}] scored {cite(a['issue_id'], 'score')} on {cite(a['issue_id'], 'complaint_count')} complaints." for a in ranked[1:3])
+            + " ".join(f"[{a['issue_id']}] scored {cite(a['issue_id'], 'priority_score')} on {cite(a['issue_id'], 'complaint_count')} complaints." for a in ranked[1:3])
             + f"\n\n## Limitations\n\nOnly {cite('', 'completed_records')} records were classified and {cite('', 'quarantined_records')} were quarantined. "
             "Reviews are self-selected and nothing here measures revenue or churn.")
     cited = sorted(set(re.findall(r"\[(C\d+)\]", memo)))

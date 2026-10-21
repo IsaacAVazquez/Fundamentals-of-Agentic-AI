@@ -1,20 +1,21 @@
-{"ts": "2026-10-20T06:14:08Z", "event": "quarantined_empty", "count": 2}
-{"ts": "2026-10-20T06:14:08Z", "event": "classify_start", "phase": "initial", "model": "fake-deterministic-v1", "label_config": "fake:fake-deterministic-v1|effort=low|prompt=v1|schema=v1", "workers": 2, "batch_size": 25, "max_spend_usd": 5.0, "statuses": {"pending": 998, "completed": 0, "quarantined": 2}}
-{"ts": "2026-10-20T06:14:08Z", "event": "batch", "phase": "initial", "attempt": 1, "model": "fake-deterministic-v1", "size": 25, "completed": 25, "retry_queued": 0, "quarantined": 0, "cost_usd": 0.0, "spent_usd": 0.0}
-{"ts": "2026-10-20T06:14:08Z", "event": "batch", "phase": "initial", "attempt": 1, "model": "fake-deterministic-v1", "size": 25, "completed": 25, "retry_queued": 0, "quarantined": 0, "cost_usd": 0.0, "spent_usd": 0.0}
-{"ts": "2026-10-20T06:14:08Z", "event": "batch", "phase": "initial", "attempt": 1, "model": "fake-deterministic-v1", "size": 25, "completed": 25, "retry_queued": 0, "quarantined": 0, "cost_usd": 0.0, "spent_usd": 0.0}
-{"ts": "2026-10-20T06:14:08Z", "event": "batch", "phase": "initial", "attempt": 1, "model": "fake-deterministic-v1", "size": 9, "completed": 9, "retry_queued": 0, "quarantined": 0, "cost_usd": 0.0, "spent_usd": 0.0}
-{"ts": "2026-10-20T06:14:08Z", "event": "cache_reuse", "count": 395}
-{"ts": "2026-10-20T06:14:08Z", "event": "cache_reuse", "count": 357}
-{"ts": "2026-10-20T06:14:08Z", "event": "cache_reuse", "count": 109}
-{"ts": "2026-10-20T06:14:08Z", "event": "batch", "phase": "initial", "attempt": 1, "model": "fake-deterministic-v1", "size": 1, "completed": 1, "retry_queued": 0, "quarantined": 0, "cost_usd": 0.0, "spent_usd": 0.0}
-{"ts": "2026-10-20T06:14:08Z", "event": "batch", "phase": "initial", "attempt": 1, "model": "fake-deterministic-v1", "size": 25, "completed": 25, "retry_queued": 0, "quarantined": 0, "cost_usd": 0.0, "spent_usd": 0.0}
-{"ts": "2026-10-20T06:14:08Z", "event": "cache_reuse", "count": 27}
-{"ts": "2026-10-20T06:14:08Z", "event": "classify_stop", "phase": "initial", "reason": "no_pending", "batches": 6, "completed": 998, "cache_hits": 888, "statuses": {"pending": 0, "completed": 998, "quarantined": 2}, "spent_usd": 0.0, "wall_clock_s": 0.035}
-{"ts": "2026-10-20T06:14:08Z", "event": "verify_start", "sample": 40, "seed": 20261020, "model": "fake-deterministic-v1"}
-{"ts": "2026-10-20T06:14:08Z", "event": "verify_done", "seed": 20261020, "sample_requested": 40, "sample_size": 40, "compared": 40, "verifier_failures": 0, "model": "fake:fake-deterministic-v1", "effort": "low", "agreement": {"topic": 1.0, "intent": 1.0, "severity_exact": 1.0}, "severity_mae": 0.0, "sentiment_mae": 0.0, "disagreement_count": 0, "disagreement_rate": 0.0, "planted_error_caught": true, "cost_usd": 0.0}
-{"ts": "2026-10-20T06:14:08Z", "event": "group_done", "members": 877, "issues": 8, "named_by_model": true}
-{"ts": "2026-10-20T06:14:08Z", "event": "rank_done", "top": ["ISS-access", "ISS-playback", "ISS-downloads"], "claims": 53}
-{"ts": "2026-10-20T06:14:08Z", "event": "memo_done", "passed": false, "priority": "ISS-access", "cost_usd": 0.0}
-{"ts": "2026-10-20T06:21:16Z", "event": "rank_done", "top": ["ISS-access", "ISS-playback", "ISS-downloads"], "claims": 53}
-{"ts": "2026-10-20T06:21:16Z", "event": "rank_done", "top": ["ISS-access", "ISS-playback", "ISS-downloads"], "claims": 53}
+{"ts": "2026-10-20T23:02:40Z", "event": "quarantined_empty", "count": 2}
+{"ts": "2026-10-20T23:02:40Z", "event": "classify_start", "phase": "initial", "model": "fake-deterministic-v1", "label_config": "fake:fake-deterministic-v1|effort=low|prompt=v1|schema=v1", "workers": 2, "batch_size": 25, "max_spend_usd": 5.0, "statuses": {"pending": 998, "completed": 0, "quarantined": 2}}
+{"ts": "2026-10-20T23:02:40Z", "event": "batch", "phase": "initial", "attempt": 1, "model": "fake-deterministic-v1", "size": 25, "completed": 25, "retry_queued": 0, "quarantined": 0, "cost_usd": 0.0, "spent_usd": 0.0}
+{"ts": "2026-10-20T23:02:40Z", "event": "batch", "phase": "initial", "attempt": 1, "model": "fake-deterministic-v1", "size": 25, "completed": 25, "retry_queued": 0, "quarantined": 0, "cost_usd": 0.0, "spent_usd": 0.0}
+{"ts": "2026-10-20T23:02:40Z", "event": "classify_stop", "phase": "initial", "reason": "max_batches", "batches": 2, "completed": 50, "cache_hits": 0, "statuses": {"pending": 948, "completed": 50, "quarantined": 2}, "spent_usd": 0.0, "wall_clock_s": 0.003}
+{"ts": "2026-10-20T23:02:40Z", "event": "classify_start", "phase": "resume", "model": "fake-deterministic-v1", "label_config": "fake:fake-deterministic-v1|effort=low|prompt=v1|schema=v1", "workers": 2, "batch_size": 25, "max_spend_usd": 5.0, "statuses": {"pending": 948, "completed": 50, "quarantined": 2}}
+{"ts": "2026-10-20T23:02:40Z", "event": "cache_reuse", "count": 347}
+{"ts": "2026-10-20T23:02:40Z", "event": "cache_reuse", "count": 292}
+{"ts": "2026-10-20T23:02:40Z", "event": "cache_reuse", "count": 169}
+{"ts": "2026-10-20T23:02:40Z", "event": "batch", "phase": "resume", "attempt": 1, "model": "fake-deterministic-v1", "size": 10, "completed": 10, "retry_queued": 0, "quarantined": 0, "cost_usd": 0.0, "spent_usd": 0.0}
+{"ts": "2026-10-20T23:02:40Z", "event": "batch", "phase": "resume", "attempt": 1, "model": "fake-deterministic-v1", "size": 25, "completed": 25, "retry_queued": 0, "quarantined": 0, "cost_usd": 0.0, "spent_usd": 0.0}
+{"ts": "2026-10-20T23:02:40Z", "event": "batch", "phase": "resume", "attempt": 1, "model": "fake-deterministic-v1", "size": 25, "completed": 25, "retry_queued": 0, "quarantined": 0, "cost_usd": 0.0, "spent_usd": 0.0}
+{"ts": "2026-10-20T23:02:40Z", "event": "cache_reuse", "count": 80}
+{"ts": "2026-10-20T23:02:40Z", "event": "classify_stop", "phase": "resume", "reason": "no_pending", "batches": 3, "completed": 948, "cache_hits": 888, "statuses": {"pending": 0, "completed": 998, "quarantined": 2}, "spent_usd": 0.0, "wall_clock_s": 0.015}
+{"ts": "2026-10-20T23:02:40Z", "event": "verify_start", "sample": 40, "seed": 20261020, "model": "fake-deterministic-v1"}
+{"ts": "2026-10-20T23:02:40Z", "event": "verify_done", "seed": 20261020, "sample_requested": 40, "sample_size": 40, "compared": 40, "verifier_failures": 0, "model": "fake:fake-deterministic-v1", "effort": "low", "agreement": {"topic": 1.0, "intent": 1.0, "severity_exact": 1.0}, "severity_mae": 0.0, "sentiment_mae": 0.0, "disagreement_count": 0, "disagreement_rate": 0.0, "planted_error_caught": true, "cost_usd": 0.0}
+{"ts": "2026-10-20T23:02:40Z", "event": "group_done", "members": 877, "issues": 8, "named_by_model": true}
+{"ts": "2026-10-20T23:02:40Z", "event": "rank_done", "top": ["ISS-access", "ISS-playback", "ISS-downloads"], "claims": 53}
+{"ts": "2026-10-20T23:02:40Z", "event": "memo_done", "passed": true, "priority": "ISS-access", "cost_usd": 0.0}
+{"ts": "2026-10-20T23:02:40Z", "event": "rank_done", "top": ["ISS-access", "ISS-playback", "ISS-downloads"], "claims": 53}
+{"ts": "2026-10-20T23:02:40Z", "event": "rank_done", "top": ["ISS-access", "ISS-playback", "ISS-downloads"], "claims": 53}

@@ -1,9 +1,9 @@
-issue_id,name,topic,complaint_count,cancellation_count,severity_sum,mean_severity,score,mean_sentiment,needs_review_count,share_of_complaint_records,rank
-ISS-playback,fake issue name,playback,15,3,46,3.066667,46,-0.520000,0,0.178571,1
-ISS-billing,fake issue name,billing,12,3,41,3.416667,41,-0.595833,0,0.142857,2
-ISS-usability,fake issue name,usability,20,9,40,2.000000,40,-0.300000,0,0.238095,3
-ISS-downloads,fake issue name,downloads,10,1,35,3.500000,35,-0.650000,0,0.119048,4
-ISS-catalog,fake issue name,catalog,14,5,30,2.142857,30,-0.285714,0,0.166667,5
-ISS-access,fake issue name,access,6,1,24,4.000000,24,-0.800000,0,0.071429,6
-ISS-support,fake issue name,support,7,2,7,1.000000,7,0.000000,0,0.083333,7
+issue_id,name,topic,complaint_count,cancellation_count,severity_sum,mean_severity,priority_score,mean_sentiment,needs_review_count,share_of_complaint_records,rank
+ISS-playback,fake issue name,playback,19,4,65,3.421053,65,-0.626316,0,0.223529,1
+ISS-downloads,fake issue name,downloads,14,3,49,3.500000,49,-0.650000,0,0.164706,2
+ISS-access,fake issue name,access,11,2,44,4.000000,44,-0.800000,0,0.129412,3
+ISS-usability,fake issue name,usability,15,3,30,2.000000,30,-0.300000,0,0.176471,4
+ISS-billing,fake issue name,billing,7,3,24,3.428571,24,-0.614286,0,0.082353,5
+ISS-catalog,fake issue name,catalog,7,1,15,2.142857,15,-0.285714,0,0.082353,6
+ISS-support,fake issue name,support,12,3,12,1.000000,12,0.000000,0,0.141176,7
 ISS-other,other problems,other,0,0,0,0.000000,0,0.000000,0,0.000000,8

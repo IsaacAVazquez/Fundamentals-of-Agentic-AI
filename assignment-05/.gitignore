@@ -12,3 +12,5 @@ build/
 /data/
 # Run outputs are large. The committed evidence lives under results/ and grading/.
 /runs/
+# Vercel CLI project link
+.vercel/

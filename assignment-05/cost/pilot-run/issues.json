@@ -1,0 +1,61 @@
+{
+  "grouping_rule": "issue_id = 'ISS-' + topic for every completed record whose intent is complaint or cancellation; one issue per review",
+  "issues": [
+    {
+      "issue_id": "ISS-access",
+      "topic": "access",
+      "name": "Users unable to log in or connect",
+      "description": "The examples describe users being blocked from their accounts, whether by rejected passwords or failed connections over Wi-Fi.",
+      "named_by": "anthropic:claude-haiku-5-5"
+    },
+    {
+      "issue_id": "ISS-usability",
+      "topic": "usability",
+      "name": "Frequent ads and removed music player features",
+      "description": "The examples share complaints that ads interrupt playback too often and that recent updates removed or restricted features, with several users saying they are leaving the app.",
+      "named_by": "anthropic:claude-haiku-5-5"
+    },
+    {
+      "issue_id": "ISS-playback",
+      "topic": "playback",
+      "name": "Music playback stops, skips, or won't start",
+      "description": "The examples report playlists that show as playing but produce no sound, songs that stop partway without resuming, inability to replay or seek back a few seconds, and restrictions on skipping or choosing tracks for non-premium users.",
+      "named_by": "anthropic:claude-haiku-5-5"
+    },
+    {
+      "issue_id": "ISS-downloads",
+      "topic": "downloads",
+      "name": "Offline downloads stall and fail to complete",
+      "description": "Both examples describe downloads not working properly, with offline playback failing and songs getting stuck while downloading in the background until the app is reopened.",
+      "named_by": "anthropic:claude-haiku-5-5"
+    },
+    {
+      "issue_id": "ISS-catalog",
+      "topic": "catalog",
+      "name": "Missing songs and inconsistent lyrics availability",
+      "description": "Several reviewers report that songs they look for are absent from the catalog or that lyrics appear for some tracks but not others, making the library feel incomplete and unreliable.",
+      "named_by": "anthropic:claude-haiku-5-5"
+    },
+    {
+      "issue_id": "ISS-billing",
+      "topic": "billing",
+      "name": "Core features locked behind premium paywall",
+      "description": "The examples complain that after an update, basic playback controls such as queueing, skipping, and shuffle are restricted to premium, making the free experience feel useless.",
+      "named_by": "anthropic:claude-haiku-5-5"
+    },
+    {
+      "issue_id": "ISS-support",
+      "topic": "support",
+      "name": "support problems",
+      "description": "contacting support, response time, quality of support answers",
+      "named_by": "code"
+    },
+    {
+      "issue_id": "ISS-other",
+      "topic": "other",
+      "name": "Vague negative reviews after recent update",
+      "description": "The examples are short, generic complaints calling the app bad or useless, with some tying the dissatisfaction to a recent update, but none specify a concrete feature or failure.",
+      "named_by": "anthropic:claude-haiku-5-5"
+    }
+  ]
+}

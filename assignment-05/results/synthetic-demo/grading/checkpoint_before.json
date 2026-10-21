@@ -1,14 +1,1 @@
-{
-  "ts": "2026-10-20T06:14:08Z",
-  "phase": "initial",
-  "moment": "before",
-  "statuses": {
-    "pending": 998,
-    "completed": 0,
-    "quarantined": 2
-  },
-  "completed_count": 0,
-  "completed_ids_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-  "classify_calls_so_far": 0,
-  "classify_spend_so_far_usd": 0.0
-}
+{"ts": "2026-10-20T23:02:40Z", "phase": "resume", "moment": "before", "statuses": {"pending": 948, "completed": 50, "quarantined": 2}, "completed_count": 50, "completed_ids_sha256": "645286d1b569385ef1f7068c3cb24dd99d7ee6f9b531253d58e8aa1625dd5c29", "classify_calls_so_far": 2, "classify_spend_so_far_usd": 0.0, "completed_ids": ["syn-0000002", "syn-0000003", "syn-0000004", "syn-0000005", "syn-0000006", "syn-0000007", "syn-0000009", "syn-0000011", "syn-0000013", "syn-0000014", "syn-0000015", "syn-0000016", "syn-0000017", "syn-0000018", "syn-0000020", "syn-0000021", "syn-0000022", "syn-0000024", "syn-0000030", "syn-0000035", "syn-0000036", "syn-0000038", "syn-0000040", "syn-0000041", "syn-0000042", "syn-0000043", "syn-0000044", "syn-0000045", "syn-0000048", "syn-0000052", "syn-0000053", "syn-0000060", "syn-0000061", "syn-0000062", "syn-0000068", "syn-0000070", "syn-0000071", "syn-0000073", "syn-0000075", "syn-0000080", "syn-0000083", "syn-0000084", "syn-0000087", "syn-0000088", "syn-0000089", "syn-0000095", "syn-0000105", "syn-0000108", "syn-0000110", "syn-0000113"]}
