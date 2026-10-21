@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-21T05:14:26Z",
+  "generated_at": "2026-10-21T07:00:47Z",
   "golden_file": "evals/golden_50.csv",
   "rows_in_file": 50,
   "rows_with_human_labels": 50,
@@ -7,11 +7,11 @@
   "missing_or_not_completed": 1,
   "ambiguous_cases": 14,
   "topic_agreement": 0.898,
-  "intent_agreement": 0.9388,
+  "intent_agreement": 0.9184,
   "severity_exact_agreement": 0.8776,
   "severity_mae": 0.1224,
   "sentiment_tolerance": 0.5,
-  "sentiment_mae": 0.0939,
+  "sentiment_mae": 0.0898,
   "sentiment_rows": 49,
   "quote_substring_failures": 0,
   "per_topic_human_counts": {

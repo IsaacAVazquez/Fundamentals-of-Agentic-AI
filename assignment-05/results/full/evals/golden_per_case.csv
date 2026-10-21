@@ -9,7 +9,7 @@ praise,0.8,1,other,True,,praise,Excellent,0.9,1,other,True,111f9048-f7bd-4be0-81
 praise,0.7,1,other,True,,praise,good ❤❤🔊🔊,0.7,1,other,True,b567f70c-edba-4922-ac2a-e945e5eb3472,True,True,compared,True
 praise,0.8,1,catalog,True,ambiguous: 'diverse' read as catalog praise; could be other,praise,Spotify is awesome and and very diverse :),0.8,1,catalog,True,b5ee7834-a0eb-4c15-9c7b-935831021922,True,True,compared,True
 praise,0.7,1,usability,True,"ambiguous: praise of no ads under Duo Premium; usability per the ads rule, not billing",praise,Duo Premium .... No ads at all!,0.7,1,billing,True,1fc8b08f-7d6a-472f-b317-8ceb28d00f22,True,True,compared,False
-complaint,-0.3,3,playback,True,mixed praise and complaint,complaint,it o ly plays a little bit then it stops,-0.5,4,playback,True,947821dc-b356-45dc-a0bc-1903728fad40,True,False,compared,True
+complaint,-0.3,4,playback,True,mixed praise and complaint,complaint,it o ly plays a little bit then it stops,-0.5,4,playback,True,947821dc-b356-45dc-a0bc-1903728fad40,True,True,compared,True
 complaint,0.3,4,playback,True,ambiguous: resolved through support in the update; could be support praise,complaint,it keeps crashing every time,-0.5,4,playback,True,723f07de-9881-4049-8680-1a9e25652914,False,True,compared,True
 complaint,-0.7,2,other,True,,complaint,This app is bad work,-0.6,2,other,True,47428620-ec21-424d-a515-0b0b0012a5cf,True,True,compared,True
 praise,0.7,1,other,True,,praise,Great...,0.6,1,other,True,fc344263-308d-48a1-9715-c380d063b6de,True,True,compared,True
@@ -19,14 +19,14 @@ praise,0.7,1,catalog,True,Tagalog: all the songs are on Spotify; ambiguous,prais
 unclear,0.0,1,other,True,a name only,unclear,Avtar sungh,0.0,1,other,True,44129679-31a0-4108-9314-086a3456f6ae,True,True,compared,True
 complaint,-0.6,3,catalog,True,Indonesian: lyrics sometimes missing; ambiguous severity 2 or 3,complaint,lirik nya kdang gaada kek mana??,-0.3,2,catalog,True,46842184-32f8-4088-ac15-2a700a7e94ed,True,False,compared,True
 complaint,-0.9,2,other,True,general bad app,complaint,Hate This application 👎,-0.9,2,other,True,657f1b77-0183-4b06-bf48-5e6d9ab08f9a,True,True,compared,True
-unclear,-0.7,1,other,True,boycott statement with no product complaint,unclear,We are boycotting Swedish app in our protest against Sweden for their desrecpect & desceration of our holy book Qur'an,-0.6,1,other,True,5de7f95b-ccad-41b2-9f63-a13f7c1d9f09,True,True,compared,True
+cancellation,-0.7,1,other,False,boycott statement with no product complaint,unclear,We are boycotting Swedish app in our protest against Sweden for their desrecpect & desceration of our holy book Qur'an,-0.6,1,other,True,5de7f95b-ccad-41b2-9f63-a13f7c1d9f09,True,True,compared,True
 praise,0.9,1,catalog,True,recommendations,praise,Spotify gave me recommendations for an AWESOME Playlist,0.9,1,catalog,True,de48c99b-46fe-4837-8634-e63dbc72a5ea,True,True,compared,True
 praise,0.9,1,other,True,,praise,"I absolutely love Spotify, to me is one of the best Music Apps. Great job Spotify!!!",0.9,1,other,True,aa573851-0b86-4b1b-adf6-210268c08d2a,True,True,compared,True
 complaint,-0.5,2,usability,False,Hindi: an ad after every song; ambiguous request versus complaint,request,Please ye ads ko thoda kumm Karo harr ek song ke baad ad,-0.4,2,usability,True,372d4e67-59cc-4c54-879f-3e8a202ee554,True,True,compared,True
 complaint,-0.8,4,playback,True,,complaint,we cannot playback the songs and most bad updates are happening,-0.8,4,playback,True,47f1406d-4918-4d60-9647-5ca8e610caca,True,True,compared,True
 praise,0.9,1,other,True,,praise,Awesomeness 👌 👏 👍 😍 💖,0.9,1,other,True,82780cbe-6435-4efb-84f6-8e5fa47ffc3a,True,True,compared,True
-unclear,-0.5,1,other,True,"Hindi insult, no product content",unclear,Bheekhmangon,0.0,1,other,True,36609c5c-fe48-4459-86b8-cc78fd3c77cd,True,True,compared,True
-unclear,0.3,1,other,False,ambiguous: could be praise; reads as a song reference,praise,"Unconditional love, Stoli Canales",0.9,1,other,True,f4c8146a-d5c8-4168-b00e-21af666afc6a,False,True,compared,True
+complaint,-0.8,2,other,False,"Hindi insult, no product content",unclear,Bheekhmangon,0.0,1,other,True,36609c5c-fe48-4459-86b8-cc78fd3c77cd,False,False,compared,True
+praise,0.8,1,other,True,ambiguous: could be praise; reads as a song reference,praise,"Unconditional love, Stoli Canales",0.9,1,other,True,f4c8146a-d5c8-4168-b00e-21af666afc6a,True,True,compared,True
 cancellation,-0.8,3,billing,True,explicitly premium-only controls go to billing per the contract; the pipeline tends to say usability,cancellation,we can't turn off shuffle option. They are pushing us to upgrade to Premium subscription.,-0.9,3,usability,True,3ddb3f4e-f7b9-430b-b335-eadc6d321f46,True,True,compared,False
 complaint,-0.7,3,billing,True,premium-only controls,complaint,everything basic features is premium....,-0.6,3,billing,True,16d640e9-b281-4746-9562-c7dbcf7126b6,True,True,compared,True
 complaint,-0.9,2,other,False,"ambiguous: boycott-flavored, but 'hate this app' is a general complaint",unclear,I hate this app and sweden .I love islam,-0.5,1,other,True,8cc4fad4-26ec-47b7-96e8-49c7da714eca,True,False,compared,True
