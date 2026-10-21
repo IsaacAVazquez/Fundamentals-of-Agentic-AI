@@ -124,6 +124,9 @@ def test_downstream_stages_and_export(synthetic_csv, tmp_path, fake_controls):
         ids = [json.loads(line)["review_id"] for line in fh]
     assert len(ids) == 300 and len(set(ids)) == 300
     assert e["counts"]["completed"] + e["counts"]["quarantined"] == 300
+    with gzip.open(rd / "enriched.jsonl.gz", "rt") as fh:
+        assert sum(1 for _ in fh) == e["counts"]["completed"]
+    assert sum(1 for _ in open(rd / "quarantine.jsonl")) == e["counts"]["quarantined"]
     rep = reproducibility(rd)
     assert rep["passed"] is True
 

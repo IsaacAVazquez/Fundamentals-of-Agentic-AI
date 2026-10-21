@@ -115,9 +115,15 @@ def export_grading(run_dir: Path, out_dir: Path | None = None, compress: bool = 
         (out / "ingestion.json").write_text(json.dumps(report["contract_profile"], ensure_ascii=False, sort_keys=True, indent=2) + "\n")
 
     rec_path = out / ("records.jsonl.gz" if compress else "records.jsonl")
-    with (gzip.open if compress else open)(rec_path, "wt", encoding="utf-8") as fh:
+    # Same records, split by status into the run folder: enriched.jsonl.gz (completed) and quarantine.jsonl (reason, attempts).
+    with (gzip.open if compress else open)(rec_path, "wt", encoding="utf-8") as fh, \
+            gzip.open(run_dir / "enriched.jsonl.gz", "wt", encoding="utf-8") as enr, \
+            open(run_dir / "quarantine.jsonl", "w", encoding="utf-8") as qua:
         for r in store.iter_records():
-            fh.write(json.dumps(contract_record(r), ensure_ascii=False) + "\n")
+            line = json.dumps(contract_record(r), ensure_ascii=False) + "\n"
+            fh.write(line)
+            if r["status"] in ("completed", "quarantined"):
+                (enr if r["status"] == "completed" else qua).write(line)
 
     shutil.copy(run_dir / "membership.csv", out / "membership.csv")
     shutil.copy(run_dir / "ranking.csv", out / "ranking.csv")

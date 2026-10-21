@@ -1,0 +1,136 @@
+^D+ date -u
+Wed Oct 21 06:38:44 UTC 2026
++ .venv/bin/pipeline eval resume --input data/cost_100.csv --out results/resume-recording --first-batches 2 --keep-run runs/resume-real --backend anthropic --model claude-haiku-5-5 --effort low --batch-size 25 --workers 1 --max-spend 1
+{
+  "passed": true,
+  "phase_initial": {
+    "stop_reason": "max_batches",
+    "batches": 2,
+    "statuses_after": {
+      "pending": 50,
+      "completed": 50,
+      "quarantined": 0
+    }
+  },
+  "phase_resume": {
+    "stop_reason": "no_pending",
+    "batches": 3,
+    "statuses_after": {
+      "pending": 0,
+      "completed": 99,
+      "quarantined": 1
+    },
+    "calls": 3
+  },
+  "completed_ids_resent_in_resume": []
+}
++ .venv/bin/pipeline status --run-dir runs/resume-real
+{
+  "statuses": {
+    "pending": 0,
+    "completed": 99,
+    "quarantined": 1
+  },
+  "rows": 100,
+  "spend_usd": 0.006058,
+  "phases": [
+    {
+      "phase": "initial",
+      "started_at": "2026-10-21T06:38:45Z",
+      "before": {
+        "ts": "2026-10-21T06:38:45Z",
+        "phase": "initial",
+        "moment": "before",
+        "statuses": {
+          "pending": 100,
+          "completed": 0,
+          "quarantined": 0
+        },
+        "completed_count": 0,
+        "completed_ids_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "classify_calls_so_far": 0,
+        "classify_spend_so_far_usd": 0.0
+      },
+      "finished_at": "2026-10-21T06:39:03Z",
+      "stop_reason": "max_batches",
+      "after": {
+        "ts": "2026-10-21T06:39:03Z",
+        "phase": "initial",
+        "moment": "after",
+        "statuses": {
+          "pending": 50,
+          "completed": 50,
+          "quarantined": 0
+        },
+        "completed_count": 50,
+        "completed_ids_sha256": "1a0d9d4d3271651c80c649ac935ec88546aaa84a10ef1cd55b1fabe7de8e4342",
+        "classify_calls_so_far": 2,
+        "classify_spend_so_far_usd": 0.002911
+      },
+      "batches": 2,
+      "completed_this_run": 50,
+      "cache_hits": 0,
+      "wall_clock_s": 17.512
+    },
+    {
+      "phase": "resume",
+      "started_at": "2026-10-21T06:39:03Z",
+      "before": {
+        "ts": "2026-10-21T06:39:03Z",
+        "phase": "resume",
+        "moment": "before",
+        "statuses": {
+          "pending": 50,
+          "completed": 50,
+          "quarantined": 0
+        },
+        "completed_count": 50,
+        "completed_ids_sha256": "1a0d9d4d3271651c80c649ac935ec88546aaa84a10ef1cd55b1fabe7de8e4342",
+        "classify_calls_so_far": 2,
+        "classify_spend_so_far_usd": 0.002911
+      },
+      "finished_at": "2026-10-21T06:39:21Z",
+      "stop_reason": "no_pending",
+      "after": {
+        "ts": "2026-10-21T06:39:21Z",
+        "phase": "resume",
+        "moment": "after",
+        "statuses": {
+          "pending": 0,
+          "completed": 99,
+          "quarantined": 1
+        },
+        "completed_count": 99,
+        "completed_ids_sha256": "158875fe217e3076902fe02ba3dae6a58d9ef9ab8dfbc193881cbfccad8ea472",
+        "classify_calls_so_far": 5,
+        "classify_spend_so_far_usd": 0.006058
+      },
+      "batches": 3,
+      "completed_this_run": 49,
+      "cache_hits": 0,
+      "wall_clock_s": 18.599
+    }
+  ],
+  "controls": {
+    "backend": "anthropic",
+    "model": "claude-haiku-5-5",
+    "effort": "low",
+    "batch_size": 25,
+    "workers": 1,
+    "max_spend_usd": 1.0,
+    "max_output_tokens": 8000,
+    "max_batches": null,
+    "max_reviews": null,
+    "time_limit_s": null,
+    "fallback_model": null,
+    "fallback_fraction": 0.02,
+    "rates_path": null,
+    "backoff_tries": 6,
+    "label_config": "anthropic:claude-haiku-5-5|effort=low|prompt=v1|schema=v1"
+  }
+}
++ ls runs/resume-real/checkpoints
+00_initial_before.json	01_resume_before.json
+01_initial_after.json	02_resume_after.json
++ date -u
+Wed Oct 21 06:39:22 UTC 2026
