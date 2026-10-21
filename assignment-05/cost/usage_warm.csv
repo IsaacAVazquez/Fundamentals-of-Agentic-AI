@@ -1,5 +1,4 @@
 stage,provider,model,effort,label_config,requests,succeeded,failed,records_requested,usage_unknown,input_tokens,cached_input_tokens,cache_write_tokens,output_tokens,duration_ms_sum
-classify,anthropic,claude-haiku-5-5,low,anthropic:claude-haiku-5-5|effort=low|prompt=v1|schema=v1,4,4,0,100,0,6921,6628,0,10321,35300
-verify,anthropic,claude-haiku-5-5,low,anthropic:claude-haiku-5-5|effort=low|prompt=v1|schema=v1,2,2,0,20,0,1600,3354,0,2015,8691
-group,anthropic,claude-haiku-5-5,low,anthropic:claude-haiku-5-5|effort=low|prompt=v1|schema=v1,14,14,0,74,0,8894,0,0,1061,20692
-memo,anthropic,claude-haiku-5-5,low,anthropic:claude-haiku-5-5|effort=low|prompt=v1|schema=v1,2,2,0,0,0,8248,1634,0,2413,12841
+verify,anthropic,claude-haiku-5-5,low,anthropic:claude-haiku-5-5|effort=low|prompt=v1|schema=v1,1,1,0,10,0,800,1677,0,1017,4367
+group,anthropic,claude-haiku-5-5,low,anthropic:claude-haiku-5-5|effort=low|prompt=v1|schema=v1,7,7,0,37,0,4447,0,0,527,10569
+memo,anthropic,claude-haiku-5-5,low,anthropic:claude-haiku-5-5|effort=low|prompt=v1|schema=v1,1,1,0,0,0,4124,817,0,1241,6683

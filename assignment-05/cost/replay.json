@@ -1,5 +1,5 @@
 {
-  "replayed_at": "2026-10-20T23:26:18Z",
+  "replayed_at": "2026-10-21T08:55:18Z",
   "rates_file": "cost/rates.csv",
   "api_calls_made": 0,
   "priced_as": null,
@@ -283,80 +283,35 @@
       },
       "stages": [
         {
-          "stage": "classify",
-          "provider": "anthropic",
-          "model": "claude-haiku-5-5",
-          "effort": "low",
-          "label_config": "anthropic:claude-haiku-5-5|effort=low|prompt=v1|schema=v1",
-          "requests": "4",
-          "succeeded": "4",
-          "failed": "0",
-          "records_requested": "100",
-          "usage_unknown": "0",
-          "input_tokens": 6921,
-          "cached_input_tokens": 6628,
-          "cache_write_tokens": 0,
-          "output_tokens": 10321,
-          "duration_ms_sum": "35300",
-          "api_cost_usd": 0.005919,
-          "priced": true,
-          "billing_items": [
-            {
-              "unit": "input",
-              "tokens": 6921,
-              "usd_per_million": 0.1,
-              "usd": 0.000692
-            },
-            {
-              "unit": "cached_input",
-              "tokens": 6628,
-              "usd_per_million": 0.01,
-              "usd": 6.6e-05
-            },
-            {
-              "unit": "cache_write",
-              "tokens": 0,
-              "usd_per_million": 0.125,
-              "usd": 0.0
-            },
-            {
-              "unit": "output",
-              "tokens": 10321,
-              "usd_per_million": 0.5,
-              "usd": 0.005161
-            }
-          ]
-        },
-        {
           "stage": "verify",
           "provider": "anthropic",
           "model": "claude-haiku-5-5",
           "effort": "low",
           "label_config": "anthropic:claude-haiku-5-5|effort=low|prompt=v1|schema=v1",
-          "requests": "2",
-          "succeeded": "2",
+          "requests": "1",
+          "succeeded": "1",
           "failed": "0",
-          "records_requested": "20",
+          "records_requested": "10",
           "usage_unknown": "0",
-          "input_tokens": 1600,
-          "cached_input_tokens": 3354,
+          "input_tokens": 800,
+          "cached_input_tokens": 1677,
           "cache_write_tokens": 0,
-          "output_tokens": 2015,
-          "duration_ms_sum": "8691",
-          "api_cost_usd": 0.001201,
+          "output_tokens": 1017,
+          "duration_ms_sum": "4367",
+          "api_cost_usd": 0.000605,
           "priced": true,
           "billing_items": [
             {
               "unit": "input",
-              "tokens": 1600,
+              "tokens": 800,
               "usd_per_million": 0.1,
-              "usd": 0.00016
+              "usd": 8e-05
             },
             {
               "unit": "cached_input",
-              "tokens": 3354,
+              "tokens": 1677,
               "usd_per_million": 0.01,
-              "usd": 3.4e-05
+              "usd": 1.7e-05
             },
             {
               "unit": "cache_write",
@@ -366,9 +321,9 @@
             },
             {
               "unit": "output",
-              "tokens": 2015,
+              "tokens": 1017,
               "usd_per_million": 0.5,
-              "usd": 0.001007
+              "usd": 0.000508
             }
           ]
         },
@@ -378,24 +333,24 @@
           "model": "claude-haiku-5-5",
           "effort": "low",
           "label_config": "anthropic:claude-haiku-5-5|effort=low|prompt=v1|schema=v1",
-          "requests": "14",
-          "succeeded": "14",
+          "requests": "7",
+          "succeeded": "7",
           "failed": "0",
-          "records_requested": "74",
+          "records_requested": "37",
           "usage_unknown": "0",
-          "input_tokens": 8894,
+          "input_tokens": 4447,
           "cached_input_tokens": 0,
           "cache_write_tokens": 0,
-          "output_tokens": 1061,
-          "duration_ms_sum": "20692",
-          "api_cost_usd": 0.00142,
+          "output_tokens": 527,
+          "duration_ms_sum": "10569",
+          "api_cost_usd": 0.000708,
           "priced": true,
           "billing_items": [
             {
               "unit": "input",
-              "tokens": 8894,
+              "tokens": 4447,
               "usd_per_million": 0.1,
-              "usd": 0.000889
+              "usd": 0.000445
             },
             {
               "unit": "cached_input",
@@ -411,9 +366,9 @@
             },
             {
               "unit": "output",
-              "tokens": 1061,
+              "tokens": 527,
               "usd_per_million": 0.5,
-              "usd": 0.000531
+              "usd": 0.000264
             }
           ]
         },
@@ -423,30 +378,30 @@
           "model": "claude-haiku-5-5",
           "effort": "low",
           "label_config": "anthropic:claude-haiku-5-5|effort=low|prompt=v1|schema=v1",
-          "requests": "2",
-          "succeeded": "2",
+          "requests": "1",
+          "succeeded": "1",
           "failed": "0",
           "records_requested": "0",
           "usage_unknown": "0",
-          "input_tokens": 8248,
-          "cached_input_tokens": 1634,
+          "input_tokens": 4124,
+          "cached_input_tokens": 817,
           "cache_write_tokens": 0,
-          "output_tokens": 2413,
-          "duration_ms_sum": "12841",
-          "api_cost_usd": 0.002048,
+          "output_tokens": 1241,
+          "duration_ms_sum": "6683",
+          "api_cost_usd": 0.001041,
           "priced": true,
           "billing_items": [
             {
               "unit": "input",
-              "tokens": 8248,
+              "tokens": 4124,
               "usd_per_million": 0.1,
-              "usd": 0.000825
+              "usd": 0.000412
             },
             {
               "unit": "cached_input",
-              "tokens": 1634,
+              "tokens": 817,
               "usd_per_million": 0.01,
-              "usd": 1.6e-05
+              "usd": 8e-06
             },
             {
               "unit": "cache_write",
@@ -456,20 +411,20 @@
             },
             {
               "unit": "output",
-              "tokens": 2413,
+              "tokens": 1241,
               "usd_per_million": 0.5,
-              "usd": 0.001207
+              "usd": 0.00062
             }
           ]
         }
       ],
-      "api_cost_usd": 0.010588,
-      "enrichment_api_cost_usd": 0.005919,
-      "cost_per_1000_inputs_usd": 0.05919,
-      "cost_per_completed_record_usd": 0.00010588,
+      "api_cost_usd": 0.002354,
+      "enrichment_api_cost_usd": 0,
+      "cost_per_1000_inputs_usd": 0.0,
+      "cost_per_completed_record_usd": 2.354e-05,
       "throughput_records_per_minute": 270.65,
       "wall_clock_seconds": 22.169,
-      "summed_call_duration_seconds": 77.524,
+      "summed_call_duration_seconds": 21.619,
       "local_compute_estimate_usd": 0.0,
       "unknown_costs": false,
       "note": "API spend = billed tokens x rates.csv. Summed call durations are not wall-clock when calls overlap."

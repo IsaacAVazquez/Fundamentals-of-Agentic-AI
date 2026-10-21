@@ -1,6 +1,6 @@
 # 100-review cost and runtime report
 
-Replayed offline at 2026-10-20T23:02:40Z from saved usage and `rates.csv`. API calls made by this replay: 0.
+Replayed offline at 2026-10-21T08:55:18Z from saved usage and `rates.csv`. API calls made by this replay: 0.
 
 **Every call below is repriced at the rates of `anthropic:claude-haiku-5-5`.** The usage is the pilot's measured usage; the provider in the stage table is the one that actually ran.
 
@@ -25,14 +25,13 @@ Input `syn100.csv`, 100 rows, statuses {'pending': 0, 'completed': 99, 'quaranti
 
 Wall clock 0.015 s (summed call durations 0.0 s). New enrichment calls in this run: 0.
 
-API spend $0.003986 (enrichment $0.001789); cost per 1,000 inputs $0.01789; cost per completed record $4.026e-05; throughput 396000.0 records/min; local compute estimate $0.0; unknown costs: False.
+API spend $0.001098 (enrichment $0); cost per 1,000 inputs $0.0; cost per completed record $1.109e-05; throughput 396000.0 records/min; local compute estimate $0.0; unknown costs: False.
 
 | stage | provider | model | effort | requests | ok | failed | records | input | cached | cache write | output | USD |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| classify | fake | fake-deterministic-v1 | low | 2 | 2 | 0 | 48 | 2959 | 0 | 0 | 2987 | 0.001789 |
-| verify | fake | fake-deterministic-v1 | low | 2 | 2 | 0 | 20 | 2214 | 0 | 0 | 1254 | 0.000848 |
-| group | fake | fake-deterministic-v1 | low | 14 | 14 | 0 | 108 | 4332 | 0 | 0 | 266 | 0.000566 |
-| memo | fake | fake-deterministic-v1 | low | 2 | 2 | 0 | 0 | 5340 | 0 | 0 | 498 | 0.000783 |
+| verify | fake | fake-deterministic-v1 | low | 1 | 1 | 0 | 10 | 1107 | 0 | 0 | 627 | 0.000424 |
+| group | fake | fake-deterministic-v1 | low | 7 | 7 | 0 | 54 | 2166 | 0 | 0 | 133 | 0.000283 |
+| memo | fake | fake-deterministic-v1 | low | 1 | 1 | 0 | 0 | 2670 | 0 | 0 | 249 | 0.000391 |
 
 ## Full-run projection
 
