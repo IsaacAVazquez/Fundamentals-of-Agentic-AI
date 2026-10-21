@@ -116,7 +116,7 @@ def prepare(input_csv: Path, run_dir: Path, chunk_rows: int = 5000, limit: int |
         "missing_app_version": versions_missing,
         "rating_counts": dict(sorted(ratings.items())),
         "rows_by_month": dict(sorted(months.items())),
-        "row_hash_definition": "sha256(utf8(json.dumps([review_id, review_text, review_rating, review_likes, app_version, review_timestamp], ensure_ascii=False, separators=(",", ":")))), the row_sha helper in check_submission.py",
+        "row_hash_definition": 'sha256(utf8(json.dumps([review_id, review_text, review_rating, review_likes, app_version, review_timestamp], ensure_ascii=False, separators=(",", ":")))), the row_sha helper in check_submission.py',
         "text_hash_definition": "sha256(utf8(review_text))",
         "expected_full_corpus": CORPUS,
         "matches_full_corpus_profile": (

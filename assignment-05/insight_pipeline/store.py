@@ -61,10 +61,16 @@ def now_iso() -> str:
 
 
 class Store:
-    def __init__(self, run_dir: Path):
+    def __init__(self, run_dir: Path, create: bool = True):
+        """create=False is for the offline commands that only read a finished run: pointed at a folder with no
+        state.sqlite (a committed results/ copy or an unzipped grading export) they stop instead of creating an
+        empty database and overwriting saved outputs with empty tables."""
         self.run_dir = Path(run_dir)
-        self.run_dir.mkdir(parents=True, exist_ok=True)
         self.path = self.run_dir / "state.sqlite"
+        if not create and not self.path.exists():
+            raise SystemExit(f"{self.path} not found. This command reads a run's saved state, which is not committed or released. "
+                             "To rerank from a grading export use: pipeline rank --from-export <grading dir> --issues <issues.json>")
+        self.run_dir.mkdir(parents=True, exist_ok=True)
         self.conn = sqlite3.connect(self.path, timeout=60, check_same_thread=False)
         self.conn.row_factory = sqlite3.Row
         self.conn.execute("PRAGMA journal_mode=WAL")

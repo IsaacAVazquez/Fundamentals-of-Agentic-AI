@@ -81,10 +81,8 @@ def run_pilot(input_csv: Path, cost_dir: Path, controls: Controls, warm: bool = 
         for row in store.iter_calls():
             if row["call_id"] > last_call_id:
                 fh.write(json.dumps({"pilot_run": label, "run_id": run_id, **contract_call(row, run_id)}) + "\n")
-    usage = _usage_rows(store)
-    with open(cost_dir / f"usage_{label}.csv", "w", newline="") as fh:
-        w = csv.DictWriter(fh, fieldnames=list(usage[0].keys()) if usage else ["stage"])
-        w.writeheader(); w.writerows(usage)
+    # Usage counts the same calls as pilot_calls: the warm run's state file also holds the cold run's calls.
+    _write_usage(cost_dir / f"usage_{label}.csv", _usage_rows(c for c in store.iter_calls() if c["call_id"] > last_call_id))
     if not warm:
         shutil.copy(cost_dir / "pilot_records_cold.jsonl", cost_dir / "pilot_records.jsonl")
         shutil.copy(cost_dir / "usage_cold.csv", cost_dir / "usage.csv")
@@ -109,21 +107,46 @@ def run_pilot(input_csv: Path, cost_dir: Path, controls: Controls, warm: bool = 
     return measured
 
 
-def _usage_rows(store: Store) -> list[dict]:
+def _usage_rows(calls) -> list[dict]:
+    """Per-stage usage from call rows: the store's (request_ids as JSON text) or pilot_calls_*.jsonl lines (review_ids as a list)."""
     rows = {}
-    for c in store.iter_calls():
+    for c in calls:
         key = (c["stage"], c["provider"], c["model"], c["effort"] or "", c["label_config"] or "")
         r = rows.setdefault(key, {"stage": key[0], "provider": key[1], "model": key[2], "effort": key[3], "label_config": key[4],
                                   "requests": 0, "succeeded": 0, "failed": 0, "records_requested": 0, "usage_unknown": 0,
                                   "input_tokens": 0, "cached_input_tokens": 0, "cache_write_tokens": 0, "output_tokens": 0, "duration_ms_sum": 0})
         r["requests"] += 1
         r["succeeded" if c["status"] == "ok" else "failed"] += 1
-        r["records_requested"] += len(json.loads(c["request_ids"]) if c["request_ids"] else [])
+        ids = c["review_ids"] if "review_ids" in c.keys() else (json.loads(c["request_ids"]) if c["request_ids"] else [])
+        r["records_requested"] += len(ids)
         r["usage_unknown"] += int(not c["usage_known"])
         for u in UNITS:
             r[f"{u}_tokens"] += int(c[f"{u}_tokens"] or 0)
         r["duration_ms_sum"] += int(c["duration_ms"] or 0)
     return list(rows.values())
+
+
+def _write_usage(path: Path, usage: list[dict]) -> None:
+    with open(path, "w", newline="") as fh:
+        w = csv.DictWriter(fh, fieldnames=list(usage[0].keys()) if usage else ["stage"])
+        w.writeheader(); w.writerows(usage)
+
+
+def rebuild_usage(cost_dir: Path) -> dict:
+    """Offline. Rewrite usage_cold.csv, usage_warm.csv and usage.csv from the saved pilot_calls_*.jsonl, so the raw usage
+    the replay prices can be checked against the call log line by line. Needs no state file and no key."""
+    cost_dir = Path(cost_dir)
+    out = {}
+    for label in ("cold", "warm"):
+        calls_path = cost_dir / f"pilot_calls_{label}.jsonl"
+        if not calls_path.exists():
+            continue
+        usage = _usage_rows(json.loads(line) for line in open(calls_path))
+        _write_usage(cost_dir / f"usage_{label}.csv", usage)
+        out[label] = {"calls": sum(u["requests"] for u in usage), "stages": [u["stage"] for u in usage]}
+    if (cost_dir / "usage_cold.csv").exists():
+        shutil.copy(cost_dir / "usage_cold.csv", cost_dir / "usage.csv")
+    return out
 
 
 def replay(cost_dir: Path, rates_override: Path | None = None, projection_override: Path | None = None,
@@ -264,7 +287,7 @@ def checkpoint_refresh(cost_dir: Path, run_dir: Path, label: str) -> dict:
     cost_dir, run_dir = Path(cost_dir), Path(run_dir)
     summary = json.loads((run_dir / "run_summary.json").read_text())
     projection = json.loads((cost_dir / "projection.json").read_text()) if (cost_dir / "projection.json").exists() else dict(DEFAULT_PROJECTION)
-    store = Store(run_dir)
+    store = Store(run_dir, create=False)
     rows = store.review_count()
     direct = store.conn.execute("SELECT COUNT(*) FROM records WHERE status='completed' AND cache_source_id IS NULL").fetchone()[0]
     cached = store.conn.execute("SELECT COUNT(*) FROM records WHERE status='completed' AND cache_source_id IS NOT NULL").fetchone()[0]

@@ -2,13 +2,15 @@ import csv
 import gzip
 import json
 
+import pytest
+
 from insight_pipeline.classify import Controls, run_classify
-from insight_pipeline.evals import injection_test, reproducibility, resume_demo
+from insight_pipeline.evals import field_checks, injection_test, reproducibility, resume_demo
 from insight_pipeline.export import export_grading
 from insight_pipeline.group import run_group
 from insight_pipeline.memo import check_memo, run_memo
 from insight_pipeline.prepare import prepare
-from insight_pipeline.rank import run_rank
+from insight_pipeline.rank import rank_from_export, run_rank
 from insight_pipeline.store import Store
 from insight_pipeline.verify import run_verify
 
@@ -129,6 +131,36 @@ def test_downstream_stages_and_export(synthetic_csv, tmp_path, fake_controls):
     assert sum(1 for _ in open(rd / "quarantine.jsonl")) == e["counts"]["quarantined"]
     rep = reproducibility(rd)
     assert rep["passed"] is True
+    # A grader has the export, not state.sqlite: reranking from it must give the same bytes.
+    rr = rank_from_export(out, tmp_path / "rerank", rd / "issues.json")
+    assert rr["model_calls_made"] == 0
+    for name in ("ranking.csv", "aggregates.csv", "claims.csv"):
+        assert (tmp_path / "rerank" / name).read_bytes() == (rd / name).read_bytes(), name
+    # Per-field checks read only the export: copy three completed records' labels into a golden file, then break one.
+    store = Store(rd)
+    picked = [r for r in store.iter_records("completed")][:3]
+    store.close()
+    golden = tmp_path / "golden.csv"
+    with open(golden, "w", newline="", encoding="utf-8") as fh:
+        w = csv.writer(fh)
+        w.writerow(["review_id", "review_text", "human_topic", "human_intent", "human_severity", "human_sentiment", "human_evidence_quote", "notes"])
+        for i, r in enumerate(picked):
+            w.writerow([r["review_id"], r["review_text"], r["topic"], r["intent"], r["severity"] if i else 6 - r["severity"], r["sentiment"], "", "ambiguous" if i == 2 else ""])
+    fc = field_checks(golden, out / "records.jsonl.gz", None, tmp_path / "fields")
+    assert fc["golden_compared"] == 3 and fc["model_calls_made"] == 0
+    assert fc["needs_review_vs_golden_label_miss"]["truth_positive"] == (picked[0]["severity"] != 3)
+    assert fc["needs_review_vs_golden_ambiguous_notes"]["truth_positive"] == 1
+    assert fc["quote_support"]["rows"] == 3 and fc["quote_support"]["human_judgments_filled"] == 0
+
+
+def test_read_only_commands_refuse_a_folder_without_state(tmp_path):
+    saved = tmp_path / "results-copy"
+    saved.mkdir()
+    (saved / "ranking.csv").write_text("rank,issue_id\n1,ISS-billing\n")
+    with pytest.raises(SystemExit, match="state.sqlite not found"):
+        run_rank(saved)
+    assert not (saved / "state.sqlite").exists()
+    assert (saved / "ranking.csv").read_text() == "rank,issue_id\n1,ISS-billing\n"
 
 
 def test_memo_checker_rejects_bad_numbers():
