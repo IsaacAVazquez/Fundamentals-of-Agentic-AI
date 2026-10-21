@@ -15,6 +15,8 @@ def test_prepare_counts_and_hashes(synthetic_csv, tmp_path):
     assert report["nonempty_reviews"] == 298
     assert report["duplicate_review_ids_skipped"] == 0
     assert report["distinct_nonempty_texts"] < 298  # the generator repeats texts on purpose
+    # The hash definition is one whole string (an unescaped quote once split it and added a stray ", " key).
+    assert ", " not in report and report["row_hash_definition"].endswith('separators=(",", ":")))), the row_sha helper in check_submission.py')
     store = Store(tmp_path / "run")
     assert store.review_count() == 300
     assert store.status_counts() == {"pending": 300, "completed": 0, "quarantined": 0}

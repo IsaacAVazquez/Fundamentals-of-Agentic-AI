@@ -1,6 +1,6 @@
 # 100-review cost and runtime report
 
-Replayed offline at 2026-10-20T23:26:18Z from saved usage and `rates.csv`. API calls made by this replay: 0.
+Replayed offline at 2026-10-21T08:55:18Z from saved usage and `rates.csv`. API calls made by this replay: 0.
 
 ## cold run
 
@@ -21,16 +21,15 @@ API spend $0.008234 (enrichment $0.005919); cost per 1,000 inputs $0.05919; cost
 
 Input `cost_100.csv`, 100 rows, statuses {'pending': 0, 'completed': 100, 'quarantined': 0}, measured at 2026-10-20T23:26:18Z.
 
-Wall clock 22.169 s (summed call durations 77.524 s). New enrichment calls in this run: 0.
+Wall clock 22.169 s (summed call durations 21.619 s). New enrichment calls in this run: 0.
 
-API spend $0.010588 (enrichment $0.005919); cost per 1,000 inputs $0.05919; cost per completed record $0.00010588; throughput 270.65 records/min; local compute estimate $0.0; unknown costs: False.
+API spend $0.002354 (enrichment $0); cost per 1,000 inputs $0.0; cost per completed record $2.354e-05; throughput 270.65 records/min; local compute estimate $0.0; unknown costs: False.
 
 | stage | provider | model | effort | requests | ok | failed | records | input | cached | cache write | output | USD |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| classify | anthropic | claude-haiku-5-5 | low | 4 | 4 | 0 | 100 | 6921 | 6628 | 0 | 10321 | 0.005919 |
-| verify | anthropic | claude-haiku-5-5 | low | 2 | 2 | 0 | 20 | 1600 | 3354 | 0 | 2015 | 0.001201 |
-| group | anthropic | claude-haiku-5-5 | low | 14 | 14 | 0 | 74 | 8894 | 0 | 0 | 1061 | 0.00142 |
-| memo | anthropic | claude-haiku-5-5 | low | 2 | 2 | 0 | 0 | 8248 | 1634 | 0 | 2413 | 0.002048 |
+| verify | anthropic | claude-haiku-5-5 | low | 1 | 1 | 0 | 10 | 800 | 1677 | 0 | 1017 | 0.000605 |
+| group | anthropic | claude-haiku-5-5 | low | 7 | 7 | 0 | 37 | 4447 | 0 | 0 | 527 | 0.000708 |
+| memo | anthropic | claude-haiku-5-5 | low | 1 | 1 | 0 | 0 | 4124 | 817 | 0 | 1241 | 0.001041 |
 
 ## Full-run projection
 

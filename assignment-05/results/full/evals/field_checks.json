@@ -1,0 +1,78 @@
+{
+  "generated_at": "2026-10-21T09:03:23Z",
+  "golden_file": "evals/golden_50.csv",
+  "records_file": "records.jsonl.gz",
+  "model_calls_made": 0,
+  "golden_compared": 49,
+  "needs_review_vs_golden_ambiguous_notes": {
+    "cases": 49,
+    "flagged": 11,
+    "truth_positive": 14,
+    "flagged_and_positive": 5,
+    "precision": 0.4545,
+    "recall": 0.3571,
+    "flag_rate_when_negative": 0.1714
+  },
+  "needs_review_vs_golden_label_miss": {
+    "cases": 49,
+    "flagged": 11,
+    "truth_positive": 13,
+    "flagged_and_positive": 7,
+    "precision": 0.6364,
+    "recall": 0.5385,
+    "flag_rate_when_negative": 0.1111
+  },
+  "needs_review_vs_verifier_disagreement": {
+    "cases": 998,
+    "flagged": 187,
+    "truth_positive": 199,
+    "flagged_and_positive": 45,
+    "precision": 0.2406,
+    "recall": 0.2261,
+    "flag_rate_when_negative": 0.1777
+  },
+  "entities": {
+    "golden_cases": 49,
+    "entities_predicted": 46,
+    "entities_not_in_text": 7,
+    "cases_with_one_or_more": 7,
+    "list": [
+      {
+        "review_id": "ac6cd66d-a9d2-42a4-afb8-2f84beff7fd1",
+        "entity": "songs"
+      },
+      {
+        "review_id": "3ddb3f4e-f7b9-430b-b335-eadc6d321f46",
+        "entity": "favorite songs"
+      },
+      {
+        "review_id": "46c0b49f-83a1-427e-8f0b-cef62e3c94b5",
+        "entity": "ads"
+      },
+      {
+        "review_id": "8c0546b0-ce43-4a36-9d33-9f979e98d522",
+        "entity": "seek"
+      },
+      {
+        "review_id": "5fba12ea-4980-4f25-a129-f830a3974fd2",
+        "entity": "recommendations"
+      },
+      {
+        "review_id": "ac4e860a-c042-49cc-90f3-189591c336ac",
+        "entity": "subscription"
+      },
+      {
+        "review_id": "9034d675-9582-49b6-a1c1-c4ddabf8baf1",
+        "entity": "ads"
+      }
+    ],
+    "rule": "case-insensitive substring of the review text; a miss is flagged for a person to judge, since a paraphrase like 'app launch' can still be supported"
+  },
+  "quote_support": {
+    "worksheet": "golden_fields_per_case.csv",
+    "rows": 49,
+    "human_judgments_filled": 0,
+    "rule": "a person fills human_quote_supports_label with yes, partly or no for whether pred_quote supports the predicted topic, intent and severity"
+  },
+  "note": "Golden human labels are the ones in golden_50.csv; the README describes how they were made. The verifier comparison uses the enricher's own needs_review flag from the records file."
+}

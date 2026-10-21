@@ -1,6 +1,6 @@
 {
-  "replayed_at": "2026-10-20T23:02:40Z",
-  "rates_file": "/private/tmp/claude-501/-Users-isaacvazquez-Fundamentals-of-Agentic-AI/475d26cb-83ba-4581-a72d-c9c156fac8c5/scratchpad/cost-synthetic/rates.csv",
+  "replayed_at": "2026-10-21T08:55:18Z",
+  "rates_file": "results/cost-synthetic/rates.csv",
   "api_calls_made": 0,
   "priced_as": "anthropic:claude-haiku-5-5",
   "runs": {
@@ -283,74 +283,29 @@
       },
       "stages": [
         {
-          "stage": "classify",
-          "provider": "fake",
-          "model": "fake-deterministic-v1",
-          "effort": "low",
-          "label_config": "fake:fake-deterministic-v1|effort=low|prompt=v1|schema=v1",
-          "requests": "2",
-          "succeeded": "2",
-          "failed": "0",
-          "records_requested": "48",
-          "usage_unknown": "0",
-          "input_tokens": 2959,
-          "cached_input_tokens": 0,
-          "cache_write_tokens": 0,
-          "output_tokens": 2987,
-          "duration_ms_sum": "0",
-          "api_cost_usd": 0.001789,
-          "priced": true,
-          "billing_items": [
-            {
-              "unit": "input",
-              "tokens": 2959,
-              "usd_per_million": 0.1,
-              "usd": 0.000296
-            },
-            {
-              "unit": "cached_input",
-              "tokens": 0,
-              "usd_per_million": 0.01,
-              "usd": 0.0
-            },
-            {
-              "unit": "cache_write",
-              "tokens": 0,
-              "usd_per_million": 0.125,
-              "usd": 0.0
-            },
-            {
-              "unit": "output",
-              "tokens": 2987,
-              "usd_per_million": 0.5,
-              "usd": 0.001494
-            }
-          ]
-        },
-        {
           "stage": "verify",
           "provider": "fake",
           "model": "fake-deterministic-v1",
           "effort": "low",
           "label_config": "fake:fake-deterministic-v1|effort=low|prompt=v1|schema=v1",
-          "requests": "2",
-          "succeeded": "2",
+          "requests": "1",
+          "succeeded": "1",
           "failed": "0",
-          "records_requested": "20",
+          "records_requested": "10",
           "usage_unknown": "0",
-          "input_tokens": 2214,
+          "input_tokens": 1107,
           "cached_input_tokens": 0,
           "cache_write_tokens": 0,
-          "output_tokens": 1254,
+          "output_tokens": 627,
           "duration_ms_sum": "0",
-          "api_cost_usd": 0.000848,
+          "api_cost_usd": 0.000424,
           "priced": true,
           "billing_items": [
             {
               "unit": "input",
-              "tokens": 2214,
+              "tokens": 1107,
               "usd_per_million": 0.1,
-              "usd": 0.000221
+              "usd": 0.000111
             },
             {
               "unit": "cached_input",
@@ -366,9 +321,9 @@
             },
             {
               "unit": "output",
-              "tokens": 1254,
+              "tokens": 627,
               "usd_per_million": 0.5,
-              "usd": 0.000627
+              "usd": 0.000313
             }
           ]
         },
@@ -378,24 +333,24 @@
           "model": "fake-deterministic-v1",
           "effort": "low",
           "label_config": "fake:fake-deterministic-v1|effort=low|prompt=v1|schema=v1",
-          "requests": "14",
-          "succeeded": "14",
+          "requests": "7",
+          "succeeded": "7",
           "failed": "0",
-          "records_requested": "108",
+          "records_requested": "54",
           "usage_unknown": "0",
-          "input_tokens": 4332,
+          "input_tokens": 2166,
           "cached_input_tokens": 0,
           "cache_write_tokens": 0,
-          "output_tokens": 266,
+          "output_tokens": 133,
           "duration_ms_sum": "0",
-          "api_cost_usd": 0.000566,
+          "api_cost_usd": 0.000283,
           "priced": true,
           "billing_items": [
             {
               "unit": "input",
-              "tokens": 4332,
+              "tokens": 2166,
               "usd_per_million": 0.1,
-              "usd": 0.000433
+              "usd": 0.000217
             },
             {
               "unit": "cached_input",
@@ -411,9 +366,9 @@
             },
             {
               "unit": "output",
-              "tokens": 266,
+              "tokens": 133,
               "usd_per_million": 0.5,
-              "usd": 0.000133
+              "usd": 6.7e-05
             }
           ]
         },
@@ -423,24 +378,24 @@
           "model": "fake-deterministic-v1",
           "effort": "low",
           "label_config": "fake:fake-deterministic-v1|effort=low|prompt=v1|schema=v1",
-          "requests": "2",
-          "succeeded": "2",
+          "requests": "1",
+          "succeeded": "1",
           "failed": "0",
           "records_requested": "0",
           "usage_unknown": "0",
-          "input_tokens": 5340,
+          "input_tokens": 2670,
           "cached_input_tokens": 0,
           "cache_write_tokens": 0,
-          "output_tokens": 498,
+          "output_tokens": 249,
           "duration_ms_sum": "0",
-          "api_cost_usd": 0.000783,
+          "api_cost_usd": 0.000391,
           "priced": true,
           "billing_items": [
             {
               "unit": "input",
-              "tokens": 5340,
+              "tokens": 2670,
               "usd_per_million": 0.1,
-              "usd": 0.000534
+              "usd": 0.000267
             },
             {
               "unit": "cached_input",
@@ -456,17 +411,17 @@
             },
             {
               "unit": "output",
-              "tokens": 498,
+              "tokens": 249,
               "usd_per_million": 0.5,
-              "usd": 0.000249
+              "usd": 0.000124
             }
           ]
         }
       ],
-      "api_cost_usd": 0.003986,
-      "enrichment_api_cost_usd": 0.001789,
-      "cost_per_1000_inputs_usd": 0.01789,
-      "cost_per_completed_record_usd": 4.026e-05,
+      "api_cost_usd": 0.001098,
+      "enrichment_api_cost_usd": 0,
+      "cost_per_1000_inputs_usd": 0.0,
+      "cost_per_completed_record_usd": 1.109e-05,
       "throughput_records_per_minute": 396000.0,
       "wall_clock_seconds": 0.015,
       "summed_call_duration_seconds": 0.0,

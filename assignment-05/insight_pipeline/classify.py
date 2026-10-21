@@ -45,7 +45,7 @@ class Controls:
     fallback_model: str | None = None
     fallback_fraction: float = 0.02
     rates_path: Path | None = None
-    backoff_tries: int = 6  # 1,2,4,8,16,30 s with jitter: long enough to ride out a per-minute token limit
+    backoff_tries: int = 6  # 1,2,4,8,16,30 s with jitter: long enough to ride out a per-minute or concurrent-request rate limit
 
     def resolved_model(self) -> str:
         return self.model or DEFAULT_MODEL[self.backend]

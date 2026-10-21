@@ -61,15 +61,25 @@ def now_iso() -> str:
 
 
 class Store:
-    def __init__(self, run_dir: Path):
+    def __init__(self, run_dir: Path, create: bool = False):
+        """Only prepare creates a run's database (create=True). Every other command opens a prepared run and stops when
+        there is none, so pointed at a committed results/ copy or an unzipped grading export it cannot create an empty
+        database, and an empty one left behind by an older version cannot unlock an overwrite of the saved outputs."""
         self.run_dir = Path(run_dir)
-        self.run_dir.mkdir(parents=True, exist_ok=True)
         self.path = self.run_dir / "state.sqlite"
+        missing = (f"{self.path} has no prepared run. Run `pipeline prepare --input <csv> --run-dir {self.run_dir}` first. The full run's "
+                   "state is not committed or released; to rerank from a grading export use: pipeline rank --from-export <grading dir> --issues <issues.json>")
+        if not create and not self.path.exists():
+            raise SystemExit(missing)
+        self.run_dir.mkdir(parents=True, exist_ok=True)
         self.conn = sqlite3.connect(self.path, timeout=60, check_same_thread=False)
         self.conn.row_factory = sqlite3.Row
         self.conn.execute("PRAGMA journal_mode=WAL")
         self.conn.execute("PRAGMA synchronous=NORMAL")
         self.conn.executescript(SCHEMA)
+        if not create and self.review_count() == 0:
+            self.conn.close()
+            raise SystemExit(missing)
 
     # ---- meta -------------------------------------------------------------
     def set_meta(self, key: str, value) -> None:

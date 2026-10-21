@@ -68,7 +68,11 @@ def main(argv=None) -> None:
     p.add_argument("--run-dir", required=True); p.add_argument("--name", action="store_true"); _add_model_args(p, with_limits=False)
 
     p = sub.add_parser("rank", help="stage 5: deterministic ranking from saved outputs (no model)")
-    p.add_argument("--run-dir", required=True)
+    src = p.add_mutually_exclusive_group(required=True)
+    src.add_argument("--run-dir", help="a run folder with state.sqlite")
+    src.add_argument("--from-export", help="a grading/ folder (records.jsonl.gz + membership.csv), e.g. unzipped from the release")
+    p.add_argument("--issues", default=None, help="with --from-export: the run's issues.json, for the issue names in aggregates.csv")
+    p.add_argument("--out", default=None, help="with --from-export: where to write; default <export>/rerank")
 
     p = sub.add_parser("memo", help="stage 6: decision memo from aggregates (model call), then code checks")
     p.add_argument("--run-dir", required=True); _add_model_args(p, with_limits=False)
@@ -87,13 +91,16 @@ def main(argv=None) -> None:
     p = sub.add_parser("status", help="counts, spend, and phases for a run")
     p.add_argument("--run-dir", required=True)
 
-    p = sub.add_parser("eval", help="golden-template | golden | injection | resume | reproducibility")
+    p = sub.add_parser("eval", help="golden-template | golden | fields | injection | resume | reproducibility")
     es = p.add_subparsers(dest="which", required=True)
     e = es.add_parser("golden-template"); e.add_argument("--run-dir", required=True); e.add_argument("--out", required=True); e.add_argument("--n", type=int, default=50); e.add_argument("--seed", type=int, default=50)
     e = es.add_parser("golden"); e.add_argument("--run-dir", required=True); e.add_argument("--golden", required=True); e.add_argument("--out", default=None)
     e = es.add_parser("injection"); e.add_argument("--out", required=True); _add_model_args(e, with_limits=False)
     e = es.add_parser("resume"); e.add_argument("--input", required=True); e.add_argument("--out", required=True); e.add_argument("--first-batches", type=int, default=2); e.add_argument("--keep-run", default=None); _add_model_args(e)
     e = es.add_parser("reproducibility"); e.add_argument("--run-dir", required=True); e.add_argument("--out", default=None)
+    e = es.add_parser("fields", help="offline: needs_review, entities, and a quote-support worksheet from saved records")
+    e.add_argument("--golden", required=True); e.add_argument("--records", required=True, help="records.jsonl.gz or enriched.jsonl.gz from the export")
+    e.add_argument("--verifier-dir", default=None, help="folder with verifier_predictions.jsonl and disagreements.json"); e.add_argument("--out", required=True)
 
     p = sub.add_parser("cost", help="pilot (paid, explicit) | replay (offline, default)")
     cs = p.add_subparsers(dest="which", required=True)
@@ -102,6 +109,7 @@ def main(argv=None) -> None:
     c = cs.add_parser("replay", help="recompute costs and projections from saved files; no API key"); c.add_argument("--cost-dir", required=True); c.add_argument("--rates", default=None); c.add_argument("--projection", default=None)
     c.add_argument("--price-as", default=None, help="reprice measured usage at another model, e.g. anthropic:claude-haiku-5-5")
     c = cs.add_parser("checkpoint", help="offline: record a finished checkpoint run's measured cost and throughput next to the pilot"); c.add_argument("--cost-dir", required=True); c.add_argument("--run-dir", required=True); c.add_argument("--label", required=True)
+    c = cs.add_parser("rebuild-usage", help="offline: rewrite usage_*.csv from the saved pilot_calls_*.jsonl"); c.add_argument("--cost-dir", required=True)
 
     p = sub.add_parser("dashboard-load", help="load a run's saved outputs into the dashboard database")
     p.add_argument("--run-dir", required=True); p.add_argument("--database-url", default=None, help="postgres://... or sqlite:///path; default $DATABASE_URL or sqlite:///dashboard/dashboard.sqlite")
@@ -121,7 +129,11 @@ def main(argv=None) -> None:
         r = run_group(Path(a.run_dir), _controls(a), name_with_model=a.name)
         print(json.dumps({"member_count": r["member_count"], "counts": r["counts"]}, indent=2))
     elif a.cmd == "rank":
-        from .rank import run_rank
+        from .rank import rank_from_export, run_rank
+        if a.from_export:
+            r = rank_from_export(Path(a.from_export), Path(a.out) if a.out else None, Path(a.issues) if a.issues else None)
+            print(json.dumps({k: r[k] for k in ("ranking", "sha256", "statuses", "model_calls_made")}, indent=2))
+            return
         r = run_rank(Path(a.run_dir))
         print(json.dumps([{k: x[k] for k in ("rank", "issue_id", "complaint_count", "mean_severity", "priority_score")} for x in r["ranking"]], indent=2))
     elif a.cmd == "memo":
@@ -173,6 +185,9 @@ def main(argv=None) -> None:
             print(json.dumps({k: r[k] for k in ("passed", "phase_initial", "phase_resume", "completed_ids_resent_in_resume")}, indent=2))
         elif a.which == "reproducibility":
             print(json.dumps(evals.reproducibility(Path(a.run_dir), Path(a.out) if a.out else None), indent=2))
+        elif a.which == "fields":
+            r = evals.field_checks(Path(a.golden), Path(a.records), Path(a.verifier_dir) if a.verifier_dir else None, Path(a.out))
+            print(json.dumps({k: v for k, v in r.items() if k != "entities"} | {"entities": {k: v for k, v in r["entities"].items() if k != "list"}}, indent=2))
     elif a.cmd == "cost":
         from . import cost
         if a.which == "pilot":
@@ -182,6 +197,8 @@ def main(argv=None) -> None:
             print(json.dumps({k: r[k] for k in ("label", "rows", "statuses", "wall_clock_seconds", "new_enrichment_calls_this_run")}, indent=2))
         elif a.which == "checkpoint":
             print(json.dumps(cost.checkpoint_refresh(Path(a.cost_dir), Path(a.run_dir), a.label), indent=2))
+        elif a.which == "rebuild-usage":
+            print(json.dumps(cost.rebuild_usage(Path(a.cost_dir)), indent=2))
         else:
             r = cost.replay(Path(a.cost_dir), Path(a.rates) if a.rates else None, Path(a.projection) if a.projection else None, price_as=a.price_as)
             print(json.dumps({k: {kk: vv for kk, vv in v.items() if kk in ("api_cost_usd", "cost_per_1000_inputs_usd", "wall_clock_seconds")} for k, v in r["runs"].items()}, indent=2))

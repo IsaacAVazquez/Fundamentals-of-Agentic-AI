@@ -2,7 +2,7 @@ import csv
 import json
 
 from insight_pipeline.classify import Controls
-from insight_pipeline.cost import replay, run_pilot
+from insight_pipeline.cost import rebuild_usage, replay, run_pilot
 from insight_pipeline.rates import call_cost, load_rates
 
 
@@ -14,6 +14,15 @@ def test_cost_formula_and_rate_doubling(synthetic_csv, tmp_path):
     run_pilot(synthetic_csv, cost_dir, Controls(backend="fake", batch_size=25), warm=True, synthetic=True)
     warm = json.loads((cost_dir / "measured_warm.json").read_text())
     assert warm["new_enrichment_calls_this_run"] == 0
+    # The warm run's usage counts only its own calls, not the cold run's calls in the shared state file.
+    warm_usage = list(csv.DictReader(open(cost_dir / "usage_warm.csv", newline="")))
+    warm_calls = [json.loads(line) for line in open(cost_dir / "pilot_calls_warm.jsonl")]
+    assert "classify" not in {u["stage"] for u in warm_usage}
+    assert sum(int(u["requests"]) for u in warm_usage) == len(warm_calls) > 0
+    # And the usage files can be rebuilt offline from the call logs, byte for byte.
+    saved = {name: (cost_dir / name).read_bytes() for name in ("usage_cold.csv", "usage_warm.csv", "usage.csv")}
+    rebuild_usage(cost_dir)
+    assert {name: (cost_dir / name).read_bytes() for name in saved} == saved
     # Give the fake model real prices and check spend doubles when prices double, with time untouched.
     rates = cost_dir / "rates.csv"
     rows = list(csv.DictReader(open(rates, newline="")))
